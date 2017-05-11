@@ -1,0 +1,722 @@
+@import url('https://fonts.googleapis.com/css?family=Droid+Sans|Fira+Sans+Condensed:300,400,500,600,700,700i,900');
+* {
+  padding: 0;
+  margin: 0;
+}
+html,
+body {
+  width: 1400px;
+  height: 100%;
+  background-color: #f1f1f9;
+  margin: 0 auto;
+  padding: 0;
+}
+.container {
+  margin: 0 auto;
+  width: 1260px;
+  min-height: 100%;
+  background-color: #cecedc;
+  position: relative;
+  padding: 22px 70px 0;
+}
+.container header {
+  background-color: #e8e8f0;
+  padding: 23px 113px 22px;
+  width: 798.14045355px;
+  position: absolute;
+  left: 306px;
+  height: 31px;
+  float: right;
+  z-index: 1;
+}
+.container header .Add {
+  display: inline-block;
+  font-family: 'Droid Sans';
+  color: #ffffff;
+  font-size: 14px;
+  /* Приближение из-за подстановки шрифтов */
+  font-weight: 700;
+  text-align: center;
+  vertical-align: middle;
+  border-radius: 2px;
+  border: none;
+  background-color: #66666d;
+  -webkit-transition-duration: 0.4s;
+  /* Safari */
+  transition-duration: 0.4s;
+  margin-right: 10px;
+  width: 104px;
+  height: 31px;
+}
+.container header .text {
+  border-radius: 2px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #cecedc;
+  background-color: #f8f8fa;
+  vertical-align: top;
+  padding: 0px 5px;
+  margin-right: 21px;
+  width: 133px;
+  height: 31px;
+}
+.container header .Search {
+  display: inline-block;
+  font-family: 'Droid Sans';
+  color: #ffffff;
+  font-size: 14px;
+  /* Приближение из-за подстановки шрифтов */
+  font-weight: 700;
+  text-align: center;
+  vertical-align: middle;
+  border: none;
+  border-radius: 2px;
+  background-color: #a8bea1;
+  -webkit-transition-duration: 0.4s;
+  /* Safari */
+  transition-duration: 0.4s;
+  width: 73px;
+  height: 31px;
+}
+.container header .Add:hover {
+  box-shadow: 0 6px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+  background-color: #000000;
+  color: white;
+}
+.container header .Search:hover {
+  box-shadow: 0 6px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+  background-color: #4CAF50;
+  color: white;
+}
+.container header .check {
+  display: inline-block;
+  border-radius: 2px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #cecedc;
+  background-color: #f8f8fa;
+  vertical-align: middle;
+  margin-right: 19px;
+  width: 16px;
+  height: 16px;
+}
+.container header span,
+.container header label {
+  font-family: 'Droid Sans';
+  color: #66666d;
+  font-size: 12px;
+  /* Приближение из-за подстановки шрифтов */
+  font-weight: 400;
+  text-align: left;
+  margin-right: 15px;
+}
+.container header .messages {
+  color: #fff;
+  background-color: #66666d;
+  border-color: #2e6da4;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.42857143;
+  text-align: center;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  float: right;
+  -webkit-transition-duration: 0.4s;
+  /* Safari */
+  transition-duration: 0.4s;
+}
+.container header .messages span {
+  display: inline-block;
+  min-width: 10px;
+  padding: 3px 7px;
+  margin: 0px;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  background-color: #777;
+  border-radius: 10px;
+}
+.container header .messages:hover {
+  background-color: #000000;
+  box-shadow: 0 6px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+  color: white;
+}
+.container nav {
+  background-color: #3c3c40;
+  width: 308px;
+  min-height: 1978px;
+  position: relative;
+  float: left;
+  z-index: 2;
+}
+.container nav input {
+  border-radius: 2px;
+  border: 0px;
+  background-color: #5c5c5e;
+  font-family: 'Droid Sans';
+  color: #ffffff;
+  font-size: 12px;
+  /* Приближение из-за подстановки шрифтов */
+  font-weight: 400;
+  text-align: left;
+  width: 169px;
+  height: 14px;
+  margin: 23px 30px;
+  padding: 12px 10px;
+}
+.container nav .menu {
+  background-color: #3c3c40;
+  background-image: url(../img/top.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-transition-duration: 0.4s;
+  /* Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border: none;
+  position: relative;
+  top: -5px;
+  width: 34px;
+  height: 30px;
+}
+.container nav .menu:hover {
+  background-color: #5c5c5e;
+  border-radius: 2px;
+  color: white;
+}
+.container nav h4 {
+  display: block;
+  height: 30px;
+  font-family: 'Droid Sans';
+  padding-left: 30px;
+  margin-top: 24px;
+  color: #a8bea1;
+  font-size: 12px;
+  /* Приближение из-за подстановки шрифтов */
+  font-weight: 400;
+  text-align: left;
+}
+.container nav ul {
+  display: block;
+  list-style-type: none;
+}
+.container nav ul li {
+  display: block;
+  padding-left: 4px;
+  height: 30px;
+}
+.container nav ul li a {
+  display: block;
+  font-family: 'Droid Sans';
+  color: #f1f1f9;
+  background-color: #3c3c40;
+  height: 22px;
+  padding-top: 8px;
+  padding-left: 26px;
+  text-decoration: none;
+  font-size: 12px;
+  /* Приближение из-за подстановки шрифтов */
+  font-weight: 400;
+  text-align: left;
+}
+.container nav ul li:hover {
+  background-color: #ef5f48;
+  cursor: pointer;
+}
+.container nav ul li:hover a {
+  background-color: #5c5c5e;
+}
+.container nav .buff {
+  height: 200px;
+}
+.container main {
+  width: 1024px;
+  min-height: 1902px;
+  background-color: #f8f8f8;
+  margin-left: 307px;
+  position: relative;
+  top: 76px;
+  left: -71px;
+  z-index: 3;
+}
+.container main .left {
+  background-color: #f8f8fa;
+  width: 484px;
+  height: 1900px;
+  float: left;
+}
+.container main .left h3 {
+  font-family: 'Droid Sans';
+  color: #ef5f48;
+  font-size: 16px;
+  /* Приближение из-за подстановки шрифтов */
+  font-weight: 700;
+  text-align: left;
+  box-shadow: 0px 1px 0px 0px rgba(215, 215, 222, 0.75);
+  padding-left: 71px;
+  padding-top: 28px;
+  height: 43px;
+}
+.container main .left .user_title_profile {
+  box-shadow: 0px 1px 0px 0px rgba(215, 215, 222, 0.75);
+  padding: 21px 0px;
+  width: 485px;
+  height: 130px;
+}
+.container main .left .user_title_profile .shape {
+  width: 15%;
+  height: 130px;
+  background-image: url(../img/shape1.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  float: left;
+}
+.container main .left .user_title_profile .about_user {
+  width: 85%;
+  height: 100%;
+  float: left;
+}
+.container main .left .user_title_profile .about_user .stars {
+  width: 99px;
+  overflow: hidden;
+}
+.container main .left .user_title_profile .about_user .stars i {
+  height: 15px;
+  width: 15px;
+  color: #cecedc;
+}
+.container main .left .user_title_profile .about_user .avatar {
+  width: 40px;
+  height: 100%;
+  float: left;
+  margin-right: 25px;
+  background-image: url(../img/Small-Avatar1.png);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.container main .left .user_title_profile .about_user .name {
+  display: inline-block;
+  font-family: 'Droid Sans';
+  color: #66666d;
+  font-size: 16px;
+  /* Приближение из-за подстановки шрифтов */
+  font-weight: 700;
+  text-align: left;
+  margin-top: 20px;
+  margin-bottom: 7px;
+}
+.container main .left .user_title_profile .about_user .email {
+  font-family: 'Droid Sans';
+  color: #66666d;
+  font-size: 12px;
+  /* Приближение из-за подстановки шрифтов */
+  font-weight: 400;
+  line-height: 18px;
+  /* Приближение из-за подстановки шрифтов */
+  text-align: left;
+}
+.container main .left .user_title_profile .about_user .status {
+  font-family: 'Droid Sans';
+  color: #a8bea1;
+  font-size: 12px;
+  /* Приближение из-за подстановки шрифтов */
+  font-weight: 700;
+  line-height: 18px;
+  /* Приближение из-за подстановки шрифтов */
+  text-align: left;
+}
+.container main .left .user_title_profile:hover {
+  background-color: #f1f1f9;
+}
+.container main .left .buff {
+  height: 200px;
+}
+.container .right {
+  display: block;
+  width: 455px;
+  height: 1871px;
+  padding: 29px 42px;
+  background-color: #f1f1f9;
+  float: left;
+}
+.container .right form {
+  margin-bottom: 40px;
+  clear: both;
+}
+.container .right form h5 {
+  display: inline-block;
+  font-family: 'Droid Sans';
+  color: #66666d;
+  font-size: 16px;
+  /* Приближение из-за подстановки шрифтов */
+  font-weight: 700;
+  text-align: left;
+  margin-bottom: 25px;
+  clear: both;
+}
+.container .right form h5:nth-of-type(2n) {
+  font-family: 'Droid Sans';
+  color: #a8bea1;
+  font-size: 16px;
+  /* Приближение из-за подстановки шрифтов */
+  font-weight: 700;
+  text-align: left;
+}
+.container .right form label {
+  display: inline-block;
+  font-family: 'Droid Sans';
+  color: #66666d;
+  font-size: 12px;
+  /* Приближение из-за подстановки шрифтов */
+  font-weight: 400;
+  text-align: left;
+  text-transform: capitalize;
+  margin-bottom: 15px;
+  clear: both;
+}
+.container .right form input,
+.container .right form select {
+  display: inline-block;
+  font-family: 'Droid Sans';
+  color: #66666d;
+  font-size: 12px;
+  /* Приближение из-за подстановки шрифтов */
+  font-weight: 400;
+  text-align: left;
+  border-radius: 2px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #cecedc;
+  background-color: #f8f8fa;
+  padding: 0px 5px;
+  margin-bottom: 16px;
+  width: 200px;
+  height: 31px;
+  clear: both;
+}
+.container .right form input[type=submit] {
+  font-family: 'Droid Sans';
+  color: #ffffff;
+  font-size: 14px;
+  /* Приближение из-за подстановки шрифтов */
+  font-weight: 700;
+  text-align: center;
+  border-radius: 2px;
+  background-color: #435870;
+  width: 211px;
+  height: 31px;
+  float: left;
+}
+.container .right form .left_form {
+  width: 215px;
+  float: left;
+}
+.container .right form .right_form {
+  width: 215px;
+  margin-left: 15px;
+  float: right;
+}
+.container .right form .submit {
+  height: 55px;
+  margin-top: 21px;
+  -webkit-transition-duration: 0.4s;
+  /* Safari */
+  transition-duration: 0.4s;
+  clear: both;
+}
+.container .right form .submit label {
+  font-family: 'Droid Sans';
+  color: #66666d;
+  font-size: 12px;
+  /* Приближение из-за подстановки шрифтов */
+  font-weight: 700;
+  text-align: left;
+}
+.container .right form input[type=submit]:hover {
+  background-color: #00008B;
+  box-shadow: 0 6px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+  color: white;
+}
+.container .right form button {
+  border-radius: 2px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #cecedc;
+  background-color: #f8f8fa;
+  color: #66666d;
+  cursor: pointer;
+  width: 22px;
+  height: 22px;
+}
+.container .right form textarea {
+  width: 430px;
+  height: 105px;
+  max-width: 430px;
+  max-height: 105px;
+  padding: 12px 12px;
+  margin: 17px 0px;
+}
+.container .right form .textsave {
+  font-family: 'Droid Sans';
+  color: #ffffff;
+  font-size: 14px;
+  /* Приближение из-за подстановки шрифтов */
+  font-weight: 700;
+  text-align: center;
+  border-radius: 2px;
+  background-color: #a8bea1;
+  -webkit-transition-duration: 0.4s;
+  /* Safari */
+  transition-duration: 0.4s;
+  margin-bottom: 36px;
+  width: 73px;
+  height: 31px;
+  float: left;
+}
+.container .right form .textsave:hover {
+  background-color: #4CAF50;
+  box-shadow: 0 6px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+  color: white;
+}
+.container .right form .textcancel {
+  font-family: 'Droid Sans';
+  color: #ffffff;
+  font-size: 14px;
+  /* Приближение из-за подстановки шрифтов */
+  font-weight: 700;
+  text-align: center;
+  border-radius: 2px;
+  background-color: #ef5f48;
+  -webkit-transition-duration: 0.4s;
+  /* Safari */
+  transition-duration: 0.4s;
+  width: 73px;
+  height: 31px;
+  float: right;
+}
+.container .right form .textcancel:hover {
+  background-color: #FF0000;
+  box-shadow: 0 6px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+  color: white;
+}
+.container .right form .used {
+  width: 226px;
+  float: left;
+  margin-bottom: 41px;
+}
+.container .right form .used .progress {
+  width: 226px;
+  height: 16px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #cecedc;
+  background-color: #f8f8fa;
+  position: relative;
+  font-family: 'Droid Sans';
+  color: #ef5f48;
+  font-size: 12px;
+  /* Приближение из-за подстановки шрифтов */
+  font-weight: 700;
+  text-align: left;
+}
+.container .right form .used .progress span {
+  margin: 0px 5px;
+  position: absolute;
+  color: brown;
+  z-index: 3;
+}
+.container .right form .used .progress-info {
+  background-color: #ef5f48;
+  float: right;
+  width: 94px;
+  height: 16px;
+  max-width: 100%;
+}
+.container .right form .free {
+  width: 226px;
+  float: left;
+  margin-bottom: 41px;
+}
+.container .right form .free .progress {
+  width: 226px;
+  height: 16px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #cecedc;
+  background-color: #f8f8fa;
+  position: relative;
+  font-family: 'Droid Sans';
+  color: #a8bea1;
+  font-size: 12px;
+  /* Приближение из-за подстановки шрифтов */
+  font-weight: 700;
+  text-align: right;
+}
+.container .right form .free .progress span {
+  margin: 0px 5px;
+  position: relative;
+  color: #4CAF50;
+  z-index: 3;
+}
+.container .right form .free .progress-info {
+  background-color: #a8bea1;
+  float: left;
+  position: absolute;
+  top: 0;
+  z-index: 2;
+  width: 111px;
+  height: 16px;
+  max-width: 100%;
+}
+.container .right form .checkbox {
+  display: block;
+  float: left;
+  border-radius: 2px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #cecedc;
+  background-color: #f8f8fa;
+  width: 16px;
+  height: 16px;
+}
+.container .right form .label_checkbox {
+  font-family: 'Droid Sans';
+  color: #66666d;
+  font-size: 12px;
+  /* Приближение из-за подстановки шрифтов */
+  font-weight: 700;
+  text-align: left;
+  margin-left: 12px;
+}
+.container .right .profile .photo {
+  float: left;
+}
+.container .right .profile .photo .avatar {
+  border-radius: 50%;
+  background-color: #cecedc;
+  background-image: url(../img/Small-Avatar1.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  margin-right: 21px;
+  margin-bottom: 14px;
+  width: 88px;
+  height: 88px;
+}
+.container .right .profile .photo a {
+  font-family: 'Droid Sans';
+  color: #a8bea1;
+  font-size: 12px;
+  /* Приближение из-за подстановки шрифтов */
+  font-weight: 400;
+  text-decoration: underline;
+  text-align: left;
+}
+.container .right .profile .forminp {
+  width: 220px;
+  float: left;
+  margin-left: 12px;
+}
+.container .right .profile label {
+  font-family: 'Droid Sans';
+  color: #66666d;
+  font-size: 12px;
+  /* Приближение из-за подстановки шрифтов */
+  font-weight: 400;
+  text-align: right;
+  margin-bottom: 23px;
+  margin-top: 10px;
+  float: right;
+}
+.container .right .profile input {
+  border-radius: 2px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #cecedc;
+  background-color: #f8f8fa;
+  float: left;
+  width: 143px;
+  height: 31px;
+}
+.container .right .profile .lastupdate {
+  float: none;
+  margin: 0px;
+}
+.container .right .profile button {
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  -webkit-transition-duration: 0.4s;
+  /* Safari */
+  transition-duration: 0.4s;
+  background-color: #a8bea1;
+  float: right;
+  width: 54px;
+  height: 40px;
+}
+.container .right .profile button i {
+  -webkit-transition-duration: 0.4s;
+  /* Safari */
+  transition-duration: 0.4s;
+  border: none;
+  background-color: #a8bea1;
+  color: #f1f1f9;
+}
+.container .right .profile button:hover {
+  background-color: #4CAF50;
+}
+.container .right .profile button:hover i {
+  background-color: #4CAF50;
+}
+.container .right .profile button:last-of-type {
+  background-color: #ef5f48;
+  position: relative;
+  top: -10px;
+}
+.container .right .profile button:last-of-type i {
+  background-color: #ef5f48;
+  color: #ffffff;
+}
+.container .right .profile button:last-of-type:hover {
+  background-color: #FF0000;
+}
+.container .right .profile button:last-of-type:hover i {
+  background-color: #FF0000;
+  color: #ffffff;
+}
+.container .right .profile span {
+  font-family: 'Droid Sans';
+  color: #66666d;
+  font-size: 12px;
+  /* Приближение из-за подстановки шрифтов */
+  font-weight: 700;
+  text-align: left;
+  margin-left: 33px;
+}
+.container .right .profile .lablesofprofile {
+  float: left;
+}
+.container .right .filespace {
+  width: 100%;
+  min-height: 100px;
+}
+.container .right .buff {
+  height: 200px;
+}
+.container .crl {
+  height: 100px;
+  clear: both;
+}
+footer {
+  height: 100px;
+  background-color: #080808;
+  margin-top: -100px;
+  position: relative;
+  clear: both;
+  z-index: 3;
+}
