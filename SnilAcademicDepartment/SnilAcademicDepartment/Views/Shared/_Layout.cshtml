@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/index")
+    @Styles.Render("~/bundles/font-awesome")
+</head>
+<body>
+    <div class=header>
+        <div class="container">
+            <a href="#" class="logo"></a>
+            <i class="fa fa-language fa-2x">
+                <ul class="lang">
+                    <li class="en">@Html.ActionLink("EN", "Index", "Home")</li>
+                    <li class="ru">@Html.ActionLink("RU", "Index", "Home")</li>
+                    <li class="zh">@Html.ActionLink("ZH", "Index", "Home")</li>
+                    <li class="es">@Html.ActionLink("ES", "Index", "Home")</li>
+                    <li class="de">@Html.ActionLink("DE", "Index", "Home")</li>
+                </ul>
+            </i>
+            <a class="signin btn btn-default" href="#" role="button">Sign In</a>
+        </div>
+    </div>
+    <div class="nav">
+        <div class="container">            
+            <h2>BSU SNIL</h2>          
+            @Html.ActionLink("Главная", "Index", "Home")        
+            @Html.ActionLink("Проекты", "Projects", "Projects")                
+            @Html.ActionLink("Обучение", "Education", "Education")            
+            @Html.ActionLink("Персонал", "Persons", "Persons")          
+            @Html.ActionLink("История", "History", "History")        
+            @Html.ActionLink("Контакты", "Contact", "Home")
+        </div>
+    </div>    
+    <div class="content">
+        @RenderBody()        
+    </div>
+    <div class="clr"></div>
+    <footer>
+        <div class="container">
+            <p>
+                &copy; Белорусский государственный университет<br />
+                Адрес: пр.&nbsp;Независимости, 4, 220030, г.&nbsp;Минск, Республика Беларусь.<br />
+                Тел. + 375 17&nbsp;209 50 44. Факс. + 375 17&nbsp;226 59 40. Url: <a href="http://bsu.by" target="_blank"> www.bsu.by</a>.
+            </p>
+        </div>
+    </footer>
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
