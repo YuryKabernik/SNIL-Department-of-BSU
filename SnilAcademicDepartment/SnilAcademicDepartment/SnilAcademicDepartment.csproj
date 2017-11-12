@@ -56,15 +56,35 @@
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.5\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http.Formatting">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Http">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
@@ -148,6 +168,8 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\EducationController.cs" />
+    <Compile Include="Controllers\HistoryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PersonsController.cs" />
     <Compile Include="Controllers\ProjectsController.cs" />
@@ -162,6 +184,9 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Education\EducationStyle.css" />
+    <Content Include="Content\font-awesome.css" />
+    <Content Include="Content\History\HistoryStyle.css" />
     <Content Include="Content\IndexStyle.css" />
     <Content Include="Content\ContactStyle.css" />
     <Content Include="Content\Persons\PersonsStyle.css" />
@@ -214,6 +239,8 @@
     </Content>
     <Content Include="Content\Projects\ProjectsStyle.less" />
     <Content Include="Content\Persons\PersonsStyle.less" />
+    <Content Include="Content\Education\EducationStyle.less" />
+    <Content Include="Content\History\HistoryStyle.less" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -225,6 +252,15 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Views\Education\PagesOfEducation%28HTML%29\education.html" />
+    <Content Include="Views\Education\PagesOfEducation%28HTML%29\lectures.html" />
+    <Content Include="Views\Education\PagesOfEducation%28HTML%29\quicklearning.html" />
+    <Content Include="Views\Education\PagesOfEducation%28HTML%29\seminars.html" />
+    <Content Include="Views\History\PagesOfHistory%28HTML%29\archive.html" />
+    <Content Include="Views\History\PagesOfHistory%28HTML%29\history.html" />
+    <Content Include="Views\History\PagesOfHistory%28HTML%29\IEEE.html" />
+    <Content Include="Views\History\PagesOfHistory%28HTML%29\reports.html" />
+    <Content Include="Views\History\PagesOfHistory%28HTML%29\review.html" />
     <Content Include="Views\Persons\PagesOfPersons%28HTML%29\administration.html" />
     <Content Include="Views\Persons\PagesOfPersons%28HTML%29\ms.html" />
     <Content Include="Views\Persons\PagesOfPersons%28HTML%29\people.html" />
@@ -256,11 +292,19 @@
     <Content Include="Views\Projects\PageCurrent.cshtml" />
     <Content Include="Views\Persons\Persons.cshtml" />
     <Content Include="Views\Persons\PageAdministration.cshtml" />
+    <Content Include="Views\Persons\PageStudents.cshtml" />
+    <Content Include="Views\Persons\PageMS.cshtml" />
+    <Content Include="Views\Persons\PagePHDs.cshtml" />
+    <Content Include="Views\History\History.cshtml" />
+    <Content Include="Views\History\PageIEEE.cshtml" />
+    <Content Include="Views\History\PageArchive.cshtml" />
+    <Content Include="Views\History\PageReports.cshtml" />
+    <Content Include="Views\History\PageReview.cshtml" />
+    <Content Include="Views\Education\Education.cshtml" />
+    <Content Include="Views\Persons\View.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Education\" />
-    <Folder Include="Views\History\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

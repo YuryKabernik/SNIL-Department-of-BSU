@@ -6,32 +6,32 @@ using System.Web.Mvc;
 
 namespace SnilAcademicDepartment.Controllers
 {
-    public class PersonsController : Controller
-    {
+    public class HistoryController : Controller
+    { 
         //----------------------------------- All Pages ------------------------------------
-        public ActionResult Persons()
+        public ActionResult History()
         {
-            ViewBag.Title = "Persons";
+            ViewBag.Title = "History";
             return View();
         }
-        public ActionResult Administration()
+        public ActionResult PageArchive()
         {
-            ViewBag.Title = "Administration";
+            ViewBag.Title = "Archive";
             return View();
         }
-        public ActionResult Students()
+        public ActionResult PageIEEE()
         {
-            ViewBag.Title = "Stuedents";
+            ViewBag.Title = "IEEE";
             return View();
         }
-        public ActionResult MS()
+        public ActionResult PageReview()
         {
-            ViewBag.Title = "MS";
+            ViewBag.Title = "Review";
             return View();
         }
-        public ActionResult PHDs()
+        public ActionResult PageReports()
         {
-            ViewBag.Title = "PHDs";
+            ViewBag.Title = "Reports";
             return View();
         }
     }
