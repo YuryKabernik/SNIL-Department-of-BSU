@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SnilAcademicDepartment.Filters;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -6,7 +7,8 @@ using System.Web.Mvc;
 
 namespace SnilAcademicDepartment.Controllers
 {
-    public class HistoryController : Controller
+    [Culture]
+    public class HistoryController : Controller, IHistory
     { 
         //----------------------------------- All Pages ------------------------------------
         public ActionResult History()

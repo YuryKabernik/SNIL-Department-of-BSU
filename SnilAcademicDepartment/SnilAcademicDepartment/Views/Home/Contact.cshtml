@@ -2,21 +2,21 @@
     ViewBag.Title = "Contact";
 }
 <div class="container formform">
-    <h3>Контакты</h3>
+    <h3>@Resources.Resource.Contacts</h3>
     <div class="form">
         <div class="row">
             <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
                 <div class="form_input">
                     <form>
-                        <h5>Full name*</h5>
+                        <h5>@Resources.Resource.FullName</h5>
                         <input class="entry" type="text" placeholder="e.g.  robert smith"><br>
-                        <h5>Email*</h5>
+                        <h5>@Resources.Resource.Email</h5>
                         <input class="entry" type="email" placeholder="e.g. name@nome.com"><br>
-                        <h5>Company*</h5>
+                        <h5>@Resources.Resource.Company</h5>
                         <input class="entry" type="text" placeholder="e.g. your company (optional)"><br>
-                        <h5>Subject*</h5>
+                        <h5>@Resources.Resource.Subject</h5>
                         <input class="entry" type="text" placeholder="e.g. info"><br>
-                        <h5>Message</h5>
+                        <h5>@Resources.Resource.Message</h5>
                         <textarea class="usertext" placeholder=""></textarea><br>
                         <input class="bottom_send_form" type="button" value="Send" />
                     </form>
@@ -28,16 +28,15 @@
                     <h3>Address</h3>
                     <div class="plase">
                         <p>
-                            Ut interdum tristique est com
-                            modo pharetra.
+                            @Resources.Resource.Address
                         </p>
                     </div>
                     <p class="text">
                         Lorem Ipsum is simply dummy
                         text of the printing and over
                     </p>
-                    <div class="call"><i class="fa fa-phone fa-3" aria-hidden="true" style="float:left"></i> +37544-704-71-47</div>
-                    <div class="mail"><i class="fa fa-envelope" aria-hidden="true"></i> rct.kobernik@bsu.by</div>
+                    <div class="call"><i class="fa fa-phone fa-3" aria-hidden="true" style="float:left"></i> @Resources.Resource.PhoneNumber</div>
+                    <div class="mail"><i class="fa fa-envelope" aria-hidden="true"></i> @Resources.Resource.MailAddress</div>
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, facilis.
                     </p>

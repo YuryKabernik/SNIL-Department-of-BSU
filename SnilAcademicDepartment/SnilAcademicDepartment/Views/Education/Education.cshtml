@@ -5,13 +5,13 @@
 <div class="container">
     <ol class="breadcrumb">
         <li>
-            @Html.ActionLink("Главная", "Index", "Home")
+            @Html.ActionLink(Resources.Resource.Home, "Index", "Home")
         </li>
-        <li class="active">Обучение</li>
+        <li class="active">@Resources.Resource.Education</li>
     </ol>
 </div>
 <div class="container">
-    <h2>Обучение</h2><br>
+    <h2>@Resources.Resource.Education</h2><br>
     <div class="row row1">
         <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
             <img src="../img/BSU3.jpg" alt="">

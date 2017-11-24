@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SnilAcademicDepartment.Filters;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -6,7 +7,8 @@ using System.Web.Mvc;
 
 namespace SnilAcademicDepartment.Controllers
 {
-    public class EducationController : Controller
+    [Culture]
+    public class EducationController : Controller, IEducation
     {
         //----------------------------------- All Pages ------------------------------------
         public ActionResult Education()

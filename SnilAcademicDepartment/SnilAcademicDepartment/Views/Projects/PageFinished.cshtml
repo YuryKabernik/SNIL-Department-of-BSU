@@ -6,10 +6,10 @@
     <div class="container">
         <ol class="breadcrumb">
             <li>
-                <a href="../index.html">Главная</a>
+                @Html.ActionLink(Resources.Resource.Home, "Index", "Home")
             </li>
             <li>
-                <a href="projects.html">Проекты</a>
+                @Html.ActionLink(Resources.Resource.Projects, "Projects", "Projects")
             </li>
             <li class="active">Готовые</li>
         </ol>

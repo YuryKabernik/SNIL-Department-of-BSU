@@ -25,62 +25,37 @@ html {
 }
 .header .container .signin {
   float: right;
-  margin-top: 35px;
-  margin-right: 35px;
+  margin-top: 20px;
 }
-.header .container i {
-  display: block;
-  width: 50px;
-  float: right;
-  color: #d0d0d0;
-  margin-top: 10px;
-  list-style: none;
+.header .container form {
+    margin-top: 10px;
+    width: 150px;
+    float: right;
+    height: 100px;
 }
 .header .container .lang {
-  color: #d0d0d0;
-  position: absolute;
+    width: 149px;
+    float: right;
+    margin-top: 5px;
+    list-style: none;
+    text-align: center;
 }
-.header .container .lang li {
-  display: none;
-  font-size: 20px;
-  border: 1px solid black;
-  font-size: 15px;
-  text-align: -webkit-center;
-  text-decoration: none;
-  background-repeat: no-repeat;
-  margin-bottom: 1px;
+/*.header .container .signin {
+    width: 100%;
+    margin: auto;
+    height: 20px;
+}*/
+.header .container .lang option {
+    font-size: 20px;
+    border: 1px solid black;
+    /*display: none;
+    font-size: 15px;
+    text-decoration: none;
+    background-repeat: no-repeat;
+    margin-bottom: 1px;*/
 }
-.header .container .lang li a {
-  display: block;
-  color: #0a3772;
-  width: 45px;
-  height: 22px;
-}
-.header .container .lang .en {
-  background-image: url(../img/United-Kingdom-flag-icon.png);
-  background-position-x: -149px;
-  background-position-y: -29px;
-}
-.header .container .lang .ru {
-  background-image: url(../img/Russian-Federation-flag-icon.png);
-  background-position-x: -217px;
-  background-position-y: -27px;
-}
-.header .container .lang .zh {
-  background-image: url(../img/China-flag-icon.png);
-  background-position-x: -149px;
-  background-position-y: -29px;
-}
-.header .container .lang .es {
-  background-image: url(../img/Spain-flag-icon.png);
-  background-position-x: -217px;
-  background-position-y: -28px;
-}
-.header .container .lang .de {
-  background-image: url(../img/Germany-flag-icon.png);
-  background-position-x: -149px;
-  background-position-y: -29px;
-}
+
+
 .header .container i i:hover li {
   display: block;
   text-align: center;
