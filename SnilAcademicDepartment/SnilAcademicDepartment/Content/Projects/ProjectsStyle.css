@@ -39,9 +39,9 @@
   float: left;
 }
 .content .container .row2 .block img {
-  width: 50%;
-  float: left;
-  margin: 0px 15px;
+    width: 90%;
+    float: left;
+    margin: 0px 15px 15px;
 }
 .content .container .rowcurrent {
   padding-bottom: 25px;

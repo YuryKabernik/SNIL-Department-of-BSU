@@ -26,7 +26,7 @@ namespace SnilAcademicDepartment.Controllers
             ViewBag.Title = "Seminars";
             return View();
         }
-        public ActionResult PageLecturs()
+        public ActionResult PageLectures()
         {
             ViewBag.Title = "Lecturs";
             return View();

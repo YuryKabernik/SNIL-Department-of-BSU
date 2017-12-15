@@ -71,6 +71,7 @@
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Web" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -86,7 +87,6 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Abstractions" />
     <Reference Include="System.Web.Routing" />
@@ -186,25 +186,55 @@
     <Compile Include="Models\ModelClass.cs" />
     <Compile Include="Models\Purchase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\ContactsResources\ContactsResource.de.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ContactsResource.de.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\ContactsResources\ContactsResource.en.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ContactsResource.en.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\EducationResources\EducationResource.de.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EducationResource.de.resx</DependentUpon>
+    </Compile>
     <Compile Include="Resources\EducationResources\EducationResource.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>EducationResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\EducationResources\EducationResource.en.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EducationResource.en.resx</DependentUpon>
     </Compile>
     <Compile Include="Resources\HistoryResources\HistoryResource.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>HistoryResource.resx</DependentUpon>
     </Compile>
-    <Compile Include="Resources\IndexResources\IndexResource.Designer.cs">
+    <Compile Include="Resources\ContactsResources\ContactsResource.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>IndexResource.resx</DependentUpon>
+      <DependentUpon>ContactsResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\PersonsResources\PersonsResource.de.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PersonsResource.de.resx</DependentUpon>
     </Compile>
     <Compile Include="Resources\PersonsResources\PersonsResource.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>PersonsResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\PersonsResources\PersonsResource.en.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PersonsResource.en.resx</DependentUpon>
     </Compile>
     <Compile Include="Resources\ProjectsResources\ProjectResource.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -236,18 +266,25 @@
     <Content Include="Content\IndexStyle.css" />
     <Content Include="Content\ContactStyle.css" />
     <Content Include="Content\Persons\PersonsStyle.css" />
-    <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="img\02.jpg" />
     <Content Include="img\217323.jpg" />
+    <Content Include="img\arnamient-1.png" />
     <Content Include="img\Belarus-flag-icon.png" />
     <Content Include="img\BSU.png" />
     <Content Include="img\BSU3.jpg" />
     <Content Include="img\Cheaf.jpg" />
     <Content Include="img\China-flag-icon.png" />
+    <Content Include="img\Conferences\IMG_3541.JPG" />
+    <Content Include="img\Conferences\IMG_3546.JPG" />
+    <Content Include="img\Conferences\IMG_3549.JPG" />
+    <Content Include="img\Conferences\P1040798.JPG" />
+    <Content Include="img\Conferences\P1040801.JPG" />
+    <Content Include="img\Conferences\P1040805.JPG" />
     <Content Include="img\CV.jpg" />
+    <Content Include="img\DSCF19562007г..JPG" />
     <Content Include="img\DSC_3533.JPG" />
     <Content Include="img\DSC_3537.JPG" />
     <Content Include="img\DSC_3538.JPG" />
@@ -269,7 +306,26 @@
     <Content Include="img\DSC_3624.JPG" />
     <Content Include="img\European-Union-flag-icon.png" />
     <Content Include="img\Germany-flag-icon.png" />
+    <Content Include="img\IMG_0004.JPG" />
+    <Content Include="img\IMG_3485.JPG" />
     <Content Include="img\originalpro.jpg" />
+    <Content Include="img\Persons\DigrisA.jpg" />
+    <Content Include="img\Persons\hileuski.jpg" />
+    <Content Include="img\Persons\HileuskiS.jpg" />
+    <Content Include="img\Persons\hlushkou.jpg" />
+    <Content Include="img\Persons\IMG_0004.JPG" />
+    <Content Include="img\Persons\IMG_0015.JPG" />
+    <Content Include="img\Persons\kavalenka.jpg" />
+    <Content Include="img\Persons\korjukou.jpg" />
+    <Content Include="img\Persons\Kruchenok.jpg" />
+    <Content Include="img\Persons\Lisitsa.jpg" />
+    <Content Include="img\Persons\lutkovski.jpg" />
+    <Content Include="img\Persons\Molopheev.jpg" />
+    <Content Include="img\Persons\nazarov.jpg" />
+    <Content Include="img\Persons\rudenko.jpg" />
+    <Content Include="img\Persons\skakun.jpg" />
+    <Content Include="img\Persons\SkakunV.jpg" />
+    <Content Include="img\Persons\yatskou.jpg" />
     <Content Include="img\Poland-flag-icon.png" />
     <Content Include="img\Russian-Federation-flag-icon.png" />
     <Content Include="img\shape1.png" />
@@ -278,10 +334,12 @@
     <Content Include="img\top.png" />
     <Content Include="img\Ukraine-flag-icon.png" />
     <Content Include="img\United-Kingdom-flag-icon.png" />
+    <Content Include="favicon.ico" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="Content\Projects\ProjectsStyle.less" />
     <Content Include="Content\Persons\PersonsStyle.less" />
@@ -352,6 +410,9 @@
     <Content Include="Views\History\PageReview.cshtml" />
     <Content Include="Views\Education\Education.cshtml" />
     <Content Include="Views\Persons\View.cshtml" />
+    <Content Include="Views\Education\PageLectures.cshtml" />
+    <Content Include="Views\Education\PageSeminars.cshtml" />
+    <Content Include="Views\Education\PageQuickLearning.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -370,10 +431,16 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Resources\EducationResources\EducationResource.de.resx" />
-    <EmbeddedResource Include="Resources\EducationResources\EducationResource.en.resx" />
+    <EmbeddedResource Include="Resources\EducationResources\EducationResource.de.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>EducationResource.de.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\EducationResources\EducationResource.en.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>EducationResource.en.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Resources\EducationResources\EducationResource.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>EducationResource.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\HistoryResources\HistoryResource.de.resx" />
@@ -382,16 +449,28 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>HistoryResource.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\IndexResources\IndexResource.de.resx" />
-    <EmbeddedResource Include="Resources\IndexResources\IndexResource.en.resx" />
-    <EmbeddedResource Include="Resources\IndexResources\IndexResource.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>IndexResource.Designer.cs</LastGenOutput>
+    <EmbeddedResource Include="Resources\ContactsResources\ContactsResource.de.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ContactsResource.de.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\PersonsResources\PersonsResource.de.resx" />
-    <EmbeddedResource Include="Resources\PersonsResources\PersonsResource.en.resx" />
+    <EmbeddedResource Include="Resources\ContactsResources\ContactsResource.en.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ContactsResource.en.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\ContactsResources\ContactsResource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ContactsResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\PersonsResources\PersonsResource.de.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>PersonsResource.de.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\PersonsResources\PersonsResource.en.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>PersonsResource.en.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Resources\PersonsResources\PersonsResource.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>PersonsResource.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\ProjectsResources\ProjectResource.de.resx" />

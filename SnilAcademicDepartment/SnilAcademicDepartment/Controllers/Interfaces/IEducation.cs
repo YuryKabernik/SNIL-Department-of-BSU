@@ -7,7 +7,7 @@ namespace SnilAcademicDepartment.Controllers
         ActionResult Education();
         ActionResult PageQuickLearning();
         ActionResult PageSeminars();
-        ActionResult PageLecturs();
+        ActionResult PageLectures();
         
     }
 }

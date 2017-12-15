@@ -123,9 +123,6 @@
   <data name="ChooseLang" xml:space="preserve">
     <value>Choose the Language</value>
   </data>
-  <data name="Company" xml:space="preserve">
-    <value>Company*</value>
-  </data>
   <data name="Contacts" xml:space="preserve">
     <value>Contacts</value>
   </data>
@@ -135,17 +132,11 @@
   <data name="Education" xml:space="preserve">
     <value>Education</value>
   </data>
-  <data name="Email" xml:space="preserve">
-    <value>Email*</value>
-  </data>
   <data name="FaxNumber" xml:space="preserve">
     <value>Fax. + 375 17 226 59 40.</value>
   </data>
   <data name="FooterCopyright" xml:space="preserve">
     <value>© Belarusian State University</value>
-  </data>
-  <data name="FullName" xml:space="preserve">
-    <value>Full name*</value>
   </data>
   <data name="History" xml:space="preserve">
     <value>History</value>
@@ -156,11 +147,11 @@
   <data name="IndexHeader" xml:space="preserve">
     <value>SNIL</value>
   </data>
+  <data name="LearnMore" xml:space="preserve">
+    <value>Read more ...</value>
+  </data>
   <data name="MailAddress" xml:space="preserve">
     <value>kobernykbeljr@gmail.com</value>
-  </data>
-  <data name="Message" xml:space="preserve">
-    <value>Message</value>
   </data>
   <data name="Persons" xml:space="preserve">
     <value>Persons</value>
@@ -170,9 +161,6 @@
   </data>
   <data name="Projects" xml:space="preserve">
     <value>Projects</value>
-  </data>
-  <data name="Subject" xml:space="preserve">
-    <value>Subject*</value>
   </data>
   <data name="Welcome" xml:space="preserve">
     <value>Welcome to the Student Resesrch Laboratory!</value>

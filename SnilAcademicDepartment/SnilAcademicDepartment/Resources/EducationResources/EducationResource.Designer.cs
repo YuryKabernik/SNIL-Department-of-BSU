@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SnilAcademicDepartment.Resources.EducationResources {
+namespace Resources.EducationResources {
     using System;
     
     
@@ -22,7 +22,7 @@ namespace SnilAcademicDepartment.Resources.EducationResources {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class EducationResource {
+    public class EducationResource {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace SnilAcademicDepartment.Resources.EducationResources {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("SnilAcademicDepartment.Resources.EducationResources.EducationResource", typeof(EducationResource).Assembly);
@@ -51,12 +51,48 @@ namespace SnilAcademicDepartment.Resources.EducationResources {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
             set {
                 resourceCulture = value;
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ключевые направления.
+        /// </summary>
+        public static string KeyDirections {
+            get {
+                return ResourceManager.GetString("KeyDirections", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Лекции.
+        /// </summary>
+        public static string Lectures {
+            get {
+                return ResourceManager.GetString("Lectures", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Quick Learning.
+        /// </summary>
+        public static string QuickLearning {
+            get {
+                return ResourceManager.GetString("QuickLearning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Семинары.
+        /// </summary>
+        public static string Seminars {
+            get {
+                return ResourceManager.GetString("Seminars", resourceCulture);
             }
         }
     }

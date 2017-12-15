@@ -1,7 +1,6 @@
 ﻿using SnilAcademicDepartment.Filters;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
@@ -32,7 +31,7 @@ namespace SnilAcademicDepartment.Controllers
         {
             string returnUrl = Request.UrlReferrer.AbsolutePath;
             // Список культур
-            List<string> cultures = new List<string>() { "ru", "en", "de" };
+            var cultures = new List<string>() { "ru", "en", "de" };
             if (!cultures.Contains(lang))
             {
                 lang = "ru";
@@ -44,10 +43,12 @@ namespace SnilAcademicDepartment.Controllers
             else
             {
 
-                cookie = new HttpCookie("lang");
-                cookie.HttpOnly = false;
-                cookie.Value = lang;
-                cookie.Expires = DateTime.Now.AddYears(1);
+                cookie = new HttpCookie("lang")
+                {
+                    HttpOnly = false,
+                    Value = lang,
+                    Expires = DateTime.Now.AddYears(1)
+                };
             }
             Response.Cookies.Add(cookie);
             return Redirect(returnUrl);

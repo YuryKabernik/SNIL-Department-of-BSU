@@ -156,6 +156,9 @@
   <data name="IndexHeader" xml:space="preserve">
     <value>СНИЛ</value>
   </data>
+  <data name="LearnMore" xml:space="preserve">
+    <value>Подробнее...</value>
+  </data>
   <data name="MailAddress" xml:space="preserve">
     <value>kobernykbeljr@gmail.com</value>
   </data>
