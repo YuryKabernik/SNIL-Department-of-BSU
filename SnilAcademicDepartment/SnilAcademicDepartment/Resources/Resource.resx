@@ -132,6 +132,9 @@
   <data name="Country" xml:space="preserve">
     <value>Минск</value>
   </data>
+  <data name="CultureName" xml:space="preserve">
+    <value>Русский</value>
+  </data>
   <data name="Education" xml:space="preserve">
     <value>Обучени</value>
   </data>

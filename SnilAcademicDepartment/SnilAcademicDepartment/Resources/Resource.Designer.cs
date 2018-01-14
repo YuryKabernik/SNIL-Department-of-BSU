@@ -106,6 +106,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Русский.
+        /// </summary>
+        public static string CultureName {
+            get {
+                return ResourceManager.GetString("CultureName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Обучени.
         /// </summary>
         public static string Education {

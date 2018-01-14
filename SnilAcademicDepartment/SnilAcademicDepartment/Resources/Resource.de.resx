@@ -129,6 +129,9 @@
   <data name="Country" xml:space="preserve">
     <value>Minsk</value>
   </data>
+  <data name="CultureName" xml:space="preserve">
+    <value>Deutsch</value>
+  </data>
   <data name="Education" xml:space="preserve">
     <value>Unterricht</value>
   </data>
