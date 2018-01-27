@@ -1,4 +1,4 @@
-﻿using NUnit.Framework;
+using NUnit.Framework;
 using SnilAcademicDepartment.Controllers;
 using System;
 using System.Collections.Generic;
@@ -11,7 +11,6 @@ namespace SnilAcademicDepartment.Controllers.Tests
     [TestFixture()]
     public class EducationControllerTests
     {
-        [Test()]
         public void EducationTest()
         {
             Assert.Fail();
