@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SnilAcademicDepartment.Filters;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -6,27 +7,33 @@ using System.Web.Mvc;
 
 namespace SnilAcademicDepartment.Controllers
 {
-    public class PersonsController : Controller
+    [Culture]
+    public class PersonsController : Controller, IPersons
     {
         //----------------------------------- All Pages ------------------------------------
         public ActionResult Persons()
         {
+            ViewBag.Title = "Persons";
             return View();
         }
         public ActionResult Administration()
         {
+            ViewBag.Title = "Administration";
             return View();
         }
         public ActionResult Students()
         {
+            ViewBag.Title = "Stuedents";
             return View();
         }
-        public ActionResult Ms()
+        public ActionResult MS()
         {
+            ViewBag.Title = "MS";
             return View();
         }
         public ActionResult PHDs()
         {
+            ViewBag.Title = "PHDs";
             return View();
         }
     }

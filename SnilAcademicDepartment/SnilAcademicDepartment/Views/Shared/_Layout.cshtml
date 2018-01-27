@@ -12,27 +12,27 @@
     <div class=header>
         <div class="container">
             <a href="#" class="logo"></a>
-            <i class="fa fa-language fa-2x">
-                <ul class="lang">
-                    <li class="en">@Html.ActionLink("EN", "Index", "Home")</li>
-                    <li class="ru">@Html.ActionLink("RU", "Index", "Home")</li>
-                    <li class="zh">@Html.ActionLink("ZH", "Index", "Home")</li>
-                    <li class="es">@Html.ActionLink("ES", "Index", "Home")</li>
-                    <li class="de">@Html.ActionLink("DE", "Index", "Home")</li>
-                </ul>
-            </i>
-            <a class="signin btn btn-default" href="#" role="button">Sign In</a>
+            @using (Html.BeginForm("ChangeCulture", "Home"))
+            {
+                <select class="lang" name="lang">
+                    <option disabled selected>@Resources.Resource.CultureName</option>
+                    <option value="ru">Русский</option>
+                    <option value="en">English</option>
+                    <option value="de">Deutsch</option>
+                </select>
+                <input class="signin btn btn-default" type="submit" name="submit" value="@Resources.Resource.ChooseLang">
+            }
         </div>
     </div>
     <div class="nav">
         <div class="container">            
             <h2>BSU SNIL</h2>          
-            @Html.ActionLink("Главная", "Index", "Home")        
-            @Html.ActionLink("Проекты", "Projects", "Projects")                
-            @Html.ActionLink("Обучение", "Education", "Education")            
-            @Html.ActionLink("Персонал", "Persons", "Persons")          
-            @Html.ActionLink("История", "History", "History")        
-            @Html.ActionLink("Контакты", "Contact", "Home")
+            @Html.ActionLink(Resources.Resource.Home, "Index", "Home")        
+            @Html.ActionLink(Resources.Resource.Projects, "Projects", "Projects")                
+            @Html.ActionLink(Resources.Resource.Education, "Education", "Education")            
+            @Html.ActionLink(Resources.Resource.Persons, "Persons", "Persons")          
+            @Html.ActionLink(Resources.Resource.History, "History", "History")        
+            @Html.ActionLink(Resources.Resource.Contacts, "Contact", "Home")
         </div>
     </div>    
     <div class="content">
@@ -42,9 +42,9 @@
     <footer>
         <div class="container">
             <p>
-                &copy; Белорусский государственный университет<br />
-                Адрес: пр.&nbsp;Независимости, 4, 220030, г.&nbsp;Минск, Республика Беларусь.<br />
-                Тел. + 375 17&nbsp;209 50 44. Факс. + 375 17&nbsp;226 59 40. Url: <a href="http://bsu.by" target="_blank"> www.bsu.by</a>.
+                @Resources.Resource.FooterCopyright<br />
+                @Resources.Resource.Address<br />
+                @Resources.Resource.PhoneNumber @Resources.Resource.FaxNumber. Url: <a href="http://bsu.by" target="_blank"> www.bsu.by</a>.
             </p>
         </div>
     </footer>

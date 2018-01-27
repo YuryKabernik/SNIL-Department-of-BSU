@@ -5,10 +5,10 @@
 <div class="container">
     <ol class="breadcrumb">
         <li>
-            <a href="../index.html">Главная</a>
+            @Html.ActionLink(Resources.Resource.Home, "Index", "Home")
         </li>
         <li>
-            <a href="education.html">Персонал</a>
+            @Html.ActionLink(Resources.Resource.Persons, "Persons", "Persons")
         </li>
         <li class="active">Администрация</li>
     </ol>

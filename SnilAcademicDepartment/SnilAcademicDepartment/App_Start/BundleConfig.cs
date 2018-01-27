@@ -34,16 +34,23 @@ namespace SnilAcademicDepartment
             bundles.Add(new StyleBundle("~/Content/index").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/IndexStyle.css",
-                      "~/Content/NewStyle.css",
                        "~/Content/ContactStyle.css"));
             //ProjectStyle
             bundles.Add(new StyleBundle("~/Content/projects").Include(
                        "~/Content/bootstrap.css",
                        "~/Content/Projects/ProjectsStyle.css"));
-            //PersonStyle
+            //HistoryStyle
+            bundles.Add(new StyleBundle("~/Content/history").Include(
+                       "~/Content/bootstrap.css",
+                       "~/Content/History/HistoryStyle.css"));
+            //PersonsStyle
             bundles.Add(new StyleBundle("~/Content/persons").Include(
                        "~/Content/bootstrap.css",
                        "~/Content/Persons/PersonsStyle.css"));
+            //EducationStyle
+            bundles.Add(new StyleBundle("~/Content/education").Include(
+                       "~/Content/bootstrap.css",
+                       "~/Content/Education/EducationStyle.css"));
             //ContactStyle
             bundles.Add(new StyleBundle("~/Content/contact").Include(
                        "~/Content/bootstrap.css",
