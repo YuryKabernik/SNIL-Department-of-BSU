@@ -30,24 +30,27 @@ namespace SnilAcademicDepartment.Controllers
         public ActionResult ChangeCulture(string lang)
         {
             string returnUrl = Request.UrlReferrer.AbsolutePath;
-            // Список культур
+            
+            // List of availiable cultures.
             var cultures = new List<string>() { "ru", "en", "de" };
-            if (!cultures.Contains(lang))
+
+            // Check if the list of cultures contains parameter.
+            if ( lang.ToLower() == null || !cultures.Contains(lang))
             {
-                lang = "ru";
+                lang = "en";
             }
-            // Сохраняем выбранную культуру в куки
+
+            // Save selected culture in the cookie.
             HttpCookie cookie = Request.Cookies["lang"];
             if (cookie != null)
-                cookie.Value = lang;   // если куки уже установлено, то обновляем значение
+                cookie.Value = lang;   // If the cookie is installed, then we update the values.
             else
             {
-
                 cookie = new HttpCookie("lang")
                 {
                     HttpOnly = false,
                     Value = lang,
-                    Expires = DateTime.Now.AddYears(1)
+                    Expires = DateTime.Now.AddHours(10)
                 };
             }
             Response.Cookies.Add(cookie);
