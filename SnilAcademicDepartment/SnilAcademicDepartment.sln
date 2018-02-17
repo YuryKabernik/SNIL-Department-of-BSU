@@ -13,12 +13,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SnilAcademicDepartment.Data
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SnilAcademicDepartment.Common", "SnilAcademicDepartment.Common\SnilAcademicDepartment.Common.csproj", "{907F30B1-1365-41CB-98D3-A649398A578C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SnilAcademicDepartment.MailService", "..\..\..\..\source\repos\MailService\MailService\SnilAcademicDepartment.MailService.csproj", "{04193F18-9125-4F39-BF0C-22BB93604ACE}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CCRules", "CCRules", "{37B9C987-86DA-4779-BC54-678551B8F999}"
 	ProjectSection(SolutionItems) = preProject
-		G:\GitEPAM\CustomLab.ruleset = G:\GitEPAM\CustomLab.ruleset
+		..\SnilCodeRules.ruleset = ..\SnilCodeRules.ruleset
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SnilAcademicDepartment.MailService", "SnilAcademicDepartment.MailService\SnilAcademicDepartment.MailService.csproj", "{04193F18-9125-4F39-BF0C-22BB93604ACE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
