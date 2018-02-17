@@ -56,10 +56,10 @@
     <Compile Include="Entities\Articles\ArticlePreview.cs" />
     <Compile Include="Entities\Articles\Author.cs" />
     <Compile Include="Entities\BaseEntity\File.cs" />
-    <Compile Include="Entities\Documents\Document.cs" />
+    <Compile Include="Entities\FileTypes\Document.cs" />
     <Compile Include="Entities\BaseEntity\IFile.cs" />
     <Compile Include="Entities\EducationBlock.cs" />
-    <Compile Include="Entities\Documents\Image.cs" />
+    <Compile Include="Entities\FileTypes\Image.cs" />
     <Compile Include="Entities\CarouselItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

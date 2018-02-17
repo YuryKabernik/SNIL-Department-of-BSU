@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Net.Mail;
 
-namespace MailService
+namespace SnilAcademicDepartment.MailService
 {
     /// <summary>
     /// SMTP Service for sending the confirmation link to new user.

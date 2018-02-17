@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace SnilAcademicDepartment.DataAccess.Entities
 {
@@ -11,8 +7,21 @@ namespace SnilAcademicDepartment.DataAccess.Entities
     /// </summary>
     public class EducationBlock
     {
-        public Image Picture { get; set; }
-        public string ShortDiscription { get; set; }
-        public ICollection<string> Theses { get; set; }
+        /// <summary>
+        /// Gets and sets education block id.
+        /// </summary>
+        public virtual string Id { get; set; }
+        /// <summary>
+        /// Gets and sets picture of education block.
+        /// </summary>
+        public virtual Image Picture { get; set; }
+        /// <summary>
+        /// Gets and sets shot discription of education block.
+        /// </summary>
+        public virtual string ShortDiscription { get; set; }
+        /// <summary>
+        /// Gets and sets tags of education block.
+        /// </summary>
+        public virtual ICollection<string> Tags { get; set; }
     }
 }
