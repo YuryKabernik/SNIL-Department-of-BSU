@@ -182,9 +182,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\DBContext.cs" />
-    <Compile Include="Models\ModelClass.cs" />
-    <Compile Include="Models\Purchase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\ContactsResources\ContactsResource.de.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -414,9 +411,7 @@
     <Content Include="Views\Education\PageSeminars.cshtml" />
     <Content Include="Views\Education\PageQuickLearning.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
   </ItemGroup>
