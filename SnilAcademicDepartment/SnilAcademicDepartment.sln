@@ -9,8 +9,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SnilAcademicDepartmentTests
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SnilAcademicDepartment.BusinessLogic", "SnilAcademicDepartment.BusinessLogic\SnilAcademicDepartment.BusinessLogic.csproj", "{1AF45174-72CA-481B-8E17-64FA0864A462}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SnilAcademicDepartment.DataAccess", "SnilAcademicDepartment.DataAccess\SnilAcademicDepartment.DataAccess.csproj", "{07C9560D-4B4A-4217-A237-2AAD93AB4E7C}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SnilAcademicDepartment.Common", "SnilAcademicDepartment.Common\SnilAcademicDepartment.Common.csproj", "{907F30B1-1365-41CB-98D3-A649398A578C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CCRules", "CCRules", "{37B9C987-86DA-4779-BC54-678551B8F999}"
@@ -38,10 +36,6 @@ Global
 		{1AF45174-72CA-481B-8E17-64FA0864A462}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1AF45174-72CA-481B-8E17-64FA0864A462}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1AF45174-72CA-481B-8E17-64FA0864A462}.Release|Any CPU.Build.0 = Release|Any CPU
-		{07C9560D-4B4A-4217-A237-2AAD93AB4E7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{07C9560D-4B4A-4217-A237-2AAD93AB4E7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{07C9560D-4B4A-4217-A237-2AAD93AB4E7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{07C9560D-4B4A-4217-A237-2AAD93AB4E7C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{907F30B1-1365-41CB-98D3-A649398A578C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{907F30B1-1365-41CB-98D3-A649398A578C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{907F30B1-1365-41CB-98D3-A649398A578C}.Release|Any CPU.ActiveCfg = Release|Any CPU
