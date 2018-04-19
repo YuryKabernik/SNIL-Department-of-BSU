@@ -6,7 +6,7 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
 {
     class CookieManager : ICookieManager
     {
-        public HttpCookie ChangeCulture()
+        public HttpCookie ChangeCulture(string language)
         {
             throw new NotImplementedException();
         }

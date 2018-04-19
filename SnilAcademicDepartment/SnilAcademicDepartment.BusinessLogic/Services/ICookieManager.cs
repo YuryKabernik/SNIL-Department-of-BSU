@@ -4,6 +4,6 @@ namespace SnilAcademicDepartment.BusinessLogic.Interfaces
 {
     public interface ICookieManager
     {
-        HttpCookie ChangeCulture();
+        HttpCookie ChangeCulture(string language);
     }
 }
