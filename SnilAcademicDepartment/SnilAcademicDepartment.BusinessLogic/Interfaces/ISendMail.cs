@@ -1,10 +1,9 @@
 ﻿using SnilAcademicDepartment.BusinessLogic.Models;
-using System.Collections.Generic;
 
 namespace SnilAcademicDepartment.BusinessLogic.Interfaces
 {
-    public interface IHistory
+    public interface ISendMail
     {
-        IEnumerable<PreView> GetPreViews();
+        void SendMailToAdmin(ClientMail clientMail);
     }
 }

@@ -3,9 +3,10 @@ using System.Collections.Generic;
 
 namespace SnilAcademicDepartment.BusinessLogic.Interfaces
 {
-    public interface IIndex
+    public interface IPeople
     {
-        IEnumerable<PreView> GetIndexPreViews();
-        IEnumerable<PreView> GetIndexPreRolls();
+        IEnumerable<Leader> GetHallOfFameLeaders();
+
+        IEnumerable<PreView> GetPreViews();
     }
 }

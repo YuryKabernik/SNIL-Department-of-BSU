@@ -1,10 +1,16 @@
-﻿namespace SnilAcademicDepartment.BusinessLogic.Interfaces
+﻿using SnilAcademicDepartment.BusinessLogic.Enums;
+using SnilAcademicDepartment.BusinessLogic.Models;
+using System.Collections.Generic;
+
+namespace SnilAcademicDepartment.BusinessLogic.Interfaces
 {
     public interface IProjects
     {
-        void PageCurrent();
-        void PageFinished();
-        void PageNew();
-        void Projects();
+        PreView GetPreView();
+
+        /// <summary>
+        /// Get current/finished/conference projects.
+        /// </summary>
+        IEnumerable<Project> GetProjects(ProjectType projectType);
     }
 }
