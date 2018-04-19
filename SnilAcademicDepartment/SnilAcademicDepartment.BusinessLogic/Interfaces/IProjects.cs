@@ -1,4 +1,5 @@
-﻿namespace SnilAcademicDepartment.Controllersnamespace SnilAcademicDepartment.BusinessLogic.Interfaces{
+﻿namespace SnilAcademicDepartment.BusinessLogic.Interfaces
+{
     public interface IProjects
     {
         void PageCurrent();

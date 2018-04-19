@@ -42,6 +42,7 @@
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -60,8 +61,10 @@
     <Compile Include="Models\FormMail.cs" />
     <Compile Include="Models\PreView.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Interfaces\CookieManager.cs" />
     <Compile Include="Services\FileLoader.cs" />
     <Compile Include="Services\HomePage.cs" />
+    <Compile Include="Services\ICookieManager.cs" />
     <Compile Include="Services\SendingMailService.cs" />
     <Compile Include="Services\Service.cs" />
   </ItemGroup>
