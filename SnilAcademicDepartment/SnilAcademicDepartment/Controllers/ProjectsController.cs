@@ -11,19 +11,30 @@ namespace SnilAcademicDepartment.Controllers
     [Culture]
     public class ProjectsController : Controller, IProjects
     {
-        //----------------------------------- All Pages ------------------------------------
+        public ProjectsController()
+        {
+
+        }
+
+        [HttpGet]
         public ActionResult Projects()
         {
             return View();
         }
+
+        [HttpGet]
         public ActionResult PageNew()
         {
             return View();
         }
+
+        [HttpGet]
         public ActionResult PageFinished()
         {
             return View();
         }
+
+        [HttpGet]
         public ActionResult PageCurrent()
         {
             return View();
