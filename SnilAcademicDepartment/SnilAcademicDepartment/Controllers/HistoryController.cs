@@ -8,7 +8,7 @@ using System.Web.Mvc;
 namespace SnilAcademicDepartment.Controllers
 {
     [Culture]
-    public class HistoryController : Controller, IHistory
+    public class HistoryController : Controller
     { 
         //----------------------------------- All Pages ------------------------------------
         public ActionResult History()
