@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("SnilAcademicDepartment.DataAccess")]
+[assembly: AssemblyTitle("SnilAcademicDepartment.BusinessLogicLayer")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("SnilAcademicDepartment.DataAccess")]
+[assembly: AssemblyProduct("SnilAcademicDepartment.BusinessLogicLayer")]
 [assembly: AssemblyCopyright("Copyright ©  2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("0a8f2c87-f051-42fc-8eab-8dd6f002236b")]
+[assembly: Guid("452af430-d5bb-4542-ac0b-32187c8fdc3e")]
 
 // Version information for an assembly consists of the following four values:
 //

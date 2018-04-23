@@ -54,11 +54,11 @@
   <ItemGroup>
     <Compile Include="Enums\ProjectType.cs" />
     <Compile Include="Interfaces\ISendMail.cs" />
-    <Compile Include="Interfaces\Services\IEducation.cs" />
-    <Compile Include="Interfaces\Services\IHistory.cs" />
-    <Compile Include="Interfaces\Services\IIndex.cs" />
-    <Compile Include="Interfaces\Services\IPeople.cs" />
-    <Compile Include="Interfaces\Services\IProjects.cs" />
+    <Compile Include="Interfaces\IEducation.cs" />
+    <Compile Include="Interfaces\IHistory.cs" />
+    <Compile Include="Interfaces\IIndex.cs" />
+    <Compile Include="Interfaces\IPeople.cs" />
+    <Compile Include="Interfaces\IProjects.cs" />
     <Compile Include="Interfaces\IService.cs" />
     <Compile Include="Models\ClientMail.cs" />
     <Compile Include="Models\KeyAreaBlock.cs" />
