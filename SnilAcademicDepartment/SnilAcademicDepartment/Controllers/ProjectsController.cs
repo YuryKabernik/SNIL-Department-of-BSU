@@ -9,7 +9,7 @@ namespace SnilAcademicDepartment.Controllers
 {
 
     [Culture]
-    public class ProjectsController : Controller, IProjects
+    public class ProjectsController : Controller
     {
         //----------------------------------- All Pages ------------------------------------
         public ActionResult Projects()

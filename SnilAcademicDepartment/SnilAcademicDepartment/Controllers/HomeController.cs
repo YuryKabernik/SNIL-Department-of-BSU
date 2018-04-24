@@ -7,7 +7,7 @@ using System.Web.Mvc;
 namespace SnilAcademicDepartment.Controllers
 {
     [Culture]
-    public class HomeController : Controller, IHome
+    public class HomeController : Controller
     {
         public ActionResult Index()
         {

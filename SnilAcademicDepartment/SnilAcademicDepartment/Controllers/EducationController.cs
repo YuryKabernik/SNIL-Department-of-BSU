@@ -8,7 +8,7 @@ using System.Web.Mvc;
 namespace SnilAcademicDepartment.Controllers
 {
     [Culture]
-    public class EducationController : Controller, IEducation
+    public class EducationController : Controller
     {
         //----------------------------------- All Pages ------------------------------------
         public ActionResult Education()

@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>SnilAcademicDepartment.BusinessLogic</RootNamespace>
     <AssemblyName>SnilAcademicDepartment.BusinessLogic</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -32,8 +33,17 @@
     <CodeAnalysisRuleSet />
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.4.5.3\lib\net45\NLog.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -42,12 +52,39 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Enum\ProjectType.cs" />
+    <Compile Include="Interfaces\ISendMail.cs" />
+    <Compile Include="Interfaces\Services\IEducation.cs" />
+    <Compile Include="Interfaces\Services\IHistory.cs" />
+    <Compile Include="Interfaces\Services\IIndex.cs" />
+    <Compile Include="Interfaces\Services\IPeople.cs" />
+    <Compile Include="Interfaces\Services\IProjects.cs" />
     <Compile Include="Interfaces\IService.cs" />
-    <Compile Include="Models\FormMail.cs" />
+    <Compile Include="Models\ClientMail.cs" />
+    <Compile Include="Models\KeyAreaBlock.cs" />
+    <Compile Include="Models\Leader.cs" />
+    <Compile Include="Models\PreView.cs" />
+    <Compile Include="Models\Project.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\CookieManager.cs" />
+    <Compile Include="Services\EducationService.cs" />
     <Compile Include="Services\FileLoader.cs" />
+    <Compile Include="Services\HistoryService.cs" />
+    <Compile Include="Services\HomeService.cs" />
+    <Compile Include="Interfaces\ICookieManager.cs" />
+    <Compile Include="Services\PeopleService.cs" />
+    <Compile Include="Services\ProjectsService.cs" />
+    <Compile Include="Services\SendingMail.cs" />
     <Compile Include="Services\Service.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SnilAcademicDepartment.DataAccess\SnilAcademicDepartment.DataAccess.csproj">
+      <Project>{706afdf9-c55c-461c-8687-816459ff30d6}</Project>
+      <Name>SnilAcademicDepartment.DataAccess</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
