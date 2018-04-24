@@ -52,7 +52,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Enums\ProjectType.cs" />
+    <Compile Include="Enum\ProjectType.cs" />
     <Compile Include="Interfaces\ISendMail.cs" />
     <Compile Include="Interfaces\IEducation.cs" />
     <Compile Include="Interfaces\IHistory.cs" />
