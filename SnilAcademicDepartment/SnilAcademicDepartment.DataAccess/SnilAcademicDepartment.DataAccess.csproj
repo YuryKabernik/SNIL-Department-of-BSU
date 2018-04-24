@@ -49,6 +49,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Migrations\201804241010135_CodeFiirstFromDatabase.cs" />
+    <Compile Include="Migrations\201804241010135_CodeFiirstFromDatabase.Designer.cs">
+      <DependentUpon>201804241010135_CodeFiirstFromDatabase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Biography.cs" />
     <Compile Include="DBContext\DBContext.cs" />
     <Compile Include="Models\Document.cs" />
@@ -75,6 +80,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Configurations\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201804241010135_CodeFiirstFromDatabase.resx">
+      <DependentUpon>201804241010135_CodeFiirstFromDatabase.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
