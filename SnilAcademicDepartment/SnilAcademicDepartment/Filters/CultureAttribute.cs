@@ -17,11 +17,12 @@ namespace SnilAcademicDepartment.Filters
         /// <param name="filterContext"> Action executed context.</param>
         public void OnActionExecuted(ActionExecutedContext filterContext)
         {
-            var cultureName = filterContext.RouteData.Values["lang"] as string;
+            var cultureName = this.CheckCookieCulture(filterContext.HttpContext);
 
+            // Get language from cookies if route data is empty and cookies not empty too.
             if (string.IsNullOrEmpty(cultureName))
             {
-                cultureName = this.CheckCookieCulture(filterContext.HttpContext);
+                cultureName = filterContext.RouteData.Values["lang"] as string;
             }
 
             if (string.IsNullOrEmpty(cultureName))
@@ -92,7 +93,7 @@ namespace SnilAcademicDepartment.Filters
                 }
             }
 
-            return currentCulture;
+            return null;
         }
     }
 }
