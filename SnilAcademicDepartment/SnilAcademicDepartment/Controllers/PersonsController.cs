@@ -1,14 +1,10 @@
 ﻿using SnilAcademicDepartment.Filters;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace SnilAcademicDepartment.Controllers
 {
     [Culture]
-    public class PersonsController : Controller, IPersons
+    public class PersonsController : Controller
     {
         public PersonsController()
         {

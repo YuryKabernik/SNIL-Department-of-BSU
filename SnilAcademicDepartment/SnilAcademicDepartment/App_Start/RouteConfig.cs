@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using System.Web.Routing;
 
 namespace SnilAcademicDepartment
@@ -13,16 +9,10 @@ namespace SnilAcademicDepartment
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-            routes.MapRoute( 
-                name: "DefaultLang",
-                url: "{lang}/{controller}/{action}",
-                defaults:  new { lang = "ru", controller = "Home", action = "Index" }
-            );
-
             routes.MapRoute(
                 name: "Default",
-                url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                url: "{controller}/{action}/{lang}",
+                defaults: new { controller = "Home", action = "Index", lang = UrlParameter.Optional }
             );
         }
     }

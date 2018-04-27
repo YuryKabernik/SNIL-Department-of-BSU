@@ -35,6 +35,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>..\..\SnilCodeRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -171,11 +172,6 @@
     <Compile Include="Controllers\EducationController.cs" />
     <Compile Include="Controllers\HistoryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\Interfaces\IHome.cs" />
-    <Compile Include="Controllers\Interfaces\IHistory.cs" />
-    <Compile Include="Controllers\Interfaces\IEducation.cs" />
-    <Compile Include="Controllers\Interfaces\IPersons.cs" />
-    <Compile Include="Controllers\Interfaces\IProjects.cs" />
     <Compile Include="Controllers\PersonsController.cs" />
     <Compile Include="Controllers\ProjectsController.cs" />
     <Compile Include="Filters\CultureAttribute.cs" />
