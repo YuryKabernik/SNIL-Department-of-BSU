@@ -1,58 +1,56 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data.Entity;
+using System.Data.Entity.ModelConfiguration;
 
 namespace SnilAcademicDepartment.DataAccess.Configurations
 {
-    public static class LanguageConfig
+    public class LanguageConfig : EntityTypeConfiguration<Language>
     {
-        public static void RegisterLanguage (this DbModelBuilder modelBuilder)
+        public LanguageConfig()
         {
+            this.Property(p => p.LanguageId)
+                .HasDatabaseGeneratedOption(System.ComponentModel.DataAnnotations.Schema.DatabaseGeneratedOption.Identity);
 
-            modelBuilder.Entity<Language>()
-                .HasMany(e => e.EducationBlocks)
+            this.Property(p => p.LanguageName)
+                .HasMaxLength(25)
+                .IsRequired();
+
+            this.Property(p => p.LanguageCode)
+                .HasMaxLength(5)
+                .IsRequired();
+
+            this.HasMany(e => e.EducationBlocks)
                 .WithRequired(e => e.Language)
                 .HasForeignKey(e => e.Localisation)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<Language>()
-                .HasMany(e => e.Lectures)
+            this.HasMany(e => e.Lectures)
                 .WithRequired(e => e.Language)
                 .HasForeignKey(e => e.Localisation)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<Language>()
-                .HasMany(e => e.People)
+            this.HasMany(e => e.People)
                 .WithRequired(e => e.Language)
                 .HasForeignKey(e => e.Localisation)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<Language>()
-                .HasMany(e => e.PreViews)
+            this.HasMany(e => e.PreViews)
                 .WithOptional(e => e.Language)
                 .HasForeignKey(e => e.Localisation);
 
-            modelBuilder.Entity<Language>()
-                .HasMany(e => e.Projects)
+            this.HasMany(e => e.Projects)
                 .WithRequired(e => e.Language)
                 .HasForeignKey(e => e.Localisation)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<Language>()
-                .HasMany(e => e.Seminars)
+            this.HasMany(e => e.Seminars)
                 .WithRequired(e => e.Language)
                 .HasForeignKey(e => e.Localisation)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<Language>()
-                .HasMany(e => e.Specialisations)
+            this.HasMany(e => e.Specialisations)
                 .WithRequired(e => e.Language)
                 .HasForeignKey(e => e.Localiation)
                 .WillCascadeOnDelete(false);
-
         }
     }
 }

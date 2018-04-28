@@ -1,4 +1,5 @@
-﻿using System.Data.Entity;
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using System.Data.Entity;
 
 namespace SnilAcademicDepartment.DataAccess.Configurations
 {
@@ -7,9 +8,17 @@ namespace SnilAcademicDepartment.DataAccess.Configurations
         public static void RegisterLecture(this DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Lecture>()
-                .HasMany(e => e.PersonLectures)
-                .WithRequired(e => e.Lecture)
-                .WillCascadeOnDelete(false);
+                .Property(p => p.LectureId)
+                .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+
+            modelBuilder.Entity<Lecture>()
+                .Property(p => p.LectureName)
+                .HasMaxLength(50)
+                .IsRequired();
+
+            modelBuilder.Entity<Lecture>()
+                .Property(p => p.Description)
+                .IsRequired();
         }
     }
 }

@@ -52,12 +52,15 @@
     <Compile Include="Configurations\BiographyConfig.cs" />
     <Compile Include="Configurations\DocumentConfig.cs" />
     <Compile Include="Configurations\EducationBlockConfig.cs" />
+    <Compile Include="Configurations\EducationTopicConfiguration.cs" />
+    <Compile Include="Configurations\HallOfFameConfiguration.cs" />
     <Compile Include="Configurations\ImageConfig.cs" />
     <Compile Include="Configurations\LanguageConfig.cs" />
     <Compile Include="Configurations\LectureConfig.cs" />
     <Compile Include="Configurations\PageTypeConfig.cs" />
     <Compile Include="Configurations\PersonConfig.cs" />
     <Compile Include="Configurations\PreViewConfig.cs" />
+    <Compile Include="Configurations\ProjectConfig.cs" />
     <Compile Include="Configurations\SpecializationConfig.cs" />
     <Compile Include="Configurations\TopicConfig.cs" />
     <Compile Include="Interfaces\IRepository.cs" />
@@ -77,7 +80,6 @@
     <Compile Include="Models\Lecture.cs" />
     <Compile Include="Models\PageType.cs" />
     <Compile Include="Models\Person.cs" />
-    <Compile Include="Models\PersonLecture.cs" />
     <Compile Include="Models\PreView.cs" />
     <Compile Include="Models\Project.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

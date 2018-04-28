@@ -1,4 +1,5 @@
-﻿using System.Data.Entity;
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using System.Data.Entity;
 
 namespace SnilAcademicDepartment.DataAccess.Configurations
 {
@@ -7,14 +8,47 @@ namespace SnilAcademicDepartment.DataAccess.Configurations
         public static void RegisterPerson(this DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Person>()
-                .HasMany(e => e.HallOfFames)
-                .WithRequired(e => e.Person)
-                .WillCascadeOnDelete(false);
+                .Property(p => p.PersonId)
+                .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity)
+                .IsRequired();
 
             modelBuilder.Entity<Person>()
-                .HasMany(e => e.PersonLectures)
+                .Property(p => p.PersonName)
+                .HasMaxLength(20)
+                .IsRequired();
+
+            modelBuilder.Entity<Person>()
+                .Property(p => p.SecoundName)
+                .HasMaxLength(25)
+                .IsRequired();
+
+            modelBuilder.Entity<Person>()
+                .Property(p => p.FathersName)
+                .HasMaxLength(25)
+                .IsRequired();
+            modelBuilder.Entity<Person>()
+                .Property(p => p.ProfessionStatus)
+                .HasMaxLength(50)
+                .IsRequired();
+
+            modelBuilder.Entity<Person>()
+                .Property(p => p.Degree)
+                .HasMaxLength(50)
+                .IsRequired();
+
+            modelBuilder.Entity<Person>()
+                .Property(p => p.AcademicTitle)
+                .HasMaxLength(50)
+                .IsRequired();
+
+            modelBuilder.Entity<Person>()
+                .Property(p => p.PersonalInterests)
+                .HasMaxLength(50)
+                .IsRequired();
+
+            modelBuilder.Entity<Person>()
+                .HasMany(e => e.HallOfFames)
                 .WithRequired(e => e.Person)
-                .HasForeignKey(e => e.LectureId)
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Person>()
@@ -25,7 +59,12 @@ namespace SnilAcademicDepartment.DataAccess.Configurations
             modelBuilder.Entity<Person>()
                 .HasMany(e => e.Seminars)
                 .WithMany(e => e.People)
-                .Map(m => m.ToTable("SeminarPersons").MapLeftKey("Person").MapRightKey("Seminar"));
+                .Map(m => m.ToTable("SeminarPersons").MapLeftKey("PersonId").MapRightKey("SeminarId"));
+
+            modelBuilder.Entity<Person>()
+                .HasMany(e => e.Lectures)
+                .WithMany(e => e.People)
+                .Map(m => m.ToTable("LecturePerson").MapLeftKey("PersonId").MapRightKey("LectureId"));
         }
     }
 }

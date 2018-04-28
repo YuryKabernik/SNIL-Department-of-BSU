@@ -1,4 +1,5 @@
-﻿using System.Data.Entity;
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using System.Data.Entity;
 
 namespace SnilAcademicDepartment.DataAccess.Configurations
 {
@@ -7,12 +8,18 @@ namespace SnilAcademicDepartment.DataAccess.Configurations
         public static void RegisterDocument(this DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Document>()
+                .Property(e => e.DocumentId)
+                .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+
+            modelBuilder.Entity<Document>()
                 .Property(e => e.DocumentName)
-                .IsFixedLength();
+                .HasMaxLength(50)
+                .IsRequired();
 
             modelBuilder.Entity<Document>()
                 .Property(e => e.FileContent)
-                .IsFixedLength();
+                .HasMaxLength(8000)
+                .IsRequired();
 
             modelBuilder.Entity<Document>()
                 .HasMany(e => e.Seminars)

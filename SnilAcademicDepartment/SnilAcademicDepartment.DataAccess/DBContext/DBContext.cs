@@ -21,7 +21,6 @@ namespace SnilAcademicDepartment.DataAccess
         public virtual DbSet<Lecture> Lectures { get; set; }
         public virtual DbSet<PageType> PageTypes { get; set; }
         public virtual DbSet<Person> People { get; set; }
-        public virtual DbSet<PersonLecture> PersonLectures { get; set; }
         public virtual DbSet<PreView> PreViews { get; set; }
         public virtual DbSet<Project> Projects { get; set; }
         public virtual DbSet<Seminar> Seminars { get; set; }
@@ -33,11 +32,12 @@ namespace SnilAcademicDepartment.DataAccess
         {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.RegisterBiography();
+            modelBuilder.Configurations.Add(new BiographyConfig());
+            modelBuilder.Configurations.Add(new ProjectConfig());
             modelBuilder.RegisterDocument();
             modelBuilder.RegisterEducation();
             modelBuilder.RegisterImage();
-            modelBuilder.RegisterLanguage();
+            modelBuilder.Configurations.Add(new LanguageConfig());
             modelBuilder.RegisterLecture();
             modelBuilder.RegisterPageType();
             modelBuilder.RegisterPerson();

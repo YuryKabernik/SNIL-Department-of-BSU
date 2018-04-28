@@ -1,13 +1,20 @@
-﻿using System.Data.Entity;
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using System.Data.Entity;
+using System.Data.Entity.ModelConfiguration;
 
 namespace SnilAcademicDepartment.DataAccess.Configurations
 {
-    public static class BiographyConfig
+    public class BiographyConfig : EntityTypeConfiguration<Biography>
     {
-        public static void RegisterBiography(this DbModelBuilder modelBuilder)
+        public BiographyConfig()
         {
-            modelBuilder.Entity<Biography>()
-                .HasMany(e => e.People)
+            this.HasKey(p => p.BiographyId);
+
+            this.Property(p => p.Description)
+               .IsRequired()
+               .HasColumnName("Biography");
+
+            this.HasMany(e => e.People)
                 .WithRequired(e => e.Biography1)
                 .HasForeignKey(e => e.Biography)
                 .WillCascadeOnDelete(false);
