@@ -1,29 +1,25 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
-using System.Data.Entity;
+using System.Data.Entity.ModelConfiguration;
 
 namespace SnilAcademicDepartment.DataAccess.Configurations
 {
-    public static class ImageConfig
+    public class ImageConfig : EntityTypeConfiguration<Image>
     {
-        public static void RegisterImage(this DbModelBuilder modelBuilder)
+        public ImageConfig()
         {
-            modelBuilder.Entity<Image>()
-                .Property(e => e.ImageId)
+            this.Property(e => e.ImageId)
                 .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
 
-            modelBuilder.Entity<Image>()
-                .Property(e => e.ImageName)
+            this.Property(e => e.ImageName)
                 .HasMaxLength(50)
                 .IsRequired();
 
-            modelBuilder.Entity<Image>()
-                .Property(p => p.Image1)
+            this.Property(p => p.Image1)
                 .HasColumnName("Image")
                 .HasColumnType("image")
                 .IsRequired();
 
-            modelBuilder.Entity<Image>()
-                .HasMany(e => e.EducationBlocks)
+            this.HasMany(e => e.EducationBlocks)
                 .WithRequired(e => e.Image1)
                 .HasForeignKey(e => e.Image)
                 .WillCascadeOnDelete(false);

@@ -1,33 +1,28 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
+using System.Data.Entity.ModelConfiguration;
 
 namespace SnilAcademicDepartment.DataAccess.Configurations
 {
-    public static class EducationBlockConfig
+    public class EducationBlockConfig : EntityTypeConfiguration<EducationBlock>
     {
-        public static void RegisterEducation(this DbModelBuilder modelBuilder)
+        public EducationBlockConfig()
         {
-            modelBuilder.Entity<EducationBlock>()
-                .HasKey(p => p.BlockId);
+            this.HasKey(p => p.BlockId);
 
-            modelBuilder.Entity<EducationBlock>()
-                .Property(p => p.BlockId)
+            this.Property(p => p.BlockId)
                 .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
 
-            modelBuilder.Entity<EducationBlock>()
-                .Property(p => p.Name)
+            this.Property(p => p.Name)
                 .HasMaxLength(50);
 
-            modelBuilder.Entity<EducationBlock>()
-                .Property(p => p.Description)
+            this.Property(p => p.Description)
                 .HasColumnType("text");
 
-            modelBuilder.Entity<EducationBlock>()
-                .Property(e => e.Description)
+            this.Property(e => e.Description)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<EducationBlock>()
-                .HasMany(e => e.EducationTopics)
+            this.HasMany(e => e.EducationTopics)
                 .WithRequired(e => e.EducationBlock)
                 .HasForeignKey(e => e.EducationBlockType)
                 .WillCascadeOnDelete(false);

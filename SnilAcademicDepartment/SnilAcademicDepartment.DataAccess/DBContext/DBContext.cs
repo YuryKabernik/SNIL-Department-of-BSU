@@ -33,17 +33,19 @@ namespace SnilAcademicDepartment.DataAccess
             base.OnModelCreating(modelBuilder);
 
             modelBuilder.Configurations.Add(new BiographyConfig());
-            modelBuilder.Configurations.Add(new ProjectConfig());
-            modelBuilder.RegisterDocument();
-            modelBuilder.RegisterEducation();
-            modelBuilder.RegisterImage();
+            modelBuilder.Configurations.Add(new DocumentConfig());
+            modelBuilder.Configurations.Add(new EducationBlockConfig());
+            modelBuilder.Configurations.Add(new EducationTopicConfiguration());
+            modelBuilder.Configurations.Add(new HallOfFameConfiguration());
+            modelBuilder.Configurations.Add(new ImageConfig());
             modelBuilder.Configurations.Add(new LanguageConfig());
-            modelBuilder.RegisterLecture();
-            modelBuilder.RegisterPageType();
-            modelBuilder.RegisterPerson();
-            modelBuilder.RegisterPreView();
-            modelBuilder.RegisterSpecialization();
-            modelBuilder.RegisterTopic();
+            modelBuilder.Configurations.Add(new LectureConfig());
+            modelBuilder.Configurations.Add(new PageTypeConfig());
+            modelBuilder.Configurations.Add(new PersonConfig());
+            modelBuilder.Configurations.Add(new PreViewConfig());
+            modelBuilder.Configurations.Add(new SpecializationConfig());
+            modelBuilder.Configurations.Add(new ProjectConfig());
+            modelBuilder.Configurations.Add(new TopicConfig());
         }
     }
 }

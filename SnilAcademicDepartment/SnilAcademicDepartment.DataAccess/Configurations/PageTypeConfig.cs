@@ -1,23 +1,20 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
-using System.Data.Entity;
+using System.Data.Entity.ModelConfiguration;
 
 namespace SnilAcademicDepartment.DataAccess.Configurations
 {
-    public static class PageTypeConfig
+    public class PageTypeConfig : EntityTypeConfiguration<PageType>
     {
-        public static void RegisterPageType(this DbModelBuilder modelBuilder)
+        public PageTypeConfig()
         {
-            modelBuilder.Entity<PageType>()
-                .Property(p => p.PageTypeId)
+            this.Property(p => p.PageTypeId)
                 .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
 
-            modelBuilder.Entity<PageType>()
-                .Property(p => p.PageTypeName)
+            this.Property(p => p.PageTypeName)
                 .HasMaxLength(50)
                 .IsRequired();
 
-            modelBuilder.Entity<PageType>()
-                .HasMany(e => e.PreViews)
+            this.HasMany(e => e.PreViews)
                 .WithRequired(e => e.PageTypeName)
                 .HasForeignKey(e => e.PageType)
                 .WillCascadeOnDelete(false);

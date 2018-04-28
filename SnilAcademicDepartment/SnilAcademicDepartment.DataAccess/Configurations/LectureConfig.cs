@@ -1,23 +1,20 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
-using System.Data.Entity;
+using System.Data.Entity.ModelConfiguration;
 
 namespace SnilAcademicDepartment.DataAccess.Configurations
 {
-    public static class LectureConfig
+    public class LectureConfig : EntityTypeConfiguration<Lecture>
     {
-        public static void RegisterLecture(this DbModelBuilder modelBuilder)
+        public LectureConfig()
         {
-            modelBuilder.Entity<Lecture>()
-                .Property(p => p.LectureId)
+            this.Property(p => p.LectureId)
                 .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
 
-            modelBuilder.Entity<Lecture>()
-                .Property(p => p.LectureName)
+            this.Property(p => p.LectureName)
                 .HasMaxLength(50)
                 .IsRequired();
 
-            modelBuilder.Entity<Lecture>()
-                .Property(p => p.Description)
+            this.Property(p => p.Description)
                 .IsRequired();
         }
     }

@@ -1,23 +1,20 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
-using System.Data.Entity;
+using System.Data.Entity.ModelConfiguration;
 
 namespace SnilAcademicDepartment.DataAccess.Configurations
 {
-    public static class TopicConfig
+    public class TopicConfig : EntityTypeConfiguration<Topic>
     {
-        public static void RegisterTopic(this DbModelBuilder modelBuilder)
+        public TopicConfig()
         {
-            modelBuilder.Entity<Topic>()
-                .Property(p => p.TopicId)
+            this.Property(p => p.TopicId)
                 .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
 
-            modelBuilder.Entity<Topic>()
-                .Property(p => p.TopicName)
+            this.Property(p => p.TopicName)
                 .IsRequired()
                 .HasMaxLength(100);
 
-            modelBuilder.Entity<Topic>()
-                .HasMany(e => e.Seminars)
+            this.HasMany(e => e.Seminars)
                 .WithOptional(e => e.Topic1)
                 .HasForeignKey(e => e.Topic);
         }

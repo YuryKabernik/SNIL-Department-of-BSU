@@ -1,29 +1,25 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
-using System.Data.Entity;
+using System.Data.Entity.ModelConfiguration;
 
 namespace SnilAcademicDepartment.DataAccess.Configurations
 {
-    public static class PreViewConfig
+    public class PreViewConfig : EntityTypeConfiguration<PreView>
     {
-        public static void RegisterPreView(this DbModelBuilder modelBuilder)
+        public PreViewConfig()
         {
-            modelBuilder.Entity<PreView>()
-                .Property(e => e.PreViewId)
+            this.Property(e => e.PreViewId)
                 .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
 
-            modelBuilder.Entity<PreView>()
-                .Property(e => e.Header)
+            this.Property(e => e.Header)
                 .HasMaxLength(50)
                 .IsRequired();
 
-            modelBuilder.Entity<PreView>()
-                .Property(e => e.ShortDescription)
+            this.Property(e => e.ShortDescription)
                 .HasColumnType("text")
                 .IsRequired()
                 .IsUnicode(false);
 
-            modelBuilder.Entity<PreView>()
-                .Property(p => p.Image)
+            this.Property(p => p.Image)
                 .HasColumnType("image")
                 .IsRequired();
         }

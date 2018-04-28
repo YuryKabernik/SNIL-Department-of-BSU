@@ -1,28 +1,24 @@
-﻿using System.Data.Entity;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using System.Data.Entity.ModelConfiguration;
 
 namespace SnilAcademicDepartment.DataAccess.Configurations
 {
-    public static class SpecializationConfig
+    public class SpecializationConfig : EntityTypeConfiguration<Specialisation>
     {
-        public static void RegisterSpecialization(this DbModelBuilder modelBuilder)
+        public SpecializationConfig()
         {
-            modelBuilder.Entity<Specialisation>()
-                .Property(p => p.SpecialisationId)
+            this.Property(p => p.SpecialisationId)
                 .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
 
-            modelBuilder.Entity<Specialisation>()
-                .Property(p => p.SpecialisationName)
+            this.Property(p => p.SpecialisationName)
                 .HasMaxLength(100)
                 .IsRequired();
 
-            modelBuilder.Entity<Specialisation>()
-                .Property(p => p.Speciality)
+            this.Property(p => p.Speciality)
                 .HasMaxLength(100)
                 .IsRequired();
 
-            modelBuilder.Entity<Specialisation>()
-                .HasMany(e => e.Lectures)
+            this.HasMany(e => e.Lectures)
                 .WithRequired(e => e.Specialisation)
                 .HasForeignKey(e => e.SpesialisationId)
                 .WillCascadeOnDelete(false);
