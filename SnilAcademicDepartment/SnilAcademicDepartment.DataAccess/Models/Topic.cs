@@ -8,20 +8,10 @@ namespace SnilAcademicDepartment.DataAccess
 
     public partial class Topic
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Topic()
-        {
-            Seminars = new HashSet<Seminar>();
-        }
-
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int TopicId { get; set; }
 
-        [Required]
-        [StringLength(100)]
         public string TopicName { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Seminar> Seminars { get; set; }
+        public virtual ICollection<Seminar> Seminars { get; set; } = new HashSet<Seminar>();
     }
 }

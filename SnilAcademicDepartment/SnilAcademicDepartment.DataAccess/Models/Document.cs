@@ -8,18 +8,8 @@ namespace SnilAcademicDepartment.DataAccess
 
     public partial class Document
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Document()
-        {
-            Projects = new HashSet<Project>();
-            Seminars = new HashSet<Seminar>();
-        }
-
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int DocumentId { get; set; }
 
-        [Required]
-        [StringLength(10)]
         public string DocumentName { get; set; }
 
         public bool? IsDeleted { get; set; }
@@ -28,14 +18,10 @@ namespace SnilAcademicDepartment.DataAccess
 
         public DateTime? ModifiedOn { get; set; }
 
-        [Required]
-        [MaxLength(4000)]
         public byte[] FileContent { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Project> Projects { get; set; }
+        public virtual ICollection<Project> Projects { get; set; } = new HashSet<Project>();
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Seminar> Seminars { get; set; }
+        public virtual ICollection<Seminar> Seminars { get; set; } = new HashSet<Seminar>();
     }
 }

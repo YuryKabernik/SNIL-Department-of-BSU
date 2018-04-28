@@ -4,16 +4,9 @@ namespace SnilAcademicDepartment.DataAccess
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
-    using System.Data.Entity.Spatial;
 
     public partial class Seminar
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Seminar()
-        {
-            People = new HashSet<Person>();
-        }
-
         public int SeminarId { get; set; }
 
         [Required]
@@ -39,7 +32,6 @@ namespace SnilAcademicDepartment.DataAccess
 
         public virtual Topic Topic1 { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Person> People { get; set; }
+        public virtual ICollection<Person> People { get; set; } = new HashSet<Person>();
     }
 }
