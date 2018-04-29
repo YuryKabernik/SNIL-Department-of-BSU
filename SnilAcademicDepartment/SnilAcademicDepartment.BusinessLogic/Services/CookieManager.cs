@@ -19,7 +19,32 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
         
         public HttpCookie ChangeCulture(string language)
         {
-            throw new NotImplementedException();
+            string returnUrl = Request.UrlReferrer.AbsolutePath;
+
+            // List of availiable cultures.
+            var cultures = new List<string>() { "ru", "en", "de" };
+
+            // Check if the list of cultures contains parameter.
+            if (lang.ToLower() == null || !cultures.Contains(lang))
+            {
+                lang = "en";
+            }
+
+            // Save selected culture in the cookie.
+            HttpCookie cookie = Request.Cookies["lang"];
+            if (cookie != null)
+                cookie.Value = lang;   // If the cookie is installed, then we update the values.
+            else
+            {
+                cookie = new HttpCookie("lang")
+                {
+                    HttpOnly = false,
+                    Value = lang,
+                    Expires = DateTime.Now.AddHours(10)
+                };
+            }
+            Response.Cookies.Add(cookie);
+            return Redirect(returnUrl);
         }
     }
 }
