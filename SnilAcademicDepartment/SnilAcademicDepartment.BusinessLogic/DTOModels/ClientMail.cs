@@ -3,7 +3,7 @@
     /// <summary>
     /// Mail form model.
     /// </summary>
-    public class FormMail
+    public class ClientMail
     {
         /// <summary>
         /// Full name of client.
