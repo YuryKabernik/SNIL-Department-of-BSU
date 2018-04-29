@@ -58,6 +58,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
+    <Reference Include="System.Web" />
   </ItemGroup>
   <Choose>
     <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
@@ -80,7 +81,6 @@
     <Compile Include="Services\HomeServiceTests.cs" />
     <Compile Include="Services\PeopleServiceTests.cs" />
     <Compile Include="Services\ProjectsServiceTests.cs" />
-    <Compile Include="Services\ServiceTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -90,6 +90,14 @@
     <ProjectReference Include="..\SnilAcademicDepartment.BusinessLogic\SnilAcademicDepartment.BusinessLogic.csproj">
       <Project>{1AF45174-72CA-481B-8E17-64FA0864A462}</Project>
       <Name>SnilAcademicDepartment.BusinessLogic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SnilAcademicDepartment.Common\SnilAcademicDepartment.Common.csproj">
+      <Project>{907F30B1-1365-41CB-98D3-A649398A578C}</Project>
+      <Name>SnilAcademicDepartment.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SnilAcademicDepartment.DataAccess\SnilAcademicDepartment.DataAccess.csproj">
+      <Project>{706AFDF9-C55C-461C-8687-816459FF30D6}</Project>
+      <Name>SnilAcademicDepartment.DataAccess</Name>
     </ProjectReference>
     <ProjectReference Include="..\SnilAcademicDepartment\SnilAcademicDepartment.csproj">
       <Project>{C7E51860-C61E-4C08-9B97-CD3B8A11D6DE}</Project>
