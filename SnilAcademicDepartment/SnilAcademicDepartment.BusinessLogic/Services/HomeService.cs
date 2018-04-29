@@ -6,7 +6,7 @@ using SnilAcademicDepartment.DataAccess.Interface;
 
 namespace SnilAcademicDepartment.BusinessLogic.Services
 {
-    class HomeService : IIndex
+    public class HomeService : IIndex
     {
         private readonly ILogger _logger;
         private readonly IRepository _repository;

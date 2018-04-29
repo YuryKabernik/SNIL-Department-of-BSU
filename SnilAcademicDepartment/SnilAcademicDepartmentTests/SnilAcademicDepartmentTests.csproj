@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>SnilAcademicDepartmentTests</RootNamespace>
     <AssemblyName>SnilAcademicDepartmentTests</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -74,6 +74,12 @@
     <Compile Include="Controllers\PersonsControllerTests.cs" />
     <Compile Include="Controllers\ProjectsControllerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\CookieManagerTests.cs" />
+    <Compile Include="Services\EducationServiceTests.cs" />
+    <Compile Include="Services\HistoryServiceTests.cs" />
+    <Compile Include="Services\HomeServiceTests.cs" />
+    <Compile Include="Services\PeopleServiceTests.cs" />
+    <Compile Include="Services\ProjectsServiceTests.cs" />
     <Compile Include="Services\ServiceTest.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -81,6 +87,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\SnilAcademicDepartment.BusinessLogic\SnilAcademicDepartment.BusinessLogic.csproj">
+      <Project>{1AF45174-72CA-481B-8E17-64FA0864A462}</Project>
+      <Name>SnilAcademicDepartment.BusinessLogic</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SnilAcademicDepartment\SnilAcademicDepartment.csproj">
       <Project>{C7E51860-C61E-4C08-9B97-CD3B8A11D6DE}</Project>
       <Name>SnilAcademicDepartment</Name>

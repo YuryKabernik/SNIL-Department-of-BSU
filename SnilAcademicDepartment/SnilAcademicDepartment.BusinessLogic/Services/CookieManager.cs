@@ -6,7 +6,7 @@ using System.Web;
 
 namespace SnilAcademicDepartment.BusinessLogic.Services
 {
-    class CookieManager : ICookieManager
+    public class CookieManager : ICookieManager
     {
         private readonly ILogger _logger;
         private readonly IRepository _repository;
