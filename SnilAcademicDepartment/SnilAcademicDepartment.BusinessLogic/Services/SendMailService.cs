@@ -1,16 +1,17 @@
 ﻿using System.Threading.Tasks;
 using SnilAcademicDepartment.BusinessLogic.Interfaces;
+using System.Net.Mail;
 
 namespace SnilAcademicDepartment.BusinessLogic.Services
 {
-    public class SendingMail : IMailSender
+    public class SendMailService : IMailSender
     {
-        public void SendMail()
+        public void SendMail(MailMessage mail)
         {
             throw new System.NotImplementedException();
         }
 
-        public Task SendMailAsync()
+        public Task SendMailAsync(MailMessage mail)
         {
             throw new System.NotImplementedException();
         }

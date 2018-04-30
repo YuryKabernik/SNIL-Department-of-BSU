@@ -1,10 +1,11 @@
-﻿using System.Threading.Tasks;
+﻿using System.Net.Mail;
+using System.Threading.Tasks;
 
 namespace SnilAcademicDepartment.BusinessLogic.Interfaces
 {
     public interface IMailSender
     {
-        Task SendMailAsync();
-        void SendMail();
+        void SendMail(MailMessage mail);
+        Task SendMailAsync(MailMessage mail);
     }
 }
