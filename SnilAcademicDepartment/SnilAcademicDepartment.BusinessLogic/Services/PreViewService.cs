@@ -7,18 +7,18 @@ using System.Collections.Generic;
 
 namespace SnilAcademicDepartment.BusinessLogic.Services
 {
-    public class EducationService : IEducation
+    public sealed class PreViewService : IService
     {
         private readonly ILogger _logger;
         private readonly IRepository _repository;
 
-        public EducationService(ILogger logger, IRepository repository)
+        public PreViewService(ILogger logger, IRepository repository)
         {
             this._logger = logger;
             this._repository = repository;
         }
 
-        public IEnumerable<KeyAreaBlock> GetKeyAreas(uint pages)
+        public PreView GetPagePreview(string pageType)
         {
             throw new NotImplementedException();
         }

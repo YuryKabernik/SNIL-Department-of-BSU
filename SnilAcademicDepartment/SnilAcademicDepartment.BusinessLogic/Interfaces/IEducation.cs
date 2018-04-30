@@ -5,7 +5,6 @@ namespace SnilAcademicDepartment.BusinessLogic.Interfaces
 {
     internal interface IEducation
     {
-        PreView GetPagePreview();
-        IEnumerable<KeyAreaBlock> GetKeyAreas();
+        IEnumerable<KeyAreaBlock> GetKeyAreas(uint pages);
     }
 }

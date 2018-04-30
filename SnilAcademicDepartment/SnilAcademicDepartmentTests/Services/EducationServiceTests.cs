@@ -1,27 +1,37 @@
-﻿using SnilAcademicDepartment.BusinessLogic.Services;
-using NUnit.Framework;
+﻿using NUnit.Framework;
+using Moq;
+using SnilAcademicDepartment.Common.LoggerAdapter;
+using SnilAcademicDepartment.DataAccess.Interface;
 
 namespace SnilAcademicDepartment.BusinessLogic.Services.Tests
 {
     [TestFixture()]
     public class EducationServiceTests
     {
-        [Test()]
-        public void EducationServiceTest()
+        private Mock<IRepository> _repositoryMock;
+        private Mock<NLogAdapter<CookieManagerTests>> _loggerMock;
+        private EducationService _educationService;
+
+        [SetUp]
+        public void SetUpMethod()
         {
-            Assert.Fail();
+            this._repositoryMock = new Mock<IRepository>();
+            this._loggerMock = new Mock<NLogAdapter<CookieManagerTests>>();
+            this._educationService = new EducationService(this._loggerMock.Object, this._repositoryMock.Object);
         }
 
         [Test()]
-        public void GetKeyAreasTest()
+        public void EducationService_GetKeyAreasTest_GetSevenPagesIsNotNullCollectionResult()
         {
-            Assert.Fail();
+            var result = this._educationService.GetKeyAreas(7);
+            Assert.NotNull(result);
         }
 
         [Test()]
-        public void GetPagePreviewTest()
+        public void EducationService_GetKeyAreasTest_GetFivePagesIsNotNullCollectionResult()
         {
-            Assert.Fail();
+            var result = this._educationService.GetKeyAreas(5);
+            Assert.NotNull(result);
         }
     }
 }

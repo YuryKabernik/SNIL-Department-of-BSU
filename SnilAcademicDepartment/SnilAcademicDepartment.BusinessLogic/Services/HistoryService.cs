@@ -18,7 +18,7 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
             this._repository = repository;
         }
 
-        public IEnumerable<PreView> GetPreViews()
+        public IEnumerable<PreView> PreViews(string previewType)
         {
             throw new NotImplementedException();
         }

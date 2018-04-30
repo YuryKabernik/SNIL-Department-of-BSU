@@ -52,6 +52,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DTOModels\HistoryDiscription.cs" />
     <Compile Include="Enum\ProjectType.cs" />
     <Compile Include="Interfaces\ISendMail.cs" />
     <Compile Include="Interfaces\IEducation.cs" />
@@ -74,7 +75,7 @@
     <Compile Include="Services\PeopleService.cs" />
     <Compile Include="Services\ProjectsService.cs" />
     <Compile Include="Services\SendingMail.cs" />
-    <Compile Include="Services\Service.cs" />
+    <Compile Include="Services\PreViewService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
