@@ -3,6 +3,10 @@ using NUnit.Framework;
 using SnilAcademicDepartment.Common.LoggerAdapter;
 using Moq;
 using SnilAcademicDepartment.DataAccess.Interface;
+using System;
+using SnilAcademicDepartment.Common.CustomExceptions;
+using System.Collections.Generic;
+using SnilAcademicDepartment.BusinessLogic.Models;
 
 namespace SnilAcademicDepartment.BusinessLogic.Services.Tests
 {
@@ -22,20 +26,27 @@ namespace SnilAcademicDepartment.BusinessLogic.Services.Tests
         }
 
         [Test()]
-        public void HistoryPreView_GetPreViewsTest_NullArgumentThrowsNullArgumentException()
+        public void HistoryPreView_GetPreViewsTest_NullArgumentThrowsArgumentNullException()
         {
-            Assert.Fail();
+            Assert.Throws(
+                typeof(ArgumentNullException),
+                () => this._historyService.PreViews(null));
         }
 
         [Test()]
-        public void HistoryPreView_GetPreViewsTest_BadPreviewTypeThrowspreviewTypeNotFoundException()
+        public void HistoryPreView_GetPreViewsTest_BadPreviewTypeThrowsPreviewTypeNotFoundException()
         {
-            Assert.Fail();
+            Assert.Throws(
+                typeof(PreviewTypeNotFoundException),
+                () => this._historyService.PreViews(null));
         }
+
         [Test()]
-        public void HistoryPreView_GetPreViewsTest_GoodPreviewTypeReturnsCollectionOfPreviews()
+        public void HistoryPreView_GetPreViewsTest_GoodPreviewTypeReturnsCollectionOfHistoryPreviews()
         {
-            Assert.Fail();
+            var resultCollection = (List<PreView>)this._historyService.PreViews("History");
+            Assert.NotNull(resultCollection);
+            Assert.NotZero(resultCollection.Count);
         }
     }
 }

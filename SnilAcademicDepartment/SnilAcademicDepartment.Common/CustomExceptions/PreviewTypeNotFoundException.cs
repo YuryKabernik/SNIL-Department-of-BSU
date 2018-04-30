@@ -4,7 +4,7 @@ using System.Runtime.Serialization;
 namespace SnilAcademicDepartment.Common.CustomExceptions
 {
     [Serializable]
-    class PreviewTypeNotFoundException : Exception
+    public class PreviewTypeNotFoundException : Exception
     {
         public PreviewTypeNotFoundException() : base()
         {
