@@ -52,7 +52,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DTOModels\HistoryDiscription.cs" />
     <Compile Include="Enum\ProjectType.cs" />
     <Compile Include="Interfaces\ISendMail.cs" />
     <Compile Include="Interfaces\IEducation.cs" />

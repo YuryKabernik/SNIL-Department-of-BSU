@@ -58,6 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CommonPackage.cs" />
+    <Compile Include="CustomExceptions\PreviewTypeNotFoundException.cs" />
     <Compile Include="LoggerAdapter\NLogAdapter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
