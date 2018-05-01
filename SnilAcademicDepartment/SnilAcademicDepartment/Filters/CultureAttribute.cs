@@ -8,9 +8,6 @@ namespace SnilAcademicDepartment.Filters
 {
     public class CultureAttribute : FilterAttribute, IActionFilter
     {
-        // Список культур
-        public readonly List<string> cultureCollection = new List<string>() { "en", "ru", "de" };
-
         /// <summary>
         /// Culture filter on action executed culture.
         /// </summary>
@@ -21,19 +18,13 @@ namespace SnilAcademicDepartment.Filters
 
             // Get language from cookies if route data is empty and cookies not empty too.
             if (string.IsNullOrEmpty(cultureName))
-            {
                 cultureName = filterContext.RouteData.Values["lang"] as string;
-            }
 
             if (string.IsNullOrEmpty(cultureName))
-            {
                 cultureName = this.CheckHeaderCulture(filterContext.HttpContext);
-            }
 
             if (string.IsNullOrEmpty(cultureName))
-            {
                 cultureName = "en";
-            }
 
             Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture(cultureName);
             Thread.CurrentThread.CurrentUICulture = CultureInfo.CreateSpecificCulture(cultureName);
@@ -50,23 +41,13 @@ namespace SnilAcademicDepartment.Filters
         /// <returns>The string of current request culture.</returns>
         private string CheckCookieCulture(HttpContextBase httpContext)
         {
-            string currentCulture = string.Empty;
-            
             // Получаем куки из контекста, которые могут содержать установленную культуру
-            var cultureCookie = httpContext.Request.Cookies["lang"];
+            var cultureCookie = httpContext.Request.Cookies["language"];
 
             if (cultureCookie != null)
-                currentCulture = cultureCookie.Value;
+                return CultureInfo.GetCultureInfo(cultureCookie.Value).Name;
             else
                 return null;
-
-            // Поиск культуры из списка культур
-            if (!cultureCollection.Contains(currentCulture))
-            {
-                return null;
-            }
-
-            return currentCulture;
         }
 
         /// <summary>
@@ -76,22 +57,11 @@ namespace SnilAcademicDepartment.Filters
         /// <returns>The string of current request culture.</returns>
         private string CheckHeaderCulture(HttpContextBase httpContext)
         {
-            var currentCulture = string.Empty;
-
             // Получаем заголовок из запроса, который может содержать установленную культуру
-            var cultureHeader = httpContext.Request.Headers["Accept-Language"];
+            var userLanguages = httpContext.Request.UserLanguages;
 
-            if (!string.IsNullOrEmpty(cultureHeader))
-                currentCulture = cultureHeader;
-
-            // Поиск культуры из списка культур
-            foreach (var lang in cultureCollection)
-            {
-                if (currentCulture.Contains(lang))
-                {
-                    return lang;
-                }
-            }
+            if (userLanguages != null && userLanguages.Length != 0)
+                return CultureInfo.GetCultureInfo(userLanguages[0]).Name;
 
             return null;
         }
