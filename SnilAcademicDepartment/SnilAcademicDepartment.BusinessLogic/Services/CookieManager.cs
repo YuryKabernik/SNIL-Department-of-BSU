@@ -32,13 +32,13 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
 
             // Save selected culture in the cookie.
             if (cookie != null)
-                cookie.Value = language;   // If the cookie is installed, then we update the values.
+                cookie.Value = culture.TwoLetterISOLanguageName;   // If the cookie is installed, then we update the values.
             else
             {
                 cookie = new HttpCookie(newCookieName)
                 {
                     HttpOnly = false,
-                    Value = language,
+                    Value = culture.TwoLetterISOLanguageName,
                     Expires = DateTime.Now.AddHours(1)
                 };
             }
