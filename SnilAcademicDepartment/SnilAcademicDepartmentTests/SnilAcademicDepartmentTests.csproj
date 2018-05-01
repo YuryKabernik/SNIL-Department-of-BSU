@@ -44,6 +44,7 @@
     <Reference Include="Castle.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
       <HintPath>..\packages\Castle.Core.4.2.1\lib\net45\Castle.Core.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.VisualStudio.TestPlatform.TestFramework, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\MSTest.TestFramework.1.2.0\lib\net45\Microsoft.VisualStudio.TestPlatform.TestFramework.dll</HintPath>
     </Reference>
@@ -53,11 +54,21 @@
     <Reference Include="Moq, Version=4.7.145.0, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
       <HintPath>..\packages\Moq.4.7.145\lib\net45\Moq.dll</HintPath>
     </Reference>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.4.5.3\lib\net45\NLog.dll</HintPath>
+    </Reference>
     <Reference Include="nunit.framework, Version=3.9.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
       <HintPath>..\packages\NUnit.3.9.0\lib\net45\nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <Choose>
     <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
@@ -91,9 +102,13 @@
       <Project>{1AF45174-72CA-481B-8E17-64FA0864A462}</Project>
       <Name>SnilAcademicDepartment.BusinessLogic</Name>
     </ProjectReference>
-    <ProjectReference Include="..\SnilAcademicDepartment\SnilAcademicDepartment.csproj">
-      <Project>{C7E51860-C61E-4C08-9B97-CD3B8A11D6DE}</Project>
-      <Name>SnilAcademicDepartment</Name>
+    <ProjectReference Include="..\SnilAcademicDepartment.Common\SnilAcademicDepartment.Common.csproj">
+      <Project>{907f30b1-1365-41cb-98d3-a649398a578c}</Project>
+      <Name>SnilAcademicDepartment.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SnilAcademicDepartment.DataAccess\SnilAcademicDepartment.DataAccess.csproj">
+      <Project>{706afdf9-c55c-461c-8687-816459ff30d6}</Project>
+      <Name>SnilAcademicDepartment.DataAccess</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

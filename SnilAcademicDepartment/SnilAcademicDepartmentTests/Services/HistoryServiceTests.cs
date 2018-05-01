@@ -1,5 +1,4 @@
-﻿using SnilAcademicDepartment.BusinessLogic.Services;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using SnilAcademicDepartment.Common.LoggerAdapter;
 using Moq;
 using SnilAcademicDepartment.DataAccess.Interface;

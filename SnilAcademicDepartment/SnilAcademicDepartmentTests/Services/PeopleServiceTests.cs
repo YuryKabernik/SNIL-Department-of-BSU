@@ -1,5 +1,4 @@
 ﻿using NUnit.Framework;
-using SnilAcademicDepartment.BusinessLogic.Services;
 
 namespace SnilAcademicDepartment.BusinessLogic.Services.Tests
 {
