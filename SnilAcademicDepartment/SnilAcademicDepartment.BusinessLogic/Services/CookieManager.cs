@@ -2,8 +2,8 @@
 using SnilAcademicDepartment.BusinessLogic.Interfaces;
 using SnilAcademicDepartment.DataAccess.Interface;
 using System;
-using System.Collections.Generic;
 using System.Web;
+using System.Globalization;
 
 namespace SnilAcademicDepartment.BusinessLogic.Services
 {
@@ -18,28 +18,30 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
             this._repository = repository;
         }
         
-        public HttpCookie ChangeCulture(string lang, HttpRequestBase request)
+        /// <summary>
+        /// Method of set cookie by user's culture.
+        /// </summary>
+        /// <param name="language"></param>
+        /// <param name="cookie"></param>
+        /// <param name="newCookieName"></param>
+        /// <returns></returns>
+        public HttpCookie SetCookieCulture(string language, HttpCookie cookie, string newCookieName = "language")
         {
-            // List of availiable cultures.
-            var cultures = new List<string>() { "ru", "en", "de" };
+            if (language == null)
+                throw new ArgumentNullException(nameof(language), "Selected language can't be null.");
 
-            // Check if the list of cultures contains parameter.
-            if (lang.ToLower() == null || !cultures.Contains(lang))
-            {
-                lang = "en";
-            }
+            var culture = CultureInfo.GetCultureInfo(language);
 
             // Save selected culture in the cookie.
-            HttpCookie cookie = request.Cookies["lang"];
             if (cookie != null)
-                cookie.Value = lang;   // If the cookie is installed, then we update the values.
+                cookie.Value = language;   // If the cookie is installed, then we update the values.
             else
             {
-                cookie = new HttpCookie("lang")
+                cookie = new HttpCookie(newCookieName)
                 {
                     HttpOnly = false,
-                    Value = lang,
-                    Expires = DateTime.Now.AddHours(10)
+                    Value = language,
+                    Expires = DateTime.Now.AddHours(1)
                 };
             }
             return cookie;

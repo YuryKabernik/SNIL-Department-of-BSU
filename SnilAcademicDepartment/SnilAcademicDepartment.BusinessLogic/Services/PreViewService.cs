@@ -22,5 +22,10 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
         {
             throw new NotImplementedException();
         }
+
+        public IEnumerable<PreView> GetPagePreviews(string pageType)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

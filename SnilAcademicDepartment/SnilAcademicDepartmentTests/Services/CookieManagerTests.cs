@@ -4,15 +4,18 @@ using SnilAcademicDepartment.Common.LoggerAdapter;
 using SnilAcademicDepartment.DataAccess.Interface;
 using System;
 using System.Globalization;
+using System.Web;
 
 namespace SnilAcademicDepartment.BusinessLogic.Services.Tests
 {
     [TestFixture()]
+    [TestOf(typeof(CookieManager))]
     public class CookieManagerTests
     {
         private Mock<IRepository> _repositoryMock;
         private Mock<NLogAdapter<CookieManagerTests>> _loggerMock;
         private CookieManager _cookieManager;
+        private HttpCookie _httpCookie;
 
         [SetUp]
         public void SetUpMethod()
@@ -20,14 +23,15 @@ namespace SnilAcademicDepartment.BusinessLogic.Services.Tests
             this._repositoryMock = new Mock<IRepository>();
             this._loggerMock = new Mock<NLogAdapter<CookieManagerTests>>();
             this._cookieManager = new CookieManager(this._loggerMock.Object, this._repositoryMock.Object);
+            this._httpCookie = new HttpCookie("Test-cookie");
         }
 
         [Test()]
         public void CookieManager_ChangeCultureTest_NullReferenceArgumentThrowsNullReferenceException()
         {
             Assert.Throws(
-                typeof(NullReferenceException),
-                () => this._cookieManager.ChangeCulture(null, null));
+                typeof(ArgumentNullException),
+                () => this._cookieManager.SetCookieCulture(null, this._httpCookie));
         }
 
         [Test()]
@@ -35,31 +39,31 @@ namespace SnilAcademicDepartment.BusinessLogic.Services.Tests
         {
             Assert.Throws(
                 typeof(CultureNotFoundException),
-                () => this._cookieManager.ChangeCulture("asls", null));
+                () => this._cookieManager.SetCookieCulture("asls", this._httpCookie));
         }
 
         [Test()]
         public void CookieManager_ChangeCultureTest_DeParameterSetsThreatCultureDe()
         {
-            var cookieResult = this._cookieManager.ChangeCulture("de", null);
+            var cookieResult = this._cookieManager.SetCookieCulture("de", this._httpCookie);
             Assert.IsNotNull(cookieResult);
-            Assert.Contains("de", cookieResult.Values);
+            Assert.AreEqual("de", cookieResult.Value);
         }
 
         [Test()]
         public void CookieManager_ChangeCultureTest_EnParameterSetsThreatCultureEn()
         {
-            var cookieResult = this._cookieManager.ChangeCulture("en", null);
+            var cookieResult = this._cookieManager.SetCookieCulture("en", this._httpCookie);
             Assert.IsNotNull(cookieResult);
-            Assert.Contains("en", cookieResult.Values);
+            Assert.AreEqual("en", cookieResult.Value);
         }
 
         [Test()]
         public void CookieManager_ChangeCultureTest_RuParameterSetsThreatCultureRu()
         {
-            var cookieResult = this._cookieManager.ChangeCulture("ru", null);
+            var cookieResult = this._cookieManager.SetCookieCulture("ru", null);
             Assert.IsNotNull(cookieResult);
-            Assert.Contains("ru", cookieResult.Values);
+            Assert.AreEqual("ru", cookieResult.Value);
         }
     }
 }

@@ -1,7 +1,7 @@
 ﻿using SnilAcademicDepartment.BusinessLogic.Models;
 using System.Collections.Generic;
 
-namespace SnilAcademicDepartment.BusinessLogic
+namespace SnilAcademicDepartment.BusinessLogic.Interfaces
 {
     /// <summary>
     /// Interface of the main service methods.
@@ -9,5 +9,6 @@ namespace SnilAcademicDepartment.BusinessLogic
     public interface IService
     {
         PreView GetPagePreview(string pageType);
+        IEnumerable<PreView> GetPagePreviews(string pageType);
     }
 }
