@@ -7,7 +7,7 @@ using System.Collections.Generic;
 
 namespace SnilAcademicDepartment.BusinessLogic.Services
 {
-    class HistoryService : IHistory
+    public class HistoryService : IHistory
     {
         private readonly ILogger _logger;
         private readonly IRepository _repository;
@@ -18,7 +18,7 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
             this._repository = repository;
         }
 
-        public IEnumerable<PreView> GetPreViews()
+        public IEnumerable<PreView> PreViews(string previewType)
         {
             throw new NotImplementedException();
         }

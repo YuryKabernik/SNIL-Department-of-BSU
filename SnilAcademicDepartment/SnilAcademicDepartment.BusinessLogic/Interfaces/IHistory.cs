@@ -5,6 +5,6 @@ namespace SnilAcademicDepartment.BusinessLogic.Interfaces
 {
     public interface IHistory
     {
-        IEnumerable<PreView> GetPreViews();
+        IEnumerable<PreView> PreViews(string previewType);
     }
 }

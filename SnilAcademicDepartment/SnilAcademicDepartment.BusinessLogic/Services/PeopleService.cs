@@ -7,7 +7,7 @@ using System.Collections.Generic;
 
 namespace SnilAcademicDepartment.BusinessLogic.Services
 {
-    class PeopleService : IPeople
+    public class PeopleService : IPeople
     {
         private readonly ILogger _logger;
         private readonly IRepository _repository;

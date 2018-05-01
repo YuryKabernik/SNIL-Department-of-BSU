@@ -7,7 +7,7 @@ using System.Web;
 
 namespace SnilAcademicDepartment.BusinessLogic.Services
 {
-    class CookieManager : ICookieManager
+    public class CookieManager : ICookieManager
     {
         private readonly ILogger _logger;
         private readonly IRepository _repository;
@@ -20,8 +20,6 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
         
         public HttpCookie ChangeCulture(string lang, HttpRequestBase request)
         {
-            string returnUrl = request.UrlReferrer.AbsolutePath;
-
             // List of availiable cultures.
             var cultures = new List<string>() { "ru", "en", "de" };
 
