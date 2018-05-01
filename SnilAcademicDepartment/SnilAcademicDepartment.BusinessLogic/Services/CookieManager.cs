@@ -2,6 +2,7 @@
 using SnilAcademicDepartment.BusinessLogic.Interfaces;
 using SnilAcademicDepartment.DataAccess.Interface;
 using System;
+using System.Collections.Generic;
 using System.Web;
 
 namespace SnilAcademicDepartment.BusinessLogic.Services
@@ -17,9 +18,9 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
             this._repository = repository;
         }
         
-        public HttpCookie ChangeCulture(string language)
+        public HttpCookie ChangeCulture(string lang, HttpRequestBase requestBase)
         {
-            string returnUrl = Request.UrlReferrer.AbsolutePath;
+            string returnUrl = requestBase.UrlReferrer.AbsolutePath;
 
             // List of availiable cultures.
             var cultures = new List<string>() { "ru", "en", "de" };
@@ -31,7 +32,7 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
             }
 
             // Save selected culture in the cookie.
-            HttpCookie cookie = Request.Cookies["lang"];
+            HttpCookie cookie = requestBase.Cookies["lang"];
             if (cookie != null)
                 cookie.Value = lang;   // If the cookie is installed, then we update the values.
             else
@@ -43,8 +44,7 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
                     Expires = DateTime.Now.AddHours(10)
                 };
             }
-            Response.Cookies.Add(cookie);
-            return Redirect(returnUrl);
+            return cookie;
         }
     }
 }
