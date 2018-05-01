@@ -18,9 +18,9 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
             this._repository = repository;
         }
         
-        public HttpCookie ChangeCulture(string lang, HttpRequestBase requestBase)
+        public HttpCookie ChangeCulture(string lang, HttpRequestBase request)
         {
-            string returnUrl = requestBase.UrlReferrer.AbsolutePath;
+            string returnUrl = request.UrlReferrer.AbsolutePath;
 
             // List of availiable cultures.
             var cultures = new List<string>() { "ru", "en", "de" };
@@ -32,7 +32,7 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
             }
 
             // Save selected culture in the cookie.
-            HttpCookie cookie = requestBase.Cookies["lang"];
+            HttpCookie cookie = request.Cookies["lang"];
             if (cookie != null)
                 cookie.Value = lang;   // If the cookie is installed, then we update the values.
             else

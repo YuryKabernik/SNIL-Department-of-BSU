@@ -12,6 +12,11 @@ namespace SnilAcademicDepartment.Controllers
         private readonly ILogger _logger;
         private readonly ICookieManager _cookieManager;
 
+        public CookiesController()
+        {
+
+        }
+
         public CookiesController(ILogger logger, ICookieManager cookieManager)
         {
             this._logger = logger;
