@@ -10,21 +10,19 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
     public class CookieManager : ICookieManager
     {
         private readonly ILogger _logger;
-        private readonly IRepository _repository;
 
-        public CookieManager(ILogger logger, IRepository repository)
+        public CookieManager(ILogger logger)
         {
             this._logger = logger;
-            this._repository = repository;
         }
         
         /// <summary>
-        /// Method of set cookie by user's culture.
+        /// Method sets language cookie by user's culture.
         /// </summary>
-        /// <param name="language"></param>
-        /// <param name="cookie"></param>
-        /// <param name="newCookieName"></param>
-        /// <returns></returns>
+        /// <param name="language">User's language.</param>
+        /// <param name="cookie">Cookie in request if exists.</param>
+        /// <param name="newCookieName">Optional. Name of new cookie.</param>
+        /// <returns>New or modifed http cookie object with fixed language.</returns>
         public HttpCookie SetCookieCulture(string language, HttpCookie cookie, string newCookieName = "language")
         {
             if (language == null)

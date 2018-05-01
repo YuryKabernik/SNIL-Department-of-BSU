@@ -1,9 +1,10 @@
 ﻿using System;
 using NLog;
 using SnilAcademicDepartment.BusinessLogic.Interfaces;
-using System.Collections.Generic;
 using System.Web;
 using System.Web.Mvc;
+using System.Globalization;
+using SnilAcademicDepartment.BusinessLogic.Services;
 
 namespace SnilAcademicDepartment.Controllers
 {
@@ -14,7 +15,8 @@ namespace SnilAcademicDepartment.Controllers
 
         public CookiesController()
         {
-
+            this._logger = new LogFactory().GetLogger($"{typeof(CookiesController)}");
+            this._cookieManager = new CookieManager(this._logger);
         }
 
         public CookiesController(ILogger logger, ICookieManager cookieManager)
@@ -23,33 +25,31 @@ namespace SnilAcademicDepartment.Controllers
             this._cookieManager = cookieManager;
         }
 
+        /// <summary>
+        /// Method for changing UI culture by inserted language.
+        /// </summary>
+        /// <param name="lang">User's language.</param>
+        /// <returns>Redirect to previouse page with new language.</returns>
         [HttpPost]
         public ActionResult ChangeCulture(string lang)
         {
             string returnUrl = Request.UrlReferrer.AbsolutePath;
+            HttpCookie cookie = null;
 
-            // List of availiable cultures.
-            var cultures = new List<string>() { "ru", "en", "de" };
-
-            // Check if the list of cultures contains parameter.
-            if (lang.ToLower() == null || !cultures.Contains(lang))
+            try
             {
-                lang = "en";
+                var requestCookie = this.Request.Cookies["language"];
+                cookie = this._cookieManager.SetCookieCulture(lang, requestCookie);
+            }
+            catch (CultureNotFoundException ex)
+            {
+                return this.Redirect(returnUrl);
+            }
+            catch (Exception ex)
+            {
+                return this.Redirect(returnUrl);
             }
 
-            // Save selected culture in the cookie.
-            HttpCookie cookie = Request.Cookies["lang"];
-            if (cookie != null)
-                cookie.Value = lang;   // If the cookie is installed, then we update the values.
-            else
-            {
-                cookie = new HttpCookie("lang")
-                {
-                    HttpOnly = false,
-                    Value = lang,
-                    Expires = DateTime.Now.AddHours(10)
-                };
-            }
             Response.Cookies.Add(cookie);
             return Redirect(returnUrl);
         }
