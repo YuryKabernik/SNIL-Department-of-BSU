@@ -1,7 +1,5 @@
-﻿using System;
-using System.Globalization;
+﻿using System.Globalization;
 using System.Threading;
-using System.Web;
 using System.Web.Mvc;
 
 namespace SnilAcademicDepartment.Filters
@@ -23,7 +21,7 @@ namespace SnilAcademicDepartment.Filters
 
                 // Get language from route.
                 if (string.IsNullOrEmpty(cultureName))
-                    cultureName = GetRouteCulture(filterContext);
+                    cultureName = this.GetRouteCulture(filterContext);
 
                 // Get language from request headers.
                 if (string.IsNullOrEmpty(cultureName))
@@ -31,11 +29,8 @@ namespace SnilAcademicDepartment.Filters
             }
             catch (CultureNotFoundException)
             {
-
+                cultureName = "en";
             }
-
-
-            
 
             if (string.IsNullOrEmpty(cultureName))
                 cultureName = "en";
@@ -44,18 +39,13 @@ namespace SnilAcademicDepartment.Filters
             Thread.CurrentThread.CurrentUICulture = CultureInfo.CreateSpecificCulture(cultureName);
         }
 
-        private static string GetRouteCulture(ActionExecutedContext filterContext)
-        {
-            return filterContext.RouteData.Values["lang"] as string;
-        }
-
         public void OnActionExecuting(ActionExecutingContext filterContext)
         {
             // throw new NotImplementedException("Method is not implemented.");
         }
 
         /// <summary>
-        /// Method of finding a culture in cookies.
+        /// Method of finding culture in cookies.
         /// </summary>
         /// <param name="filterContext">Base filter context.</param>
         /// <returns>The string of current request culture.</returns>
@@ -68,6 +58,21 @@ namespace SnilAcademicDepartment.Filters
                 return CultureInfo.GetCultureInfo(cultureCookie.Value).Name;
             else
                 return null;
+        }
+
+        /// <summary>
+        /// Method of getting culture in route.
+        /// </summary>
+        /// <param name="filterContext">Base filter context.</param>
+        /// <returns>The string of current request culture.</returns>
+        private string GetRouteCulture(ActionExecutedContext filterContext)
+        {
+            var routeLanguage = filterContext.RouteData.Values["language"] as string;
+
+            if (!string.IsNullOrEmpty(routeLanguage))
+                return CultureInfo.GetCultureInfo(routeLanguage).Name;
+
+            return null;
         }
 
         /// <summary>
