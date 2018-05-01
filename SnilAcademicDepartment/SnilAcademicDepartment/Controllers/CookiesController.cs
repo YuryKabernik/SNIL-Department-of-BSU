@@ -41,11 +41,11 @@ namespace SnilAcademicDepartment.Controllers
                 var requestCookie = this.Request.Cookies["language"];
                 cookie = this._cookieManager.SetCookieCulture(lang, requestCookie);
             }
-            catch (CultureNotFoundException ex)
+            catch (CultureNotFoundException)
             {
                 return this.Redirect(returnUrl);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return this.Redirect(returnUrl);
             }

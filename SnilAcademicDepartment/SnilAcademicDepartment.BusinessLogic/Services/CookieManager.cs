@@ -25,8 +25,8 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
         /// <returns>New or modifed http cookie object with fixed language.</returns>
         public HttpCookie SetCookieCulture(string language, HttpCookie cookie, string newCookieName = "language")
         {
-            if (language == null)
-                throw new ArgumentNullException(nameof(language), "Selected language can't be null.");
+            if (string.IsNullOrEmpty(language) || string.IsNullOrWhiteSpace(language))
+                throw new ArgumentException(nameof(language), "Selected language can't be null.");
 
             var culture = CultureInfo.GetCultureInfo(language);
 

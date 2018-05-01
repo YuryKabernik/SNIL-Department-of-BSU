@@ -22,7 +22,7 @@ namespace SnilAcademicDepartment.BusinessLogic.Services.Tests
         {
             this._repositoryMock = new Mock<IRepository>();
             this._loggerMock = new Mock<NLogAdapter<CookieManagerTests>>();
-            this._cookieManager = new CookieManager(this._loggerMock.Object, this._repositoryMock.Object);
+            this._cookieManager = new CookieManager(this._loggerMock.Object);
             this._httpCookie = new HttpCookie("Test-cookie");
         }
 
@@ -30,8 +30,16 @@ namespace SnilAcademicDepartment.BusinessLogic.Services.Tests
         public void CookieManager_ChangeCultureTest_NullReferenceArgumentThrowsNullReferenceException()
         {
             Assert.Throws(
-                typeof(ArgumentNullException),
+                typeof(ArgumentException),
                 () => this._cookieManager.SetCookieCulture(null, this._httpCookie));
+        }
+
+        [Test()]
+        public void CookieManager_ChangeCultureTest_EmptyStringArgumentThrowsNullReferenceException2()
+        {
+            Assert.Throws(
+                typeof(ArgumentException),
+                () => this._cookieManager.SetCookieCulture(string.Empty, this._httpCookie));
         }
 
         [Test()]
