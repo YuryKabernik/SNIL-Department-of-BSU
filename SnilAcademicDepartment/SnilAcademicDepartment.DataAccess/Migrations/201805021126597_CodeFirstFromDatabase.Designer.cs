@@ -7,13 +7,13 @@ namespace SnilAcademicDepartment.DataAccess.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class EditAfterExtractingConfigs : IMigrationMetadata
+    public sealed partial class CodeFirstFromDatabase : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(EditAfterExtractingConfigs));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(CodeFirstFromDatabase));
         
         string IMigrationMetadata.Id
         {
-            get { return "201805021039480_EditAfterExtractingConfigs"; }
+            get { return "201805021126597_CodeFirstFromDatabase"; }
         }
         
         string IMigrationMetadata.Source

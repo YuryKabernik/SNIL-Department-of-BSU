@@ -64,13 +64,13 @@
     <Compile Include="Configurations\SpecializationConfig.cs" />
     <Compile Include="Configurations\TopicConfig.cs" />
     <Compile Include="Interfaces\IRepository.cs" />
-    <Compile Include="Migrations\201804241010135_CodeFiirstFromDatabase.cs" />
-    <Compile Include="Migrations\201804241010135_CodeFiirstFromDatabase.Designer.cs">
-      <DependentUpon>201804241010135_CodeFiirstFromDatabase.cs</DependentUpon>
+    <Compile Include="Migrations\201805021126597_CodeFirstFromDatabase.cs" />
+    <Compile Include="Migrations\201805021126597_CodeFirstFromDatabase.Designer.cs">
+      <DependentUpon>201805021126597_CodeFirstFromDatabase.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201805021039480_EditAfterExtractingConfigs.cs" />
-    <Compile Include="Migrations\201805021039480_EditAfterExtractingConfigs.Designer.cs">
-      <DependentUpon>201805021039480_EditAfterExtractingConfigs.cs</DependentUpon>
+    <Compile Include="Migrations\201805021130529_AddFieldPointsToHallOfFame.cs" />
+    <Compile Include="Migrations\201805021130529_AddFieldPointsToHallOfFame.Designer.cs">
+      <DependentUpon>201805021130529_AddFieldPointsToHallOfFame.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Biography.cs" />
@@ -96,13 +96,12 @@
     <None Include="App.Config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201804241010135_CodeFiirstFromDatabase.resx">
-      <DependentUpon>201804241010135_CodeFiirstFromDatabase.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201805021126597_CodeFirstFromDatabase.resx">
+      <DependentUpon>201805021126597_CodeFirstFromDatabase.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201805021039480_EditAfterExtractingConfigs.resx">
-      <DependentUpon>201805021039480_EditAfterExtractingConfigs.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201805021130529_AddFieldPointsToHallOfFame.resx">
+      <DependentUpon>201805021130529_AddFieldPointsToHallOfFame.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

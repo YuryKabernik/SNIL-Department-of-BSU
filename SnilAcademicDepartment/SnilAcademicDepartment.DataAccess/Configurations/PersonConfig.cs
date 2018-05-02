@@ -48,7 +48,7 @@ namespace SnilAcademicDepartment.DataAccess.Configurations
 
             this.HasMany(e => e.Seminars)
                 .WithMany(e => e.People)
-                .Map(m => m.ToTable("SeminarPersons").MapLeftKey("PersonId").MapRightKey("SeminarId"));
+                .Map(m => m.ToTable("SeminarPerson").MapLeftKey("PersonId").MapRightKey("SeminarId"));
 
             this.HasMany(e => e.Lectures)
                 .WithMany(e => e.People)

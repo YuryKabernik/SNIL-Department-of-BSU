@@ -1,4 +1,5 @@
 using System.Data.Entity;
+using System.Data.Entity.ModelConfiguration.Conventions;
 using SnilAcademicDepartment.DataAccess.Configurations;
 using SnilAcademicDepartment.DataAccess.Migrations;
 
@@ -34,6 +35,7 @@ namespace SnilAcademicDepartment.DataAccess
         {
             base.OnModelCreating(modelBuilder);
 
+            modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
             modelBuilder.Configurations.Add(new BiographyConfig());
             modelBuilder.Configurations.Add(new DocumentConfig());
             modelBuilder.Configurations.Add(new EducationBlockConfig());

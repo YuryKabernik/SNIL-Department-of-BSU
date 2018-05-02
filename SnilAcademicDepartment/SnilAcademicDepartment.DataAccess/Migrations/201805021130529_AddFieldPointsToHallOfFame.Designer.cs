@@ -7,13 +7,13 @@ namespace SnilAcademicDepartment.DataAccess.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class CodeFiirstFromDatabase : IMigrationMetadata
+    public sealed partial class AddFieldPointsToHallOfFame : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(CodeFiirstFromDatabase));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(AddFieldPointsToHallOfFame));
         
         string IMigrationMetadata.Id
         {
-            get { return "201804241010135_CodeFiirstFromDatabase"; }
+            get { return "201805021130529_AddFieldPointsToHallOfFame"; }
         }
         
         string IMigrationMetadata.Source
