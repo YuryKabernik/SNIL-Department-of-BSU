@@ -68,6 +68,10 @@
     <Compile Include="Migrations\201804241010135_CodeFiirstFromDatabase.Designer.cs">
       <DependentUpon>201804241010135_CodeFiirstFromDatabase.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201805021039480_EditAfterExtractingConfigs.cs" />
+    <Compile Include="Migrations\201805021039480_EditAfterExtractingConfigs.Designer.cs">
+      <DependentUpon>201805021039480_EditAfterExtractingConfigs.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Biography.cs" />
     <Compile Include="DBContext\DBContext.cs" />
@@ -96,6 +100,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201804241010135_CodeFiirstFromDatabase.resx">
       <DependentUpon>201804241010135_CodeFiirstFromDatabase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805021039480_EditAfterExtractingConfigs.resx">
+      <DependentUpon>201805021039480_EditAfterExtractingConfigs.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

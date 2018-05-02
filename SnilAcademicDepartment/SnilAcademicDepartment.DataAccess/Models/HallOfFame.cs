@@ -9,6 +9,8 @@ namespace SnilAcademicDepartment.DataAccess
 
         public int PersonId { get; set; }
 
+        public uint Points { get; set; }
+
         public virtual Person Person { get; set; }
     }
 }

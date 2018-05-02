@@ -23,6 +23,9 @@ namespace SnilAcademicDepartment.DataAccess.Configurations
                 .WithRequired(e => e.Image1)
                 .HasForeignKey(e => e.Image)
                 .WillCascadeOnDelete(false);
+
+            this.HasOptional(e => e.Person)
+                .WithOptionalPrincipal(e => e.Image);
         }
     }
 }

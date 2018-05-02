@@ -1,5 +1,6 @@
 using System.Data.Entity;
 using SnilAcademicDepartment.DataAccess.Configurations;
+using SnilAcademicDepartment.DataAccess.Migrations;
 
 namespace SnilAcademicDepartment.DataAccess
 {
@@ -7,8 +8,9 @@ namespace SnilAcademicDepartment.DataAccess
     public partial class DBContext : DbContext
     {
         public DBContext()
-            : base("name=SNILDepartment")
+            : base("name=SNILDepartment2")
         {
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<DBContext, Configuration>("IdentityDb"));
         }
 
         public virtual DbSet<Biography> Biographies { get; set; }

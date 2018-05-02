@@ -17,5 +17,7 @@ namespace SnilAcademicDepartment.DataAccess
         public virtual ICollection<EducationBlock> EducationBlocks { get; set; } = new HashSet<EducationBlock>();
 
         public virtual ICollection<Project> Projects { get; set; } = new HashSet<Project>();
+
+        public Person Person { get; set; }
     }
 }

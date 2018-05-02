@@ -20,7 +20,7 @@ namespace SnilAcademicDepartment.DataAccess.Configurations
 
             this.HasMany(e => e.Seminars)
                 .WithOptional(e => e.Document)
-                .HasForeignKey(e => e.DocFile);
+                .HasForeignKey(e => e.DoctId);
 
         }
     }

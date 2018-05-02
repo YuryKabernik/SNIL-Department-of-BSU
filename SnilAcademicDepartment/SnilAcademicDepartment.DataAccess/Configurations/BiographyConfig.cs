@@ -6,6 +6,8 @@ namespace SnilAcademicDepartment.DataAccess.Configurations
     {
         public BiographyConfig()
         {
+            this.ToTable("Biographies");
+
             this.HasKey(p => p.BiographyId);
 
             this.Property(p => p.Description)

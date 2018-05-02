@@ -18,7 +18,7 @@ namespace SnilAcademicDepartment.DataAccess
         [Column(TypeName = "date")]
         public DateTime EventDate { get; set; }
 
-        public int? DocFile { get; set; }
+        public int? DoctId { get; set; }
 
         public int ResponsiblePersonId { get; set; }
 

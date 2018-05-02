@@ -24,7 +24,7 @@ namespace SnilAcademicDepartment.DataAccess
 
         public Image Image { get; set; }
 
-        public Language Localisation { get; set; }
+        public int Localisation { get; set; }
 
         // Внешние связи
 
@@ -40,4 +40,5 @@ namespace SnilAcademicDepartment.DataAccess
 
         public virtual ICollection<Lecture> Lectures { get; set; } = new HashSet<Lecture>();
     }
+    // EditAfterExtractingConfigs
 }
