@@ -36,6 +36,12 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="SimpleInjector, Version=4.2.2.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
+      <HintPath>..\packages\SimpleInjector.4.2.2\lib\net45\SimpleInjector.dll</HintPath>
+    </Reference>
+    <Reference Include="SimpleInjector.Packaging, Version=4.2.2.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
+      <HintPath>..\packages\SimpleInjector.Packaging.4.2.2\lib\net40\SimpleInjector.Packaging.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -49,20 +55,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Configurations\BiographyConfig.cs" />
-    <Compile Include="Configurations\DocumentConfig.cs" />
-    <Compile Include="Configurations\EducationBlockConfig.cs" />
-    <Compile Include="Configurations\EducationTopicConfiguration.cs" />
-    <Compile Include="Configurations\HallOfFameConfiguration.cs" />
-    <Compile Include="Configurations\ImageConfig.cs" />
-    <Compile Include="Configurations\LanguageConfig.cs" />
-    <Compile Include="Configurations\LectureConfig.cs" />
-    <Compile Include="Configurations\PageTypeConfig.cs" />
-    <Compile Include="Configurations\PersonConfig.cs" />
-    <Compile Include="Configurations\PreViewConfig.cs" />
-    <Compile Include="Configurations\ProjectConfig.cs" />
-    <Compile Include="Configurations\SpecializationConfig.cs" />
-    <Compile Include="Configurations\TopicConfig.cs" />
+    <Compile Include="EntitiesConfiguration\BiographyConfig.cs" />
+    <Compile Include="EntitiesConfiguration\DocumentConfig.cs" />
+    <Compile Include="EntitiesConfiguration\EducationBlockConfig.cs" />
+    <Compile Include="EntitiesConfiguration\EducationTopicConfiguration.cs" />
+    <Compile Include="EntitiesConfiguration\HallOfFameConfiguration.cs" />
+    <Compile Include="EntitiesConfiguration\ImageConfig.cs" />
+    <Compile Include="EntitiesConfiguration\LanguageConfig.cs" />
+    <Compile Include="EntitiesConfiguration\LectureConfig.cs" />
+    <Compile Include="EntitiesConfiguration\PageTypeConfig.cs" />
+    <Compile Include="EntitiesConfiguration\PersonConfig.cs" />
+    <Compile Include="EntitiesConfiguration\PreViewConfig.cs" />
+    <Compile Include="EntitiesConfiguration\ProjectConfig.cs" />
+    <Compile Include="EntitiesConfiguration\SpecializationConfig.cs" />
+    <Compile Include="EntitiesConfiguration\TopicConfig.cs" />
+    <Compile Include="InjectionPackageDAL.cs" />
     <Compile Include="Interfaces\IRepository.cs" />
     <Compile Include="Migrations\201805021126597_CodeFirstFromDatabase.cs" />
     <Compile Include="Migrations\201805021126597_CodeFirstFromDatabase.Designer.cs">

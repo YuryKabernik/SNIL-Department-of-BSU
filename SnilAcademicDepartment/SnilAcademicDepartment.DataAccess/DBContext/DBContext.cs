@@ -6,12 +6,12 @@ using SnilAcademicDepartment.DataAccess.Migrations;
 namespace SnilAcademicDepartment.DataAccess
 {
 
-    public partial class DBContext : DbContext
+    public partial class SnilDBContext : DbContext
     {
-        public DBContext()
+        public SnilDBContext()
             : base("name=SNILDepartment2")
         {
-            Database.SetInitializer(new MigrateDatabaseToLatestVersion<DBContext, Configuration>("IdentityDb"));
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<SnilDBContext, Configuration>("IdentityDb"));
         }
 
         public virtual DbSet<Biography> Biographies { get; set; }

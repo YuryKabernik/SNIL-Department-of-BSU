@@ -5,14 +5,14 @@ namespace SnilAcademicDepartment.DataAccess.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<SnilAcademicDepartment.DataAccess.DBContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<SnilAcademicDepartment.DataAccess.SnilDBContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(SnilAcademicDepartment.DataAccess.DBContext context)
+        protected override void Seed(SnilAcademicDepartment.DataAccess.SnilDBContext context)
         {
             //  This method will be called after migrating to the latest version.
 
