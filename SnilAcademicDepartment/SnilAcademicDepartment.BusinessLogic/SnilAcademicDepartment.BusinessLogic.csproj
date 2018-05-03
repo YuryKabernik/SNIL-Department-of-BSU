@@ -58,7 +58,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BusinessLogicInjectionPackage.cs" />
+    <Compile Include="InjectionPackageBLL.cs" />
     <Compile Include="Enum\ProjectType.cs" />
     <Compile Include="Interfaces\ISendMail.cs" />
     <Compile Include="Interfaces\IEducation.cs" />

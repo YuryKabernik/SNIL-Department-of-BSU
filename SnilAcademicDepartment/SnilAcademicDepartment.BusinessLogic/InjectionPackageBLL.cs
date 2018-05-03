@@ -5,7 +5,7 @@ using SnilAcademicDepartment.BusinessLogic.Services;
 
 namespace SnilAcademicDepartment.BusinessLogic
 {
-    public class BusinessLogicInjectionPackage : IPackage
+    public class InjectionPackageBLL : IPackage
     {
         public void RegisterServices(Container container)
         {
