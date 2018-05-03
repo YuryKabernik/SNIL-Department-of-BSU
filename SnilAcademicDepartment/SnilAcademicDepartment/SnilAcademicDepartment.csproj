@@ -103,6 +103,12 @@
     <Reference Include="SimpleInjector, Version=4.2.2.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
       <HintPath>..\packages\SimpleInjector.4.2.2\lib\net45\SimpleInjector.dll</HintPath>
     </Reference>
+    <Reference Include="SimpleInjector.Integration.Web, Version=4.2.2.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
+      <HintPath>..\packages\SimpleInjector.Integration.Web.4.2.2\lib\net40\SimpleInjector.Integration.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="SimpleInjector.Integration.Web.Mvc, Version=4.2.2.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
+      <HintPath>..\packages\SimpleInjector.Integration.Web.Mvc.4.2.2\lib\net40\SimpleInjector.Integration.Web.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -172,6 +178,7 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\InjectorConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\CookiesController.cs" />
     <Compile Include="Controllers\EducationController.cs" />
@@ -500,6 +507,10 @@
     <ProjectReference Include="..\SnilAcademicDepartment.BusinessLogic\SnilAcademicDepartment.BusinessLogic.csproj">
       <Project>{1af45174-72ca-481b-8e17-64fa0864a462}</Project>
       <Name>SnilAcademicDepartment.BusinessLogic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SnilAcademicDepartment.Common\SnilAcademicDepartment.Common.csproj">
+      <Project>{907F30B1-1365-41CB-98D3-A649398A578C}</Project>
+      <Name>SnilAcademicDepartment.Common</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

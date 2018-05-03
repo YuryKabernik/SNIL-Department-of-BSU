@@ -1,6 +1,5 @@
 ﻿using NLog;
 using SnilAcademicDepartment.BusinessLogic.Interfaces;
-using SnilAcademicDepartment.DataAccess.Interface;
 using System;
 using System.Web;
 using System.Globalization;

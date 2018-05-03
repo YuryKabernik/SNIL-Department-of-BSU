@@ -3,7 +3,7 @@ using SimpleInjector;
 using SimpleInjector.Packaging;
 using SnilAcademicDepartment.Common.LoggerAdapter;
 
-namespace SnilAcademicDepartment.Common.Common
+namespace SnilAcademicDepartment.Common
 {
     /// <summary>
     /// Registering services in SimpleInjector in runtime.

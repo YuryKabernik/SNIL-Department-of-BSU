@@ -1,7 +1,7 @@
 ﻿using NLog;
 using SnilAcademicDepartment.BusinessLogic.Interfaces;
 using SnilAcademicDepartment.BusinessLogic.Models;
-using SnilAcademicDepartment.DataAccess.Interface;
+using SnilAcademicDepartment.DataAccess;
 using System;
 using System.Collections.Generic;
 
@@ -10,9 +10,9 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
     public class PeopleService : IPeople
     {
         private readonly ILogger _logger;
-        private readonly IRepository _repository;
+        private readonly SnilDBContext _repository;
 
-        public PeopleService(ILogger logger, IRepository repository)
+        public PeopleService(ILogger logger, SnilDBContext repository)
         {
             this._logger = logger;
             this._repository = repository;
@@ -23,7 +23,7 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
             throw new NotImplementedException();
         }
 
-        public IEnumerable<PreView> GetPreViews()
+        public IEnumerable<Models.PreView> GetPreViews()
         {
             throw new NotImplementedException();
         }

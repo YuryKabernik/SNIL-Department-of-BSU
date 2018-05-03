@@ -1,28 +1,27 @@
 ﻿using System.Collections.Generic;
 using NLog;
 using SnilAcademicDepartment.BusinessLogic.Interfaces;
-using SnilAcademicDepartment.BusinessLogic.Models;
-using SnilAcademicDepartment.DataAccess.Interface;
+using SnilAcademicDepartment.DataAccess;
 
 namespace SnilAcademicDepartment.BusinessLogic.Services
 {
     public class HomeService : IIndex
     {
         private readonly ILogger _logger;
-        private readonly IRepository _repository;
+        private readonly SnilDBContext _repository;
 
-        public HomeService(ILogger logger, IRepository repository)
+        public HomeService(ILogger logger, SnilDBContext repository)
         {
             this._logger = logger;
             this._repository = repository;
         }
 
-        public IEnumerable<PreView> GetIndexPreRolls()
+        public IEnumerable<Models.PreView> GetIndexPreRolls()
         {
             throw new System.NotImplementedException();
         }
 
-        public IEnumerable<PreView> GetIndexPreViews()
+        public IEnumerable<Models.PreView> GetIndexPreViews()
         {
             throw new System.NotImplementedException();
         }

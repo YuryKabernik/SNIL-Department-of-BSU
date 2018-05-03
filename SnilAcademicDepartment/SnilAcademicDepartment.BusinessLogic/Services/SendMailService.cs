@@ -7,6 +7,11 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
 {
     public class SendMailService : IMailSender, ISendMail
     {
+        public SendMailService()
+        {
+
+        }
+
         public void SendMail(MailMessage mail)
         {
             throw new System.NotImplementedException();

@@ -1,8 +1,7 @@
 ﻿using NLog;
 using SnilAcademicDepartment.BusinessLogic.Enums;
 using SnilAcademicDepartment.BusinessLogic.Interfaces;
-using SnilAcademicDepartment.BusinessLogic.Models;
-using SnilAcademicDepartment.DataAccess.Interface;
+using SnilAcademicDepartment.DataAccess;
 using System;
 using System.Collections.Generic;
 
@@ -11,20 +10,20 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
     public class ProjectsService : IProjects
     {
         private readonly ILogger _logger;
-        private readonly IRepository _repository;
+        private readonly SnilDBContext _repository;
 
-        public ProjectsService(ILogger logger, IRepository repository)
+        public ProjectsService(ILogger logger, SnilDBContext repository)
         {
             this._logger = logger;
             this._repository = repository;
         }
 
-        public PreView GetPreView()
+        public Models.PreView GetPreView()
         {
             throw new NotImplementedException();
         }
 
-        public IEnumerable<Project> GetProjects(ProjectType projectType)
+        public IEnumerable<Models.Project> GetProjects(ProjectType projectType)
         {
             throw new NotImplementedException();
         }
