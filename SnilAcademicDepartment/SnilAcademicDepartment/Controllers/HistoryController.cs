@@ -1,14 +1,25 @@
-﻿using SnilAcademicDepartment.Filters;
+﻿using NLog;
+using SnilAcademicDepartment.BusinessLogic.Interfaces;
+using SnilAcademicDepartment.Filters;
 using System.Web.Mvc;
 
 namespace SnilAcademicDepartment.Controllers
 {
     [Culture]
     public class HistoryController : Controller
-    { 
-        public HistoryController()
-        {
+    {
+        private readonly ILogger _logger;
+        private readonly IHistory _historyService;
 
+        /// <summary>
+        /// Constructor of the HistoryController.
+        /// </summary>
+        /// <param name="logger"></param>
+        /// <param name="historyService"></param>
+        public HistoryController(ILogger logger, IHistory historyService)
+        {
+            this._logger = logger;
+            this._historyService = historyService;
         }
 
         [HttpGet]

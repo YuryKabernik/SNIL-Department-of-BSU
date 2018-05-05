@@ -1,4 +1,6 @@
-﻿using SnilAcademicDepartment.Filters;
+﻿using NLog;
+using SnilAcademicDepartment.Filters;
+using SnilAcademicDepartment.BusinessLogic.Interfaces;
 using System.Web.Mvc;
 
 namespace SnilAcademicDepartment.Controllers
@@ -6,9 +8,18 @@ namespace SnilAcademicDepartment.Controllers
     [Culture]
     public class PersonsController : Controller
     {
-        public PersonsController()
-        {
+        private readonly ILogger _logger;
+        private readonly IPeople _peopleService;
 
+        /// <summary>
+        /// Constructor of the PersonsController.
+        /// </summary>
+        /// <param name="logger"></param>
+        /// <param name="peopleService"></param>
+        public PersonsController(ILogger logger, IPeople peopleService)
+        {
+            this._logger = logger;
+            this._peopleService = peopleService;
         }
 
         [HttpGet]

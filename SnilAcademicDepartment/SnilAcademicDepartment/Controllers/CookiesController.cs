@@ -4,7 +4,6 @@ using SnilAcademicDepartment.BusinessLogic.Interfaces;
 using System.Web;
 using System.Web.Mvc;
 using System.Globalization;
-// using SnilAcademicDepartment.BusinessLogic.Services;
 
 namespace SnilAcademicDepartment.Controllers
 {
@@ -12,12 +11,6 @@ namespace SnilAcademicDepartment.Controllers
     {
         private readonly ILogger _logger;
         private readonly ICookieManager _cookieManager;
-
-        //public CookiesController()
-        //{
-        //    this._logger = new LogFactory().GetLogger($"{typeof(CookiesController)}");
-        //    this._cookieManager = new CookieManager(this._logger);
-        //}
 
         public CookiesController(ILogger logger, ICookieManager cookieManager)
         {
