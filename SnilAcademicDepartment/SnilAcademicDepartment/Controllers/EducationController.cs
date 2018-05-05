@@ -6,6 +6,7 @@ using System.Web.Mvc;
 namespace SnilAcademicDepartment.Controllers
 {
     [Culture]
+    [RoutePrefix("{language}")]
     public class EducationController : Controller
     {
         private readonly ILogger _logger;

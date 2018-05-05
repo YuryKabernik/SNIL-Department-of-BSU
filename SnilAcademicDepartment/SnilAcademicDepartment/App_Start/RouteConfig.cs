@@ -7,15 +7,23 @@ namespace SnilAcademicDepartment
     {
         public static void RegisterRoutes(RouteCollection routes)
         {
+            var lang = System.Threading.Thread.CurrentThread.CurrentUICulture.Name;
+
             routes.MapMvcAttributeRoutes();
 
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
                 name: "Default",
-                url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
-            );
+                url: "{language}/{controller}/{action}/{id}",
+                defaults: new
+                {
+                    language = lang,
+                    controller = "Home",
+                    action = "Index",
+                    id = UrlParameter.Optional
+                }
+             );
         }
     }
 }

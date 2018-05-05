@@ -4,7 +4,6 @@ using System.Web.Mvc;
 using SnilAcademicDepartment.Common.Infrastructure;
 using SimpleInjector;
 using SimpleInjector.Integration.Web.Mvc;
-// using SimpleInjector.Lifestyles;
 using SimpleInjector.Integration.Web;
 
 namespace SnilAcademicDepartment

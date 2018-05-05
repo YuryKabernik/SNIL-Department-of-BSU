@@ -7,6 +7,7 @@ namespace SnilAcademicDepartment.Controllers
 {
 
     [Culture]
+    [RoutePrefix("{language}")]
     public class ProjectsController : Controller
     {
         private readonly ILogger _logger;
