@@ -5,7 +5,6 @@ using System.Threading;
 using System.Web;
 using System.Globalization;
 using System.Web.Routing;
-using System.Collections.Generic;
 
 namespace SnilAcademicDepartment.Filters.Tests
 {
