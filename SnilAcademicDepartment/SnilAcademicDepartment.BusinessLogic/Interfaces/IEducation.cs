@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace SnilAcademicDepartment.BusinessLogic.Interfaces
 {
-    internal interface IEducation
+    public interface IEducation
     {
         IEnumerable<KeyAreaBlock> GetKeyAreas(uint pages);
     }

@@ -1,4 +1,6 @@
-﻿using SnilAcademicDepartment.Filters;
+﻿using NLog;
+using SnilAcademicDepartment.Filters;
+using SnilAcademicDepartment.BusinessLogic.Interfaces;
 using System.Web.Mvc;
 
 namespace SnilAcademicDepartment.Controllers
@@ -6,9 +8,18 @@ namespace SnilAcademicDepartment.Controllers
     [Culture]
     public class EducationController : Controller
     {
-        public EducationController()
-        {
+        private readonly ILogger _logger;
+        private readonly IEducation _educationService;
 
+        /// <summary>
+        /// Constructor of the EducationController.
+        /// </summary>
+        /// <param name="logger"></param>
+        /// <param name="educationService"></param>
+        public EducationController(ILogger logger, IEducation educationService)
+        {
+            this._logger = logger;
+            this._educationService = educationService;
         }
 
         [HttpGet]
