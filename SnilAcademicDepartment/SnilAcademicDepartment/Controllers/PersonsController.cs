@@ -12,6 +12,7 @@ namespace SnilAcademicDepartment.Controllers
         }
 
         [HttpGet]
+        [Route("Persons")]
         public ActionResult Persons()
         {
             ViewBag.Title = "Persons";
@@ -19,6 +20,7 @@ namespace SnilAcademicDepartment.Controllers
         }
 
         [HttpGet]
+        [Route("Administration")]
         public ActionResult Administration()
         {
             ViewBag.Title = "Administration";
@@ -26,6 +28,7 @@ namespace SnilAcademicDepartment.Controllers
         }
 
         [HttpGet]
+        [Route("Students")]
         public ActionResult Students()
         {
             ViewBag.Title = "Stuedents";
@@ -33,13 +36,15 @@ namespace SnilAcademicDepartment.Controllers
         }
 
         [HttpGet]
+        [Route("MS")]
         public ActionResult MS()
         {
-            ViewBag.Title = "MS";
+            ViewBag.Title = "Master of Science";
             return View();
         }
 
         [HttpGet]
+        [Route("PHDs")]
         public ActionResult PHDs()
         {
             ViewBag.Title = "PHDs";

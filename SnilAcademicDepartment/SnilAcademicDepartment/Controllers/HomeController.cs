@@ -18,6 +18,7 @@ namespace SnilAcademicDepartment.Controllers
         }
 
         [HttpGet]
+        [Route("About")]
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
@@ -25,6 +26,7 @@ namespace SnilAcademicDepartment.Controllers
         }
 
         [HttpGet]
+        [Route("Contact")]
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
