@@ -24,7 +24,7 @@ namespace SnilAcademicDepartment.Controllers
         public ActionResult PageArchive()
         {
             ViewBag.Title = "Archive";
-            return View("Error");
+            return View();
         }
 
         [HttpGet]
