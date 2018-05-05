@@ -35,8 +35,8 @@ namespace SnilAcademicDepartment.Filters
             if (string.IsNullOrEmpty(cultureName))
                 cultureName = "en";
 
-            Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture(cultureName);
-            Thread.CurrentThread.CurrentUICulture = CultureInfo.CreateSpecificCulture(cultureName);
+            // Set culture if it's not user custom culture.
+            this.SetThreadCulture(cultureName);
         }
 
         public void OnActionExecuting(ActionExecutingContext filterContext)
@@ -89,6 +89,26 @@ namespace SnilAcademicDepartment.Filters
                 return CultureInfo.GetCultureInfo(userLanguages[0]).TextInfo.CultureName;
 
             return null;
+        }
+
+        /// <summary>
+        /// Sets user's culture or default culture to thread.
+        /// </summary>
+        /// <param name="cultureName">Culture to set in current Thread.</param>
+        private void SetThreadCulture(string cultureName)
+        {
+            var isCustomCulture = new CultureInfo(cultureName).CultureTypes.HasFlag(CultureTypes.UserCustomCulture);
+
+            if (!isCustomCulture)
+            {
+                Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture(cultureName);
+                Thread.CurrentThread.CurrentUICulture = CultureInfo.CreateSpecificCulture(cultureName);
+            }
+            else
+            {
+                Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture("en");
+                Thread.CurrentThread.CurrentUICulture = CultureInfo.CreateSpecificCulture("en");
+            }
         }
     }
 }

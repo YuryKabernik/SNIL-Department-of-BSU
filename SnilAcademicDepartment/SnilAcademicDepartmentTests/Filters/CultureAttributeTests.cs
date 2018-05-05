@@ -29,7 +29,7 @@ namespace SnilAcademicDepartment.Filters.Tests
         }
 
         [Test()]
-        public void CultureAttribute_OnActionExecutedTest_SetGoodCultureFromCookie()
+        public void CultureAttribute_OnActionExecutedTest_SetGoodRuCultureFromCookie()
         {
             var language = "ru";
             var cookieName = "language";
@@ -233,23 +233,5 @@ namespace SnilAcademicDepartment.Filters.Tests
             Assert.AreEqual(CultureInfo.GetCultureInfo("en").TwoLetterISOLanguageName,
                 Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName);
         }
-
-        //[Test()]
-        //public void CultureAttribute_OnActionExecutedTest_SetCultureFromHeader()
-        //{
-        //    this._cultureAttribute.OnActionExecuted(this._filterContext.Object);
-
-        //    Assert.AreEqual(,Thread.CurrentThread.CurrentCulture.Name);
-        //    Assert.AreEqual(,Thread.CurrentThread.CurrentUICulture.Name);
-        //}
-
-        //[Test()]
-        //public void CultureAttribute_OnActionExecutedTest_SetCultureFromRoute()
-        //{
-        //    this._cultureAttribute.OnActionExecuted(this._filterContext.Object);
-
-        //    Assert.AreEqual(, Thread.CurrentThread.CurrentCulture.Name);
-        //    Assert.AreEqual(, Thread.CurrentThread.CurrentUICulture.Name);
-        //}
     }
 }
