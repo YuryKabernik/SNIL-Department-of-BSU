@@ -12,6 +12,7 @@ namespace SnilAcademicDepartment.Controllers
         }
 
         [HttpGet]
+        [Route("Education")]
         public ActionResult Education()
         {
             ViewBag.Title = "Education";
@@ -19,6 +20,7 @@ namespace SnilAcademicDepartment.Controllers
         }
 
         [HttpGet]
+        [Route("PageQuickLearning")]
         public ActionResult PageQuickLearning()
         {
             ViewBag.Title = "Quick Learning";
@@ -26,6 +28,7 @@ namespace SnilAcademicDepartment.Controllers
         }
 
         [HttpGet]
+        [Route("PageSeminars")]
         public ActionResult PageSeminars()
         {
             ViewBag.Title = "Seminars";
@@ -33,6 +36,7 @@ namespace SnilAcademicDepartment.Controllers
         }
 
         [HttpGet]
+        [Route("PageLectures")]
         public ActionResult PageLectures()
         {
             ViewBag.Title = "Lecturs";
