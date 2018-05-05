@@ -27,7 +27,7 @@ namespace SnilAcademicDepartment.BusinessLogic.Services.Tests
         }
 
         [Test()]
-        public void CookieManager_ChangeCultureTest_NullReferenceArgumentThrowsNullReferenceException()
+        public void CookieManager_ChangeCultureTest_NullReferenceArgumentThrowsArgumentException()
         {
             Assert.Throws(
                 typeof(ArgumentException),
@@ -35,7 +35,7 @@ namespace SnilAcademicDepartment.BusinessLogic.Services.Tests
         }
 
         [Test()]
-        public void CookieManager_ChangeCultureTest_EmptyStringArgumentThrowsNullReferenceException2()
+        public void CookieManager_ChangeCultureTest_EmptyStringArgumentThrowsArgumentException()
         {
             Assert.Throws(
                 typeof(ArgumentException),
@@ -43,11 +43,11 @@ namespace SnilAcademicDepartment.BusinessLogic.Services.Tests
         }
 
         [Test()]
-        public void CookieManager_ChangeCultureTest_BadArgumentThrows()
+        public void CookieManager_ChangeCultureTest_BadArgumentThrowsCultureNotFoundException()
         {
             Assert.Throws(
                 typeof(CultureNotFoundException),
-                () => this._cookieManager.SetCookieCulture("asls", this._httpCookie));
+                () => this._cookieManager.SetCookieCulture("цц", this._httpCookie));
         }
 
         [Test()]

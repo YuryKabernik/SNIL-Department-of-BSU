@@ -64,9 +64,17 @@ namespace SnilAcademicDepartment.Controllers
         {
             string returnUrl;
             var segm = Request.UrlReferrer.Segments;
-            segm.SetValue(cookie.Value, 1);
 
-            returnUrl = string.Join<string>("/", segm).Remove(0,1);
+            if(segm.Length != 1)
+            {
+                segm.SetValue(cookie.Value, 1);
+                returnUrl = string.Join<string>("/", segm).Remove(0, 1);
+            }
+            else
+            {
+                returnUrl = segm[0] + cookie.Value;
+            }
+
             return returnUrl;
         }
     }

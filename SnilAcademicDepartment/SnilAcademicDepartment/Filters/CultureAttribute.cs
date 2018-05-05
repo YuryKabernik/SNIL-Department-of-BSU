@@ -16,12 +16,12 @@ namespace SnilAcademicDepartment.Filters
 
             try
             {
-                // Get language from cookies.
-                cultureName = this.GetCookieCulture(filterContext);
-
                 // Get language from route.
+                cultureName = this.GetRouteCulture(filterContext);
+
+                // Get language from cookies.
                 if (string.IsNullOrEmpty(cultureName))
-                    cultureName = this.GetRouteCulture(filterContext);
+                    cultureName = this.GetCookieCulture(filterContext);
 
                 // Get language from request headers.
                 if (string.IsNullOrEmpty(cultureName))

@@ -31,15 +31,25 @@ namespace SnilAcademicDepartment.Filters.Tests
         [Test()]
         public void CultureAttribute_OnActionExecutedTest_SetGoodRuCultureFromCookie()
         {
-            var language = "ru";
+            // Setup route
+            string language = null;
+            var routeParameter = "language";
+
+            this._filterContext.Setup(cfg => cfg.HttpContext)
+                .Returns(this._httpContext.Object);
+
+            this._filterContext.Setup(cfg => cfg.RouteData)
+                .Returns(this._routeData.Object);
+
+            this._routeData.Object.Values.Add(routeParameter, language);
+
+            // Setup cookie
+            language = "ru";
             var cookieName = "language";
             var cookie = new HttpCookie(cookieName, language);
 
             var collection = new HttpCookieCollection();
             collection.Add(cookie);
-
-            this._filterContext.Setup(cfg => cfg.HttpContext)
-                .Returns(_httpContext.Object);
 
             this._filterContext.Setup(cfg => cfg.HttpContext.Request)
                 .Returns(_httpRequest.Object);
@@ -59,15 +69,25 @@ namespace SnilAcademicDepartment.Filters.Tests
         [Test()]
         public void CultureAttribute_OnActionExecutedTest_BadCultureFromCookieSetENCultureByDefault()
         {
-            var language = "eruip";
+            // Setup route
+            var language = "qwerav";
+            var routeParameter = "language";
+
+            this._filterContext.Setup(cfg => cfg.HttpContext)
+                .Returns(this._httpContext.Object);
+
+            this._filterContext.Setup(cfg => cfg.RouteData)
+                .Returns(this._routeData.Object);
+
+            this._routeData.Object.Values.Add(routeParameter, language);
+
+            // Setup cookie
+            language = "eru";
             var cookieName = "language";
             var cookie = new HttpCookie(cookieName, language);
 
             var collection = new HttpCookieCollection();
             collection.Add(cookie);
-
-            this._filterContext.Setup(cfg => cfg.HttpContext)
-                .Returns(this._httpContext.Object);
 
             this._filterContext.Setup(cfg => cfg.HttpContext.Request)
                 .Returns(this._httpRequest.Object);
@@ -125,23 +145,6 @@ namespace SnilAcademicDepartment.Filters.Tests
         [Test()]
         public void CultureAttribute_OnActionExecutedTest_SetGoodCultureFromRoute()
         {
-            // Setup cookie
-            var cookieLang = "eruip";
-            var cookieName = "language2";
-            var cookie = new HttpCookie(cookieName, cookieLang);
-
-            var collection = new HttpCookieCollection();
-            collection.Add(cookie);
-
-            this._filterContext.Setup(cfg => cfg.HttpContext)
-                .Returns(this._httpContext.Object);
-
-            this._filterContext.Setup(cfg => cfg.HttpContext.Request)
-                .Returns(this._httpRequest.Object);
-
-            this._filterContext.Setup(cfg => cfg.HttpContext.Request.Cookies)
-                .Returns(collection);
-
             // Setup route
             var language = "de";
             var routeParameter = "language";
