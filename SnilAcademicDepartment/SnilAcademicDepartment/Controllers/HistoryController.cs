@@ -12,6 +12,7 @@ namespace SnilAcademicDepartment.Controllers
         }
 
         [HttpGet]
+        [Route("History")]
         public ActionResult History()
         {
             ViewBag.Title = "History";
@@ -19,13 +20,15 @@ namespace SnilAcademicDepartment.Controllers
         }
 
         [HttpGet]
+        [Route("PageArchive")]
         public ActionResult PageArchive()
         {
             ViewBag.Title = "Archive";
-            return View();
+            return View("Error");
         }
 
         [HttpGet]
+        [Route("PageIEEE")]
         public ActionResult PageIEEE()
         {
             ViewBag.Title = "IEEE";
@@ -33,6 +36,7 @@ namespace SnilAcademicDepartment.Controllers
         }
 
         [HttpGet]
+        [Route("PageReview")]
         public ActionResult PageReview()
         {
             ViewBag.Title = "Review";
@@ -40,6 +44,7 @@ namespace SnilAcademicDepartment.Controllers
         }
 
         [HttpGet]
+        [Route("PageReports")]
         public ActionResult PageReports()
         {
             ViewBag.Title = "Reports";
