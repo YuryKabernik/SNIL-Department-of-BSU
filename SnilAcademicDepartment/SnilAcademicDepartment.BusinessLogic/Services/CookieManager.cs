@@ -31,13 +31,13 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
 
             // Save selected culture in the cookie.
             if (cookie != null)
-                cookie.Value = culture.Name;   // If the cookie is installed, then we update the values.
+                cookie.Value = culture.TextInfo.CultureName;   // If the cookie is installed, then we update the values.
             else
             {
                 cookie = new HttpCookie(newCookieName)
                 {
                     HttpOnly = false,
-                    Value = culture.Name,
+                    Value = culture.TextInfo.CultureName,
                     Expires = DateTime.Now.AddHours(1)
                 };
             }
