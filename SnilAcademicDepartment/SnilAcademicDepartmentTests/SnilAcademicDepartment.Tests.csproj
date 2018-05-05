@@ -108,6 +108,7 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
+    <Compile Include="Controllers\CookiesControllerTests.cs" />
     <Compile Include="Controllers\EducationControllerTests.cs" />
     <Compile Include="Controllers\HistoryControllerTests.cs" />
     <Compile Include="Controllers\HomeControllerTests.cs" />
