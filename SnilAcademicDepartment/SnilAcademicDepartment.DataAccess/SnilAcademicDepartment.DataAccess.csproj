@@ -30,8 +30,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -40,9 +49,60 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DBContext.cs" />
-    <Compile Include="Interface\IRepository.cs" />
+    <Compile Include="Configurations\BiographyConfig.cs" />
+    <Compile Include="Configurations\DocumentConfig.cs" />
+    <Compile Include="Configurations\EducationBlockConfig.cs" />
+    <Compile Include="Configurations\EducationTopicConfiguration.cs" />
+    <Compile Include="Configurations\HallOfFameConfiguration.cs" />
+    <Compile Include="Configurations\ImageConfig.cs" />
+    <Compile Include="Configurations\LanguageConfig.cs" />
+    <Compile Include="Configurations\LectureConfig.cs" />
+    <Compile Include="Configurations\PageTypeConfig.cs" />
+    <Compile Include="Configurations\PersonConfig.cs" />
+    <Compile Include="Configurations\PreViewConfig.cs" />
+    <Compile Include="Configurations\ProjectConfig.cs" />
+    <Compile Include="Configurations\SpecializationConfig.cs" />
+    <Compile Include="Configurations\TopicConfig.cs" />
+    <Compile Include="Interfaces\IRepository.cs" />
+    <Compile Include="Migrations\201805021126597_CodeFirstFromDatabase.cs" />
+    <Compile Include="Migrations\201805021126597_CodeFirstFromDatabase.Designer.cs">
+      <DependentUpon>201805021126597_CodeFirstFromDatabase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805021130529_AddFieldPointsToHallOfFame.cs" />
+    <Compile Include="Migrations\201805021130529_AddFieldPointsToHallOfFame.Designer.cs">
+      <DependentUpon>201805021130529_AddFieldPointsToHallOfFame.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Biography.cs" />
+    <Compile Include="DBContext\DBContext.cs" />
+    <Compile Include="Models\Document.cs" />
+    <Compile Include="Models\EducationBlock.cs" />
+    <Compile Include="Models\EducationTopic.cs" />
+    <Compile Include="Models\HallOfFame.cs" />
+    <Compile Include="Models\Image.cs" />
+    <Compile Include="Models\Language.cs" />
+    <Compile Include="Models\Lecture.cs" />
+    <Compile Include="Models\PageType.cs" />
+    <Compile Include="Models\Person.cs" />
+    <Compile Include="Models\PreView.cs" />
+    <Compile Include="Models\Project.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Models\Seminar.cs" />
+    <Compile Include="Models\Specialisation.cs" />
+    <Compile Include="sysdiagram.cs" />
+    <Compile Include="Models\Topic.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201805021126597_CodeFirstFromDatabase.resx">
+      <DependentUpon>201805021126597_CodeFirstFromDatabase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805021130529_AddFieldPointsToHallOfFame.resx">
+      <DependentUpon>201805021130529_AddFieldPointsToHallOfFame.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

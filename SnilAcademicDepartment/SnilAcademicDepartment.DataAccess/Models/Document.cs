@@ -1,0 +1,27 @@
+namespace SnilAcademicDepartment.DataAccess
+{
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+    using System.Data.Entity.Spatial;
+
+    public partial class Document
+    {
+        public int DocumentId { get; set; }
+
+        public string DocumentName { get; set; }
+
+        public bool? IsDeleted { get; set; }
+
+        public DateTime CreatedOn { get; set; }
+
+        public DateTime? ModifiedOn { get; set; }
+
+        public byte[] FileContent { get; set; }
+
+        public virtual ICollection<Project> Projects { get; set; } = new HashSet<Project>();
+
+        public virtual ICollection<Seminar> Seminars { get; set; } = new HashSet<Seminar>();
+    }
+}
