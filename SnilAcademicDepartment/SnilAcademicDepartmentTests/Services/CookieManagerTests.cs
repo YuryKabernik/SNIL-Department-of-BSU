@@ -53,25 +53,34 @@ namespace SnilAcademicDepartment.BusinessLogic.Services.Tests
         [Test()]
         public void CookieManager_ChangeCultureTest_DeParameterSetsThreatCultureDe()
         {
-            var cookieResult = this._cookieManager.SetCookieCulture("de", this._httpCookie);
+            var setCulture = "de-DE";
+
+            var cookieResult = this._cookieManager.SetCookieCulture(setCulture, this._httpCookie);
+
             Assert.IsNotNull(cookieResult);
-            Assert.AreEqual("de", cookieResult.Value);
+            Assert.AreEqual(setCulture, cookieResult.Value);
         }
 
         [Test()]
         public void CookieManager_ChangeCultureTest_EnParameterSetsThreatCultureEn()
         {
-            var cookieResult = this._cookieManager.SetCookieCulture("en", this._httpCookie);
+            var setCulture = "en-US";
+
+            var cookieResult = this._cookieManager.SetCookieCulture(setCulture, this._httpCookie);
+
             Assert.IsNotNull(cookieResult);
-            Assert.AreEqual("en", cookieResult.Value);
+            Assert.AreEqual(setCulture, cookieResult.Value);
         }
 
         [Test()]
         public void CookieManager_ChangeCultureTest_RuParameterSetsThreatCultureRu()
         {
-            var cookieResult = this._cookieManager.SetCookieCulture("ru", null);
+            var setCulture = "ru-RU";
+
+            var cookieResult = this._cookieManager.SetCookieCulture(setCulture, null);
+
             Assert.IsNotNull(cookieResult);
-            Assert.AreEqual("ru", cookieResult.Value);
+            Assert.AreEqual(setCulture, cookieResult.Value);
         }
     }
 }

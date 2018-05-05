@@ -55,7 +55,7 @@ namespace SnilAcademicDepartment.Filters
             var cultureCookie = filterContext.HttpContext.Request.Cookies["language"];
 
             if (cultureCookie != null)
-                return CultureInfo.GetCultureInfo(cultureCookie.Value).Name;
+                return CultureInfo.GetCultureInfo(cultureCookie.Value).TextInfo.CultureName;
             else
                 return null;
         }
@@ -70,7 +70,7 @@ namespace SnilAcademicDepartment.Filters
             var routeLanguage = filterContext.RouteData.Values["language"] as string;
 
             if (!string.IsNullOrEmpty(routeLanguage))
-                return CultureInfo.GetCultureInfo(routeLanguage).Name;
+                return CultureInfo.GetCultureInfo(routeLanguage).TextInfo.CultureName;
 
             return null;
         }
@@ -86,7 +86,7 @@ namespace SnilAcademicDepartment.Filters
             var userLanguages = filterContext.HttpContext.Request.UserLanguages;
 
             if (userLanguages != null && userLanguages.Length != 0)
-                return CultureInfo.GetCultureInfo(userLanguages[0]).Name;
+                return CultureInfo.GetCultureInfo(userLanguages[0]).TextInfo.CultureName;
 
             return null;
         }
