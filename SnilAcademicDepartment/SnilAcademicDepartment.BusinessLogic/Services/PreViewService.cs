@@ -59,7 +59,7 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
 
             if (requestResult == null)
             {
-                throw new InvalidOperationException("Cant't find previews for this page/\.");
+                throw new InvalidOperationException("Cant't find previews for this page.");
             }
 
             return this._mapper.Map<IEnumerable<Models.PreView>>(requestResult);
