@@ -1,5 +1,4 @@
-﻿using AutoMapper;
-using SimpleInjector;
+﻿using SimpleInjector;
 using SimpleInjector.Packaging;
 using SnilAcademicDepartment.BusinessLogic.Interfaces;
 using SnilAcademicDepartment.BusinessLogic.Services;
@@ -10,9 +9,6 @@ namespace SnilAcademicDepartment.BusinessLogic
     {
         public void RegisterServices(Container container)
         {
-            // Register Mapper.
-            container.Register<IMapper, Mapper>(Lifestyle.Scoped);
-
             // Register Services.
             container.Register<ICookieManager, CookieManager>(Lifestyle.Scoped);
             container.Register<IEducation, EducationService>(Lifestyle.Scoped);
