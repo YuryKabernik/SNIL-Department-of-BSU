@@ -55,6 +55,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DBTypesInitialisation\EducationKeyAreaDBInit.cs" />
+    <Compile Include="DBTypesInitialisation\EducationTopicDBInit.cs" />
+    <Compile Include="DBTypesInitialisation\ImageDBInit.cs" />
     <Compile Include="DBTypesInitialisation\LanguageDBInit.cs" />
     <Compile Include="DBTypesInitialisation\PageTypeDBInit.cs" />
     <Compile Include="DBTypesInitialisation\PreviewDBInit.cs" />
