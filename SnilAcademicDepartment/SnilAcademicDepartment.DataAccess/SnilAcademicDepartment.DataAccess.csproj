@@ -113,5 +113,8 @@
       <DependentUpon>201805021130529_AddFieldPointsToHallOfFame.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="img\BSU3.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
