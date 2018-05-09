@@ -1,15 +1,11 @@
 ﻿using NLog;
-using SnilAcademicDepartment.Filters;
 using SnilAcademicDepartment.BusinessLogic.Interfaces;
 using System.Web.Mvc;
 using SnilAcademicDepartment.BusinessLogic.Models;
 using System.Threading;
-using System.Drawing.Imaging;
-using System;
 
 namespace SnilAcademicDepartment.Controllers
 {
-    [Culture]
     [RoutePrefix("{language}")]
     public class EducationController : Controller
     {

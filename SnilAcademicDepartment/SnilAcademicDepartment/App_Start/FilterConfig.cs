@@ -1,4 +1,4 @@
-﻿using System.Web;
+﻿using SnilAcademicDepartment.Filters;
 using System.Web.Mvc;
 
 namespace SnilAcademicDepartment
@@ -8,6 +8,7 @@ namespace SnilAcademicDepartment
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
             filters.Add(new HandleErrorAttribute());
+            filters.Add(new CultureAttribute());
         }
     }
 }
