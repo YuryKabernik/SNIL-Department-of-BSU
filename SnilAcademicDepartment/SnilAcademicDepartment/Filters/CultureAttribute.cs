@@ -10,7 +10,7 @@ namespace SnilAcademicDepartment.Filters
         /// Culture filter on action executed.
         /// </summary>
         /// <param name="filterContext"> Action executed context.</param>
-        public void OnActionExecuted(ActionExecutedContext filterContext)
+        public void OnActionExecuting(ActionExecutingContext filterContext)
         {
             string cultureName = string.Empty;
 
@@ -39,7 +39,7 @@ namespace SnilAcademicDepartment.Filters
             this.SetThreadCulture(cultureName);
         }
 
-        public void OnActionExecuting(ActionExecutingContext filterContext)
+        public void OnActionExecuted(ActionExecutedContext filterContext)
         {
             // throw new NotImplementedException("Method is not implemented.");
         }
@@ -49,7 +49,7 @@ namespace SnilAcademicDepartment.Filters
         /// </summary>
         /// <param name="filterContext">Base filter context.</param>
         /// <returns>The string of current request culture.</returns>
-        private string GetCookieCulture(ActionExecutedContext filterContext)
+        private string GetCookieCulture(ActionExecutingContext filterContext)
         {
             // Получаем куки из контекста, которые могут содержать установленную культуру
             var cultureCookie = filterContext.HttpContext.Request.Cookies["language"];
@@ -65,7 +65,7 @@ namespace SnilAcademicDepartment.Filters
         /// </summary>
         /// <param name="filterContext">Base filter context.</param>
         /// <returns>The string of current request culture.</returns>
-        private string GetRouteCulture(ActionExecutedContext filterContext)
+        private string GetRouteCulture(ActionExecutingContext filterContext)
         {
             var routeLanguage = filterContext.RouteData.Values["language"] as string;
 
@@ -80,7 +80,7 @@ namespace SnilAcademicDepartment.Filters
         /// </summary>
         /// <param name="filterContext">Base filter context.</param>
         /// <returns>The string of current request culture.</returns>
-        private string GetHeaderCulture(ActionExecutedContext filterContext)
+        private string GetHeaderCulture(ActionExecutingContext filterContext)
         {
             // Получаем заголовок из запроса, который может содержать установленную культуру
             var userLanguages = filterContext.HttpContext.Request.UserLanguages;

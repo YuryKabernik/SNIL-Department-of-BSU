@@ -1,11 +1,9 @@
 ﻿using NLog;
 using SnilAcademicDepartment.BusinessLogic.Interfaces;
-using SnilAcademicDepartment.Filters;
 using System.Web.Mvc;
 
 namespace SnilAcademicDepartment.Controllers
 {
-    [Culture]
     [RoutePrefix("{language}")]
     public class HistoryController : Controller
     {
