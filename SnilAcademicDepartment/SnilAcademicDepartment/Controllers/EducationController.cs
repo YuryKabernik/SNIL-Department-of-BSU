@@ -2,6 +2,10 @@
 using SnilAcademicDepartment.Filters;
 using SnilAcademicDepartment.BusinessLogic.Interfaces;
 using System.Web.Mvc;
+using SnilAcademicDepartment.BusinessLogic.Models;
+using System.Threading;
+using System.Drawing.Imaging;
+using System;
 
 namespace SnilAcademicDepartment.Controllers
 {
@@ -10,24 +14,39 @@ namespace SnilAcademicDepartment.Controllers
     public class EducationController : Controller
     {
         private readonly ILogger _logger;
-        private readonly IEducation _educationService;
+        private readonly IService _previewService;
 
         /// <summary>
         /// Constructor of the EducationController.
         /// </summary>
         /// <param name="logger"></param>
-        /// <param name="educationService"></param>
-        public EducationController(ILogger logger, IEducation educationService)
+        /// <param name="previewService"></param>
+        public EducationController(ILogger logger, IService previewService)
         {
             this._logger = logger;
-            this._educationService = educationService;
+            this._previewService = previewService;
         }
 
         [HttpGet]
         [Route("Education")]
         public ActionResult Education()
         {
+            PreView viewModel = null;
+
+            try
+            {
+                // Get data.
+                viewModel = this._previewService.GetPagePreview("Education", Thread.CurrentThread.CurrentCulture.LCID);
+            }
+            catch (System.Exception ex)
+            {
+
+                throw;
+            }
+
             ViewBag.Title = "Education";
+            ViewBag.viewModel = viewModel;
+
             return View();
         }
 

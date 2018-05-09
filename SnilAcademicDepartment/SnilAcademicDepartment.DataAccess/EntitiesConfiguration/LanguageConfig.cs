@@ -15,7 +15,6 @@ namespace SnilAcademicDepartment.DataAccess.Configurations
                 .IsRequired();
 
             this.Property(p => p.LanguageCode)
-                .HasMaxLength(5)
                 .IsRequired();
 
             this.HasMany(e => e.EducationBlocks)

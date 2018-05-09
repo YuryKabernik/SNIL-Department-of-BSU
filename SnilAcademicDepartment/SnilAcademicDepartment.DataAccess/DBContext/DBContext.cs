@@ -9,9 +9,10 @@ namespace SnilAcademicDepartment.DataAccess
     public partial class SnilDBContext : DbContext
     {
         public SnilDBContext()
-            : base("name=SNILDepartment2")
+            : base("SNILDepartment2")
         {
-            Database.SetInitializer(new MigrateDatabaseToLatestVersion<SnilDBContext, Configuration>("IdentityDb"));
+            // Uncomment this to use migration
+            // Database.SetInitializer(new MigrateDatabaseToLatestVersion<SnilDBContext, Configuration>("SNILDepartment2"));
         }
 
         public virtual DbSet<Biography> Biographies { get; set; }

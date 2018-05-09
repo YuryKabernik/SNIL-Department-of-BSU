@@ -52,21 +52,21 @@ namespace SnilAcademicDepartment.BusinessLogic.Services.Tests
         public void PreViewService_GetPagePreviewTest_NullArgumentReturnsArgumentNullException()
         {
             Assert.Throws<ArgumentNullException>(
-                () => this._service.GetPagePreview(null));
+                () => this._service.GetPagePreview(null, It.IsAny<int>()));
         }
 
         [Test()]
         public void PreViewService_GetPagePreviewTest_EmptyArgumentReturnsArgumentNullException()
         {
             Assert.Throws<ArgumentNullException>(
-                () => this._service.GetPagePreview(String.Empty));
+                () => this._service.GetPagePreview(String.Empty, It.IsAny<int>()));
         }
 
         [Test()]
         public void PreViewService_GetPagePreviewTest_WhiteSpaceArgumentReturnsArgumentNullException()
         {
             Assert.Throws<ArgumentNullException>(
-                () => this._service.GetPagePreview(" "));
+                () => this._service.GetPagePreview(" ", It.IsAny<int>()));
         }
 
         [Test()]
@@ -75,7 +75,7 @@ namespace SnilAcademicDepartment.BusinessLogic.Services.Tests
             this._mockRepository.Setup(cfg => cfg.PreViews)
                 .Returns(this._mockDbSet.Object);
 
-            var result = this._service.GetPagePreview("BBB");
+            var result = this._service.GetPagePreview("BBB", It.IsAny<int>());
 
             Assert.IsNotNull(result);
             Assert.IsInstanceOf<Models.PreView>(result);
@@ -90,7 +90,7 @@ namespace SnilAcademicDepartment.BusinessLogic.Services.Tests
             this._mockDbSet.Object.Add(It.IsAny<PreView>());
 
             Assert.Throws<InvalidOperationException>(
-                () => this._service.GetPagePreview(It.IsAny<string>())
+                () => this._service.GetPagePreview(It.IsAny<string>(), It.IsAny<int>())
                 );
         }
         

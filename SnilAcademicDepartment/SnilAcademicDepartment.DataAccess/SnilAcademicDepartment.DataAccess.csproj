@@ -79,6 +79,10 @@
     <Compile Include="Migrations\201805021130529_AddFieldPointsToHallOfFame.Designer.cs">
       <DependentUpon>201805021130529_AddFieldPointsToHallOfFame.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201805091031220_ChangeLanguageCodeTypeToInt32.cs" />
+    <Compile Include="Migrations\201805091031220_ChangeLanguageCodeTypeToInt32.Designer.cs">
+      <DependentUpon>201805091031220_ChangeLanguageCodeTypeToInt32.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Biography.cs" />
     <Compile Include="DBContext\DBContext.cs" />
@@ -111,6 +115,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201805021130529_AddFieldPointsToHallOfFame.resx">
       <DependentUpon>201805021130529_AddFieldPointsToHallOfFame.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805091031220_ChangeLanguageCodeTypeToInt32.resx">
+      <DependentUpon>201805091031220_ChangeLanguageCodeTypeToInt32.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

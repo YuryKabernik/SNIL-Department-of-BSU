@@ -26,14 +26,16 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
         /// </summary>
         /// <param name="pageType">Type of the page.</param>
         /// <returns>Single page preview.</returns>
-        public Models.PreView GetPagePreview(string pageType)
+        public Models.PreView GetPagePreview(string pageType, int langLCID)
         {
             if (string.IsNullOrEmpty(pageType) || string.IsNullOrWhiteSpace(pageType))
             {
                 throw new ArgumentNullException(nameof(pageType), "Your argument is Null, Empty or WhiteSpace");
             }
 
-            var requestResult = this._repository.PreViews.FirstOrDefault(e => e.PageTypeName.PageTypeName == pageType);
+            var requestResult = this._repository.PreViews
+                .FirstOrDefault(e => pageType.Equals(e.PageTypeName.PageTypeName,StringComparison.OrdinalIgnoreCase)
+                && e.Language.LanguageCode == langLCID);
 
             if (requestResult == null)
             {

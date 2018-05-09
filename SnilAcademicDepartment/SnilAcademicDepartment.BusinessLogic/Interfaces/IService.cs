@@ -8,7 +8,7 @@ namespace SnilAcademicDepartment.BusinessLogic.Interfaces
     /// </summary>
     public interface IService
     {
-        PreView GetPagePreview(string pageType);
+        PreView GetPagePreview(string pageType, int langLCID);
         IEnumerable<PreView> GetPagePreviews(string pageType);
     }
 }

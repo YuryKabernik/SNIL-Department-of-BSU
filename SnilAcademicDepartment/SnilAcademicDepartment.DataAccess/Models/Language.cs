@@ -10,7 +10,7 @@ namespace SnilAcademicDepartment.DataAccess
 
         public string LanguageName { get; set; }
 
-        public string LanguageCode { get; set; }
+        public int LanguageCode { get; set; }
 
         public virtual ICollection<EducationBlock> EducationBlocks { get; set; } = new HashSet<EducationBlock>();
 

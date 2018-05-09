@@ -30,9 +30,18 @@ namespace SnilAcademicDepartment.DataAccess.Migrations
         };
 
         private Language[] _languages = new Language[] {
-            new Language{ LanguageName = "RU", LanguageCode = CultureInfo.GetCultureInfo("ru").LCID.ToString() },
-            new Language{ LanguageName = "EN", LanguageCode = CultureInfo.GetCultureInfo("en").LCID.ToString() },
-            new Language{ LanguageName = "DE", LanguageCode = CultureInfo.GetCultureInfo("de").LCID.ToString() }
+             new Language{
+                LanguageName = CultureInfo.GetCultureInfo("ru-RU").Name,
+                LanguageCode = CultureInfo.GetCultureInfo("ru-RU").LCID
+            },
+            new Language{
+                LanguageName = CultureInfo.GetCultureInfo("en-US").Name,
+                LanguageCode = CultureInfo.GetCultureInfo("en-US").LCID
+            },
+            new Language{
+                LanguageName = CultureInfo.GetCultureInfo("de-DE").Name,
+                LanguageCode = CultureInfo.GetCultureInfo("de-DE").LCID
+            }
         };
 
         private byte[] _img = File.ReadAllBytes(@"D:\GitHub_projects\SNIL\SNIL-Department-of-BSU\SnilAcademicDepartment\SnilAcademicDepartment.DataAccess\img\BSU3.jpg");
