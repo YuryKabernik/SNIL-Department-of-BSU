@@ -1,7 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using AutoMapper;
+using AutoMapper.Configuration;
 using SimpleInjector;
 
 namespace SnilAcademicDepartment.Common.Infrastructure
@@ -26,7 +29,7 @@ namespace SnilAcademicDepartment.Common.Infrastructure
 
             container.RegisterPackages(assemblies);
 
-            // RegisterAutoMapper(container, assemblies);
+            RegisterAutoMapper(container, assemblies);
             // RegisterFluentValidation(container, assemblies);
         }
 
@@ -54,31 +57,31 @@ namespace SnilAcademicDepartment.Common.Infrastructure
         /// <param name="assemblies">
         ///     List of assemblies of application.
         /// </param>
-        //private static void RegisterAutoMapper(Container container, IEnumerable<Assembly> assemblies)
-        //{
-        //    container.Register(
-        //        () =>
-        //        {
-        //            if (assemblies == null)
-        //            {
-        //                throw new ArgumentNullException(
-        //                    nameof(assemblies),
-        //                    "Collection of assemblies is null.");
-        //            }
+        private static void RegisterAutoMapper(Container container, IEnumerable<Assembly> assemblies)
+        {
+            container.Register(
+                () =>
+                {
+                    if (assemblies == null)
+                    {
+                        throw new ArgumentNullException(
+                            nameof(assemblies),
+                            "Collection of assemblies is null.");
+                    }
 
-        //            var mapperConfigurationExpression = new MapperConfigurationExpression();
-        //            mapperConfigurationExpression.ConstructServicesUsing(container.GetInstance);
+                    var mapperConfigurationExpression = new MapperConfigurationExpression();
+                    mapperConfigurationExpression.ConstructServicesUsing(container.GetInstance);
 
-        //            mapperConfigurationExpression.AddProfiles(assemblies);
+                    mapperConfigurationExpression.AddProfiles(assemblies);
 
-        //            var mapperConfiguration = new MapperConfiguration(mapperConfigurationExpression);
-        //            mapperConfiguration.AssertConfigurationIsValid();
+                    var mapperConfiguration = new MapperConfiguration(mapperConfigurationExpression);
+                    mapperConfiguration.AssertConfigurationIsValid();
 
-        //            IMapper mapper = new Mapper(mapperConfiguration, container.GetInstance);
+                    IMapper mapper = new Mapper(mapperConfiguration, container.GetInstance);
 
-        //            return mapper;
-        //        },
-        //        Lifestyle.Singleton);
-        //}
+                    return mapper;
+                },
+                Lifestyle.Singleton);
+        }
     }
 }

@@ -33,6 +33,9 @@
     <CodeAnalysisRuleSet />
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=6.2.2.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.6.2.2\lib\net45\AutoMapper.dll</HintPath>
+    </Reference>
     <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
       <HintPath>..\packages\NLog.4.5.3\lib\net45\NLog.dll</HintPath>
     </Reference>
@@ -61,11 +64,13 @@
     <Compile Include="CustomExceptions\PreviewTypeNotFoundException.cs" />
     <Compile Include="LoggerAdapter\NLogAdapter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SalesAggregatorPackage.cs" />
+    <Compile Include="SnilDepartmentPackage.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
