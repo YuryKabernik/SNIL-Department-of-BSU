@@ -40,16 +40,16 @@ namespace SnilAcademicDepartment.DataAccess.Migrations
                 ImageDBInit.DBInit(db, this._imgByte, out this._image);
 
                 // Add Education blocks.
-                EducationKeyAreaDBInit.DBInit(db, "Seminar", "RU", this._image, this._languages[1], this._educationBlocks);
-                EducationKeyAreaDBInit.DBInit(db, "ENSeminar", "EN", this._image, this._languages[0], this._educationBlocks);
+                EducationKeyAreaDBInit.DBInit(db, "Seminar", "RU", this._image, this._languages[0], this._educationBlocks);
+                EducationKeyAreaDBInit.DBInit(db, "ENSeminar", "EN", this._image, this._languages[1], this._educationBlocks);
                 EducationKeyAreaDBInit.DBInit(db, "DESeminar", "DE", this._image, this._languages[2], this._educationBlocks);
 
-                EducationKeyAreaDBInit.DBInit(db, "Lection", "RU", this._image, this._languages[1], this._educationBlocks);
-                EducationKeyAreaDBInit.DBInit(db, "ENLection", "EN", this._image, this._languages[0], this._educationBlocks);
+                EducationKeyAreaDBInit.DBInit(db, "Lection", "RU", this._image, this._languages[0], this._educationBlocks);
+                EducationKeyAreaDBInit.DBInit(db, "ENLection", "EN", this._image, this._languages[1], this._educationBlocks);
                 EducationKeyAreaDBInit.DBInit(db, "DELection", "DE", this._image, this._languages[2], this._educationBlocks);
 
-                EducationKeyAreaDBInit.DBInit(db, "QuickLearning", "RU", this._image, this._languages[1], this._educationBlocks);
-                EducationKeyAreaDBInit.DBInit(db, "ENQuickLearning", "EN", this._image, this._languages[0], this._educationBlocks);
+                EducationKeyAreaDBInit.DBInit(db, "QuickLearning", "RU", this._image, this._languages[0], this._educationBlocks);
+                EducationKeyAreaDBInit.DBInit(db, "ENQuickLearning", "EN", this._image, this._languages[1], this._educationBlocks);
                 EducationKeyAreaDBInit.DBInit(db, "DEQuickLearning", "DE", this._image, this._languages[2], this._educationBlocks);
 
                 // Add EducationTopics.
@@ -58,44 +58,44 @@ namespace SnilAcademicDepartment.DataAccess.Migrations
                 EducationQuickLerning(db);
 
                 // Init History page preview data.
-                PreviewDBInit.DBInit(db, "History","RU", this._pageTypes[4], this._languages[1], this._imgByte);
-                PreviewDBInit.DBInit(db, "Èñòîðèÿ", "EN", this._pageTypes[4], this._languages[0], this._imgByte);
+                PreviewDBInit.DBInit(db, "Èñòîðèÿ","RU", this._pageTypes[4], this._languages[0], this._imgByte);
+                PreviewDBInit.DBInit(db, "History", "EN", this._pageTypes[4], this._languages[1], this._imgByte);
                 PreviewDBInit.DBInit(db, "ÈñòîðèÿDE", "DE", this._pageTypes[4], this._languages[2], this._imgByte);
 
                 // Init People page preview data.
-                PreviewDBInit.DBInit(db, "People", "RU", this._pageTypes[3], this._languages[1], this._imgByte);
-                PreviewDBInit.DBInit(db, "Ïåðñîíàë", "EN", this._pageTypes[3], this._languages[0], this._imgByte);
+                PreviewDBInit.DBInit(db, "Ïåðñîíàë", "RU", this._pageTypes[3], this._languages[0], this._imgByte);
+                PreviewDBInit.DBInit(db, "People", "EN", this._pageTypes[3], this._languages[1], this._imgByte);
                 PreviewDBInit.DBInit(db, "ÏåðñîíàëDE", "DE", this._pageTypes[3], this._languages[2], this._imgByte);
 
                 // Init Projects page preview data.
-                PreviewDBInit.DBInit(db, "Projects", "RU", this._pageTypes[1], this._languages[1], this._imgByte);
-                PreviewDBInit.DBInit(db, "Ïðîåêòû", "EN", this._pageTypes[1], this._languages[0], this._imgByte);
+                PreviewDBInit.DBInit(db, "Ïðîåêòû", "RU", this._pageTypes[1], this._languages[0], this._imgByte);
+                PreviewDBInit.DBInit(db, "Projects", "EN", this._pageTypes[1], this._languages[1], this._imgByte);
                 PreviewDBInit.DBInit(db, "ÏðîåêòûDE", "DE", this._pageTypes[1], this._languages[2], this._imgByte);
 
                 // Init Education page preview data.
-                PreviewDBInit.DBInit(db, "Education", "RU", this._pageTypes[0], this._languages[1], this._imgByte);
-                PreviewDBInit.DBInit(db, "Îáó÷åíèå", "EN", this._pageTypes[0], this._languages[0], this._imgByte);
+                PreviewDBInit.DBInit(db, "Îáó÷åíèå", "RU", this._pageTypes[0], this._languages[0], this._imgByte);
+                PreviewDBInit.DBInit(db, "Education", "EN", this._pageTypes[0], this._languages[1], this._imgByte);
                 PreviewDBInit.DBInit(db, "Îáó÷åíèåDE", "DE", this._pageTypes[0], this._languages[2], this._imgByte);
 
                 // Init Home page preview data.
-                PreviewDBInit.DBInit(db, "HomeProjects", "RUProjects", this._pageTypes[2], this._languages[1], this._imgByte, true);
-                PreviewDBInit.DBInit(db, "ÄîìProjects", "ENProjects", this._pageTypes[2], this._languages[0], this._imgByte, true);
+                PreviewDBInit.DBInit(db, "ÄîìProjects", "RUProjects", this._pageTypes[2], this._languages[0], this._imgByte, true);
+                PreviewDBInit.DBInit(db, "HomeProjects", "ENProjects", this._pageTypes[2], this._languages[1], this._imgByte, true);
                 PreviewDBInit.DBInit(db, "ÄîìDEProjects", "DEProjects", this._pageTypes[2], this._languages[2], this._imgByte, true);
 
-                PreviewDBInit.DBInit(db, "HomeEducation", "RUEducation", this._pageTypes[2], this._languages[1], this._imgByte, true);
-                PreviewDBInit.DBInit(db, "ÄîìEducation", "ENEducation", this._pageTypes[2], this._languages[0], this._imgByte, true);
+                PreviewDBInit.DBInit(db, "ÄîìEducation", "RUEducation", this._pageTypes[2], this._languages[0], this._imgByte, true);
+                PreviewDBInit.DBInit(db, "HomeEducation", "ENEducation", this._pageTypes[2], this._languages[1], this._imgByte, true);
                 PreviewDBInit.DBInit(db, "ÄîìDEEducation", "DEEducation", this._pageTypes[2], this._languages[2], this._imgByte, true);
 
-                PreviewDBInit.DBInit(db, "HomePeople", "RUPeople", this._pageTypes[2], this._languages[1], this._imgByte, true);
-                PreviewDBInit.DBInit(db, "ÄîìPeople", "ENPeople", this._pageTypes[2], this._languages[0], this._imgByte, true);
+                PreviewDBInit.DBInit(db, "ÄîìPeople", "RUPeople", this._pageTypes[2], this._languages[0], this._imgByte, true);
+                PreviewDBInit.DBInit(db, "HomePeople", "ENPeople", this._pageTypes[2], this._languages[1], this._imgByte, true);
                 PreviewDBInit.DBInit(db, "ÄîìDEPeople", "DEPeople", this._pageTypes[2], this._languages[2], this._imgByte, true);
 
-                PreviewDBInit.DBInit(db, "HomeHistory", "RUHistory", this._pageTypes[2], this._languages[1], this._imgByte, true);
-                PreviewDBInit.DBInit(db, "ÄîìHistory", "ENHistory", this._pageTypes[2], this._languages[0], this._imgByte, true);
+                PreviewDBInit.DBInit(db, "ÄîìHistory", "RUHistory", this._pageTypes[2], this._languages[0], this._imgByte, true);
+                PreviewDBInit.DBInit(db, "HomeHistory", "ENHistory", this._pageTypes[2], this._languages[1], this._imgByte, true);
                 PreviewDBInit.DBInit(db, "ÄîìDEHistory", "DEHistory", this._pageTypes[2], this._languages[2], this._imgByte, true);
 
-                PreviewDBInit.DBInit(db, "HomeProjects", "RUProjects", this._pageTypes[2], this._languages[1], this._imgByte, true);
-                PreviewDBInit.DBInit(db, "ÄîìProjects", "ENProjects", this._pageTypes[2], this._languages[0], this._imgByte, true);
+                PreviewDBInit.DBInit(db, "ÄîìProjects", "RUProjects", this._pageTypes[2], this._languages[0], this._imgByte, true);
+                PreviewDBInit.DBInit(db, "HomeProjects", "ENProjects", this._pageTypes[2], this._languages[1], this._imgByte, true);
                 PreviewDBInit.DBInit(db, "ÄîìDEProjects", "DEProjects", this._pageTypes[2], this._languages[2], this._imgByte, true);
             }
         }
