@@ -1,13 +1,12 @@
-using System;
-using System.Data.Entity;
 using System.Data.Entity.Migrations;
-using System.Linq;
-using System.Collections.Generic;
 using System.Globalization;
+using System.Threading.Tasks;
+using System.IO;
+using System.Threading;
 
 namespace SnilAcademicDepartment.DataAccess.Migrations
 {
-    internal sealed class Configuration : DbMigrationsConfiguration<SnilAcademicDepartment.DataAccess.SnilDBContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<SnilDBContext>
     {
         private string _description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. " +
                     "Sunt, consequatur delectus totam molestiae, in nam. Pariatur explicabo velit quas tempore rerum voluptas alias doloribus in repudiandae quos commodi asperiores quae esse iure cumque perspiciatis aperiam, expedita provident aspernatur nisi error molestias repellendus." +
@@ -36,6 +35,8 @@ namespace SnilAcademicDepartment.DataAccess.Migrations
             new Language{ LanguageName = "DE", LanguageCode = CultureInfo.GetCultureInfo("de").LCID.ToString() }
         };
 
+        private byte[] _img = File.ReadAllBytes(@"D:\GitHub_projects\SNIL\SNIL-Department-of-BSU\SnilAcademicDepartment\SnilAcademicDepartment.DataAccess\img\BSU3.jpg");
+
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
@@ -45,35 +46,193 @@ namespace SnilAcademicDepartment.DataAccess.Migrations
         {
             using (var db = new SnilDBContext())
             {
-                // Initial Education preview objects.
-                var previewdEducationEN = new PreView()
-                {
-                    Header = "Education",
-                    ShortDescription = "EN" + this._description,
-                    PageTypeName = this._pageTypes[0],
-                    Language = this._languages[1]
-                };
+                // Add page type and languages.
+                db.PageTypes.AddRange(this._pageTypes);
+                db.Languages.AddRange(this._languages);
+                db.SaveChanges();
 
-                var previewdEducationRU = new PreView()
-                {
-                    Header = "Обучение",
-                    ShortDescription = "RU" + this._description,
-                    PageTypeName = this._pageTypes[0],
-                    Language = this._languages[0]
-                };
-
-                var previewdEducationDE = new PreView()
-                {
-                    Header = "ОбучениеDE",
-                    ShortDescription = "DE" + this._description,
-                    PageTypeName = this._pageTypes[0],
-                    Language = this._languages[2]
-                };
-
-                db.PreViews.Add(previewdEducationEN);
-                db.PreViews.Add(previewdEducationRU);
-                db.PreViews.Add(previewdEducationDE);
+                // Initial previews preview objects.
+                InitialEducationPreviewsAsync(db);
+                InitialProjectsPreviewsAsync(db);
+                InitialHomePreviewsAsync(db);
+                InitialPeoplePreviewsAsync(db);
+                InitialHistoryPreviewsAsync(db);
             }
+        }
+
+        private void InitialHistoryPreviewsAsync(SnilDBContext db)
+        {
+            var previewEN = new PreView()
+            {
+                Header = "History",
+                ShortDescription = "EN" + this._description,
+                PageTypeName = this._pageTypes[4],
+                Language = this._languages[1],
+                Image = this._img
+            };
+
+            var previewRU = new PreView()
+            {
+                Header = "История",
+                ShortDescription = "RU" + this._description,
+                PageTypeName = this._pageTypes[4],
+                Language = this._languages[0],
+                Image = this._img
+            };
+
+            var previewDE = new PreView()
+            {
+                Header = "ИсторияDE",
+                ShortDescription = "DE" + this._description,
+                PageTypeName = this._pageTypes[4],
+                Language = this._languages[2],
+                Image = this._img
+            };
+
+            db.PreViews.Add(previewEN);
+            db.PreViews.Add(previewRU);
+            db.PreViews.Add(previewDE);
+            db.SaveChanges();
+        }
+
+        private void InitialPeoplePreviewsAsync(SnilDBContext db)
+        {
+            var previewEN = new PreView()
+            {
+                Header = "People",
+                ShortDescription = "EN" + this._description,
+                PageTypeName = this._pageTypes[3],
+                Language = this._languages[1],
+                Image = this._img
+            };
+
+            var previewRU = new PreView()
+            {
+                Header = "Персонал",
+                ShortDescription = "RU" + this._description,
+                PageTypeName = this._pageTypes[3],
+                Language = this._languages[0],
+                Image = this._img
+            };
+
+            var previewDE = new PreView()
+            {
+                Header = "ПерсоналDE",
+                ShortDescription = "DE" + this._description,
+                PageTypeName = this._pageTypes[3],
+                Language = this._languages[2],
+                Image = this._img
+            };
+
+            db.PreViews.Add(previewEN);
+            db.PreViews.Add(previewRU);
+            db.PreViews.Add(previewDE);
+            db.SaveChanges();
+        }
+
+        private void InitialHomePreviewsAsync(SnilDBContext db)
+        {
+            var previewEN = new PreView()
+            {
+                Header = "Home",
+                ShortDescription = "EN" + this._description,
+                PageTypeName = this._pageTypes[2],
+                Language = this._languages[1],
+                Image = this._img
+            };
+
+            var previewRU = new PreView()
+            {
+                Header = "Дом",
+                ShortDescription = "RU" + this._description,
+                PageTypeName = this._pageTypes[2],
+                Language = this._languages[0],
+                Image = this._img
+            };
+
+            var previewDE = new PreView()
+            {
+                Header = "ДомDE",
+                ShortDescription = "DE" + this._description,
+                PageTypeName = this._pageTypes[2],
+                Language = this._languages[2],
+                Image = this._img
+            };
+
+            db.PreViews.Add(previewEN);
+            db.PreViews.Add(previewRU);
+            db.PreViews.Add(previewDE);
+            db.SaveChanges();
+        }
+
+        private void InitialProjectsPreviewsAsync(SnilDBContext db)
+        {
+            var previewEN = new PreView()
+            {
+                Header = "Projects",
+                ShortDescription = "EN" + this._description,
+                PageTypeName = this._pageTypes[1],
+                Language = this._languages[1],
+                Image = this._img
+            };
+
+            var previewRU = new PreView()
+            {
+                Header = "Проекты",
+                ShortDescription = "RU" + this._description,
+                PageTypeName = this._pageTypes[1],
+                Language = this._languages[0],
+                Image = this._img
+            };
+
+            var previewDE = new PreView()
+            {
+                Header = "ПроектыDE",
+                ShortDescription = "DE" + this._description,
+                PageTypeName = this._pageTypes[1],
+                Language = this._languages[2],
+                Image = this._img
+            };
+
+            db.PreViews.Add(previewEN);
+            db.PreViews.Add(previewRU);
+            db.PreViews.Add(previewDE);
+            db.SaveChanges();
+        }
+
+        private void InitialEducationPreviewsAsync(SnilDBContext db)
+        {
+            var previewdEducationEN = new PreView()
+            {
+                Header = "Education",
+                ShortDescription = "EN" + this._description,
+                PageTypeName = this._pageTypes[0],
+                Language = this._languages[1],
+                Image = this._img
+            };
+
+            var previewdEducationRU = new PreView()
+            {
+                Header = "Обучение",
+                ShortDescription = "RU" + this._description,
+                PageTypeName = this._pageTypes[0],
+                Language = this._languages[0],
+                Image = this._img
+            };
+
+            var previewdEducationDE = new PreView()
+            {
+                Header = "ОбучениеDE",
+                ShortDescription = "DE" + this._description,
+                PageTypeName = this._pageTypes[0],
+                Language = this._languages[2],
+                Image = this._img
+            };
+
+            db.PreViews.Add(previewdEducationEN);
+            db.PreViews.Add(previewdEducationRU);
+            db.PreViews.Add(previewdEducationDE);
+            db.SaveChanges();
         }
     }
 }
