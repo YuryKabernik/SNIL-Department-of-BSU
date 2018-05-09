@@ -55,6 +55,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DBTypesInitialisation\LanguageDBInit.cs" />
+    <Compile Include="DBTypesInitialisation\PageTypeDBInit.cs" />
+    <Compile Include="DBTypesInitialisation\PreviewDBInit.cs" />
     <Compile Include="EntitiesConfiguration\BiographyConfig.cs" />
     <Compile Include="EntitiesConfiguration\DocumentConfig.cs" />
     <Compile Include="EntitiesConfiguration\EducationBlockConfig.cs" />

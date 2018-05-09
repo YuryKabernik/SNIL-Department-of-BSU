@@ -29,11 +29,11 @@ namespace SnilAcademicDepartment.Filters
             }
             catch (CultureNotFoundException)
             {
-                cultureName = "en";
+                cultureName = "en-US";
             }
 
             if (string.IsNullOrEmpty(cultureName))
-                cultureName = "en";
+                cultureName = "en-US";
 
             // Set culture if it's not user custom culture.
             this.SetThreadCulture(cultureName);
@@ -106,8 +106,8 @@ namespace SnilAcademicDepartment.Filters
             }
             else
             {
-                Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture("en");
-                Thread.CurrentThread.CurrentUICulture = CultureInfo.CreateSpecificCulture("en");
+                Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture("en-US");
+                Thread.CurrentThread.CurrentUICulture = CultureInfo.CreateSpecificCulture("en-US");
             }
         }
     }
