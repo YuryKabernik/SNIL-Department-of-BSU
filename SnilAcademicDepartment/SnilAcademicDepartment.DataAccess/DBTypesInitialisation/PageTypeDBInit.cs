@@ -7,7 +7,8 @@
             new PageType{ PageTypeName = "Projects" },
             new PageType{ PageTypeName = "Home" },
             new PageType{ PageTypeName = "People" },
-            new PageType{ PageTypeName = "History" }
+            new PageType{ PageTypeName = "History" },
+            new PageType{ PageTypeName = "Carousel" }
         };
 
         public static void DBInit(SnilDBContext db, out PageType[] pages)

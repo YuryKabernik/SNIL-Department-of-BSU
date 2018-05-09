@@ -21,12 +21,21 @@ namespace SnilAcademicDepartment.DataAccess.DBTypesInitialisation
                     "Corporis, quaerat labore non porro unde neque vitae nihil saepe qui sint cupiditate placeat, nam, vero laborum quisquam numquam sit aliquam dignissimos animi itaque. " +
                     "Sunt veniam natus reprehenderit doloremque velit, nemo, ut consequatur iure qui, laudantium alias facere.";
 
-        public static void DBInit(SnilDBContext db, string header, PageType pageTypeName, Language language, byte[] imgPath)
+        private static string _shortDiscription = "Участники лаборатории, преподаватели и студенты кафедры. В данном разделе вы можете ознакомиться с преподавательским составом лаборатории и кафедры, а так же с самыми активными студентами и их достижениями в обучении и научной деятельности. Также вы можете ознакомиться с лучшими сотрудниками месяца.";
+
+        public static void DBInit(
+            SnilDBContext db,
+            string header,
+            string discriptionPrefix,
+            PageType pageTypeName,
+            Language language,
+            byte[] imgPath,
+            bool isShorted = false)
         {
             var preview = new PreView()
             {
                 Header = header,
-                ShortDescription = "EN" + _description,
+                ShortDescription = (isShorted ? discriptionPrefix + _description : discriptionPrefix + _shortDiscription),
                 PageTypeName = pageTypeName,
                 Language = language,
                 Image = imgPath

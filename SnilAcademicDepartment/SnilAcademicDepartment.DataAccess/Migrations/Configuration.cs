@@ -58,29 +58,45 @@ namespace SnilAcademicDepartment.DataAccess.Migrations
                 EducationQuickLerning(db);
 
                 // Init History page preview data.
-                PreviewDBInit.DBInit(db, "History", this._pageTypes[4], this._languages[1], this._imgByte);
-                PreviewDBInit.DBInit(db, "История", this._pageTypes[4], this._languages[0], this._imgByte);
-                PreviewDBInit.DBInit(db, "ИсторияDE", this._pageTypes[4], this._languages[2], this._imgByte);
+                PreviewDBInit.DBInit(db, "History","RU", this._pageTypes[4], this._languages[1], this._imgByte);
+                PreviewDBInit.DBInit(db, "История", "EN", this._pageTypes[4], this._languages[0], this._imgByte);
+                PreviewDBInit.DBInit(db, "ИсторияDE", "DE", this._pageTypes[4], this._languages[2], this._imgByte);
 
                 // Init People page preview data.
-                PreviewDBInit.DBInit(db, "People", this._pageTypes[3], this._languages[1], this._imgByte);
-                PreviewDBInit.DBInit(db, "Персонал", this._pageTypes[3], this._languages[0], this._imgByte);
-                PreviewDBInit.DBInit(db, "ПерсоналDE", this._pageTypes[3], this._languages[2], this._imgByte);
-
-                // Init Home page preview data.
-                PreviewDBInit.DBInit(db, "Home", this._pageTypes[2], this._languages[1], this._imgByte);
-                PreviewDBInit.DBInit(db, "Дом", this._pageTypes[2], this._languages[0], this._imgByte);
-                PreviewDBInit.DBInit(db, "ДомDE", this._pageTypes[2], this._languages[2], this._imgByte);
+                PreviewDBInit.DBInit(db, "People", "RU", this._pageTypes[3], this._languages[1], this._imgByte);
+                PreviewDBInit.DBInit(db, "Персонал", "EN", this._pageTypes[3], this._languages[0], this._imgByte);
+                PreviewDBInit.DBInit(db, "ПерсоналDE", "DE", this._pageTypes[3], this._languages[2], this._imgByte);
 
                 // Init Projects page preview data.
-                PreviewDBInit.DBInit(db, "Projects", this._pageTypes[1], this._languages[1], this._imgByte);
-                PreviewDBInit.DBInit(db, "Проекты", this._pageTypes[1], this._languages[0], this._imgByte);
-                PreviewDBInit.DBInit(db, "ПроектыDE", this._pageTypes[1], this._languages[2], this._imgByte);
+                PreviewDBInit.DBInit(db, "Projects", "RU", this._pageTypes[1], this._languages[1], this._imgByte);
+                PreviewDBInit.DBInit(db, "Проекты", "EN", this._pageTypes[1], this._languages[0], this._imgByte);
+                PreviewDBInit.DBInit(db, "ПроектыDE", "DE", this._pageTypes[1], this._languages[2], this._imgByte);
 
                 // Init Education page preview data.
-                PreviewDBInit.DBInit(db, "Education", this._pageTypes[0], this._languages[1], this._imgByte);
-                PreviewDBInit.DBInit(db, "Обучение", this._pageTypes[0], this._languages[0], this._imgByte);
-                PreviewDBInit.DBInit(db, "ОбучениеDE", this._pageTypes[0], this._languages[2], this._imgByte);
+                PreviewDBInit.DBInit(db, "Education", "RU", this._pageTypes[0], this._languages[1], this._imgByte);
+                PreviewDBInit.DBInit(db, "Обучение", "EN", this._pageTypes[0], this._languages[0], this._imgByte);
+                PreviewDBInit.DBInit(db, "ОбучениеDE", "DE", this._pageTypes[0], this._languages[2], this._imgByte);
+
+                // Init Home page preview data.
+                PreviewDBInit.DBInit(db, "HomeProjects", "RUProjects", this._pageTypes[2], this._languages[1], this._imgByte, false);
+                PreviewDBInit.DBInit(db, "ДомProjects", "ENProjects", this._pageTypes[2], this._languages[0], this._imgByte, false);
+                PreviewDBInit.DBInit(db, "ДомDEProjects", "DEProjects", this._pageTypes[2], this._languages[2], this._imgByte, false);
+
+                PreviewDBInit.DBInit(db, "HomeEducation", "RUEducation", this._pageTypes[2], this._languages[1], this._imgByte, false);
+                PreviewDBInit.DBInit(db, "ДомEducation", "ENEducation", this._pageTypes[2], this._languages[0], this._imgByte, false);
+                PreviewDBInit.DBInit(db, "ДомDEEducation", "DEEducation", this._pageTypes[2], this._languages[2], this._imgByte, false);
+
+                PreviewDBInit.DBInit(db, "HomePeople", "RUPeople", this._pageTypes[2], this._languages[1], this._imgByte, false);
+                PreviewDBInit.DBInit(db, "ДомPeople", "ENPeople", this._pageTypes[2], this._languages[0], this._imgByte, false);
+                PreviewDBInit.DBInit(db, "ДомDEPeople", "DEPeople", this._pageTypes[2], this._languages[2], this._imgByte, false);
+
+                PreviewDBInit.DBInit(db, "HomeHistory", "RUHistory", this._pageTypes[2], this._languages[1], this._imgByte, false);
+                PreviewDBInit.DBInit(db, "ДомHistory", "ENHistory", this._pageTypes[2], this._languages[0], this._imgByte, false);
+                PreviewDBInit.DBInit(db, "ДомDEHistory", "DEHistory", this._pageTypes[2], this._languages[2], this._imgByte, false);
+
+                PreviewDBInit.DBInit(db, "HomeProjects", "RUProjects", this._pageTypes[2], this._languages[1], this._imgByte, false);
+                PreviewDBInit.DBInit(db, "ДомProjects", "ENProjects", this._pageTypes[2], this._languages[0], this._imgByte, false);
+                PreviewDBInit.DBInit(db, "ДомDEProjects", "DEProjects", this._pageTypes[2], this._languages[2], this._imgByte, false);
             }
         }
 
