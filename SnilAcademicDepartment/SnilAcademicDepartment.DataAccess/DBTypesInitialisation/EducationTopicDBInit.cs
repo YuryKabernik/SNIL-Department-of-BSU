@@ -8,11 +8,12 @@ namespace SnilAcademicDepartment.DataAccess.DBTypesInitialisation
 {
     public static class EducationTopicDBInit
     {
-        public static void DBInit(SnilDBContext db, string topicName)
+        public static void DBInit(SnilDBContext db, string topicName, EducationBlock educationBlock)
         {
             var preview = new EducationTopic()
             {
-                TopicName = topicName
+                TopicName = topicName,
+                EducationBlock = educationBlock
             };
 
             db.EducationTopics.Add(preview);
