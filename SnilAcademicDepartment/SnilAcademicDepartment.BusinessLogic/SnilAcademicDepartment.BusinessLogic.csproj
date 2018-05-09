@@ -73,7 +73,7 @@
     <Compile Include="Interfaces\IProjects.cs" />
     <Compile Include="Interfaces\IService.cs" />
     <Compile Include="DTOModels\ClientMail.cs" />
-    <Compile Include="DTOModels\KeyAreaBlock.cs" />
+    <Compile Include="DTOModels\EducationBlockModel.cs" />
     <Compile Include="DTOModels\Leader.cs" />
     <Compile Include="DTOModels\PreView.cs" />
     <Compile Include="DTOModels\Project.cs" />

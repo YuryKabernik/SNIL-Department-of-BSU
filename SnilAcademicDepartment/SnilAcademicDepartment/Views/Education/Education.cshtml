@@ -22,79 +22,30 @@
         </div>
     </div>
     <h2>@Resources.EducationResources.EducationResource.KeyDirections</h2><br>
-    <div class="row row2">
-        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-            <a href="#"><img src="../img/BSU3.jpg" alt=""></a>
-        </div>
-        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-            <h4>@Resources.EducationResources.EducationResource.Seminars</h4>
-            <p>
-                Семинары с подробным описанием темы выступления и результатами участия.
-                Раскрытие темы семинаров, мнений участников по представленной тематике и результаты встречи.
-                Вы можете ознакомиться с докладами участников каждого семинара, узнать подробнее о тематике докладов и результатам обработки данных каждого участника события.
-            </p>
-            <p>@Html.ActionLink(Resources.Resource.LearnMore, "PageSeminars", "Education")</p>
-        </div>
-        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 row3">
-            <ul>
-                <li>Gene Expression of Secondary Messengers and Replicates</li>
-                <li>Genomic and Molecular Genetic Directions in the Area of Infectology</li>
-                <li>Software GeneExpressionAnalyser for analysis of DNA microarrays</li>
-                <li>Analysis of DNA microarrays</li>
-                <li>Digital processing biology images</li>
-                <li>Software CellDataMiner for Analysis of Luminescence Images of Cancer Cells</li>
-            </ul>
-        </div>
-    </div>
-    <div class="row row2">
-        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-            <a href="#"><img src="../img/BSU3.jpg" alt=""></a>
-        </div>
-        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-            <h4>@Resources.EducationResources.EducationResource.Lectures</h4>
-            <p>
-                Лекции с подробным описанием плана проведения занятий каждой из дисциплин.
-                Раскрытие темы лекции, основного материала каждого из лекционного занятия, важные определения и формулы.
-                Вы можете ознакомиться с отзывами студентов о зачитанном материале и качестве преподавания сотрудников лаборатории.
-                Также есть возможность ознакомиться с профессианальной деятельностью и заслугами преподавательского состава.
-            </p>
-            <p>@Html.ActionLink(Resources.Resource.LearnMore, "PageLectures", "Education")</p>
-        </div>
-        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 row3">
-            <ul>
-                <li>Mathematical Modeling.</li>
-                <li>Simulation and Statistical Modeling.</li>
-                <li>Theory of Probability and Mathematical Statistics.</li>
-                <li>Random Processes.</li>
-                <li>Stochastic Systems.</li>
-                <li>Basics of Systems Theory.</li>
-                <li>Information-Measuring Systems.</li>
-            </ul>
-        </div>
-    </div>
-    <div class="row row2">
-        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-            <a href="#"><img src="../img/BSU3.jpg" alt=""></a>
-        </div>
-        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-            <h4>@Resources.EducationResources.EducationResource.QuickLearning</h4>
-            <p>
-                Специальная программа ускоренного обучения.
-                На данный момент находится на этапе разработки и корректровки для более результативного изучения теоретического материала в ускоренном режиме.
-                За основу методики была взята польская система Quick Learning и откорректирована под специализацию нашей лаборатории.
-            </p>
-            <p>@Html.ActionLink(Resources.Resource.LearnMore, "PageQuickLearning", "Education")</p>
-        </div>
-        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 row3">
-            <ul>
-                <li>Computer Information Technologies</li>
-                <li>Data Mining</li>
-                <li>Quantum Systems Modeling</li>
-                <li>Databases</li>
-                <li>Neural Networks</li>
-                <li>Programming of Microprocessor Systems</li>
-                <li>Object-Oriented Technologies</li>
-            </ul>
-        </div>
-    </div>
+    @{
+        foreach (var educationBlockModel in ViewBag.blockModel)
+        {
+            var base64Block = Convert.ToBase64String(educationBlockModel.Image);
+            var imgSrcBlock = String.Format("data:image/jpeg;base64,{0}", base64Block);
+
+            <div class="row row2">
+                <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                    <a href="#"><img src="@imgSrcBlock" alt=""></a>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    <h4>@educationBlockModel.Title</h4>
+                    <p>
+                        @educationBlockModel.Description
+                    </p>
+                    <p>@Html.ActionLink(Resources.Resource.LearnMore, "PageSeminars", "Education")</p>
+                </div>
+                <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 row3">
+                    <ul>
+                        @foreach (string topic in educationBlockModel.Topics)
+                        {<li>@topic</li>}
+                    </ul>
+                </div>
+            </div>
+        }
+    }
 </div>

@@ -42,7 +42,7 @@ namespace SnilAcademicDepartment.BusinessLogic.Services.Tests
         [Test()]
         public void HistoryPreView_GetPreViewsTest_GoodPreviewTypeReturnsCollectionOfHistoryPreviews()
         {
-            var resultCollection = (List<Models.PreView>)this._historyService.PreViews("History");
+            var resultCollection = (List<DTOModels.PreView>)this._historyService.PreViews("History");
             Assert.NotNull(resultCollection);
             Assert.NotZero(resultCollection.Count);
         }

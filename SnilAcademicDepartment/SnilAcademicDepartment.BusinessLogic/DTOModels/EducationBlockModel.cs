@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 
-namespace SnilAcademicDepartment.BusinessLogic.Models
+namespace SnilAcademicDepartment.BusinessLogic.DTOModels
 {
-    public class KeyAreaBlock
+    public class EducationBlockModel
     {
         /// <summary>
         /// Key area block title.

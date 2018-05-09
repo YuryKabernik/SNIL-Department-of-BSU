@@ -1,4 +1,4 @@
-﻿using SnilAcademicDepartment.BusinessLogic.Models;
+﻿using SnilAcademicDepartment.BusinessLogic.DTOModels;
 
 namespace SnilAcademicDepartment.BusinessLogic.Interfaces
 {

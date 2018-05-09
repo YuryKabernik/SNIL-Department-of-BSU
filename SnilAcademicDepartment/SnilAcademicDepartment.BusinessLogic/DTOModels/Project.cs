@@ -1,4 +1,4 @@
-﻿namespace SnilAcademicDepartment.BusinessLogic.Models
+﻿namespace SnilAcademicDepartment.BusinessLogic.DTOModels
 {
     public class Project
     {

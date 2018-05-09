@@ -1,8 +1,9 @@
 ﻿using NLog;
 using SnilAcademicDepartment.BusinessLogic.Interfaces;
 using System.Web.Mvc;
-using SnilAcademicDepartment.BusinessLogic.Models;
 using System.Threading;
+using System.Collections.Generic;
+using SnilAcademicDepartment.BusinessLogic.DTOModels;
 
 namespace SnilAcademicDepartment.Controllers
 {
@@ -11,16 +12,18 @@ namespace SnilAcademicDepartment.Controllers
     {
         private readonly ILogger _logger;
         private readonly IService _previewService;
+        private readonly IEducation _educationService;
 
         /// <summary>
         /// Constructor of the EducationController.
         /// </summary>
         /// <param name="logger"></param>
         /// <param name="previewService"></param>
-        public EducationController(ILogger logger, IService previewService)
+        public EducationController(ILogger logger, IService previewService, IEducation educationService)
         {
             this._logger = logger;
             this._previewService = previewService;
+            this._educationService = educationService;
         }
 
         [HttpGet]
@@ -28,20 +31,24 @@ namespace SnilAcademicDepartment.Controllers
         public ActionResult Education()
         {
             PreView viewModel = null;
+            List<EducationBlockModel> blockCollection = null;
 
             try
             {
-                // Get data.
+                // Get page preview data.
                 viewModel = this._previewService.GetPagePreview("Education", Thread.CurrentThread.CurrentCulture.LCID);
+
+                // Get educatio key areas.
+                blockCollection = this._educationService.GetKeyAreas(5, Thread.CurrentThread.CurrentCulture.LCID);
             }
             catch (System.Exception ex)
             {
-
                 throw;
             }
 
             ViewBag.Title = "Education";
             ViewBag.viewModel = viewModel;
+            ViewBag.blockModel = blockCollection;
 
             return View();
         }

@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
 using SnilAcademicDepartment.BusinessLogic.Interfaces;
 using System.Net.Mail;
-using SnilAcademicDepartment.BusinessLogic.Models;
+using SnilAcademicDepartment.BusinessLogic.DTOModels;
 
 namespace SnilAcademicDepartment.BusinessLogic.Services
 {

@@ -2,6 +2,8 @@
 using Moq;
 using SnilAcademicDepartment.Common.LoggerAdapter;
 using SnilAcademicDepartment.DataAccess;
+using AutoMapper;
+using System;
 
 namespace SnilAcademicDepartment.BusinessLogic.Services.Tests
 {
@@ -9,6 +11,7 @@ namespace SnilAcademicDepartment.BusinessLogic.Services.Tests
     public class EducationServiceTests
     {
         private Mock<SnilDBContext> _repositoryMock;
+        private Mock<IMapper> _mapperMock;
         private Mock<NLogAdapter<CookieManagerTests>> _loggerMock;
         private EducationService _educationService;
 
@@ -16,22 +19,26 @@ namespace SnilAcademicDepartment.BusinessLogic.Services.Tests
         public void SetUpMethod()
         {
             this._repositoryMock = new Mock<SnilDBContext>();
+            this._mapperMock = new Mock<IMapper>();
             this._loggerMock = new Mock<NLogAdapter<CookieManagerTests>>();
-            this._educationService = new EducationService(this._loggerMock.Object, this._repositoryMock.Object);
+            this._educationService = new EducationService(this._loggerMock.Object, this._repositoryMock.Object, this._mapperMock.Object);
         }
 
         [Test()]
-        public void EducationService_GetKeyAreasTest_GetSevenPagesIsNotNullCollectionResult()
+        public void EducationService_GetKeyAreasTest_GetMinusSevenPagesThrowsIndexOutOfRangeException()
         {
-            var result = this._educationService.GetKeyAreas(7);
-            Assert.NotNull(result);
+            Assert.Throws<IndexOutOfRangeException>(
+                ()=> this._educationService.GetKeyAreas(-7, It.IsAny<int>())
+                );
         }
 
         [Test()]
-        public void EducationService_GetKeyAreasTest_GetFivePagesIsNotNullCollectionResult()
+        public void EducationService_GetKeyAreasTest_GetMinusFiveLCIDCodeThrowsIndexOutOfRangeException()
         {
-            var result = this._educationService.GetKeyAreas(5);
-            Assert.NotNull(result);
+            Assert.Throws<IndexOutOfRangeException>(
+                () => this._educationService.GetKeyAreas(5, -5)
+                );
         }
+
     }
 }

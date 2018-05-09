@@ -18,12 +18,12 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
             this._repository = repository;
         }
 
-        public Models.PreView GetPreView()
+        public DTOModels.PreView GetPreView()
         {
             throw new NotImplementedException();
         }
 
-        public IEnumerable<Models.Project> GetProjects(ProjectType projectType)
+        public IEnumerable<DTOModels.Project> GetProjects(ProjectType projectType)
         {
             throw new NotImplementedException();
         }

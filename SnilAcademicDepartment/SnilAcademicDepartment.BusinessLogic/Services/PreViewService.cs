@@ -26,7 +26,7 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
         /// </summary>
         /// <param name="pageType">Type of the page.</param>
         /// <returns>Single page preview.</returns>
-        public Models.PreView GetPagePreview(string pageType, int langLCID)
+        public DTOModels.PreView GetPagePreview(string pageType, int langLCID)
         {
             if (string.IsNullOrEmpty(pageType) || string.IsNullOrWhiteSpace(pageType))
             {
@@ -42,7 +42,7 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
                 throw new InvalidOperationException("Cant't find page preview");
             }
 
-            return this._mapper.Map<Models.PreView>(requestResult);
+            return this._mapper.Map<DTOModels.PreView>(requestResult);
         }
 
         /// <summary>
@@ -50,7 +50,7 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
         /// </summary>
         /// <param name="pageType">Name of the preview type.</param>
         /// <returns>Collection of preview.</returns>
-        public IEnumerable<Models.PreView> GetPagePreviews(string pageType)
+        public IEnumerable<DTOModels.PreView> GetPagePreviews(string pageType)
         {
             if (string.IsNullOrEmpty(pageType) || string.IsNullOrWhiteSpace(pageType))
             {
@@ -64,7 +64,7 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
                 throw new InvalidOperationException("Cant't find previews for this page.");
             }
 
-            return this._mapper.Map<IEnumerable<Models.PreView>>(requestResult);
+            return this._mapper.Map<IEnumerable<DTOModels.PreView>>(requestResult);
         }
     }
 }

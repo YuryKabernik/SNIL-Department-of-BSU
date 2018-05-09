@@ -1,4 +1,4 @@
-﻿namespace SnilAcademicDepartment.BusinessLogic.Models
+﻿namespace SnilAcademicDepartment.BusinessLogic.DTOModels
 {
     /// <summary>
     /// Model of preview page block.

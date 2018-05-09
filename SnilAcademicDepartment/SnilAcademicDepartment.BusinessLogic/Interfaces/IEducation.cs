@@ -1,10 +1,10 @@
-﻿using SnilAcademicDepartment.BusinessLogic.Models;
+﻿using SnilAcademicDepartment.BusinessLogic.DTOModels;
 using System.Collections.Generic;
 
 namespace SnilAcademicDepartment.BusinessLogic.Interfaces
 {
     public interface IEducation
     {
-        IEnumerable<KeyAreaBlock> GetKeyAreas(uint pages);
+        List<EducationBlockModel> GetKeyAreas(int pages, int lCID);
     }
 }

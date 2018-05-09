@@ -1,6 +1,6 @@
 ﻿using NLog;
 using SnilAcademicDepartment.BusinessLogic.Interfaces;
-using SnilAcademicDepartment.BusinessLogic.Models;
+using SnilAcademicDepartment.BusinessLogic.DTOModels;
 using SnilAcademicDepartment.DataAccess;
 using System;
 using System.Collections.Generic;
@@ -23,7 +23,7 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
             throw new NotImplementedException();
         }
 
-        public IEnumerable<Models.PreView> GetPreViews()
+        public IEnumerable<DTOModels.PreView> GetPreViews()
         {
             throw new NotImplementedException();
         }
