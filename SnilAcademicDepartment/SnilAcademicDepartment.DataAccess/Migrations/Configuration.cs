@@ -78,25 +78,25 @@ namespace SnilAcademicDepartment.DataAccess.Migrations
                 PreviewDBInit.DBInit(db, "Îáó÷åíèåDE", "DE", this._pageTypes[0], this._languages[2], this._imgByte);
 
                 // Init Home page preview data.
-                PreviewDBInit.DBInit(db, "HomeProjects", "RUProjects", this._pageTypes[2], this._languages[1], this._imgByte, false);
-                PreviewDBInit.DBInit(db, "ÄîìProjects", "ENProjects", this._pageTypes[2], this._languages[0], this._imgByte, false);
-                PreviewDBInit.DBInit(db, "ÄîìDEProjects", "DEProjects", this._pageTypes[2], this._languages[2], this._imgByte, false);
+                PreviewDBInit.DBInit(db, "HomeProjects", "RUProjects", this._pageTypes[2], this._languages[1], this._imgByte, true);
+                PreviewDBInit.DBInit(db, "ÄîìProjects", "ENProjects", this._pageTypes[2], this._languages[0], this._imgByte, true);
+                PreviewDBInit.DBInit(db, "ÄîìDEProjects", "DEProjects", this._pageTypes[2], this._languages[2], this._imgByte, true);
 
-                PreviewDBInit.DBInit(db, "HomeEducation", "RUEducation", this._pageTypes[2], this._languages[1], this._imgByte, false);
-                PreviewDBInit.DBInit(db, "ÄîìEducation", "ENEducation", this._pageTypes[2], this._languages[0], this._imgByte, false);
-                PreviewDBInit.DBInit(db, "ÄîìDEEducation", "DEEducation", this._pageTypes[2], this._languages[2], this._imgByte, false);
+                PreviewDBInit.DBInit(db, "HomeEducation", "RUEducation", this._pageTypes[2], this._languages[1], this._imgByte, true);
+                PreviewDBInit.DBInit(db, "ÄîìEducation", "ENEducation", this._pageTypes[2], this._languages[0], this._imgByte, true);
+                PreviewDBInit.DBInit(db, "ÄîìDEEducation", "DEEducation", this._pageTypes[2], this._languages[2], this._imgByte, true);
 
-                PreviewDBInit.DBInit(db, "HomePeople", "RUPeople", this._pageTypes[2], this._languages[1], this._imgByte, false);
-                PreviewDBInit.DBInit(db, "ÄîìPeople", "ENPeople", this._pageTypes[2], this._languages[0], this._imgByte, false);
-                PreviewDBInit.DBInit(db, "ÄîìDEPeople", "DEPeople", this._pageTypes[2], this._languages[2], this._imgByte, false);
+                PreviewDBInit.DBInit(db, "HomePeople", "RUPeople", this._pageTypes[2], this._languages[1], this._imgByte, true);
+                PreviewDBInit.DBInit(db, "ÄîìPeople", "ENPeople", this._pageTypes[2], this._languages[0], this._imgByte, true);
+                PreviewDBInit.DBInit(db, "ÄîìDEPeople", "DEPeople", this._pageTypes[2], this._languages[2], this._imgByte, true);
 
-                PreviewDBInit.DBInit(db, "HomeHistory", "RUHistory", this._pageTypes[2], this._languages[1], this._imgByte, false);
-                PreviewDBInit.DBInit(db, "ÄîìHistory", "ENHistory", this._pageTypes[2], this._languages[0], this._imgByte, false);
-                PreviewDBInit.DBInit(db, "ÄîìDEHistory", "DEHistory", this._pageTypes[2], this._languages[2], this._imgByte, false);
+                PreviewDBInit.DBInit(db, "HomeHistory", "RUHistory", this._pageTypes[2], this._languages[1], this._imgByte, true);
+                PreviewDBInit.DBInit(db, "ÄîìHistory", "ENHistory", this._pageTypes[2], this._languages[0], this._imgByte, true);
+                PreviewDBInit.DBInit(db, "ÄîìDEHistory", "DEHistory", this._pageTypes[2], this._languages[2], this._imgByte, true);
 
-                PreviewDBInit.DBInit(db, "HomeProjects", "RUProjects", this._pageTypes[2], this._languages[1], this._imgByte, false);
-                PreviewDBInit.DBInit(db, "ÄîìProjects", "ENProjects", this._pageTypes[2], this._languages[0], this._imgByte, false);
-                PreviewDBInit.DBInit(db, "ÄîìDEProjects", "DEProjects", this._pageTypes[2], this._languages[2], this._imgByte, false);
+                PreviewDBInit.DBInit(db, "HomeProjects", "RUProjects", this._pageTypes[2], this._languages[1], this._imgByte, true);
+                PreviewDBInit.DBInit(db, "ÄîìProjects", "ENProjects", this._pageTypes[2], this._languages[0], this._imgByte, true);
+                PreviewDBInit.DBInit(db, "ÄîìDEProjects", "DEProjects", this._pageTypes[2], this._languages[2], this._imgByte, true);
             }
         }
 

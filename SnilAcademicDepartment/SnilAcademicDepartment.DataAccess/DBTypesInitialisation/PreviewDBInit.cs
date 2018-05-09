@@ -35,7 +35,7 @@ namespace SnilAcademicDepartment.DataAccess.DBTypesInitialisation
             var preview = new PreView()
             {
                 Header = header,
-                ShortDescription = (isShorted ? discriptionPrefix + _shortDiscription : discriptionPrefix + _description),
+                ShortDescription = (isShorted ? (discriptionPrefix + _shortDiscription) : (discriptionPrefix + _description)),
                 PageTypeName = pageTypeName,
                 Language = language,
                 Image = imgPath
