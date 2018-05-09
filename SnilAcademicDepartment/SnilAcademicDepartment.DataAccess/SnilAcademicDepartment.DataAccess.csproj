@@ -89,6 +89,10 @@
     <Compile Include="Migrations\201805091031220_ChangeLanguageCodeTypeToInt32.Designer.cs">
       <DependentUpon>201805091031220_ChangeLanguageCodeTypeToInt32.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201805091425210_ExpandMaxLengthInTopic.cs" />
+    <Compile Include="Migrations\201805091425210_ExpandMaxLengthInTopic.Designer.cs">
+      <DependentUpon>201805091425210_ExpandMaxLengthInTopic.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Biography.cs" />
     <Compile Include="DBContext\DBContext.cs" />
@@ -124,6 +128,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201805091031220_ChangeLanguageCodeTypeToInt32.resx">
       <DependentUpon>201805091031220_ChangeLanguageCodeTypeToInt32.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805091425210_ExpandMaxLengthInTopic.resx">
+      <DependentUpon>201805091425210_ExpandMaxLengthInTopic.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

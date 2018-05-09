@@ -11,7 +11,7 @@ namespace SnilAcademicDepartment.DataAccess.Configurations
                 .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
 
             this.Property(p => p.TopicName)
-                .HasMaxLength(50)
+                .HasMaxLength(100)
                 .IsRequired();
         }
     }
