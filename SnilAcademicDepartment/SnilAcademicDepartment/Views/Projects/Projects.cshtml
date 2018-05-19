@@ -23,91 +23,60 @@
         </div>
     </div>
     <div class="row row2">
+        <h2>New</h2>
+        @{
+            foreach (var project in ViewBag.newPreviews)
+            {
+                var base64Block = Convert.ToBase64String(project.Image);
+                var imgSrcProj = String.Format("data:image/jpeg;base64,{0}", base64Block);
+
+                <div class="col-sm-4 col-md-4 col-lg-4 block">
+                    <img src="@imgSrcProj" alt="">
+                    <div class="projects">
+                        <h4>@project.Title</h4>
+                        <p>@project.ShortDescription</p>
+                        @Html.ActionLink(Resources.Resource.LearnMore, "PageCurrent", new { conrtoller = "Projects", id = project.ProjectId })
+                    </div>
+                </div>
+            }
+        }
+    </div>
+    <div class="row row2">
         <h2>Finished</h2>
-        @{ 
+        @{
             foreach (var project in ViewBag.finishedPreviews)
             {
                 var base64Block = Convert.ToBase64String(project.Image);
-                var imgSrcBlock = String.Format("data:image/jpeg;base64,{0}", base64Block);
+                var imgSrcProj = String.Format("data:image/jpeg;base64,{0}", base64Block);
+
+                <div class="col-sm-4 col-md-4 col-lg-4 block">
+                    <img src="@imgSrcProj" alt="">
+                    <div class="projects">
+                        <h4>@project.Title</h4>
+                        <p>@project.ShortDescription</p>
+                        @Html.ActionLink(Resources.Resource.LearnMore, "PageFinished", new { conrtoller = "Projects", id = project.ProjectId })
+                    </div>
+                </div>
             }
         }
-        <div class="col-sm-4 col-md-4 col-lg-4 block">
-            <img src="../img/DSC_3564.jpg" alt="">
-            <div class="projects">
-                <h4>Бомба</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident consequuntur quos dicta obcaecati ut error eius harum. A magnam ex provident officiis aspernatur architecto culpa, quasi dolorem delectus, error repellendus pariatur odit similique! Dolorum quasi odio molestiae tempora inventore molestias, vel illum, rerum sint, dolores id. Alias quos porro quibusdam!</p>
-                @Html.ActionLink(Resources.Resource.LearnMore, "PageFinished", "Projects") 
-            </div>
-        </div>
-        <div class="col-sm-4 col-md-4 col-lg-4 block">
-            <img src="../img/DSC_3537.jpg" alt="">
-            <div class="education">
-                <h4>Музыкальная станция</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo nam et, magnam voluptates quod suscipit modi praesentium ducimus voluptas qui eos, quidem quam saepe voluptatem sed quo velit repellat magni error assumenda aliquid amet excepturi voluptatum officiis! Unde eius tempora saepe asperiores, quia obcaecati at qui, officia, alias aperiam autem.</p>
-                @Html.ActionLink(Resources.Resource.LearnMore, "PageFinished", "Projects") 
-            </div>
-        </div>
-        <div class="col-sm-4 col-md-4 col-lg-4 block">
-            <img src="../img/DSC_3541.jpg" alt="">
-            <div class="person">
-                <h4>Модели кристаллов</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam ad laudantium, quae deleniti et dignissimos consequuntur rerum porro voluptate quos, eveniet magni, quam, explicabo impedit libero sit accusantium corrupti cupiditate repudiandae reprehenderit! Officiis quas reiciendis modi enim adipisci voluptatibus neque atque facilis a, ullam earum dicta hic, quae asperiores consequatur.</p>
-                @Html.ActionLink(Resources.Resource.LearnMore, "PageFinished", "Projects") 
-            </div>
-        </div>
     </div>
     <div class="row row2">
         <h2>Current</h2>
-        <div class="col-sm-4 col-md-4 col-lg-4 block">
-            <img src="../img/DSC_3545.jpg" alt="">
-            <div class="projects">
-                <h4>Рука-робот</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident consequuntur quos dicta obcaecati ut error eius harum. A magnam ex provident officiis aspernatur architecto culpa, quasi dolorem delectus, error repellendus pariatur odit similique! Dolorum quasi odio molestiae tempora inventore molestias, vel illum, rerum sint, dolores id. Alias quos porro quibusdam!</p>
-                @Html.ActionLink(Resources.Resource.LearnMore, "PageCurrent", "Projects") 
-            </div>
-        </div>
-        <div class="col-sm-4 col-md-4 col-lg-4 block">
-            <img src="../img/DSC_3568.jpg" alt="">
-            <div class="education">
-                <h4>Солнечная батарейка</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo nam et, magnam voluptates quod suscipit modi praesentium ducimus voluptas qui eos, quidem quam saepe voluptatem sed quo velit repellat magni error assumenda aliquid amet excepturi voluptatum officiis! Unde eius tempora saepe asperiores, quia obcaecati at qui, officia, alias aperiam autem.</p>
-                @Html.ActionLink(Resources.Resource.LearnMore, "PageCurrent", "Projects") 
-            </div>
-        </div>
-        <div class="col-sm-4 col-md-4 col-lg-4 block">
-            <img src="../img/DSC_3601.jpg" alt="">
-            <div class="person">
-                <h4>Дартс</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam ad laudantium, quae deleniti et dignissimos consequuntur rerum porro voluptate quos, eveniet magni, quam, explicabo impedit libero sit accusantium corrupti cupiditate repudiandae reprehenderit! Officiis quas reiciendis modi enim adipisci voluptatibus neque atque facilis a, ullam earum dicta hic, quae asperiores consequatur.</p>
-                @Html.ActionLink(Resources.Resource.LearnMore, "PageCurrent", "Projects") 
-            </div>
-        </div>
-    </div>
-    <div class="row row2">
-        <h2>Conferences</h2>
-        <div class="col-sm-4 col-md-4 col-lg-4 block">
-            <img src="../img/DSC_3538.jpg" alt="">
-            <div class="projects">
-                <h4>Лазерная резьба</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident consequuntur quos dicta obcaecati ut error eius harum. A magnam ex provident officiis aspernatur architecto culpa, quasi dolorem delectus, error repellendus pariatur odit similique! Dolorum quasi odio molestiae tempora inventore molestias, vel illum, rerum sint, dolores id. Alias quos porro quibusdam!</p>
-                @Html.ActionLink(Resources.Resource.LearnMore, "PageNew", "Projects") 
-            </div>
-        </div>
-        <div class="col-sm-4 col-md-4 col-lg-4 block">
-            <img src="../img/DSC_3579.jpg" alt="">
-            <div class="education">
-                <h4>Катушка</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo nam et, magnam voluptates quod suscipit modi praesentium ducimus voluptas qui eos, quidem quam saepe voluptatem sed quo velit repellat magni error assumenda aliquid amet excepturi voluptatum officiis! Unde eius tempora saepe asperiores, quia obcaecati at qui, officia, alias aperiam autem.</p>
-                @Html.ActionLink(Resources.Resource.LearnMore, "PageNew", "Projects") 
-            </div>
-        </div>
-        <div class="col-sm-4 col-md-4 col-lg-4 block">
-            <img src="../img/DSC_3608.jpg" alt="">
-            <div class="person">
-                <h4>Квадрокоптер</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam ad laudantium, quae deleniti et dignissimos consequuntur rerum porro voluptate quos, eveniet magni, quam, explicabo impedit libero sit accusantium corrupti cupiditate repudiandae reprehenderit! Officiis quas reiciendis modi enim adipisci voluptatibus neque atque facilis a, ullam earum dicta hic, quae asperiores consequatur.</p>
-                @Html.ActionLink(Resources.Resource.LearnMore, "PageNew", "Projects") 
-            </div>
-        </div>
+        @{
+            foreach (var project in ViewBag.currentPreviews)
+            {
+                var base64Block = Convert.ToBase64String(project.Image);
+                var imgSrcProj = String.Format("data:image/jpeg;base64,{0}", base64Block);
+
+                <div class="col-sm-4 col-md-4 col-lg-4 block">
+                    <img src="@imgSrcProj" alt="">
+                    <div class="projects">
+                        <h4>@project.Title</h4>
+                        <p>@project.ShortDescription</p>
+                        @Html.ActionLink(Resources.Resource.LearnMore, "PageCurrent", new { conrtoller = "Projects", id = project.ProjectId })
+                    </div>
+                </div>
+            }
+        }
     </div>
 </div>
