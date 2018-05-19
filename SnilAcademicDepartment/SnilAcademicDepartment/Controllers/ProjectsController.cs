@@ -14,17 +14,19 @@ namespace SnilAcademicDepartment.Controllers
         private readonly ILogger _logger;
         private readonly IService _previewService;
         private readonly IProjects _projectsService;
+        private readonly IProjectsPreview _projectsPreview;
 
         /// <summary>
         /// Constructor of the ProjectsController.
         /// </summary>
         /// <param name="logger"></param>
         /// <param name="projectsService"></param>
-        public ProjectsController(ILogger logger,IService previewService, IProjects projectsService)
+        public ProjectsController(ILogger logger,IService previewService, IProjects projectsService, IProjectsPreview projectsPreview)
         {
             this._logger = logger;
             this._previewService = previewService;
             this._projectsService = projectsService;
+            this._projectsPreview = projectsPreview;
         }
 
         [HttpGet]
@@ -42,14 +44,14 @@ namespace SnilAcademicDepartment.Controllers
                 // Get project preview.
                 projectPreview = this._previewService.GetPagePreview("Projects", Thread.CurrentThread.CurrentCulture.LCID);
 
-                currentPreviews = this._projectsService
-                    .GetProjects<ProjectPreview>("Current", 0, 3, Thread.CurrentThread.CurrentCulture.LCID);
+                currentPreviews = this._projectsPreview
+                    .GetProjectsPreviews<ProjectPreview>("Current", 0, 3, Thread.CurrentThread.CurrentCulture.LCID);
 
-                newPreviews = this._projectsService
-                    .GetProjects<ProjectPreview>("New", 0, 3, Thread.CurrentThread.CurrentCulture.LCID);
+                newPreviews = this._projectsPreview
+                    .GetProjectsPreviews<ProjectPreview>("New", 0, 3, Thread.CurrentThread.CurrentCulture.LCID);
 
-                finishedPreviews = this._projectsService
-                    .GetProjects<ProjectPreview>("Finished", 0, 3, Thread.CurrentThread.CurrentCulture.LCID);
+                finishedPreviews = this._projectsPreview
+                    .GetProjectsPreviews<ProjectPreview>("Finished", 0, 3, Thread.CurrentThread.CurrentCulture.LCID);
             }
             catch (Exception ex)
             {

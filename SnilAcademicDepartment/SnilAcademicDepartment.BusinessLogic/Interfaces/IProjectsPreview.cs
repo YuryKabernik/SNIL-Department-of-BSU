@@ -1,34 +1,33 @@
-﻿using SnilAcademicDepartment.BusinessLogic.DTOModels;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace SnilAcademicDepartment.BusinessLogic.Interfaces
 {
-    public interface IProjects
+    public interface IProjectsPreview
     {
         /// <summary>
-        /// Get first project by type anf language code.
+        /// Get preview of the first project by type and language code.
         /// </summary>
         /// <param name="projectType"></param>
         /// <param name="langLCID"></param>
         /// <returns></returns>
-        ProjectModel GetProject(string projectStatus, int langLCID);
+        T GetProjectPreview<T>(string projectStatus, int langLCID);
 
         /// <summary>
-        /// Get all projects.
+        /// Get previews of all projects by type and language code.
         /// </summary>
         /// <param name="projectType">Status of the project.</param>
         /// <param name="langLCID"></param>
         /// <returns></returns>
-        IEnumerable<ProjectModel> GetProjects(string projectStatus, int langLCID);
+        IEnumerable<T> GetProjectsPreviews<T>(string projectStatus, int langLCID);
 
         /// <summary>
-        /// Get number of projects from start to end index.
+        /// Get number of projects from start to end index by type and language code.
         /// </summary>
         /// <param name="projectType"></param>
         /// <param name="startIndex"></param>
         /// <param name="endIndex"></param>
         /// <param name="langLCID"></param>
         /// <returns></returns>
-        IEnumerable<ProjectModel> GetProjects(string projectStatus, int startIndex, int endIndex, int langLCID);
+        IEnumerable<T> GetProjectsPreviews<T>(string projectStatus, int startIndex, int endIndex, int langLCID);
     }
 }

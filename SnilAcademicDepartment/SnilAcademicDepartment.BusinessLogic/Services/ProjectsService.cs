@@ -9,7 +9,7 @@ using System.Linq;
 
 namespace SnilAcademicDepartment.BusinessLogic.Services
 {
-    public class ProjectsService : IProjects
+    public class ProjectsService : IProjects, IProjectsPreview
     {
         private readonly ILogger _logger;
         private readonly SnilDBContext _repository;
@@ -28,7 +28,7 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
         /// <param name="projectType"></param>
         /// <param name="langLCID"></param>
         /// <returns></returns>
-        public T GetProject<T>(string projectStatus, int langLCID)
+        public T GetProjectPreview<T>(string projectStatus, int langLCID)
         {
             var res = this.GetProject(projectStatus, langLCID);
 
@@ -40,7 +40,7 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
         /// <param name="projectType">Status of the project.</param>
         /// <param name="langLCID"></param>
         /// <returns></returns>
-        public IEnumerable<T> GetProjects<T>(string projectStatus, int langLCID)
+        public IEnumerable<T> GetProjectsPreviews<T>(string projectStatus, int langLCID)
         {
             var res = this.GetProjects(projectStatus, langLCID);
 
@@ -55,7 +55,7 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
         /// <param name="endIndex"></param>
         /// <param name="langLCID"></param>
         /// <returns></returns>
-        public IEnumerable<T> GetProjects<T>(string projectStatus, int startIndex, int endIndex, int langLCID)
+        public IEnumerable<T> GetProjectsPreviews<T>(string projectStatus, int startIndex, int endIndex, int langLCID)
         {
             var res = this.GetProjects(projectStatus, startIndex, endIndex, langLCID);
 

@@ -66,6 +66,7 @@
     <Compile Include="DTOModels\ProjectPreview.cs" />
     <Compile Include="InjectionPackageBLL.cs" />
     <Compile Include="Enum\ProjectType.cs" />
+    <Compile Include="Interfaces\IProjectsPreview.cs" />
     <Compile Include="Interfaces\ISendMail.cs" />
     <Compile Include="Interfaces\IEducation.cs" />
     <Compile Include="Interfaces\IHistory.cs" />
