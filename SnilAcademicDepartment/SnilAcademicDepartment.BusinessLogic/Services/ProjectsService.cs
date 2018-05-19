@@ -129,7 +129,7 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
             try
             {
                 var requestResult = this._repository.Projects
-               .Where(o => o.ProjectId == projectId
+               .Where(o => o.CommonID == projectId
                && o.Language.LanguageCode == langLCID)
                .First();
 
