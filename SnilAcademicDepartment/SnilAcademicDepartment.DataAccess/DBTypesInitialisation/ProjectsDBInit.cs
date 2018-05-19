@@ -21,6 +21,7 @@ namespace SnilAcademicDepartment.DataAccess.DBTypesInitialisation
 
         public static void DBInit(
              SnilDBContext db,
+             int commonId,
              string title,
              string discriptionPrefix,
              string projectStatus,
@@ -31,6 +32,7 @@ namespace SnilAcademicDepartment.DataAccess.DBTypesInitialisation
         {
             var project = new Project()
             {
+                CommonID = commonId,
                 ProjectName = title,
                 ShortDescription = discriptionPrefix + _shortDiscription,
                 Description = discriptionPrefix + _description,
