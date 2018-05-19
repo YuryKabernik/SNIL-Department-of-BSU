@@ -95,6 +95,10 @@
     <Compile Include="Migrations\201805091425210_ExpandMaxLengthInTopic.Designer.cs">
       <DependentUpon>201805091425210_ExpandMaxLengthInTopic.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201805191751495_AddCommonIDToProjectForCulturalProjectAssociation.cs" />
+    <Compile Include="Migrations\201805191751495_AddCommonIDToProjectForCulturalProjectAssociation.Designer.cs">
+      <DependentUpon>201805191751495_AddCommonIDToProjectForCulturalProjectAssociation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Biography.cs" />
     <Compile Include="DBContext\DBContext.cs" />
@@ -133,6 +137,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201805091425210_ExpandMaxLengthInTopic.resx">
       <DependentUpon>201805091425210_ExpandMaxLengthInTopic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805191751495_AddCommonIDToProjectForCulturalProjectAssociation.resx">
+      <DependentUpon>201805191751495_AddCommonIDToProjectForCulturalProjectAssociation.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

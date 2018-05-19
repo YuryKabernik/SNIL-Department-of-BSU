@@ -17,7 +17,7 @@ namespace SnilAcademicDepartment.BusinessLogic
 
             // Mapping project objects.
             this.CreateMap<Project, ProjectModel>()
-                .ForMember(des => des.ProjectId, opt => opt.MapFrom(s => s.ProjectId))
+                .ForMember(des => des.ProjectId, opt => opt.MapFrom(s => s.CommonID))
                 .ForMember(des => des.ProjectTitle, opt => opt.MapFrom(s => s.ProjectName))
                 .ForMember(des => des.ProjectStatus, opt => opt.MapFrom(s => s.ProjectStatus))
                 .ForMember(des => des.Localisation, opt => opt.MapFrom(s => s.Language.LanguageCode))

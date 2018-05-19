@@ -10,6 +10,9 @@ namespace SnilAcademicDepartment.DataAccess.Configurations
             this.Property(p => p.ProjectId)
                 .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
 
+            this.Property(p => p.CommonID)
+                .IsRequired();
+
             this.Property(p => p.ProjectName)
                 .HasMaxLength(50)
                 .IsRequired();

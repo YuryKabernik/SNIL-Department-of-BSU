@@ -8,6 +8,8 @@ namespace SnilAcademicDepartment.DataAccess
     {
         public int ProjectId { get; set; }
 
+        public int CommonID { get; set; }
+
         public string ProjectName { get; set; }
 
         public string Description { get; set; }
