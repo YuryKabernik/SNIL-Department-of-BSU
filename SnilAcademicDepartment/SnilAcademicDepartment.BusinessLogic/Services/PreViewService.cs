@@ -50,14 +50,16 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
         /// </summary>
         /// <param name="pageType">Name of the preview type.</param>
         /// <returns>Collection of preview.</returns>
-        public IEnumerable<DTOModels.PreView> GetPagePreviews(string pageType)
+        public IEnumerable<DTOModels.PreView> GetPagePreviews(string pageType, int langLCID)
         {
             if (string.IsNullOrEmpty(pageType) || string.IsNullOrWhiteSpace(pageType))
             {
                 throw new ArgumentNullException(nameof(pageType), "Your argument is Null, Empty or WhiteSpace");
             }
 
-            var requestResult = this._repository.PreViews.Where(e => e.PageTypeName.PageTypeName == pageType);
+            var requestResult = this._repository.PreViews
+                .Where(e => e.PageTypeName.PageTypeName == pageType && e.Language.LanguageCode == langLCID)
+                .AsEnumerable();
 
             if (requestResult == null)
             {
