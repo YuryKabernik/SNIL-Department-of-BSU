@@ -63,6 +63,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BLLMappingConfig.cs" />
+    <Compile Include="DTOModels\ProjectPreview.cs" />
     <Compile Include="InjectionPackageBLL.cs" />
     <Compile Include="Enum\ProjectType.cs" />
     <Compile Include="Interfaces\ISendMail.cs" />

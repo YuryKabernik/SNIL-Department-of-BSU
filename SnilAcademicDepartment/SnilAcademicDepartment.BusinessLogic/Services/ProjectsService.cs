@@ -1,7 +1,6 @@
 ﻿using AutoMapper;
 using NLog;
 using SnilAcademicDepartment.BusinessLogic.DTOModels;
-using SnilAcademicDepartment.BusinessLogic.Enums;
 using SnilAcademicDepartment.BusinessLogic.Interfaces;
 using SnilAcademicDepartment.DataAccess;
 using System;
@@ -23,7 +22,47 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
             this._mapper = mapper;
         }
 
-        public DTOModels.ProjectModel GetProject(string projectStatus, int langLCID)
+        /// <summary>
+        /// Get first project by type anf language code mapped to type <typeparamref name="T"/>.
+        /// </summary>
+        /// <param name="projectType"></param>
+        /// <param name="langLCID"></param>
+        /// <returns></returns>
+        public T GetProject<T>(string projectStatus, int langLCID)
+        {
+            var res = this.GetProject(projectStatus, langLCID);
+
+            return this._mapper.Map<T>(res);
+        }
+        /// <summary>
+        /// Get all projects mapped to type <typeparamref name="T"/>.
+        /// </summary>
+        /// <param name="projectType">Status of the project.</param>
+        /// <param name="langLCID"></param>
+        /// <returns></returns>
+        public IEnumerable<T> GetProjects<T>(string projectStatus, int langLCID)
+        {
+            var res = this.GetProjects(projectStatus, langLCID);
+
+            return this._mapper.Map<IEnumerable<T>>(res);
+        }
+
+        /// <summary>
+        /// Get number of projects from start to end index mapped to type <typeparamref name="T"/>.
+        /// </summary>
+        /// <param name="projectType"></param>
+        /// <param name="startIndex"></param>
+        /// <param name="endIndex"></param>
+        /// <param name="langLCID"></param>
+        /// <returns></returns>
+        public IEnumerable<T> GetProjects<T>(string projectStatus, int startIndex, int endIndex, int langLCID)
+        {
+            var res = this.GetProjects(projectStatus, startIndex, endIndex, langLCID);
+
+            return this._mapper.Map<IEnumerable<T>>(res);
+        }
+
+        public ProjectModel GetProject(string projectStatus, int langLCID)
         {
             if (string.IsNullOrEmpty(projectStatus) || string.IsNullOrWhiteSpace(projectStatus))
             {
@@ -42,7 +81,7 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
             return this._mapper.Map<DTOModels.ProjectModel>(requestResult);
         }
 
-        public IEnumerable<DTOModels.ProjectModel> GetProjects(string projectStatus, int langLCID)
+        public IEnumerable<ProjectModel> GetProjects(string projectStatus, int langLCID)
         {
             if (string.IsNullOrEmpty(projectStatus) || string.IsNullOrWhiteSpace(projectStatus))
             {
@@ -61,7 +100,7 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
             return this._mapper.Map<IEnumerable<DTOModels.ProjectModel>>(requestResult);
         }
 
-        public IEnumerable<DTOModels.ProjectModel> GetProjects(string projectStatus, int startIndex, int endIndex, int langLCID)
+        public IEnumerable<ProjectModel> GetProjects(string projectStatus, int startIndex, int endIndex, int langLCID)
         {
             if (string.IsNullOrEmpty(projectStatus) || string.IsNullOrWhiteSpace(projectStatus))
             {

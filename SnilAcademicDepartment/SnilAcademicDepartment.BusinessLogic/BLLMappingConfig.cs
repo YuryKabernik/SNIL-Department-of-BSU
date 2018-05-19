@@ -27,6 +27,14 @@ namespace SnilAcademicDepartment.BusinessLogic
                 .ForMember(des => des.Description, opt => opt.MapFrom(s => s.Description))
                 .ForMember(des => des.ShortDescription, opt => opt.MapFrom(s => s.ShortDescription));
 
+            //Mapping project preview objects.
+            this.CreateMap<ProjectModel, ProjectPreview>()
+                .ForMember(des => des.ProjectId, opt => opt.MapFrom(s => s.ProjectId))
+                .ForMember(des => des.Title, opt => opt.MapFrom(s => s.ProjectTitle))
+                .ForMember(des => des.ProjectStatus, opt => opt.MapFrom(s => s.ProjectStatus))
+                .ForMember(des => des.Image, opt => opt.MapFrom(s => s.Image))
+                .ForMember(des => des.Description, opt => opt.MapFrom(s => s.ShortDescription));
+
             // Mapping EducationBlock objects.
             this.CreateMap<EducationBlock, EducationBlockModel>()
                 .ForMember(des => des.Title, opt => opt.MapFrom(s => s.Name))
