@@ -34,8 +34,8 @@
                     <img src="@imgSrcProj" alt="">
                     <div class="projects">
                         <h4>@project.Title</h4>
-                        <p>@project.ShortDescription</p>
-                        @Html.ActionLink(Resources.Resource.LearnMore, "PageCurrent", new { conrtoller = "Projects", id = project.ProjectId })
+                        <p>@project.Description</p>
+                        @Html.RouteLink(Resources.Resource.LearnMore, new { controller = "Projects", action = "PageCurrent", id = project.ProjectId })
                     </div>
                 </div>
             }
@@ -53,8 +53,8 @@
                     <img src="@imgSrcProj" alt="">
                     <div class="projects">
                         <h4>@project.Title</h4>
-                        <p>@project.ShortDescription</p>
-                        @Html.ActionLink(Resources.Resource.LearnMore, "PageFinished", new { conrtoller = "Projects", id = project.ProjectId })
+                        <p>@project.Description</p>
+                        @Html.RouteLink(Resources.Resource.LearnMore, new { controller = "Projects", action = "PageFinished", id = project.ProjectId })
                     </div>
                 </div>
             }
@@ -72,8 +72,8 @@
                     <img src="@imgSrcProj" alt="">
                     <div class="projects">
                         <h4>@project.Title</h4>
-                        <p>@project.ShortDescription</p>
-                        @Html.ActionLink(Resources.Resource.LearnMore, "PageCurrent", new { conrtoller = "Projects", id = project.ProjectId })
+                        <p>@project.Description</p>
+                        @Html.RouteLink(Resources.Resource.LearnMore, new { controller = "Projects", action = "PageCurrent", id = project.ProjectId })
                     </div>
                 </div>
             }

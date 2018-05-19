@@ -38,16 +38,16 @@ namespace SnilAcademicDepartment.Controllers
             }
             catch (CultureNotFoundException)
             {
-                returnUrl = Request.UrlReferrer.AbsolutePath;
+                returnUrl = Request.UrlReferrer.AbsoluteUri;
                 return this.Redirect(returnUrl);
             }
             catch(IndexOutOfRangeException)
             {
-                returnUrl = Request.UrlReferrer.AbsolutePath;
+                returnUrl = Request.UrlReferrer.AbsoluteUri;
             }
             catch (Exception)
             {
-                returnUrl = Request.UrlReferrer.AbsolutePath;
+                returnUrl = Request.UrlReferrer.AbsoluteUri;
                 return this.Redirect(returnUrl);
             }
 
@@ -64,11 +64,12 @@ namespace SnilAcademicDepartment.Controllers
         {
             string returnUrl;
             var segm = Request.UrlReferrer.Segments;
+            var query = Request.UrlReferrer.Query;
 
-            if(segm.Length != 1)
+            if (segm.Length != 1)
             {
                 segm.SetValue(cookie.Value, 1);
-                returnUrl = string.Join<string>("/", segm).Remove(0, 1);
+                returnUrl = string.Join<string>("/", segm).Remove(0, 1) + query;
             }
             else
             {

@@ -30,7 +30,7 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
         /// <returns></returns>
         public T GetProjectPreview<T>(string projectStatus, int langLCID)
         {
-            var res = this.GetProject(projectStatus, langLCID);
+            var res = this.GetProjectByStatus(projectStatus, langLCID);
 
             return this._mapper.Map<T>(res);
         }
@@ -42,7 +42,7 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
         /// <returns></returns>
         public IEnumerable<T> GetProjectsPreviews<T>(string projectStatus, int langLCID)
         {
-            var res = this.GetProjects(projectStatus, langLCID);
+            var res = this.GetProjectsByStatus(projectStatus, langLCID);
 
             return this._mapper.Map<IEnumerable<T>>(res);
         }
@@ -57,12 +57,12 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
         /// <returns></returns>
         public IEnumerable<T> GetProjectsPreviews<T>(string projectStatus, int startIndex, int endIndex, int langLCID)
         {
-            var res = this.GetProjects(projectStatus, startIndex, endIndex, langLCID);
+            var res = this.GetProjectsByStatus(projectStatus, startIndex, endIndex, langLCID);
 
             return this._mapper.Map<IEnumerable<T>>(res);
         }
 
-        public ProjectModel GetProject(string projectStatus, int langLCID)
+        public ProjectModel GetProjectByStatus(string projectStatus, int langLCID)
         {
             if (string.IsNullOrEmpty(projectStatus) || string.IsNullOrWhiteSpace(projectStatus))
             {
@@ -81,7 +81,7 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
             return this._mapper.Map<DTOModels.ProjectModel>(requestResult);
         }
 
-        public IEnumerable<ProjectModel> GetProjects(string projectStatus, int langLCID)
+        public IEnumerable<ProjectModel> GetProjectsByStatus(string projectStatus, int langLCID)
         {
             if (string.IsNullOrEmpty(projectStatus) || string.IsNullOrWhiteSpace(projectStatus))
             {
@@ -100,7 +100,7 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
             return this._mapper.Map<IEnumerable<DTOModels.ProjectModel>>(requestResult);
         }
 
-        public IEnumerable<ProjectModel> GetProjects(string projectStatus, int startIndex, int endIndex, int langLCID)
+        public IEnumerable<ProjectModel> GetProjectsByStatus(string projectStatus, int startIndex, int endIndex, int langLCID)
         {
             if (string.IsNullOrEmpty(projectStatus) || string.IsNullOrWhiteSpace(projectStatus))
             {
@@ -114,8 +114,7 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
 
             var requestResult = this._repository.Projects
                 .Where(e => e.ProjectStatus == projectStatus && e.Language.LanguageCode == langLCID)
-                .Skip(startIndex).Take(endIndex)
-                .AsEnumerable();
+                .AsEnumerable().Skip(startIndex).Take(endIndex);
 
             if (requestResult == null)
             {
@@ -123,6 +122,23 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
             }
 
             return this._mapper.Map<IEnumerable<DTOModels.ProjectModel>>(requestResult);
+        }
+
+        public ProjectModel GetProjectById(int projectId, int langLCID)
+        {
+            try
+            {
+                var requestResult = this._repository.Projects
+               .Where(o => o.ProjectId == projectId
+               && o.Language.LanguageCode == langLCID)
+               .First();
+
+                return this._mapper.Map<DTOModels.ProjectModel>(requestResult);
+            }
+            catch (Exception ex)
+            {
+                throw new InvalidOperationException("Cant't find project with such id.", ex);
+            }
         }
     }
 }

@@ -1,0 +1,48 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    @Styles.Render("~/Content/projects")
+    var base64 = Convert.ToBase64String(ViewBag.Project.Image);
+    var imgSrc = String.Format("data:image/jpeg;base64,{0}", base64);
+}
+<div class="container">
+    <ol class="breadcrumb">
+        <li>
+            @Html.ActionLink(Resources.Resource.Home, "Index", "Home")
+        </li>
+        <li>
+            @Html.ActionLink(Resources.Resource.Projects, "Projects", "Projects")
+        </li>
+        <li class="active">@ViewBag.Project.ProjectStatus</li>
+    </ol>
+</div>
+<div class="container">
+    <h2>@ViewBag.Project.ProjectTitle</h2><br>
+    <div class="row row1">
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <img src="@imgSrc" alt="">
+        </div>
+        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+            @ViewBag.Project.Description
+        </div>
+    </div>
+    <div class="row rowcurrent">
+        <h2>@Resources.Resource.Projects</h2><br>
+        @{
+            foreach (var project in ViewBag.Previews)
+            {
+                var base64Block = Convert.ToBase64String(project.Image);
+                var imgSrcProj = String.Format("data:image/jpeg;base64,{0}", base64Block);
+
+                <div class="col-sm-4 col-md-4 col-lg-4 block">
+                    <img src="@imgSrcProj" alt="">
+                    <div class="projects">
+                        <h4>@project.Title</h4>
+                        <p>@project.Description</p>
+                        @Html.RouteLink(Resources.Resource.LearnMore, new { controller = "Projects", action = "PageCurrent", id = project.ProjectId })
+                    </div>
+                </div>
+            }
+        }
+    </div>
+</div>

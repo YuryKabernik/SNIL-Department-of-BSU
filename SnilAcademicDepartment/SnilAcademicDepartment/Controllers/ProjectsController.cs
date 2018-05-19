@@ -53,7 +53,7 @@ namespace SnilAcademicDepartment.Controllers
                 finishedPreviews = this._projectsPreview
                     .GetProjectsPreviews<ProjectPreview>("Finished", 0, 3, Thread.CurrentThread.CurrentCulture.LCID);
             }
-            catch (Exception ex)
+            catch (Exception )
             {
 
                 throw;
@@ -72,21 +72,84 @@ namespace SnilAcademicDepartment.Controllers
         [Route("New")]
         public ActionResult PageNew(int id)
         {
-            return View();
+            ProjectModel projectModel = null;
+            IEnumerable<ProjectPreview> newPreviews = null;
+
+            try
+            {
+                projectModel = this._projectsService.GetProjectById(id, Thread.CurrentThread.CurrentCulture.LCID);
+
+                newPreviews = this._projectsPreview
+                    .GetProjectsPreviews<ProjectPreview>("New", 0, 3, Thread.CurrentThread.CurrentCulture.LCID);
+
+            }
+            catch (Exception )
+            {
+
+                throw;
+            }
+
+            ViewBag.Title = projectModel.ProjectTitle;
+            ViewBag.Project = projectModel;
+            ViewBag.Previews = newPreviews;
+
+            return View("ProjectPage");
         }
 
         [HttpGet]
         [Route("Finished")]
         public ActionResult PageFinished(int id)
         {
-            return View();
+            ProjectModel projectModel = null;
+            IEnumerable<ProjectPreview> finishedPreviews = null;
+
+            try
+            {
+                projectModel = this._projectsService.GetProjectById(id, Thread.CurrentThread.CurrentCulture.LCID);
+
+                finishedPreviews = this._projectsPreview
+                    .GetProjectsPreviews<ProjectPreview>("Finished", 0, 3, Thread.CurrentThread.CurrentCulture.LCID);
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+            ViewBag.Title = projectModel.ProjectTitle;
+            ViewBag.Project = projectModel;
+            ViewBag.Previews = finishedPreviews;
+
+            return View("ProjectPage");
         }
 
         [HttpGet]
         [Route("Current")]
         public ActionResult PageCurrent(int id)
         {
-            return View();
+            ProjectModel projectModel = null;
+            IEnumerable<ProjectPreview> currentPreviews = null;
+
+            try
+            {
+                projectModel = this._projectsService.GetProjectById(id, Thread.CurrentThread.CurrentCulture.LCID);
+
+                currentPreviews = this._projectsPreview
+                   .GetProjectsPreviews<ProjectPreview>("Current", 0, 3, Thread.CurrentThread.CurrentCulture.LCID);
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+            ViewBag.Title = projectModel.ProjectTitle;
+            ViewBag.Project = projectModel;
+            ViewBag.Previews = currentPreviews;
+
+            return View("ProjectPage");
         }
     }
 }
