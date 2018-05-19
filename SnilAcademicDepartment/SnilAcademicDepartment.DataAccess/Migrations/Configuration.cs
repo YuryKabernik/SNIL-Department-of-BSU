@@ -5,6 +5,7 @@ using System.IO;
 using System.Threading;
 using SnilAcademicDepartment.DataAccess.DBTypesInitialisation;
 using System.Collections.Generic;
+using System;
 
 namespace SnilAcademicDepartment.DataAccess.Migrations
 {
@@ -16,6 +17,8 @@ namespace SnilAcademicDepartment.DataAccess.Migrations
         private Language[] _languages;
 
         private List<EducationBlock> _educationBlocks = new List<EducationBlock>();
+
+        private Document _document;
 
         private Image _image;
 
@@ -39,6 +42,9 @@ namespace SnilAcademicDepartment.DataAccess.Migrations
                 // Add image.
                 ImageDBInit.DBInit(db, this._imgByte, out this._image);
 
+                // Add Document.
+                DocumentDBInit.DBInit(db, this._imgByte, out this._document);
+
                 // Add Education blocks.
                 EducationKeyAreaDBInit.DBInit(db, "Seminar", "RU", this._image, this._languages[0], this._educationBlocks);
                 EducationKeyAreaDBInit.DBInit(db, "ENSeminar", "EN", this._image, this._languages[1], this._educationBlocks);
@@ -58,7 +64,7 @@ namespace SnilAcademicDepartment.DataAccess.Migrations
                 EducationQuickLerning(db);
 
                 // Init History page preview data.
-                PreviewDBInit.DBInit(db, "Èñòîðèÿ","RU", this._pageTypes[4], this._languages[0], this._imgByte);
+                PreviewDBInit.DBInit(db, "Èñòîðèÿ", "RU", this._pageTypes[4], this._languages[0], this._imgByte);
                 PreviewDBInit.DBInit(db, "History", "EN", this._pageTypes[4], this._languages[1], this._imgByte);
                 PreviewDBInit.DBInit(db, "ÈñòîðèÿDE", "DE", this._pageTypes[4], this._languages[2], this._imgByte);
 
@@ -97,7 +103,53 @@ namespace SnilAcademicDepartment.DataAccess.Migrations
                 PreviewDBInit.DBInit(db, "ÄîìProjects", "RUProjects", this._pageTypes[2], this._languages[0], this._imgByte, true);
                 PreviewDBInit.DBInit(db, "HomeProjects", "ENProjects", this._pageTypes[2], this._languages[1], this._imgByte, true);
                 PreviewDBInit.DBInit(db, "ÄîìDEProjects", "DEProjects", this._pageTypes[2], this._languages[2], this._imgByte, true);
+
+
+                // Init Projects in database.
+                AddingProjects(db);
             }
+        }
+
+        private void AddingProjects(SnilDBContext db)
+        {
+            ProjectsDBInit.DBInit(db, "P111", "RU", "New", DateTime.UtcNow, this._languages[0], this._image, this._document);
+            ProjectsDBInit.DBInit(db, "P112", "EN", "New", DateTime.UtcNow, this._languages[1], this._image, this._document);
+            ProjectsDBInit.DBInit(db, "P113", "DE", "New", DateTime.UtcNow, this._languages[2], this._image, this._document);
+
+            ProjectsDBInit.DBInit(db, "P121", "RU", "New", DateTime.UtcNow, this._languages[0], this._image, this._document);
+            ProjectsDBInit.DBInit(db, "P122", "EN", "New", DateTime.UtcNow, this._languages[1], this._image, this._document);
+            ProjectsDBInit.DBInit(db, "P123", "DE", "New", DateTime.UtcNow, this._languages[2], this._image, this._document);
+
+            ProjectsDBInit.DBInit(db, "P131", "RU", "New", DateTime.UtcNow, this._languages[0], this._image, this._document);
+            ProjectsDBInit.DBInit(db, "P132", "EN", "New", DateTime.UtcNow, this._languages[1], this._image, this._document);
+            ProjectsDBInit.DBInit(db, "P133", "DE", "New", DateTime.UtcNow, this._languages[2], this._image, this._document);
+
+
+            ProjectsDBInit.DBInit(db, "P211", "RU", "Current", DateTime.UtcNow, this._languages[0], this._image, this._document);
+            ProjectsDBInit.DBInit(db, "P212", "EN", "Current", DateTime.UtcNow, this._languages[1], this._image, this._document);
+            ProjectsDBInit.DBInit(db, "P213", "DE", "Current", DateTime.UtcNow, this._languages[2], this._image, this._document);
+
+            ProjectsDBInit.DBInit(db, "P21", "RU", "Current", DateTime.UtcNow, this._languages[0], this._image, this._document);
+            ProjectsDBInit.DBInit(db, "P22", "EN", "Current", DateTime.UtcNow, this._languages[1], this._image, this._document);
+            ProjectsDBInit.DBInit(db, "P23", "DE", "Current", DateTime.UtcNow, this._languages[2], this._image, this._document);
+
+            ProjectsDBInit.DBInit(db, "P31", "RU", "Current", DateTime.UtcNow, this._languages[0], this._image, this._document);
+            ProjectsDBInit.DBInit(db, "P22", "EN", "Current", DateTime.UtcNow, this._languages[1], this._image, this._document);
+            ProjectsDBInit.DBInit(db, "P23", "DE", "Current", DateTime.UtcNow, this._languages[2], this._image, this._document);
+
+
+            ProjectsDBInit.DBInit(db, "P31", "RU", "Finished", DateTime.UtcNow, this._languages[0], this._image, this._document);
+            ProjectsDBInit.DBInit(db, "P32", "EN", "Finished", DateTime.UtcNow, this._languages[1], this._image, this._document);
+            ProjectsDBInit.DBInit(db, "P33", "DE", "Finished", DateTime.UtcNow, this._languages[2], this._image, this._document);
+
+            ProjectsDBInit.DBInit(db, "P331", "RU", "Finished", DateTime.UtcNow, this._languages[0], this._image, this._document);
+            ProjectsDBInit.DBInit(db, "P332", "EN", "Finished", DateTime.UtcNow, this._languages[1], this._image, this._document);
+            ProjectsDBInit.DBInit(db, "P333", "DE", "Finished", DateTime.UtcNow, this._languages[2], this._image, this._document);
+
+            ProjectsDBInit.DBInit(db, "P331", "RU", "Finished", DateTime.UtcNow, this._languages[0], this._image, this._document);
+            ProjectsDBInit.DBInit(db, "P332", "EN", "Finished", DateTime.UtcNow, this._languages[1], this._image, this._document);
+            ProjectsDBInit.DBInit(db, "P333", "DE", "Finished", DateTime.UtcNow, this._languages[2], this._image, this._document);
+
         }
 
         private void EducationQuickLerning(SnilDBContext db)

@@ -107,9 +107,9 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
                 throw new ArgumentNullException(nameof(projectStatus), "Your argument is Null, Empty or WhiteSpace");
             }
 
-            if (startIndex <= 0 || endIndex <= 0)
+            if (startIndex < 0 || endIndex < 0)
             {
-                throw new IndexOutOfRangeException("Your start or end index is smaller or equal to zero.");
+                throw new IndexOutOfRangeException("Your start or end index is smaller than zero.");
             }
 
             var requestResult = this._repository.Projects
