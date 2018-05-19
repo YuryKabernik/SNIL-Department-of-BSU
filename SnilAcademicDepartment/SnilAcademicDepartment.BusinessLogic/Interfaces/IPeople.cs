@@ -7,6 +7,6 @@ namespace SnilAcademicDepartment.BusinessLogic.Interfaces
     {
         IEnumerable<Leader> GetHallOfFameLeaders();
 
-        IEnumerable<PreView> GetPreViews();
+        IEnumerable<PreViewModel> GetPreViews();
     }
 }

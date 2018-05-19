@@ -16,12 +16,12 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
             this._repository = repository;
         }
 
-        public IEnumerable<DTOModels.PreView> GetIndexPreRolls()
+        public IEnumerable<DTOModels.PreViewModel> GetIndexPreRolls()
         {
             throw new System.NotImplementedException();
         }
 
-        public IEnumerable<DTOModels.PreView> GetIndexPreViews()
+        public IEnumerable<DTOModels.PreViewModel> GetIndexPreViews()
         {
             throw new System.NotImplementedException();
         }

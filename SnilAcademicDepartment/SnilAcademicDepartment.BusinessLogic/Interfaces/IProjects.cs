@@ -11,7 +11,7 @@ namespace SnilAcademicDepartment.BusinessLogic.Interfaces
         /// <param name="projectType"></param>
         /// <param name="langLCID"></param>
         /// <returns></returns>
-        Project GetProject(string projectStatus, int langLCID);
+        ProjectModel GetProject(string projectStatus, int langLCID);
 
         /// <summary>
         /// Get all projects.
@@ -19,7 +19,7 @@ namespace SnilAcademicDepartment.BusinessLogic.Interfaces
         /// <param name="projectType">Status of the project.</param>
         /// <param name="langLCID"></param>
         /// <returns></returns>
-        IEnumerable<Project> GetProjects(string projectStatus, int langLCID);
+        IEnumerable<ProjectModel> GetProjects(string projectStatus, int langLCID);
 
         /// <summary>
         /// Get number of projects from start to end index.
@@ -29,6 +29,6 @@ namespace SnilAcademicDepartment.BusinessLogic.Interfaces
         /// <param name="endIndex"></param>
         /// <param name="langLCID"></param>
         /// <returns></returns>
-        IEnumerable<Project> GetProjects(string projectStatus, int startIndex, int endIndex, int langLCID);
+        IEnumerable<ProjectModel> GetProjects(string projectStatus, int startIndex, int endIndex, int langLCID);
     }
 }

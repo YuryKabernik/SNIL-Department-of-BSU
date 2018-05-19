@@ -23,7 +23,7 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
             this._mapper = mapper;
         }
 
-        public DTOModels.Project GetProject(string projectStatus, int langLCID)
+        public DTOModels.ProjectModel GetProject(string projectStatus, int langLCID)
         {
             if (string.IsNullOrEmpty(projectStatus) || string.IsNullOrWhiteSpace(projectStatus))
             {
@@ -39,10 +39,10 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
                 throw new InvalidOperationException("Cant't find project with such options.");
             }
 
-            return this._mapper.Map<DTOModels.Project>(requestResult);
+            return this._mapper.Map<DTOModels.ProjectModel>(requestResult);
         }
 
-        public IEnumerable<DTOModels.Project> GetProjects(string projectStatus, int langLCID)
+        public IEnumerable<DTOModels.ProjectModel> GetProjects(string projectStatus, int langLCID)
         {
             if (string.IsNullOrEmpty(projectStatus) || string.IsNullOrWhiteSpace(projectStatus))
             {
@@ -58,10 +58,10 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
                 throw new InvalidOperationException("Cant't find projects with such options.");
             }
 
-            return this._mapper.Map<IEnumerable<DTOModels.Project>>(requestResult);
+            return this._mapper.Map<IEnumerable<DTOModels.ProjectModel>>(requestResult);
         }
 
-        public IEnumerable<DTOModels.Project> GetProjects(string projectStatus, int startIndex, int endIndex, int langLCID)
+        public IEnumerable<DTOModels.ProjectModel> GetProjects(string projectStatus, int startIndex, int endIndex, int langLCID)
         {
             if (string.IsNullOrEmpty(projectStatus) || string.IsNullOrWhiteSpace(projectStatus))
             {
@@ -83,7 +83,7 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
                 throw new InvalidOperationException("Cant't find projects with such options.");
             }
 
-            return this._mapper.Map<IEnumerable<DTOModels.Project>>(requestResult);
+            return this._mapper.Map<IEnumerable<DTOModels.ProjectModel>>(requestResult);
         }
     }
 }

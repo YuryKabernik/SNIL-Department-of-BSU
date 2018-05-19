@@ -30,7 +30,7 @@ namespace SnilAcademicDepartment.Controllers
         [Route("Education")]
         public ActionResult Education()
         {
-            PreView viewModel = null;
+            PreViewModel viewModel = null;
             List<EducationBlockModel> blockCollection = null;
 
             try
@@ -54,7 +54,7 @@ namespace SnilAcademicDepartment.Controllers
         }
 
         [HttpGet]
-        [Route("PageQuickLearning")]
+        [Route("QuickLearning")]
         public ActionResult PageQuickLearning()
         {
             ViewBag.Title = "Quick Learning";
@@ -62,7 +62,7 @@ namespace SnilAcademicDepartment.Controllers
         }
 
         [HttpGet]
-        [Route("PageSeminars")]
+        [Route("Seminars")]
         public ActionResult PageSeminars()
         {
             ViewBag.Title = "Seminars";
@@ -70,7 +70,7 @@ namespace SnilAcademicDepartment.Controllers
         }
 
         [HttpGet]
-        [Route("PageLectures")]
+        [Route("Lectures")]
         public ActionResult PageLectures()
         {
             ViewBag.Title = "Lecturs";

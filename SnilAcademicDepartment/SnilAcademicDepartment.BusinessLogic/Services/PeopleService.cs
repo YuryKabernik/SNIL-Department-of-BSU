@@ -23,7 +23,7 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
             throw new NotImplementedException();
         }
 
-        public IEnumerable<DTOModels.PreView> GetPreViews()
+        public IEnumerable<DTOModels.PreViewModel> GetPreViews()
         {
             throw new NotImplementedException();
         }

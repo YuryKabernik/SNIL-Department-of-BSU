@@ -3,7 +3,7 @@
     /// <summary>
     /// Model of preview page block.
     /// </summary>
-    public class PreView
+    public class PreViewModel
     {
         public string Title { get; set; }
 

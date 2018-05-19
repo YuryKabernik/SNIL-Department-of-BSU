@@ -5,7 +5,7 @@ namespace SnilAcademicDepartment.BusinessLogic.Interfaces
 {
     public interface IIndex
     {
-        IEnumerable<PreView> GetIndexPreViews();
-        IEnumerable<PreView> GetIndexPreRolls();
+        IEnumerable<PreViewModel> GetIndexPreViews();
+        IEnumerable<PreViewModel> GetIndexPreRolls();
     }
 }

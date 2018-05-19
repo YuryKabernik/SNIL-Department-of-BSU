@@ -78,7 +78,7 @@ namespace SnilAcademicDepartment.BusinessLogic.Services.Tests
             var result = this._service.GetPagePreview("BBB", It.IsAny<int>());
 
             Assert.IsNotNull(result);
-            Assert.IsInstanceOf<DTOModels.PreView>(result);
+            Assert.IsInstanceOf<DTOModels.PreViewModel>(result);
         }
 
         [Test()]

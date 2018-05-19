@@ -5,6 +5,7 @@ using System;
 using System.Linq;
 using System.Collections.Generic;
 using AutoMapper;
+using SnilAcademicDepartment.BusinessLogic.DTOModels;
 
 namespace SnilAcademicDepartment.BusinessLogic.Services
 {
@@ -26,7 +27,7 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
         /// </summary>
         /// <param name="pageType">Type of the page.</param>
         /// <returns>Single page preview.</returns>
-        public DTOModels.PreView GetPagePreview(string pageType, int langLCID)
+        public PreViewModel GetPagePreview(string pageType, int langLCID)
         {
             if (string.IsNullOrEmpty(pageType) || string.IsNullOrWhiteSpace(pageType))
             {
@@ -42,7 +43,7 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
                 throw new InvalidOperationException("Cant't find page preview");
             }
 
-            return this._mapper.Map<DTOModels.PreView>(requestResult);
+            return this._mapper.Map<PreViewModel>(requestResult);
         }
 
         /// <summary>
@@ -50,7 +51,7 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
         /// </summary>
         /// <param name="pageType">Name of the preview type.</param>
         /// <returns>Collection of preview.</returns>
-        public IEnumerable<DTOModels.PreView> GetPagePreviews(string pageType, int langLCID)
+        public IEnumerable<PreViewModel> GetPagePreviews(string pageType, int langLCID)
         {
             if (string.IsNullOrEmpty(pageType) || string.IsNullOrWhiteSpace(pageType))
             {
@@ -66,7 +67,7 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
                 throw new InvalidOperationException("Cant't find previews for this page.");
             }
 
-            return this._mapper.Map<IEnumerable<DTOModels.PreView>>(requestResult);
+            return this._mapper.Map<IEnumerable<PreViewModel>>(requestResult);
         }
     }
 }
