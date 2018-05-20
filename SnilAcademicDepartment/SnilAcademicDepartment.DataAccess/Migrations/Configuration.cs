@@ -2,6 +2,7 @@ using System.Data.Entity.Migrations;
 using System.IO;
 using SnilAcademicDepartment.DataAccess.DBTypesInitialisation;
 using System.Collections.Generic;
+using System.Linq;
 using System;
 
 namespace SnilAcademicDepartment.DataAccess.Migrations
@@ -22,6 +23,8 @@ namespace SnilAcademicDepartment.DataAccess.Migrations
         private List<Project> _projects = new List<Project>();
 
         private Document _document;
+
+        private Biography _biography;
 
         private Image _image;
 
@@ -47,6 +50,9 @@ namespace SnilAcademicDepartment.DataAccess.Migrations
 
                 // Add Document.
                 DocumentDBInit.DBInit(db, this._imgByte, out this._document);
+
+                // Add Biography.
+                BiographyDBInit.DBInit(db, "MyBio", out this._biography);
 
                 // Add Education blocks.
                 EducationKeyAreaDBInit.DBInit(db, "Seminar", "RU", this._image, this._languages[0], this._educationBlocks);
@@ -124,7 +130,17 @@ namespace SnilAcademicDepartment.DataAccess.Migrations
 
         private void AddingPersons(SnilDBContext db)
         {
-            throw new NotImplementedException();
+            PersonDBInit.DBInit(db, "Name1", "SecoundName1", "FathersName", this._biography, this._image, "AcademicTitle", "Degree", this._languages[0], "Status", "–‘Ë “", this._lectures, this._seminars, this._projects);
+            PersonDBInit.DBInit(db, "Name1", "SecoundName2", "FathersName", this._biography, this._image, "AcademicTitle", "Degree", this._languages[1], "Status", "–‘Ë “", this._lectures, this._seminars, this._projects);
+            PersonDBInit.DBInit(db, "Name1", "SecoundName3", "FathersName", this._biography, this._image, "AcademicTitle", "Degree", this._languages[2], "Status", "–‘Ë “", this._lectures, this._seminars, this._projects);
+
+            PersonDBInit.DBInit(db, "Name2", "SecoundName1", "FathersName", this._biography, this._image, "AcademicTitle", "Degree", this._languages[0], "Status", "–‘Ë “", this._lectures, this._seminars, this._projects);
+            PersonDBInit.DBInit(db, "Name2", "SecoundName2", "FathersName", this._biography, this._image, "AcademicTitle", "Degree", this._languages[1], "Status", "–‘Ë “", this._lectures, this._seminars, this._projects);
+            PersonDBInit.DBInit(db, "Name2", "SecoundName3", "FathersName", this._biography, this._image, "AcademicTitle", "Degree", this._languages[2], "Status", "–‘Ë “", this._lectures, this._seminars, this._projects);
+
+            PersonDBInit.DBInit(db, "Name3", "SecoundName1", "FathersName", this._biography, this._image, "AcademicTitle", "Degree", this._languages[0], "Status", "–‘Ë “", this._lectures, this._seminars, this._projects);
+            PersonDBInit.DBInit(db, "Name3", "SecoundName2", "FathersName", this._biography, this._image, "AcademicTitle", "Degree", this._languages[1], "Status", "–‘Ë “", this._lectures, this._seminars, this._projects);
+            PersonDBInit.DBInit(db, "Name3", "SecoundName3", "FathersName", this._biography, this._image, "AcademicTitle", "Degree", this._languages[2], "Status", "–‘Ë “", this._lectures, this._seminars, this._projects);
         }
 
         private void AddingLectures(SnilDBContext db)
@@ -140,43 +156,43 @@ namespace SnilAcademicDepartment.DataAccess.Migrations
         private void AddingProjects(SnilDBContext db)
         {
             var commId = 11;
-            ProjectsDBInit.DBInit(db, commId, "P111", "RU", "New", DateTime.UtcNow, this._languages[0], this._image, this._document);
-            ProjectsDBInit.DBInit(db, commId, "P112", "EN", "New", DateTime.UtcNow, this._languages[1], this._image, this._document);
-            ProjectsDBInit.DBInit(db, commId, "P113", "DE", "New", DateTime.UtcNow, this._languages[2], this._image, this._document);
+            ProjectsDBInit.DBInit(db, commId, "P111", "RU", "New", DateTime.UtcNow, this._languages[0], this._image, this._document, this._projects);
+            ProjectsDBInit.DBInit(db, commId, "P112", "EN", "New", DateTime.UtcNow, this._languages[1], this._image, this._document, this._projects);
+            ProjectsDBInit.DBInit(db, commId, "P113", "DE", "New", DateTime.UtcNow, this._languages[2], this._image, this._document, this._projects);
             commId = 12;
-            ProjectsDBInit.DBInit(db, commId, "P121", "RU", "New", DateTime.UtcNow, this._languages[0], this._image, this._document);
-            ProjectsDBInit.DBInit(db, commId, "P122", "EN", "New", DateTime.UtcNow, this._languages[1], this._image, this._document);
-            ProjectsDBInit.DBInit(db, commId, "P123", "DE", "New", DateTime.UtcNow, this._languages[2], this._image, this._document);
+            ProjectsDBInit.DBInit(db, commId, "P121", "RU", "New", DateTime.UtcNow, this._languages[0], this._image, this._document, this._projects);
+            ProjectsDBInit.DBInit(db, commId, "P122", "EN", "New", DateTime.UtcNow, this._languages[1], this._image, this._document, this._projects);
+            ProjectsDBInit.DBInit(db, commId, "P123", "DE", "New", DateTime.UtcNow, this._languages[2], this._image, this._document, this._projects);
             commId = 13;
-            ProjectsDBInit.DBInit(db, commId, "P131", "RU", "New", DateTime.UtcNow, this._languages[0], this._image, this._document);
-            ProjectsDBInit.DBInit(db, commId, "P132", "EN", "New", DateTime.UtcNow, this._languages[1], this._image, this._document);
-            ProjectsDBInit.DBInit(db, commId, "P133", "DE", "New", DateTime.UtcNow, this._languages[2], this._image, this._document);
+            ProjectsDBInit.DBInit(db, commId, "P131", "RU", "New", DateTime.UtcNow, this._languages[0], this._image, this._document, this._projects);
+            ProjectsDBInit.DBInit(db, commId, "P132", "EN", "New", DateTime.UtcNow, this._languages[1], this._image, this._document, this._projects);
+            ProjectsDBInit.DBInit(db, commId, "P133", "DE", "New", DateTime.UtcNow, this._languages[2], this._image, this._document, this._projects);
 
             commId = 21;
-            ProjectsDBInit.DBInit(db, commId, "P211", "RU", "Current", DateTime.UtcNow, this._languages[0], this._image, this._document);
-            ProjectsDBInit.DBInit(db, commId, "P212", "EN", "Current", DateTime.UtcNow, this._languages[1], this._image, this._document);
-            ProjectsDBInit.DBInit(db, commId, "P213", "DE", "Current", DateTime.UtcNow, this._languages[2], this._image, this._document);
+            ProjectsDBInit.DBInit(db, commId, "P211", "RU", "Current", DateTime.UtcNow, this._languages[0], this._image, this._document, this._projects);
+            ProjectsDBInit.DBInit(db, commId, "P212", "EN", "Current", DateTime.UtcNow, this._languages[1], this._image, this._document, this._projects);
+            ProjectsDBInit.DBInit(db, commId, "P213", "DE", "Current", DateTime.UtcNow, this._languages[2], this._image, this._document, this._projects);
             commId = 22;
-            ProjectsDBInit.DBInit(db, commId, "P21", "RU", "Current", DateTime.UtcNow, this._languages[0], this._image, this._document);
-            ProjectsDBInit.DBInit(db, commId, "P22", "EN", "Current", DateTime.UtcNow, this._languages[1], this._image, this._document);
-            ProjectsDBInit.DBInit(db, commId, "P23", "DE", "Current", DateTime.UtcNow, this._languages[2], this._image, this._document);
+            ProjectsDBInit.DBInit(db, commId, "P21", "RU", "Current", DateTime.UtcNow, this._languages[0], this._image, this._document, this._projects);
+            ProjectsDBInit.DBInit(db, commId, "P22", "EN", "Current", DateTime.UtcNow, this._languages[1], this._image, this._document, this._projects);
+            ProjectsDBInit.DBInit(db, commId, "P23", "DE", "Current", DateTime.UtcNow, this._languages[2], this._image, this._document, this._projects);
             commId = 23;
-            ProjectsDBInit.DBInit(db, commId, "P31", "RU", "Current", DateTime.UtcNow, this._languages[0], this._image, this._document);
-            ProjectsDBInit.DBInit(db, commId, "P22", "EN", "Current", DateTime.UtcNow, this._languages[1], this._image, this._document);
-            ProjectsDBInit.DBInit(db, commId, "P23", "DE", "Current", DateTime.UtcNow, this._languages[2], this._image, this._document);
+            ProjectsDBInit.DBInit(db, commId, "P31", "RU", "Current", DateTime.UtcNow, this._languages[0], this._image, this._document, this._projects);
+            ProjectsDBInit.DBInit(db, commId, "P22", "EN", "Current", DateTime.UtcNow, this._languages[1], this._image, this._document, this._projects);
+            ProjectsDBInit.DBInit(db, commId, "P23", "DE", "Current", DateTime.UtcNow, this._languages[2], this._image, this._document, this._projects);
 
             commId = 31;
-            ProjectsDBInit.DBInit(db, commId, "P311", "RU", "Finished", DateTime.UtcNow, this._languages[0], this._image, this._document);
-            ProjectsDBInit.DBInit(db, commId, "P312", "EN", "Finished", DateTime.UtcNow, this._languages[1], this._image, this._document);
-            ProjectsDBInit.DBInit(db, commId, "P313", "DE", "Finished", DateTime.UtcNow, this._languages[2], this._image, this._document);
+            ProjectsDBInit.DBInit(db, commId, "P311", "RU", "Finished", DateTime.UtcNow, this._languages[0], this._image, this._document, this._projects);
+            ProjectsDBInit.DBInit(db, commId, "P312", "EN", "Finished", DateTime.UtcNow, this._languages[1], this._image, this._document, this._projects);
+            ProjectsDBInit.DBInit(db, commId, "P313", "DE", "Finished", DateTime.UtcNow, this._languages[2], this._image, this._document, this._projects);
             commId = 32;
-            ProjectsDBInit.DBInit(db, commId, "P321", "RU", "Finished", DateTime.UtcNow, this._languages[0], this._image, this._document);
-            ProjectsDBInit.DBInit(db, commId, "P322", "EN", "Finished", DateTime.UtcNow, this._languages[1], this._image, this._document);
-            ProjectsDBInit.DBInit(db, commId, "P323", "DE", "Finished", DateTime.UtcNow, this._languages[2], this._image, this._document);
+            ProjectsDBInit.DBInit(db, commId, "P321", "RU", "Finished", DateTime.UtcNow, this._languages[0], this._image, this._document, this._projects);
+            ProjectsDBInit.DBInit(db, commId, "P322", "EN", "Finished", DateTime.UtcNow, this._languages[1], this._image, this._document, this._projects);
+            ProjectsDBInit.DBInit(db, commId, "P323", "DE", "Finished", DateTime.UtcNow, this._languages[2], this._image, this._document, this._projects);
             commId = 33;
-            ProjectsDBInit.DBInit(db, commId, "P331", "RU", "Finished", DateTime.UtcNow, this._languages[0], this._image, this._document);
-            ProjectsDBInit.DBInit(db, commId, "P332", "EN", "Finished", DateTime.UtcNow, this._languages[1], this._image, this._document);
-            ProjectsDBInit.DBInit(db, commId, "P333", "DE", "Finished", DateTime.UtcNow, this._languages[2], this._image, this._document);
+            ProjectsDBInit.DBInit(db, commId, "P331", "RU", "Finished", DateTime.UtcNow, this._languages[0], this._image, this._document, this._projects);
+            ProjectsDBInit.DBInit(db, commId, "P332", "EN", "Finished", DateTime.UtcNow, this._languages[1], this._image, this._document, this._projects);
+            ProjectsDBInit.DBInit(db, commId, "P333", "DE", "Finished", DateTime.UtcNow, this._languages[2], this._image, this._document, this._projects);
 
         }
 

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace SnilAcademicDepartment.DataAccess.DBTypesInitialisation
 {
@@ -28,7 +29,8 @@ namespace SnilAcademicDepartment.DataAccess.DBTypesInitialisation
              DateTime? dataTime,
              Language language,
              Image image,
-             Document document)
+             Document document,
+            List<Project> projects )
         {
             var project = new Project()
             {
@@ -42,6 +44,8 @@ namespace SnilAcademicDepartment.DataAccess.DBTypesInitialisation
                 Image = image,
                 Document = document
             };
+
+            projects.Add(project);
 
             db.Projects.Add(project);
             db.SaveChanges();
