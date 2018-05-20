@@ -15,11 +15,17 @@ namespace SnilAcademicDepartment.DataAccess.Migrations
 
         private List<EducationBlock> _educationBlocks = new List<EducationBlock>();
 
+        private List<Seminar> _seminars = new List<Seminar>();
+
+        private List<Lecture> _lectures = new List<Lecture>();
+
+        private List<Project> _projects = new List<Project>();
+
         private Document _document;
 
         private Image _image;
 
-        private byte[] _imgByte = File.ReadAllBytes(@"D:\GitHub_projects\SNIL\SNIL-Department-of-BSU\SnilAcademicDepartment\SnilAcademicDepartment.DataAccess\img\BSU3.jpg");
+        private byte[] _imgByte = File.ReadAllBytes(@"D:\Visual Studio Projects\SNIL\SnilAcademicDepartment\SnilAcademicDepartment.DataAccess\img\BSU3.jpg"); // D:\GitHub_projects\SNIL\SNIL-Department-of-BSU\SnilAcademicDepartment\SnilAcademicDepartment.DataAccess\img\BSU3.jpg
 
         public Configuration()
         {
@@ -104,7 +110,31 @@ namespace SnilAcademicDepartment.DataAccess.Migrations
 
                 // Init Projects in database.
                 AddingProjects(db);
+
+                // Init Seminars in database.
+                AddingSeminars(db);
+
+                // Init Lectures in database.
+                AddingLectures(db);
+
+                // Init Lectures in database.
+                AddingPersons(db);
             }
+        }
+
+        private void AddingPersons(SnilDBContext db)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void AddingLectures(SnilDBContext db)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void AddingSeminars(SnilDBContext db)
+        {
+            throw new NotImplementedException();
         }
 
         private void AddingProjects(SnilDBContext db)
