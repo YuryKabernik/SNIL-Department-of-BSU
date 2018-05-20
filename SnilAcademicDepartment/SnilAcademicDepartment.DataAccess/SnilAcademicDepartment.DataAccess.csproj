@@ -55,15 +55,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DBTypesInitialisation\BiographyDBInit.cs" />
     <Compile Include="DBTypesInitialisation\DocumentDBInit.cs" />
     <Compile Include="DBTypesInitialisation\EducationKeyAreaDBInit.cs" />
     <Compile Include="DBTypesInitialisation\EducationTopicDBInit.cs" />
     <Compile Include="DBTypesInitialisation\ImageDBInit.cs" />
     <Compile Include="DBTypesInitialisation\LanguageDBInit.cs" />
+    <Compile Include="DBTypesInitialisation\LecturesDBInit.cs" />
     <Compile Include="DBTypesInitialisation\PageTypeDBInit.cs" />
     <Compile Include="DBTypesInitialisation\PersonDBInit.cs" />
     <Compile Include="DBTypesInitialisation\PreviewDBInit.cs" />
     <Compile Include="DBTypesInitialisation\ProjectsDBInit.cs" />
+    <Compile Include="DBTypesInitialisation\SeminarsDBInit.cs" />
     <Compile Include="EntitiesConfiguration\BiographyConfig.cs" />
     <Compile Include="EntitiesConfiguration\DocumentConfig.cs" />
     <Compile Include="EntitiesConfiguration\EducationBlockConfig.cs" />

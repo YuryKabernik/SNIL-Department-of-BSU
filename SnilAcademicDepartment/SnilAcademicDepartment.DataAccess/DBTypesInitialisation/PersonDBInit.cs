@@ -20,11 +20,11 @@ namespace SnilAcademicDepartment.DataAccess.DBTypesInitialisation
             Language lang,
             string status,
             string interests,
-            Lecture[] lectures,
-            Seminar[] seminars,
-            Project[] projects)
+            List<Lecture> lectures,
+            List<Seminar> seminars,
+            List<Project> projects)
         {
-            var obj = new Person()
+            var person = new Person()
             {
                 PersonName = name,
                 SecoundName = secoundName,
@@ -36,10 +36,13 @@ namespace SnilAcademicDepartment.DataAccess.DBTypesInitialisation
                 Language = lang,
                 ProfessionStatus = status,
                 PersonalInterests = interests,
-                Lectures = lectures,
-                Seminars = seminars,
-                Projects = projects
+                Lectures = lectures.Where(p => p.Language.LanguageCode == lang.LanguageCode).Take(3).ToArray(),
+                Seminars = seminars.Where(p => p.Language.LanguageCode == lang.LanguageCode).Take(3).ToArray(),
+                Projects = projects.Where(p => p.Language.LanguageCode == lang.LanguageCode).Take(3).ToArray()
             };
+
+            dBContext.People.Add(person);
+            dBContext.SaveChanges();
         }
     }
 }
