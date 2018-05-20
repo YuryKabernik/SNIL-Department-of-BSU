@@ -20,6 +20,9 @@ namespace SnilAcademicDepartment.DataAccess.DBTypesInitialisation
             {
                 Description = description + _description
             };
+
+            dBContext.Biographies.Add(biography);
+            dBContext.SaveChanges();
         }
     }
 }

@@ -145,7 +145,29 @@ namespace SnilAcademicDepartment.DataAccess.Migrations
 
         private void AddingLectures(SnilDBContext db)
         {
-            throw new NotImplementedException();
+            LecturesDBInit.DBInit(db, "LectureName1", this._languages[0], this._lectures);
+            LecturesDBInit.DBInit(db, "LectureName1", this._languages[1], this._lectures);
+            LecturesDBInit.DBInit(db, "LectureName1", this._languages[2], this._lectures);
+
+            LecturesDBInit.DBInit(db, "LectureName2", this._languages[0], this._lectures);
+            LecturesDBInit.DBInit(db, "LectureName2", this._languages[1], this._lectures);
+            LecturesDBInit.DBInit(db, "LectureName2", this._languages[2], this._lectures);
+
+            LecturesDBInit.DBInit(db, "LectureName3", this._languages[0], this._lectures);
+            LecturesDBInit.DBInit(db, "LectureName3", this._languages[1], this._lectures);
+            LecturesDBInit.DBInit(db, "LectureName3", this._languages[2], this._lectures);
+
+            LecturesDBInit.DBInit(db, "LectureName11", this._languages[0], this._lectures);
+            LecturesDBInit.DBInit(db, "LectureName12", this._languages[1], this._lectures);
+            LecturesDBInit.DBInit(db, "LectureName13", this._languages[2], this._lectures);
+
+            LecturesDBInit.DBInit(db, "LectureName21", this._languages[0], this._lectures);
+            LecturesDBInit.DBInit(db, "LectureName22", this._languages[1], this._lectures);
+            LecturesDBInit.DBInit(db, "LectureName23", this._languages[2], this._lectures);
+
+            LecturesDBInit.DBInit(db, "LectureName31", this._languages[0], this._lectures);
+            LecturesDBInit.DBInit(db, "LectureName32", this._languages[1], this._lectures);
+            LecturesDBInit.DBInit(db, "LectureName33", this._languages[2], this._lectures);
         }
 
         private void AddingSeminars(SnilDBContext db)
