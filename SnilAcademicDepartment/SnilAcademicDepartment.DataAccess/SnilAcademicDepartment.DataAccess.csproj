@@ -61,6 +61,7 @@
     <Compile Include="DBTypesInitialisation\ImageDBInit.cs" />
     <Compile Include="DBTypesInitialisation\LanguageDBInit.cs" />
     <Compile Include="DBTypesInitialisation\PageTypeDBInit.cs" />
+    <Compile Include="DBTypesInitialisation\PersonDBInit.cs" />
     <Compile Include="DBTypesInitialisation\PreviewDBInit.cs" />
     <Compile Include="DBTypesInitialisation\ProjectsDBInit.cs" />
     <Compile Include="EntitiesConfiguration\BiographyConfig.cs" />
