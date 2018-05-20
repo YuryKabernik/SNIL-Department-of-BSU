@@ -1,4 +1,5 @@
 ﻿using SnilAcademicDepartment.BusinessLogic.Services;
+using System.Threading.Tasks;
 using System.Web.Mvc;
 
 namespace SnilAcademicDepartment.Controllers
@@ -14,9 +15,9 @@ namespace SnilAcademicDepartment.Controllers
 
         [HttpGet]
         [Route("image")]
-        public void GetImage()
+        public async Task GetImage(int id)
         {
-            byte[] bytes = imageManager.GetImage();
+            byte[] bytes = await  imageManager.GetImageAsync(id);
             var res = new FileContentResult(bytes, "image/jpeg");
             res.ExecuteResult(this.ControllerContext);
         }

@@ -1,7 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Data.Entity;
 using System.Linq;
-using System.Text;
+using System.Threading.Tasks;
 using SnilAcademicDepartment.DataAccess;
 
 namespace SnilAcademicDepartment.BusinessLogic.Services
@@ -15,9 +14,11 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
             this.snilDBContext = snilDBContext;
         }
 
-        public byte[] GetImage()
+        public async Task<byte[]> GetImageAsync(int id)
         {
-            return snilDBContext.Images.First().Image1;
+            var res = await snilDBContext.Images.Where(p => p.ImageId == id).Select(s => s.Image1).FirstAsync();
+
+            return res;
         }
     }
 }
