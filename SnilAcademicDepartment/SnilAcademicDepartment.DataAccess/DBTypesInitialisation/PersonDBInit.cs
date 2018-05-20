@@ -24,7 +24,7 @@ namespace SnilAcademicDepartment.DataAccess.DBTypesInitialisation
             List<Seminar> seminars,
             List<Project> projects)
         {
-            var obj = new Person()
+            var person = new Person()
             {
                 PersonName = name,
                 SecoundName = secoundName,
@@ -40,6 +40,9 @@ namespace SnilAcademicDepartment.DataAccess.DBTypesInitialisation
                 Seminars = seminars.Where(p => p.Language.LanguageCode == lang.LanguageCode).Take(3).ToArray(),
                 Projects = projects.Where(p => p.Language.LanguageCode == lang.LanguageCode).Take(3).ToArray()
             };
+
+            dBContext.People.Add(person);
+            dBContext.SaveChanges();
         }
     }
 }

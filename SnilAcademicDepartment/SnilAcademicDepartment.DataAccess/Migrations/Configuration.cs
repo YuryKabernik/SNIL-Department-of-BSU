@@ -28,7 +28,7 @@ namespace SnilAcademicDepartment.DataAccess.Migrations
 
         private Image _image;
 
-        private byte[] _imgByte = File.ReadAllBytes(@"D:\Visual Studio Projects\SNIL\SnilAcademicDepartment\SnilAcademicDepartment.DataAccess\img\BSU3.jpg"); // D:\GitHub_projects\SNIL\SNIL-Department-of-BSU\SnilAcademicDepartment\SnilAcademicDepartment.DataAccess\img\BSU3.jpg
+        private byte[] _imgByte = File.ReadAllBytes(@" D:\GitHub_projects\SNIL\SNIL-Department-of-BSU\SnilAcademicDepartment\SnilAcademicDepartment.DataAccess\img\BSU3.jpg"); // D:\Visual Studio Projects\SNIL\SnilAcademicDepartment\SnilAcademicDepartment.DataAccess\img\BSU3.jpg
 
         public Configuration()
         {
