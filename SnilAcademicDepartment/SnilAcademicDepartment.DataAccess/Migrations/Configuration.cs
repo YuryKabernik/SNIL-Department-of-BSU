@@ -172,7 +172,17 @@ namespace SnilAcademicDepartment.DataAccess.Migrations
 
         private void AddingSeminars(SnilDBContext db)
         {
-            throw new NotImplementedException();
+            SeminarsDBInit.DBInit(db, "Title1", this._languages[0], this._document, this._seminars);
+            SeminarsDBInit.DBInit(db, "Title1", this._languages[1], this._document, this._seminars);
+            SeminarsDBInit.DBInit(db, "Title1", this._languages[2], this._document, this._seminars);
+
+            SeminarsDBInit.DBInit(db, "Title2", this._languages[0], this._document, this._seminars);
+            SeminarsDBInit.DBInit(db, "Title2", this._languages[1], this._document, this._seminars);
+            SeminarsDBInit.DBInit(db, "Title2", this._languages[2], this._document, this._seminars);
+
+            SeminarsDBInit.DBInit(db, "Title3", this._languages[0], this._document, this._seminars);
+            SeminarsDBInit.DBInit(db, "Title3", this._languages[1], this._document, this._seminars);
+            SeminarsDBInit.DBInit(db, "Title3", this._languages[2], this._document, this._seminars);
         }
 
         private void AddingProjects(SnilDBContext db)

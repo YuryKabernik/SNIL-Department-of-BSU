@@ -66,6 +66,7 @@
     <Compile Include="DBTypesInitialisation\PersonDBInit.cs" />
     <Compile Include="DBTypesInitialisation\PreviewDBInit.cs" />
     <Compile Include="DBTypesInitialisation\ProjectsDBInit.cs" />
+    <Compile Include="DBTypesInitialisation\SeminarsDBInit.cs" />
     <Compile Include="EntitiesConfiguration\BiographyConfig.cs" />
     <Compile Include="EntitiesConfiguration\DocumentConfig.cs" />
     <Compile Include="EntitiesConfiguration\EducationBlockConfig.cs" />
