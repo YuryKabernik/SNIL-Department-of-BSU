@@ -14,6 +14,17 @@ namespace SnilAcademicDepartment
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+               name: "ImgIdRoute",
+               url: "image/{id}",
+               defaults: new
+               {
+                   controller = "Image",
+                   action = "GetImage",
+                   id = UrlParameter.Optional
+               }
+            );
+
+            routes.MapRoute(
                 name: "NoIdRoute",
                 url: "{language}/{controller}/{action}",
                 defaults: new
