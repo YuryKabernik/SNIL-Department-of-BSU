@@ -4,6 +4,9 @@ using System.Web.Mvc;
 using System.Threading;
 using System.Collections.Generic;
 using SnilAcademicDepartment.BusinessLogic.DTOModels;
+using System;
+using System.Web.Helpers;
+using System.Text;
 
 namespace SnilAcademicDepartment.Controllers
 {
@@ -76,5 +79,14 @@ namespace SnilAcademicDepartment.Controllers
             ViewBag.Title = "Lecturs";
             return View();
         }
+
+        //[HttpGet]
+        //[Route("image")]
+        //public void GetImage(string id)
+        //{
+        //    byte[] bytes = Encoding.ASCII.GetBytes(id);
+        //    var res = new FileContentResult(bytes,"image/jpeg");
+        //    res.ExecuteResult(this.ControllerContext);
+        //}
     }
 }
