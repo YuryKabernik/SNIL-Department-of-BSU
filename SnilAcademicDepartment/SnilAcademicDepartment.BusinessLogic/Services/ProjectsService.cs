@@ -129,9 +129,8 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
             try
             {
                 var requestResult = this._repository.Projects
-               .Where(o => o.CommonID == projectId
-               && o.Language.LanguageCode == langLCID)
-               .First();
+               .First(o => o.CommonID == projectId
+               && o.Language.LanguageCode == langLCID);
 
                 return this._mapper.Map<DTOModels.ProjectModel>(requestResult);
             }

@@ -12,7 +12,7 @@ namespace SnilAcademicDepartment.DataAccess
             : base("SNILDepartment2")
         {
             // Uncomment this to use migration
-            Database.SetInitializer(new MigrateDatabaseToLatestVersion<SnilDBContext, Configuration>("SNILDepartment2"));
+            // Database.SetInitializer(new MigrateDatabaseToLatestVersion<SnilDBContext, Configuration>("SNILDepartment2"));
         }
 
         public virtual DbSet<Biography> Biographies { get; set; }
