@@ -86,6 +86,7 @@
     <Compile Include="Services\HomeService.cs" />
     <Compile Include="Interfaces\ICookieManager.cs" />
     <Compile Include="Interfaces\IMailSender.cs" />
+    <Compile Include="Services\ImageManager.cs" />
     <Compile Include="Services\PeopleService.cs" />
     <Compile Include="Services\ProjectsService.cs" />
     <Compile Include="Services\SendMailService.cs" />
