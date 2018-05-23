@@ -3,6 +3,7 @@ using SnilAcademicDepartment.BusinessLogic.Interfaces;
 using System.Web.Mvc;
 using System.Threading;
 using System.Collections.Generic;
+using Resources.EducationResources;
 using SnilAcademicDepartment.BusinessLogic.DTOModels;
 
 namespace SnilAcademicDepartment.Controllers
@@ -58,7 +59,9 @@ namespace SnilAcademicDepartment.Controllers
         public ActionResult PageQuickLearning()
         {
             ViewBag.Title = "Quick Learning";
-            return View();
+            ViewBag.EducationResourseTitle = EducationResource.QuickLearning;
+
+            return View("EducationPage");
         }
 
         [HttpGet]
@@ -66,7 +69,9 @@ namespace SnilAcademicDepartment.Controllers
         public ActionResult PageSeminars()
         {
             ViewBag.Title = "Seminars";
-            return View();
+            ViewBag.EducationResourseTitle = EducationResource.Seminars;
+
+            return View("EducationPage");
         }
 
         [HttpGet]
@@ -74,7 +79,9 @@ namespace SnilAcademicDepartment.Controllers
         public ActionResult PageLectures()
         {
             ViewBag.Title = "Lecturs";
-            return View();
+            ViewBag.EducationResourseTitle = EducationResource.Lectures;
+
+            return View("EducationPage");
         }
     }
 }
