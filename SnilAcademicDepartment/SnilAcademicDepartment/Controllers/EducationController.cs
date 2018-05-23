@@ -59,12 +59,12 @@ namespace SnilAcademicDepartment.Controllers
         [Route("QuickLearning")]
         public ActionResult PageQuickLearning()
         {
-            PreViewModel viewModel = null;
+            EducationBlockModel viewModel = null;
             List<PreViewModel> lecturePreviewsModels = null;
 
             try
             {
-                // viewModel = this._educationService.
+                viewModel = this._educationService.GetEducationBlock("Quic kLearning", Thread.CurrentThread.CurrentCulture.LCID);
             }
             catch (Exception ex)
             {
