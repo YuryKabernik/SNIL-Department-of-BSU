@@ -27,19 +27,21 @@
         </div>
     </div>
     @{
-        if (ViewBag.ViewModel.Components > 3)
+        if (ViewBag.Components > 3)
         {
 
         }
         else
         {
             <div class="row rowcurrent">
-                @foreach(var item in ViewBag.ViewModel.Components)
+                @foreach(var item in ViewBag.Components)
                 {
                     <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 block">
-                        <h2>@ViewBag.ViewModel.Header</h2><br>
-                        <a href="../files/downloadFile.rtf"><img src="@Url.Action("GetImage", new {controller = "Image", id = 1})" alt="">@ViewBag.ViewModel.Header</a>
-                        <p>@ViewBag.ViewModel.ShortDescription</p>
+                        <h2>@item.Header</h2><br>
+                        <a href="../files/downloadFile.rtf">
+                            <img src="@Url.Action("GetImage", new {controller = "Image", id = 1})" alt="@item.Header" />
+                        </a>
+                        <p>@item.ShortDescription</p>
                     </div>
                 }
                 

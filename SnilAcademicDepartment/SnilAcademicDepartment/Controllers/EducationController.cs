@@ -1,4 +1,5 @@
-﻿using NLog;
+﻿using System;
+using NLog;
 using SnilAcademicDepartment.BusinessLogic.Interfaces;
 using System.Web.Mvc;
 using System.Threading;
@@ -58,6 +59,19 @@ namespace SnilAcademicDepartment.Controllers
         [Route("QuickLearning")]
         public ActionResult PageQuickLearning()
         {
+            PreViewModel viewModel = null;
+            List<PreViewModel> lecturePreviewsModels = null;
+
+            try
+            {
+                // viewModel = this._educationService.
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+
             ViewBag.Title = "Quick Learning";
             ViewBag.EducationResourseTitle = EducationResource.QuickLearning;
 
