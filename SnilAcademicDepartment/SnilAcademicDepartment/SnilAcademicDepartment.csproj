@@ -412,9 +412,6 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Projects\Projects.cshtml" />
-    <Content Include="Views\Projects\PageNew.cshtml" />
-    <Content Include="Views\Projects\PageFinished.cshtml" />
-    <Content Include="Views\Projects\PageCurrent.cshtml" />
     <Content Include="Views\Persons\Persons.cshtml" />
     <Content Include="Views\Persons\PageAdministration.cshtml" />
     <Content Include="Views\Persons\PageStudents.cshtml" />
