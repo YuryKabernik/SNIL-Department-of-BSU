@@ -1,11 +1,11 @@
 ﻿using NLog;
 using System;
+using AutoMapper;
+using System.Linq;
+using System.Globalization;
+using System.Collections.Generic;
 using SnilAcademicDepartment.BusinessLogic.Interfaces;
 using SnilAcademicDepartment.DataAccess;
-using System.Linq;
-using System.Collections.Generic;
-using System.Globalization;
-using AutoMapper;
 using SnilAcademicDepartment.BusinessLogic.DTOModels;
 
 namespace SnilAcademicDepartment.BusinessLogic.Services
@@ -50,6 +50,36 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
             }
 
             return this._mapper.Map<List<EducationBlockModel>>(resultCollection);
+        }
+
+        /// <summary>
+        /// Get education block by it's name.
+        /// </summary>
+        /// <param name="pages">Name of the education block.</param>
+        /// <param name="LCID">Languahe code.</param>
+        /// <returns>Education block as requested.</returns>
+        public EducationBlockModel GetEducationBlock(string blockName, int LCID)
+        {
+            if (string.IsNullOrEmpty(blockName) || string.IsNullOrWhiteSpace(blockName))
+            {
+                throw new ArgumentException($"Parameter {nameof(blockName)} is null, empty or white space.", nameof(blockName));
+            }
+            else if (LCID <= 0)
+            {
+                throw new IndexOutOfRangeException($"Argument {nameof(LCID)} is equal or less than zero.");
+            }
+
+            var block = this._repository.EducationBlocks
+                .FirstOrDefault(s => 
+                    s.Name == blockName && 
+                    s.Language.LanguageCode == CultureInfo.CurrentCulture.LCID);
+
+            if (block == null)
+            {
+                throw new ArgumentNullException(nameof(block), $"Sorry, but there is no EducationBlock you are looking for (Name : {blockName}).");
+            }
+
+            return this._mapper.Map<EducationBlockModel>(block);
         }
     }
 }
