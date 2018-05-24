@@ -62,24 +62,47 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
         {
             if (string.IsNullOrEmpty(blockName) || string.IsNullOrWhiteSpace(blockName))
             {
-                throw new ArgumentException($"Parameter {nameof(blockName)} is null, empty or white space.", nameof(blockName));
+                throw new ArgumentException($"Parameter {nameof(blockName)} is null, empty or white space.",
+                    nameof(blockName));
             }
             else if (LCID <= 0)
             {
                 throw new IndexOutOfRangeException($"Argument {nameof(LCID)} is equal or less than zero.");
             }
 
-            var block = this._repository.EducationBlocks
-                .FirstOrDefault(s => 
-                    s.Name == blockName && 
-                    s.Language.LanguageCode == CultureInfo.CurrentCulture.LCID);
+            var block = this._repository.EducationBlocks.FirstOrDefault(s =>
+                s.Name == blockName && s.Language.LanguageCode == LCID);
 
             if (block == null)
             {
-                throw new ArgumentNullException(nameof(block), $"Sorry, but there is no EducationBlock you are looking for (Name : {blockName}).");
+                throw new ArgumentNullException(nameof(block),
+                    $"Sorry, but there is no EducationBlock you are looking for (Name : {blockName}).");
             }
 
             return this._mapper.Map<EducationBlockModel>(block);
+        }
+
+        public EducationBlockModel GetEducationBlockById(int educationBlockId, int LCID)
+        {
+            if (educationBlockId <= 0)
+            {
+                throw new ArgumentOutOfRangeException(nameof(educationBlockId), "Id cant be equal or less than zero.");
+            }
+
+            if (LCID <= 0)
+            {
+                throw new ArgumentException("Language id cant be equal or less than zero.", nameof(LCID));
+            }
+
+            var res = this._repository.EducationBlocks.FirstOrDefault(s =>
+                s.BlockId == educationBlockId && s.Language.LanguageCode == LCID);
+
+            if (res == null)
+            {
+                throw new ArgumentNullException("There is no Education block with such ID and LCID.");
+            }
+
+            return this._mapper.Map<EducationBlockModel>(res);
         }
     }
 }

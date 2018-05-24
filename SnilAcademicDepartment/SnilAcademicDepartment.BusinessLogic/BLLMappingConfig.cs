@@ -46,6 +46,14 @@ namespace SnilAcademicDepartment.BusinessLogic
             this.CreateMap<HallOfFame, Leader>()
                 .ForMember(des => des.Image, opt => opt.MapFrom(s => s.Person.Image.Image1))
                 .ForMember(des => des.FullName, opt => opt.MapFrom(s => s.Person.SecoundName + s.Person.PersonName + s.Person.FathersName));
+
+            // Mapping Document object.
+            this.CreateMap<Document, DocumentModel>()
+                .ForMember(des => des.Id, opt => opt.MapFrom(s => s.DocumentId))
+                .ForMember(des => des.Name, opt => opt.MapFrom(s => s.DocumentName))
+                .ForMember(des => des.Content, opt => opt.MapFrom(s => s.FileContent))
+                .ForMember(des => des.CreatedOn, opt => opt.MapFrom(s => s.CreatedOn));
+
         }
     }
 }

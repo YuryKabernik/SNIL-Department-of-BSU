@@ -64,7 +64,7 @@ namespace SnilAcademicDepartment.Controllers
 
             try
             {
-                viewModel = this._educationService.GetEducationBlock("Quic kLearning", Thread.CurrentThread.CurrentCulture.LCID);
+                viewModel = this._educationService.GetEducationBlock("Quick Learning", Thread.CurrentThread.CurrentCulture.LCID);
             }
             catch (Exception ex)
             {
