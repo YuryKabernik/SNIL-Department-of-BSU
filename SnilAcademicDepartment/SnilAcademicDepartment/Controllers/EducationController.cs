@@ -65,6 +65,8 @@ namespace SnilAcademicDepartment.Controllers
             try
             {
                 viewModel = this._educationService.GetEducationBlock("Quick Learning", Thread.CurrentThread.CurrentCulture.LCID);
+
+
             }
             catch (Exception ex)
             {
@@ -74,6 +76,7 @@ namespace SnilAcademicDepartment.Controllers
 
             ViewBag.Title = "Quick Learning";
             ViewBag.EducationResourseTitle = EducationResource.QuickLearning;
+            ViewBag.Components = viewModel;
 
             return View("EducationPage");
         }
@@ -82,8 +85,22 @@ namespace SnilAcademicDepartment.Controllers
         [Route("Seminars")]
         public ActionResult PageSeminars()
         {
+            EducationBlockModel viewModel = null;
+            List<PreViewModel> lecturePreviewsModels = null;
+
+            try
+            {
+                viewModel = this._educationService.GetEducationBlock("Seminars", Thread.CurrentThread.CurrentCulture.LCID);
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+
             ViewBag.Title = "Seminars";
             ViewBag.EducationResourseTitle = EducationResource.Seminars;
+            ViewBag.Components = viewModel;
 
             return View("EducationPage");
         }

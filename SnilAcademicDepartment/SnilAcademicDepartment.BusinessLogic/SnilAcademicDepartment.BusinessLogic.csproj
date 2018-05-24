@@ -90,6 +90,7 @@
     <Compile Include="Interfaces\ICookieManager.cs" />
     <Compile Include="Interfaces\IMailSender.cs" />
     <Compile Include="Managers\ImageManager.cs" />
+    <Compile Include="Interfaces\ILecturePreview.cs" />
     <Compile Include="Services\PeopleService.cs" />
     <Compile Include="Services\ProjectsService.cs" />
     <Compile Include="Services\SendMailService.cs" />

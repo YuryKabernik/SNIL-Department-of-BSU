@@ -9,7 +9,7 @@ using SnilAcademicDepartment.BusinessLogic.DTOModels;
 
 namespace SnilAcademicDepartment.BusinessLogic.Services
 {
-    public sealed class PreViewService : IService
+    public sealed class PreViewService : IService, ILecturePreview
     {
         private readonly ILogger _logger;
         private readonly IMapper _mapper;
@@ -68,6 +68,32 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
             }
 
             return this._mapper.Map<IEnumerable<PreViewModel>>(requestResult);
+        }
+
+
+        /// <inheritdoc cref="ILecturePreview"/>
+        public IEnumerable<TPreviewType> GetLecturePreviews<TPreviewType>(int numberOfLectures, int lcid)
+        {
+            if (numberOfLectures <= 0)
+            {
+                throw new ArgumentOutOfRangeException(nameof(numberOfLectures), "Number of lectures cant be equal or less than zero.");
+            }
+
+            if (lcid <= 0)
+            {
+                throw new ArgumentException("Language id cant be equal or less than zero.", nameof(lcid));
+            }
+
+            var lectures = this._repository.Lectures
+                .Where(s => s.Language.LanguageCode == lcid).Take(numberOfLectures)
+                .ToList();
+
+            if (lectures == null)
+            {
+                throw new ArgumentNullException(nameof(lectures),"Cant finde any lecture by requested parameters.");
+            }
+
+            return this._mapper.Map<IEnumerable<TPreviewType>>(lectures);
         }
     }
 }
