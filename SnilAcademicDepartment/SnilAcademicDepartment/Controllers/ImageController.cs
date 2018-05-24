@@ -1,4 +1,4 @@
-﻿using SnilAcademicDepartment.BusinessLogic.Services;
+﻿using SnilAcademicDepartment.BusinessLogic.Managers;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 

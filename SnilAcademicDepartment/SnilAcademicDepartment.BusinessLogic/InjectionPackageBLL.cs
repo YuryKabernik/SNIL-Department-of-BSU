@@ -1,6 +1,7 @@
 ﻿using SimpleInjector;
 using SimpleInjector.Packaging;
 using SnilAcademicDepartment.BusinessLogic.Interfaces;
+using SnilAcademicDepartment.BusinessLogic.Managers;
 using SnilAcademicDepartment.BusinessLogic.Services;
 
 namespace SnilAcademicDepartment.BusinessLogic
