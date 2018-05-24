@@ -27,17 +27,17 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
         /// Search key areas of education blocks.
         /// </summary>
         /// <param name="pages">Number of pages to get.</param>
-        /// <param name="LCID">Languahe code</param>
+        /// <param name="lcid">Languahe code</param>
         /// <returns>Collection of education key areas.</returns>
-        public List<EducationBlockModel> GetKeyAreas(int pages, int LCID)
+        public List<EducationBlockModel> GetKeyAreas(int pages, int lcid)
         {
             if (pages <= 0)
             {
                 throw new IndexOutOfRangeException($"Argument {nameof(pages)} is equal or less than zero.");
             }
-            else if (LCID <= 0)
+            else if (lcid <= 0)
             {
-                throw new IndexOutOfRangeException($"Argument {nameof(LCID)} is equal or less than zero.");
+                throw new IndexOutOfRangeException($"Argument {nameof(lcid)} is equal or less than zero.");
             }
 
             var resultCollection = this._repository.EducationBlocks
@@ -55,23 +55,23 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
         /// <summary>
         /// Get education block by it's name.
         /// </summary>
-        /// <param name="pages">Name of the education block.</param>
-        /// <param name="LCID">Languahe code.</param>
+        /// <param name="blockName">Name of the education block.</param>
+        /// <param name="lcid">Languahe code.</param>
         /// <returns>Education block as requested.</returns>
-        public EducationBlockModel GetEducationBlock(string blockName, int LCID)
+        public EducationBlockModel GetEducationBlock(string blockName, int lcid)
         {
             if (string.IsNullOrEmpty(blockName) || string.IsNullOrWhiteSpace(blockName))
             {
                 throw new ArgumentException($"Parameter {nameof(blockName)} is null, empty or white space.",
                     nameof(blockName));
             }
-            else if (LCID <= 0)
+            else if (lcid <= 0)
             {
-                throw new IndexOutOfRangeException($"Argument {nameof(LCID)} is equal or less than zero.");
+                throw new IndexOutOfRangeException($"Argument {nameof(lcid)} is equal or less than zero.");
             }
 
             var block = this._repository.EducationBlocks.FirstOrDefault(s =>
-                s.Name == blockName && s.Language.LanguageCode == LCID);
+                s.Name == blockName && s.Language.LanguageCode == lcid);
 
             if (block == null)
             {
@@ -82,20 +82,20 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
             return this._mapper.Map<EducationBlockModel>(block);
         }
 
-        public EducationBlockModel GetEducationBlockById(int educationBlockId, int LCID)
+        public EducationBlockModel GetEducationBlockById(int educationBlockId, int lcid)
         {
             if (educationBlockId <= 0)
             {
                 throw new ArgumentOutOfRangeException(nameof(educationBlockId), "Id cant be equal or less than zero.");
             }
 
-            if (LCID <= 0)
+            if (lcid <= 0)
             {
-                throw new ArgumentException("Language id cant be equal or less than zero.", nameof(LCID));
+                throw new ArgumentException("Language id cant be equal or less than zero.", nameof(lcid));
             }
 
             var res = this._repository.EducationBlocks.FirstOrDefault(s =>
-                s.BlockId == educationBlockId && s.Language.LanguageCode == LCID);
+                s.BlockId == educationBlockId && s.Language.LanguageCode == lcid);
 
             if (res == null)
             {
