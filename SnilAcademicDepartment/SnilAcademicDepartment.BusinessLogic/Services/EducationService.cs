@@ -10,7 +10,7 @@ using SnilAcademicDepartment.BusinessLogic.DTOModels;
 
 namespace SnilAcademicDepartment.BusinessLogic.Services
 {
-    public class EducationService : IEducation
+    public class EducationService : IEducation, ILection
     {
         private readonly ILogger _logger;
         private readonly IMapper _mapper;

@@ -347,10 +347,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Content\Projects\ProjectsStyle.less" />
-    <Content Include="Content\Persons\PersonsStyle.less" />
-    <Content Include="Content\Education\EducationStyle.less" />
-    <Content Include="Content\History\HistoryStyle.less" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -430,7 +426,7 @@
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
     <Content Include="Views\Projects\ProjectPage.cshtml" />
-    <Content Include="Views\Education\EducationPage.cshtml" />
+    <Content Include="Views\Education\EducationBlockPage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Cookies\" />

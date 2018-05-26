@@ -22,6 +22,7 @@ namespace SnilAcademicDepartment.DataAccess.Configurations
             this.Property(p => p.FathersName)
                 .HasMaxLength(25)
                 .IsRequired();
+
             this.Property(p => p.ProfessionStatus)
                 .HasMaxLength(50)
                 .IsRequired();

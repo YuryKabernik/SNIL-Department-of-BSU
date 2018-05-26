@@ -15,17 +15,26 @@ namespace SnilAcademicDepartment.Controllers
         private readonly ILogger _logger;
         private readonly IService _previewService;
         private readonly IEducation _educationService;
+        private readonly ILecturePreview _lecturePreview;
+        private readonly ISeminarPreview _seminarPreview;
 
         /// <summary>
         /// Constructor of the EducationController.
         /// </summary>
         /// <param name="logger"></param>
         /// <param name="previewService"></param>
-        public EducationController(ILogger logger, IService previewService, IEducation educationService)
+        public EducationController(
+            ILogger logger,
+            IService previewService, 
+            IEducation educationService, 
+            ILecturePreview lecturePreview,
+            ISeminarPreview seminarPreview)
         {
             this._logger = logger;
             this._previewService = previewService;
             this._educationService = educationService;
+            this._lecturePreview = lecturePreview;
+            this._seminarPreview = seminarPreview;
         }
 
         [HttpGet]
@@ -48,6 +57,12 @@ namespace SnilAcademicDepartment.Controllers
                 throw;
             }
 
+            int i = 1;
+            foreach (var item in blockCollection)
+            {
+                item.ActionId = i++;
+            }
+
             ViewBag.Title = "Education";
             ViewBag.viewModel = viewModel;
             ViewBag.blockModel = blockCollection;
@@ -60,12 +75,10 @@ namespace SnilAcademicDepartment.Controllers
         public ActionResult PageQuickLearning()
         {
             EducationBlockModel viewModel = null;
-            List<PreViewModel> lecturePreviewsModels = null;
 
             try
             {
-                viewModel = this._educationService.GetEducationBlock("Quick Learning", Thread.CurrentThread.CurrentCulture.LCID);
-
+                viewModel = this._educationService.GetEducationBlock("QuickLearning", Thread.CurrentThread.CurrentCulture.LCID);
 
             }
             catch (Exception ex)
@@ -76,9 +89,9 @@ namespace SnilAcademicDepartment.Controllers
 
             ViewBag.Title = "Quick Learning";
             ViewBag.EducationResourseTitle = EducationResource.QuickLearning;
-            ViewBag.Components = viewModel;
+            ViewBag.ViewModel = viewModel;
 
-            return View("EducationPage");
+            return View("EducationBlockPage");
         }
 
         [HttpGet]
@@ -86,11 +99,14 @@ namespace SnilAcademicDepartment.Controllers
         public ActionResult PageSeminars()
         {
             EducationBlockModel viewModel = null;
-            List<PreViewModel> lecturePreviewsModels = null;
+            IEnumerable<SeminarPreview> seninarsPreviewsModels = null;
 
             try
             {
-                viewModel = this._educationService.GetEducationBlock("Seminars", Thread.CurrentThread.CurrentCulture.LCID);
+                //viewModel = this._educationService.GetEducationBlock("Seminar", Thread.CurrentThread.CurrentCulture.LCID);
+
+                //seninarsPreviewsModels = this._seminarPreview.GetSeminarPreviews<SeminarPreview>(3, Thread.CurrentThread.CurrentCulture.LCID);
+
             }
             catch (Exception ex)
             {
@@ -100,19 +116,37 @@ namespace SnilAcademicDepartment.Controllers
 
             ViewBag.Title = "Seminars";
             ViewBag.EducationResourseTitle = EducationResource.Seminars;
-            ViewBag.Components = viewModel;
+            ViewBag.ViewModel = viewModel;
+            ViewBag.Components = seninarsPreviewsModels;
 
-            return View("EducationPage");
+            return View("EducationBlockPage");
         }
 
         [HttpGet]
-        [Route("Lectures")]
+        [Route("Lections")]
         public ActionResult PageLectures()
         {
-            ViewBag.Title = "Lecturs";
-            ViewBag.EducationResourseTitle = EducationResource.Lectures;
+            EducationBlockModel viewModel = null;
+            IEnumerable<LecturePreview> lecturePreviewsModels = null;
 
-            return View("EducationPage");
+            try
+            {
+                viewModel = this._educationService.GetEducationBlock("Lection", Thread.CurrentThread.CurrentCulture.LCID);
+
+                lecturePreviewsModels = this._lecturePreview.GetLecturePreviews<LecturePreview>(3, Thread.CurrentThread.CurrentCulture.LCID);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+            ViewBag.Title = "Lections";
+            ViewBag.EducationResourseTitle = EducationResource.Lectures;
+            ViewBag.ViewModel = viewModel;
+            ViewBag.Components = lecturePreviewsModels;
+
+            return View("EducationBlockPage");
         }
     }
 }

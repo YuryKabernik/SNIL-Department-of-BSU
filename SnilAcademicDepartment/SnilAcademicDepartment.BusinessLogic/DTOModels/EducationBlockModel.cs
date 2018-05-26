@@ -23,5 +23,10 @@ namespace SnilAcademicDepartment.BusinessLogic.DTOModels
         /// Topics of this ke area block.
         /// </summary>
         public IEnumerable<string> Topics { get; set; }
+
+        /// <summary>
+        /// The id of the action.
+        /// </summary>
+        public int ActionId { get; set; }
     }
 }

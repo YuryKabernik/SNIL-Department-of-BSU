@@ -40,11 +40,13 @@
 .content .container .rowcurrent {
   padding-bottom: 25px;
 }
-.content .container .rowcurrent .block img {
-  width: 90%;
-  text-align: center;
-}
-.content .container .rowcurrent .block p {
+.content .container .rowcurrent .block {
   display: block;
   margin-top: 25px;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+
 }
+    .content .container .rowcurrent .block:hover {
+        box-shadow: 0 0 10px #555;
+    }

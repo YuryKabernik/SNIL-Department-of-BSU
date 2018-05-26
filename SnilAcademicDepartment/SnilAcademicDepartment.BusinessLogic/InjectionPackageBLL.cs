@@ -22,6 +22,9 @@ namespace SnilAcademicDepartment.BusinessLogic
             container.Register<ISendMail, SendMailService>(Lifestyle.Scoped);
             container.Register<IService, PreViewService>(Lifestyle.Scoped);
             container.Register<ImageManager>(Lifestyle.Scoped);
+            container.Register<ILecturePreview, PreViewService>(Lifestyle.Scoped);
+            container.Register<ISeminarPreview, PreViewService>(Lifestyle.Scoped);
+
         }
     }
 }

@@ -40,7 +40,8 @@ namespace SnilAcademicDepartment.BusinessLogic
                 .ForMember(des => des.Title, opt => opt.MapFrom(s => s.Name))
                 .ForMember(des => des.Description, opt => opt.MapFrom(s => s.Description))
                 .ForMember(des => des.Image, opt => opt.MapFrom(s => s.Image1.Image1))
-                .ForMember(des => des.Topics, opt => opt.MapFrom(s => s.EducationTopics.Select(p=>p.TopicName)));
+                .ForMember(des => des.Topics, opt => opt.MapFrom(s => s.EducationTopics.Select(p=>p.TopicName)))
+                .ForMember(des=>des.ActionId, opt => opt.MapFrom(s=>s.BlockId));
 
             // Mapping HallOfFame objects.
             this.CreateMap<HallOfFame, Leader>()
@@ -53,6 +54,12 @@ namespace SnilAcademicDepartment.BusinessLogic
                 .ForMember(des => des.Name, opt => opt.MapFrom(s => s.DocumentName))
                 .ForMember(des => des.Content, opt => opt.MapFrom(s => s.FileContent))
                 .ForMember(des => des.CreatedOn, opt => opt.MapFrom(s => s.CreatedOn));
+
+            // Mapping Lecture object LecturePreview.
+            this.CreateMap<Lecture, LecturePreview>()
+                .ForMember(des => des.Author, opt => opt.MapFrom(s => string.Concat(s.People.FirstOrDefault().PersonName, " ", s.People.FirstOrDefault().SecoundName)))
+                .ForMember(des => des.LectureTitle, opt => opt.MapFrom(s => s.LectureName))
+                .ForMember(des => des.Specialisation, opt => opt.MapFrom(s => s.Specialisation.SpecialisationName));
 
         }
     }
