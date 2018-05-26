@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System.Linq;
+using System.Collections.Generic;
+using SnilAcademicDepartment.BusinessLogic.DTOModels;
 
 namespace SnilAcademicDepartment.BusinessLogic.Interfaces
 {
@@ -11,6 +13,6 @@ namespace SnilAcademicDepartment.BusinessLogic.Interfaces
         /// <param name="numberOfSeminars">Number of the seminars to get.</param>
         /// <param name="lcid">Language code of the seminar.</param>
         /// <returns>Previews of the seminars.</returns>
-        IEnumerable<TPreviewType> GetSeminarPreviews<TPreviewType>(int numberOfSeminars, int lcid);
+        IEnumerable<IGrouping<int, TPreviewType>> GetSeminarPreviews<TPreviewType>(int numberOfSeminars, int lcid) where TPreviewType : SeminarPreview;
     }
 }

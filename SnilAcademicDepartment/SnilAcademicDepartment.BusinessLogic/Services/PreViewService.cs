@@ -6,6 +6,7 @@ using System.Linq;
 using System.Collections.Generic;
 using AutoMapper;
 using SnilAcademicDepartment.BusinessLogic.DTOModels;
+using AutoMapper.QueryableExtensions;
 
 namespace SnilAcademicDepartment.BusinessLogic.Services
 {
@@ -86,7 +87,7 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
 
             var lectures = this._repository.Lectures
                 .Where(s => s.Language.LanguageCode == lcid).Take(numberOfLectures)
-                .ToList();
+                .AsEnumerable();
 
             if (lectures == null)
             {
@@ -96,7 +97,7 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
             return this._mapper.Map<IEnumerable<TPreviewType>>(lectures);
         }
 
-        public IEnumerable<TPreviewType> GetSeminarPreviews<TPreviewType>(int numberOfSeminars, int lcid)
+        public IEnumerable<IGrouping<int, TPreviewType>> GetSeminarPreviews<TPreviewType>(int numberOfSeminars, int lcid) where TPreviewType : SeminarPreview
         {
             if (numberOfSeminars <= 0)
             {
@@ -109,15 +110,17 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
             }
 
             var seminars = this._repository.Seminars
-                .Where(s => s.Language.LanguageCode == lcid).Take(numberOfSeminars)
-                .AsEnumerable();
+                .Where(s => s.Language.LanguageCode == lcid)
+                .Take(numberOfSeminars).ToList().AsQueryable()
+                .ProjectTo<SeminarPreview>(this._mapper.ConfigurationProvider) // AutoMapper Extension
+                .GroupBy<SeminarPreview, int>(k => k.EventDate.Year).ToList();
 
             if (seminars == null)
             {
                 throw new ArgumentNullException(nameof(seminars), "Cant finde any seminar by requested parameters.");
             }
 
-            return this._mapper.Map<IEnumerable<TPreviewType>>(seminars);
+            return (IEnumerable<IGrouping<int, TPreviewType>>)seminars;
         }
     }
 }

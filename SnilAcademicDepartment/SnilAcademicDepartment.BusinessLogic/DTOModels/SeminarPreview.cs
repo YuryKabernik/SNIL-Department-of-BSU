@@ -9,7 +9,7 @@ namespace SnilAcademicDepartment.BusinessLogic.DTOModels
 
         public string Topic { get; set; }
 
-        public IEnumerable<string> SpeakersFullNames { get; set; }
+        public IEnumerable<string> SpeakersProfessionStatusAndFullNames { get; set; }
 
         public int? DocumentId { get; set; }
 

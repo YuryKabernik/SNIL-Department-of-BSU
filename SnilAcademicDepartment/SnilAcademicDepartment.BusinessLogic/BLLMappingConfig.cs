@@ -40,8 +40,8 @@ namespace SnilAcademicDepartment.BusinessLogic
                 .ForMember(des => des.Title, opt => opt.MapFrom(s => s.Name))
                 .ForMember(des => des.Description, opt => opt.MapFrom(s => s.Description))
                 .ForMember(des => des.Image, opt => opt.MapFrom(s => s.Image1.Image1))
-                .ForMember(des => des.Topics, opt => opt.MapFrom(s => s.EducationTopics.Select(p=>p.TopicName)))
-                .ForMember(des=>des.ActionId, opt => opt.MapFrom(s=>s.BlockId));
+                .ForMember(des => des.Topics, opt => opt.MapFrom(s => s.EducationTopics.Select(p => p.TopicName)))
+                .ForMember(des => des.ActionId, opt => opt.MapFrom(s => s.BlockId));
 
             // Mapping HallOfFame objects.
             this.CreateMap<HallOfFame, Leader>()
@@ -64,10 +64,15 @@ namespace SnilAcademicDepartment.BusinessLogic
             // Mapping Seminar object SeminarPreview.
             this.CreateMap<Seminar, SeminarPreview>()
                 .ForMember(des => des.Title, opt => opt.MapFrom(s => s.Title))
-                .ForMember(des => des.SpeakersFullNames, opt => opt.MapFrom(s => s.People.Select<Person, string>(j => string.Concat(j.PersonName, j.SecoundName))))
+                .ForMember(des => des.SpeakersProfessionStatusAndFullNames, opt => opt
+                    .MapFrom(s => s.People.Select<Person, string>(j =>
+                    string.Concat(j.PersonName, j.SecoundName, $" ({j.ProfessionStatus})"))))
                 .ForMember(des => des.EventDate, opt => opt.MapFrom(s => s.EventDate))
                 .ForMember(des => des.Topic, opt => opt.MapFrom(s => s.Topic1.TopicName))
                 .ForMember(des => des.DocumentId, opt => opt.MapFrom(s => s.DoctId));
+
+            this.CreateMap<IGrouping<int, Seminar>, IGrouping<int, SeminarPreview>>()
+                .ForMember(des => des.Key, opt => opt.MapFrom(s => s.Key));
         }
     }
 }

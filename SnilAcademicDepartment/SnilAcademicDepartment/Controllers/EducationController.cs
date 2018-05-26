@@ -6,6 +6,7 @@ using System.Threading;
 using System.Collections.Generic;
 using Resources.EducationResources;
 using SnilAcademicDepartment.BusinessLogic.DTOModels;
+using System.Linq;
 
 namespace SnilAcademicDepartment.Controllers
 {
@@ -78,7 +79,7 @@ namespace SnilAcademicDepartment.Controllers
 
             try
             {
-                viewModel = this._educationService.GetEducationBlock("QuickLearning", Thread.CurrentThread.CurrentCulture.LCID);
+                viewModel = this._educationService.GetEducationBlockById(3, Thread.CurrentThread.CurrentCulture.LCID);
 
             }
             catch (Exception ex)
@@ -89,7 +90,7 @@ namespace SnilAcademicDepartment.Controllers
 
             ViewBag.Title = "Quick Learning";
             ViewBag.EducationResourseTitle = EducationResource.QuickLearning;
-            ViewBag.ViewModel = viewModel;
+            ViewBag.Components = viewModel;
 
             return View("EducationBlockPage");
         }
@@ -98,12 +99,11 @@ namespace SnilAcademicDepartment.Controllers
         [Route("Seminars")]
         public ActionResult PageSeminars()
         {
-            IEnumerable<SeminarPreview> seninarsPreviewsModels = null;
+            IEnumerable<IGrouping<int, SeminarPreview>> seninarsPreviewsModels = null;
 
             try
             {
-                seninarsPreviewsModels = this._seminarPreviewService.GetSeminarPreviews<SeminarPreview>(3, Thread.CurrentThread.CurrentCulture.LCID);
-
+                seninarsPreviewsModels = this._seminarPreviewService.GetSeminarPreviews<SeminarPreview>(12, Thread.CurrentThread.CurrentCulture.LCID);
             }
             catch (Exception ex)
             {
@@ -122,13 +122,10 @@ namespace SnilAcademicDepartment.Controllers
         [Route("Lections")]
         public ActionResult PageLectures()
         {
-            EducationBlockModel viewModel = null;
             IEnumerable<LecturePreview> lecturePreviewsModels = null;
 
             try
             {
-                viewModel = this._educationService.GetEducationBlock("Lection", Thread.CurrentThread.CurrentCulture.LCID);
-
                 lecturePreviewsModels = this._lecturePreviewService.GetLecturePreviews<LecturePreview>(3, Thread.CurrentThread.CurrentCulture.LCID);
             }
             catch (Exception)
@@ -139,7 +136,6 @@ namespace SnilAcademicDepartment.Controllers
 
             ViewBag.Title = "Lections";
             ViewBag.EducationResourseTitle = EducationResource.Lectures;
-            ViewBag.ViewModel = viewModel;
             ViewBag.Components = lecturePreviewsModels;
 
             return View("EducationBlockPage");
