@@ -15,8 +15,8 @@ namespace SnilAcademicDepartment.Controllers
         private readonly ILogger _logger;
         private readonly IService _previewService;
         private readonly IEducation _educationService;
-        private readonly ILecturePreview _lecturePreview;
-        private readonly ISeminarPreview _seminarPreview;
+        private readonly ILecturePreview _lecturePreviewService;
+        private readonly ISeminarPreview _seminarPreviewService;
 
         /// <summary>
         /// Constructor of the EducationController.
@@ -27,14 +27,14 @@ namespace SnilAcademicDepartment.Controllers
             ILogger logger,
             IService previewService, 
             IEducation educationService, 
-            ILecturePreview lecturePreview,
-            ISeminarPreview seminarPreview)
+            ILecturePreview lecturePreviewService,
+            ISeminarPreview seminarPreviewService)
         {
             this._logger = logger;
             this._previewService = previewService;
             this._educationService = educationService;
-            this._lecturePreview = lecturePreview;
-            this._seminarPreview = seminarPreview;
+            this._lecturePreviewService = lecturePreviewService;
+            this._seminarPreviewService = seminarPreviewService;
         }
 
         [HttpGet]
@@ -102,7 +102,7 @@ namespace SnilAcademicDepartment.Controllers
 
             try
             {
-                seninarsPreviewsModels = this._seminarPreview.GetSeminarPreviews<SeminarPreview>(3, Thread.CurrentThread.CurrentCulture.LCID);
+                seninarsPreviewsModels = this._seminarPreviewService.GetSeminarPreviews<SeminarPreview>(3, Thread.CurrentThread.CurrentCulture.LCID);
 
             }
             catch (Exception ex)
@@ -129,7 +129,7 @@ namespace SnilAcademicDepartment.Controllers
             {
                 viewModel = this._educationService.GetEducationBlock("Lection", Thread.CurrentThread.CurrentCulture.LCID);
 
-                lecturePreviewsModels = this._lecturePreview.GetLecturePreviews<LecturePreview>(3, Thread.CurrentThread.CurrentCulture.LCID);
+                lecturePreviewsModels = this._lecturePreviewService.GetLecturePreviews<LecturePreview>(3, Thread.CurrentThread.CurrentCulture.LCID);
             }
             catch (Exception)
             {

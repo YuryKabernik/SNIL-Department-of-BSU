@@ -1,7 +1,6 @@
 ﻿using AutoMapper;
 using SnilAcademicDepartment.BusinessLogic.DTOModels;
 using SnilAcademicDepartment.DataAccess;
-using System.Collections.Generic;
 using System.Linq;
 
 namespace SnilAcademicDepartment.BusinessLogic

@@ -103,6 +103,10 @@
     <Compile Include="Migrations\201805191751495_AddCommonIDToProjectForCulturalProjectAssociation.Designer.cs">
       <DependentUpon>201805191751495_AddCommonIDToProjectForCulturalProjectAssociation.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201805261520417_AddCommonIdToBlockType.cs" />
+    <Compile Include="Migrations\201805261520417_AddCommonIdToBlockType.Designer.cs">
+      <DependentUpon>201805261520417_AddCommonIdToBlockType.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Biography.cs" />
     <Compile Include="DBContext\DBContext.cs" />
@@ -144,6 +148,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201805191751495_AddCommonIDToProjectForCulturalProjectAssociation.resx">
       <DependentUpon>201805191751495_AddCommonIDToProjectForCulturalProjectAssociation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805261520417_AddCommonIdToBlockType.resx">
+      <DependentUpon>201805261520417_AddCommonIdToBlockType.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

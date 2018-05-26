@@ -55,17 +55,17 @@ namespace SnilAcademicDepartment.DataAccess.Migrations
                 BiographyDBInit.DBInit(db, "MyBio", out this._biography);
 
                 // Add Education blocks.
-                EducationKeyAreaDBInit.DBInit(db, "Seminar", "RU", this._image, this._languages[0], this._educationBlocks);
-                EducationKeyAreaDBInit.DBInit(db, "ENSeminar", "EN", this._image, this._languages[1], this._educationBlocks);
-                EducationKeyAreaDBInit.DBInit(db, "DESeminar", "DE", this._image, this._languages[2], this._educationBlocks);
+                EducationKeyAreaDBInit.DBInit(db, "Seminar", "RU", 1, this._image, this._languages[0], this._educationBlocks);
+                EducationKeyAreaDBInit.DBInit(db, "ENSeminar", "EN", 1, this._image, this._languages[1], this._educationBlocks);
+                EducationKeyAreaDBInit.DBInit(db, "DESeminar", "DE", 1, this._image, this._languages[2], this._educationBlocks);
 
-                EducationKeyAreaDBInit.DBInit(db, "Lection", "RU", this._image, this._languages[0], this._educationBlocks);
-                EducationKeyAreaDBInit.DBInit(db, "ENLection", "EN", this._image, this._languages[1], this._educationBlocks);
-                EducationKeyAreaDBInit.DBInit(db, "DELection", "DE", this._image, this._languages[2], this._educationBlocks);
+                EducationKeyAreaDBInit.DBInit(db, "Lection", "RU", 2, this._image, this._languages[0], this._educationBlocks);
+                EducationKeyAreaDBInit.DBInit(db, "ENLection", "EN", 2, this._image, this._languages[1], this._educationBlocks);
+                EducationKeyAreaDBInit.DBInit(db, "DELection", "DE", 2, this._image, this._languages[2], this._educationBlocks);
 
-                EducationKeyAreaDBInit.DBInit(db, "QuickLearning", "RU", this._image, this._languages[0], this._educationBlocks);
-                EducationKeyAreaDBInit.DBInit(db, "ENQuickLearning", "EN", this._image, this._languages[1], this._educationBlocks);
-                EducationKeyAreaDBInit.DBInit(db, "DEQuickLearning", "DE", this._image, this._languages[2], this._educationBlocks);
+                EducationKeyAreaDBInit.DBInit(db, "QuickLearning", "RU", 3, this._image, this._languages[0], this._educationBlocks);
+                EducationKeyAreaDBInit.DBInit(db, "ENQuickLearning", "EN", 3, this._image, this._languages[1], this._educationBlocks);
+                EducationKeyAreaDBInit.DBInit(db, "DEQuickLearning", "DE", 3, this._image, this._languages[2], this._educationBlocks);
 
                 // Add EducationTopics.
                 EducationTopicsSeminar(db);

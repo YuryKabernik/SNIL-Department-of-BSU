@@ -108,9 +108,9 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
                 throw new ArgumentException("Language id cant be equal or less than zero.", nameof(lcid));
             }
 
-            var seminars = this._repository.Lectures
+            var seminars = this._repository.Seminars
                 .Where(s => s.Language.LanguageCode == lcid).Take(numberOfSeminars)
-                .ToList();
+                .AsEnumerable();
 
             if (seminars == null)
             {

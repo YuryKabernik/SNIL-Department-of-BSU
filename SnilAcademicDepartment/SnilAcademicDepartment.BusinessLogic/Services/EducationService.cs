@@ -82,11 +82,11 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
             return this._mapper.Map<EducationBlockModel>(block);
         }
 
-        public EducationBlockModel GetEducationBlockById(int educationBlockId, int lcid)
+        public EducationBlockModel GetEducationBlockById(int commonBlockTypeId, int lcid)
         {
-            if (educationBlockId <= 0)
+            if (commonBlockTypeId <= 0)
             {
-                throw new ArgumentOutOfRangeException(nameof(educationBlockId), "Id cant be equal or less than zero.");
+                throw new ArgumentOutOfRangeException(nameof(commonBlockTypeId), "Id cant be equal or less than zero.");
             }
 
             if (lcid <= 0)
@@ -95,7 +95,7 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
             }
 
             var res = this._repository.EducationBlocks.FirstOrDefault(s =>
-                s.BlockId == educationBlockId && s.Language.LanguageCode == lcid);
+                s.CommonBlockTypeId == commonBlockTypeId && s.Language.LanguageCode == lcid);
 
             if (res == null)
             {

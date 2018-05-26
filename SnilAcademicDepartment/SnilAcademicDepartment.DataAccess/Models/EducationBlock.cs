@@ -8,6 +8,8 @@ namespace SnilAcademicDepartment.DataAccess
     {
         public int BlockId { get; set; }
 
+        public int CommonBlockTypeId { get; set; }
+
         public string Name { get; set; }
 
         public string Description { get; set; }
