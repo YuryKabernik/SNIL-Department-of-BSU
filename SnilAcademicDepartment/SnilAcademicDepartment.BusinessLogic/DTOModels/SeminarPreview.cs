@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace SnilAcademicDepartment.BusinessLogic.DTOModels
 {
@@ -6,10 +7,12 @@ namespace SnilAcademicDepartment.BusinessLogic.DTOModels
     {
         public string Title { get; set; }
 
-        public IEnumerable<string> SpeakersFullName { get; set; }
+        public string Topic { get; set; }
 
-        public string ProfessionStatus { get; set; }
+        public IEnumerable<string> SpeakersFullNames { get; set; }
 
-        public string Description { get; set; }
+        public int? DocumentId { get; set; }
+
+        public DateTime EventDate { get; set; }
     }
 }

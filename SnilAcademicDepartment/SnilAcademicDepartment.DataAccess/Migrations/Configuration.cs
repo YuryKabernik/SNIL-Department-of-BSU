@@ -183,6 +183,14 @@ namespace SnilAcademicDepartment.DataAccess.Migrations
             SeminarsDBInit.DBInit(db, "Title3", this._languages[0], this._document, this._seminars);
             SeminarsDBInit.DBInit(db, "Title3", this._languages[1], this._document, this._seminars);
             SeminarsDBInit.DBInit(db, "Title3", this._languages[2], this._document, this._seminars);
+
+            SeminarsDBInit.DBInit(db, "Title4", this._languages[0], this._document, this._seminars);
+            SeminarsDBInit.DBInit(db, "Title4", this._languages[1], this._document, this._seminars);
+            SeminarsDBInit.DBInit(db, "Title4", this._languages[2], this._document, this._seminars);
+
+            SeminarsDBInit.DBInit(db, "Title5", this._languages[0], this._document, this._seminars);
+            SeminarsDBInit.DBInit(db, "Title5", this._languages[1], this._document, this._seminars);
+            SeminarsDBInit.DBInit(db, "Title5", this._languages[2], this._document, this._seminars);
         }
 
         private void AddingProjects(SnilDBContext db)

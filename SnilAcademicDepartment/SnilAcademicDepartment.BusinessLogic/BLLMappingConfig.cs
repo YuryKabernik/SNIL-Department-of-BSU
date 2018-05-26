@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using SnilAcademicDepartment.BusinessLogic.DTOModels;
 using SnilAcademicDepartment.DataAccess;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace SnilAcademicDepartment.BusinessLogic
@@ -61,6 +62,13 @@ namespace SnilAcademicDepartment.BusinessLogic
                 .ForMember(des => des.LectureTitle, opt => opt.MapFrom(s => s.LectureName))
                 .ForMember(des => des.Specialisation, opt => opt.MapFrom(s => s.Specialisation.SpecialisationName));
 
+            // Mapping Seminar object SeminarPreview.
+            this.CreateMap<Seminar, SeminarPreview>()
+                .ForMember(des => des.Title, opt => opt.MapFrom(s => s.Title))
+                .ForMember(des => des.SpeakersFullNames, opt => opt.MapFrom(s => s.People.Select<Person, string>(j => string.Concat(j.PersonName, j.SecoundName))))
+                .ForMember(des => des.EventDate, opt => opt.MapFrom(s => s.EventDate))
+                .ForMember(des => des.Topic, opt => opt.MapFrom(s => s.Topic1.TopicName))
+                .ForMember(des => des.DocumentId, opt => opt.MapFrom(s => s.DoctId));
         }
     }
 }

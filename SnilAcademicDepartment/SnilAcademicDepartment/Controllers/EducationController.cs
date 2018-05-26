@@ -98,14 +98,11 @@ namespace SnilAcademicDepartment.Controllers
         [Route("Seminars")]
         public ActionResult PageSeminars()
         {
-            EducationBlockModel viewModel = null;
             IEnumerable<SeminarPreview> seninarsPreviewsModels = null;
 
             try
             {
-                //viewModel = this._educationService.GetEducationBlock("Seminar", Thread.CurrentThread.CurrentCulture.LCID);
-
-                //seninarsPreviewsModels = this._seminarPreview.GetSeminarPreviews<SeminarPreview>(3, Thread.CurrentThread.CurrentCulture.LCID);
+                seninarsPreviewsModels = this._seminarPreview.GetSeminarPreviews<SeminarPreview>(3, Thread.CurrentThread.CurrentCulture.LCID);
 
             }
             catch (Exception ex)
@@ -116,7 +113,6 @@ namespace SnilAcademicDepartment.Controllers
 
             ViewBag.Title = "Seminars";
             ViewBag.EducationResourseTitle = EducationResource.Seminars;
-            ViewBag.ViewModel = viewModel;
             ViewBag.Components = seninarsPreviewsModels;
 
             return View("EducationBlockPage");
