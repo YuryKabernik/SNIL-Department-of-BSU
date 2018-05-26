@@ -1,4 +1,5 @@
-﻿
+﻿@using SnilAcademicDepartment.BusinessLogic.DTOModels;
+@using System.Linq;
 @{
     @Styles.Render("~/Content/education")
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -18,107 +19,49 @@
 
 <div class="container">
     <div class="row rowcurrent">
-        <h2>Программа семинара 2018</h2><br>
-        <div class="row">
-            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 block">
-                <h3>Course of lectures by Dr. Mikalai Yatskou</h3><br>
-                    <p>
-                        Gene Expression of Secondary Messengers and Replicates. <br />
-                        <strong>Speaker:</strong> Natalia Chehovich (PhD student), Natalia Chehovich (PhD student),Natalia Chehovich (PhD student)
-                    </p>
-                <a href="~/img/DSC_3546.JPG">Download document...</a>
-            </div>
-            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 block">
-                <h3>Course of lectures by Dr. Victor Skakun</h3><br>
-                <p>
-                    Gene Expression of Secondary Messengers and Replicates. <br />
-                    <strong>Speaker:</strong> Natalia Chehovich (PhD student)
-                </p>
-                <a href="~/img/DSC_3546.JPG">Download document...</a>
+        @{
 
-            </div>
-            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 block">
-                <h3>Course of lectures by Anatoly Digris</h3><br>
-                <p>
-                    Genomic and Molecular Genetic Directions in the Area of Infectology. <br />
-                    <strong>Speaker:</strong> Acad. Prof. Dr. Leonid Titov
-                </p>
-                <a href="~/img/DSC_3546.JPG">Download document...</a>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 block">
-                <h3>Course of lectures by Dr. Mikalai Yatskou</h3><br>
-                <p>
-                    Gene Expression of Secondary Messengers and Replicates. <br />
-                    <strong>Speaker:</strong> Natalia Chehovich (PhD student)
-                </p>
-                <a href="~/img/DSC_3546.JPG">Download document...</a>
-            </div>
-            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 block">
-                <h3>Course of lectures by Dr. Victor Skakun</h3><br>
-                                                                <p>
-                                                                    Gene Expression of Secondary Messengers and Replicates. <br />
-                                                                    <strong>Speaker:</strong> Natalia Chehovich (PhD student), Natalia Chehovich (PhD student)
-                                                                </p>
-                <a href="~/img/DSC_3546.JPG">Download document...</a>
+            if (ViewBag.Components is IEnumerable<IGrouping<int, SeminarPreview>>)
+            {
+                foreach (IGrouping<int, SeminarPreview> group in ViewBag.Components)
+                {
+                    <h2>@ViewBag.EducationResourseTitle @group.Key</h2><br>
+                    <div class="row">
+                        @foreach (var item in group)
+                        {
+                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 block">
+                                <h3>@item.Title</h3><br>
+                                <p>
+                                    @item.Topic <br />
+                                    <br /><strong>@Resources.EducationResources.EducationResource.SeminarSpeaker: </strong><br />@string.Join(",", item.SpeakersProfessionStatusAndFullNames)
+                                </p>
+                                <a href="~/img/DSC_3546.JPG">@Resources.Resource.Download</a>
+                            </div>
+                        }
+                    </div>
 
-            </div>
-            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 block">
-                <h3>Course of lectures by Anatoly Digris</h3><br>
-                <p>
-                    Genomic and Molecular Genetic Directions in the Area of Infectology. <br />
-                    <strong>Speaker:</strong> Acad. Prof. Dr. Leonid Titov
-                </p>
-                <a href="~/img/DSC_3546.JPG">Download document...</a>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 block">
-                <h3>Course of lectures by Dr. Mikalai Yatskou</h3><br>
-                                                                  <p>
-                                                                      Gene Expression of Secondary Messengers and Replicates. <br />
-                                                                      <strong>Speaker:</strong> Natalia Chehovich (PhD student),Natalia Chehovich (PhD student)Natalia Chehovich (PhD student)
-                                                                  </p>
-                <a href="~/img/DSC_3546.JPG">Download document...</a>
-            </div>
-            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 block">
-                <h3>Course of lectures by Dr. Victor Skakun</h3><br>
-                <p>
-                    Gene Expression of Secondary Messengers and Replicates. <br />
-                    <strong>Speaker:</strong> Natalia Chehovich (PhD student)
-                </p>
-                <a href="~/img/DSC_3546.JPG">Download document...</a>
-
-            </div>
-            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 block">
-                <h3>Course of lectures by Anatoly Digris</h3><br>
-                <p>
-                    Genomic and Molecular Genetic Directions in the Area of Infectology. <br />
-                    <strong>Speaker:</strong> Acad. Prof. Dr. Leonid Titov
-                </p>
-                <a href="~/img/DSC_3546.JPG">Download document...</a>
-            </div>
-        </div>
-    </div>
-    <div class="row rowcurrent">
-        <h2>Программа семинара 2016</h2><br>
-        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 block">
-            <h3>Course of lectures by Vladimir Lutkovski</h3><br>
-            <p>Artificial Neural Network Modification of Simulation-Based Fitting: Application to a Protein-Lipid System. <strong>Speaker:</strong> Petr Nazarov (PhD student)</p>
-            <a href="~/img/DSC_3546.JPG">Download document...</a>
-        </div>
-        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 block">
-            <h3>Course of lectures by Pavel Korjukou</h3><br>
-            <p>Software GeneExpressionAnalyser for analysis of DNA microarrays. 
-            <br /><strong>Speaker:</strong> Saechnikov Anton (PhD student)</p>
-            <a href="~/img/DSC_3546.JPG">Download document...</a>
-        </div>
-        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 block">
-            <h3>Course of lectures by Dr. Stanislau Hileuski</h3><br>
-            <p>An algorithm for Automated Segmenting the Cancer Cell Borders in the Three-Channel Fluorescence Images. 
-            <br /><strong>Speaker:</strong> Lisistsa E.V., Skakun V.V.</p>
-            <a href="~/img/DSC_3546.JPG">Download document...</a>
-        </div>
+                }
+            }
+            if (ViewBag.Components is IEnumerable<LecturePreview>)
+            {
+                <div class="row">
+                    @foreach (LecturePreview component in ViewBag.Components)
+                    {
+                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 block">
+                        <h3>@component.LectureTitle</h3><br>
+                        <p>
+                            @component.Specialisation<br />
+                            <br /><strong>@Resources.EducationResources.EducationResource.LectureSpeaker: </strong><br />@component.Author
+                        </p>
+                        <a href="~/img/DSC_3546.JPG">@Resources.Resource.Download</a>
+                    </div>
+                    }
+                </div>
+            }
+            if (ViewBag.Components is EducationBlockModel)
+            {
+                <p style="text-align: center; text-shadow:20px 12px 2px #808080"><strong>Sorry, this education block is not avaliable :(</strong></p> 
+            }
+        }
     </div>
 </div>

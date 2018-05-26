@@ -132,6 +132,9 @@
   <data name="CultureName" xml:space="preserve">
     <value>Deutsch</value>
   </data>
+  <data name="Download" xml:space="preserve">
+    <value>Dokument herunterladen ...</value>
+  </data>
   <data name="Education" xml:space="preserve">
     <value>Unterricht</value>
   </data>

@@ -44,9 +44,8 @@
   display: block;
   margin-top: 25px;
   margin-bottom: 20px;
-  padding-bottom: 15px;
-
+  padding: 5px 20px 15px 20px;
 }
-    .content .container .rowcurrent .block:hover {
-        box-shadow: 0 0 10px #555;
-    }
+.content .container .rowcurrent .block:hover {
+    box-shadow: 0 0 10px #555;
+}

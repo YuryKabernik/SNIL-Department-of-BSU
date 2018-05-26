@@ -123,10 +123,16 @@
   <data name="Lectures" xml:space="preserve">
     <value>Лекции</value>
   </data>
+  <data name="LectureSpeaker" xml:space="preserve">
+    <value>Читает лекции</value>
+  </data>
   <data name="QuickLearning" xml:space="preserve">
     <value>Quick Learning</value>
   </data>
   <data name="Seminars" xml:space="preserve">
     <value>Семинары</value>
+  </data>
+  <data name="SeminarSpeaker" xml:space="preserve">
+    <value>Участники</value>
   </data>
 </root>

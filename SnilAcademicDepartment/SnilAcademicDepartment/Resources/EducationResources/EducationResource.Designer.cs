@@ -79,6 +79,15 @@ namespace Resources.EducationResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Читает лекции.
+        /// </summary>
+        public static string LectureSpeaker {
+            get {
+                return ResourceManager.GetString("LectureSpeaker", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Quick Learning.
         /// </summary>
         public static string QuickLearning {
@@ -93,6 +102,15 @@ namespace Resources.EducationResources {
         public static string Seminars {
             get {
                 return ResourceManager.GetString("Seminars", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Участники.
+        /// </summary>
+        public static string SeminarSpeaker {
+            get {
+                return ResourceManager.GetString("SeminarSpeaker", resourceCulture);
             }
         }
     }
