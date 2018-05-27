@@ -1,8 +1,6 @@
 ﻿using System.Web.Mvc;
 using SnilAcademicDepartment.BusinessLogic.Interfaces;
-using System.Security.Cryptography.Pkcs;
 using System.Web;
-using System.Net.Mime;
 
 namespace SnilAcademicDepartment.Controllers
 {
@@ -14,9 +12,10 @@ namespace SnilAcademicDepartment.Controllers
         {
             this._fileManager = fileManager;
         }
+
         [HttpGet]
         [Route("file")]
-        public ActionResult GetFileById(int? id)
+        public FileResult GetFileById(int? id)
         {
             if (id == null)
             {
@@ -24,12 +23,11 @@ namespace SnilAcademicDepartment.Controllers
             }
 
             var file = this._fileManager.GetFileById((int)id);
-            var stream = new ContentInfo(file.Content);
-
-            string fileName = file.Name;
-            string mimeType = "";
             
-            var res = File(file.Content, "", fileName);
+            string fileName = file.Name;
+            string mimeType = MimeMapping.GetMimeMapping(file.FileType);
+
+            var res = new FileContentResult(file.Content, mimeType);
             return res;
         }
     }

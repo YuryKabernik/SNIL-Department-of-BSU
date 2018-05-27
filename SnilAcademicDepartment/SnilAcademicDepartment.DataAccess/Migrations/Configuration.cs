@@ -28,7 +28,11 @@ namespace SnilAcademicDepartment.DataAccess.Migrations
 
         private Image _image;
 
-        private byte[] _imgByte = File.ReadAllBytes(@" D:\GitHub_projects\SNIL\SNIL-Department-of-BSU\SnilAcademicDepartment\SnilAcademicDepartment.DataAccess\img\BSU3.jpg"); // D:\Visual Studio Projects\SNIL\SnilAcademicDepartment\SnilAcademicDepartment.DataAccess\img\BSU3.jpg
+        private static string _imgPath = @"D:\GitHub_projects\SNIL\SNIL-Department-of-BSU\SnilAcademicDepartment\SnilAcademicDepartment.DataAccess\img\BSU3.jpg"; // D:\Visual Studio Projects\SNIL\SnilAcademicDepartment\SnilAcademicDepartment.DataAccess\img\BSU3.jpg
+        private byte[] _imgByte = File.ReadAllBytes(_imgPath);
+
+        private static string _docPath = @"D:\GitHub_projects\SNIL\SNIL-Department-of-BSU\SnilAcademicDepartment\SnilAcademicDepartment.DataAccess\img\Ректору  - БГУ.docx"; // D:\Visual Studio Projects\SNIL\SnilAcademicDepartment\SnilAcademicDepartment.DataAccess\img\Ректору  - БГУ.docx
+        private byte[] _docByte = File.ReadAllBytes(_docPath);
 
         public Configuration()
         {
@@ -49,7 +53,7 @@ namespace SnilAcademicDepartment.DataAccess.Migrations
                 ImageDBInit.DBInit(db, this._imgByte, out this._image);
 
                 // Add Document.
-                DocumentDBInit.DBInit(db, this._imgByte, out this._document);
+                DocumentDBInit.DBInit(db, this._docByte, _imgPath, out this._document);
 
                 // Add Biography.
                 BiographyDBInit.DBInit(db, "MyBio", out this._biography);

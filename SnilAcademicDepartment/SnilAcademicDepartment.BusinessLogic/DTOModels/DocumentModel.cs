@@ -11,5 +11,7 @@ namespace SnilAcademicDepartment.BusinessLogic.DTOModels
         public DateTime CreatedOn { get; set; }
 
         public byte[] Content { get; set; }
+
+        public string FileType { get; set; }
     }
 }

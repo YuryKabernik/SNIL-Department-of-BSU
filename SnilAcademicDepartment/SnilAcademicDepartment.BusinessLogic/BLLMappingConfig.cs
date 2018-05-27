@@ -53,7 +53,8 @@ namespace SnilAcademicDepartment.BusinessLogic
                 .ForMember(des => des.Id, opt => opt.MapFrom(s => s.DocumentId))
                 .ForMember(des => des.Name, opt => opt.MapFrom(s => s.DocumentName))
                 .ForMember(des => des.Content, opt => opt.MapFrom(s => s.FileContent))
-                .ForMember(des => des.CreatedOn, opt => opt.MapFrom(s => s.CreatedOn));
+                .ForMember(des => des.CreatedOn, opt => opt.MapFrom(s => s.CreatedOn))
+                .ForMember(des => des.FileType, opt => opt.MapFrom(s => s.FileType));
 
             // Mapping Lecture object LecturePreview.
             this.CreateMap<Lecture, LecturePreview>()

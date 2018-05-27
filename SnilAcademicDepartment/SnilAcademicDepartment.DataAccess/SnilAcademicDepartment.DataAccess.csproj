@@ -107,6 +107,10 @@
     <Compile Include="Migrations\201805261520417_AddCommonIdToBlockType.Designer.cs">
       <DependentUpon>201805261520417_AddCommonIdToBlockType.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201805271221307_AddFileTypeColumnToDocumentTable.cs" />
+    <Compile Include="Migrations\201805271221307_AddFileTypeColumnToDocumentTable.Designer.cs">
+      <DependentUpon>201805271221307_AddFileTypeColumnToDocumentTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Biography.cs" />
     <Compile Include="DBContext\DBContext.cs" />
@@ -129,6 +133,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />
+    <None Include="img\Ректору  - БГУ.docx" />
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
@@ -151,6 +156,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201805261520417_AddCommonIdToBlockType.resx">
       <DependentUpon>201805261520417_AddCommonIdToBlockType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805271221307_AddFileTypeColumnToDocumentTable.resx">
+      <DependentUpon>201805271221307_AddFileTypeColumnToDocumentTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Linq;
 using AutoMapper;
 using SnilAcademicDepartment.BusinessLogic.DTOModels;
