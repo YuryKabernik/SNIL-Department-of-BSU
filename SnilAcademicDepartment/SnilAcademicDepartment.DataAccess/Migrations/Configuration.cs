@@ -134,67 +134,32 @@ namespace SnilAcademicDepartment.DataAccess.Migrations
 
         private void AddingPersons(SnilDBContext db)
         {
-            PersonDBInit.DBInit(db, "Name1", "SecoundName1", "FathersName", this._biography, this._image, "AcademicTitle", "Degree", this._languages[0], "Status", "–‘Ë “", this._lectures, this._seminars, this._projects);
-            PersonDBInit.DBInit(db, "Name1", "SecoundName2", "FathersName", this._biography, this._image, "AcademicTitle", "Degree", this._languages[1], "Status", "–‘Ë “", this._lectures, this._seminars, this._projects);
-            PersonDBInit.DBInit(db, "Name1", "SecoundName3", "FathersName", this._biography, this._image, "AcademicTitle", "Degree", this._languages[2], "Status", "–‘Ë “", this._lectures, this._seminars, this._projects);
-
-            PersonDBInit.DBInit(db, "Name2", "SecoundName1", "FathersName", this._biography, this._image, "AcademicTitle", "Degree", this._languages[0], "Status", "–‘Ë “", this._lectures, this._seminars, this._projects);
-            PersonDBInit.DBInit(db, "Name2", "SecoundName2", "FathersName", this._biography, this._image, "AcademicTitle", "Degree", this._languages[1], "Status", "–‘Ë “", this._lectures, this._seminars, this._projects);
-            PersonDBInit.DBInit(db, "Name2", "SecoundName3", "FathersName", this._biography, this._image, "AcademicTitle", "Degree", this._languages[2], "Status", "–‘Ë “", this._lectures, this._seminars, this._projects);
-
-            PersonDBInit.DBInit(db, "Name3", "SecoundName1", "FathersName", this._biography, this._image, "AcademicTitle", "Degree", this._languages[0], "Status", "–‘Ë “", this._lectures, this._seminars, this._projects);
-            PersonDBInit.DBInit(db, "Name3", "SecoundName2", "FathersName", this._biography, this._image, "AcademicTitle", "Degree", this._languages[1], "Status", "–‘Ë “", this._lectures, this._seminars, this._projects);
-            PersonDBInit.DBInit(db, "Name3", "SecoundName3", "FathersName", this._biography, this._image, "AcademicTitle", "Degree", this._languages[2], "Status", "–‘Ë “", this._lectures, this._seminars, this._projects);
+            for (int i = 1; i < 6; i++)
+            {
+                PersonDBInit.DBInit(db, $"Name{i}", $"SecoundName1{i}", $"FathersName{i}", this._biography, this._image, "AcademicTitle", "Degree", this._languages[0], "Status", "–‘Ë “", this._lectures, this._seminars, this._projects);
+                PersonDBInit.DBInit(db, $"Name{i}", $"SecoundName2{i}", $"FathersName{i}", this._biography, this._image, "AcademicTitle", "Degree", this._languages[1], "Status", "–‘Ë “", this._lectures, this._seminars, this._projects);
+                PersonDBInit.DBInit(db, $"Name{i}", $"SecoundName3{i}", $"FathersName{i}", this._biography, this._image, "AcademicTitle", "Degree", this._languages[2], "Status", "–‘Ë “", this._lectures, this._seminars, this._projects);
+            }
         }
 
         private void AddingLectures(SnilDBContext db)
         {
-            LecturesDBInit.DBInit(db, "LectureName1", this._languages[0], this._lectures);
-            LecturesDBInit.DBInit(db, "LectureName1", this._languages[1], this._lectures);
-            LecturesDBInit.DBInit(db, "LectureName1", this._languages[2], this._lectures);
-
-            LecturesDBInit.DBInit(db, "LectureName2", this._languages[0], this._lectures);
-            LecturesDBInit.DBInit(db, "LectureName2", this._languages[1], this._lectures);
-            LecturesDBInit.DBInit(db, "LectureName2", this._languages[2], this._lectures);
-
-            LecturesDBInit.DBInit(db, "LectureName3", this._languages[0], this._lectures);
-            LecturesDBInit.DBInit(db, "LectureName3", this._languages[1], this._lectures);
-            LecturesDBInit.DBInit(db, "LectureName3", this._languages[2], this._lectures);
-
-            LecturesDBInit.DBInit(db, "LectureName11", this._languages[0], this._lectures);
-            LecturesDBInit.DBInit(db, "LectureName12", this._languages[1], this._lectures);
-            LecturesDBInit.DBInit(db, "LectureName13", this._languages[2], this._lectures);
-
-            LecturesDBInit.DBInit(db, "LectureName21", this._languages[0], this._lectures);
-            LecturesDBInit.DBInit(db, "LectureName22", this._languages[1], this._lectures);
-            LecturesDBInit.DBInit(db, "LectureName23", this._languages[2], this._lectures);
-
-            LecturesDBInit.DBInit(db, "LectureName31", this._languages[0], this._lectures);
-            LecturesDBInit.DBInit(db, "LectureName32", this._languages[1], this._lectures);
-            LecturesDBInit.DBInit(db, "LectureName33", this._languages[2], this._lectures);
+            for (int i = 1; i < 13; i++)
+            {
+                LecturesDBInit.DBInit(db, $"LectureName{i}", this._languages[0], this._lectures, this._document);
+                LecturesDBInit.DBInit(db, $"LectureName{i}", this._languages[1], this._lectures, this._document);
+                LecturesDBInit.DBInit(db, $"LectureName{i}", this._languages[2], this._lectures, this._document);
+            }
         }
 
         private void AddingSeminars(SnilDBContext db)
         {
-            SeminarsDBInit.DBInit(db, "Title1", this._languages[0], this._document, this._seminars);
-            SeminarsDBInit.DBInit(db, "Title1", this._languages[1], this._document, this._seminars);
-            SeminarsDBInit.DBInit(db, "Title1", this._languages[2], this._document, this._seminars);
-
-            SeminarsDBInit.DBInit(db, "Title2", this._languages[0], this._document, this._seminars);
-            SeminarsDBInit.DBInit(db, "Title2", this._languages[1], this._document, this._seminars);
-            SeminarsDBInit.DBInit(db, "Title2", this._languages[2], this._document, this._seminars);
-
-            SeminarsDBInit.DBInit(db, "Title3", this._languages[0], this._document, this._seminars);
-            SeminarsDBInit.DBInit(db, "Title3", this._languages[1], this._document, this._seminars);
-            SeminarsDBInit.DBInit(db, "Title3", this._languages[2], this._document, this._seminars);
-
-            SeminarsDBInit.DBInit(db, "Title4", this._languages[0], this._document, this._seminars);
-            SeminarsDBInit.DBInit(db, "Title4", this._languages[1], this._document, this._seminars);
-            SeminarsDBInit.DBInit(db, "Title4", this._languages[2], this._document, this._seminars);
-
-            SeminarsDBInit.DBInit(db, "Title5", this._languages[0], this._document, this._seminars);
-            SeminarsDBInit.DBInit(db, "Title5", this._languages[1], this._document, this._seminars);
-            SeminarsDBInit.DBInit(db, "Title5", this._languages[2], this._document, this._seminars);
+            for (int i = 1; i < 10; i++)
+            {
+                SeminarsDBInit.DBInit(db, $"Title{i}", this._languages[0], this._document, this._seminars);
+                SeminarsDBInit.DBInit(db, $"Title{i}", this._languages[1], this._document, this._seminars);
+                SeminarsDBInit.DBInit(db, $"Title{i}", this._languages[2], this._document, this._seminars);
+            }
         }
 
         private void AddingProjects(SnilDBContext db)

@@ -29,8 +29,8 @@ namespace SnilAcademicDepartment.DataAccess.DBTypesInitialisation
                 PersonName = name,
                 SecoundName = secoundName,
                 FathersName = fathers,
-                Biography1 = biogr,
-                Image = img,
+                Biography1 = CopyBiography(name, biogr),
+                Image = CopyImage(img),
                 AcademicTitle = acadTitle,
                 Degree = degree,
                 Language = lang,
@@ -43,6 +43,24 @@ namespace SnilAcademicDepartment.DataAccess.DBTypesInitialisation
 
             dBContext.People.Add(person);
             dBContext.SaveChanges();
+        }
+
+        private static Biography CopyBiography(string name, Biography biogr)
+        {
+            return new Biography
+            {
+                Description = name + biogr.Description
+            };
+        }
+
+        private static Image CopyImage(Image img)
+        {
+            return new Image
+            {
+                ImageName = "Person Foto",
+                Image1 = img.Image1,
+                ImageTypeExtenction = img.ImageTypeExtenction
+            };
         }
     }
 }

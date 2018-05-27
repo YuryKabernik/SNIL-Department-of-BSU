@@ -15,7 +15,7 @@ namespace SnilAcademicDepartment.DataAccess.DBTypesInitialisation
                 Title = title,
                 Topic1 = new Topic { TopicName = title + "Global Topic" },
                 Language = language,
-                Document = document,
+                Document = CopyDocument(document),
                 EventDate = DateTime.UtcNow
             };
 
@@ -23,6 +23,19 @@ namespace SnilAcademicDepartment.DataAccess.DBTypesInitialisation
 
             dBContext.Seminars.Add(seminar);
             dBContext.SaveChanges();
+        }
+
+        private static Document CopyDocument(Document document)
+        {
+            return new Document
+            {
+                DocumentName = document.DocumentName,
+                FileContent = document.FileContent,
+                CreatedOn = document.CreatedOn.AddDays(-3),
+                IsDeleted = document.IsDeleted,
+                ModifiedOn = document.ModifiedOn,
+                FileTypeExtenction = document.FileTypeExtenction
+            };
         }
     }
 }
