@@ -15,7 +15,6 @@ namespace SnilAcademicDepartment.DataAccess.Configurations
                 .IsRequired();
 
             this.Property(e => e.FileContent)
-                .HasMaxLength(8000)
                 .IsRequired();
 
             this.HasMany(e => e.Seminars)

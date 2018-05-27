@@ -17,7 +17,7 @@ namespace SnilAcademicDepartment.DataAccess
 
         public byte[] FileContent { get; set; }
 
-        public string FileType { get; set; }
+        public string FileTypeExtenction { get; set; }
 
         public virtual ICollection<Project> Projects { get; set; } = new HashSet<Project>();
 

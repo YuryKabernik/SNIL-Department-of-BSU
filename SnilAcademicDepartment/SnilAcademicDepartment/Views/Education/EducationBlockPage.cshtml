@@ -36,7 +36,6 @@
                                     <br /><strong>@Resources.EducationResources.EducationResource.SeminarSpeaker: </strong><br />@string.Join(",", item.SpeakersProfessionStatusAndFullNames)
                                 </p>
                                 @Html.ActionLink(Resources.Resource.Download, "GetFileById", new { controller = "File", action = "GetFileById", id = item.DocumentId })
-                                <a href="~/img/DSC_3546.JPG">@Resources.Resource.Download</a>
                             </div>
                         }
                     </div>
@@ -45,6 +44,7 @@
             }else
             if (ViewBag.Components is IEnumerable<LecturePreview>)
             {
+                <h2>@ViewBag.EducationResourseTitle </h2><br>
                 <div class="row">
                     @foreach (LecturePreview component in ViewBag.Components)
                     {

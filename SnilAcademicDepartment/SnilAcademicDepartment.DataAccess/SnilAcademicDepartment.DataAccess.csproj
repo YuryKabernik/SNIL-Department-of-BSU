@@ -115,6 +115,14 @@
     <Compile Include="Migrations\201805271335524_AddImageTypeExtenctionColumnToImageTable.Designer.cs">
       <DependentUpon>201805271335524_AddImageTypeExtenctionColumnToImageTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201805271558061_EditFileTypeColumnInDocumentTable.cs" />
+    <Compile Include="Migrations\201805271558061_EditFileTypeColumnInDocumentTable.Designer.cs">
+      <DependentUpon>201805271558061_EditFileTypeColumnInDocumentTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805271605370_EditMaxValeuOfColumnFileContentInDocumentTable.cs" />
+    <Compile Include="Migrations\201805271605370_EditMaxValeuOfColumnFileContentInDocumentTable.Designer.cs">
+      <DependentUpon>201805271605370_EditMaxValeuOfColumnFileContentInDocumentTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Biography.cs" />
     <Compile Include="DBContext\DBContext.cs" />
@@ -166,6 +174,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201805271335524_AddImageTypeExtenctionColumnToImageTable.resx">
       <DependentUpon>201805271335524_AddImageTypeExtenctionColumnToImageTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805271558061_EditFileTypeColumnInDocumentTable.resx">
+      <DependentUpon>201805271558061_EditFileTypeColumnInDocumentTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805271605370_EditMaxValeuOfColumnFileContentInDocumentTable.resx">
+      <DependentUpon>201805271605370_EditMaxValeuOfColumnFileContentInDocumentTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

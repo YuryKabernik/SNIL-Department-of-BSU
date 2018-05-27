@@ -12,8 +12,9 @@ namespace SnilAcademicDepartment.DataAccess.DBTypesInitialisation
                 DocumentName = "Document!",
                 FileContent = content,
                 CreatedOn = DateTime.UtcNow.AddDays(-1),
+                IsDeleted = false,
                 ModifiedOn = DateTime.UtcNow,
-                FileType = GetDocumentExtenction(path)
+                FileTypeExtenction = GetDocumentExtenction(path)
             };
 
             db.Documents.Add(document);
