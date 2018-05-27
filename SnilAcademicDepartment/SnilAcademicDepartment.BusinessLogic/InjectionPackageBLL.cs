@@ -24,6 +24,7 @@ namespace SnilAcademicDepartment.BusinessLogic
             container.Register<ImageManager>(Lifestyle.Scoped);
             container.Register<ILecturePreview, PreViewService>(Lifestyle.Scoped);
             container.Register<ISeminarPreview, PreViewService>(Lifestyle.Scoped);
+            container.Register<IDataBaseFileManager, FileManager>(Lifestyle.Scoped);
 
         }
     }

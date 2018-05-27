@@ -35,13 +35,14 @@
                                     @item.Topic <br />
                                     <br /><strong>@Resources.EducationResources.EducationResource.SeminarSpeaker: </strong><br />@string.Join(",", item.SpeakersProfessionStatusAndFullNames)
                                 </p>
+                                @Html.ActionLink(Resources.Resource.Download, "GetFileById", new { controller = "File", action = "GetFileById", id = item.DocumentId })
                                 <a href="~/img/DSC_3546.JPG">@Resources.Resource.Download</a>
                             </div>
                         }
                     </div>
 
                 }
-            }
+            }else
             if (ViewBag.Components is IEnumerable<LecturePreview>)
             {
                 <div class="row">
@@ -57,10 +58,14 @@
                     </div>
                     }
                 </div>
-            }
+            }else
             if (ViewBag.Components is EducationBlockModel)
             {
-                <p style="text-align: center; text-shadow:20px 12px 2px #808080"><strong>Sorry, this education block is not avaliable :(</strong></p> 
+                <p style="text-align: center; text-shadow:10px 12px 2px #808080"><strong>Sorry, this education block is not avaliable :(</strong></p> 
+            }
+            else
+            {
+                <p style="text-align: center; text-shadow:10px 12px 2px #808080"><strong>Sorry, this education block is not avaliable :(</strong></p> 
             }
         }
     </div>

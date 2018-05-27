@@ -18,16 +18,11 @@ namespace SnilAcademicDepartment.BusinessLogic.Managers
             this._mapper = mapper;
         }
 
-        public DocumentModel GetFileById(int id, int lcid)
+        public DocumentModel GetFileById(int id)
         {
             if (id <= 0)
             {
                 throw new ArgumentOutOfRangeException(nameof(id), "Incorrect file id.");
-            }
-
-            if (lcid <= 0)
-            {
-                throw new ArgumentException("Bad language code, it must be bigger than zero.",nameof(lcid));
             }
 
             var file = this._dbContext.Documents.FirstOrDefault(s => s.DocumentId == id);
@@ -40,16 +35,11 @@ namespace SnilAcademicDepartment.BusinessLogic.Managers
             return this._mapper.Map<DocumentModel>(file);
         }
 
-        public DocumentModel GetFileByName(string name, int lcid)
+        public DocumentModel GetFileByName(string name)
         {
             if (string.IsNullOrEmpty(name) || string.IsNullOrWhiteSpace(name))
             {
                 throw new ArgumentException("File name cant be null or white space.", nameof(name));
-            }
-
-            if (lcid <= 0)
-            {
-                throw new ArgumentException("Bad language code, it must be bigger than zero.", nameof(lcid));
             }
 
             var file = this._dbContext.Documents.FirstOrDefault(s =>

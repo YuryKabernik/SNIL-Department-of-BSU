@@ -11,14 +11,12 @@ namespace SnilAcademicDepartment.BusinessLogic.Interfaces
         /// Get file by id.
         /// </summary>
         /// <param name="id">File id number.</param>
-        /// <param name="lcid">Language LCID code.</param>
-        DocumentModel GetFileById(int id, int lcid);
+        DocumentModel GetFileById(int id);
         
         /// <summary>
         /// Get file by name.
         /// </summary>
         /// <param name="name">Name of the file.</param>
-        /// <param name="lcid">Language LCID code.</param>
-        DocumentModel GetFileByName(string name, int lcid);
+        DocumentModel GetFileByName(string name);
     }
 }

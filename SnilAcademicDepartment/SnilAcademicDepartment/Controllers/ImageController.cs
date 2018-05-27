@@ -1,6 +1,7 @@
 ﻿using SnilAcademicDepartment.BusinessLogic.Managers;
 using System.Threading.Tasks;
 using System.Web.Mvc;
+using System.Net.Mime;
 
 namespace SnilAcademicDepartment.Controllers
 {
@@ -18,7 +19,7 @@ namespace SnilAcademicDepartment.Controllers
         public async Task GetImage(int id)
         {
             byte[] bytes = await  imageManager.GetImageAsync(id);
-            var res = new FileContentResult(bytes, "image/jpeg");
+            var res = new FileContentResult(bytes, System.Net.Mime.MediaTypeNames.Image.Gif);
             res.ExecuteResult(this.ControllerContext);
         }
     }
