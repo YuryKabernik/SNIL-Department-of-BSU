@@ -50,10 +50,10 @@ namespace SnilAcademicDepartment.DataAccess.Migrations
                 LanguageDBInit.DBInit(db, out this._languages);
 
                 // Add image.
-                ImageDBInit.DBInit(db, this._imgByte, out this._image);
+                ImageDBInit.DBInit(db, this._imgByte, _imgPath, out this._image);
 
                 // Add Document.
-                DocumentDBInit.DBInit(db, this._docByte, _imgPath, out this._document);
+                DocumentDBInit.DBInit(db, this._docByte, _docPath, out this._document);
 
                 // Add Biography.
                 BiographyDBInit.DBInit(db, "MyBio", out this._biography);

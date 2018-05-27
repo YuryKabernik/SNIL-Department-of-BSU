@@ -10,6 +10,8 @@ namespace SnilAcademicDepartment.DataAccess
 
         public byte[] Image1 { get; set; }
 
+        public string ImageTypeExtenction { get; set; }
+
         public virtual ICollection<EducationBlock> EducationBlocks { get; set; } = new HashSet<EducationBlock>();
 
         public virtual ICollection<Project> Projects { get; set; } = new HashSet<Project>();

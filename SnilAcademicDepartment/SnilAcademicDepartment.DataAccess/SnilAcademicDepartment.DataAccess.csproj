@@ -111,6 +111,10 @@
     <Compile Include="Migrations\201805271221307_AddFileTypeColumnToDocumentTable.Designer.cs">
       <DependentUpon>201805271221307_AddFileTypeColumnToDocumentTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201805271335524_AddImageTypeExtenctionColumnToImageTable.cs" />
+    <Compile Include="Migrations\201805271335524_AddImageTypeExtenctionColumnToImageTable.Designer.cs">
+      <DependentUpon>201805271335524_AddImageTypeExtenctionColumnToImageTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Biography.cs" />
     <Compile Include="DBContext\DBContext.cs" />
@@ -159,6 +163,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201805271221307_AddFileTypeColumnToDocumentTable.resx">
       <DependentUpon>201805271221307_AddFileTypeColumnToDocumentTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805271335524_AddImageTypeExtenctionColumnToImageTable.resx">
+      <DependentUpon>201805271335524_AddImageTypeExtenctionColumnToImageTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

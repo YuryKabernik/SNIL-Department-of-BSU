@@ -13,14 +13,14 @@ namespace SnilAcademicDepartment.DataAccess.DBTypesInitialisation
                 FileContent = content,
                 CreatedOn = DateTime.UtcNow.AddDays(-1),
                 ModifiedOn = DateTime.UtcNow,
-                FileType = GetMimeType()
+                FileType = GetDocumentExtenction(path)
             };
 
             db.Documents.Add(document);
             db.SaveChanges();
         }
 
-        private static string GetMimeType()
+        private static string GetDocumentExtenction(string path)
         {
             var info = new FileInfo(path);
             return info.Extension;

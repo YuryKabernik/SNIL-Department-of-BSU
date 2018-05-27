@@ -1,26 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.IO;
 
 namespace SnilAcademicDepartment.DataAccess.DBTypesInitialisation
 {
     public static class ImageDBInit
     {
-        public static void DBInit(SnilDBContext db, byte[] imageByte, out Image image)
+        public static void DBInit(SnilDBContext db, byte[] imageByte, string imgPath, out Image image)
         {
-            var preview = new Image()
+            image = new Image()
             {
                 ImageName = "Default",
-                Image1 = imageByte
+                Image1 = imageByte,
+                ImageTypeExtenction = GetImageExtenction(imgPath)
             };
 
-            db.Images.Add(preview);
+            db.Images.Add(image);
             db.SaveChanges();
+        }
 
-            // Set to out.
-            image = preview;
+        private static string GetImageExtenction(string imgPath)
+        {
+            var info = new FileInfo(imgPath);
+            return info.Extension;
         }
     }
 }
