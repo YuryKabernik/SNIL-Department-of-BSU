@@ -22,5 +22,8 @@ namespace SnilAcademicDepartment.DataAccess
         public virtual ICollection<Project> Projects { get; set; } = new HashSet<Project>();
 
         public virtual ICollection<Seminar> Seminars { get; set; } = new HashSet<Seminar>();
+
+        public virtual ICollection<Lecture> Lectures { get; set; } = new HashSet<Lecture>();
+
     }
 }

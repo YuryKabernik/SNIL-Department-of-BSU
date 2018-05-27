@@ -66,7 +66,8 @@ namespace SnilAcademicDepartment.BusinessLogic
             this.CreateMap<Lecture, LecturePreview>()
                 .ForMember(des => des.Author, opt => opt.MapFrom(s => string.Concat(s.People.FirstOrDefault().PersonName, " ", s.People.FirstOrDefault().SecoundName)))
                 .ForMember(des => des.LectureTitle, opt => opt.MapFrom(s => s.LectureName))
-                .ForMember(des => des.Specialisation, opt => opt.MapFrom(s => s.Specialisation.SpecialisationName));
+                .ForMember(des => des.Specialisation, opt => opt.MapFrom(s => s.Specialisation.SpecialisationName))
+                .ForMember(des => des.DocumentId, opt => opt.MapFrom(s => s.DocumentId));
 
             // Mapping Seminar object SeminarPreview.
             this.CreateMap<Seminar, SeminarPreview>()

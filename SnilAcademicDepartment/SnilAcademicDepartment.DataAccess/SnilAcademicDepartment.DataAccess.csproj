@@ -123,6 +123,10 @@
     <Compile Include="Migrations\201805271605370_EditMaxValeuOfColumnFileContentInDocumentTable.Designer.cs">
       <DependentUpon>201805271605370_EditMaxValeuOfColumnFileContentInDocumentTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201805271637267_AddDocumentToLecturesTable.cs" />
+    <Compile Include="Migrations\201805271637267_AddDocumentToLecturesTable.Designer.cs">
+      <DependentUpon>201805271637267_AddDocumentToLecturesTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Biography.cs" />
     <Compile Include="DBContext\DBContext.cs" />
@@ -180,6 +184,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201805271605370_EditMaxValeuOfColumnFileContentInDocumentTable.resx">
       <DependentUpon>201805271605370_EditMaxValeuOfColumnFileContentInDocumentTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805271637267_AddDocumentToLecturesTable.resx">
+      <DependentUpon>201805271637267_AddDocumentToLecturesTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

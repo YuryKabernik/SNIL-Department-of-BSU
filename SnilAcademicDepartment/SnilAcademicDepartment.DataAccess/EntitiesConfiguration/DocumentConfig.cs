@@ -21,6 +21,9 @@ namespace SnilAcademicDepartment.DataAccess.Configurations
                 .WithOptional(e => e.Document)
                 .HasForeignKey(e => e.DoctId);
 
+            this.HasMany(e => e.Lectures)
+                .WithOptional(e => e.Document)
+                .HasForeignKey(e => e.DocumentId);
         }
     }
 }

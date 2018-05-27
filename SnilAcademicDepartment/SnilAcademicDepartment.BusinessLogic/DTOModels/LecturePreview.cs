@@ -7,5 +7,7 @@
         public string LectureTitle{ get; set; }
 
         public string Specialisation { get; set; }
+
+        public int DocumentId { get; set; }
     }
 }
