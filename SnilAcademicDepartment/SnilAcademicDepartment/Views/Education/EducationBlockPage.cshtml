@@ -54,14 +54,14 @@
                             @component.Specialisation<br />
                             <br /><strong>@Resources.EducationResources.EducationResource.LectureSpeaker: </strong><br />@component.Author
                         </p>
-                        <a href="~/img/DSC_3546.JPG">@Resources.Resource.Download</a>
+                        @Html.ActionLink(Resources.Resource.Download, "GetFileById", new { controller = "File", action = "GetFileById", id = component.DocumentId })
                     </div>
                     }
                 </div>
             }else
             if (ViewBag.Components is EducationBlockModel)
             {
-                <p style="text-align: center; text-shadow:10px 12px 2px #808080"><strong>Sorry, this education block is not avaliable :(</strong></p> 
+                <p style="text-align: center; text-shadow:10px 12px 2px #808080; margin-top: 150px; margin-bottom: 150px"><strong>Sorry, this education block is not avaliable :(</strong></p> 
             }
             else
             {

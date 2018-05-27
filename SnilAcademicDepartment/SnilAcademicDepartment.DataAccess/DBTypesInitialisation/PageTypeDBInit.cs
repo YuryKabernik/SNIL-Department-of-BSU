@@ -8,6 +8,10 @@
             new PageType{ PageTypeName = "Home" },
             new PageType{ PageTypeName = "People" },
             new PageType{ PageTypeName = "History" },
+            new PageType{ PageTypeName = "IEEE" },
+            new PageType{ PageTypeName = "Reports" },
+            new PageType{ PageTypeName = "Archive" },
+            new PageType{ PageTypeName = "Review" },
             new PageType{ PageTypeName = "Carousel" }
         };
 

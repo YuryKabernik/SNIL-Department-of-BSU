@@ -51,7 +51,7 @@ namespace SnilAcademicDepartment.Controllers
                 viewModel = this._previewService.GetPagePreview("Education", Thread.CurrentThread.CurrentCulture.LCID);
 
                 // Get educatio key areas.
-                blockCollection = this._educationService.GetKeyAreas(5, Thread.CurrentThread.CurrentCulture.LCID);
+                blockCollection = this._educationService.GetKeyAreas(20, Thread.CurrentThread.CurrentCulture.LCID);
             }
             catch (System.Exception ex)
             {
@@ -103,7 +103,7 @@ namespace SnilAcademicDepartment.Controllers
 
             try
             {
-                seninarsPreviewsModels = this._seminarPreviewService.GetSeminarPreviews<SeminarPreview>(12, Thread.CurrentThread.CurrentCulture.LCID);
+                seninarsPreviewsModels = this._seminarPreviewService.GetSeminarPreviews<SeminarPreview>(20, Thread.CurrentThread.CurrentCulture.LCID);
             }
             catch (Exception ex)
             {
@@ -126,7 +126,7 @@ namespace SnilAcademicDepartment.Controllers
 
             try
             {
-                lecturePreviewsModels = this._lecturePreviewService.GetLecturePreviews<LecturePreview>(3, Thread.CurrentThread.CurrentCulture.LCID);
+                lecturePreviewsModels = this._lecturePreviewService.GetLecturePreviews<LecturePreview>(20, Thread.CurrentThread.CurrentCulture.LCID);
             }
             catch (Exception)
             {

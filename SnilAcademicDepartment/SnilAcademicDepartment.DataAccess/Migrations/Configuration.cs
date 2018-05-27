@@ -73,8 +73,8 @@ namespace SnilAcademicDepartment.DataAccess.Migrations
 
                 // Add EducationTopics.
                 EducationTopicsSeminar(db);
-                EducationLecture(db);
-                EducationQuickLerning(db);
+                EducationLectureTopics(db);
+                EducationQuickLerningTopics(db);
 
                 // Init History page preview data.
                 PreviewDBInit.DBInit(db, "История", "RU", this._pageTypes[4], this._languages[0], this._imgByte);
@@ -205,7 +205,7 @@ namespace SnilAcademicDepartment.DataAccess.Migrations
 
         }
 
-        private void EducationQuickLerning(SnilDBContext db)
+        private void EducationQuickLerningTopics(SnilDBContext db)
         {
             EducationTopicDBInit.DBInit(db, "RUComputer Information Technologies", this._educationBlocks[6]);
             EducationTopicDBInit.DBInit(db, "RUData Mining", this._educationBlocks[6]);
@@ -232,7 +232,7 @@ namespace SnilAcademicDepartment.DataAccess.Migrations
             EducationTopicDBInit.DBInit(db, "DEObject-Oriented Technologies", this._educationBlocks[8]);
         }
 
-        private void EducationLecture(SnilDBContext db)
+        private void EducationLectureTopics(SnilDBContext db)
         {
             EducationTopicDBInit.DBInit(db, "RUMathematical Modeling", this._educationBlocks[3]);
             EducationTopicDBInit.DBInit(db, "RUSimulation and Statistical Modeling.", this._educationBlocks[3]);
