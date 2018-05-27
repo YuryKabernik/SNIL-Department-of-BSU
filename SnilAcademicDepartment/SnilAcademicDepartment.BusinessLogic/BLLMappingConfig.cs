@@ -15,6 +15,12 @@ namespace SnilAcademicDepartment.BusinessLogic
                 .ForMember(des => des.Description, opt => opt.MapFrom(s => s.ShortDescription))
                 .ForMember(des => des.Image, opt => opt.MapFrom(s => s.Image));
 
+            // Mapping image objects.
+            this.CreateMap<Image, ImageModel>()
+                .ForMember(des => des.ImageName, opt => opt.MapFrom(s => s.ImageName))
+                .ForMember(des => des.Content, opt => opt.MapFrom(s => s.Image1))
+                .ForMember(des => des.ImageTypeExtenction, opt => opt.MapFrom(s => s.ImageTypeExtenction));
+
             // Mapping project objects.
             this.CreateMap<Project, ProjectModel>()
                 .ForMember(des => des.ProjectId, opt => opt.MapFrom(s => s.CommonID))
