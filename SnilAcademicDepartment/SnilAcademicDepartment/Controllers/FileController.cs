@@ -19,12 +19,11 @@ namespace SnilAcademicDepartment.Controllers
         {
             if (id == null)
             {
-                Redirect(this.Request.UrlReferrer.AbsolutePath);
+                Redirect(this.Request.UrlReferrer?.AbsolutePath ?? "/");
             }
 
             var file = this._fileManager.GetFileById((int)id);
             
-            string fileName = file.Name;
             string mimeType = MimeMapping.GetMimeMapping(file.FileType);
 
             var res = new FileContentResult(file.Content, mimeType);

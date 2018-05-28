@@ -1,6 +1,9 @@
-﻿using NLog;
+﻿using System;
+using System.Threading.Tasks;
+using NLog;
 using SnilAcademicDepartment.BusinessLogic.Interfaces;
 using System.Web.Mvc;
+using SnilAcademicDepartment.BusinessLogic.DTOModels;
 
 namespace SnilAcademicDepartment.Controllers
 {
@@ -10,16 +13,19 @@ namespace SnilAcademicDepartment.Controllers
     {
         private readonly ILogger _logger;
         private readonly IService _previewService;
+        private readonly ISendMail _mailSender;
 
         /// <summary>
         /// Constructor of the HomeController.
         /// </summary>
         /// <param name="logger"></param>
         /// <param name="previewService"></param>
-        public HomeController(ILogger logger, IService previewService)
+        /// <param name="mailSender">Service for sending mail.</param>
+        public HomeController(ILogger logger, IService previewService, ISendMail mailSender)
         {
             this._logger = logger;
             this._previewService = previewService;
+            _mailSender = mailSender;
         }
 
         [HttpGet]
@@ -42,6 +48,21 @@ namespace SnilAcademicDepartment.Controllers
         {
             ViewBag.Message = "Your contact page.";
             return View();
+        }
+
+        [HttpPost]
+        [Route("Sendrequest")]
+        public async Task SendMailMessage(ClientMail mail)
+        {
+            try
+            {
+                await this._mailSender.SendMailToAdminAsync(mail);
+            }
+            catch (Exception e)
+            {
+                
+                throw;
+            }
         }
     }
 }

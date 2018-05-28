@@ -7,19 +7,25 @@
         <div class="row">
             <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
                 <div class="form_input">
-                    <form>
-                        <h5>@SnilAcademicDepartment.Resources.ContactsResources.ContactsResource.FullName</h5>
-                        <input class="entry" type="text" placeholder="e.g.  robert smith"><br>
-                        <h5>@SnilAcademicDepartment.Resources.ContactsResources.ContactsResource.Email</h5>
-                        <input class="entry" type="email" placeholder="e.g. name@nome.com"><br>
-                        <h5>@SnilAcademicDepartment.Resources.ContactsResources.ContactsResource.Company</h5>
-                        <input class="entry" type="text" placeholder="e.g. your company (optional)"><br>
-                        <h5>@SnilAcademicDepartment.Resources.ContactsResources.ContactsResource.Subject</h5>
-                        <input class="entry" type="text" placeholder="e.g. info"><br>
-                        <h5>@SnilAcademicDepartment.Resources.ContactsResources.ContactsResource.Message</h5>
-                        <textarea class="usertext" placeholder=""></textarea><br>
-                        <input class="bottom_send_form" type="button" value="Send" />
-                    </form>
+                    @using ( Html.BeginForm( new { controller="Home", action="SendMailMessage"}) )
+                    {
+                        <label>@SnilAcademicDepartment.Resources.ContactsResources.ContactsResource.FullName</label>
+                        <input name="FullName" class="entry" type="text" placeholder="e.g.  robert smith" required>
+                        <br>
+                        <label>@SnilAcademicDepartment.Resources.ContactsResources.ContactsResource.Email</label>
+                        <input name="Email" class="entry" type="email" placeholder="e.g. name@nome.com" required>
+                        <br>
+                        <label>@SnilAcademicDepartment.Resources.ContactsResources.ContactsResource.Company</label>
+                        <input name="Company" class="entry" type="text" placeholder="e.g. your company (optional)">
+                        <br>
+                        <label>@SnilAcademicDepartment.Resources.ContactsResources.ContactsResource.Subject</label>
+                        <input name="Subject" class="entry" type="text" placeholder="e.g. info" required>
+                        <br>
+                        <label>@SnilAcademicDepartment.Resources.ContactsResources.ContactsResource.Message</label>
+                        <textarea name="Message" class="usertext" placeholder="Input message..." required></textarea>
+                        <br>
+                        <input class="btn btn-default bottom_send_form" type="submit" name="submit" value="Send"/>
+                    }
                 </div>
             </div>
 
@@ -34,7 +40,7 @@
                     <p class="text">
                         <strong>@SnilAcademicDepartment.Resources.ContactsResources.ContactsResource.Secretary</strong> <br/>
                            @SnilAcademicDepartment.Resources.ContactsResources.ContactsResource.NinaRudenko<br />
-                           @SnilAcademicDepartment.Resources.ContactsResources.ContactsResource.NinaRudenkoMail<br />
+                           @SnilAcademicDepartment.Resources.ContactsResources.ContactsResource.NinaRudenkoMail<br/>
                     </p>
                     <p class="text">
                         <strong>@SnilAcademicDepartment.Resources.ContactsResources.ContactsResource.Head</strong> <br />

@@ -38,16 +38,16 @@ namespace SnilAcademicDepartment.Controllers
             }
             catch (CultureNotFoundException)
             {
-                returnUrl = Request.UrlReferrer.AbsoluteUri;
+                returnUrl = Request.UrlReferrer?.AbsoluteUri ?? "/";
                 return this.Redirect(returnUrl);
             }
             catch(IndexOutOfRangeException)
             {
-                returnUrl = Request.UrlReferrer.AbsoluteUri;
+                returnUrl = Request.UrlReferrer?.AbsoluteUri;
             }
             catch (Exception)
             {
-                returnUrl = Request.UrlReferrer.AbsoluteUri;
+                returnUrl = Request.UrlReferrer?.AbsoluteUri;
                 return this.Redirect(returnUrl);
             }
 
