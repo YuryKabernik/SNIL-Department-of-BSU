@@ -2,6 +2,7 @@
 using SnilAcademicDepartment.BusinessLogic.DTOModels;
 using SnilAcademicDepartment.DataAccess;
 using System.Linq;
+using System.Net.Mail;
 
 namespace SnilAcademicDepartment.BusinessLogic
 {
@@ -81,6 +82,13 @@ namespace SnilAcademicDepartment.BusinessLogic
 
             this.CreateMap<IGrouping<int, Seminar>, IGrouping<int, SeminarPreview>>()
                 .ForMember(des => des.Key, opt => opt.MapFrom(s => s.Key));
+
+            //this.CreateMap<ClientMail, MailMessage>()
+            //    .ForMember(des => des.To, opt => opt.MapFrom(s => "kobernicyri@mail.ru"))
+            //    .ForMember(des => des.From, opt => opt.MapFrom(s => s.Email))
+            //    .ForMember(des => des.Body, opt => opt.MapFrom(s => s.Company + s.Message))
+            //    .ForMember(des => des.Subject, opt => opt.MapFrom(s => s.Subject));
+
         }
     }
 }

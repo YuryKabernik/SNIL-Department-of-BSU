@@ -44,7 +44,9 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
                 throw new ArgumentException("Mail can't be null or empty.", nameof(clientMail));
             }
 
-            var mailMessage = this._mapper.Map<MailMessage>(clientMail);
+            var mailMessage = new MailMessage(clientMail.Email, "kobernicyri@mail.ru", clientMail.Subject,
+                clientMail.Company + clientMail.Message);
+            
             await this._mailClient.SendMailAsync(mailMessage);
         }
     }
