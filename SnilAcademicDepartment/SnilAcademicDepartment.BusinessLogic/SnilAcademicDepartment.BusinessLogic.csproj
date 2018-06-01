@@ -109,6 +109,10 @@
       <Project>{706afdf9-c55c-461c-8687-816459ff30d6}</Project>
       <Name>SnilAcademicDepartment.DataAccess</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SnilAcademicDepartment.MailService\SnilAcademicDepartment.MailService.csproj">
+      <Project>{04193F18-9125-4F39-BF0C-22BB93604ACE}</Project>
+      <Name>SnilAcademicDepartment.MailService</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

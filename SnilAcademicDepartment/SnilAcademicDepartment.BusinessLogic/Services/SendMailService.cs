@@ -4,15 +4,16 @@ using SnilAcademicDepartment.BusinessLogic.Interfaces;
 using System.Net.Mail;
 using AutoMapper;
 using SnilAcademicDepartment.BusinessLogic.DTOModels;
+using SnilAcademicDepartment.MailService;
 
 namespace SnilAcademicDepartment.BusinessLogic.Services
 {
     public class SendMailService : IMailSender, ISendMail
     {
-        private readonly SmtpClient _mailClient;
+        private readonly SMTPService _mailClient;
         private readonly IMapper _mapper;
 
-        public SendMailService(SmtpClient mailClient, IMapper mapper)
+        public SendMailService(SMTPService mailClient, IMapper mapper)
         {
             _mailClient = mailClient;
             _mapper = mapper;
@@ -20,18 +21,20 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
 
         public void SendMail(MailMessage mail)
         {
-            this._mailClient.Send(mail);
+            this._mailClient.SendEmail(mail);
         }
 
         public async Task SendMailAsync(MailMessage mail)
         {
-            await this._mailClient.SendMailAsync(mail);
+           // await this._mailClient.SendMailAsync(mail);
         }
 
         public void SendMailToAdmin(ClientMail clientMail)
         {
-            var mailMessage = this._mapper.Map<MailMessage>(clientMail);
-            this._mailClient.Send(mailMessage);
+            var mailMessage = this._mapper.Map<ClientMail,MailMessage>(clientMail);
+            mailMessage.To.Add("kobernicyri@mail.ru");
+            mailMessage.CC.Add(new MailAddress(clientMail.Email));
+            this._mailClient.SendEmail(mailMessage);
         }
 
         public async Task SendMailToAdminAsync(ClientMail clientMail)
@@ -45,7 +48,7 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
             }
 
             var mailMessage = this._mapper.Map<MailMessage>(clientMail);
-            await this._mailClient.SendMailAsync(mailMessage);
+            //await this._mailClient.SendMailAsync(mailMessage);
         }
     }
 }
