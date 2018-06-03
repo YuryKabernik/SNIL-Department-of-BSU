@@ -6,21 +6,21 @@ namespace SnilAcademicDepartment.BusinessLogic.Interfaces
     public interface ICookieManager
     {
         /// <summary>
-        /// Method for creating cookie culture data.
+        /// Method sets language cookie by user's culture.
         /// </summary>
-        /// <param name="language">Short culture name.</param>
-        /// <param name="cookie">Cookie object if exist.</param>
-        /// <param name="name">Data alias.</param>
-        /// <returns>Returns Cookie object to set user.</returns>
+        /// <param name="language">User's language.</param>
+        /// <param name="cookie">Cookie in request if exists.</param>
+        /// <param name="newCookieName">Optional. Name of new cookie.</param>
+        /// <returns>New or modifed http cookie object with fixed language.</returns>
         HttpCookie SetCookieCulture(string language, HttpCookie cookie, string name = "language");
 
         /// <summary>
-        /// Async method for creating cookie culture data.
+        /// Async method sets language cookie by user's culture.
         /// </summary>
-        /// <param name="language">Short culture name.</param>
-        /// <param name="cookie">Cookie object if exist.</param>
-        /// <param name="name">Data alias.</param>
-        /// <returns>Returns Cookie object to set user.</returns>
+        /// <param name="language">User's language.</param>
+        /// <param name="cookie">Cookie in request if exists.</param>
+        /// <param name="newCookieName">Optional. Name of new cookie.</param>
+        /// <returns>New or modifed http cookie object with fixed language.</returns>
         Task<HttpCookie> SetCookieCultureAsync(string language, HttpCookie cookie, string name = "language");
     }
 }
