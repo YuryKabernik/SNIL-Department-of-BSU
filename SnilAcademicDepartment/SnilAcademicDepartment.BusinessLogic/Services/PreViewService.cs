@@ -7,6 +7,8 @@ using System.Collections.Generic;
 using AutoMapper;
 using SnilAcademicDepartment.BusinessLogic.DTOModels;
 using AutoMapper.QueryableExtensions;
+using System.Threading.Tasks;
+using System.Data.Entity;
 
 namespace SnilAcademicDepartment.BusinessLogic.Services
 {
@@ -121,6 +123,44 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
             }
 
             return (IEnumerable<IGrouping<int, TPreviewType>>)seminars;
+        }
+
+        public async Task<PreViewModel> GetPagePreviewAsync(string pageType, int langLCID)
+        {
+            if (string.IsNullOrEmpty(pageType) || string.IsNullOrWhiteSpace(pageType))
+            {
+                throw new ArgumentNullException(nameof(pageType), "Your argument is Null, Empty or WhiteSpace");
+            }
+
+            var requestResult = await this._repository.PreViews
+                .FirstOrDefaultAsync(e => pageType.Equals(e.PageTypeName.PageTypeName, StringComparison.OrdinalIgnoreCase)
+                && e.Language.LanguageCode == langLCID);
+
+            if (requestResult == null)
+            {
+                throw new InvalidOperationException("Cant't find page preview");
+            }
+
+            return this._mapper.Map<PreViewModel>(requestResult);
+        }
+
+        public async Task<IEnumerable<PreViewModel>> GetPagePreviewsAsync(string pageType, int langLCID)
+        {
+            if (string.IsNullOrEmpty(pageType) || string.IsNullOrWhiteSpace(pageType))
+            {
+                throw new ArgumentNullException(nameof(pageType), "Your argument is Null, Empty or WhiteSpace");
+            }
+
+            var requestResult = await this._repository.PreViews
+                .Where(e => e.PageTypeName.PageTypeName == pageType && e.Language.LanguageCode == langLCID)
+                .ToListAsync();
+
+            if (requestResult == null)
+            {
+                throw new InvalidOperationException("Cant't find previews for this page.");
+            }
+
+            return this._mapper.Map<IEnumerable<PreViewModel>>(requestResult);
         }
     }
 }
