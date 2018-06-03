@@ -7,6 +7,8 @@ using System.Collections.Generic;
 using SnilAcademicDepartment.BusinessLogic.Interfaces;
 using SnilAcademicDepartment.DataAccess;
 using SnilAcademicDepartment.BusinessLogic.DTOModels;
+using System.Threading.Tasks;
+using System.Data.Entity;
 
 namespace SnilAcademicDepartment.BusinessLogic.Services
 {
@@ -103,6 +105,29 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
             }
 
             return this._mapper.Map<EducationBlockModel>(res);
+        }
+
+        public async Task<List<EducationBlockModel>> GetKeyAreasAsync(int pages, int lcid)
+        {
+            if (pages <= 0)
+            {
+                throw new IndexOutOfRangeException($"Argument {nameof(pages)} is equal or less than zero.");
+            }
+            else if (lcid <= 0)
+            {
+                throw new IndexOutOfRangeException($"Argument {nameof(lcid)} is equal or less than zero.");
+            }
+
+            var resultCollection = await this._repository.EducationBlocks
+                .Where(s => s.Language.LanguageCode == CultureInfo.CurrentCulture.LCID)
+                .Take(pages).ToListAsync();
+
+            if (resultCollection == null)
+            {
+                throw new ArgumentNullException(nameof(resultCollection), "Sorry, but there is no EducationBlocks you are looking for.");
+            }
+
+            return this._mapper.Map<List<EducationBlockModel>>(resultCollection);
         }
     }
 }
