@@ -1,5 +1,6 @@
 ﻿using System;
 using NLog;
+using System.Threading.Tasks;
 using SnilAcademicDepartment.BusinessLogic.Interfaces;
 using System.Web;
 using System.Web.Mvc;
@@ -24,7 +25,7 @@ namespace SnilAcademicDepartment.Controllers
         /// <param name="lang">User's language.</param>
         /// <returns>Redirect to previouse page with new language.</returns>
         [HttpPost]
-        public ActionResult ChangeCulture(string lang)
+        public async Task<ActionResult> ChangeCulture(string lang)
         {
             string returnUrl = null;
             HttpCookie cookie = null;
@@ -32,7 +33,7 @@ namespace SnilAcademicDepartment.Controllers
             try
             {
                 var requestCookie = this.Request.Cookies["language"];
-                cookie = this._cookieManager.SetCookieCulture(lang, requestCookie);
+                cookie = await this._cookieManager.SetCookieCultureAsync(lang, requestCookie);
 
                 returnUrl = GenerateReturnUrl(cookie); // Get return Url.
             }

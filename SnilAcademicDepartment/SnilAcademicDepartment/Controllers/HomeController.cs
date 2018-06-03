@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Threading.Tasks;
 using NLog;
 using SnilAcademicDepartment.BusinessLogic.Interfaces;
 using System.Web.Mvc;
