@@ -1,5 +1,6 @@
 ﻿using SnilAcademicDepartment.BusinessLogic.DTOModels;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace SnilAcademicDepartment.BusinessLogic.Interfaces
 {
@@ -12,6 +13,14 @@ namespace SnilAcademicDepartment.BusinessLogic.Interfaces
         /// <param name="lcid">Language code</param>
         /// <returns>Collection of education key areas.</returns>
         List<EducationBlockModel> GetKeyAreas(int pages, int lcid);
+
+        /// <summary>
+        /// Async search key areas of education blocks.
+        /// </summary>
+        /// <param name="pages">Number of the pages to get.</param>
+        /// <param name="lcid">Language code</param>
+        /// <returns>Collection of education key areas.</returns>
+        Task<List<EducationBlockModel>> GetKeyAreasAsync(int pages, int lcid);
 
         /// <summary>
         /// Get education block by it's name.

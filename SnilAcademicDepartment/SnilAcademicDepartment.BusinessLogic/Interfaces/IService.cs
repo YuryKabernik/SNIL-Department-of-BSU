@@ -1,5 +1,6 @@
 ﻿using SnilAcademicDepartment.BusinessLogic.DTOModels;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace SnilAcademicDepartment.BusinessLogic.Interfaces
 {
@@ -10,5 +11,8 @@ namespace SnilAcademicDepartment.BusinessLogic.Interfaces
     {
         PreViewModel GetPagePreview(string pageType, int langLCID);
         IEnumerable<PreViewModel> GetPagePreviews(string pageType, int langLCID);
+
+        Task<PreViewModel> GetPagePreviewAsync(string pageType, int langLCID);
+        Task<IEnumerable<PreViewModel>> GetPagePreviewsAsync(string pageType, int langLCID);
     }
 }

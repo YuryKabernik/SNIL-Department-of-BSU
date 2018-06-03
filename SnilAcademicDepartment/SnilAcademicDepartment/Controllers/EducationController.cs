@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using Resources.EducationResources;
 using SnilAcademicDepartment.BusinessLogic.DTOModels;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace SnilAcademicDepartment.Controllers
 {
@@ -40,7 +41,7 @@ namespace SnilAcademicDepartment.Controllers
 
         [HttpGet]
         [Route("Education")]
-        public ActionResult Education()
+        public async Task<ActionResult> Education()
         {
             PreViewModel viewModel = null;
             List<EducationBlockModel> blockCollection = null;
@@ -48,14 +49,14 @@ namespace SnilAcademicDepartment.Controllers
             try
             {
                 // Get page preview data.
-                viewModel = this._previewService.GetPagePreview("Education", Thread.CurrentThread.CurrentCulture.LCID);
+                viewModel = await this._previewService.GetPagePreviewAsync("Education", Thread.CurrentThread.CurrentCulture.LCID);
 
                 // Get educatio key areas.
-                blockCollection = this._educationService.GetKeyAreas(20, Thread.CurrentThread.CurrentCulture.LCID);
+                blockCollection = await this._educationService.GetKeyAreasAsync(20, Thread.CurrentThread.CurrentCulture.LCID);
             }
-            catch (System.Exception ex)
+            catch (System.Exception)
             {
-                throw;
+                return Redirect(Request.UrlReferrer.AbsoluteUri);
             }
 
             int i = 1;
@@ -85,7 +86,7 @@ namespace SnilAcademicDepartment.Controllers
             catch (Exception ex)
             {
 
-                throw;
+                return Redirect(Request.UrlReferrer.AbsoluteUri);
             }
 
             ViewBag.Title = "Quick Learning";
@@ -108,7 +109,7 @@ namespace SnilAcademicDepartment.Controllers
             catch (Exception ex)
             {
 
-                throw;
+                return Redirect(Request.UrlReferrer.AbsoluteUri);
             }
 
             ViewBag.Title = "Seminars";
@@ -131,7 +132,7 @@ namespace SnilAcademicDepartment.Controllers
             catch (Exception)
             {
 
-                throw;
+                return Redirect(Request.UrlReferrer.AbsoluteUri);
             }
 
             ViewBag.Title = "Lections";
