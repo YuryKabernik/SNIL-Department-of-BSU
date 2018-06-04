@@ -56,9 +56,9 @@ namespace SnilAcademicDepartment.Controllers
                 // Get educatio key areas.
                 blockCollection = this._educationService.GetKeyAreas(20, Thread.CurrentThread.CurrentCulture.LCID);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                Redirect(this.Request.UrlReferrer?.AbsolutePath ?? "/");
+                return Redirect(this.Request.UrlReferrer?.AbsoluteUri ?? "/");
             }
 
             int i = 1;
@@ -87,7 +87,7 @@ namespace SnilAcademicDepartment.Controllers
             }
             catch (Exception)
             {
-                Redirect(this.Request.UrlReferrer?.AbsolutePath ?? "/");
+                return Redirect(this.Request.UrlReferrer?.AbsoluteUri ?? "/");
             }
 
             ViewBag.Title = "Quick Learning";
@@ -109,7 +109,7 @@ namespace SnilAcademicDepartment.Controllers
             }
             catch (Exception)
             {
-                Redirect(this.Request.UrlReferrer?.AbsolutePath ?? "/");
+                return Redirect(this.Request.UrlReferrer?.AbsoluteUri ?? "/");
             }
 
             ViewBag.Title = "Seminars";
@@ -131,7 +131,7 @@ namespace SnilAcademicDepartment.Controllers
             }
             catch (Exception)
             {
-                Redirect(this.Request.UrlReferrer?.AbsolutePath ?? "/");
+                return Redirect(this.Request.UrlReferrer?.AbsoluteUri ?? "/");
             }
 
             ViewBag.Title = "Lections";

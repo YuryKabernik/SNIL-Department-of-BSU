@@ -60,7 +60,7 @@ namespace SnilAcademicDepartment.Controllers
             }
             catch (Exception e)
             {
-                return Redirect(Request.UrlReferrer?.AbsoluteUri ?? "/");
+                return Redirect(this.Request.UrlReferrer?.AbsoluteUri ?? "/");
             }
             return Redirect(Request.UrlReferrer?.AbsoluteUri ?? "/");
         }

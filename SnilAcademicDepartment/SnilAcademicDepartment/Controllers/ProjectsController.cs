@@ -55,7 +55,7 @@ namespace SnilAcademicDepartment.Controllers
             }
             catch (Exception )
             {
-                Redirect(this.Request.UrlReferrer?.AbsoluteUri ?? "/");
+                return Redirect(this.Request.UrlReferrer?.AbsoluteUri ?? "/");
             }
 
             ViewBag.Preview = projectPreview;
@@ -84,7 +84,7 @@ namespace SnilAcademicDepartment.Controllers
             }
             catch (Exception )
             {
-                Redirect(this.Request.UrlReferrer?.AbsoluteUri ?? "/");
+                return Redirect(this.Request.UrlReferrer?.AbsoluteUri ?? "/");
             }
 
             ViewBag.Title = projectModel.ProjectTitle;
@@ -111,7 +111,7 @@ namespace SnilAcademicDepartment.Controllers
             }
             catch (Exception)
             {
-                Redirect(this.Request.UrlReferrer?.AbsoluteUri ?? "/");
+                return Redirect(this.Request.UrlReferrer?.AbsoluteUri ?? "/");
             }
 
             ViewBag.Title = projectModel.ProjectTitle;
@@ -138,7 +138,7 @@ namespace SnilAcademicDepartment.Controllers
             }
             catch (Exception)
             {
-                Redirect(this.Request.UrlReferrer?.AbsoluteUri ?? "/");
+                return Redirect(this.Request.UrlReferrer?.AbsoluteUri ?? "/");
             }
 
             ViewBag.Title = projectModel.ProjectTitle;

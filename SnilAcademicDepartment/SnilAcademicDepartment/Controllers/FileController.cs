@@ -16,12 +16,12 @@ namespace SnilAcademicDepartment.Controllers
 
         [HttpGet]
         [Route("file")]
-        public FileResult GetFileById(int? id)
+        public ActionResult GetFileById(int? id)
         {
             FileContentResult fileResult = null;
             if (id == null)
             {
-                Redirect(this.Request.UrlReferrer?.AbsolutePath ?? "/");
+                Redirect(this.Request.UrlReferrer?.AbsoluteUri ?? "/").ExecuteResult(this.ControllerContext);
             }
 
             try
@@ -34,7 +34,7 @@ namespace SnilAcademicDepartment.Controllers
             }
             catch (Exception)
             {
-                Redirect(this.Request.UrlReferrer?.AbsolutePath ?? "/");
+                return Redirect(this.Request.UrlReferrer?.AbsoluteUri ?? "/");
             }
 
             return fileResult;
