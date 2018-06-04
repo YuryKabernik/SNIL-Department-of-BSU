@@ -1,4 +1,5 @@
-﻿using System.Web.Mvc;
+﻿using System;
+using System.Web.Mvc;
 using SnilAcademicDepartment.BusinessLogic.Interfaces;
 using System.Web;
 
@@ -17,17 +18,26 @@ namespace SnilAcademicDepartment.Controllers
         [Route("file")]
         public FileResult GetFileById(int? id)
         {
+            FileContentResult fileResult = null;
             if (id == null)
             {
                 Redirect(this.Request.UrlReferrer?.AbsolutePath ?? "/");
             }
 
-            var file = this._fileManager.GetFileById((int)id);
-            
-            string mimeType = MimeMapping.GetMimeMapping(file.FileType);
+            try
+            {
+                var file = this._fileManager.GetFileById((int)id);
 
-            var res = new FileContentResult(file.Content, mimeType);
-            return res;
+                string mimeType = MimeMapping.GetMimeMapping(file.FileType);
+
+                fileResult  = new FileContentResult(file.Content, mimeType);
+            }
+            catch (Exception)
+            {
+                Redirect(this.Request.UrlReferrer?.AbsolutePath ?? "/");
+            }
+
+            return fileResult;
         }
     }
 }
