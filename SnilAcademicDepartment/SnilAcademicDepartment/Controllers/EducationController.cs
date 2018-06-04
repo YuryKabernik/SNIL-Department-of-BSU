@@ -24,6 +24,9 @@ namespace SnilAcademicDepartment.Controllers
         /// </summary>
         /// <param name="logger"></param>
         /// <param name="previewService"></param>
+        /// <param name="educationService"></param>
+        /// <param name="lecturePreviewService"></param>
+        /// <param name="seminarPreviewService"></param>
         public EducationController(
             ILogger logger,
             IService previewService, 
@@ -53,9 +56,9 @@ namespace SnilAcademicDepartment.Controllers
                 // Get educatio key areas.
                 blockCollection = this._educationService.GetKeyAreas(20, Thread.CurrentThread.CurrentCulture.LCID);
             }
-            catch (System.Exception ex)
+            catch (Exception ex)
             {
-                throw;
+                Redirect(this.Request.UrlReferrer?.AbsolutePath ?? "/");
             }
 
             int i = 1;
@@ -82,10 +85,9 @@ namespace SnilAcademicDepartment.Controllers
                 viewModel = this._educationService.GetEducationBlockById(3, Thread.CurrentThread.CurrentCulture.LCID);
 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-
-                throw;
+                Redirect(this.Request.UrlReferrer?.AbsolutePath ?? "/");
             }
 
             ViewBag.Title = "Quick Learning";
@@ -105,10 +107,9 @@ namespace SnilAcademicDepartment.Controllers
             {
                 seninarsPreviewsModels = this._seminarPreviewService.GetSeminarPreviews<SeminarPreview>(20, Thread.CurrentThread.CurrentCulture.LCID);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-
-                throw;
+                Redirect(this.Request.UrlReferrer?.AbsolutePath ?? "/");
             }
 
             ViewBag.Title = "Seminars";
@@ -130,8 +131,7 @@ namespace SnilAcademicDepartment.Controllers
             }
             catch (Exception)
             {
-
-                throw;
+                Redirect(this.Request.UrlReferrer?.AbsolutePath ?? "/");
             }
 
             ViewBag.Title = "Lections";
