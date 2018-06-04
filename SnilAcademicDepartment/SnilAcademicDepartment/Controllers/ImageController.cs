@@ -1,4 +1,5 @@
-﻿using SnilAcademicDepartment.BusinessLogic.Managers;
+﻿using System;
+using SnilAcademicDepartment.BusinessLogic.Managers;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 using System.Web;
@@ -18,9 +19,16 @@ namespace SnilAcademicDepartment.Controllers
         [Route("image")]
         public async Task GetImage(int id)
         {
-            var image = await  imageManager.GetImageAsync(id);
-            var res = new FileContentResult(image.Content, MimeMapping.GetMimeMapping(image.ImageTypeExtenction));
-            res.ExecuteResult(this.ControllerContext);
+            try
+            {
+                var image = await imageManager.GetImageAsync(id);
+                var res = new FileContentResult(image.Content, MimeMapping.GetMimeMapping(image.ImageTypeExtenction));
+                res.ExecuteResult(this.ControllerContext);
+            }
+            catch (Exception)
+            {
+                Redirect(this.Request.UrlReferrer?.AbsoluteUri ?? "/");
+            }
         }
     }
 }
