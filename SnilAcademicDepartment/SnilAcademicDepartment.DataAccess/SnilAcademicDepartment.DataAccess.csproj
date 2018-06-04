@@ -149,7 +149,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />
-    <None Include="img\Ректору  - БГУ.docx" />
+    <None Include="img\Head - BSU.docx" />
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
