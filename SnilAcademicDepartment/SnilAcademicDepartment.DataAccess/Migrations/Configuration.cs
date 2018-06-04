@@ -9,7 +9,7 @@ namespace SnilAcademicDepartment.DataAccess.Migrations
 {
     internal sealed class Configuration : DbMigrationsConfiguration<SnilDBContext>
     {
-        
+        #region PROPERTIES
         private PageType[] _pageTypes;
 
         private Language[] _languages;
@@ -33,7 +33,7 @@ namespace SnilAcademicDepartment.DataAccess.Migrations
 
         private static string _docPath = @"D:\Visual Studio Projects\SNIL\SnilAcademicDepartment\SnilAcademicDepartment.DataAccess\img\Head - BSU.docx"; // D:\Visual Studio Projects\SNIL\SnilAcademicDepartment\SnilAcademicDepartment.DataAccess\img\Ректору  - БГУ.docx
         private byte[] _docByte = File.ReadAllBytes(_docPath);
-
+#endregion
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;

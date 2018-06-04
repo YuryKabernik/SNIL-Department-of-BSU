@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Threading.Tasks;
 using NLog;
 using SnilAcademicDepartment.BusinessLogic.Interfaces;
 using System.Web.Mvc;
@@ -58,7 +57,7 @@ namespace SnilAcademicDepartment.Controllers
             {
                 this._mailSender.SendMailToAdmin(mail);
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 return Redirect(this.Request.UrlReferrer?.AbsoluteUri ?? "/");
             }
