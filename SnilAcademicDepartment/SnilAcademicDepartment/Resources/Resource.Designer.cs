@@ -187,7 +187,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to СНИЛ.
+        ///   Looks up a localized string similar to БГУ СНИЛ.
         /// </summary>
         public static string IndexHeader {
             get {
