@@ -1,4 +1,6 @@
-﻿using SimpleInjector;
+﻿using System.Net;
+using System.Net.Mail;
+using SimpleInjector;
 using SimpleInjector.Packaging;
 using SnilAcademicDepartment.BusinessLogic.Interfaces;
 using SnilAcademicDepartment.BusinessLogic.Managers;
@@ -17,6 +19,7 @@ namespace SnilAcademicDepartment.BusinessLogic
             container.Register<IHistory, HistoryService>(Lifestyle.Scoped);
             container.Register<IIndex, HomeService>(Lifestyle.Scoped); container.Register(() => new SMTPService(), Lifestyle.Scoped);
             container.Register<IMailSender, SendMailService>(Lifestyle.Scoped);
+            container.Register(() => new SmtpClient(), Lifestyle.Singleton);
             container.Register<IPeople, PeopleService>(Lifestyle.Scoped);
             container.Register<IProjects, ProjectsService>(Lifestyle.Scoped);
             container.Register<IProjectsPreview, ProjectsService>(Lifestyle.Scoped);
