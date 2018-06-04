@@ -52,17 +52,18 @@ namespace SnilAcademicDepartment.Controllers
 
         [HttpPost]
         [Route("Sendrequest")]
-        public async Task SendMailMessage(ClientMail mail)
+        public ActionResult SendMailMessage(ClientMail mail)
         {
             try
             {
-                await this._mailSender.SendMailToAdminAsync(mail);
+                this._mailSender.SendMailToAdmin(mail);
             }
             catch (Exception e)
             {
                 
                 throw;
             }
+            return Redirect(Request.UrlReferrer.AbsolutePath);
         }
     }
 }

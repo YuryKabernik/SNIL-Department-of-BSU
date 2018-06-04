@@ -83,12 +83,16 @@ namespace SnilAcademicDepartment.BusinessLogic
             this.CreateMap<IGrouping<int, Seminar>, IGrouping<int, SeminarPreview>>()
                 .ForMember(des => des.Key, opt => opt.MapFrom(s => s.Key));
 
-            //this.CreateMap<ClientMail, MailMessage>()
-            //    .ForMember(des => des.To, opt => opt.MapFrom(s => "kobernicyri@mail.ru"))
-            //    .ForMember(des => des.From, opt => opt.MapFrom(s => s.Email))
-            //    .ForMember(des => des.Body, opt => opt.MapFrom(s => s.Company + s.Message))
-            //    .ForMember(des => des.Subject, opt => opt.MapFrom(s => s.Subject));
-
+            this.CreateMap<ClientMail, MailMessage>()
+                .ForMember(des => des.Body, opt => opt.MapFrom(s => "Company: " + s.Company + "\n Message:" + s.Message))
+                .ForMember(des => des.From, opt => opt.ResolveUsing(s => new MailAddress(s.Email)))
+                .ForMember(des => des.Sender, opt => opt.ResolveUsing(s => new MailAddress(s.Email)))
+                .ForMember(des => des.Subject, opt => opt.ResolveUsing(s => s.Subject))
+                .ForMember(des => des.To, opt => opt.ResolveUsing(s => new MailAddressCollection()))
+                .ForMember(des => des.CC, opt => opt.ResolveUsing(s => new MailAddressCollection()))
+                .ForMember(des => des.Priority, opt => opt.ResolveUsing(s => MailPriority.Normal))
+                .ForMember(des => des.IsBodyHtml, opt => opt.ResolveUsing(s => true))
+                .ForAllOtherMembers(s=> s.Ignore());
         }
     }
 }

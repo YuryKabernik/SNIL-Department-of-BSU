@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Net;
 using System.Net.Mail;
 
 namespace SnilAcademicDepartment.MailService
@@ -28,10 +29,12 @@ namespace SnilAcademicDepartment.MailService
 
         private void SendMail(MailMessage mailMessage)
         {
-            using (var smtpClient = new SmtpClient())
+            using (var smtpClient = new SmtpClient("smtp.gmail.com", 587))
             {
                 try
                 {
+                    smtpClient.EnableSsl = true;
+                    smtpClient.Credentials = new NetworkCredential(userName: "snilbsudepartment@gmail.com", password: "Snilpassword123");
                     smtpClient.Send(mailMessage);
                 }
                 catch (SmtpFailedRecipientsException ex)

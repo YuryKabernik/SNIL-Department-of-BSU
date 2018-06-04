@@ -507,6 +507,10 @@
       <Project>{907F30B1-1365-41CB-98D3-A649398A578C}</Project>
       <Name>SnilAcademicDepartment.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SnilAcademicDepartment.MailService\SnilAcademicDepartment.MailService.csproj">
+      <Project>{04193F18-9125-4F39-BF0C-22BB93604ACE}</Project>
+      <Name>SnilAcademicDepartment.MailService</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
