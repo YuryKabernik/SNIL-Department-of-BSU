@@ -126,6 +126,9 @@
   <data name="Contacts" xml:space="preserve">
     <value>Kontakte</value>
   </data>
+  <data name="ContactsShortDescription" xml:space="preserve">
+    <value>Kontakte mit den Leitern der Abteilung, der Verwaltung. Machen Sie sich mit dem Standort des Labors, dem kürzesten Weg zu Fuß, mit öffentlichen Verkehrsmitteln vertraut. Sie können eine Textnachricht auf der Seite hinterlassen.</value>
+  </data>
   <data name="Country" xml:space="preserve">
     <value>Minsk</value>
   </data>
@@ -138,6 +141,9 @@
   <data name="Education" xml:space="preserve">
     <value>Unterricht</value>
   </data>
+  <data name="EducationShortDescription" xml:space="preserve">
+    <value>Lernprozess von Studenten, Unterrichtspläne, Seminare, Quick Learning. Hier finden Sie die Beschreibung des Bildungsprozesses, lernen Sie die aktuellen Lehrer kennen und nehmen Sie Feedback zu den Arbeiten der Lehrkräfte des Labors und der Abteilung für Systemanalyse und Computermodellierung.</value>
+  </data>
   <data name="FaxNumber" xml:space="preserve">
     <value>Fax. + 375 17 226 59 40.</value>
   </data>
@@ -146,6 +152,9 @@
   </data>
   <data name="History" xml:space="preserve">
     <value>Geschichte</value>
+  </data>
+  <data name="HistoryShortDescription" xml:space="preserve">
+    <value>Die Geschichte der Schöpfung, die Leiter des Labors und der Abteilung, Konferenzen und Berichte über die Jahre. Auf dieser Seite finden Sie eine detaillierte Beschreibung der Vorträge zu den Seminaren, PHD, IEEE, Berichte zu den Seminaren und Archivdokumenten.</value>
   </data>
   <data name="Home" xml:space="preserve">
     <value>Home</value>
@@ -159,6 +168,9 @@
   <data name="MailAddress" xml:space="preserve">
     <value>kobernykbeljr@gmail.com</value>
   </data>
+  <data name="PeopleShortDescription" xml:space="preserve">
+    <value>Teilnehmer des Labors, Lehrer und Studenten der Abteilung. In diesem Abschnitt können Sie sich mit den Lehrkräften des Labors und der Abteilung sowie mit den aktivsten Studenten und ihren Leistungen in der Lehre und wissenschaftlichen Tätigkeit vertraut machen. Außerdem können Sie die besten Mitarbeiter des Monats kennenlernen.</value>
+  </data>
   <data name="Persons" xml:space="preserve">
     <value>Personal</value>
   </data>
@@ -167,6 +179,9 @@
   </data>
   <data name="Projects" xml:space="preserve">
     <value>Projekt</value>
+  </data>
+  <data name="ProjectsShortDescription" xml:space="preserve">
+    <value>Projekte und Leistungen unserer Studenten. Hier finden Sie eine Beschreibung von Projekten, Ideen und wissenschaftlichen Berichten von Laborteilnehmern und der Abteilung Systemanalyse und Computersimulation. Für das sehr wichtige Ergebnis der Studien und der weiteren Anwendung der durchgeführten Projekte.</value>
   </data>
   <data name="Welcome" xml:space="preserve">
     <value>Willkommen im Studenforschungslaborator!</value>

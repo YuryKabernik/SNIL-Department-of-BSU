@@ -129,6 +129,9 @@
   <data name="Contacts" xml:space="preserve">
     <value>Контакты</value>
   </data>
+  <data name="ContactsShortDescription" xml:space="preserve">
+    <value>Контакты с руководителями кафедры, администрацией. Ознакомьтесь с расположением лаборатории, кротчайшим пешким путём, на общественном, личном транспорте. На странице имеется возможность оставить текстовое сообщение.</value>
+  </data>
   <data name="Country" xml:space="preserve">
     <value>Минск</value>
   </data>
@@ -140,6 +143,9 @@
   </data>
   <data name="Education" xml:space="preserve">
     <value>Обучени</value>
+  </data>
+  <data name="EducationShortDescription" xml:space="preserve">
+    <value>Образовательный процесс студентов, планы занятий, семинары, программа Quick Learning. Тут вы можете найти описание образовательного процесса, ознакомиться с действующими преподавателями и отзывами на работу преподавательского состава лаборатории и кафедры Системного анализа и компьютерного моделирования.</value>
   </data>
   <data name="Email" xml:space="preserve">
     <value>Эл. адрес*</value>
@@ -156,6 +162,9 @@
   <data name="History" xml:space="preserve">
     <value>История</value>
   </data>
+  <data name="HistoryShortDescription" xml:space="preserve">
+    <value>История создания, руководители лаборатории и кафедры, конференции и доклады по годам. На данной странице вы сможете найти подробное описание выступлений на семинарах, PHD, IEEE, отчеты по семинарам и архивные документы.</value>
+  </data>
   <data name="Home" xml:space="preserve">
     <value>Главная</value>
   </data>
@@ -171,6 +180,9 @@
   <data name="Message" xml:space="preserve">
     <value>Сообщение</value>
   </data>
+  <data name="PeopleShortDescription" xml:space="preserve">
+    <value>Участники лаборатории, преподаватели и студенты кафедры. В данном разделе вы можете ознакомиться с преподавательским составом лаборатории и кафедры, а так же с самыми активными студентами и их достижениями в обучении и научной деятельности. Также вы можете ознакомиться с лучшими сотрудниками месяца.</value>
+  </data>
   <data name="Persons" xml:space="preserve">
     <value>Персонал</value>
   </data>
@@ -179,6 +191,9 @@
   </data>
   <data name="Projects" xml:space="preserve">
     <value>Проекты</value>
+  </data>
+  <data name="ProjectsShortDescription" xml:space="preserve">
+    <value>Проекты студентов нашей лаборатории и достижения. Тут вы можете найти описание проектов, идей и научных докладов участников лаборатории и кафедры Системного анализа и компьютерного моделирования. Для очень важен результат проведенных исследований и дальнейшее применение реализованных проектов.</value>
   </data>
   <data name="Subject" xml:space="preserve">
     <value>Тема*</value>

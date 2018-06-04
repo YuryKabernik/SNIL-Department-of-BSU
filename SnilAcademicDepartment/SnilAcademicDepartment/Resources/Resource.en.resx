@@ -126,6 +126,9 @@
   <data name="Contacts" xml:space="preserve">
     <value>Contacts</value>
   </data>
+  <data name="ContactsShortDescription" xml:space="preserve">
+    <value>Contacts with the heads of the department, the administration. Familiarize yourself with the location of the laboratory, the shortest way on foot, on public, personal transport. You can leave a text message on the page.</value>
+  </data>
   <data name="Country" xml:space="preserve">
     <value>Minsk</value>
   </data>
@@ -138,6 +141,9 @@
   <data name="Education" xml:space="preserve">
     <value>Education</value>
   </data>
+  <data name="EducationShortDescription" xml:space="preserve">
+    <value>Educational process of students, lesson plans, seminars, Quick Learning. Here you can find the description of the educational process, get acquainted with the current teachers and feedback on the work of the teaching staff of the laboratory and the Department of System Analysis and Computer Modeling.</value>
+  </data>
   <data name="FaxNumber" xml:space="preserve">
     <value>Fax. + 375 17 226 59 40.</value>
   </data>
@@ -146,6 +152,9 @@
   </data>
   <data name="History" xml:space="preserve">
     <value>History</value>
+  </data>
+  <data name="HistoryShortDescription" xml:space="preserve">
+    <value>The history of the creation, the heads of the laboratory and the department, conferences and reports on the years. On this page you can find a detailed description of the presentations at the seminars, PHD, IEEE, reports on the seminars and archival documents.</value>
   </data>
   <data name="Home" xml:space="preserve">
     <value>Home</value>
@@ -159,6 +168,9 @@
   <data name="MailAddress" xml:space="preserve">
     <value>kobernykbeljr@gmail.com</value>
   </data>
+  <data name="PeopleShortDescription" xml:space="preserve">
+    <value>Participants of the laboratory, teachers and students of the department. In this section you can get acquainted with the teaching staff of the laboratory and the department, as well as with the most active students and their achievements in teaching and scientific activity. Also you can get acquainted with the best employees of the month.</value>
+  </data>
   <data name="Persons" xml:space="preserve">
     <value>Persons</value>
   </data>
@@ -167,6 +179,9 @@
   </data>
   <data name="Projects" xml:space="preserve">
     <value>Projects</value>
+  </data>
+  <data name="ProjectsShortDescription" xml:space="preserve">
+    <value>Projects and achievements of our students. Here you can find a description of projects, ideas and scientific reports of laboratory participants and the Department of System Analysis and Computer Simulation. For the very important result of the studies and further application of the implemented projects.</value>
   </data>
   <data name="Welcome" xml:space="preserve">
     <value>Welcome to the Student Resesrch Laboratory!</value>
