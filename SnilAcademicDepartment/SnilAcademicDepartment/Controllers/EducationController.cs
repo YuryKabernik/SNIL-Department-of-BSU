@@ -56,7 +56,8 @@ namespace SnilAcademicDepartment.Controllers
             }
             catch (System.Exception)
             {
-                return Redirect(Request.UrlReferrer.AbsoluteUri);
+                ViewBag.ErrorMessage = "Sorry, but education page is not avaliable now :( \n Try again later!";
+                return View("Error");
             }
 
             int i = 1;
@@ -85,8 +86,9 @@ namespace SnilAcademicDepartment.Controllers
             }
             catch (Exception ex)
             {
-
-                return Redirect(Request.UrlReferrer.AbsoluteUri);
+            
+                ViewBag.ErrorMessage = "Sorry, but education page is not avaliable now :( \n Try again later!";
+                return View("Error");
             }
 
             ViewBag.Title = "Quick Learning";

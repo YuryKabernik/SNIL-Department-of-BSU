@@ -144,6 +144,9 @@
   <data name="Email" xml:space="preserve">
     <value>Эл. адрес*</value>
   </data>
+  <data name="Error" xml:space="preserve">
+    <value>Ошибка</value>
+  </data>
   <data name="FaxNumber" xml:space="preserve">
     <value>Факс. + 375 17 226 59 40.</value>
   </data>
