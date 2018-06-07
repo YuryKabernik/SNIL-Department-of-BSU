@@ -27,7 +27,7 @@ namespace SnilAcademicDepartment.Controllers
             }
             catch (Exception)
             {
-                Redirect(this.Request.UrlReferrer?.AbsoluteUri ?? "/");
+                Redirect(this.Request.UrlReferrer?.AbsoluteUri ?? "/").ExecuteResult(this.ControllerContext);
             }
         }
     }

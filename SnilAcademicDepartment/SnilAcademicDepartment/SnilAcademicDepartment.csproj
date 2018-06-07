@@ -281,12 +281,9 @@
     <Content Include="Content\Site.css" />
     <Content Include="img\02.jpg" />
     <Content Include="img\217323.jpg" />
-    <Content Include="img\arnamient-1.png" />
-    <Content Include="img\Belarus-flag-icon.png" />
     <Content Include="img\BSU.png" />
     <Content Include="img\BSU3.jpg" />
     <Content Include="img\Cheaf.jpg" />
-    <Content Include="img\China-flag-icon.png" />
     <Content Include="img\Conferences\IMG_3541.JPG" />
     <Content Include="img\Conferences\IMG_3546.JPG" />
     <Content Include="img\Conferences\IMG_3549.JPG" />
@@ -336,14 +333,6 @@
     <Content Include="img\Persons\skakun.jpg" />
     <Content Include="img\Persons\SkakunV.jpg" />
     <Content Include="img\Persons\yatskou.jpg" />
-    <Content Include="img\Poland-flag-icon.png" />
-    <Content Include="img\Russian-Federation-flag-icon.png" />
-    <Content Include="img\shape1.png" />
-    <Content Include="img\Small-Avatar1.png" />
-    <Content Include="img\Spain-flag-icon.png" />
-    <Content Include="img\top.png" />
-    <Content Include="img\Ukraine-flag-icon.png" />
-    <Content Include="img\United-Kingdom-flag-icon.png" />
     <Content Include="favicon.ico" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -354,6 +343,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <None Include="Properties\PublishProfiles\ReleaseProfile.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />

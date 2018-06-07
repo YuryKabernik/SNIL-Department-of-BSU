@@ -57,9 +57,9 @@ namespace SnilAcademicDepartment.Controllers
             {
                 this._mailSender.SendMailToAdmin(mail);
             }
-            catch (Exception e)
+            catch (Exception)
             {
-                return Redirect(Request.UrlReferrer?.AbsoluteUri ?? "/");
+                return Redirect(this.Request.UrlReferrer?.AbsoluteUri ?? "/");
             }
             return Redirect(Request.UrlReferrer?.AbsoluteUri ?? "/");
         }

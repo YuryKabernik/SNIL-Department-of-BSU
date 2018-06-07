@@ -25,6 +25,9 @@ namespace SnilAcademicDepartment.Controllers
         /// </summary>
         /// <param name="logger"></param>
         /// <param name="previewService"></param>
+        /// <param name="educationService"></param>
+        /// <param name="lecturePreviewService"></param>
+        /// <param name="seminarPreviewService"></param>
         public EducationController(
             ILogger logger,
             IService previewService, 
@@ -54,7 +57,7 @@ namespace SnilAcademicDepartment.Controllers
                 // Get educatio key areas.
                 blockCollection = await this._educationService.GetKeyAreasAsync(20, Thread.CurrentThread.CurrentCulture.LCID);
             }
-            catch (System.Exception)
+            catch (Exception)
             {
                 ViewBag.ErrorMessage = "Sorry, but education page is not avaliable now :( \n Try again later!";
                 return View("Error");
@@ -84,7 +87,7 @@ namespace SnilAcademicDepartment.Controllers
                 viewModel = this._educationService.GetEducationBlockById(3, Thread.CurrentThread.CurrentCulture.LCID);
 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
             
                 ViewBag.ErrorMessage = "Sorry, but education page is not avaliable now :( \n Try again later!";
@@ -108,10 +111,10 @@ namespace SnilAcademicDepartment.Controllers
             {
                 seninarsPreviewsModels = this._seminarPreviewService.GetSeminarPreviews<SeminarPreview>(20, Thread.CurrentThread.CurrentCulture.LCID);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
-                return Redirect(Request.UrlReferrer.AbsoluteUri);
+                return Redirect(Request.UrlReferrer.AbsoluteUri ?? "/");
             }
 
             ViewBag.Title = "Seminars";
@@ -134,7 +137,7 @@ namespace SnilAcademicDepartment.Controllers
             catch (Exception)
             {
 
-                return Redirect(Request.UrlReferrer.AbsoluteUri);
+                return Redirect(this.Request.UrlReferrer?.AbsoluteUri ?? "/");
             }
 
             ViewBag.Title = "Lections";

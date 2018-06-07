@@ -6,9 +6,9 @@ using System.Runtime.InteropServices;
 // набора атрибутов. Измените значения этих атрибутов для изменения сведений,
 // связанных с этой сборкой.
 [assembly: AssemblyTitle("SnilAcademicDepartment")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Created by Yury Kabernik-Berazouski")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("BSU Belarus")]
 [assembly: AssemblyProduct("SnilAcademicDepartment")]
 [assembly: AssemblyCopyright("© , 2017")]
 [assembly: AssemblyTrademark("")]

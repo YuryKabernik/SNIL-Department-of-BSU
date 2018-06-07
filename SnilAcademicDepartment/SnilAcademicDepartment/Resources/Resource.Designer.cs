@@ -97,6 +97,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Контакты с руководителями кафедры, администрацией. Ознакомьтесь с расположением лаборатории, кротчайшим пешким путём, на общественном, личном транспорте. На странице имеется возможность оставить текстовое сообщение..
+        /// </summary>
+        public static string ContactsShortDescription {
+            get {
+                return ResourceManager.GetString("ContactsShortDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Минск.
         /// </summary>
         public static string Country {
@@ -129,6 +138,15 @@ namespace Resources {
         public static string Education {
             get {
                 return ResourceManager.GetString("Education", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Образовательный процесс студентов, планы занятий, семинары, программа Quick Learning. Тут вы можете найти описание образовательного процесса, ознакомиться с действующими преподавателями и отзывами на работу преподавательского состава лаборатории и кафедры Системного анализа и компьютерного моделирования..
+        /// </summary>
+        public static string EducationShortDescription {
+            get {
+                return ResourceManager.GetString("EducationShortDescription", resourceCulture);
             }
         }
         
@@ -187,6 +205,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to История создания, руководители лаборатории и кафедры, конференции и доклады по годам. На данной странице вы сможете найти подробное описание выступлений на семинарах, PHD, IEEE, отчеты по семинарам и архивные документы..
+        /// </summary>
+        public static string HistoryShortDescription {
+            get {
+                return ResourceManager.GetString("HistoryShortDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Главная.
         /// </summary>
         public static string Home {
@@ -232,6 +259,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Участники лаборатории, преподаватели и студенты кафедры. В данном разделе вы можете ознакомиться с преподавательским составом лаборатории и кафедры, а так же с самыми активными студентами и их достижениями в обучении и научной деятельности. Также вы можете ознакомиться с лучшими сотрудниками месяца..
+        /// </summary>
+        public static string PeopleShortDescription {
+            get {
+                return ResourceManager.GetString("PeopleShortDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Персонал.
         /// </summary>
         public static string Persons {
@@ -255,6 +291,15 @@ namespace Resources {
         public static string Projects {
             get {
                 return ResourceManager.GetString("Projects", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Проекты студентов нашей лаборатории и достижения. Тут вы можете найти описание проектов, идей и научных докладов участников лаборатории и кафедры Системного анализа и компьютерного моделирования. Для очень важен результат проведенных исследований и дальнейшее применение реализованных проектов..
+        /// </summary>
+        public static string ProjectsShortDescription {
+            get {
+                return ResourceManager.GetString("ProjectsShortDescription", resourceCulture);
             }
         }
         
