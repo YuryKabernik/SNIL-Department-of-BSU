@@ -32,8 +32,9 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
         public void SendMailToAdmin(ClientMail clientMail)
         {
             var mailMessage = this._mapper.Map<ClientMail,MailMessage>(clientMail);
-            mailMessage.To.Add("kobernicyri@mail.ru");
+            mailMessage.To.Add("skakun@bsu.by");
             mailMessage.CC.Add(new MailAddress(clientMail.Email));
+            mailMessage.CC.Add(new MailAddress("yakubovskiy@bsu.by"));
             this._mailClient.SendEmail(mailMessage);
         }
 

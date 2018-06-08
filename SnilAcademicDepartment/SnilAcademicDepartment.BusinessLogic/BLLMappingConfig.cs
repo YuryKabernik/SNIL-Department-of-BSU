@@ -84,7 +84,7 @@ namespace SnilAcademicDepartment.BusinessLogic
                 .ForMember(des => des.Key, opt => opt.MapFrom(s => s.Key));
 
             this.CreateMap<ClientMail, MailMessage>()
-                .ForMember(des => des.Body, opt => opt.MapFrom(s => "Company: " + s.Company + "\n Message:" + s.Message))
+                .ForMember(des => des.Body, opt => opt.MapFrom(s => "Message:" + s.Message))
                 .ForMember(des => des.From, opt => opt.ResolveUsing(s => new MailAddress(s.Email)))
                 .ForMember(des => des.Sender, opt => opt.ResolveUsing(s => new MailAddress(s.Email)))
                 .ForMember(des => des.Subject, opt => opt.ResolveUsing(s => s.Subject))
