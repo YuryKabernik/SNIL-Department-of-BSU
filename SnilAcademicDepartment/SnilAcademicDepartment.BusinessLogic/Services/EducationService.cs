@@ -31,6 +31,8 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
         /// <param name="pages">Number of pages to get.</param>
         /// <param name="lcid">Languahe code</param>
         /// <returns>Collection of education key areas.</returns>
+        /// <exception cref="IndexOutOfRangeException">Throws when argument 'pages' or 'lcid' is equal or less than zero.</exception>
+        /// <exception cref="ArgumentNullException">Throws when result from database is null.</exception>
         public List<EducationBlockModel> GetKeyAreas(int pages, int lcid)
         {
             if (pages <= 0)
@@ -44,7 +46,7 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
 
             var resultCollection = this._repository.EducationBlocks
                 .Where(s => s.Language.LanguageCode == CultureInfo.CurrentCulture.LCID)
-                .Take(pages);
+                .Take(pages).ToList();
 
             if (resultCollection == null)
             {
@@ -60,9 +62,11 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
         /// <param name="blockName">Name of the education block.</param>
         /// <param name="lcid">Languahe code.</param>
         /// <returns>Education block as requested.</returns>
+        /// <exception cref="IndexOutOfRangeException">Throws when argument lcid is equal or less than zero.</exception>
+        /// <exception cref="ArgumentNullException">Throws when blockName is null, empty or whitespace. Throws when result from database is null.</exception>
         public EducationBlockModel GetEducationBlock(string blockName, int lcid)
         {
-            if (string.IsNullOrEmpty(blockName) || string.IsNullOrWhiteSpace(blockName))
+            if (string.IsNullOrWhiteSpace(blockName))
             {
                 throw new ArgumentException($"Parameter {nameof(blockName)} is null, empty or white space.",
                     nameof(blockName));
@@ -84,6 +88,12 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
             return this._mapper.Map<EducationBlockModel>(block);
         }
 
+        /// <summary>
+        /// Method to get education block by common multi language Id.
+        /// </summary>
+        /// <param name="commonBlockTypeId">Id of a multi language project id.</param>
+        /// <param name="lcid">Language LCID code.</param>
+        /// <returns>Education block by common Id.</returns>
         public EducationBlockModel GetEducationBlockById(int commonBlockTypeId, int lcid)
         {
             if (commonBlockTypeId <= 0)
@@ -107,6 +117,14 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
             return this._mapper.Map<EducationBlockModel>(res);
         }
 
+        /// <summary>
+        /// Get education areas async.
+        /// </summary>
+        /// <param name="pages">Number of pages to take.</param>
+        /// <param name="lcid">Language LCID code.</param>
+        /// <returns>List of education blocks.</returns>
+        /// <exception cref="IndexOutOfRangeException">Throws when argument 'pages' or 'lcid' is equal or less than zero.</exception>
+        /// <exception cref="ArgumentNullException">Throws when result from database is null.</exception>
         public async Task<List<EducationBlockModel>> GetKeyAreasAsync(int pages, int lcid)
         {
             if (pages <= 0)
