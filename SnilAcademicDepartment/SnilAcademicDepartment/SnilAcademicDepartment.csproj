@@ -279,7 +279,8 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="img\02.jpg" />
+    <Content Include="img\Carousel\conferences.jpg" />
+    <Content Include="img\Carousel\tools.jpg" />
     <Content Include="img\217323.jpg" />
     <Content Include="img\BSU.png" />
     <Content Include="img\BSU3.jpg" />
@@ -290,7 +291,7 @@
     <Content Include="img\Conferences\P1040798.JPG" />
     <Content Include="img\Conferences\P1040801.JPG" />
     <Content Include="img\Conferences\P1040805.JPG" />
-    <Content Include="img\CV.jpg" />
+    <Content Include="img\Carousel\CV.jpg" />
     <Content Include="img\DSCF19562007г..JPG" />
     <Content Include="img\DSC_3533.JPG" />
     <Content Include="img\DSC_3537.JPG" />
@@ -311,7 +312,7 @@
     <Content Include="img\DSC_3616.JPG" />
     <Content Include="img\DSC_3623.JPG" />
     <Content Include="img\DSC_3624.JPG" />
-    <Content Include="img\European-Union-flag-icon.png" />
+    <Content Include="img\Carousel\cooperation.jpg" />
     <Content Include="img\Germany-flag-icon.png" />
     <Content Include="img\IMG_0004.JPG" />
     <Content Include="img\IMG_3485.JPG" />
