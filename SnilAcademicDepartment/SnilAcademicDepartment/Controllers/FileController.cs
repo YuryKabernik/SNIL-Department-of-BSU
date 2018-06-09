@@ -2,6 +2,7 @@
 using System.Web.Mvc;
 using SnilAcademicDepartment.BusinessLogic.Interfaces;
 using System.Web;
+using System.Threading.Tasks;
 
 namespace SnilAcademicDepartment.Controllers
 {
@@ -16,17 +17,17 @@ namespace SnilAcademicDepartment.Controllers
 
         [HttpGet]
         [Route("file")]
-        public ActionResult GetFileById(int? id)
+        public async Task<ActionResult> GetFileById(int? id)
         {
             FileContentResult fileResult = null;
             if (id == null)
             {
-                Redirect(this.Request.UrlReferrer?.AbsoluteUri ?? "/").ExecuteResult(this.ControllerContext);
+                return Redirect(this.Request.UrlReferrer?.AbsoluteUri ?? "/");
             }
 
             try
             {
-                var file = this._fileManager.GetFileById((int)id);
+                var file = await this._fileManager.GetFileByIdAsync((int)id);
 
                 string mimeType = MimeMapping.GetMimeMapping(file.FileType);
 
