@@ -103,13 +103,13 @@ namespace SnilAcademicDepartment.Controllers
 
         [HttpGet]
         [Route("Seminars")]
-        public ActionResult PageSeminars()
+        public async Task<ActionResult> PageSeminars()
         {
             IEnumerable<IGrouping<int, SeminarPreview>> seninarsPreviewsModels = null;
 
             try
             {
-                seninarsPreviewsModels = this._seminarPreviewService.GetSeminarPreviews<SeminarPreview>(20, Thread.CurrentThread.CurrentCulture.LCID);
+                seninarsPreviewsModels = await this._seminarPreviewService.GetSeminarPreviewsAsync<SeminarPreview>(20, Thread.CurrentThread.CurrentCulture.LCID);
             }
             catch (Exception)
             {
@@ -126,13 +126,13 @@ namespace SnilAcademicDepartment.Controllers
 
         [HttpGet]
         [Route("Lections")]
-        public ActionResult PageLectures()
+        public async Task<ActionResult> PageLectures()
         {
             IEnumerable<LecturePreview> lecturePreviewsModels = null;
 
             try
             {
-                lecturePreviewsModels = this._lecturePreviewService.GetLecturePreviews<LecturePreview>(20, Thread.CurrentThread.CurrentCulture.LCID);
+                lecturePreviewsModels = await this._lecturePreviewService.GetLecturePreviewsAsync<LecturePreview>(20, Thread.CurrentThread.CurrentCulture.LCID);
             }
             catch (Exception)
             {
