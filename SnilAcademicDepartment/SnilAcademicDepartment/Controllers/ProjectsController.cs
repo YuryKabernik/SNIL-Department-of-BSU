@@ -42,19 +42,19 @@ namespace SnilAcademicDepartment.Controllers
 
             try
             {
-                // Get project preview.
+                // Get project previews.
                 projectPreview = await this._previewService.GetPagePreviewAsync("Projects", Thread.CurrentThread.CurrentCulture.LCID);
 
-                currentPreviews = this._projectsPreview
-                    .GetProjectsPreviews<ProjectPreview>("Current", 0, 12, Thread.CurrentThread.CurrentCulture.LCID);
+                currentPreviews = await this._projectsPreview
+                    .GetProjectsPreviewsAsync<ProjectPreview>("Current", 0, 12, Thread.CurrentThread.CurrentCulture.LCID);
 
-                newPreviews = this._projectsPreview
-                    .GetProjectsPreviews<ProjectPreview>("New", 0, 12, Thread.CurrentThread.CurrentCulture.LCID);
+                newPreviews = await this._projectsPreview
+                    .GetProjectsPreviewsAsync<ProjectPreview>("New", 0, 12, Thread.CurrentThread.CurrentCulture.LCID);
 
-                finishedPreviews = this._projectsPreview
-                    .GetProjectsPreviews<ProjectPreview>("Finished", 0, 12, Thread.CurrentThread.CurrentCulture.LCID);
+                finishedPreviews = await this._projectsPreview
+                    .GetProjectsPreviewsAsync<ProjectPreview>("Finished", 0, 12, Thread.CurrentThread.CurrentCulture.LCID);
             }
-            catch (Exception )
+            catch (Exception)
             {
                 return Redirect(this.Request.UrlReferrer?.AbsoluteUri ?? "/");
             }
@@ -79,8 +79,8 @@ namespace SnilAcademicDepartment.Controllers
             {
                 projectModel = this._projectsService.GetProjectById(id, Thread.CurrentThread.CurrentCulture.LCID);
 
-                newPreviews = this._projectsPreview
-                    .GetProjectsPreviews<ProjectPreview>("New", 0, 6, Thread.CurrentThread.CurrentCulture.LCID);
+                newPreviews = await this._projectsPreview
+                    .GetProjectsPreviewsAsync<ProjectPreview>("New", 0, 6, Thread.CurrentThread.CurrentCulture.LCID);
 
             }
             catch (Exception )
@@ -106,8 +106,8 @@ namespace SnilAcademicDepartment.Controllers
             {
                 projectModel = this._projectsService.GetProjectById(id, Thread.CurrentThread.CurrentCulture.LCID);
 
-                finishedPreviews = this._projectsPreview
-                    .GetProjectsPreviews<ProjectPreview>("Finished", 0, 6, Thread.CurrentThread.CurrentCulture.LCID);
+                finishedPreviews = await this._projectsPreview
+                    .GetProjectsPreviewsAsync<ProjectPreview>("Finished", 0, 6, Thread.CurrentThread.CurrentCulture.LCID);
 
             }
             catch (Exception)
@@ -133,8 +133,8 @@ namespace SnilAcademicDepartment.Controllers
             {
                 projectModel = this._projectsService.GetProjectById(id, Thread.CurrentThread.CurrentCulture.LCID);
 
-                currentPreviews = this._projectsPreview
-                   .GetProjectsPreviews<ProjectPreview>("Current", 0, 6, Thread.CurrentThread.CurrentCulture.LCID);
+                currentPreviews = await this._projectsPreview
+                   .GetProjectsPreviewsAsync<ProjectPreview>("Current", 0, 6, Thread.CurrentThread.CurrentCulture.LCID);
 
             }
             catch (Exception)
