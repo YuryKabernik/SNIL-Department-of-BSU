@@ -99,6 +99,13 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
             return this._mapper.Map<IEnumerable<TPreviewType>>(lectures);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <typeparam name="TPreviewType"></typeparam>
+        /// <param name="numberOfSeminars"></param>
+        /// <param name="lcid"></param>
+        /// <returns></returns>
         public IEnumerable<IGrouping<int, TPreviewType>> GetSeminarPreviews<TPreviewType>(int numberOfSeminars, int lcid) where TPreviewType : SeminarPreview
         {
             if (numberOfSeminars <= 0)
@@ -125,6 +132,12 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
             return (IEnumerable<IGrouping<int, TPreviewType>>)seminars;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="pageType"></param>
+        /// <param name="langLCID"></param>
+        /// <returns></returns>
         public async Task<PreViewModel> GetPagePreviewAsync(string pageType, int langLCID)
         {
             if (string.IsNullOrEmpty(pageType) || string.IsNullOrWhiteSpace(pageType))
@@ -144,6 +157,12 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
             return this._mapper.Map<PreViewModel>(requestResult);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="pageType"></param>
+        /// <param name="langLCID"></param>
+        /// <returns></returns>
         public async Task<IEnumerable<PreViewModel>> GetPagePreviewsAsync(string pageType, int langLCID)
         {
             if (string.IsNullOrEmpty(pageType) || string.IsNullOrWhiteSpace(pageType))
@@ -163,6 +182,13 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
             return this._mapper.Map<IEnumerable<PreViewModel>>(requestResult);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <typeparam name="TPreviewType"></typeparam>
+        /// <param name="numberOfLectures"></param>
+        /// <param name="lcid"></param>
+        /// <returns></returns>
         public async Task<IEnumerable<TPreviewType>> GetLecturePreviewsAsync<TPreviewType>(int numberOfLectures, int lcid)
         {
             if (numberOfLectures <= 0)
@@ -187,6 +213,13 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
             return this._mapper.Map<IEnumerable<TPreviewType>>(lectures);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <typeparam name="TPreviewType"></typeparam>
+        /// <param name="numberOfSeminars"></param>
+        /// <param name="lcid"></param>
+        /// <returns></returns>
         public async Task<IEnumerable<IGrouping<int, TPreviewType>>> GetSeminarPreviewsAsync<TPreviewType>(int numberOfSeminars, int lcid) where TPreviewType : SeminarPreview
         {
             if (numberOfSeminars <= 0)
@@ -199,18 +232,24 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
                 throw new ArgumentException("Language id cant be equal or less than zero.", nameof(lcid));
             }
 
+            // Taking list of seminars.
             var seminars = await this._repository.Seminars
                 .Where(s => s.Language.LanguageCode == lcid)
-                .Take(numberOfSeminars).ToList().AsQueryable()
-                .ProjectTo<SeminarPreview>(this._mapper.ConfigurationProvider) // AutoMapper Extension
-                .GroupBy<SeminarPreview, int>(k => k.EventDate.Year).ToListAsync();
+                .Take(numberOfSeminars)
+                .ToListAsync();
 
-            if (seminars == null)
+            // Mapping and grouping seminars.
+            var mappedAndGroupedSeminars = seminars
+                .AsQueryable()
+                .ProjectTo<SeminarPreview>(this._mapper.ConfigurationProvider)
+                .GroupBy<SeminarPreview, int>(k => k.EventDate.Year);
+
+            if (mappedAndGroupedSeminars == null)
             {
                 throw new ArgumentNullException(nameof(seminars), "Cant finde any seminar by requested parameters.");
             }
 
-            return (IEnumerable<IGrouping<int, TPreviewType>>)seminars;
+            return (IEnumerable<IGrouping<int, TPreviewType>>)mappedAndGroupedSeminars;
         }
     }
 }
