@@ -4,6 +4,7 @@ using SnilAcademicDepartment.BusinessLogic.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Threading;
+using System.Threading.Tasks;
 using System.Web.Mvc;
 
 namespace SnilAcademicDepartment.Controllers
@@ -31,7 +32,7 @@ namespace SnilAcademicDepartment.Controllers
 
         [HttpGet]
         [Route("Projects")]
-        public ActionResult Projects()
+        public async Task<ActionResult> Projects()
         {
             PreViewModel projectPreview = null;
 
@@ -42,7 +43,7 @@ namespace SnilAcademicDepartment.Controllers
             try
             {
                 // Get project preview.
-                projectPreview = this._previewService.GetPagePreview("Projects", Thread.CurrentThread.CurrentCulture.LCID);
+                projectPreview = await this._previewService.GetPagePreviewAsync("Projects", Thread.CurrentThread.CurrentCulture.LCID);
 
                 currentPreviews = this._projectsPreview
                     .GetProjectsPreviews<ProjectPreview>("Current", 0, 12, Thread.CurrentThread.CurrentCulture.LCID);
@@ -69,7 +70,7 @@ namespace SnilAcademicDepartment.Controllers
 
         [HttpGet]
         [Route("New")]
-        public ActionResult PageNew(int id)
+        public async Task<ActionResult> PageNew(int id)
         {
             ProjectModel projectModel = null;
             IEnumerable<ProjectPreview> newPreviews = null;
@@ -96,7 +97,7 @@ namespace SnilAcademicDepartment.Controllers
 
         [HttpGet]
         [Route("Finished")]
-        public ActionResult PageFinished(int id)
+        public async Task<ActionResult> PageFinished(int id)
         {
             ProjectModel projectModel = null;
             IEnumerable<ProjectPreview> finishedPreviews = null;
@@ -123,7 +124,7 @@ namespace SnilAcademicDepartment.Controllers
 
         [HttpGet]
         [Route("Current")]
-        public ActionResult PageCurrent(int id)
+        public async Task<ActionResult> PageCurrent(int id)
         {
             ProjectModel projectModel = null;
             IEnumerable<ProjectPreview> currentPreviews = null;
