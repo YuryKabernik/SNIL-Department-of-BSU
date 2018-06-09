@@ -1,5 +1,6 @@
 ﻿using NLog;
 using SnilAcademicDepartment.BusinessLogic.Interfaces;
+using System.Threading.Tasks;
 using System.Web.Mvc;
 
 namespace SnilAcademicDepartment.Controllers
@@ -23,7 +24,7 @@ namespace SnilAcademicDepartment.Controllers
 
         [HttpGet]
         [Route("Persons")]
-        public ActionResult Persons()
+        public async Task<ActionResult> Persons()
         {
             ViewBag.Title = "Persons";
             return View();
@@ -31,7 +32,7 @@ namespace SnilAcademicDepartment.Controllers
 
         [HttpGet]
         [Route("Administration")]
-        public ActionResult Administration()
+        public async Task<ActionResult> Administration()
         {
             ViewBag.Title = "Administration";
             return View();
@@ -39,7 +40,7 @@ namespace SnilAcademicDepartment.Controllers
 
         [HttpGet]
         [Route("Students")]
-        public ActionResult Students()
+        public async Task<ActionResult> Students()
         {
             ViewBag.Title = "Stuedents";
             return View();
@@ -47,7 +48,7 @@ namespace SnilAcademicDepartment.Controllers
 
         [HttpGet]
         [Route("MS")]
-        public ActionResult MS()
+        public async Task<ActionResult> MS()
         {
             ViewBag.Title = "Master of Science";
             return View();
@@ -55,7 +56,7 @@ namespace SnilAcademicDepartment.Controllers
 
         [HttpGet]
         [Route("PHDs")]
-        public ActionResult PHDs()
+        public async Task<ActionResult> PHDs()
         {
             ViewBag.Title = "PHDs";
             return View();
