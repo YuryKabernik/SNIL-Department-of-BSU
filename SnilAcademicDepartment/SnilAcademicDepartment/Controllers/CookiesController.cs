@@ -44,11 +44,12 @@ namespace SnilAcademicDepartment.Controllers
             }
             catch(IndexOutOfRangeException)
             {
-                returnUrl = Request.UrlReferrer?.AbsoluteUri;
+                returnUrl = Request.UrlReferrer?.AbsoluteUri ?? "/";
+                return this.Redirect(returnUrl);
             }
             catch (Exception)
             {
-                returnUrl = Request.UrlReferrer?.AbsoluteUri;
+                returnUrl = Request.UrlReferrer?.AbsoluteUri ?? "/";
                 return this.Redirect(returnUrl);
             }
 

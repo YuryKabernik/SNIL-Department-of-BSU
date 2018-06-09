@@ -162,5 +162,55 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
 
             return this._mapper.Map<IEnumerable<PreViewModel>>(requestResult);
         }
+
+        public async Task<IEnumerable<TPreviewType>> GetLecturePreviewsAsync<TPreviewType>(int numberOfLectures, int lcid)
+        {
+            if (numberOfLectures <= 0)
+            {
+                throw new ArgumentOutOfRangeException(nameof(numberOfLectures), "Number of lectures cant be equal or less than zero.");
+            }
+
+            if (lcid <= 0)
+            {
+                throw new ArgumentException("Language id cant be equal or less than zero.", nameof(lcid));
+            }
+
+            var lectures = await this._repository.Lectures
+                .Where(s => s.Language.LanguageCode == lcid).Take(numberOfLectures)
+                .ToListAsync();
+
+            if (lectures == null)
+            {
+                throw new ArgumentNullException(nameof(lectures), "Cant finde any lecture by requested parameters.");
+            }
+
+            return this._mapper.Map<IEnumerable<TPreviewType>>(lectures);
+        }
+
+        public async Task<IEnumerable<IGrouping<int, TPreviewType>>> GetSeminarPreviewsAsync<TPreviewType>(int numberOfSeminars, int lcid) where TPreviewType : SeminarPreview
+        {
+            if (numberOfSeminars <= 0)
+            {
+                throw new ArgumentOutOfRangeException(nameof(numberOfSeminars), "Number of seminars cant be equal or less than zero.");
+            }
+
+            if (lcid <= 0)
+            {
+                throw new ArgumentException("Language id cant be equal or less than zero.", nameof(lcid));
+            }
+
+            var seminars = await this._repository.Seminars
+                .Where(s => s.Language.LanguageCode == lcid)
+                .Take(numberOfSeminars).ToList().AsQueryable()
+                .ProjectTo<SeminarPreview>(this._mapper.ConfigurationProvider) // AutoMapper Extension
+                .GroupBy<SeminarPreview, int>(k => k.EventDate.Year).ToListAsync();
+
+            if (seminars == null)
+            {
+                throw new ArgumentNullException(nameof(seminars), "Cant finde any seminar by requested parameters.");
+            }
+
+            return (IEnumerable<IGrouping<int, TPreviewType>>)seminars;
+        }
     }
 }
