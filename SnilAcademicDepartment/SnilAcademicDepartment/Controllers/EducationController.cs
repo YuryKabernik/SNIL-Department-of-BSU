@@ -78,7 +78,7 @@ namespace SnilAcademicDepartment.Controllers
 
         [HttpGet]
         [Route("QuickLearning")]
-        public ActionResult PageQuickLearning()
+        public async Task<ActionResult> PageQuickLearning()
         {
             EducationBlockModel viewModel = null;
 

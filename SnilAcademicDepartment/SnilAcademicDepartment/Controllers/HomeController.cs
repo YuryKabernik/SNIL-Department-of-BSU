@@ -3,6 +3,7 @@ using NLog;
 using SnilAcademicDepartment.BusinessLogic.Interfaces;
 using System.Web.Mvc;
 using SnilAcademicDepartment.BusinessLogic.DTOModels;
+using System.Threading.Tasks;
 
 namespace SnilAcademicDepartment.Controllers
 {
@@ -28,14 +29,14 @@ namespace SnilAcademicDepartment.Controllers
         }
 
         [HttpGet]
-        public ActionResult Index()
+        public async Task<ActionResult> Index()
         {
             return View();
         }
 
         [HttpGet]
         [Route("About")]
-        public ActionResult About()
+        public async Task<ActionResult> About()
         {
             ViewBag.Message = "Your application description page.";
             return View();
@@ -43,7 +44,7 @@ namespace SnilAcademicDepartment.Controllers
 
         [HttpGet]
         [Route("Contact")]
-        public ActionResult Contact()
+        public async Task<ActionResult> Contact()
         {
             ViewBag.Message = "Your contact page.";
             return View();
@@ -51,7 +52,7 @@ namespace SnilAcademicDepartment.Controllers
 
         [HttpPost]
         [Route("Sendrequest")]
-        public ActionResult SendMailMessage(ClientMail mail)
+        public async Task<ActionResult> SendMailMessage(ClientMail mail)
         {
             try
             {
