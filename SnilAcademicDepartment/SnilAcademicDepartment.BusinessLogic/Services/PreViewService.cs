@@ -88,7 +88,8 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
             }
 
             var lectures = this._repository.Lectures
-                .Where(s => s.Language.LanguageCode == lcid).Take(numberOfLectures)
+                .Where(s => s.Language.LanguageCode == lcid)
+                .Take(numberOfLectures)
                 .AsEnumerable();
 
             if (lectures == null)
@@ -120,9 +121,12 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
 
             var seminars = this._repository.Seminars
                 .Where(s => s.Language.LanguageCode == lcid)
-                .Take(numberOfSeminars).ToList().AsQueryable()
+                .Take(numberOfSeminars)
+                .ToList()
+                .AsQueryable()
                 .ProjectTo<SeminarPreview>(this._mapper.ConfigurationProvider) // AutoMapper Extension
-                .GroupBy<SeminarPreview, int>(k => k.EventDate.Year).ToList();
+                .GroupBy<SeminarPreview, int>(k => k.EventDate.Year)
+                .ToList();
 
             if (seminars == null)
             {
@@ -202,7 +206,8 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
             }
 
             var lectures = await this._repository.Lectures
-                .Where(s => s.Language.LanguageCode == lcid).Take(numberOfLectures)
+                .Where(s => s.Language.LanguageCode == lcid)
+                .Take(numberOfLectures)
                 .ToListAsync();
 
             if (lectures == null)
