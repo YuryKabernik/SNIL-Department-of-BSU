@@ -5,7 +5,9 @@ using SnilAcademicDepartment.BusinessLogic.Interfaces;
 using SnilAcademicDepartment.DataAccess;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace SnilAcademicDepartment.BusinessLogic.Services
 {
@@ -34,6 +36,7 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
 
             return this._mapper.Map<T>(res);
         }
+       
         /// <summary>
         /// Get all projects mapped to type <typeparamref name="T"/>.
         /// </summary>
@@ -62,6 +65,12 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
             return this._mapper.Map<IEnumerable<T>>(res);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="projectStatus"></param>
+        /// <param name="langLCID"></param>
+        /// <returns></returns>
         public ProjectModel GetProjectByStatus(string projectStatus, int langLCID)
         {
             if (string.IsNullOrEmpty(projectStatus) || string.IsNullOrWhiteSpace(projectStatus))
@@ -81,6 +90,12 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
             return this._mapper.Map<DTOModels.ProjectModel>(requestResult);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="projectStatus"></param>
+        /// <param name="langLCID"></param>
+        /// <returns></returns>
         public IEnumerable<ProjectModel> GetProjectsByStatus(string projectStatus, int langLCID)
         {
             if (string.IsNullOrEmpty(projectStatus) || string.IsNullOrWhiteSpace(projectStatus))
@@ -100,6 +115,14 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
             return this._mapper.Map<IEnumerable<DTOModels.ProjectModel>>(requestResult);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="projectStatus"></param>
+        /// <param name="startIndex"></param>
+        /// <param name="endIndex"></param>
+        /// <param name="langLCID"></param>
+        /// <returns></returns>
         public IEnumerable<ProjectModel> GetProjectsByStatus(string projectStatus, int startIndex, int endIndex, int langLCID)
         {
             if (string.IsNullOrEmpty(projectStatus) || string.IsNullOrWhiteSpace(projectStatus))
@@ -124,6 +147,12 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
             return this._mapper.Map<IEnumerable<DTOModels.ProjectModel>>(requestResult);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="projectId"></param>
+        /// <param name="langLCID"></param>
+        /// <returns></returns>
         public ProjectModel GetProjectById(int projectId, int langLCID)
         {
             try
@@ -139,5 +168,136 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
                 throw new InvalidOperationException("Cant't find project with such id.", ex);
             }
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="projectStatus"></param>
+        /// <param name="langLCID"></param>
+        /// <returns></returns>
+        public async Task<T> GetProjectPreviewAsync<T>(string projectStatus, int langLCID)
+        {
+            var res = await this.GetProjectByStatusAsync(projectStatus, langLCID);
+
+            return this._mapper.Map<T>(res);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="projectStatus"></param>
+        /// <param name="langLCID"></param>
+        /// <returns></returns>
+        private async Task<ProjectModel> GetProjectByStatusAsync(string projectStatus, int langLCID)
+        {
+            if (string.IsNullOrEmpty(projectStatus) || string.IsNullOrWhiteSpace(projectStatus))
+            {
+                throw new ArgumentNullException(nameof(projectStatus), "Your argument is Null, Empty or WhiteSpace");
+            }
+
+            var requestResult = await this._repository.Projects
+                .FirstOrDefaultAsync(e => projectStatus.Equals(e.ProjectStatus, StringComparison.OrdinalIgnoreCase)
+                && e.Language.LanguageCode == langLCID);
+
+            if (requestResult == null)
+            {
+                throw new InvalidOperationException("Cant't find project with such options.");
+            }
+
+            return this._mapper.Map<DTOModels.ProjectModel>(requestResult);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="projectStatus"></param>
+        /// <param name="langLCID"></param>
+        /// <returns></returns>
+        public async Task<IEnumerable<T>> GetProjectsPreviewsAsync<T>(string projectStatus, int langLCID)
+        {
+            var res = await this.GetProjectsByStatusAsync(projectStatus, langLCID);
+
+            return this._mapper.Map<IEnumerable<T>>(res);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="projectStatus"></param>
+        /// <param name="langLCID"></param>
+        /// <returns></returns>
+        private async Task<IEnumerable<ProjectModel>> GetProjectsByStatusAsync(string projectStatus, int langLCID)
+        {
+            if (string.IsNullOrEmpty(projectStatus) || string.IsNullOrWhiteSpace(projectStatus))
+            {
+                throw new ArgumentNullException(nameof(projectStatus), "Your argument is Null, Empty or WhiteSpace");
+            }
+
+            var requestResult = await this._repository.Projects
+                .Where(e => e.ProjectStatus == projectStatus && e.Language.LanguageCode == langLCID)
+                .ToListAsync();
+
+            if (requestResult == null)
+            {
+                throw new InvalidOperationException("Cant't find projects with such options.");
+            }
+
+            return this._mapper.Map<IEnumerable<DTOModels.ProjectModel>>(requestResult);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="projectStatus"></param>
+        /// <param name="startIndex"></param>
+        /// <param name="endIndex"></param>
+        /// <param name="langLCID"></param>
+        /// <returns></returns>
+        public async Task<IEnumerable<T>> GetProjectsPreviewsAsync<T>(string projectStatus, int startIndex, int endIndex, int langLCID)
+        {
+            var res = await this.GetProjectsByStatusAsync(projectStatus, startIndex, endIndex, langLCID);
+
+            return this._mapper.Map<IEnumerable<T>>(res);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="projectStatus"></param>
+        /// <param name="startIndex"></param>
+        /// <param name="endIndex"></param>
+        /// <param name="langLCID"></param>
+        /// <returns></returns>
+        private async Task<IEnumerable<ProjectModel>> GetProjectsByStatusAsync(string projectStatus, int startIndex, int endIndex, int langLCID)
+        {
+            if (string.IsNullOrEmpty(projectStatus) || string.IsNullOrWhiteSpace(projectStatus))
+            {
+                throw new ArgumentNullException(nameof(projectStatus), "Your argument is Null, Empty or WhiteSpace");
+            }
+
+            if (startIndex < 0 || endIndex < 0)
+            {
+                throw new IndexOutOfRangeException("Your start or end index is smaller than zero.");
+            }
+
+            var requestResult = await this._repository.Projects
+                .Where(e => e.ProjectStatus == projectStatus && e.Language.LanguageCode == langLCID)
+                .ToListAsync();
+
+            var takenProjects = requestResult
+                .Skip(startIndex)
+                .Take(endIndex);
+
+            if (requestResult == null)
+            {
+                throw new InvalidOperationException("Cant't find projects with such options.");
+            }
+
+            return this._mapper.Map<IEnumerable<DTOModels.ProjectModel>>(takenProjects);
+        }
+
     }
 }
