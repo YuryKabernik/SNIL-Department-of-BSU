@@ -280,6 +280,7 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="img\Carousel\conferences.jpg" />
+    <Content Include="img\Carousel\cvbsu.jpg" />
     <Content Include="img\Carousel\tools.jpg" />
     <Content Include="img\217323.jpg" />
     <Content Include="img\BSU.png" />
@@ -291,7 +292,6 @@
     <Content Include="img\Conferences\P1040798.JPG" />
     <Content Include="img\Conferences\P1040801.JPG" />
     <Content Include="img\Conferences\P1040805.JPG" />
-    <Content Include="img\Carousel\CV.jpg" />
     <Content Include="img\DSCF19562007г..JPG" />
     <Content Include="img\DSC_3533.JPG" />
     <Content Include="img\DSC_3537.JPG" />
