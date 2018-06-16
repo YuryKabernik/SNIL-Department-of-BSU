@@ -1,6 +1,6 @@
 ﻿@{
     ViewBag.Title = "Projects";
-    @Styles.Render("~/Content/projects")
+    @Styles.Render("~/Content/projectscss")
     var base64 = Convert.ToBase64String(ViewBag.Preview.Image);
     var imgSrc = String.Format("data:image/jpeg;base64,{0}", base64);
 }

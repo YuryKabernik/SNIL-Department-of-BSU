@@ -273,7 +273,6 @@
     <Content Include="Content\Education\EducationStyle.css" />
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\History\HistoryStyle.css" />
-    <Content Include="Content\IndexStyle.css" />
     <Content Include="Content\ContactStyle.css" />
     <Content Include="Content\Persons\PersonsStyle.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -344,6 +343,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <None Include="Properties\PublishProfiles\LocalFileSysProfile.pubxml" />
     <None Include="Properties\PublishProfiles\ReleaseProfile.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
@@ -397,7 +397,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Projects\Projects.cshtml" />
@@ -412,7 +411,6 @@
     <Content Include="Views\History\PageReports.cshtml" />
     <Content Include="Views\History\PageReview.cshtml" />
     <Content Include="Views\Education\Education.cshtml" />
-    <Content Include="Views\Persons\View.cshtml" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
     <Content Include="Views\Projects\ProjectPage.cshtml" />

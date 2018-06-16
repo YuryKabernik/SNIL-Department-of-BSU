@@ -52,7 +52,7 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
         /// <param name="cookie">Cookie in request if exists.</param>
         /// <param name="newCookieName">Optional. Name of new cookie.</param>
         /// <returns>New or modifed http cookie object with fixed language.</returns>
-        public async Task<HttpCookie> SetCookieCultureAsync(string language, HttpCookie cookie, string newCookieName = "language")
+        public Task<HttpCookie> SetCookieCultureAsync(string language, HttpCookie cookie, string newCookieName = "language")
         {
             if (string.IsNullOrEmpty(language) || string.IsNullOrWhiteSpace(language))
                 throw new ArgumentException(nameof(language), "Selected language can't be null.");
@@ -71,7 +71,7 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
                     Expires = DateTime.Now.AddHours(1)
                 };
             }
-            return cookie;
+            return Task.FromResult<HttpCookie>(cookie);
         }
     }
 }

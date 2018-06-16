@@ -24,42 +24,42 @@ namespace SnilAcademicDepartment.Controllers
 
         [HttpGet]
         [Route("History")]
-        public async Task<ActionResult> History()
+        public Task<ActionResult> History()
         {
             ViewBag.Title = "History";
-            return View();
+            return Task.FromResult<ActionResult>(View());
         }
 
         [HttpGet]
         [Route("PageArchive")]
-        public async Task<ActionResult> PageArchive()
+        public Task<ActionResult> PageArchive()
         {
             ViewBag.Title = "Archive";
-            return View();
+            return Task.FromResult<ActionResult>(View());
         }
 
         [HttpGet]
         [Route("PageIEEE")]
-        public async Task<ActionResult> PageIEEE()
+        public Task<ActionResult> PageIEEE()
         {
             ViewBag.Title = "IEEE";
-            return View();
+            return Task.FromResult<ActionResult>(View());
         }
 
         [HttpGet]
         [Route("PageReview")]
-        public async Task<ActionResult> PageReview()
+        public Task<ActionResult> PageReview()
         {
             ViewBag.Title = "Review";
-            return View();
+            return Task.FromResult<ActionResult>(View());
         }
 
         [HttpGet]
         [Route("PageReports")]
-        public async Task<ActionResult> PageReports()
+        public Task<ActionResult> PageReports()
         {
             ViewBag.Title = "Reports";
-            return View();
+            return Task.FromResult<ActionResult>(View());
         }
     }
 }

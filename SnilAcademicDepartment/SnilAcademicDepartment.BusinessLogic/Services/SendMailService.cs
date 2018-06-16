@@ -24,9 +24,10 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
             this._mailClient.SendEmail(mail);
         }
 
-        public async Task SendMailAsync(MailMessage mail)
+        public Task SendMailAsync(MailMessage mail)
         {
-           // await this._mailClient.SendMailAsync(mail);
+            // await this._mailClient.SendMailAsync(mail);
+            return Task.CompletedTask;
         }
 
         public void SendMailToAdmin(ClientMail clientMail)
@@ -38,7 +39,7 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
             this._mailClient.SendEmail(mailMessage);
         }
 
-        public async Task SendMailToAdminAsync(ClientMail clientMail)
+        public Task SendMailToAdminAsync(ClientMail clientMail)
         {
             if (string.IsNullOrWhiteSpace(clientMail.Email) || 
                 string.IsNullOrWhiteSpace(clientMail.FullName) || 
@@ -50,6 +51,7 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
 
             var mailMessage = this._mapper.Map<MailMessage>(clientMail);
             //await this._mailClient.SendMailAsync(mailMessage);
+            return Task.CompletedTask;
         }
     }
 }

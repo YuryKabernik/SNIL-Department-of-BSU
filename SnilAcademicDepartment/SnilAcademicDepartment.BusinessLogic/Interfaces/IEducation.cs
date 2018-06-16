@@ -37,5 +37,21 @@ namespace SnilAcademicDepartment.BusinessLogic.Interfaces
         /// <param name="lcid">Language code.</param>
         /// <returns>Education block by requested id.</returns>
         EducationBlockModel GetEducationBlockById(int educationBlockId, int lcid);
+
+        /// <summary>
+        /// Get education block by it's name.
+        /// </summary>
+        /// <param name="pages">Name of the education block.</param>
+        /// <param name="lcid">Language code.</param>
+        /// <returns>Education block as requested.</returns>
+        Task<EducationBlockModel> GetEducationBlockAsync(string blockName, int lcid);
+
+        /// <summary>
+        /// Get education block by it's id.
+        /// </summary>
+        /// <param name="pages">Id of the education block.</param>
+        /// <param name="lcid">Language code.</param>
+        /// <returns>Education block by requested id.</returns>
+        Task<EducationBlockModel> GetEducationBlockByIdAsync(int educationBlockId, int lcid);
     }
 }

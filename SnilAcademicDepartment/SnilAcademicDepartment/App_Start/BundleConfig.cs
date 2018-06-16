@@ -31,28 +31,28 @@ namespace SnilAcademicDepartment
                         jqueryCdnPath).Include(
                         "~/Scripts/font-awesome.*"));
             //IndexStyle
-            bundles.Add(new StyleBundle("~/Content/index").Include(
+            bundles.Add(new StyleBundle("~/Content/indexcss").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/IndexStyle.css",
                        "~/Content/ContactStyle.css"));
             //ProjectStyle
-            bundles.Add(new StyleBundle("~/Content/projects").Include(
+            bundles.Add(new StyleBundle("~/Content/projectscss").Include(
                        "~/Content/bootstrap.css",
                        "~/Content/Projects/ProjectsStyle.css"));
             //HistoryStyle
-            bundles.Add(new StyleBundle("~/Content/history").Include(
+            bundles.Add(new StyleBundle("~/Content/historycss").Include(
                        "~/Content/bootstrap.css",
                        "~/Content/History/HistoryStyle.css"));
             //PersonsStyle
-            bundles.Add(new StyleBundle("~/Content/persons").Include(
+            bundles.Add(new StyleBundle("~/Content/peoplecss").Include(
                        "~/Content/bootstrap.css",
                        "~/Content/Persons/PersonsStyle.css"));
             //EducationStyle
-            bundles.Add(new StyleBundle("~/Content/education").Include(
+            bundles.Add(new StyleBundle("~/Content/educationcss").Include(
                        "~/Content/bootstrap.css",
                        "~/Content/Education/EducationStyle.css"));
             //ContactStyle
-            bundles.Add(new StyleBundle("~/Content/contact").Include(
+            bundles.Add(new StyleBundle("~/Content/contactcss").Include(
                        "~/Content/bootstrap.css",
                        "~/Content/ContactStyle.css"));
         }

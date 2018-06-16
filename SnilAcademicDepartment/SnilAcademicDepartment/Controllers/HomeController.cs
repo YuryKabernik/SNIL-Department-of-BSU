@@ -29,9 +29,9 @@ namespace SnilAcademicDepartment.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult> Index()
+        public Task<ActionResult> Index()
         {
-            return View();
+            return Task.FromResult<ActionResult>(View());
         }
 
         [HttpGet]

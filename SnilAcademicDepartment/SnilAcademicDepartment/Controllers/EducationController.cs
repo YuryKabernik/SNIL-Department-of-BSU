@@ -84,7 +84,7 @@ namespace SnilAcademicDepartment.Controllers
 
             try
             {
-                viewModel = this._educationService.GetEducationBlockById(3, Thread.CurrentThread.CurrentCulture.LCID);
+                viewModel = await this._educationService.GetEducationBlockByIdAsync(3, Thread.CurrentThread.CurrentCulture.LCID);
 
             }
             catch (Exception)

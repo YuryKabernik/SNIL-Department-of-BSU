@@ -24,42 +24,42 @@ namespace SnilAcademicDepartment.Controllers
 
         [HttpGet]
         [Route("Persons")]
-        public async Task<ActionResult> Persons()
+        public Task<ActionResult> Persons()
         {
             ViewBag.Title = "Persons";
-            return View();
+            return Task.FromResult<ActionResult>(View());
         }
 
         [HttpGet]
         [Route("Administration")]
-        public async Task<ActionResult> Administration()
+        public Task<ActionResult> Administration()
         {
             ViewBag.Title = "Administration";
-            return View();
+            return Task.FromResult<ActionResult>(View());
         }
 
         [HttpGet]
         [Route("Students")]
-        public async Task<ActionResult> Students()
+        public Task<ActionResult> Students()
         {
             ViewBag.Title = "Stuedents";
-            return View();
+            return Task.FromResult<ActionResult>(View());
         }
 
         [HttpGet]
         [Route("MS")]
-        public async Task<ActionResult> MS()
+        public Task<ActionResult> MS()
         {
             ViewBag.Title = "Master of Science";
-            return View();
+            return Task.FromResult<ActionResult>(View());
         }
 
         [HttpGet]
         [Route("PHDs")]
-        public async Task<ActionResult> PHDs()
+        public Task<ActionResult> PHDs()
         {
             ViewBag.Title = "PHDs";
-            return View();
+            return Task.FromResult<ActionResult>(View());
         }
     }
 }

@@ -118,6 +118,67 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
         }
 
         /// <summary>
+        /// Get education block by it's name.
+        /// </summary>
+        /// <param name="blockName">Name of the education block.</param>
+        /// <param name="lcid">Languahe code.</param>
+        /// <returns>Education block as requested.</returns>
+        /// <exception cref="IndexOutOfRangeException">Throws when argument lcid is equal or less than zero.</exception>
+        /// <exception cref="ArgumentNullException">Throws when blockName is null, empty or whitespace. Throws when result from database is null.</exception>
+        public async Task<EducationBlockModel> GetEducationBlockAsync(string blockName, int lcid)
+        {
+            if (string.IsNullOrWhiteSpace(blockName))
+            {
+                throw new ArgumentException($"Parameter {nameof(blockName)} is null, empty or white space.",
+                    nameof(blockName));
+            }
+            else if (lcid <= 0)
+            {
+                throw new IndexOutOfRangeException($"Argument {nameof(lcid)} is equal or less than zero.");
+            }
+
+            var block = await this._repository.EducationBlocks.FirstOrDefaultAsync(s =>
+                s.Name == blockName && s.Language.LanguageCode == lcid);
+
+            if (block == null)
+            {
+                throw new ArgumentNullException(nameof(block),
+                    $"Sorry, but there is no EducationBlock you are looking for (Name : {blockName}).");
+            }
+
+            return this._mapper.Map<EducationBlockModel>(block);
+        }
+
+        /// <summary>
+        /// Async Method to get education block by common multi language Id.
+        /// </summary>
+        /// <param name="commonBlockTypeId">Id of a multi language project id.</param>
+        /// <param name="lcid">Language LCID code.</param>
+        /// <returns>Education block by common Id.</returns>
+        public async Task<EducationBlockModel> GetEducationBlockByIdAsync(int commonBlockTypeId, int lcid)
+        {
+            if (commonBlockTypeId <= 0)
+            {
+                throw new ArgumentOutOfRangeException(nameof(commonBlockTypeId), "Id cant be equal or less than zero.");
+            }
+
+            if (lcid <= 0)
+            {
+                throw new ArgumentException("Language id cant be equal or less than zero.", nameof(lcid));
+            }
+
+            var res = await this._repository.EducationBlocks.FirstOrDefaultAsync(s =>
+                s.CommonBlockTypeId == commonBlockTypeId && s.Language.LanguageCode == lcid);
+
+            if (res == null)
+            {
+                throw new ArgumentNullException("There is no Education block with such ID and LCID.");
+            }
+
+            return this._mapper.Map<EducationBlockModel>(res);
+        }
+
+        /// <summary>
         /// Get education areas async.
         /// </summary>
         /// <param name="pages">Number of pages to take.</param>
