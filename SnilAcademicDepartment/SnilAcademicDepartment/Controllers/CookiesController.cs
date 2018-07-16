@@ -24,7 +24,7 @@ namespace SnilAcademicDepartment.Controllers
         /// </summary>
         /// <param name="lang">User's language.</param>
         /// <returns>Redirect to previouse page with new language.</returns>
-        [HttpPost]
+        [HttpGet]
         public async Task<ActionResult> ChangeCulture(string lang)
         {
             string returnUrl = null;

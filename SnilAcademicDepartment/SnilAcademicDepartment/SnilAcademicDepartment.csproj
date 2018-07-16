@@ -274,6 +274,7 @@
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\History\HistoryStyle.css" />
     <Content Include="Content\ContactStyle.css" />
+    <Content Include="Content\IndexStyle.css" />
     <Content Include="Content\Persons\PersonsStyle.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />

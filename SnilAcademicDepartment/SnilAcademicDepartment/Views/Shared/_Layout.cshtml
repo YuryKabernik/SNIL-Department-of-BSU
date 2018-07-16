@@ -1,39 +1,23 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title</title>
     @Styles.Render("~/Content/indexcss")
     @Styles.Render("~/bundles/font-awesome")
     <script src="~/Scripts/jquery-3.3.1.js"></script>
-    <script >
-        $(function () {
-            var lang = $("option").eq(0).val();
-            $("option").click(takeLanguage);
-
-            function takeLanguage() {
-                $.ajax({
-                    type: "POST",
-                    url: "ru-RU/Cookies/ChangeCulture/",
-                    dataType: "json",
-                    data: { "lang": lang.toString() }
-                });
-            }
-        });
-    </script>
 </head>
 <body>
     <div class=header>
         <div class="container">
             <a href="#" class="logo"></a>
-                <select class="lang" name="lang">
-                    <option disabled selected>@Resources.Resource.CultureName</option>
-                    <option value="ru">Русский</option>
-                    <option value="en">English</option>
-                    <option value="de">Deutsch</option>
-                </select>
+            <ul class="lang">
+                <li class="ru">@Html.ActionLink("Русский", "ChangeCulture", new { controller = "Cookies", lang = "ru" })</li>
+                <li class="en">@Html.ActionLink("English", "ChangeCulture", new { controller = "Cookies", lang = "en" })</li>
+                <li class="de">@Html.ActionLink("Deutsch", "ChangeCulture", new { controller = "Cookies", lang = "de" })</li>
+            </ul>
         </div>
     </div>
     <div class="nav">
