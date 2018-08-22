@@ -275,6 +275,7 @@
     <Content Include="Content\History\HistoryStyle.css" />
     <Content Include="Content\ContactStyle.css" />
     <Content Include="Content\IndexStyle.css" />
+    <Content Include="Content\dropdown-box.css" />
     <Content Include="Content\Persons\PersonsStyle.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -316,6 +317,7 @@
     <Content Include="img\Germany-flag-icon.png" />
     <Content Include="img\IMG_0004.JPG" />
     <Content Include="img\IMG_3485.JPG" />
+    <Content Include="img\language-solid.svg" />
     <Content Include="img\originalpro.jpg" />
     <Content Include="img\Persons\DigrisA.jpg" />
     <Content Include="img\Persons\hileuski.jpg" />

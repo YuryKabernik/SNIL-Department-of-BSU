@@ -12,12 +12,15 @@
 <body>
     <div class=header>
         <div class="container">
-            <a href="#" class="logo"></a>
-            <ul class="lang">
-                <li class="ru">@Html.ActionLink("Русский", "ChangeCulture", new { controller = "Cookies", lang = "ru" })</li>
-                <li class="en">@Html.ActionLink("English", "ChangeCulture", new { controller = "Cookies", lang = "en" })</li>
-                <li class="de">@Html.ActionLink("Deutsch", "ChangeCulture", new { controller = "Cookies", lang = "de" })</li>
-            </ul>
+            @Html.ActionLink("_", "Index", new { controller = "Home" }, new { @class = "logo" })
+            <div class="dropdown" style="float:right;">
+                <button class="dropbtn"></button>
+                <div class="dropdown-content">
+                    @Html.ActionLink("Русский", "ChangeCulture", new { controller = "Cookies", lang = "ru" })
+                    @Html.ActionLink("English", "ChangeCulture", new { controller = "Cookies", lang = "en" })
+                    @Html.ActionLink("Deutsch", "ChangeCulture", new { controller = "Cookies", lang = "de" })
+                </div>
+            </div>
         </div>
     </div>
     <div class="nav">

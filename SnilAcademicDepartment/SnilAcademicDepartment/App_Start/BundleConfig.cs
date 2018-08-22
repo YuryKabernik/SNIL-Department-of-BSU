@@ -34,7 +34,8 @@ namespace SnilAcademicDepartment
             bundles.Add(new StyleBundle("~/Content/indexcss").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/IndexStyle.css",
-                       "~/Content/ContactStyle.css"));
+                       "~/Content/ContactStyle.css",
+                       "~/Content/dropdown-box.css"));
             //ProjectStyle
             bundles.Add(new StyleBundle("~/Content/projectscss").Include(
                        "~/Content/bootstrap.css",
