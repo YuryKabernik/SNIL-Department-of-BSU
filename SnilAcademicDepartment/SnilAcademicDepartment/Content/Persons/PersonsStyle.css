@@ -24,7 +24,7 @@
   text-align: center;
   margin-bottom: 15px;
 }
-.content .container .HallofFame a {
+.content .container .HallofFame .wrapper {
   display: block;
   height: 100%;
   text-decoration: none;
@@ -34,14 +34,16 @@
   border-radius: 7px;
   padding: 15px;
 }
-.content .container .HallofFame a img {
-  height: 120px;
+.content .container .HallofFame .wrapper a {
   margin-right: 20px;
 }
-.content .container .HallofFame a img:hover {
+.content .container .HallofFame .wrapper a img {
+  height: 120px;
+}
+.content .container .HallofFame .wrapper a img:hover {
   box-shadow: 0 0 10px #555;
 }
-.content .container .HallofFame a p {
+.content .container .HallofFame .wrapper a p {
   clear: both;
 }
 .content .container .rows {

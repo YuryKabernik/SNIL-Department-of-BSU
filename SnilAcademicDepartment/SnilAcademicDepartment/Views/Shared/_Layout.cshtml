@@ -6,13 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title</title>
     @Styles.Render("~/Content/indexcss")
-    @Styles.Render("~/bundles/font-awesome")
     <script src="~/Scripts/jquery-3.3.1.js"></script>
 </head>
 <body>
     <div class=header>
         <div class="container">
-            @Html.ActionLink("_", "Index", new { controller = "Home" }, new { @class = "logo" })
+            @Html.ActionLink("SPMA BSU", "Index", new { controller = "Home" }, new { @class = "logo" })
             <div class="dropdown" style="float:right;">
                 <button class="dropbtn"></button>
                 <div class="dropdown-content">
@@ -26,16 +25,16 @@
     <div class="nav">
         <div class="container">            
             <h2>@Resources.Resource.IndexHeader</h2>          
-            @Html.ActionLink(Resources.Resource.Home, "Index", "Home")        
-            @Html.ActionLink(Resources.Resource.Projects, "Projects", "Projects")                
-            @Html.ActionLink(Resources.Resource.Education, "Education", "Education")            
-            @Html.ActionLink(Resources.Resource.Persons, "Persons", "Persons")          
-            @Html.ActionLink(Resources.Resource.History, "History", "History")        
+            @Html.ActionLink(Resources.Resource.Home, "Index", "Home")
+            @Html.ActionLink(Resources.Resource.Projects, "Projects", "Projects")
+            @Html.ActionLink(Resources.Resource.Education, "Education", "Education")
+            @Html.ActionLink(Resources.Resource.Persons, "Persons", "Persons")
+            @Html.ActionLink(Resources.Resource.History, "History", "History")
             @Html.ActionLink(Resources.Resource.Contacts, "Contact", "Home")
         </div>
     </div>    
     <div class="content">
-        @RenderBody()        
+        @RenderBody()
     </div>
     <div class="clr"></div>
     <footer>

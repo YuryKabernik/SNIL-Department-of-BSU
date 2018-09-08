@@ -126,6 +126,9 @@
   <data name="HallFame" xml:space="preserve">
     <value>Доска почета</value>
   </data>
+  <data name="HallFameDescription" xml:space="preserve">
+    <value>Доска почета с представленными на ней лучшими преподавателями и студентами нашего кафедры системного анализа и компьютерного моделирования</value>
+  </data>
   <data name="Lecturers" xml:space="preserve">
     <value>Преподаватели</value>
   </data>

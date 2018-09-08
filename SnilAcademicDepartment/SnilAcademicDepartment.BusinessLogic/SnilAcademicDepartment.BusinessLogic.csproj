@@ -84,6 +84,7 @@
     <Compile Include="DTOModels\DocumentModel.cs" />
     <Compile Include="DTOModels\ImageModel.cs" />
     <Compile Include="DTOModels\LecturePreview.cs" />
+    <Compile Include="DTOModels\PersonVM.cs" />
     <Compile Include="DTOModels\ProjectPreview.cs" />
     <Compile Include="DTOModels\SeminarPreview.cs" />
     <Compile Include="InjectionPackageBLL.cs" />

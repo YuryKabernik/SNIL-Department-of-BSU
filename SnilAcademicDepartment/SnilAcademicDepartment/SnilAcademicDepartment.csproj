@@ -276,6 +276,7 @@
     <Content Include="Content\ContactStyle.css" />
     <Content Include="Content\IndexStyle.css" />
     <Content Include="Content\dropdown-box.css" />
+    <Content Include="Content\Persons\PersonalPageStyle.css" />
     <Content Include="Content\Persons\PersonsStyle.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -418,6 +419,8 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
     <Content Include="Views\Projects\ProjectPage.cshtml" />
     <Content Include="Views\Education\EducationBlockPage.cshtml" />
+    <Content Include="Views\Persons\Enrollee.cshtml" />
+    <Content Include="Views\Persons\PersonalPage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Cookies\" />

@@ -10,6 +10,7 @@ namespace SnilAcademicDepartment.DataAccess.DBTypesInitialisation
     {
         public static void DBInit(
             SnilDBContext dBContext,
+            int personUniqueIdentifire,
             string name,
             string secoundName,
             string fathers,
@@ -26,6 +27,7 @@ namespace SnilAcademicDepartment.DataAccess.DBTypesInitialisation
         {
             var person = new Person()
             {
+                PersonUniqueIdentifire = personUniqueIdentifire,
                 PersonName = name,
                 SecoundName = secoundName,
                 FathersName = fathers,

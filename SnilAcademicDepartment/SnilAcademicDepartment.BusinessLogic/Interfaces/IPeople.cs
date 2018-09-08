@@ -1,12 +1,13 @@
 ﻿using SnilAcademicDepartment.BusinessLogic.DTOModels;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace SnilAcademicDepartment.BusinessLogic.Interfaces
 {
     public interface IPeople
     {
-        IEnumerable<Leader> GetHallOfFameLeaders();
+        Task<IEnumerable<Leader>> GetHallOfFameLeadersAsync(int count, int langLCID);
 
-        IEnumerable<PreViewModel> GetPreViews();
+        Task<PersonVM> GetPersonDescriptionAsync(int personId, int langLCID);
     }
 }

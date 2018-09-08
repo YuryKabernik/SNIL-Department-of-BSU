@@ -127,6 +127,10 @@
     <Compile Include="Migrations\201805271637267_AddDocumentToLecturesTable.Designer.cs">
       <DependentUpon>201805271637267_AddDocumentToLecturesTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201809072018179_AddFameLeaderIdentifier.cs" />
+    <Compile Include="Migrations\201809072018179_AddFameLeaderIdentifier.Designer.cs">
+      <DependentUpon>201809072018179_AddFameLeaderIdentifier.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Biography.cs" />
     <Compile Include="DBContext\DBContext.cs" />
@@ -187,6 +191,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201805271637267_AddDocumentToLecturesTable.resx">
       <DependentUpon>201805271637267_AddDocumentToLecturesTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809072018179_AddFameLeaderIdentifier.resx">
+      <DependentUpon>201809072018179_AddFameLeaderIdentifier.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

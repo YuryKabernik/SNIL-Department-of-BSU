@@ -126,6 +126,9 @@
   <data name="HallFame" xml:space="preserve">
     <value>Ehrenkarte</value>
   </data>
+  <data name="HallFameDescription" xml:space="preserve">
+    <value>Honour-Board mit den besten Lehrern und Studenten unserer Abteilung für Systemanalyse und Computer-Modellierung vorgestellt</value>
+  </data>
   <data name="Lecturers" xml:space="preserve">
     <value>Lehrer</value>
   </data>

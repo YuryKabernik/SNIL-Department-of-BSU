@@ -1,5 +1,8 @@
 ﻿using NLog;
+using SnilAcademicDepartment.BusinessLogic.DTOModels;
 using SnilAcademicDepartment.BusinessLogic.Interfaces;
+using System.Collections.Generic;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 
@@ -24,9 +27,65 @@ namespace SnilAcademicDepartment.Controllers
 
         [HttpGet]
         [Route("Persons")]
-        public Task<ActionResult> Persons()
+        public async Task<ActionResult> Persons()
         {
+            IEnumerable<Leader> leaders;
+
             ViewBag.Title = "Persons";
+
+            try
+            {
+                leaders = await this._peopleService.GetHallOfFameLeadersAsync(5, Thread.CurrentThread.CurrentCulture.LCID);
+
+            }
+            catch (System.Exception)
+            {
+
+                throw;
+            }
+
+            ViewBag.Leaders = leaders;
+
+            return View();
+        }
+
+        [HttpGet]
+        [Route("PersonalPage")]
+        public async Task<ActionResult> PersonalPage(int id)
+        {
+            if (id <= 0)
+                return Redirect(this.Request.UrlReferrer?.AbsoluteUri ?? "/");
+
+            PersonVM personalInfo = null;
+
+            try
+            {
+                personalInfo = await this._peopleService.GetPersonDescriptionAsync(id, Thread.CurrentThread.CurrentCulture.LCID);
+            }
+            catch (System.Exception)
+            {
+
+                throw;
+            }
+
+            ViewData.Model = personalInfo;
+
+            return View();
+        }
+
+        [HttpGet]
+        [Route("Enrollee")]
+        public Task<ActionResult> Enrollee()
+        {
+            ViewBag.Title = "Enrollee";
+            return Task.FromResult<ActionResult>(View());
+        }
+
+        [HttpGet]
+        [Route("Professors")]
+        public Task<ActionResult> Professors()
+        {
+            ViewBag.Title = "Professors";
             return Task.FromResult<ActionResult>(View());
         }
 

@@ -126,6 +126,9 @@
   <data name="HallFame" xml:space="preserve">
     <value>Hall of Fame</value>
   </data>
+  <data name="HallFameDescription" xml:space="preserve">
+    <value>Honor board with the best teachers and students of our department of system analysis and computer modeling presented on it</value>
+  </data>
   <data name="Lecturers" xml:space="preserve">
     <value>Lecturers</value>
   </data>

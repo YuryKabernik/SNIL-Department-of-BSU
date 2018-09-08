@@ -88,6 +88,15 @@ namespace Resources.PersonsResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Доска почета с представленными на ней лучшими преподавателями и студентами нашего кафедры системного анализа и компьютерного моделирования.
+        /// </summary>
+        public static string HallFameDescription {
+            get {
+                return ResourceManager.GetString("HallFameDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Преподаватели.
         /// </summary>
         public static string Lecturers {

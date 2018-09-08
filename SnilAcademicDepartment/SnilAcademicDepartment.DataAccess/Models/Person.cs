@@ -6,6 +6,8 @@ namespace SnilAcademicDepartment.DataAccess
     {
         public int PersonId { get; set; }
 
+        public int PersonUniqueIdentifire { get; set; }
+
         public string PersonName { get; set; }
 
         public string SecoundName { get; set; }

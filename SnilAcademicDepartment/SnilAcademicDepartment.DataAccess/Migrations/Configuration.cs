@@ -136,9 +136,9 @@ namespace SnilAcademicDepartment.DataAccess.Migrations
         {
             for (int i = 1; i < 6; i++)
             {
-                PersonDBInit.DBInit(db, $"Name{i}", $"SecoundName1{i}", $"FathersName{i}", this._biography, this._image, "AcademicTitle", "Degree", this._languages[0], "Status", "ÐÔèÊÒ", this._lectures, this._seminars, this._projects);
-                PersonDBInit.DBInit(db, $"Name{i}", $"SecoundName2{i}", $"FathersName{i}", this._biography, this._image, "AcademicTitle", "Degree", this._languages[1], "Status", "ÐÔèÊÒ", this._lectures, this._seminars, this._projects);
-                PersonDBInit.DBInit(db, $"Name{i}", $"SecoundName3{i}", $"FathersName{i}", this._biography, this._image, "AcademicTitle", "Degree", this._languages[2], "Status", "ÐÔèÊÒ", this._lectures, this._seminars, this._projects);
+                PersonDBInit.DBInit(db, i * 111, $"Name{i}", $"SecoundName1{i}", $"FathersName{i}", this._biography, this._image, "AcademicTitle", "Degree", this._languages[0], "Status", "ÐÔèÊÒ", this._lectures, this._seminars, this._projects);
+                PersonDBInit.DBInit(db, i * 111, $"Name{i}", $"SecoundName2{i}", $"FathersName{i}", this._biography, this._image, "AcademicTitle", "Degree", this._languages[1], "Status", "ÐÔèÊÒ", this._lectures, this._seminars, this._projects);
+                PersonDBInit.DBInit(db, i * 111, $"Name{i}", $"SecoundName3{i}", $"FathersName{i}", this._biography, this._image, "AcademicTitle", "Degree", this._languages[2], "Status", "ÐÔèÊÒ", this._lectures, this._seminars, this._projects);
             }
         }
 

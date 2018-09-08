@@ -1,4 +1,5 @@
-﻿@{
+﻿@using SnilAcademicDepartment.BusinessLogic.DTOModels;
+@{
     ViewBag.Title = "Persons";
     @Styles.Render("~/Content/peoplecss")
 }
@@ -13,28 +14,33 @@
 <div class="container">
     <div class="row HallofFame">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <a href="#">
-                <img src="~/img/Persons/DigrisA.jpg" alt="dicriptiom">
-                <img src="~/img/Persons/kavalenka.jpg" alt="dicriptiom">
-                <img src="~/img/Persons/HileuskiS.jpg" alt="dicriptiom">
-                <img src="~/img/Persons/SkakunV.jpg" alt="dicriptiom">
-                <img src="~/img/Persons/Molopheev.jpg" alt="dicriptiom">
+            <div class="wrapper">
+                @{
+                    foreach (Leader person in ViewBag.Leaders)
+                    {
+                        var base64 = Convert.ToBase64String(person.Image);
+                        var imgSrc = String.Format("data:image/jpeg;base64,{0}", base64);
+                        var personPageUrl = Url.RouteUrl(new { action= "PersonalPage", controller = "Persons", id=person.Id });
+
+                        <a href="@personPageUrl"><img src="@imgSrc" alt="@person.FullName" title="@person.FullName" ></a>
+                    }
+                }
                 <h2>@Resources.PersonsResources.PersonsResource.HallFame</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores aspernatur maxime dicta, incidunt velit dolorum sint praesentium quia sit, impedit, voluptatum expedita excepturi odit eius ipsam veritatis voluptas cupiditate nostrum doloremque consequatur. Magni molestiae at rerum unde distinctio, repudiandae debitis ex eaque repellendus id ipsam nobis, veritatis corporis cupiditate officia.</p>
-            </a>
+                <p>@Resources.PersonsResources.PersonsResource.HallFameDescription</p>
+            </div>
         </div>
     </div>
     <div class="row rows">
         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
             <a href="#">
-                <img src="~/img/Persons/hileuski.jpg" alt="dicriptiom">
+                <img src="~/img/Persons/hileuski.jpg" title="dicriptiom">
                 <h2>@Resources.PersonsResources.PersonsResource.Lecturers</h2>
             </a>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam, maxime! Optio voluptatem doloribus illum beatae dolor voluptatibus officiis ut in.</p>
         </div>
         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
             <a href="#">
-                <img src="~/img/Persons/hlushkou.jpg" alt="dicriptiom">
+                <img src="~/img/Persons/hlushkou.jpg" title="dicriptiom">
                 <h2>@Resources.PersonsResources.PersonsResource.MS</h2>
             </a>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium quis sequi eos incidunt expedita obcaecati vitae delectus quo sint, animi?</p>
@@ -43,14 +49,14 @@
     <div class="row rows">
         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
             <a href="#">
-                <img src="~/img/Conferences/P1040801.jpg" alt="dicriptiom">
+                <img src="~/img/Conferences/P1040801.jpg" title="dicriptiom">
                 <h2>@Resources.PersonsResources.PersonsResource.PhD</h2>
             </a>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos ullam, repellat vel consectetur consequuntur eaque ea enim aliquam itaque architecto.</p>
         </div>
         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
             <a href="#">
-                <img src="~/img/Persons/skakun.jpg" alt="dicriptiom">
+                <img src="~/img/Persons/skakun.jpg" title="dicriptiom">
                 <h2>@Resources.PersonsResources.PersonsResource.Abitur</h2>
             </a>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam perferendis minima nostrum eius laboriosam doloribus dolorem aspernatur? Maiores, expedita, optio.</p>
@@ -59,14 +65,14 @@
     <div class="row rows">
         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
             <a href="#">
-                <img src="~/img/Conferences/P1040805.jpg" alt="dicriptiom">
+                <img src="~/img/Conferences/P1040805.jpg" title="dicriptiom">
                 <h2>@Resources.PersonsResources.PersonsResource.Students</h2>
             </a>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos ullam, repellat vel consectetur consequuntur eaque ea enim aliquam itaque architecto.</p>
         </div>
         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
             <a href="#">
-                <img src="~/img/DSCF19562007г..jpg" alt="dicriptiom">
+                <img src="~/img/DSCF19562007г..jpg" title="dicriptiom">
                 <h2>@Resources.PersonsResources.PersonsResource.Administration</h2>
             </a>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam perferendis minima nostrum eius laboriosam doloribus dolorem aspernatur? Maiores, expedita, optio.</p>
