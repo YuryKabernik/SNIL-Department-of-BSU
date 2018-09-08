@@ -56,6 +56,13 @@ namespace SnilAcademicDepartment.BusinessLogic
                 .ForMember(des => des.Image, opt => opt.MapFrom(s => s.Person.Image.Image1))
                 .ForMember(des => des.FullName, opt => opt.MapFrom(s => s.Person.SecoundName + " " + s.Person.PersonName + " " + s.Person.FathersName));
 
+            // Mapping Person type on Leader.
+            this.CreateMap<Person, Leader>()
+                .ForMember(des => des.Id, opt => opt.MapFrom(s => s.PersonUniqueIdentifire))
+                .ForMember(des => des.Image, opt => opt.MapFrom(s => s.Image.Image1))
+                .ForMember(des => des.FullName, opt => opt.MapFrom(s => s.SecoundName + " " + s.PersonName + " " + s.FathersName));
+
+
             // Mapping Document object.
             this.CreateMap<Document, DocumentModel>()
                 .ForMember(des => des.Id, opt => opt.MapFrom(s => s.DocumentId))

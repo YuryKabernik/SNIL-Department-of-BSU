@@ -35,10 +35,15 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
             if (count <= 0)
                 throw new ArgumentOutOfRangeException(nameof(count), "Argument can't be less or equal zero.");
 
-            var result = await this._repository.HallOfFames.Where(p => p.Person.Language.LanguageCode == langLCID)
+            var leadersIdCollection = this._repository.HallOfFames
                 .OrderByDescending(person => person.Points)
                 .Take(count)
-                .Include(prop => prop.Person.Image)
+                .Select<HallOfFame, int>(p => p.Person.PersonUniqueIdentifire)
+                .Distinct();
+
+            var result = await this._repository.People
+                .Where(p => leadersIdCollection.Any(id => id == p.PersonUniqueIdentifire) && p.Language.LanguageCode == langLCID)
+                .Include(prop => prop.Image)
                 .ToListAsync();
 
             return this._mapper.Map<IEnumerable<Leader>>(result);
