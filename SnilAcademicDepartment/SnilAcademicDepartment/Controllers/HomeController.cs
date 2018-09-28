@@ -52,6 +52,7 @@ namespace SnilAcademicDepartment.Controllers
 
         [HttpPost]
         [Route("Sendrequest")]
+        [ValidateAntiForgeryToken]
         public async Task<ActionResult> SendMailMessage(ClientMail mail)
         {
             try

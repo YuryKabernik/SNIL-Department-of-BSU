@@ -4,6 +4,8 @@ namespace SnilAcademicDepartment.BusinessLogic.DTOModels
 {
     public class PersonVM
     {
+        public int Id { get; set; }
+
         public string PersonName { get; set; }
 
         public string SecoundName { get; set; }

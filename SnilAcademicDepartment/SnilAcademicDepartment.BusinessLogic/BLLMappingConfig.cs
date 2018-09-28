@@ -60,8 +60,8 @@ namespace SnilAcademicDepartment.BusinessLogic
             this.CreateMap<Person, Leader>()
                 .ForMember(des => des.Id, opt => opt.MapFrom(s => s.PersonUniqueIdentifire))
                 .ForMember(des => des.Image, opt => opt.MapFrom(s => s.Image.Image1))
-                .ForMember(des => des.FullName, opt => opt.MapFrom(s => s.SecoundName + " " + s.PersonName + " " + s.FathersName));
-
+                .ForMember(des => des.FullName, opt => opt.MapFrom(s => s.SecoundName + " " + s.PersonName + " " + s.FathersName))
+                .ForAllOtherMembers(opt => opt.Ignore());
 
             // Mapping Document object.
             this.CreateMap<Document, DocumentModel>()
@@ -103,6 +103,7 @@ namespace SnilAcademicDepartment.BusinessLogic
                 .ForAllOtherMembers(s=> s.Ignore());
 
             this.CreateMap<Person, PersonVM>()
+                .ForMember(des => des.Id, opt => opt.MapFrom(s => s.PersonUniqueIdentifire))
                 .ForMember(des => des.PersonName, opt => opt.MapFrom(s => s.PersonName))
                 .ForMember(des => des.SecoundName, opt => opt.MapFrom(s => s.SecoundName))
                 .ForMember(des => des.FathersName, opt => opt.MapFrom(s => s.FathersName))

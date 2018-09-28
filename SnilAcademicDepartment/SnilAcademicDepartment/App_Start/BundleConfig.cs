@@ -32,7 +32,7 @@ namespace SnilAcademicDepartment
                         "~/Scripts/font-awesome.*"));
             //IndexStyle
             bundles.Add(new StyleBundle("~/Content/indexcss").Include(
-                      "~/Content/bootstrap.css",
+                      "~/Content/bootstrap.min.css",
                       "~/Content/IndexStyle.css",
                        "~/Content/ContactStyle.css",
                        "~/Content/dropdown-box.css"));

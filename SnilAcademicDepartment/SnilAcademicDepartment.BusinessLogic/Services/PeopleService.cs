@@ -67,5 +67,25 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
 
             return this._mapper.Map<PersonVM>(result);
         }
+
+        /// <summary>
+        /// Get person by degree.
+        /// </summary>
+        /// <param name="degreeName">Person's degree.</param>
+        /// <returns>Returns collestion of persons with specific degree.</returns>
+        public async Task<IEnumerable<PersonVM>> GetPersonsByDegreeAsync(string degreeName, int langLCID)
+        {
+            if (string.IsNullOrWhiteSpace(degreeName)) 
+            {
+                throw new ArgumentNullException(nameof(degreeName), "Argument can't be null, empty or white space.");
+            }
+
+            var result = await this._repository.People
+               .Where(p => p.Degree.Equals(degreeName, StringComparison.OrdinalIgnoreCase) && p.Language.LanguageCode == langLCID)
+               .Include(prop => prop.Image)
+               .ToListAsync();
+
+            return this._mapper.Map< IEnumerable<PersonVM>>(result);
+        }
     }
 }

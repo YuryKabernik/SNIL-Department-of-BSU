@@ -40,8 +40,7 @@ namespace SnilAcademicDepartment.Controllers
             }
             catch (System.Exception)
             {
-
-                throw;
+                return Redirect(this.Request.UrlReferrer?.AbsoluteUri ?? "/");
             }
 
             ViewBag.Leaders = leaders;
@@ -64,8 +63,7 @@ namespace SnilAcademicDepartment.Controllers
             }
             catch (System.Exception)
             {
-
-                throw;
+                return Redirect(this.Request.UrlReferrer?.AbsoluteUri ?? "/");
             }
 
             ViewData.Model = personalInfo;
@@ -99,10 +97,22 @@ namespace SnilAcademicDepartment.Controllers
 
         [HttpGet]
         [Route("Students")]
-        public Task<ActionResult> Students()
+        public async Task<ActionResult> StudentsAsync()
         {
-            ViewBag.Title = "Stuedents";
-            return Task.FromResult<ActionResult>(View());
+            IEnumerable<PersonVM> personVMs;
+
+            try
+            {
+                personVMs = await this._peopleService.GetPersonsByDegreeAsync("Student", Thread.CurrentThread.CurrentCulture.LCID);
+            }
+            catch (System.Exception)
+            {
+                return Redirect(this.Request.UrlReferrer?.AbsoluteUri ?? "/");
+            }
+
+            ViewData["Students"] = personVMs;
+            ViewBag.Title = "Students";
+            return View("PageStudents");
         }
 
         [HttpGet]

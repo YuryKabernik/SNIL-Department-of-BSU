@@ -1,7 +1,8 @@
 ﻿@using SnilAcademicDepartment.BusinessLogic.DTOModels;
 @{
     ViewBag.Title = "Persons";
-    @Styles.Render("~/Content/peoplecss")
+    @Styles.Render("~/Content/peoplecss");
+    var Students = Url.Action("Students", routeValues: null);
 }
 <div class="container">
     <ol class="breadcrumb">
@@ -64,7 +65,7 @@
     </div>
     <div class="row rows">
         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-            <a href="#">
+            <a href="@Students">
                 <img src="~/img/Conferences/P1040805.jpg" title="dicriptiom">
                 <h2>@Resources.PersonsResources.PersonsResource.Students</h2>
             </a>

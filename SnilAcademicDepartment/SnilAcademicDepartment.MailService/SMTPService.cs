@@ -29,12 +29,19 @@ namespace SnilAcademicDepartment.MailService
 
         private void SendMail(MailMessage mailMessage)
         {
-            using (var smtpClient = new SmtpClient("smtp.gmail.com", 587))
+            using (var smtpClient = new SmtpClient
+            {
+                Host = "smtp.gmail.com",
+                Port = 587,
+                EnableSsl = true,
+                DeliveryMethod = SmtpDeliveryMethod.Network,
+                UseDefaultCredentials = false,
+                Credentials = new NetworkCredential(userName: "snilbsudepartment@gmail.com", password: "Snilpassword1233"),
+            })
             {
                 try
                 {
                     smtpClient.EnableSsl = true;
-                    smtpClient.Credentials = new NetworkCredential(userName: "snilbsudepartment@gmail.com", password: "Snilpassword123");
                     smtpClient.Send(mailMessage);
                 }
                 catch (SmtpFailedRecipientsException ex)

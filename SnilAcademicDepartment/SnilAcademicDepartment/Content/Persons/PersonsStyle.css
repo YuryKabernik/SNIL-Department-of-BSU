@@ -95,4 +95,6 @@
   display: block;
   margin-top: 25px;
 }
-
+.row-student h4{
+    text-align:center;
+}
