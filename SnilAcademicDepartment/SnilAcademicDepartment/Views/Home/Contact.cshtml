@@ -38,18 +38,19 @@
                             @SnilAcademicDepartment.Resources.ContactsResources.ContactsResource.Address
                         </p>
                     </div>
-                    <p class="text">
-                        <strong>@SnilAcademicDepartment.Resources.ContactsResources.ContactsResource.Secretary</strong> <br/>
-                           @SnilAcademicDepartment.Resources.ContactsResources.ContactsResource.NinaRudenko<br />
-                           @SnilAcademicDepartment.Resources.ContactsResources.ContactsResource.NinaRudenkoMail<br/>
-                    </p>
-                    <p class="text">
-                        <strong>@SnilAcademicDepartment.Resources.ContactsResources.ContactsResource.Head</strong> <br />
-                        @SnilAcademicDepartment.Resources.ContactsResources.ContactsResource.VictorSkakun<br />
-                        @SnilAcademicDepartment.Resources.ContactsResources.ContactsResource.VictorSkakunMail<br />
-                    </p>
-                    <div class="call"><i class="fa fa-phone fa-3" aria-hidden="true" style="float:left"></i> @Resources.Resource.PhoneNumber</div>
-                    @*<div class="mail"><i class="fa fa-envelope" aria-hidden="true"></i> @Resources.Resource.MailAddress</div>*@
+                   
+                    <address class="text">
+                        <strong>@SnilAcademicDepartment.Resources.ContactsResources.ContactsResource.Secretary</strong><br>
+                        @SnilAcademicDepartment.Resources.ContactsResources.ContactsResource.NinaRudenko<br>
+                        @SnilAcademicDepartment.Resources.ContactsResources.ContactsResource.EmailString <a href="mailto:#">@SnilAcademicDepartment.Resources.ContactsResources.ContactsResource.NinaRudenkoMail</a><br>
+                        <abbr title="Phone">@Resources.Resource.PhoneString</abbr>  @Resources.Resource.PhoneNumber
+                    </address>
+
+                    <address class="text">
+                        <strong>@SnilAcademicDepartment.Resources.ContactsResources.ContactsResource.Head</strong><br>
+                        @SnilAcademicDepartment.Resources.ContactsResources.ContactsResource.VictorSkakun<br>
+                        @SnilAcademicDepartment.Resources.ContactsResources.ContactsResource.EmailString <a href="mailto:#">@SnilAcademicDepartment.Resources.ContactsResources.ContactsResource.VictorSkakunMail</a><br>
+                    </address>
                 </div>
             </div>
         </div>

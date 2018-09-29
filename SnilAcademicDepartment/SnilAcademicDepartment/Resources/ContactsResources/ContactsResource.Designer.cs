@@ -61,7 +61,7 @@ namespace SnilAcademicDepartment.Resources.ContactsResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Адрес: пр. Независимости, 4, 220030, г. Минск, Республика Беларусь..
+        ///   Looks up a localized string similar to пр. Независимости, 4, 220030, г. Минск, Республика Беларусь..
         /// </summary>
         public static string Address {
             get {
@@ -93,6 +93,15 @@ namespace SnilAcademicDepartment.Resources.ContactsResources {
         public static string Email {
             get {
                 return ResourceManager.GetString("Email", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to E-mail:.
+        /// </summary>
+        public static string EmailString {
+            get {
+                return ResourceManager.GetString("EmailString", resourceCulture);
             }
         }
         
@@ -133,7 +142,7 @@ namespace SnilAcademicDepartment.Resources.ContactsResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to e-mail: rudenko@bsu.by.
+        ///   Looks up a localized string similar to rudenko@bsu.by.
         /// </summary>
         public static string NinaRudenkoMail {
             get {
@@ -169,7 +178,7 @@ namespace SnilAcademicDepartment.Resources.ContactsResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to e-mail: skakun@bsu.by.
+        ///   Looks up a localized string similar to skakun@bsu.by.
         /// </summary>
         public static string VictorSkakunMail {
             get {

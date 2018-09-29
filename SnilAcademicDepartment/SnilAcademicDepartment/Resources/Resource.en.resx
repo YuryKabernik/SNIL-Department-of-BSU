@@ -178,7 +178,7 @@
     <value>Persons</value>
   </data>
   <data name="PhoneNumber" xml:space="preserve">
-    <value>Tel. + 375 17 209 50 44. </value>
+    <value>+ 375 17 209 50 44. </value>
   </data>
   <data name="Projects" xml:space="preserve">
     <value>Projects</value>
@@ -188,5 +188,8 @@
   </data>
   <data name="Welcome" xml:space="preserve">
     <value>Welcome to the Student Resesrch Laboratory!</value>
+  </data>
+  <data name="PhoneString" xml:space="preserve">
+    <value>P. :</value>
   </data>
 </root>

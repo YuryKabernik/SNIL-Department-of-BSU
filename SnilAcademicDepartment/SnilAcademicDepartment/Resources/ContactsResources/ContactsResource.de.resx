@@ -129,6 +129,9 @@
   <data name="Email" xml:space="preserve">
     <value>Email*</value>
   </data>
+  <data name="EmailString" xml:space="preserve">
+    <value>E-mail:</value>
+  </data>
   <data name="FullName" xml:space="preserve">
     <value>Vollständiger Name*</value>
   </data>
@@ -142,7 +145,7 @@
     <value>Mrs. Nina Rudenko</value>
   </data>
   <data name="NinaRudenkoMail" xml:space="preserve">
-    <value>e-mail: rudenko@bsu.by</value>
+    <value>rudenko@bsu.by</value>
   </data>
   <data name="Secretary" xml:space="preserve">
     <value>Secretary</value>
@@ -154,6 +157,6 @@
     <value>Dr., Docent Victor Skakun</value>
   </data>
   <data name="VictorSkakunMail" xml:space="preserve">
-    <value>e-mail: skakun@bsu.by</value>
+    <value>skakun@bsu.by</value>
   </data>
 </root>

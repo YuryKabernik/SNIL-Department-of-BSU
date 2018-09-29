@@ -277,11 +277,20 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Тел. + 375 17 209 50 44. .
+        ///   Looks up a localized string similar to + 375 17 209 50 44. .
         /// </summary>
         public static string PhoneNumber {
             get {
                 return ResourceManager.GetString("PhoneNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Тел. :.
+        /// </summary>
+        public static string PhoneString {
+            get {
+                return ResourceManager.GetString("PhoneString", resourceCulture);
             }
         }
         

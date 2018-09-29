@@ -1,4 +1,4 @@
-﻿
+﻿@using SnilAcademicDepartment.BusinessLogic.DTOModels;
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
     @Styles.Render("~/Content/projectscss")
@@ -27,22 +27,31 @@
         </div>
     </div>
     <div class="row rowcurrent">
-        <h2>@Resources.Resource.Projects</h2><br>
+        @RenderProjectsV2(Resources.Resource.Projects, ViewBag.Previews)
+    </div>
+</div>
+
+@helper RenderProjectsV2(string title, IEnumerable<ProjectPreview> collection)
+{
+    <div class="row">
+        <h2>@title</h2>
         @{
-            foreach (var project in ViewBag.Previews)
+            foreach (var item in collection)
             {
-                var base64Block = Convert.ToBase64String(project.Image);
+                var base64Block = Convert.ToBase64String(item.Image);
                 var imgSrcProj = String.Format("data:image/jpeg;base64,{0}", base64Block);
 
-                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 block">
-                    <img src="@imgSrcProj" alt="">
-                    <div class="projects">
-                        <h4>@project.Title</h4>
-                        <p>@project.Description</p>
-                        @Html.RouteLink(Resources.Resource.LearnMore, new { controller = "Projects", action = "PageCurrent", id = project.ProjectId })
+                <div class="col-sm-6 col-md-4">
+                    <div class="thumbnail block">
+                        <img src="@imgSrcProj" alt="@item.Title" class="img-rounded">
+                        <div class="caption">
+                            <h3>@item.Title</h3>
+                            <p>@item.Description</p>
+                            @Html.RouteLink(Resources.Resource.LearnMore, new { controller = "Projects", action = "PageCurrent", id = item.ProjectId })
+                        </div>
                     </div>
                 </div>
             }
         }
     </div>
-</div>
+}

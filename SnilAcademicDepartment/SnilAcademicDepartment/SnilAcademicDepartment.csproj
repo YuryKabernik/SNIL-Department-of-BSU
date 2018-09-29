@@ -475,7 +475,7 @@
     <EmbeddedResource Include="Resources\ProjectsResources\ProjectResource.de.resx" />
     <EmbeddedResource Include="Resources\ProjectsResources\ProjectResource.en.resx" />
     <EmbeddedResource Include="Resources\ProjectsResources\ProjectResource.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>ProjectResource.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\Resource.de.resx">

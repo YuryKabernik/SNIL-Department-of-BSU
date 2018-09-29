@@ -190,7 +190,10 @@
     <value>Персонал</value>
   </data>
   <data name="PhoneNumber" xml:space="preserve">
-    <value>Тел. + 375 17 209 50 44. </value>
+    <value>+ 375 17 209 50 44. </value>
+  </data>
+  <data name="PhoneString" xml:space="preserve">
+    <value>Тел. :</value>
   </data>
   <data name="Projects" xml:space="preserve">
     <value>Проекты</value>
