@@ -73,7 +73,7 @@ namespace SnilAcademicDepartment.Controllers
 
         [HttpGet]
         [Route("enrollee")]
-        public Task<ActionResult> EnrolleePage()
+        public Task<ActionResult> Enrollee()
         {
             ViewBag.Title = "Enrollee";
             return Task.FromResult<ActionResult>(View());
@@ -101,7 +101,7 @@ namespace SnilAcademicDepartment.Controllers
 
         [HttpGet]
         [Route("administration")]
-        public Task<ActionResult> AdministrationPage()
+        public Task<ActionResult> PageAdministration()
         {
             ViewBag.Title = "Administration";
             return Task.FromResult<ActionResult>(View());
@@ -128,30 +128,43 @@ namespace SnilAcademicDepartment.Controllers
         }
 
         [HttpGet]
-        [Route("MS")]
+        [Route("ms")]
         public async Task<ActionResult> PageMS()
         {
-			IEnumerable<Professor> personVMs;
+			IEnumerable<MasterOfScience> personVMs;
 
 			try
 			{
-				personVMs = await this._peopleService.GetPersonsByProfessionStatusAsync<Professor>("MS", Thread.CurrentThread.CurrentCulture.LCID);
+				personVMs = await this._peopleService.GetPersonsByDegreeAsync<MasterOfScience>("MS", Thread.CurrentThread.CurrentCulture.LCID);
 			}
 			catch (System.Exception)
 			{
 				return Redirect(this.Request.UrlReferrer?.AbsoluteUri ?? "/");
 			}
 
+            ViewData["MS"] = personVMs;
 			ViewBag.Title = "Masters of Science";
-            return View();
+			return View();
         }
 
         [HttpGet]
-        [Route("PHDs")]
-        public Task<ActionResult> PHDsPage()
+        [Route("phd")]
+        public async Task<ActionResult> PagePHDs()
         {
-            ViewBag.Title = "PHDs";
-            return Task.FromResult<ActionResult>(View());
+			IEnumerable<DoctorOfPhilosophy> personVMs;
+
+			try
+			{
+				personVMs = await this._peopleService.GetPersonsByDegreeAsync<DoctorOfPhilosophy>("PhD", Thread.CurrentThread.CurrentCulture.LCID);
+			}
+			catch (System.Exception)
+			{
+				return Redirect(this.Request.UrlReferrer?.AbsoluteUri ?? "/");
+			}
+
+            ViewData["PHD"] = personVMs;
+			ViewBag.Title = "Doctors of Philosophy";
+			return View();
         }
     }
 }

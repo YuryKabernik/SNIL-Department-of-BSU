@@ -2,11 +2,8 @@
 
 namespace SnilAcademicDepartment.BusinessLogic.DTOModels
 {
-    /// <summary>
-    /// Data object of persons.
-    /// </summary>
-    public class Professor
-    {
+	public class MasterOfScience
+	{
 		public int Id { get; set; }
 
 		public string PersonName { get; set; }
@@ -26,7 +23,7 @@ namespace SnilAcademicDepartment.BusinessLogic.DTOModels
 		public byte[] Image { get; set; }
 
 		public string Biography { get; set; }
-		
+
 		/// <summary>
 		/// Professor's email address.
 		/// </summary>
@@ -40,7 +37,5 @@ namespace SnilAcademicDepartment.BusinessLogic.DTOModels
 		public IEnumerable<string> Projects { get; set; }
 
 		public IEnumerable<string> Seminars { get; set; }
-
-		public IEnumerable<string> Lectures { get; set; }
-    }
+	}
 }
