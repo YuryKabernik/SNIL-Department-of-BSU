@@ -1,81 +1,82 @@
 ﻿@using SnilAcademicDepartment.BusinessLogic.DTOModels;
+@using SnilAcademicDepartment.Resources.PersonsResources;
 @{
-    ViewBag.Title = "Persons";
-    @Styles.Render("~/Content/peoplecss");
+	ViewBag.Title = "Persons";
+	@Styles.Render("~/Content/peoplecss");
 }
 <div class="container">
-    <ol class="breadcrumb">
-        <li>
-            @Html.ActionLink(Resources.Resource.Home, "Index", "Home")
-        </li>
-        <li class="active">@Resources.Resource.Persons</li>
-    </ol>
+	<ol class="breadcrumb">
+		<li>
+			@Html.ActionLink(Resources.Resource.Home, "Index", "Home")
+		</li>
+		<li class="active">@Resources.Resource.Persons</li>
+	</ol>
 </div>
 <div class="container">
-    <div class="row HallofFame">
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <div class="wrapper">
-                @{
-                    foreach (Leader person in ViewBag.Leaders)
-                    {
-                        var base64 = Convert.ToBase64String(person.Image);
-                        var imgSrc = String.Format("data:image/jpeg;base64,{0}", base64);
-                        var personPageUrl = Url.RouteUrl(new { action= "PersonalPage", controller = "Persons", id=person.Id });
+	<div class="row HallofFame">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+			<div class="wrapper">
+				@{
+					foreach (Leader person in ViewBag.Leaders)
+					{
+						var base64 = Convert.ToBase64String(person.Image);
+						var imgSrc = String.Format("data:image/jpeg;base64,{0}", base64);
+						var personPageUrl = Url.RouteUrl(new { action = "PersonalPage", controller = "Persons", id = person.Id });
 
-                        <a href="@personPageUrl"><img src="@imgSrc" alt="@person.FullName" title="@person.FullName" ></a>
-                    }
-                }
-                <h2>@Resources.PersonsResources.PersonsResource.HallFame</h2>
-                <p>@Resources.PersonsResources.PersonsResource.HallFameDescription</p>
-            </div>
-        </div>
-    </div>
-    <div class="row rows">
-        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-            <a href="@Url.Action("ProfessorsPage")">
-                <img src="~/img/Persons/hileuski.jpg" title="dicriptiom">
-                <h2>@Resources.PersonsResources.PersonsResource.Professors</h2>
-            </a>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam, maxime! Optio voluptatem doloribus illum beatae dolor voluptatibus officiis ut in.</p>
-        </div>
-        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-            <a href="@Url.Action("PageMS")">
-                <img src="~/img/Persons/hlushkou.jpg" title="dicriptiom">
-                <h2>@Resources.PersonsResources.PersonsResource.MS</h2>
-            </a>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium quis sequi eos incidunt expedita obcaecati vitae delectus quo sint, animi?</p>
-        </div>
-    </div>
-    <div class="row rows">
-        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-            <a href="@Url.Action("PagePHDs")">
-                <img src="~/img/Conferences/P1040801.jpg" title="dicriptiom">
-                <h2>@Resources.PersonsResources.PersonsResource.PhD</h2>
-            </a>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos ullam, repellat vel consectetur consequuntur eaque ea enim aliquam itaque architecto.</p>
-        </div>
-        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-            <a href="@Url.Action("Enrollee")">
-                <img src="~/img/Persons/skakun.jpg" title="dicriptiom">
-                <h2>@Resources.PersonsResources.PersonsResource.Abitur</h2>
-            </a>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam perferendis minima nostrum eius laboriosam doloribus dolorem aspernatur? Maiores, expedita, optio.</p>
-        </div>
-    </div>
-    <div class="row rows">
-        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-            <a href="@Url.Action("PageStudents")">
-                <img src="~/img/Conferences/P1040805.jpg" title="dicriptiom">
-                <h2>@Resources.PersonsResources.PersonsResource.Students</h2>
-            </a>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos ullam, repellat vel consectetur consequuntur eaque ea enim aliquam itaque architecto.</p>
-        </div>
-        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-            <a href="@Url.Action("PageAdministration")">
-                <img src="~/img/DSCF19562007г..jpg" title="dicriptiom">
-                <h2>@Resources.PersonsResources.PersonsResource.Administration</h2>
-            </a>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam perferendis minima nostrum eius laboriosam doloribus dolorem aspernatur? Maiores, expedita, optio.</p>
-        </div>
-    </div>
+						<a href="@personPageUrl"><img src="@imgSrc" alt="@person.FullName" title="@person.FullName"></a>
+					}
+				}
+				<h2>@PersonsResource.HallFame</h2>
+				<p>@PersonsResource.HallFameDescription</p>
+			</div>
+		</div>
+	</div>
+	<div class="row rows">
+		<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+			<a href="@Url.Action("ProfessorsPage")">
+				<img src="~/img/Persons/hileuski.jpg" title="dicriptiom">
+				<h2>@PersonsResource.Professors</h2>
+			</a>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam, maxime! Optio voluptatem doloribus illum beatae dolor voluptatibus officiis ut in.</p>
+		</div>
+		<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+			<a href="@Url.Action("PageMS")">
+				<img src="~/img/Persons/hlushkou.jpg" title="dicriptiom">
+				<h2>@PersonsResource.MS</h2>
+			</a>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium quis sequi eos incidunt expedita obcaecati vitae delectus quo sint, animi?</p>
+		</div>
+	</div>
+	<div class="row rows">
+		<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+			<a href="@Url.Action("PagePHDs")">
+				<img src="~/img/Conferences/P1040801.jpg" title="dicriptiom">
+				<h2>@PersonsResource.PhD</h2>
+			</a>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos ullam, repellat vel consectetur consequuntur eaque ea enim aliquam itaque architecto.</p>
+		</div>
+		<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+			<a href="@Url.Action("Enrollee")">
+				<img src="~/img/Persons/skakun.jpg" title="dicriptiom">
+				<h2>@PersonsResource.Abitur</h2>
+			</a>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam perferendis minima nostrum eius laboriosam doloribus dolorem aspernatur? Maiores, expedita, optio.</p>
+		</div>
+	</div>
+	<div class="row rows">
+		<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+			<a href="@Url.Action("PageStudents")">
+				<img src="~/img/Conferences/P1040805.jpg" title="dicriptiom">
+				<h2>@PersonsResource.Students</h2>
+			</a>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos ullam, repellat vel consectetur consequuntur eaque ea enim aliquam itaque architecto.</p>
+		</div>
+		<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+			<a href="@Url.Action("PageAdministration")">
+				<img src="~/img/DSCF19562007г..jpg" title="dicriptiom">
+				<h2>@PersonsResource.Administration</h2>
+			</a>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam perferendis minima nostrum eius laboriosam doloribus dolorem aspernatur? Maiores, expedita, optio.</p>
+		</div>
+	</div>
 </div>

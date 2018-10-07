@@ -1,4 +1,5 @@
 ﻿@using SnilAcademicDepartment.BusinessLogic.DTOModels;
+@using SnilAcademicDepartment.Resources.PersonsResources;
 @{
 	Layout = "~/Views/Shared/_Layout.cshtml";
 	@Styles.Render("~/Content/peoplecss");
@@ -11,11 +12,11 @@
 		<li>
 			@Html.ActionLink(Resources.Resource.Persons, "Persons", "Persons")
 		</li>
-		<li class="active">@Resources.PersonsResources.PersonsResource.MS</li>
+		<li class="active">@PersonsResource.MS</li>
 	</ol>
 </div>
 <div class="container subpage">
-	<h2>@Resources.PersonsResources.PersonsResource.MS</h2><br>
+	<h2>@PersonsResource.MS</h2><br>
 	@{
 		foreach (var masterOfScience in ViewData["MS"] as IList<MasterOfScience>)
 		{

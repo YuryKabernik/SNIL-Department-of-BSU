@@ -130,10 +130,10 @@
     <value>Доска почета с представленными на ней лучшими преподавателями и студентами нашего кафедры системного анализа и компьютерного моделирования</value>
   </data>
   <data name="MS" xml:space="preserve">
-    <value>MS Program</value>
+    <value>Магистры</value>
   </data>
   <data name="PhD" xml:space="preserve">
-    <value>PhD Program</value>
+    <value>Доктора наук</value>
   </data>
   <data name="Professors" xml:space="preserve">
     <value>Профессора</value>

@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Web.Mvc;
+using SnilAcademicDepartment.Resources.PersonsResources;
 
 namespace SnilAcademicDepartment.Controllers
 {
@@ -95,7 +96,7 @@ namespace SnilAcademicDepartment.Controllers
             }
 
             ViewData["Professors"] = personVMs;
-            ViewBag.Title = "Professors";
+            ViewBag.Title = PersonsResource.Professors;
             return View("Professors");
         }
 
@@ -103,7 +104,7 @@ namespace SnilAcademicDepartment.Controllers
         [Route("administration")]
         public Task<ActionResult> PageAdministration()
         {
-            ViewBag.Title = "Administration";
+            ViewBag.Title = PersonsResource.Administration;
             return Task.FromResult<ActionResult>(View());
         }
 
@@ -123,7 +124,7 @@ namespace SnilAcademicDepartment.Controllers
             }
 
             ViewData["Students"] = personVMs;
-            ViewBag.Title = "Students";
+            ViewBag.Title = PersonsResource.Students;
             return View();
         }
 
@@ -143,7 +144,7 @@ namespace SnilAcademicDepartment.Controllers
 			}
 
             ViewData["MS"] = personVMs;
-			ViewBag.Title = "Masters of Science";
+			ViewBag.Title = PersonsResource.MS;
 			return View();
         }
 
@@ -163,7 +164,7 @@ namespace SnilAcademicDepartment.Controllers
 			}
 
             ViewData["PHD"] = personVMs;
-			ViewBag.Title = "Doctors of Philosophy";
+			ViewBag.Title = PersonsResource.PhD;
 			return View();
         }
     }

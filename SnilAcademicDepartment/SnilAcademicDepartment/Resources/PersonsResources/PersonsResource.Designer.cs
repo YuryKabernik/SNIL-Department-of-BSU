@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Resources.PersonsResources {
+namespace SnilAcademicDepartment.Resources.PersonsResources {
     using System;
     
     
@@ -97,7 +97,7 @@ namespace Resources.PersonsResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to MS Program.
+        ///   Looks up a localized string similar to Магистры.
         /// </summary>
         public static string MS {
             get {
@@ -106,7 +106,7 @@ namespace Resources.PersonsResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to PhD Program.
+        ///   Looks up a localized string similar to Доктора наук.
         /// </summary>
         public static string PhD {
             get {
