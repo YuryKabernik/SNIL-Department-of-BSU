@@ -16,7 +16,7 @@
         <li>
             @Html.ActionLink(Resources.Resource.Persons, "Persons", "Persons")
         </li>
-        <li class="active">@String.Concat(person.SecoundName, " ", person.PersonName, " ", person.FathersName)</li>
+		<li class="active">@string.Format("{0}, {1}", person.SecoundName, person.PersonName)</li>
     </ol>
 </div>
 <div class="container">

@@ -134,11 +134,11 @@ namespace SnilAcademicDepartment.DataAccess.Migrations
 
         private void AddingPersons(SnilDBContext db)
         {
-            for (int i = 1; i < 6; i++)
+            for (int i = 1; i < 7; i++)
             {
-                PersonDBInit.DBInit(db, i * 111, $"Name{i}", $"SecoundName1{i}", $"FathersName{i}", this._biography, this._image, "AcademicTitle", "Degree", this._languages[0], "Status", "ÐÔèÊÒ", this._lectures, this._seminars, this._projects);
-                PersonDBInit.DBInit(db, i * 111, $"Name{i}", $"SecoundName2{i}", $"FathersName{i}", this._biography, this._image, "AcademicTitle", "Degree", this._languages[1], "Status", "ÐÔèÊÒ", this._lectures, this._seminars, this._projects);
-                PersonDBInit.DBInit(db, i * 111, $"Name{i}", $"SecoundName3{i}", $"FathersName{i}", this._biography, this._image, "AcademicTitle", "Degree", this._languages[2], "Status", "ÐÔèÊÒ", this._lectures, this._seminars, this._projects);
+                PersonDBInit.DBInit(db, i * 111, $"Name{i}", $"SecoundName1{i}", $"FathersName{i}", this._biography, this._image, "AcademicTitle", "Degree", this._languages[0], "Status", "ÐÔèÊÒ", "mail@ru", $"+375 44 {i}23 45 67", this._lectures, this._seminars, this._projects);
+                PersonDBInit.DBInit(db, i * 111, $"Name{i}", $"SecoundName2{i}", $"FathersName{i}", this._biography, this._image, "AcademicTitle", "Degree", this._languages[1], "Status", "ÐÔèÊÒ", "mail@ru", $"+375 44 {i}23 45 67", this._lectures, this._seminars, this._projects);
+                PersonDBInit.DBInit(db, i * 111, $"Name{i}", $"SecoundName3{i}", $"FathersName{i}", this._biography, this._image, "AcademicTitle", "Degree", this._languages[2], "Status", "ÐÔèÊÒ", "mail@ru", $"+375 44 {i}23 45 67", this._lectures, this._seminars, this._projects);
             }
         }
 

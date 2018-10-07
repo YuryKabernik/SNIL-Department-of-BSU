@@ -422,6 +422,7 @@
     <Content Include="Views\Education\EducationBlockPage.cshtml" />
     <Content Include="Views\Persons\Enrollee.cshtml" />
     <Content Include="Views\Persons\PersonalPage.cshtml" />
+    <Content Include="Views\Persons\Professors.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Cookies\" />

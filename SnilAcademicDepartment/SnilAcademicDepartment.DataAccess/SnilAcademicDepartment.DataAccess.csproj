@@ -131,6 +131,10 @@
     <Compile Include="Migrations\201809072018179_AddFameLeaderIdentifier.Designer.cs">
       <DependentUpon>201809072018179_AddFameLeaderIdentifier.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201810070634348_AddPhoneNumberAndAddress.cs" />
+    <Compile Include="Migrations\201810070634348_AddPhoneNumberAndAddress.Designer.cs">
+      <DependentUpon>201810070634348_AddPhoneNumberAndAddress.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Biography.cs" />
     <Compile Include="DBContext\DBContext.cs" />
@@ -194,6 +198,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201809072018179_AddFameLeaderIdentifier.resx">
       <DependentUpon>201809072018179_AddFameLeaderIdentifier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810070634348_AddPhoneNumberAndAddress.resx">
+      <DependentUpon>201810070634348_AddPhoneNumberAndAddress.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

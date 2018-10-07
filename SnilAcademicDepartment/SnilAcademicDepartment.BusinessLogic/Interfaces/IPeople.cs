@@ -13,6 +13,10 @@ namespace SnilAcademicDepartment.BusinessLogic.Interfaces
 
         Task<PersonVM> GetPersonDescriptionAsync(int personId, int langLCID);
 
-        Task<IEnumerable<PersonVM>> GetPersonsByDegreeAsync(string degreeName, int langLCID);
+        Task<IEnumerable<T>> GetPersonsByDegreeAsync<T>(string degreeName, int langLCID);
+
+        Task<IEnumerable<T>> GetPersonsByAcademicTitleAsync<T>(string degreeName, int langLCID);
+
+        Task<IEnumerable<T>> GetPersonsByProfessionStatusAsync<T>(string degreeName, int langLCID);
     }
 }

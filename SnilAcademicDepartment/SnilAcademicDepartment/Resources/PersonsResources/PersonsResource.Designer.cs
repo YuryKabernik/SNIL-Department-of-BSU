@@ -97,15 +97,6 @@ namespace Resources.PersonsResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Преподаватели.
-        /// </summary>
-        public static string Lecturers {
-            get {
-                return ResourceManager.GetString("Lecturers", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to MS Program.
         /// </summary>
         public static string MS {
@@ -120,6 +111,15 @@ namespace Resources.PersonsResources {
         public static string PhD {
             get {
                 return ResourceManager.GetString("PhD", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Профессора.
+        /// </summary>
+        public static string Professors {
+            get {
+                return ResourceManager.GetString("Professors", resourceCulture);
             }
         }
         

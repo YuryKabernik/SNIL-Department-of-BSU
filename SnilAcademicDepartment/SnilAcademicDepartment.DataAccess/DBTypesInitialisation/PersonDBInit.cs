@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SnilAcademicDepartment.DataAccess.DBTypesInitialisation
 {
@@ -21,6 +18,8 @@ namespace SnilAcademicDepartment.DataAccess.DBTypesInitialisation
             Language lang,
             string status,
             string interests,
+            string emailAddress,
+            string phoneNumber,
             List<Lecture> lectures,
             List<Seminar> seminars,
             List<Project> projects)
@@ -38,6 +37,8 @@ namespace SnilAcademicDepartment.DataAccess.DBTypesInitialisation
                 Language = lang,
                 ProfessionStatus = status,
                 PersonalInterests = interests,
+                EmailAddress = emailAddress,
+                PhoneNumber = phoneNumber,
                 Lectures = lectures.Where(p => p.Language.LanguageCode == lang.LanguageCode).Take(3).ToArray(),
                 Seminars = seminars.Where(p => p.Language.LanguageCode == lang.LanguageCode).Take(3).ToArray(),
                 Projects = projects.Where(p => p.Language.LanguageCode == lang.LanguageCode).Take(3).ToArray()

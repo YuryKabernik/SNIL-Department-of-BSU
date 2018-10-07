@@ -71,9 +71,11 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
         /// <summary>
         /// Get person by degree.
         /// </summary>
+        /// <typeparam name="T">Specific type of person model to map and return.</typeparam>
         /// <param name="degreeName">Person's degree.</param>
-        /// <returns>Returns collestion of persons with specific degree.</returns>
-        public async Task<IEnumerable<PersonVM>> GetPersonsByDegreeAsync(string degreeName, int langLCID)
+        /// <param name="langLCID">Current language LCID.</param>
+        /// <returns>Returns collestion of persons of a specific education degree.</returns>
+        public async Task<IEnumerable<T>> GetPersonsByDegreeAsync<T>(string degreeName, int langLCID)
         {
             if (string.IsNullOrWhiteSpace(degreeName)) 
             {
@@ -85,7 +87,51 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
                .Include(prop => prop.Image)
                .ToListAsync();
 
-            return this._mapper.Map< IEnumerable<PersonVM>>(result);
+            return this._mapper.Map< IEnumerable<T>>(result);
+        }
+
+        /// <summary>
+        /// Get person by academic title.
+        /// </summary>
+        /// <typeparam name="T">Specific type of person model to map and return.</typeparam>
+        /// <param name="academicTitle"></param>
+        /// <param name="langLCID"></param>
+        /// <returns>Returns collestion of persons of a specific academic title.</returns>
+        public async Task<IEnumerable<T>> GetPersonsByAcademicTitleAsync<T>(string academicTitle, int langLCID)
+        {
+            if (string.IsNullOrWhiteSpace(academicTitle))
+            {
+                throw new ArgumentNullException(nameof(academicTitle), "Argument can't be null, empty or white space.");
+            }
+
+            var result = await this._repository.People
+               .Where(p => p.AcademicTitle.Equals(academicTitle, StringComparison.OrdinalIgnoreCase) && p.Language.LanguageCode == langLCID)
+               .Include(prop => prop.Image)
+               .ToListAsync();
+
+            return this._mapper.Map<IEnumerable<T>>(result);
+        }
+
+        /// <summary>
+        /// Get person by profession.
+        /// </summary>
+        /// <typeparam name="T">Specific type of person model to map and return.</typeparam>
+        /// <param name="professionStatus"></param>
+        /// <param name="langLCID"></param>
+        /// <returns>Returns collestion of persons of a specific profession status.</returns>
+        public async Task<IEnumerable<T>> GetPersonsByProfessionStatusAsync<T>(string professionStatus, int langLCID)
+        {
+            if (string.IsNullOrWhiteSpace(professionStatus))
+            {
+                throw new ArgumentNullException(nameof(professionStatus), "Argument can't be null, empty or white space.");
+            }
+
+            var result = await this._repository.People
+               .Where(p => p.ProfessionStatus.Equals(professionStatus, StringComparison.OrdinalIgnoreCase) && p.Language.LanguageCode == langLCID)
+               .Include(prop => prop.Image)
+               .ToListAsync();
+
+            return this._mapper.Map<IEnumerable<T>>(result);
         }
     }
 }

@@ -129,14 +129,14 @@
   <data name="HallFameDescription" xml:space="preserve">
     <value>Honour-Board mit den besten Lehrern und Studenten unserer Abteilung für Systemanalyse und Computer-Modellierung vorgestellt</value>
   </data>
-  <data name="Lecturers" xml:space="preserve">
-    <value>Lehrer</value>
-  </data>
   <data name="MS" xml:space="preserve">
     <value>MS Programm</value>
   </data>
   <data name="PhD" xml:space="preserve">
     <value>PhD Programm</value>
+  </data>
+  <data name="Professors" xml:space="preserve">
+    <value>Lehrer</value>
   </data>
   <data name="Students" xml:space="preserve">
     <value>Studenten</value>

@@ -26,7 +26,7 @@ namespace SnilAcademicDepartment.Controllers
         }
 
         [HttpGet]
-        [Route("Persons")]
+        [Route("people")]
         public async Task<ActionResult> Persons()
         {
             IEnumerable<Leader> leaders;
@@ -49,7 +49,7 @@ namespace SnilAcademicDepartment.Controllers
         }
 
         [HttpGet]
-        [Route("PersonalPage")]
+        [Route("personalpage")]
         public async Task<ActionResult> PersonalPage(int id)
         {
             if (id <= 0)
@@ -67,43 +67,55 @@ namespace SnilAcademicDepartment.Controllers
             }
 
             ViewData.Model = personalInfo;
-
-            return View();
+			ViewBag.Title = string.Format("{0}, {1}",personalInfo.SecoundName, personalInfo.PersonName);
+			return View();
         }
 
         [HttpGet]
-        [Route("Enrollee")]
-        public Task<ActionResult> Enrollee()
+        [Route("enrollee")]
+        public Task<ActionResult> EnrolleePage()
         {
             ViewBag.Title = "Enrollee";
             return Task.FromResult<ActionResult>(View());
         }
 
         [HttpGet]
-        [Route("Professors")]
-        public Task<ActionResult> Professors()
+        [Route("professors")]
+        public async Task<ActionResult> ProfessorsPage()
         {
+            IEnumerable<Professor> personVMs;
+
+            try
+            {
+                personVMs = await this._peopleService.GetPersonsByProfessionStatusAsync<Professor>("Professor", Thread.CurrentThread.CurrentCulture.LCID);
+            }
+            catch (System.Exception)
+            {
+                return Redirect(this.Request.UrlReferrer?.AbsoluteUri ?? "/");
+            }
+
+            ViewData["Professors"] = personVMs;
             ViewBag.Title = "Professors";
-            return Task.FromResult<ActionResult>(View());
+            return View("Professors");
         }
 
         [HttpGet]
-        [Route("Administration")]
-        public Task<ActionResult> Administration()
+        [Route("administration")]
+        public Task<ActionResult> AdministrationPage()
         {
             ViewBag.Title = "Administration";
             return Task.FromResult<ActionResult>(View());
         }
 
         [HttpGet]
-        [Route("Students")]
-        public async Task<ActionResult> StudentsAsync()
+        [Route("students")]
+        public async Task<ActionResult> PageStudents()
         {
             IEnumerable<PersonVM> personVMs;
 
             try
             {
-                personVMs = await this._peopleService.GetPersonsByDegreeAsync("Student", Thread.CurrentThread.CurrentCulture.LCID);
+                personVMs = await this._peopleService.GetPersonsByProfessionStatusAsync<PersonVM>("Student", Thread.CurrentThread.CurrentCulture.LCID);
             }
             catch (System.Exception)
             {
@@ -112,20 +124,31 @@ namespace SnilAcademicDepartment.Controllers
 
             ViewData["Students"] = personVMs;
             ViewBag.Title = "Students";
-            return View("PageStudents");
+            return View();
         }
 
         [HttpGet]
         [Route("MS")]
-        public Task<ActionResult> MS()
+        public async Task<ActionResult> PageMS()
         {
-            ViewBag.Title = "Master of Science";
-            return Task.FromResult<ActionResult>(View());
+			IEnumerable<Professor> personVMs;
+
+			try
+			{
+				personVMs = await this._peopleService.GetPersonsByProfessionStatusAsync<Professor>("MS", Thread.CurrentThread.CurrentCulture.LCID);
+			}
+			catch (System.Exception)
+			{
+				return Redirect(this.Request.UrlReferrer?.AbsoluteUri ?? "/");
+			}
+
+			ViewBag.Title = "Masters of Science";
+            return View();
         }
 
         [HttpGet]
         [Route("PHDs")]
-        public Task<ActionResult> PHDs()
+        public Task<ActionResult> PHDsPage()
         {
             ViewBag.Title = "PHDs";
             return Task.FromResult<ActionResult>(View());

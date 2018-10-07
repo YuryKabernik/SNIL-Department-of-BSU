@@ -39,7 +39,15 @@ namespace SnilAcademicDepartment.DataAccess.Configurations
                 .HasMaxLength(50)
                 .IsRequired();
 
-            this.HasMany(e => e.HallOfFames)
+			this.Property(p => p.EmailAddress)
+				.HasMaxLength(50)
+				.IsOptional();
+
+			this.Property(p => p.PhoneNumber)
+				.HasMaxLength(50)
+				.IsOptional();
+
+			this.HasMany(e => e.HallOfFames)
                 .WithRequired(e => e.Person)
                 .WillCascadeOnDelete(false);
 

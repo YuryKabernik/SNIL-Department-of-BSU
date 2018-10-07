@@ -24,6 +24,10 @@ namespace SnilAcademicDepartment.DataAccess
 
         public string PersonalInterests { get; set; }
 
+        public string EmailAddress { get; set; }
+
+        public string PhoneNumber { get; set; }
+
         public Image Image { get; set; }
 
         public int Localisation { get; set; }
