@@ -6,6 +6,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 using SnilAcademicDepartment.Resources.PersonsResources;
+using SnilAcademicDepartment.Resources.UnavaliableErrorResources;
 
 namespace SnilAcademicDepartment.Controllers
 {
@@ -37,12 +38,12 @@ namespace SnilAcademicDepartment.Controllers
             try
             {
                 leaders = await this._peopleService.GetHallOfFameLeadersAsync(5, Thread.CurrentThread.CurrentCulture.LCID);
-
             }
             catch (System.Exception)
             {
-                return Redirect(this.Request.UrlReferrer?.AbsoluteUri ?? "/");
-            }
+				ViewBag.Title = UnavaliableErrorResource.UnavaliableMessage;
+				return View("SorryUnavaliable");
+			}
 
             ViewBag.Leaders = leaders;
 
@@ -64,7 +65,8 @@ namespace SnilAcademicDepartment.Controllers
             }
             catch (System.Exception)
             {
-                return Redirect(this.Request.UrlReferrer?.AbsoluteUri ?? "/");
+				ViewBag.Title = UnavaliableErrorResource.UnavaliableMessage;
+				return View("SorryUnavaliable");
             }
 
             ViewData.Model = personalInfo;
@@ -74,10 +76,23 @@ namespace SnilAcademicDepartment.Controllers
 
         [HttpGet]
         [Route("enrollee")]
-        public Task<ActionResult> Enrollee()
+        public async Task<ActionResult> Enrollee()
         {
-            ViewBag.Title = "Enrollee";
-            return Task.FromResult<ActionResult>(View());
+			IEnumerable<Professor> personVMs;
+
+			try
+			{
+				personVMs = await this._peopleService.GetPersonsByProfessionStatusAsync<Professor>("Professor", Thread.CurrentThread.CurrentCulture.LCID);
+			}
+			catch (System.Exception)
+			{
+				ViewBag.Title = UnavaliableErrorResource.UnavaliableMessage;
+				return View("SorryUnavaliable");
+			}
+
+			ViewData["Professors"] = personVMs;
+			ViewBag.Title = PersonsResource.Abitur;
+			return View("Enrollee");
         }
 
         [HttpGet]
@@ -92,8 +107,9 @@ namespace SnilAcademicDepartment.Controllers
             }
             catch (System.Exception)
             {
-                return Redirect(this.Request.UrlReferrer?.AbsoluteUri ?? "/");
-            }
+				ViewBag.Title = UnavaliableErrorResource.UnavaliableMessage;
+				return View("SorryUnavaliable");
+			}
 
             ViewData["Professors"] = personVMs;
             ViewBag.Title = PersonsResource.Professors;
@@ -120,8 +136,9 @@ namespace SnilAcademicDepartment.Controllers
             }
             catch (System.Exception)
             {
-                return Redirect(this.Request.UrlReferrer?.AbsoluteUri ?? "/");
-            }
+				ViewBag.Title = UnavaliableErrorResource.UnavaliableMessage;
+				return View("SorryUnavaliable");
+			}
 
             ViewData["Students"] = personVMs;
             ViewBag.Title = PersonsResource.Students;
@@ -140,7 +157,8 @@ namespace SnilAcademicDepartment.Controllers
 			}
 			catch (System.Exception)
 			{
-				return Redirect(this.Request.UrlReferrer?.AbsoluteUri ?? "/");
+				ViewBag.Title = UnavaliableErrorResource.UnavaliableMessage;
+				return View("SorryUnavaliable");
 			}
 
             ViewData["MS"] = personVMs;
@@ -160,7 +178,8 @@ namespace SnilAcademicDepartment.Controllers
 			}
 			catch (System.Exception)
 			{
-				return Redirect(this.Request.UrlReferrer?.AbsoluteUri ?? "/");
+				ViewBag.Title = UnavaliableErrorResource.UnavaliableMessage;
+				return View("SorryUnavaliable");
 			}
 
             ViewData["PHD"] = personVMs;

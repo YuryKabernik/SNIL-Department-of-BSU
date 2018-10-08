@@ -8,6 +8,7 @@ using Resources.EducationResources;
 using SnilAcademicDepartment.BusinessLogic.DTOModels;
 using System.Linq;
 using System.Threading.Tasks;
+using SnilAcademicDepartment.Resources.UnavaliableErrorResources;
 
 namespace SnilAcademicDepartment.Controllers
 {
@@ -89,10 +90,10 @@ namespace SnilAcademicDepartment.Controllers
             }
             catch (Exception)
             {
-            
-                ViewBag.ErrorMessage = "Sorry, but education page is not avaliable now :( \n Try again later!";
-                return View("Error");
-            }
+
+				ViewBag.Title = UnavaliableErrorResource.UnavaliableMessage;
+				return View("SorryUnavaliable");
+			}
 
             ViewBag.Title = "Quick Learning";
             ViewBag.EducationResourseTitle = EducationResource.QuickLearning;
@@ -113,9 +114,9 @@ namespace SnilAcademicDepartment.Controllers
             }
             catch (Exception)
             {
-
-                return Redirect(Request.UrlReferrer.AbsoluteUri ?? "/");
-            }
+				ViewBag.Title = UnavaliableErrorResource.UnavaliableMessage;
+				return View("SorryUnavaliable");
+			}
 
             ViewBag.Title = "Seminars";
             ViewBag.EducationResourseTitle = EducationResource.Seminars;
@@ -136,9 +137,9 @@ namespace SnilAcademicDepartment.Controllers
             }
             catch (Exception)
             {
-
-                return Redirect(this.Request.UrlReferrer?.AbsoluteUri ?? "/");
-            }
+				ViewBag.Title = UnavaliableErrorResource.UnavaliableMessage;
+				return View("SorryUnavaliable");
+			}
 
             ViewBag.Title = "Lections";
             ViewBag.EducationResourseTitle = EducationResource.Lectures;

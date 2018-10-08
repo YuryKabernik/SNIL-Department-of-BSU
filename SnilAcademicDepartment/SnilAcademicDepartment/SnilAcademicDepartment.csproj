@@ -264,6 +264,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resource.resx</DependentUpon>
     </Compile>
+    <Compile Include="Resources\UnavaliableErrorResources\UnavaliableErrorResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UnavaliableErrorResource.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -423,6 +428,7 @@
     <Content Include="Views\Persons\Enrollee.cshtml" />
     <Content Include="Views\Persons\PersonalPage.cshtml" />
     <Content Include="Views\Persons\Professors.cshtml" />
+    <Content Include="Views\Shared\SorryUnavaliable.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Cookies\" />
@@ -493,6 +499,12 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resource.Designer.cs</LastGenOutput>
       <CustomToolNamespace>Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\UnavaliableErrorResources\UnavaliableErrorResource.de.resx" />
+    <EmbeddedResource Include="Resources\UnavaliableErrorResources\UnavaliableErrorResource.en.resx" />
+    <EmbeddedResource Include="Resources\UnavaliableErrorResources\UnavaliableErrorResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>UnavaliableErrorResource.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
