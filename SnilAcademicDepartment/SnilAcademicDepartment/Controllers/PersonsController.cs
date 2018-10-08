@@ -118,11 +118,24 @@ namespace SnilAcademicDepartment.Controllers
 
         [HttpGet]
         [Route("administration")]
-        public Task<ActionResult> PageAdministration()
+        public async Task<ActionResult> PageAdministration()
         {
-            ViewBag.Title = PersonsResource.Administration;
-            return Task.FromResult<ActionResult>(View());
-        }
+			IEnumerable<Administrator> personVMs;
+
+			try
+			{
+				personVMs = await this._peopleService.GetPersonsByProfessionStatusAsync<Administrator>("Administrator", Thread.CurrentThread.CurrentCulture.LCID);
+			}
+			catch (System.Exception)
+			{
+				ViewBag.Title = UnavaliableErrorResource.UnavaliableMessage;
+				return View("SorryUnavaliable");
+			}
+
+			ViewData["Administrators"] = personVMs;
+			ViewBag.Title = PersonsResource.Students;
+			return View();
+		}
 
         [HttpGet]
         [Route("students")]

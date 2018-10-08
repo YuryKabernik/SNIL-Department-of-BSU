@@ -116,6 +116,17 @@ namespace SnilAcademicDepartment.BusinessLogic
 				.ForMember(des => des.Seminars, opt => opt.MapFrom(s => s.Seminars.Select(o => o.Title)))
 				.ForMember(des => des.Projects, opt => opt.MapFrom(s => s.Projects.Select(o => o.ProjectName)));
 
+			this.CreateMap<Person, Administrator>() // PersonVM
+				.ForMember(des => des.Id, opt => opt.MapFrom(s => s.PersonUniqueIdentifire))
+				.ForMember(des => des.PersonName, opt => opt.MapFrom(s => s.PersonName))
+				.ForMember(des => des.SecoundName, opt => opt.MapFrom(s => s.SecoundName))
+				.ForMember(des => des.FathersName, opt => opt.MapFrom(s => s.FathersName))
+				.ForMember(des => des.ProfessionStatus, opt => opt.MapFrom(s => s.ProfessionStatus))
+				.ForMember(des => des.AcademicTitle, opt => opt.MapFrom(s => s.AcademicTitle))
+				.ForMember(des => des.Biography, opt => opt.MapFrom(s => s.Biography1.Description))
+				.ForMember(des => des.Degree, opt => opt.MapFrom(s => s.Degree))
+				.ForMember(des => des.Image, opt => opt.MapFrom(s => s.Image.Image1));
+
 			this.CreateMap<Person, Professor>() // Professor
 				.ForMember(des => des.Id, opt => opt.MapFrom(s => s.PersonUniqueIdentifire))
 				.ForMember(des => des.PersonName, opt => opt.MapFrom(s => s.PersonName))

@@ -81,6 +81,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BLLMappingConfig.cs" />
+    <Compile Include="DTOModels\Administrator.cs" />
     <Compile Include="DTOModels\DoctorOfPhilosophy.cs" />
     <Compile Include="DTOModels\DocumentModel.cs" />
     <Compile Include="DTOModels\ImageModel.cs" />
