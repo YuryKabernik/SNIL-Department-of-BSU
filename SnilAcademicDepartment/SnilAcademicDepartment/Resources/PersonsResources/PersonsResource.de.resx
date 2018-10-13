@@ -120,8 +120,17 @@
   <data name="Abitur" xml:space="preserve">
     <value>Universitätseinsteiger</value>
   </data>
+  <data name="AcademicTitle" xml:space="preserve">
+    <value>Akademischer Titel</value>
+  </data>
   <data name="Administration" xml:space="preserve">
     <value>Administration</value>
+  </data>
+  <data name="Degree" xml:space="preserve">
+    <value>Abschluss</value>
+  </data>
+  <data name="EmailAddress" xml:space="preserve">
+    <value>E-Mail-Addresse</value>
   </data>
   <data name="HallFame" xml:space="preserve">
     <value>Ehrenkarte</value>
@@ -134,6 +143,12 @@
   </data>
   <data name="PhD" xml:space="preserve">
     <value>Ärzte der Philosophie</value>
+  </data>
+  <data name="PhoneNumber" xml:space="preserve">
+    <value>Telefon</value>
+  </data>
+  <data name="ProfessionStatus" xml:space="preserve">
+    <value>Berufsstatus</value>
   </data>
   <data name="Professors" xml:space="preserve">
     <value>Lehrer</value>

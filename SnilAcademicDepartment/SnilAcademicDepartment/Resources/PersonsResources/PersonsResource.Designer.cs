@@ -70,11 +70,38 @@ namespace SnilAcademicDepartment.Resources.PersonsResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Ученое звание.
+        /// </summary>
+        public static string AcademicTitle {
+            get {
+                return ResourceManager.GetString("AcademicTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Администрация.
         /// </summary>
         public static string Administration {
             get {
                 return ResourceManager.GetString("Administration", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Степень.
+        /// </summary>
+        public static string Degree {
+            get {
+                return ResourceManager.GetString("Degree", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Адрес эл. почты.
+        /// </summary>
+        public static string EmailAddress {
+            get {
+                return ResourceManager.GetString("EmailAddress", resourceCulture);
             }
         }
         
@@ -111,6 +138,24 @@ namespace SnilAcademicDepartment.Resources.PersonsResources {
         public static string PhD {
             get {
                 return ResourceManager.GetString("PhD", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Телефон.
+        /// </summary>
+        public static string PhoneNumber {
+            get {
+                return ResourceManager.GetString("PhoneNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Статус профессии.
+        /// </summary>
+        public static string ProfessionStatus {
+            get {
+                return ResourceManager.GetString("ProfessionStatus", resourceCulture);
             }
         }
         

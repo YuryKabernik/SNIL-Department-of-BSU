@@ -16,7 +16,7 @@
 	</ol>
 </div>
 <div class="container subpage">
-	<h2>@PersonsResource.Professors</h2><br>
+	<h2>@PersonsResource.Administration</h2><br>
 	@{
 		foreach (var administrator in ViewData["Administrators"] as IList<Administrator>)
 		{
@@ -38,13 +38,13 @@
 				</div>
 				<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 row3">
 					<ul>
-						<li><strong>Degree:</strong>  <span>@administrator.Degree</span> </li>
-						<li><strong>Academic title:</strong> <span>@administrator.AcademicTitle</span> </li>
-						<li><strong>Profession status:</strong> <span>@administrator.ProfessionStatus</span> </li>
+						<li><strong>@PersonsResource.Degree:</strong>  <span>@administrator.Degree</span> </li>
+						<li><strong>@PersonsResource.AcademicTitle:</strong> <span>@administrator.AcademicTitle</span> </li>
+						<li><strong>@PersonsResource.ProfessionStatus:</strong> <span>@administrator.ProfessionStatus</span> </li>
 					</ul>
 					<ul>
-						<li><strong>Email address:</strong>  <span>@administrator.EmailAddress</span> </li>
-						<li><strong>Phone number:</strong> <span>@administrator.PhoneNumber</span> </li>
+						<li><strong>@PersonsResource.EmailAddress:</strong>  <span>@administrator.EmailAddress</span> </li>
+						<li><strong>@PersonsResource.PhoneNumber:</strong> <span>@administrator.PhoneNumber</span> </li>
 					</ul>
 				</div>
 			</div>

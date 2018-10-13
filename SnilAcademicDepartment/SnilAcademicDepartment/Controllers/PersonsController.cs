@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Web.Mvc;
 using SnilAcademicDepartment.Resources.PersonsResources;
 using SnilAcademicDepartment.Resources.UnavaliableErrorResources;
+using Resources;
 
 namespace SnilAcademicDepartment.Controllers
 {
@@ -33,8 +34,6 @@ namespace SnilAcademicDepartment.Controllers
         {
             IEnumerable<Leader> leaders;
 
-            ViewBag.Title = "Persons";
-
             try
             {
                 leaders = await this._peopleService.GetHallOfFameLeadersAsync(5, Thread.CurrentThread.CurrentCulture.LCID);
@@ -46,8 +45,8 @@ namespace SnilAcademicDepartment.Controllers
 			}
 
             ViewBag.Leaders = leaders;
-
-            return View();
+			ViewBag.Title = Resource.Persons;
+			return View();
         }
 
         [HttpGet]
@@ -133,7 +132,7 @@ namespace SnilAcademicDepartment.Controllers
 			}
 
 			ViewData["Administrators"] = personVMs;
-			ViewBag.Title = PersonsResource.Students;
+			ViewBag.Title = PersonsResource.Administration;
 			return View();
 		}
 

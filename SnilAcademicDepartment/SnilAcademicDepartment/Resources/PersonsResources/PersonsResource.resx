@@ -120,8 +120,17 @@
   <data name="Abitur" xml:space="preserve">
     <value>Абитуриенты</value>
   </data>
+  <data name="AcademicTitle" xml:space="preserve">
+    <value>Ученое звание</value>
+  </data>
   <data name="Administration" xml:space="preserve">
     <value>Администрация</value>
+  </data>
+  <data name="Degree" xml:space="preserve">
+    <value>Степень</value>
+  </data>
+  <data name="EmailAddress" xml:space="preserve">
+    <value>Адрес эл. почты</value>
   </data>
   <data name="HallFame" xml:space="preserve">
     <value>Доска почета</value>
@@ -134,6 +143,12 @@
   </data>
   <data name="PhD" xml:space="preserve">
     <value>Доктора наук</value>
+  </data>
+  <data name="PhoneNumber" xml:space="preserve">
+    <value>Телефон</value>
+  </data>
+  <data name="ProfessionStatus" xml:space="preserve">
+    <value>Статус профессии</value>
   </data>
   <data name="Professors" xml:space="preserve">
     <value>Профессора</value>
