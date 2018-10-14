@@ -7,15 +7,15 @@
   clear: both;
 }
 .content .formform {
-  padding-bottom: 30px;
-  padding-left: 50px;
+	padding: 20px 40px 40px 40px;
 }
 .content .formform .form {
   display: block;
 }
 .content .formform .form .form_input {
+  padding-top: 20px;
   float: left;
-  width: 300px;
+  width: 70%;
 }
 .content .formform .form .form_address {
   padding-left: 50px;
@@ -52,6 +52,5 @@
   border-color: #efefef;
   box-sizing: border-box;
   background-color: #ffffff;
-  width: 350px;
-  height: 150px;
+  min-height: 150px;
 }
