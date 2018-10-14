@@ -169,7 +169,7 @@ namespace SnilAcademicDepartment.Resources.ContactsResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Др., Доцент Виктор Скакун.
+        ///   Looks up a localized string similar to Др., Доцент: Виктор Скакун.
         /// </summary>
         public static string VictorSkakun {
             get {

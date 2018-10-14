@@ -14,31 +14,27 @@ html {
     padding-top: 20px;
     padding-bottom: 30px;
 }
-.header .container .logo {
-  width: 225px;
-  height: 100px;
-  background-image: url(../img/BSU.png);
-  background-repeat: no-repeat;
-  background-position: left;
-  background-size: 100%;
-  float: left;
-
-  /*Hide text*/
-  text-indent: 100%;
-    white-space: nowrap;
-    overflow: hidden;
+.header .header-container{
+	max-width: 90%;
 }
-.header .container .signin {
+.header .header-container .logo {
+  height: 80px;
+  float: left;
+}
+.header .header-container .logo img{
+  height: 100%;
+}
+.header .header-container .signin {
   float: right;
   margin-top: 20px;
 }
-.header .container form {
+.header .header-container form {
     margin-top: 10px;
     width: 150px;
     float: right;
     height: 100px;
 }
-.header .container .lang {
+.header .header-container .lang {
     width: 149px;
     float: right;
     margin-top: 5px;
@@ -50,7 +46,7 @@ html {
     margin: auto;
     height: 20px;
 }*/
-.header .container .lang option {
+.header .header-container .lang option {
     font-size: 20px;
     border: 1px solid black;
     /*display: none;
@@ -59,38 +55,42 @@ html {
     background-repeat: no-repeat;
     margin-bottom: 1px;*/
 }
-
-
-.header .container i i:hover li {
+.header .header-container i i:hover li {
   display: block;
   text-align: center;
   text-decoration: none;
 }
 .nav {
-    width: 100%;
-    float: left;
-    background-color: #f0f0f0;
+	width: 100%;
+	float: left;
+	background-color: #f0f0f0;
+	list-style: none;
 }
-.nav .container h2 {
-  padding: 12px;
-  float: left;
-  margin: 10px 0;
-  margin-right: 20px;
+.nav .container .li-center{
+	width: 100%;
+	display: flex;
+	justify-content: center;
 }
-.nav .container a {
+.nav .container .li-center .nav-item {
   display: block;
-  height: 77px;
   float: left;
-  padding: 29px 10px 20px 10px;
+  padding: 20px 10px;
   color: #333333;
   text-decoration: none;
 }
-.nav .container a:hover {
-  text-decoration: underline;
-  color: #f0f0f0;
-  background-color: #254e72;
+.nav .container .li-center .nav-item a{
+	color: #333333;
+	text-decoration: none;
+}
+.nav .container .li-center .nav-item:hover {
+  background-color: gray;
   border-bottom-left-radius: 3px;
   border-bottom-right-radius: 3px;
+  cursor: pointer;
+}
+.nav .container .li-center .nav-item:hover a{
+	text-decoration: solid;
+	color: #f0f0f0;
 }
 .content {
   min-height: 100%;

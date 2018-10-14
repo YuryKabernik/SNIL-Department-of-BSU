@@ -1,55 +1,61 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title</title>
-    @Styles.Render("~/Content/indexcss")
-    <script src="~/Scripts/jquery-3.3.1.js"></script>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>@ViewBag.Title</title>
+	@Styles.Render("~/Content/indexcss")
+	<script src="~/Scripts/jquery-3.3.1.js"></script>
 </head>
 <body>
-    <div class=header>
-        <div class="container">
-            @Html.ActionLink("SPMA BSU", "Index", new { controller = "Home" }, new { @class = "logo" })
-            <div class="dropdown" style="float:right;">
-                <button class="dropbtn"></button>
-                <div class="dropdown-content">
-                    @Html.ActionLink("Русский", "ChangeCulture", new { controller = "Cookies", lang = "ru" })
-                    @Html.ActionLink("English", "ChangeCulture", new { controller = "Cookies", lang = "en" })
-                    @Html.ActionLink("Deutsch", "ChangeCulture", new { controller = "Cookies", lang = "de" })
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="nav">
-        <div class="container">
-            <h2>@Resources.Resource.IndexHeader</h2>
-            @Html.ActionLink(Resources.Resource.Home, "Index", "Home")
-            @Html.ActionLink(Resources.Resource.Projects, "Projects", "Projects")
-            @Html.ActionLink(Resources.Resource.Education, "Education", "Education")
-            @Html.ActionLink(Resources.Resource.Persons, "Persons", "Persons")
-            @Html.ActionLink(Resources.Resource.History, "History", "History")
-            @Html.ActionLink(Resources.Resource.Contacts, "Contact", "Home")
-        </div>
-    </div>    
-    <div class="content">
-        @RenderBody()
-    </div>
-    <div class="clr"></div>
-    <footer>
-        <div class="container">
-            <!-- Copyright -->
-            <div class="footer-copyright text-center py-3">
-                @Resources.Resource.FooterCopyright<br />
-                @Resources.Resource.Address<br />
-                @Resources.Resource.PhoneNumber @Resources.Resource.FaxNumber. Url: <a href="http://bsu.by">www.bsu.by</a>
-            </div>
-        </div>
-    </footer>
-    @Scripts.Render("~/bundles/modernizr")
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+	<div class=header>
+		<div class="container header-container">
+			@{
+				var url = Url.RouteUrl(new { action = "Index", controller = "Home", });
+				<a class="logo" href="@url">
+					<img src="~/img/BSU.png" />
+				</a>
+			}
+			<div class="dropdown" style="float:right;">
+				<button class="dropbtn"></button>
+				<div class="dropdown-content">
+					@Html.ActionLink("Русский", "ChangeCulture", new { controller = "Cookies", lang = "ru" })
+					@Html.ActionLink("English", "ChangeCulture", new { controller = "Cookies", lang = "en" })
+					@Html.ActionLink("Deutsch", "ChangeCulture", new { controller = "Cookies", lang = "de" })
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="nav">
+		<div class="container">
+			<ul class="navbar-nav li-center">
+				<li class="nav-item">@Html.ActionLink(Resources.Resource.Home, "Index", "Home")</li>
+				<li class="nav-item">@Html.ActionLink(Resources.Resource.Projects, "Projects", "Projects")</li>
+				<li class="nav-item">@Html.ActionLink(Resources.Resource.Education, "Education", "Education")</li>
+				<li class="nav-item">@Html.ActionLink(Resources.Resource.Persons, "Persons", "Persons")</li>
+				<li class="nav-item">@Html.ActionLink(Resources.Resource.History, "History", "History")</li>
+				<li class="nav-item">@Html.ActionLink(Resources.Resource.Contacts, "Contact", "Home")</li>
+			</ul>
+		</div>
+	</div>
+	<div class="content">
+		@RenderBody()
+	</div>
+	<div class="clr"></div>
+	<footer>
+		<div class="container">
+			<!-- Copyright -->
+			<div class="footer-copyright text-center py-3">
+				@Resources.Resource.FooterCopyright<br />
+				@Resources.Resource.Address<br />
+				@Resources.Resource.PhoneNumber @Resources.Resource.FaxNumber. Url: <a href="http://bsu.by">www.bsu.by</a>
+			</div>
+		</div>
+	</footer>
+	@Scripts.Render("~/bundles/modernizr")
+	@Scripts.Render("~/bundles/jquery")
+	@Scripts.Render("~/bundles/bootstrap")
+	@RenderSection("scripts", required: false)
 </body>
 </html>

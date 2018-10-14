@@ -3,6 +3,7 @@ using NLog;
 using SnilAcademicDepartment.BusinessLogic.Interfaces;
 using System.Web.Mvc;
 using SnilAcademicDepartment.BusinessLogic.DTOModels;
+using Resources;
 using System.Threading.Tasks;
 
 namespace SnilAcademicDepartment.Controllers
@@ -31,7 +32,8 @@ namespace SnilAcademicDepartment.Controllers
         [HttpGet]
         public Task<ActionResult> Index()
         {
-            return Task.FromResult<ActionResult>(View());
+			ViewBag.Title = Resource.IndexHeader;
+			return Task.FromResult<ActionResult>(View());
         }
 
         [HttpGet]
