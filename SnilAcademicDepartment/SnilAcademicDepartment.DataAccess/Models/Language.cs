@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace SnilAcademicDepartment.DataAccess
+namespace SnilAcademicDepartment.DataAccess.Models
 {
     [Table("Language")]
     public partial class Language

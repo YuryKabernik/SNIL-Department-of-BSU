@@ -2,6 +2,7 @@ using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using SnilAcademicDepartment.DataAccess.Configurations;
 using SnilAcademicDepartment.DataAccess.Migrations;
+using SnilAcademicDepartment.DataAccess.Models;
 
 namespace SnilAcademicDepartment.DataAccess
 {

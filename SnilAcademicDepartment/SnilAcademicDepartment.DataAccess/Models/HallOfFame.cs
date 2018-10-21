@@ -1,4 +1,4 @@
-namespace SnilAcademicDepartment.DataAccess
+namespace SnilAcademicDepartment.DataAccess.Models
 {
     using System.ComponentModel.DataAnnotations.Schema;
 

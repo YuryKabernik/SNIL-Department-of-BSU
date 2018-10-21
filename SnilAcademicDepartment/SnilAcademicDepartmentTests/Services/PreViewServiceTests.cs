@@ -5,9 +5,9 @@ using SnilAcademicDepartment.DataAccess;
 using System;
 using System.Data.Entity;
 using System.Linq;
-using System.Data.Entity;
 using AutoMapper;
 using System.Collections.Generic;
+using SnilAcademicDepartment.DataAccess.Models;
 
 namespace SnilAcademicDepartment.BusinessLogic.Services.Tests
 {

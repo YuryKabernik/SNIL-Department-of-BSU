@@ -1,4 +1,6 @@
-﻿namespace SnilAcademicDepartment.DataAccess.DBTypesInitialisation
+﻿using SnilAcademicDepartment.DataAccess.Models;
+
+namespace SnilAcademicDepartment.DataAccess.DBTypesInitialisation
 {
     public static class PageTypeDBInit
     {

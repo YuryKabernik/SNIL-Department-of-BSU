@@ -1,4 +1,5 @@
 ﻿using System.IO;
+using SnilAcademicDepartment.DataAccess.Models;
 
 namespace SnilAcademicDepartment.DataAccess.DBTypesInitialisation
 {

@@ -1,7 +1,6 @@
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 
-namespace SnilAcademicDepartment.DataAccess
+namespace SnilAcademicDepartment.DataAccess.Models
 {
     public partial class Specialisation
     {

@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using SnilAcademicDepartment.DataAccess.Models;
 
 namespace SnilAcademicDepartment.DataAccess.DBTypesInitialisation
 {
@@ -13,10 +14,10 @@ namespace SnilAcademicDepartment.DataAccess.DBTypesInitialisation
             string fathers,
             Biography biogr,
             Image img,
-            string acadTitle,
-            string degree,
+            AcademicTitle acadTitle,
+            Degree degree,
             Language lang,
-            string status,
+            ProfessionStatus status,
             string interests,
             string emailAddress,
             string phoneNumber,

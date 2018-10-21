@@ -1,4 +1,4 @@
-namespace SnilAcademicDepartment.DataAccess
+namespace SnilAcademicDepartment.DataAccess.Models
 {
     public partial class PreView
     {

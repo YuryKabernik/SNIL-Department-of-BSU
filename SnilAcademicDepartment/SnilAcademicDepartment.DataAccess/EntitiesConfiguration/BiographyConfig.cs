@@ -1,4 +1,5 @@
 ﻿using System.Data.Entity.ModelConfiguration;
+using SnilAcademicDepartment.DataAccess.Models;
 
 namespace SnilAcademicDepartment.DataAccess.Configurations
 {

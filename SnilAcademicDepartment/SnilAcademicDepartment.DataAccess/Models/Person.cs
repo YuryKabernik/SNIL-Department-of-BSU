@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace SnilAcademicDepartment.DataAccess
+namespace SnilAcademicDepartment.DataAccess.Models
 {
     public partial class Person
     {
@@ -14,11 +14,11 @@ namespace SnilAcademicDepartment.DataAccess
 
         public string FathersName { get; set; }
 
-        public string ProfessionStatus { get; set; }
+        public ProfessionStatus ProfessionStatus { get; set; }
 
-        public string Degree { get; set; }
+        public Degree Degree { get; set; }
 
-        public string AcademicTitle { get; set; }
+        public AcademicTitle AcademicTitle { get; set; }
 
         public int Biography { get; set; }
 

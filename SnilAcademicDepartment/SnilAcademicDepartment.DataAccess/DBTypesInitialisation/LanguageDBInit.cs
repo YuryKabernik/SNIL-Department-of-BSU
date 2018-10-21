@@ -1,4 +1,5 @@
 ﻿using System.Globalization;
+using SnilAcademicDepartment.DataAccess.Models;
 
 namespace SnilAcademicDepartment.DataAccess.DBTypesInitialisation
 {

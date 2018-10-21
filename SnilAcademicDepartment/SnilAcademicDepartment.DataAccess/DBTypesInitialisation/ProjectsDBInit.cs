@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using SnilAcademicDepartment.DataAccess.Models;
 
 namespace SnilAcademicDepartment.DataAccess.DBTypesInitialisation
 {

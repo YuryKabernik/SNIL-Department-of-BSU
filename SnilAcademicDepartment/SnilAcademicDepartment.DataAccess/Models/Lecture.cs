@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace SnilAcademicDepartment.DataAccess
+namespace SnilAcademicDepartment.DataAccess.Models
 {
     public partial class Lecture
     {

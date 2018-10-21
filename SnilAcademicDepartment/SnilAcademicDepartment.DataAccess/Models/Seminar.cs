@@ -1,10 +1,10 @@
-namespace SnilAcademicDepartment.DataAccess
-{
-    using System;
-    using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-    using System.ComponentModel.DataAnnotations.Schema;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
+namespace SnilAcademicDepartment.DataAccess.Models
+{
     public partial class Seminar
     {
         public int SeminarId { get; set; }

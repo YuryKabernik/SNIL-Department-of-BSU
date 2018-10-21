@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using SnilAcademicDepartment.BusinessLogic.DTOModels;
-using SnilAcademicDepartment.DataAccess;
+using SnilAcademicDepartment.DataAccess.Models;
 using System.Linq;
 using System.Net.Mail;
 
@@ -83,7 +83,7 @@ namespace SnilAcademicDepartment.BusinessLogic
 				.ForMember(des => des.Title, opt => opt.MapFrom(s => s.Title))
 				.ForMember(des => des.SpeakersProfessionStatusAndFullNames, opt => opt
 					.MapFrom(s => s.People.Select<Person, string>(j =>
-					string.Concat(j.PersonName, j.SecoundName, $" ({j.ProfessionStatus})"))))
+					string.Concat(j.PersonName, j.SecoundName, $" ({j.ProfessionStatus.StatusNaming})"))))
 				.ForMember(des => des.EventDate, opt => opt.MapFrom(s => s.EventDate))
 				.ForMember(des => des.Topic, opt => opt.MapFrom(s => s.Topic1.TopicName))
 				.ForMember(des => des.DocumentId, opt => opt.MapFrom(s => s.DoctId));
@@ -107,10 +107,10 @@ namespace SnilAcademicDepartment.BusinessLogic
 				.ForMember(des => des.PersonName, opt => opt.MapFrom(s => s.PersonName))
 				.ForMember(des => des.SecoundName, opt => opt.MapFrom(s => s.SecoundName))
 				.ForMember(des => des.FathersName, opt => opt.MapFrom(s => s.FathersName))
-				.ForMember(des => des.ProfessionStatus, opt => opt.MapFrom(s => s.ProfessionStatus))
-				.ForMember(des => des.AcademicTitle, opt => opt.MapFrom(s => s.AcademicTitle))
+				.ForMember(des => des.ProfessionStatus, opt => opt.MapFrom(s => s.ProfessionStatus.StatusNaming))
+				.ForMember(des => des.AcademicTitle, opt => opt.MapFrom(s => s.AcademicTitle.AcademicTitleNaming))
 				.ForMember(des => des.Biography, opt => opt.MapFrom(s => s.Biography1.Description))
-				.ForMember(des => des.Degree, opt => opt.MapFrom(s => s.Degree))
+				.ForMember(des => des.Degree, opt => opt.MapFrom(s => s.Degree.DegreeNaming))
 				.ForMember(des => des.Image, opt => opt.MapFrom(s => s.Image.Image1))
 				.ForMember(des => des.Lectures, opt => opt.MapFrom(s => s.Lectures.Select(o => o.LectureName)))
 				.ForMember(des => des.Seminars, opt => opt.MapFrom(s => s.Seminars.Select(o => o.Title)))
@@ -121,10 +121,10 @@ namespace SnilAcademicDepartment.BusinessLogic
 				.ForMember(des => des.PersonName, opt => opt.MapFrom(s => s.PersonName))
 				.ForMember(des => des.SecoundName, opt => opt.MapFrom(s => s.SecoundName))
 				.ForMember(des => des.FathersName, opt => opt.MapFrom(s => s.FathersName))
-				.ForMember(des => des.ProfessionStatus, opt => opt.MapFrom(s => s.ProfessionStatus))
-				.ForMember(des => des.AcademicTitle, opt => opt.MapFrom(s => s.AcademicTitle))
+				.ForMember(des => des.ProfessionStatus, opt => opt.MapFrom(s => s.ProfessionStatus.StatusNaming))
+				.ForMember(des => des.AcademicTitle, opt => opt.MapFrom(s => s.AcademicTitle.AcademicTitleNaming))
 				.ForMember(des => des.Biography, opt => opt.MapFrom(s => s.Biography1.Description))
-				.ForMember(des => des.Degree, opt => opt.MapFrom(s => s.Degree))
+				.ForMember(des => des.Degree, opt => opt.MapFrom(s => s.Degree.DegreeNaming))
 				.ForMember(des => des.Image, opt => opt.MapFrom(s => s.Image.Image1));
 
 			this.CreateMap<Person, Professor>() // Professor
@@ -132,10 +132,10 @@ namespace SnilAcademicDepartment.BusinessLogic
 				.ForMember(des => des.PersonName, opt => opt.MapFrom(s => s.PersonName))
 				.ForMember(des => des.SecoundName, opt => opt.MapFrom(s => s.SecoundName))
 				.ForMember(des => des.FathersName, opt => opt.MapFrom(s => s.FathersName))
-				.ForMember(des => des.ProfessionStatus, opt => opt.MapFrom(s => s.ProfessionStatus))
-				.ForMember(des => des.AcademicTitle, opt => opt.MapFrom(s => s.AcademicTitle))
+				.ForMember(des => des.ProfessionStatus, opt => opt.MapFrom(s => s.ProfessionStatus.StatusNaming))
+				.ForMember(des => des.AcademicTitle, opt => opt.MapFrom(s => s.AcademicTitle.AcademicTitleNaming))
 				.ForMember(des => des.Biography, opt => opt.MapFrom(s => s.Biography1.Description))
-				.ForMember(des => des.Degree, opt => opt.MapFrom(s => s.Degree))
+				.ForMember(des => des.Degree, opt => opt.MapFrom(s => s.Degree.DegreeNaming))
 				.ForMember(des => des.EmailAddress, opt => opt.MapFrom(s => s.EmailAddress))
 				.ForMember(des => des.PhoneNumber, opt => opt.MapFrom(s => s.PhoneNumber))
 				.ForMember(des => des.Image, opt => opt.MapFrom(s => s.Image.Image1))
@@ -148,10 +148,10 @@ namespace SnilAcademicDepartment.BusinessLogic
 				.ForMember(des => des.PersonName, opt => opt.MapFrom(s => s.PersonName))
 				.ForMember(des => des.SecoundName, opt => opt.MapFrom(s => s.SecoundName))
 				.ForMember(des => des.FathersName, opt => opt.MapFrom(s => s.FathersName))
-				.ForMember(des => des.ProfessionStatus, opt => opt.MapFrom(s => s.ProfessionStatus))
-				.ForMember(des => des.AcademicTitle, opt => opt.MapFrom(s => s.AcademicTitle))
+				.ForMember(des => des.ProfessionStatus, opt => opt.MapFrom(s => s.ProfessionStatus.StatusNaming))
+				.ForMember(des => des.AcademicTitle, opt => opt.MapFrom(s => s.AcademicTitle.AcademicTitleNaming))
 				.ForMember(des => des.Biography, opt => opt.MapFrom(s => s.Biography1.Description))
-				.ForMember(des => des.Degree, opt => opt.MapFrom(s => s.Degree))
+				.ForMember(des => des.Degree, opt => opt.MapFrom(s => s.Degree.DegreeNaming))
 				.ForMember(des => des.EmailAddress, opt => opt.MapFrom(s => s.EmailAddress))
 				.ForMember(des => des.PhoneNumber, opt => opt.MapFrom(s => s.PhoneNumber))
 				.ForMember(des => des.Image, opt => opt.MapFrom(s => s.Image.Image1))
@@ -163,10 +163,10 @@ namespace SnilAcademicDepartment.BusinessLogic
 				.ForMember(des => des.PersonName, opt => opt.MapFrom(s => s.PersonName))
 				.ForMember(des => des.SecoundName, opt => opt.MapFrom(s => s.SecoundName))
 				.ForMember(des => des.FathersName, opt => opt.MapFrom(s => s.FathersName))
-				.ForMember(des => des.ProfessionStatus, opt => opt.MapFrom(s => s.ProfessionStatus))
-				.ForMember(des => des.AcademicTitle, opt => opt.MapFrom(s => s.AcademicTitle))
+				.ForMember(des => des.ProfessionStatus, opt => opt.MapFrom(s => s.ProfessionStatus.StatusNaming))
+				.ForMember(des => des.AcademicTitle, opt => opt.MapFrom(s => s.AcademicTitle.AcademicTitleNaming))
 				.ForMember(des => des.Biography, opt => opt.MapFrom(s => s.Biography1.Description))
-				.ForMember(des => des.Degree, opt => opt.MapFrom(s => s.Degree))
+				.ForMember(des => des.Degree, opt => opt.MapFrom(s => s.Degree.DegreeNaming))
 				.ForMember(des => des.EmailAddress, opt => opt.MapFrom(s => s.EmailAddress))
 				.ForMember(des => des.PhoneNumber, opt => opt.MapFrom(s => s.PhoneNumber))
 				.ForMember(des => des.Image, opt => opt.MapFrom(s => s.Image.Image1))
