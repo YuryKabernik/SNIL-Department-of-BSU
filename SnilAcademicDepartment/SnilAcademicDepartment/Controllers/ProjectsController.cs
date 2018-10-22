@@ -1,6 +1,7 @@
 ﻿using NLog;
 using SnilAcademicDepartment.BusinessLogic.DTOModels;
 using SnilAcademicDepartment.BusinessLogic.Interfaces;
+using SnilAcademicDepartment.Common.Enumerations;
 using System;
 using System.Collections.Generic;
 using System.Threading;
@@ -46,13 +47,13 @@ namespace SnilAcademicDepartment.Controllers
                 projectPreview = await this._previewService.GetPagePreviewAsync("Projects", Thread.CurrentThread.CurrentCulture.LCID);
 
                 currentPreviews = await this._projectsPreview
-                    .GetProjectsPreviewsAsync<ProjectPreview>("Current", 0, 12, Thread.CurrentThread.CurrentCulture.LCID);
+                    .GetProjectsPreviewsAsync<ProjectPreview>(ProjectStatusDTO.Current, 0, 12, Thread.CurrentThread.CurrentCulture.LCID);
 
                 newPreviews = await this._projectsPreview
-                    .GetProjectsPreviewsAsync<ProjectPreview>("New", 0, 12, Thread.CurrentThread.CurrentCulture.LCID);
+                    .GetProjectsPreviewsAsync<ProjectPreview>(ProjectStatusDTO.New, 0, 12, Thread.CurrentThread.CurrentCulture.LCID);
 
                 finishedPreviews = await this._projectsPreview
-                    .GetProjectsPreviewsAsync<ProjectPreview>("Finished", 0, 12, Thread.CurrentThread.CurrentCulture.LCID);
+                    .GetProjectsPreviewsAsync<ProjectPreview>(ProjectStatusDTO.Finished, 0, 12, Thread.CurrentThread.CurrentCulture.LCID);
             }
             catch (Exception)
             {
@@ -80,7 +81,7 @@ namespace SnilAcademicDepartment.Controllers
                 projectModel = this._projectsService.GetProjectById(id, Thread.CurrentThread.CurrentCulture.LCID);
 
                 newPreviews = await this._projectsPreview
-                    .GetProjectsPreviewsAsync<ProjectPreview>("New", 0, 6, Thread.CurrentThread.CurrentCulture.LCID);
+                    .GetProjectsPreviewsAsync<ProjectPreview>(ProjectStatusDTO.New, 0, 6, Thread.CurrentThread.CurrentCulture.LCID);
 
             }
             catch (Exception )
@@ -107,7 +108,7 @@ namespace SnilAcademicDepartment.Controllers
                 projectModel = this._projectsService.GetProjectById(id, Thread.CurrentThread.CurrentCulture.LCID);
 
                 finishedPreviews = await this._projectsPreview
-                    .GetProjectsPreviewsAsync<ProjectPreview>("Finished", 0, 6, Thread.CurrentThread.CurrentCulture.LCID);
+                    .GetProjectsPreviewsAsync<ProjectPreview>(ProjectStatusDTO.Finished, 0, 6, Thread.CurrentThread.CurrentCulture.LCID);
 
             }
             catch (Exception)
@@ -134,7 +135,7 @@ namespace SnilAcademicDepartment.Controllers
                 projectModel = this._projectsService.GetProjectById(id, Thread.CurrentThread.CurrentCulture.LCID);
 
                 currentPreviews = await this._projectsPreview
-                   .GetProjectsPreviewsAsync<ProjectPreview>("Current", 0, 6, Thread.CurrentThread.CurrentCulture.LCID);
+                   .GetProjectsPreviewsAsync<ProjectPreview>(ProjectStatusDTO.Current, 0, 6, Thread.CurrentThread.CurrentCulture.LCID);
 
             }
             catch (Exception)

@@ -140,6 +140,10 @@
     <Compile Include="Migrations\201810211045134_AddProfessionTables.Designer.cs">
       <DependentUpon>201810211045134_AddProfessionTables.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201810221951291_SetProjectStatusAsEnum.cs" />
+    <Compile Include="Migrations\201810221951291_SetProjectStatusAsEnum.Designer.cs">
+      <DependentUpon>201810221951291_SetProjectStatusAsEnum.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AcademicTitle.cs" />
     <Compile Include="Models\Biography.cs" />
@@ -148,6 +152,7 @@
     <Compile Include="Models\Document.cs" />
     <Compile Include="Models\EducationBlock.cs" />
     <Compile Include="Models\EducationTopic.cs" />
+    <Compile Include="Models\EnumType\ProjectStatus.cs" />
     <Compile Include="Models\HallOfFame.cs" />
     <Compile Include="Models\Image.cs" />
     <Compile Include="Models\Language.cs" />
@@ -213,9 +218,13 @@
     <EmbeddedResource Include="Migrations\201810211045134_AddProfessionTables.resx">
       <DependentUpon>201810211045134_AddProfessionTables.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810221951291_SetProjectStatusAsEnum.resx">
+      <DependentUpon>201810221951291_SetProjectStatusAsEnum.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Content Include="img\BSU3.jpg" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

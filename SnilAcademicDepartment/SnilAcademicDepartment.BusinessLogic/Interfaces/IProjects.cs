@@ -1,4 +1,5 @@
 ﻿using SnilAcademicDepartment.BusinessLogic.DTOModels;
+using SnilAcademicDepartment.Common.Enumerations;
 using System.Collections.Generic;
 
 namespace SnilAcademicDepartment.BusinessLogic.Interfaces
@@ -11,7 +12,7 @@ namespace SnilAcademicDepartment.BusinessLogic.Interfaces
         /// <param name="projectType"></param>
         /// <param name="langLCID"></param>
         /// <returns></returns>
-        ProjectModel GetProjectByStatus(string projectStatus, int langLCID);
+        ProjectModel GetProjectByStatus(ProjectStatusDTO projectStatus, int langLCID);
 
         /// <summary>
         /// Get project by id and language code.
@@ -27,7 +28,7 @@ namespace SnilAcademicDepartment.BusinessLogic.Interfaces
         /// <param name="projectType">Status of the project.</param>
         /// <param name="langLCID"></param>
         /// <returns></returns>
-        IEnumerable<ProjectModel> GetProjectsByStatus(string projectStatus, int langLCID);
+        IEnumerable<ProjectModel> GetProjectsByStatus(ProjectStatusDTO projectStatus, int langLCID);
 
         /// <summary>
         /// Get number of projects from start to end index.
@@ -37,6 +38,6 @@ namespace SnilAcademicDepartment.BusinessLogic.Interfaces
         /// <param name="endIndex"></param>
         /// <param name="langLCID"></param>
         /// <returns></returns>
-        IEnumerable<ProjectModel> GetProjectsByStatus(string projectStatus, int startIndex, int endIndex, int langLCID);
+        IEnumerable<ProjectModel> GetProjectsByStatus(ProjectStatusDTO projectStatus, int startIndex, int endIndex, int langLCID);
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using SnilAcademicDepartment.DataAccess.Models;
+using SnilAcademicDepartment.DataAccess.Models.EnumTypes;
 
 namespace SnilAcademicDepartment.DataAccess.DBTypesInitialisation
 {
@@ -26,7 +27,7 @@ namespace SnilAcademicDepartment.DataAccess.DBTypesInitialisation
              int commonId,
              string title,
              string discriptionPrefix,
-             string projectStatus,
+			 ProjectStatus projectStatus,
              DateTime? dataTime,
              Language language,
              Image image,
@@ -39,7 +40,7 @@ namespace SnilAcademicDepartment.DataAccess.DBTypesInitialisation
                 ProjectName = title,
                 ShortDescription = discriptionPrefix + _shortDiscription,
                 Description = discriptionPrefix + _description,
-                ProjectStatus = projectStatus,
+                Status = projectStatus,
                 CreationDate = dataTime,
                 Language = language,
                 Image = image,

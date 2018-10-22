@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
+using SnilAcademicDepartment.Common.Enumerations;
 
 namespace SnilAcademicDepartment.BusinessLogic.Interfaces
 {
@@ -11,7 +12,7 @@ namespace SnilAcademicDepartment.BusinessLogic.Interfaces
         /// <param name="projectType"></param>
         /// <param name="langLCID"></param>
         /// <returns></returns>
-        T GetProjectPreview<T>(string projectStatus, int langLCID);
+        T GetProjectPreview<T>(ProjectStatusDTO projectStatus, int langLCID);
 
         /// <summary>
         /// Get previews of all projects by type and language code.
@@ -19,7 +20,7 @@ namespace SnilAcademicDepartment.BusinessLogic.Interfaces
         /// <param name="projectType">Status of the project.</param>
         /// <param name="langLCID"></param>
         /// <returns></returns>
-        IEnumerable<T> GetProjectsPreviews<T>(string projectStatus, int langLCID);
+        IEnumerable<T> GetProjectsPreviews<T>(ProjectStatusDTO projectStatus, int langLCID);
 
         /// <summary>
         /// Get number of projects from start to end index by type and language code.
@@ -29,7 +30,7 @@ namespace SnilAcademicDepartment.BusinessLogic.Interfaces
         /// <param name="endIndex"></param>
         /// <param name="langLCID"></param>
         /// <returns></returns>
-        IEnumerable<T> GetProjectsPreviews<T>(string projectStatus, int startIndex, int endIndex, int langLCID);
+        IEnumerable<T> GetProjectsPreviews<T>(ProjectStatusDTO projectStatus, int startIndex, int endIndex, int langLCID);
 
         /// <summary>
         /// Get preview of the first project by type and language code.
@@ -37,7 +38,7 @@ namespace SnilAcademicDepartment.BusinessLogic.Interfaces
         /// <param name="projectType"></param>
         /// <param name="langLCID"></param>
         /// <returns></returns>
-        Task<T> GetProjectPreviewAsync<T>(string projectStatus, int langLCID);
+        Task<T> GetProjectPreviewAsync<T>(ProjectStatusDTO projectStatus, int langLCID);
 
         /// <summary>
         /// Get previews of all projects by type and language code.
@@ -45,7 +46,7 @@ namespace SnilAcademicDepartment.BusinessLogic.Interfaces
         /// <param name="projectType">Status of the project.</param>
         /// <param name="langLCID"></param>
         /// <returns></returns>
-        Task<IEnumerable<T>> GetProjectsPreviewsAsync<T>(string projectStatus, int langLCID);
+        Task<IEnumerable<T>> GetProjectsPreviewsAsync<T>(ProjectStatusDTO projectStatus, int langLCID);
 
         /// <summary>
         /// Get number of projects from start to end index by type and language code.
@@ -55,6 +56,6 @@ namespace SnilAcademicDepartment.BusinessLogic.Interfaces
         /// <param name="endIndex"></param>
         /// <param name="langLCID"></param>
         /// <returns></returns>
-        Task<IEnumerable<T>> GetProjectsPreviewsAsync<T>(string projectStatus, int startIndex, int endIndex, int langLCID);
+        Task<IEnumerable<T>> GetProjectsPreviewsAsync<T>(ProjectStatusDTO projectStatus, int startIndex, int endIndex, int langLCID);
     }
 }

@@ -2,9 +2,9 @@ namespace SnilAcademicDepartment.DataAccess.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
+	using SnilAcademicDepartment.DataAccess.Models.EnumTypes;
 
-    public partial class Project
+	public partial class Project
     {
         public int ProjectId { get; set; }
 
@@ -18,7 +18,7 @@ namespace SnilAcademicDepartment.DataAccess.Models
 
         public string ShortDescription { get; set; }
 
-        public string ProjectStatus { get; set; }
+        public ProjectStatus Status { get; set; }
 
         public int? ImageId { get; set; }
 
