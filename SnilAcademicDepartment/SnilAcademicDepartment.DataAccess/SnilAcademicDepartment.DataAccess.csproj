@@ -144,6 +144,10 @@
     <Compile Include="Migrations\201810221951291_SetProjectStatusAsEnum.Designer.cs">
       <DependentUpon>201810221951291_SetProjectStatusAsEnum.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201810271522023_StringifyStatus.cs" />
+    <Compile Include="Migrations\201810271522023_StringifyStatus.Designer.cs">
+      <DependentUpon>201810271522023_StringifyStatus.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AcademicTitle.cs" />
     <Compile Include="Models\Biography.cs" />
@@ -220,6 +224,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201810221951291_SetProjectStatusAsEnum.resx">
       <DependentUpon>201810221951291_SetProjectStatusAsEnum.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810271522023_StringifyStatus.resx">
+      <DependentUpon>201810271522023_StringifyStatus.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

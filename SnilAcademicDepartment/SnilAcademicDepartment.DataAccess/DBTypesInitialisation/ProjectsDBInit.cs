@@ -40,7 +40,7 @@ namespace SnilAcademicDepartment.DataAccess.DBTypesInitialisation
                 ProjectName = title,
                 ShortDescription = discriptionPrefix + _shortDiscription,
                 Description = discriptionPrefix + _description,
-                Status = projectStatus,
+                Status = projectStatus.ToString(),
                 CreationDate = dataTime,
                 Language = language,
                 Image = image,

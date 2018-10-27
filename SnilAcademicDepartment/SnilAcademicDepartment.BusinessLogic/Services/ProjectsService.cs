@@ -80,7 +80,7 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
 			}
 
 			var requestResult = this._repository.Projects
-				.FirstOrDefault(e => (int)e.Status == (int)projectStatus
+				.FirstOrDefault(e => e.Status.Equals(projectStatus.ToString(), StringComparison.OrdinalIgnoreCase)
 				&& e.Language.LanguageCode == langLCID);
 
 			if (requestResult == null)
@@ -105,7 +105,7 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
 			}
 
 			var requestResult = this._repository.Projects
-				.Where(e => (int)e.Status == (int)projectStatus && e.Language.LanguageCode == langLCID)
+				.Where(e => e.Status.Equals(projectStatus.ToString(), StringComparison.OrdinalIgnoreCase) && e.Language.LanguageCode == langLCID)
 				.AsEnumerable();
 
 			if (requestResult == null)
@@ -137,7 +137,7 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
 			}
 
 			var requestResult = this._repository.Projects
-				.Where(e => (int)e.Status == (int)projectStatus && e.Language.LanguageCode == langLCID)
+				.Where(e => e.Status.Equals(projectStatus.ToString(), StringComparison.OrdinalIgnoreCase) && e.Language.LanguageCode == langLCID)
 				.AsEnumerable().Skip(startIndex).Take(endIndex);
 
 			if (requestResult == null)
@@ -198,7 +198,7 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
 			}
 
 			var requestResult = await this._repository.Projects
-				.FirstOrDefaultAsync(e => (int)e.Status == (int)projectStatus
+				.FirstOrDefaultAsync(e => e.Status.Equals(projectStatus.ToString(), StringComparison.OrdinalIgnoreCase)
 				&& e.Language.LanguageCode == langLCID);
 
 			if (requestResult == null)
@@ -237,7 +237,7 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
 			}
 
 			var requestResult = await this._repository.Projects
-				.Where(e => (int)e.Status == (int)projectStatus && e.Language.LanguageCode == langLCID)
+				.Where(e => e.Status.Equals(projectStatus.ToString(), StringComparison.OrdinalIgnoreCase) && e.Language.LanguageCode == langLCID)
 				.ToListAsync();
 
 			if (requestResult == null)
@@ -285,7 +285,7 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
 			}
 
 			var requestResult = await this._repository.Projects
-				.Where(e => (int)e.Status == (int)projectStatus && e.Language.LanguageCode == langLCID)
+				.Where(e => e.Status.Equals(projectStatus.ToString(), StringComparison.OrdinalIgnoreCase) && e.Language.LanguageCode == langLCID)
 				.ToListAsync();
 
 			var takenProjects = requestResult

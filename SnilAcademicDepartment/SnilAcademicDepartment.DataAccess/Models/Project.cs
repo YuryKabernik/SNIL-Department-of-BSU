@@ -18,7 +18,7 @@ namespace SnilAcademicDepartment.DataAccess.Models
 
         public string ShortDescription { get; set; }
 
-        public ProjectStatus Status { get; set; }
+        public string Status { get; set; }
 
         public int? ImageId { get; set; }
 
