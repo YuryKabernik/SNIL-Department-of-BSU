@@ -82,11 +82,10 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
 		/// <returns>Returns collestion of persons of a specific education degree.</returns>
 		public async Task<IEnumerable<T>> GetPersonsByDegreeAsync<T>(DegreeEnum degreeName, int langLCID)
 		{
-			//if (string.IsNullOrWhiteSpace(degreeName.)) 
-			//{
-			//    throw new ArgumentNullException(nameof(degreeName), "Argument can't be null, empty or white space.");
-			//}
-
+			if (degreeName != null)
+			{
+				throw new ArgumentNullException(nameof(degreeName), "Argument can't be null, empty or white space.");
+			}
 
 			var result = await this._repository.People
 				.Where(p => p.Degree.UniqueCode == (int)degreeName && p.Language.LanguageCode == langLCID)
@@ -108,10 +107,10 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
 		/// <returns>Returns collestion of persons of a specific academic title.</returns>
 		public async Task<IEnumerable<T>> GetPersonsByAcademicTitleAsync<T>(AcademicTitleEnum academicTitle, int langLCID)
 		{
-			//if (string.IsNullOrWhiteSpace(academicTitle))
-			//{
-			//	throw new ArgumentNullException(nameof(academicTitle), "Argument can't be null, empty or white space.");
-			//}
+			if (academicTitle != null)
+			{
+				throw new ArgumentNullException(nameof(academicTitle), "Argument can't be null, empty or white space.");
+			}
 
 			var result = await this._repository.People
 				.Where(p => p.AcademicTitle.UniqueCode == (int)academicTitle && p.Language.LanguageCode == langLCID)
@@ -133,10 +132,10 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
 		/// <returns>Returns collestion of persons of a specific profession status.</returns>
 		public async Task<IEnumerable<T>> GetPersonsByProfessionStatusAsync<T>(ProfessionStatusEnum professionStatus, int langLCID)
 		{
-			//if (string.IsNullOrWhiteSpace(professionStatus))
-			//{
-			//	throw new ArgumentNullException(nameof(professionStatus), "Argument can't be null, empty or white space.");
-			//}
+			if (professionStatus != null)
+			{
+				throw new ArgumentNullException(nameof(professionStatus), "Argument can't be null, empty or white space.");
+			}
 
 			var result = await this._repository.People
 				.Where(p => p.ProfessionStatus.UniqueCode == (int)professionStatus && p.Language.LanguageCode == langLCID)

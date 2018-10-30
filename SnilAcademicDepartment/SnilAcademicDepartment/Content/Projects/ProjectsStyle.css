@@ -48,9 +48,12 @@
   width: 80%;
   text-align: center;
 }
-.content .container .rowcurrent .block p {
-  display: block;
-  margin-top: 25px;
+.content .container .rowcurrent .block p, 
+.block p {
+	overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 8;
+    -webkit-box-orient: vertical;
 }
 .flex-container {
     display: flex;

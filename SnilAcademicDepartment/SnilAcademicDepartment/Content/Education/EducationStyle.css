@@ -24,10 +24,16 @@
 .content .container .row2 {
   padding-bottom: 25px;
 }
+.content .container .row2 p{
+	overflow: hidden;
+	display: -webkit-box;
+	-webkit-line-clamp: 8;
+	-webkit-box-orient: vertical;
+}
 .content .container .row2 ul {
-  text-decoration: none;
-  list-style-type: none;
-  padding-top: 45px;
+	text-decoration: none;
+	list-style-type: none;
+	padding-top: 45px;
 }
 .content .container .row2 ul li {
   text-align: center;
@@ -51,4 +57,24 @@
 .flex-container {
     display: flex;
     flex-flow: row wrap;
+}
+.block .speaker-list {
+	text-decoration: none;
+	list-style-type: none;
+
+	/* BOTH of the following are required for text-overflow */
+	white-space: nowrap;
+	overflow: hidden;
+}
+.speaker-list .speaker,
+.author-list .author {
+	text-overflow: ellipsis;
+	padding-left: 10px;
+}
+.block .seminar-content,
+.block .lecture-content {
+	overflow: hidden;
+	display: -webkit-box;
+	-webkit-line-clamp: 8;
+	-webkit-box-orient: vertical;
 }
