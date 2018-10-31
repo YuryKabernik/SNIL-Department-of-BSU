@@ -55,7 +55,7 @@ namespace SnilAcademicDepartment.Controllers
                 finishedPreviews = await this._projectsPreview
                     .GetProjectsPreviewsAsync<ProjectPreview>(ProjectStatusDTO.Finished, 0, 12, Thread.CurrentThread.CurrentCulture.LCID);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 return Redirect(this.Request.UrlReferrer?.AbsoluteUri ?? "/");
             }
