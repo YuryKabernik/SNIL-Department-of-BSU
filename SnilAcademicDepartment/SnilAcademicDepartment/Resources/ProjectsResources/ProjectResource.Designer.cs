@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Resources.ProjectsResources {
+namespace SnilAcademicDepartment.Resources.ProjectsResources {
     using System;
     
     
@@ -84,6 +84,15 @@ namespace Resources.ProjectsResources {
         public static string NewTitle {
             get {
                 return ResourceManager.GetString("NewTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Проекты.
+        /// </summary>
+        public static string Projects {
+            get {
+                return ResourceManager.GetString("Projects", resourceCulture);
             }
         }
     }

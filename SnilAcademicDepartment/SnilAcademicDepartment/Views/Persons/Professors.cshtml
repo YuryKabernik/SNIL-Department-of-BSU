@@ -1,5 +1,8 @@
 ﻿@using SnilAcademicDepartment.BusinessLogic.DTOModels;
 @using SnilAcademicDepartment.Resources.PersonsResources;
+@using SnilAcademicDepartment.Resources.ProjectsResources;
+@using Resources.EducationResources;
+
 @{
 	Layout = "~/Views/Shared/_Layout.cshtml";
 	@Styles.Render("~/Content/peoplecss");
@@ -36,15 +39,15 @@
 						@{
 							if (professor.Projects.Count() > 0)
 							{
-								@UlStringList(professor.Projects, "Projects");
+								@UlStringList(professor.Projects, ProjectResource.Projects);
 							}
 							if (professor.Seminars.Count() > 0)
 							{
-								@UlStringList(professor.Seminars, "Seminars");
+								@UlStringList(professor.Seminars, EducationResource.Seminars);
 							}
 							if (professor.Lectures.Count() > 0)
 							{
-								@UlStringList(professor.Lectures, "Lectures");
+								@UlStringList(professor.Lectures, EducationResource.Lectures);
 							}
 						}
 					</div>

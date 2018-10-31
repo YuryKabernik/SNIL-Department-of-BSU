@@ -82,7 +82,7 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
 		/// <returns>Returns collestion of persons of a specific education degree.</returns>
 		public async Task<IEnumerable<T>> GetPersonsByDegreeAsync<T>(DegreeEnum degreeName, int langLCID)
 		{
-			if (degreeName != null)
+			if (degreeName == null)
 			{
 				throw new ArgumentNullException(nameof(degreeName), "Argument can't be null, empty or white space.");
 			}
@@ -107,7 +107,7 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
 		/// <returns>Returns collestion of persons of a specific academic title.</returns>
 		public async Task<IEnumerable<T>> GetPersonsByAcademicTitleAsync<T>(AcademicTitleEnum academicTitle, int langLCID)
 		{
-			if (academicTitle != null)
+			if (academicTitle == null)
 			{
 				throw new ArgumentNullException(nameof(academicTitle), "Argument can't be null, empty or white space.");
 			}
@@ -132,7 +132,7 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
 		/// <returns>Returns collestion of persons of a specific profession status.</returns>
 		public async Task<IEnumerable<T>> GetPersonsByProfessionStatusAsync<T>(ProfessionStatusEnum professionStatus, int langLCID)
 		{
-			if (professionStatus != null)
+			if (professionStatus == null)
 			{
 				throw new ArgumentNullException(nameof(professionStatus), "Argument can't be null, empty or white space.");
 			}

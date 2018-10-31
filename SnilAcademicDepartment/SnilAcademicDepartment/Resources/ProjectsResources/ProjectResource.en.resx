@@ -126,4 +126,7 @@
   <data name="NewTitle" xml:space="preserve">
     <value>New projects</value>
   </data>
+  <data name="Projects" xml:space="preserve">
+    <value>Projects</value>
+  </data>
 </root>
