@@ -81,6 +81,7 @@
     <Compile Include="EntitiesConfiguration\ProfessionStatusConfig.cs" />
     <Compile Include="EntitiesConfiguration\ProjectConfig.cs" />
     <Compile Include="EntitiesConfiguration\SpecializationConfig.cs" />
+    <Compile Include="EntitiesConfiguration\StudentsConfig.cs" />
     <Compile Include="EntitiesConfiguration\TopicConfig.cs" />
     <Compile Include="InjectionPackageDAL.cs" />
     <Compile Include="Interfaces\IRepository.cs" />
@@ -148,6 +149,10 @@
     <Compile Include="Migrations\201810271522023_StringifyStatus.Designer.cs">
       <DependentUpon>201810271522023_StringifyStatus.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201810311856280_AddStudentsTableToDatabase.cs" />
+    <Compile Include="Migrations\201810311856280_AddStudentsTableToDatabase.Designer.cs">
+      <DependentUpon>201810311856280_AddStudentsTableToDatabase.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AcademicTitle.cs" />
     <Compile Include="Models\Biography.cs" />
@@ -166,6 +171,7 @@
     <Compile Include="Models\PreView.cs" />
     <Compile Include="Models\ProfessionStatus.cs" />
     <Compile Include="Models\Project.cs" />
+    <Compile Include="Models\Students.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Models\Seminar.cs" />
     <Compile Include="Models\Specialisation.cs" />
@@ -227,6 +233,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201810271522023_StringifyStatus.resx">
       <DependentUpon>201810271522023_StringifyStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810311856280_AddStudentsTableToDatabase.resx">
+      <DependentUpon>201810311856280_AddStudentsTableToDatabase.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

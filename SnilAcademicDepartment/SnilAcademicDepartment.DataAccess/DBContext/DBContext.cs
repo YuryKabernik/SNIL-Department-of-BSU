@@ -32,8 +32,9 @@ namespace SnilAcademicDepartment.DataAccess
         public virtual DbSet<Specialisation> Specialisations { get; set; }
         // public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<Topic> Topics { get; set; }
+        public virtual DbSet<Students> Students { get; set; }
 
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+		protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
 
@@ -52,6 +53,7 @@ namespace SnilAcademicDepartment.DataAccess
             modelBuilder.Configurations.Add(new SpecializationConfig());
             modelBuilder.Configurations.Add(new ProjectConfig());
             modelBuilder.Configurations.Add(new TopicConfig());
-        }
+            modelBuilder.Configurations.Add(new StudentsConfig());
+		}
     }
 }

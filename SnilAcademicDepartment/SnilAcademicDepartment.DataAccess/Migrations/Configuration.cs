@@ -30,10 +30,10 @@ namespace SnilAcademicDepartment.DataAccess.Migrations
 
 		private Image _image;
 
-		private static string _imgPath = System.AppDomain.CurrentDomain.BaseDirectory + "img\\BSU3.jpg"; // D:\Visual Studio Projects\SNIL\SnilAcademicDepartment\SnilAcademicDepartment.DataAccess\img\BSU3.jpg
+		private static string _imgPath = @"D:\GitHub_projects\SNIL\SNIL-Department-of-BSU\SnilAcademicDepartment\SnilAcademicDepartment.DataAccess\img\BSU3.jpg"; // D:\Visual Studio Projects\SNIL\SnilAcademicDepartment\SnilAcademicDepartment.DataAccess\img\BSU3.jpg
 		private byte[] _imgByte = File.ReadAllBytes(_imgPath);
 
-		private static string _docPath = System.AppDomain.CurrentDomain.BaseDirectory + "img\\Head - BSU.docx"; // D:\Visual Studio Projects\SNIL\SnilAcademicDepartment\SnilAcademicDepartment.DataAccess\img\Ректору  - БГУ.docx
+		private static string _docPath = @"D:\GitHub_projects\SNIL\SNIL-Department-of-BSU\SnilAcademicDepartment\SnilAcademicDepartment.DataAccess\img\Head - BSU.docx"; // D:\Visual Studio Projects\SNIL\SnilAcademicDepartment\SnilAcademicDepartment.DataAccess\img\Ректору  - БГУ.docx
 		private byte[] _docByte = File.ReadAllBytes(_docPath);
 
 		/* Paths to files
