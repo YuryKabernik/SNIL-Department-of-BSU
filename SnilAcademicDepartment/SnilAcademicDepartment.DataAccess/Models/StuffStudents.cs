@@ -3,9 +3,9 @@
 namespace SnilAcademicDepartment.DataAccess.Models
 {
 	/// <summary>
-	/// Department SNIL stuff table.
+	/// Table of SNIL stuff of students.
 	/// </summary>
-	public class StuffDepartment
+	public class StuffStudents
 	{
 		/// <summary>
 		/// Gets or sets the identifier.
@@ -15,25 +15,25 @@ namespace SnilAcademicDepartment.DataAccess.Models
 		/// </value>
 		public int Id { get; set; }
 		/// <summary>
-		/// Gets or sets the person identifier.
+		/// Gets or sets the student.
 		/// </summary>
 		/// <value>
-		/// The person identifier.
+		/// The student.
 		/// </value>
-		public Person PersonId { get; set; }
+		public Students Student { get; set; }
 		/// <summary>
-		/// Gets or sets the data assign.
+		/// Gets or sets the date entrance.
 		/// </summary>
 		/// <value>
-		/// The data assign.
+		/// The date entrance.
 		/// </value>
-		public DateTime DataAssign { get; set; }
+		public DateTime DateEntrance { get; set; }
 		/// <summary>
-		/// Gets or sets the date release.
+		/// Gets or sets the date departure.
 		/// </summary>
 		/// <value>
-		/// The date release.
+		/// The date departure.
 		/// </value>
-		public DateTime DateRelease { get; set; }
+		public DateTime DateDeparture { get; set; }
 	}
 }

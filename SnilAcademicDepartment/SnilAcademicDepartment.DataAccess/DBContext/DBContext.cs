@@ -34,6 +34,7 @@ namespace SnilAcademicDepartment.DataAccess
         public virtual DbSet<Topic> Topics { get; set; }
         public virtual DbSet<Students> Students { get; set; }
         public virtual DbSet<StuffDepartment> StuffDepartment { get; set; }
+        public virtual DbSet<StuffStudents> StuffStudents { get; set; }
 
 		protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -56,6 +57,7 @@ namespace SnilAcademicDepartment.DataAccess
             modelBuilder.Configurations.Add(new TopicConfig());
             modelBuilder.Configurations.Add(new StudentsConfig());
             modelBuilder.Configurations.Add(new StuffDepartmentConfig());
+            modelBuilder.Configurations.Add(new StuffStudentsConfig());
 		}
     }
 }
