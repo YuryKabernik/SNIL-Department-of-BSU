@@ -23,9 +23,9 @@
             @ViewBag.Preview.Description
         </div>
     </div>
-        @RenderProjectsV2(@Resources.ProjectsResources.ProjectResource.NewTitle, ViewBag.newPreviews as IEnumerable<ProjectPreview>)
-        @RenderProjectsV2(@Resources.ProjectsResources.ProjectResource.FinishedTitle, ViewBag.finishedPreviews as IEnumerable<ProjectPreview>)
-        @RenderProjectsV2(@Resources.ProjectsResources.ProjectResource.CurrentTitle, ViewBag.currentPreviews as IEnumerable<ProjectPreview>)
+        @RenderProjectsV2(@ProjectsResources.ProjectResource.NewTitle, ViewBag.newPreviews as IEnumerable<ProjectPreview>)
+        @RenderProjectsV2(@ProjectsResources.ProjectResource.FinishedTitle, ViewBag.finishedPreviews as IEnumerable<ProjectPreview>)
+        @RenderProjectsV2(@ProjectsResources.ProjectResource.CurrentTitle, ViewBag.currentPreviews as IEnumerable<ProjectPreview>)
 </div>
 
 @helper RenderProjects(string title, IEnumerable<ProjectPreview> collection)
