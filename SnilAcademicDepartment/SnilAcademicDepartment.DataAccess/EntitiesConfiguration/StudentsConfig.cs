@@ -1,4 +1,5 @@
-﻿using System.Data.Entity.ModelConfiguration;
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using System.Data.Entity.ModelConfiguration;
 using SnilAcademicDepartment.DataAccess.Models;
 
 namespace SnilAcademicDepartment.DataAccess.Configurations
@@ -10,6 +11,7 @@ namespace SnilAcademicDepartment.DataAccess.Configurations
 			this.ToTable("Students");
 
 			this.HasKey(p => p.Id);
+			this.Property(p => p.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
 
 			this.Property(p => p.FirstName)
 				.HasMaxLength(50)
@@ -29,6 +31,17 @@ namespace SnilAcademicDepartment.DataAccess.Configurations
 
 			this.Property(p => p.GraduationYear)
 				.IsOptional();
+
+			this.Property(p => p.UniqueIdentifier)
+				.IsRequired();
+
+			this.HasOptional(p => p.StudentType)
+				.WithMany(p=>p.Students)
+				.WillCascadeOnDelete(false);
+
+			this.HasRequired(p => p.Language)
+				.WithMany(p => p.Students)
+				.WillCascadeOnDelete(false);
 		}
 	}
 }

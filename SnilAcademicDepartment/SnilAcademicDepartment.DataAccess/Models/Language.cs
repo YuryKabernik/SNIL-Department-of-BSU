@@ -11,8 +11,10 @@ namespace SnilAcademicDepartment.DataAccess.Models
         public string LanguageName { get; set; }
 
         public int LanguageCode { get; set; }
-
-        public virtual ICollection<EducationBlock> EducationBlocks { get; set; } = new HashSet<EducationBlock>();
+		
+		/// Gets or sets the student one-to-many relationship.
+		/// 
+		public virtual ICollection<EducationBlock> EducationBlocks { get; set; } = new HashSet<EducationBlock>();
 
         public virtual ICollection<Lecture> Lectures { get; set; } = new HashSet<Lecture>();
 
@@ -25,5 +27,7 @@ namespace SnilAcademicDepartment.DataAccess.Models
         public virtual ICollection<Seminar> Seminars { get; set; } = new HashSet<Seminar>();
 
         public virtual ICollection<Specialisation> Specialisations { get; set; } = new HashSet<Specialisation>();
-    }
+
+		public virtual ICollection<Students> Students { get; set; } = new HashSet<Students>();
+	}
 }

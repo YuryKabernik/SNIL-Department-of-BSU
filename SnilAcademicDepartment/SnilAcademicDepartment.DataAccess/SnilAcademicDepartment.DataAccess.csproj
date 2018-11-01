@@ -82,6 +82,7 @@
     <Compile Include="EntitiesConfiguration\ProjectConfig.cs" />
     <Compile Include="EntitiesConfiguration\SpecializationConfig.cs" />
     <Compile Include="EntitiesConfiguration\StudentsConfig.cs" />
+    <Compile Include="EntitiesConfiguration\StudentTypesConfig.cs" />
     <Compile Include="EntitiesConfiguration\StuffDepartmentConfig.cs" />
     <Compile Include="EntitiesConfiguration\StuffStudentsConfig.cs" />
     <Compile Include="EntitiesConfiguration\TopicConfig.cs" />
@@ -163,6 +164,10 @@
     <Compile Include="Migrations\201810312012100_AddStuffStudentsTable.Designer.cs">
       <DependentUpon>201810312012100_AddStuffStudentsTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201811011937475_AddStudentTypesAndUpdateStudentTable.cs" />
+    <Compile Include="Migrations\201811011937475_AddStudentTypesAndUpdateStudentTable.Designer.cs">
+      <DependentUpon>201811011937475_AddStudentTypesAndUpdateStudentTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AcademicTitle.cs" />
     <Compile Include="Models\Biography.cs" />
@@ -172,6 +177,7 @@
     <Compile Include="Models\EducationBlock.cs" />
     <Compile Include="Models\EducationTopic.cs" />
     <Compile Include="Models\EnumType\ProjectStatus.cs" />
+    <Compile Include="Models\EnumType\StudentType.cs" />
     <Compile Include="Models\HallOfFame.cs" />
     <Compile Include="Models\Image.cs" />
     <Compile Include="Models\Language.cs" />
@@ -182,6 +188,7 @@
     <Compile Include="Models\ProfessionStatus.cs" />
     <Compile Include="Models\Project.cs" />
     <Compile Include="Models\Students.cs" />
+    <Compile Include="Models\StudentTypes.cs" />
     <Compile Include="Models\StuffDepartment.cs" />
     <Compile Include="Models\StuffStudents.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -254,6 +261,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201810312012100_AddStuffStudentsTable.resx">
       <DependentUpon>201810312012100_AddStuffStudentsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811011937475_AddStudentTypesAndUpdateStudentTable.resx">
+      <DependentUpon>201811011937475_AddStudentTypesAndUpdateStudentTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

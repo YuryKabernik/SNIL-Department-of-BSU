@@ -15,6 +15,13 @@ namespace SnilAcademicDepartment.DataAccess.Models
 		/// </value>
 		public int Id { get; set; }
 		/// <summary>
+		/// Gets or sets person's unique identifier.
+		/// </summary>
+		/// <value>
+		/// The unique identifier.
+		/// </value>
+		public int UniqueIdentifier { get; set; }
+		/// <summary>
 		/// Gets or sets the first name.
 		/// </summary>
 		/// <value>
@@ -49,5 +56,19 @@ namespace SnilAcademicDepartment.DataAccess.Models
 		/// The students group.
 		/// </value>
 		public string StudentsGroup { get; set; }
+		/// <summary>
+		/// Gets or sets the language.
+		/// </summary>
+		/// <value>
+		/// The language.
+		/// </value>
+		public virtual Language Language { get; set; }
+		/// <summary>
+		/// Gets or sets the language.
+		/// </summary>
+		/// <value>
+		/// The language.
+		/// </value>
+		public virtual StudentTypes StudentType { get; set; }
 	}
 }
