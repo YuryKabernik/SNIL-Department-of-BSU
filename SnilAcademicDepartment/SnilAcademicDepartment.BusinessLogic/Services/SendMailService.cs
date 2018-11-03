@@ -5,18 +5,21 @@ using System.Net.Mail;
 using AutoMapper;
 using SnilAcademicDepartment.BusinessLogic.DTOModels;
 using SnilAcademicDepartment.MailService;
+using SnilAcademicDepartment.Common.ConfigManagerAdapter;
 
 namespace SnilAcademicDepartment.BusinessLogic.Services
 {
     public class SendMailService : IMailSender, ISendMail
     {
         private readonly SMTPService _mailClient;
-        private readonly IMapper _mapper;
+		private readonly ISNILConfigurationManager _configManager;
+		private readonly IMapper _mapper;
 
-        public SendMailService(SMTPService mailClient, IMapper mapper)
+        public SendMailService(SMTPService mailClient, ISNILConfigurationManager configManager, IMapper mapper)
         {
-            _mailClient = mailClient;
-            _mapper = mapper;
+			this._mailClient = mailClient;
+			this._configManager = configManager;
+			this._mapper = mapper;
         }
 
         public void SendMail(MailMessage mail)
