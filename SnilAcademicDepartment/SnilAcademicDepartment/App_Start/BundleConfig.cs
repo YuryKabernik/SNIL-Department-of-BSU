@@ -55,6 +55,9 @@ namespace SnilAcademicDepartment
 			bundles.Add(new StyleBundle("~/Content/contactcss").Include(
 					   "~/Content/bootstrap.min.css",
 					   "~/Content/ContactStyle.css"));
+
+			// Code removed for clarity.
+			BundleTable.EnableOptimizations = true;
 		}
 	}
 }
