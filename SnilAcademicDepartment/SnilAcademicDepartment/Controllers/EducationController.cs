@@ -9,6 +9,7 @@ using SnilAcademicDepartment.BusinessLogic.DTOModels;
 using System.Linq;
 using System.Threading.Tasks;
 using SnilAcademicDepartment.Resources.UnavaliableErrorResources;
+using SnilAcademicDepartment.Common.ConfigManagerAdapter;
 
 namespace SnilAcademicDepartment.Controllers
 {
@@ -20,24 +21,28 @@ namespace SnilAcademicDepartment.Controllers
         private readonly IEducation _educationService;
         private readonly ILecturePreview _lecturePreviewService;
         private readonly ISeminarPreview _seminarPreviewService;
+		private readonly ISNILConfigurationManager _configManager;
 
-        /// <summary>
-        /// Constructor of the EducationController.
-        /// </summary>
-        /// <param name="logger"></param>
-        /// <param name="previewService"></param>
-        /// <param name="educationService"></param>
-        /// <param name="lecturePreviewService"></param>
-        /// <param name="seminarPreviewService"></param>
-        public EducationController(
+		/// <summary>
+		/// Constructor of the EducationController.
+		/// </summary>
+		/// <param name="logger">The logger.</param>
+		/// <param name="configManager">The configuration manager.</param>
+		/// <param name="previewService">The preview service.</param>
+		/// <param name="educationService">The education service.</param>
+		/// <param name="lecturePreviewService">The lecture preview service.</param>
+		/// <param name="seminarPreviewService">The seminar preview service.</param>
+		public EducationController(
             ILogger logger,
-            IService previewService, 
+            ISNILConfigurationManager configManager,
+			IService previewService, 
             IEducation educationService, 
             ILecturePreview lecturePreviewService,
             ISeminarPreview seminarPreviewService)
         {
             this._logger = logger;
-            this._previewService = previewService;
+			this._configManager = configManager;
+			this._previewService = previewService;
             this._educationService = educationService;
             this._lecturePreviewService = lecturePreviewService;
             this._seminarPreviewService = seminarPreviewService;
