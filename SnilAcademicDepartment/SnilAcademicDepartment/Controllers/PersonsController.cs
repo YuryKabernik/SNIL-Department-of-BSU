@@ -9,6 +9,7 @@ using SnilAcademicDepartment.Resources.PersonsResources;
 using SnilAcademicDepartment.Resources.UnavaliableErrorResources;
 using Resources;
 using SnilAcademicDepartment.Common.Enumerations;
+using SnilAcademicDepartment.Common.ConfigManagerAdapter;
 
 namespace SnilAcademicDepartment.Controllers
 {
@@ -16,6 +17,7 @@ namespace SnilAcademicDepartment.Controllers
 	public class PersonsController : Controller
 	{
 		private readonly ILogger _logger;
+		private readonly ISNILConfigurationManager _configManager;
 		private readonly IPeople _peopleService;
 
 		/// <summary>
@@ -23,9 +25,10 @@ namespace SnilAcademicDepartment.Controllers
 		/// </summary>
 		/// <param name="logger"></param>
 		/// <param name="peopleService"></param>
-		public PersonsController(ILogger logger, IPeople peopleService)
+		public PersonsController(ILogger logger, ISNILConfigurationManager configManager, IPeople peopleService)
 		{
 			this._logger = logger;
+			this._configManager = configManager;
 			this._peopleService = peopleService;
 		}
 
