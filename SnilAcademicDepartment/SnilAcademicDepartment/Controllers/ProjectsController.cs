@@ -1,6 +1,7 @@
 ﻿using NLog;
 using SnilAcademicDepartment.BusinessLogic.DTOModels;
 using SnilAcademicDepartment.BusinessLogic.Interfaces;
+using SnilAcademicDepartment.Common.ConfigManagerAdapter;
 using SnilAcademicDepartment.Common.Enumerations;
 using System;
 using System.Collections.Generic;
@@ -14,7 +15,8 @@ namespace SnilAcademicDepartment.Controllers
     public class ProjectsController : Controller
     {
         private readonly ILogger _logger;
-        private readonly IService _previewService;
+		private readonly ISNILConfigurationManager _configManager;
+		private readonly IService _previewService;
         private readonly IProjects _projectsService;
         private readonly IProjectsPreview _projectsPreview;
 
@@ -23,10 +25,11 @@ namespace SnilAcademicDepartment.Controllers
         /// </summary>
         /// <param name="logger"></param>
         /// <param name="projectsService"></param>
-        public ProjectsController(ILogger logger,IService previewService, IProjects projectsService, IProjectsPreview projectsPreview)
+        public ProjectsController(ILogger logger, ISNILConfigurationManager configManager, IService previewService, IProjects projectsService, IProjectsPreview projectsPreview)
         {
             this._logger = logger;
-            this._previewService = previewService;
+			this._configManager = configManager;
+			this._previewService = previewService;
             this._projectsService = projectsService;
             this._projectsPreview = projectsPreview;
         }
