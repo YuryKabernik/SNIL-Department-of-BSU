@@ -45,6 +45,8 @@ namespace SnilAcademicDepartment.DataAccess.Models
         public virtual ICollection<Seminar> Seminars { get; set; } = new HashSet<Seminar>();
 
         public virtual ICollection<Lecture> Lectures { get; set; } = new HashSet<Lecture>();
-    }
+
+		public virtual ICollection<StuffPersonal> StuffPeople { get; set; } = new HashSet<StuffPersonal>();
+	}
     // EditAfterExtractingConfigs
 }

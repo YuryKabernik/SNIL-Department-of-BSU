@@ -84,6 +84,7 @@
     <Compile Include="EntitiesConfiguration\StudentsConfig.cs" />
     <Compile Include="EntitiesConfiguration\StudentTypesConfig.cs" />
     <Compile Include="EntitiesConfiguration\StuffDepartmentConfig.cs" />
+    <Compile Include="EntitiesConfiguration\StuffPersonalConfig.cs" />
     <Compile Include="EntitiesConfiguration\StuffStudentsConfig.cs" />
     <Compile Include="EntitiesConfiguration\TopicConfig.cs" />
     <Compile Include="InjectionPackageDAL.cs" />
@@ -168,6 +169,10 @@
     <Compile Include="Migrations\201811011937475_AddStudentTypesAndUpdateStudentTable.Designer.cs">
       <DependentUpon>201811011937475_AddStudentTypesAndUpdateStudentTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201811031029371_AddStuffPersonalTableToDataBase.cs" />
+    <Compile Include="Migrations\201811031029371_AddStuffPersonalTableToDataBase.Designer.cs">
+      <DependentUpon>201811031029371_AddStuffPersonalTableToDataBase.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AcademicTitle.cs" />
     <Compile Include="Models\Biography.cs" />
@@ -190,6 +195,7 @@
     <Compile Include="Models\Students.cs" />
     <Compile Include="Models\StudentTypes.cs" />
     <Compile Include="Models\StuffDepartment.cs" />
+    <Compile Include="Models\StuffPersonal.cs" />
     <Compile Include="Models\StuffStudents.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Models\Seminar.cs" />
@@ -264,6 +270,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201811011937475_AddStudentTypesAndUpdateStudentTable.resx">
       <DependentUpon>201811011937475_AddStudentTypesAndUpdateStudentTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811031029371_AddStuffPersonalTableToDataBase.resx">
+      <DependentUpon>201811031029371_AddStuffPersonalTableToDataBase.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
