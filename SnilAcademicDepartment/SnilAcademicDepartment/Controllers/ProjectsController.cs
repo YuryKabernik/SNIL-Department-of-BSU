@@ -38,7 +38,10 @@ namespace SnilAcademicDepartment.Controllers
         [Route("Projects")]
         public async Task<ActionResult> Projects()
         {
-            PreViewModel projectPreview = null;
+			var start = this._configManager.GetConfigValueInt("ProjectsPreviewsStartIndex");
+			var end = this._configManager.GetConfigValueInt("ProjectsPreviewsEndIndex");
+
+			PreViewModel projectPreview = null;
 
             IEnumerable<ProjectPreview> currentPreviews = null;
             IEnumerable<ProjectPreview> newPreviews = null;
@@ -50,13 +53,13 @@ namespace SnilAcademicDepartment.Controllers
                 projectPreview = await this._previewService.GetPagePreviewAsync("Projects", Thread.CurrentThread.CurrentCulture.LCID);
 
                 currentPreviews = await this._projectsPreview
-                    .GetProjectsPreviewsAsync<ProjectPreview>(ProjectStatusDTO.Current, 0, 12, Thread.CurrentThread.CurrentCulture.LCID);
+                    .GetProjectsPreviewsAsync<ProjectPreview>(ProjectStatusDTO.Current, start, end, Thread.CurrentThread.CurrentCulture.LCID);
 
                 newPreviews = await this._projectsPreview
-                    .GetProjectsPreviewsAsync<ProjectPreview>(ProjectStatusDTO.New, 0, 12, Thread.CurrentThread.CurrentCulture.LCID);
+                    .GetProjectsPreviewsAsync<ProjectPreview>(ProjectStatusDTO.New, start, end, Thread.CurrentThread.CurrentCulture.LCID);
 
                 finishedPreviews = await this._projectsPreview
-                    .GetProjectsPreviewsAsync<ProjectPreview>(ProjectStatusDTO.Finished, 0, 12, Thread.CurrentThread.CurrentCulture.LCID);
+                    .GetProjectsPreviewsAsync<ProjectPreview>(ProjectStatusDTO.Finished, start, end, Thread.CurrentThread.CurrentCulture.LCID);
             }
             catch (Exception ex)
             {
@@ -79,12 +82,15 @@ namespace SnilAcademicDepartment.Controllers
             ProjectModel projectModel = null;
             IEnumerable<ProjectPreview> newPreviews = null;
 
-            try
-            {
+			var start = this._configManager.GetConfigValueInt("ProjectPagePreviewsStartIndex");
+			var end = this._configManager.GetConfigValueInt("ProjectPagePreviewsEndIndex");
+
+			try
+			{
                 projectModel = this._projectsService.GetProjectById(id, Thread.CurrentThread.CurrentCulture.LCID);
 
                 newPreviews = await this._projectsPreview
-                    .GetProjectsPreviewsAsync<ProjectPreview>(ProjectStatusDTO.New, 0, 6, Thread.CurrentThread.CurrentCulture.LCID);
+                    .GetProjectsPreviewsAsync<ProjectPreview>(ProjectStatusDTO.New, start, end, Thread.CurrentThread.CurrentCulture.LCID);
 
             }
             catch (Exception )
@@ -106,12 +112,15 @@ namespace SnilAcademicDepartment.Controllers
             ProjectModel projectModel = null;
             IEnumerable<ProjectPreview> finishedPreviews = null;
 
-            try
-            {
+			var start = this._configManager.GetConfigValueInt("ProjectPagePreviewsStartIndex");
+			var end = this._configManager.GetConfigValueInt("ProjectPagePreviewsEndIndex");
+
+			try
+			{
                 projectModel = this._projectsService.GetProjectById(id, Thread.CurrentThread.CurrentCulture.LCID);
 
                 finishedPreviews = await this._projectsPreview
-                    .GetProjectsPreviewsAsync<ProjectPreview>(ProjectStatusDTO.Finished, 0, 6, Thread.CurrentThread.CurrentCulture.LCID);
+                    .GetProjectsPreviewsAsync<ProjectPreview>(ProjectStatusDTO.Finished, start, end, Thread.CurrentThread.CurrentCulture.LCID);
 
             }
             catch (Exception)
@@ -133,12 +142,15 @@ namespace SnilAcademicDepartment.Controllers
             ProjectModel projectModel = null;
             IEnumerable<ProjectPreview> currentPreviews = null;
 
-            try
-            {
+			var start = this._configManager.GetConfigValueInt("ProjectPagePreviewsStartIndex");
+			var end = this._configManager.GetConfigValueInt("ProjectPagePreviewsEndIndex");
+
+			try
+			{
                 projectModel = this._projectsService.GetProjectById(id, Thread.CurrentThread.CurrentCulture.LCID);
 
                 currentPreviews = await this._projectsPreview
-                   .GetProjectsPreviewsAsync<ProjectPreview>(ProjectStatusDTO.Current, 0, 6, Thread.CurrentThread.CurrentCulture.LCID);
+                   .GetProjectsPreviewsAsync<ProjectPreview>(ProjectStatusDTO.Current, start, end, Thread.CurrentThread.CurrentCulture.LCID);
 
             }
             catch (Exception)
