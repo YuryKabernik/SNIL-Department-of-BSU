@@ -3,6 +3,7 @@ using SnilAcademicDepartment.BusinessLogic.DTOModels;
 using SnilAcademicDepartment.BusinessLogic.Interfaces;
 using SnilAcademicDepartment.Common.ConfigManagerAdapter;
 using SnilAcademicDepartment.Common.Enumerations;
+using SnilAcademicDepartment.Properties;
 using System;
 using System.Collections.Generic;
 using System.Threading;
@@ -38,8 +39,8 @@ namespace SnilAcademicDepartment.Controllers
         [Route("Projects")]
         public async Task<ActionResult> Projects()
         {
-			var start = this._configManager.GetConfigValueInt("ProjectsPreviewsStartIndex");
-			var end = this._configManager.GetConfigValueInt("ProjectsPreviewsEndIndex");
+			var start = this._configManager.GetConfigValueInt(SnilConfigurationSectionKeys.ProjectsPreviewsStartIndexKey);
+			var end = this._configManager.GetConfigValueInt(SnilConfigurationSectionKeys.ProjectsPreviewsEndIndexKey);
 
 			PreViewModel projectPreview = null;
 
@@ -82,8 +83,8 @@ namespace SnilAcademicDepartment.Controllers
             ProjectModel projectModel = null;
             IEnumerable<ProjectPreview> newPreviews = null;
 
-			var start = this._configManager.GetConfigValueInt("ProjectPagePreviewsStartIndex");
-			var end = this._configManager.GetConfigValueInt("ProjectPagePreviewsEndIndex");
+			var start = this._configManager.GetConfigValueInt(SnilConfigurationSectionKeys.ProjectPagePreviewsStartIndexKey);
+			var end = this._configManager.GetConfigValueInt(SnilConfigurationSectionKeys.ProjectPagePreviewsEndIndexKey);
 
 			try
 			{
@@ -112,8 +113,8 @@ namespace SnilAcademicDepartment.Controllers
             ProjectModel projectModel = null;
             IEnumerable<ProjectPreview> finishedPreviews = null;
 
-			var start = this._configManager.GetConfigValueInt("ProjectPagePreviewsStartIndex");
-			var end = this._configManager.GetConfigValueInt("ProjectPagePreviewsEndIndex");
+			var start = this._configManager.GetConfigValueInt(SnilConfigurationSectionKeys.ProjectPagePreviewsStartIndexKey);
+			var end = this._configManager.GetConfigValueInt(SnilConfigurationSectionKeys.ProjectPagePreviewsEndIndexKey);
 
 			try
 			{
@@ -142,8 +143,8 @@ namespace SnilAcademicDepartment.Controllers
             ProjectModel projectModel = null;
             IEnumerable<ProjectPreview> currentPreviews = null;
 
-			var start = this._configManager.GetConfigValueInt("ProjectPagePreviewsStartIndex");
-			var end = this._configManager.GetConfigValueInt("ProjectPagePreviewsEndIndex");
+			var start = this._configManager.GetConfigValueInt(SnilConfigurationSectionKeys.ProjectPagePreviewsStartIndexKey);
+			var end = this._configManager.GetConfigValueInt(SnilConfigurationSectionKeys.ProjectPagePreviewsEndIndexKey);
 
 			try
 			{

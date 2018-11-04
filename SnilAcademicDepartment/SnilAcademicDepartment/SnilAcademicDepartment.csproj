@@ -194,6 +194,11 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\SnilConfigurationSectionKeys.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SnilConfigurationSectionKeys.resx</DependentUpon>
+    </Compile>
     <Compile Include="Resources\ContactsResources\ContactsResource.de.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -440,6 +445,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Properties\SnilConfigurationSectionKeys.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>SnilConfigurationSectionKeys.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Resources\EducationResources\EducationResource.de.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>EducationResource.de.Designer.cs</LastGenOutput>
