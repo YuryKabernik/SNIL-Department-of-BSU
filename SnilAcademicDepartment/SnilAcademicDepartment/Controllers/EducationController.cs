@@ -44,7 +44,7 @@ namespace SnilAcademicDepartment.Controllers
         }
 
         [HttpGet]
-        [Route("Education")]
+        [Route("education")]
         public async Task<ActionResult> Education()
         {
             PreViewModel viewModel = null;
@@ -78,7 +78,7 @@ namespace SnilAcademicDepartment.Controllers
         }
 
         [HttpGet]
-        [Route("QuickLearning")]
+        [Route("learning")]
         public async Task<ActionResult> PageQuickLearning()
         {
             EducationBlockModel viewModel = null;
@@ -103,7 +103,7 @@ namespace SnilAcademicDepartment.Controllers
         }
 
         [HttpGet]
-        [Route("Seminars")]
+        [Route("seminars")]
         public async Task<ActionResult> PageSeminars()
         {
             IEnumerable<IGrouping<int, SeminarPreview>> seninarsPreviewsModels = null;
@@ -126,7 +126,7 @@ namespace SnilAcademicDepartment.Controllers
         }
 
         [HttpGet]
-        [Route("Lections")]
+        [Route("lections")]
         public async Task<ActionResult> PageLectures()
         {
             IEnumerable<LecturePreview> lecturePreviewsModels = null;
