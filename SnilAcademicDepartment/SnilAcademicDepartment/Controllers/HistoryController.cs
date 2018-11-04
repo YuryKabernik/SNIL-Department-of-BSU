@@ -23,7 +23,7 @@ namespace SnilAcademicDepartment.Controllers
         }
 
         [HttpGet]
-        [Route("History")]
+        [Route("history")]
         public Task<ActionResult> History()
         {
             ViewBag.Title = "History";
@@ -31,7 +31,7 @@ namespace SnilAcademicDepartment.Controllers
         }
 
         [HttpGet]
-        [Route("PageArchive")]
+        [Route("archive")]
         public Task<ActionResult> PageArchive()
         {
             ViewBag.Title = "Archive";
@@ -39,7 +39,7 @@ namespace SnilAcademicDepartment.Controllers
         }
 
         [HttpGet]
-        [Route("PageIEEE")]
+        [Route("ieee")]
         public Task<ActionResult> PageIEEE()
         {
             ViewBag.Title = "IEEE";
@@ -47,7 +47,7 @@ namespace SnilAcademicDepartment.Controllers
         }
 
         [HttpGet]
-        [Route("PageReview")]
+        [Route("review")]
         public Task<ActionResult> PageReview()
         {
             ViewBag.Title = "Review";
@@ -55,7 +55,7 @@ namespace SnilAcademicDepartment.Controllers
         }
 
         [HttpGet]
-        [Route("PageReports")]
+        [Route("reports")]
         public Task<ActionResult> PageReports()
         {
             ViewBag.Title = "Reports";
