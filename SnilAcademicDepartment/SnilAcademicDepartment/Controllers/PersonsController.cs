@@ -37,9 +37,9 @@ namespace SnilAcademicDepartment.Controllers
 		[Route("people")]
 		public async Task<ActionResult> Persons()
 		{
-			IEnumerable<Leader> leaders;
+			IEnumerable<Leader> leaders = null;
 
-			var numberOfLeadersOnHallOfFame = this._configManager.GetConfigValueInt(SnilConfigurationSectionKeys.NumberOfLeadersOnHallOfFameKey);
+			var numberOfLeadersOnHallOfFame = await this._configManager.GetConfigValueIntAsync(SnilConfigurationSectionKeys.NumberOfLeadersOnHallOfFameKey);
 
 			try
 			{
@@ -84,7 +84,7 @@ namespace SnilAcademicDepartment.Controllers
 		[Route("enrollee")]
 		public async Task<ActionResult> Enrollee()
 		{
-			IEnumerable<Professor> personVMs;
+			IEnumerable<Professor> personVMs = null;
 
 			try
 			{
@@ -105,7 +105,7 @@ namespace SnilAcademicDepartment.Controllers
 		[Route("professors")]
 		public async Task<ActionResult> ProfessorsPage()
 		{
-			IEnumerable<Professor> personVMs;
+			IEnumerable<Professor> personVMs = null;
 
 			try
 			{
@@ -126,7 +126,7 @@ namespace SnilAcademicDepartment.Controllers
 		[Route("administration")]
 		public async Task<ActionResult> PageAdministration()
 		{
-			IEnumerable<Administrator> personVMs;
+			IEnumerable<Administrator> personVMs = null;
 
 			try
 			{
@@ -147,7 +147,7 @@ namespace SnilAcademicDepartment.Controllers
 		[Route("students")]
 		public async Task<ActionResult> PageStudents()
 		{
-			IEnumerable<PersonVM> personVMs;
+			IEnumerable<PersonVM> personVMs = null;
 
 			try
 			{

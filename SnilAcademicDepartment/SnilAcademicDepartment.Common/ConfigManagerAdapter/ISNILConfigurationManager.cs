@@ -1,5 +1,6 @@
 ﻿using System.Configuration;
 using System;
+using System.Threading.Tasks;
 
 namespace SnilAcademicDepartment.Common.ConfigManagerAdapter
 {
@@ -17,7 +18,7 @@ namespace SnilAcademicDepartment.Common.ConfigManagerAdapter
 		/// </returns>
 		/// <exception cref="ArgumentException"> Null, empty or whitespace of string key parameter.</exception>
 		/// <exception cref="ConfigurationErrorsException">Key doesn't exists in configuration section.</exception>
-		int GetConfigValueInt(string key);
+		Task<int> GetConfigValueIntAsync(string key);
 
 		/// <summary>
 		/// Gets the configuration <see cref="string"/> value.
@@ -28,6 +29,6 @@ namespace SnilAcademicDepartment.Common.ConfigManagerAdapter
 		/// </returns>
 		/// <exception cref="ArgumentException"> Null, empty or whitespace of string key parameter.</exception>
 		/// <exception cref="ConfigurationErrorsException">Key doesn't exists in configuration section.</exception>
-		string GetConfigValueString(string key);
+		Task<string> GetConfigValueStringAsync(string key);
 	}
 }

@@ -2,6 +2,7 @@
 using System.Collections.Specialized;
 using System.Linq;
 using System;
+using System.Threading.Tasks;
 
 namespace SnilAcademicDepartment.Common.ConfigManagerAdapter
 {
@@ -36,7 +37,7 @@ namespace SnilAcademicDepartment.Common.ConfigManagerAdapter
 		/// </returns>
 		/// <exception cref="ArgumentException"> Null, empty or whitespace of string key parameter.</exception>
 		/// <exception cref="ConfigurationErrorsException">Key doesn't exists in configuration section.</exception>
-		public int GetConfigValueInt(string key)
+		public async Task<int> GetConfigValueIntAsync(string key)
 		{
 			if (string.IsNullOrWhiteSpace(key))
 			{
@@ -63,7 +64,7 @@ namespace SnilAcademicDepartment.Common.ConfigManagerAdapter
 		/// </returns>
 		/// <exception cref="ArgumentException"> Null, empty or whitespace of string key parameter.</exception>
 		/// <exception cref="ConfigurationErrorsException">Key doesn't exists in configuration section.</exception>
-		public string GetConfigValueString(string key)
+		public async Task<string> GetConfigValueStringAsync(string key)
 		{
 			if (string.IsNullOrWhiteSpace(key))
 			{

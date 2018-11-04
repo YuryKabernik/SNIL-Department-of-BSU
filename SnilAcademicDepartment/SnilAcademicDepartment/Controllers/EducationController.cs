@@ -56,7 +56,7 @@ namespace SnilAcademicDepartment.Controllers
             PreViewModel viewModel = null;
             List<EducationBlockModel> blockCollection = null;
 
-			var numberOfElements = this._configManager.GetConfigValueInt(SnilConfigurationSectionKeys.NumberOfKeyAreasOnEducationPageKey);
+			var numberOfElements = await this._configManager.GetConfigValueIntAsync(SnilConfigurationSectionKeys.NumberOfKeyAreasOnEducationPageKey);
 
             try
             {
@@ -91,7 +91,7 @@ namespace SnilAcademicDepartment.Controllers
         {
             EducationBlockModel viewModel = null;
 
-			var numberOfElements = this._configManager.GetConfigValueInt(SnilConfigurationSectionKeys.NumberOfQuickLearningBlocksOnPageKey);
+			var numberOfElements = await this._configManager.GetConfigValueIntAsync(SnilConfigurationSectionKeys.NumberOfQuickLearningBlocksOnPageKey);
 
 			try
 			{
@@ -118,7 +118,7 @@ namespace SnilAcademicDepartment.Controllers
         {
             IEnumerable<IGrouping<int, SeminarPreview>> seninarsPreviewsModels = null;
 
-			var numberOfSeminars = this._configManager.GetConfigValueInt(SnilConfigurationSectionKeys.NumberOfSeminarsOnPageSeminarsKey);
+			var numberOfSeminars = await this._configManager.GetConfigValueIntAsync(SnilConfigurationSectionKeys.NumberOfSeminarsOnPageSeminarsKey);
 
 			try
 			{
@@ -143,7 +143,7 @@ namespace SnilAcademicDepartment.Controllers
         {
             IEnumerable<LecturePreview> lecturePreviewsModels = null;
 
-			var numberOfLectures = this._configManager.GetConfigValueInt(SnilConfigurationSectionKeys.NumberOfLecturesOnPageLecturesKey);
+			var numberOfLectures = await this._configManager.GetConfigValueIntAsync(SnilConfigurationSectionKeys.NumberOfLecturesOnPageLecturesKey);
 
 			try
 			{

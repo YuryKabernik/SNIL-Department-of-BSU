@@ -39,17 +39,17 @@ namespace SnilAcademicDepartment.Controllers
         [Route("Projects")]
         public async Task<ActionResult> Projects()
         {
-			var start = this._configManager.GetConfigValueInt(SnilConfigurationSectionKeys.ProjectsPreviewsStartIndexKey);
-			var end = this._configManager.GetConfigValueInt(SnilConfigurationSectionKeys.ProjectsPreviewsEndIndexKey);
-
 			PreViewModel projectPreview = null;
 
-            IEnumerable<ProjectPreview> currentPreviews = null;
+			IEnumerable<ProjectPreview> currentPreviews = null;
             IEnumerable<ProjectPreview> newPreviews = null;
             IEnumerable<ProjectPreview> finishedPreviews = null;
 
-            try
-            {
+			var start = await this._configManager.GetConfigValueIntAsync(SnilConfigurationSectionKeys.ProjectsPreviewsStartIndexKey);
+			var end = await this._configManager.GetConfigValueIntAsync(SnilConfigurationSectionKeys.ProjectsPreviewsEndIndexKey);
+
+			try
+			{
                 // Get project previews.
                 projectPreview = await this._previewService.GetPagePreviewAsync("Projects", Thread.CurrentThread.CurrentCulture.LCID);
 
@@ -83,8 +83,8 @@ namespace SnilAcademicDepartment.Controllers
             ProjectModel projectModel = null;
             IEnumerable<ProjectPreview> newPreviews = null;
 
-			var start = this._configManager.GetConfigValueInt(SnilConfigurationSectionKeys.ProjectPagePreviewsStartIndexKey);
-			var end = this._configManager.GetConfigValueInt(SnilConfigurationSectionKeys.ProjectPagePreviewsEndIndexKey);
+			var start = await this._configManager.GetConfigValueIntAsync(SnilConfigurationSectionKeys.ProjectPagePreviewsStartIndexKey);
+			var end = await this._configManager.GetConfigValueIntAsync(SnilConfigurationSectionKeys.ProjectPagePreviewsEndIndexKey);
 
 			try
 			{
@@ -113,8 +113,8 @@ namespace SnilAcademicDepartment.Controllers
             ProjectModel projectModel = null;
             IEnumerable<ProjectPreview> finishedPreviews = null;
 
-			var start = this._configManager.GetConfigValueInt(SnilConfigurationSectionKeys.ProjectPagePreviewsStartIndexKey);
-			var end = this._configManager.GetConfigValueInt(SnilConfigurationSectionKeys.ProjectPagePreviewsEndIndexKey);
+			var start = await  this._configManager.GetConfigValueIntAsync(SnilConfigurationSectionKeys.ProjectPagePreviewsStartIndexKey);
+			var end = await this._configManager.GetConfigValueIntAsync(SnilConfigurationSectionKeys.ProjectPagePreviewsEndIndexKey);
 
 			try
 			{
@@ -143,8 +143,8 @@ namespace SnilAcademicDepartment.Controllers
             ProjectModel projectModel = null;
             IEnumerable<ProjectPreview> currentPreviews = null;
 
-			var start = this._configManager.GetConfigValueInt(SnilConfigurationSectionKeys.ProjectPagePreviewsStartIndexKey);
-			var end = this._configManager.GetConfigValueInt(SnilConfigurationSectionKeys.ProjectPagePreviewsEndIndexKey);
+			var start = await this._configManager.GetConfigValueIntAsync(SnilConfigurationSectionKeys.ProjectPagePreviewsStartIndexKey);
+			var end = await this._configManager.GetConfigValueIntAsync(SnilConfigurationSectionKeys.ProjectPagePreviewsEndIndexKey);
 
 			try
 			{
