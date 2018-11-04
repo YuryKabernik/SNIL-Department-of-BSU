@@ -70,6 +70,15 @@ namespace SnilAcademicDepartment.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to NumberOfLeadersOnHallOfFame.
+        /// </summary>
+        public static string NumberOfLeadersOnHallOfFameKey {
+            get {
+                return ResourceManager.GetString("NumberOfLeadersOnHallOfFameKey", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to NumberOfLecturesOnPageLectures.
         /// </summary>
         public static string NumberOfLecturesOnPageLecturesKey {

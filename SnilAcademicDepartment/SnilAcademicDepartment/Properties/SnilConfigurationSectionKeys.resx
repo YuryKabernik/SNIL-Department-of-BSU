@@ -120,6 +120,9 @@
   <data name="NumberOfKeyAreasOnEducationPageKey" xml:space="preserve">
     <value>NumberOfKeyAreasOnEducationPage</value>
   </data>
+  <data name="NumberOfLeadersOnHallOfFameKey" xml:space="preserve">
+    <value>NumberOfLeadersOnHallOfFame</value>
+  </data>
   <data name="NumberOfLecturesOnPageLecturesKey" xml:space="preserve">
     <value>NumberOfLecturesOnPageLectures</value>
   </data>

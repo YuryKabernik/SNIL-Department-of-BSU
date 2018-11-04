@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Web.Mvc;
 using SnilAcademicDepartment.Resources.PersonsResources;
 using SnilAcademicDepartment.Resources.UnavaliableErrorResources;
+using SnilAcademicDepartment.Properties;
 using Resources;
 using SnilAcademicDepartment.Common.Enumerations;
 using SnilAcademicDepartment.Common.ConfigManagerAdapter;
@@ -38,9 +39,11 @@ namespace SnilAcademicDepartment.Controllers
 		{
 			IEnumerable<Leader> leaders;
 
+			var numberOfLeadersOnHallOfFame = this._configManager.GetConfigValueInt(SnilConfigurationSectionKeys.NumberOfLeadersOnHallOfFameKey);
+
 			try
 			{
-				leaders = await this._peopleService.GetHallOfFameLeadersAsync(5, Thread.CurrentThread.CurrentCulture.LCID);
+				leaders = await this._peopleService.GetHallOfFameLeadersAsync(numberOfLeadersOnHallOfFame, Thread.CurrentThread.CurrentCulture.LCID);
 			}
 			catch (System.Exception)
 			{
