@@ -32,7 +32,7 @@ namespace SnilAcademicDepartment.Controllers
         }
 
         [HttpGet]
-        [Route("Projects")]
+        [Route("projects")]
         public async Task<ActionResult> Projects()
         {
             PreViewModel projectPreview = null;
@@ -70,7 +70,7 @@ namespace SnilAcademicDepartment.Controllers
         }
 
         [HttpGet]
-        [Route("New")]
+        [Route("new")]
         public async Task<ActionResult> PageNew(int id)
         {
             ProjectModel projectModel = null;
@@ -97,7 +97,7 @@ namespace SnilAcademicDepartment.Controllers
         }
 
         [HttpGet]
-        [Route("Finished")]
+        [Route("finished")]
         public async Task<ActionResult> PageFinished(int id)
         {
             ProjectModel projectModel = null;
@@ -124,7 +124,7 @@ namespace SnilAcademicDepartment.Controllers
         }
 
         [HttpGet]
-        [Route("Current")]
+        [Route("current")]
         public async Task<ActionResult> PageCurrent(int id)
         {
             ProjectModel projectModel = null;

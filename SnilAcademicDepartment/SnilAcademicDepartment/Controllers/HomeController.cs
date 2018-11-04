@@ -37,7 +37,7 @@ namespace SnilAcademicDepartment.Controllers
         }
 
         [HttpGet]
-        [Route("About")]
+        [Route("about")]
         public async Task<ActionResult> About()
         {
             ViewBag.Message = "Your application description page.";
@@ -45,7 +45,7 @@ namespace SnilAcademicDepartment.Controllers
         }
 
         [HttpGet]
-        [Route("Contact")]
+        [Route("contact")]
         public async Task<ActionResult> Contact()
         {
             ViewBag.Message = "Your contact page.";
@@ -53,7 +53,7 @@ namespace SnilAcademicDepartment.Controllers
         }
 
         [HttpPost]
-        [Route("Sendrequest")]
+        [Route("sendrequest")]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> SendMailMessage(ClientMail mail)
         {

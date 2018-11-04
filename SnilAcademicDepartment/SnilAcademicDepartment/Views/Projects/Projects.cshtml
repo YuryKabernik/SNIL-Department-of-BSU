@@ -24,35 +24,12 @@
             @ViewBag.Preview.Description
         </div>
     </div>
-        @RenderProjectsV2(@ProjectResource.NewTitle, ViewBag.newPreviews as IEnumerable<ProjectPreview>)
-        @RenderProjectsV2(@ProjectResource.FinishedTitle, ViewBag.finishedPreviews as IEnumerable<ProjectPreview>)
-        @RenderProjectsV2(@ProjectResource.CurrentTitle, ViewBag.currentPreviews as IEnumerable<ProjectPreview>)
+        @RenderProjectsV2(@ProjectResource.NewTitle, ViewBag.newPreviews as IEnumerable<ProjectPreview>, "PageNew")
+        @RenderProjectsV2(@ProjectResource.FinishedTitle, ViewBag.finishedPreviews as IEnumerable<ProjectPreview>, "PageFinished")
+        @RenderProjectsV2(@ProjectResource.CurrentTitle, ViewBag.currentPreviews as IEnumerable<ProjectPreview>, "PageCurrent")
 </div>
 
-@helper RenderProjects(string title, IEnumerable<ProjectPreview> collection)
-{
-    <div class="row row2">
-        <h2>@title</h2>
-        @{
-            foreach (var item in collection)
-            {
-                var base64Block = Convert.ToBase64String(item.Image);
-                var imgSrcProj = String.Format("data:image/jpeg;base64,{0}", base64Block);
-
-                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 block">
-                    <img src="@imgSrcProj" alt="" class="img-thumbnail">
-                    <div class="projects">
-                        <h4>@item.Title</h4>
-                        <p>@item.Description</p>
-                        @Html.RouteLink(Resources.Resource.LearnMore, new { controller = "Projects", action = "PageCurrent", id = item.ProjectId })
-                    </div>
-                </div>
-            }
-        }
-    </div>
-}
-
-@helper RenderProjectsV2(string title, IEnumerable<ProjectPreview> collection)
+@helper RenderProjectsV2(string title, IEnumerable<ProjectPreview> collection, string actionName)
 {
     <div class="row">
         <h2>@title</h2>
@@ -69,7 +46,7 @@
                             <div class="caption">
                                 <h3>@item.Title</h3>
                                 <p>@item.Description</p>
-                                @Html.RouteLink(Resources.Resource.LearnMore, new { controller = "Projects", action = "PageCurrent", id = item.ProjectId })
+                                @Html.RouteLink(Resources.Resource.LearnMore, new { controller = "Projects", action = actionName, id = item.ProjectId })
                             </div>
                         </div>
                     </div>
