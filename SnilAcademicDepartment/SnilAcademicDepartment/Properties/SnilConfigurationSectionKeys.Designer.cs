@@ -61,6 +61,42 @@ namespace SnilAcademicDepartment.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to NumberOfKeyAreasOnEducationPage.
+        /// </summary>
+        public static string NumberOfKeyAreasOnEducationPageKey {
+            get {
+                return ResourceManager.GetString("NumberOfKeyAreasOnEducationPageKey", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to NumberOfLecturesOnPageLectures.
+        /// </summary>
+        public static string NumberOfLecturesOnPageLecturesKey {
+            get {
+                return ResourceManager.GetString("NumberOfLecturesOnPageLecturesKey", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to NumberOfQuickLearningBlocksOnPage.
+        /// </summary>
+        public static string NumberOfQuickLearningBlocksOnPageKey {
+            get {
+                return ResourceManager.GetString("NumberOfQuickLearningBlocksOnPageKey", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to NumberOfSeminarsOnPageSeminars.
+        /// </summary>
+        public static string NumberOfSeminarsOnPageSeminarsKey {
+            get {
+                return ResourceManager.GetString("NumberOfSeminarsOnPageSeminarsKey", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ProjectPagePreviewsEndIndex.
         /// </summary>
         public static string ProjectPagePreviewsEndIndexKey {

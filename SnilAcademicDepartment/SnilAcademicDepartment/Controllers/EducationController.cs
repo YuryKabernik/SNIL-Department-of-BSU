@@ -5,6 +5,7 @@ using System.Web.Mvc;
 using System.Threading;
 using System.Collections.Generic;
 using Resources.EducationResources;
+using SnilAcademicDepartment.Properties;
 using SnilAcademicDepartment.BusinessLogic.DTOModels;
 using System.Linq;
 using System.Threading.Tasks;
@@ -55,13 +56,15 @@ namespace SnilAcademicDepartment.Controllers
             PreViewModel viewModel = null;
             List<EducationBlockModel> blockCollection = null;
 
+			var numberOfElements = this._configManager.GetConfigValueInt(SnilConfigurationSectionKeys.NumberOfKeyAreasOnEducationPageKey);
+
             try
             {
                 // Get page preview data.
                 viewModel = await this._previewService.GetPagePreviewAsync("Education", Thread.CurrentThread.CurrentCulture.LCID);
 
                 // Get educatio key areas.
-                blockCollection = await this._educationService.GetKeyAreasAsync(20, Thread.CurrentThread.CurrentCulture.LCID);
+                blockCollection = await this._educationService.GetKeyAreasAsync(numberOfElements, Thread.CurrentThread.CurrentCulture.LCID);
             }
             catch (Exception)
             {
@@ -88,9 +91,11 @@ namespace SnilAcademicDepartment.Controllers
         {
             EducationBlockModel viewModel = null;
 
-            try
-            {
-                viewModel = await this._educationService.GetEducationBlockByIdAsync(3, Thread.CurrentThread.CurrentCulture.LCID);
+			var numberOfElements = this._configManager.GetConfigValueInt(SnilConfigurationSectionKeys.NumberOfQuickLearningBlocksOnPageKey);
+
+			try
+			{
+                viewModel = await this._educationService.GetEducationBlockByIdAsync(numberOfElements, Thread.CurrentThread.CurrentCulture.LCID);
 
             }
             catch (Exception)
@@ -113,9 +118,11 @@ namespace SnilAcademicDepartment.Controllers
         {
             IEnumerable<IGrouping<int, SeminarPreview>> seninarsPreviewsModels = null;
 
-            try
-            {
-                seninarsPreviewsModels = await this._seminarPreviewService.GetSeminarPreviewsAsync<SeminarPreview>(20, Thread.CurrentThread.CurrentCulture.LCID);
+			var numberOfSeminars = this._configManager.GetConfigValueInt(SnilConfigurationSectionKeys.NumberOfSeminarsOnPageSeminarsKey);
+
+			try
+			{
+                seninarsPreviewsModels = await this._seminarPreviewService.GetSeminarPreviewsAsync<SeminarPreview>(numberOfSeminars, Thread.CurrentThread.CurrentCulture.LCID);
             }
             catch (Exception)
             {
@@ -136,9 +143,11 @@ namespace SnilAcademicDepartment.Controllers
         {
             IEnumerable<LecturePreview> lecturePreviewsModels = null;
 
-            try
-            {
-                lecturePreviewsModels = await this._lecturePreviewService.GetLecturePreviewsAsync<LecturePreview>(20, Thread.CurrentThread.CurrentCulture.LCID);
+			var numberOfLectures = this._configManager.GetConfigValueInt(SnilConfigurationSectionKeys.NumberOfLecturesOnPageLecturesKey);
+
+			try
+			{
+                lecturePreviewsModels = await this._lecturePreviewService.GetLecturePreviewsAsync<LecturePreview>(numberOfLectures, Thread.CurrentThread.CurrentCulture.LCID);
             }
             catch (Exception)
             {
