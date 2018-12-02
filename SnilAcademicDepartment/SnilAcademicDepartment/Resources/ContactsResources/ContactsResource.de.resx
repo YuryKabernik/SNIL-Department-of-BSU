@@ -141,6 +141,12 @@
   <data name="Message" xml:space="preserve">
     <value>Nachricht</value>
   </data>
+  <data name="MessageSentFailed" xml:space="preserve">
+    <value>Entschuldigung, aber wir können Ihre Nachricht nicht senden. Versuchen Sie es später erneut oder senden Sie es an </value>
+  </data>
+  <data name="MessageSentSuccess" xml:space="preserve">
+    <value>Danke für die E-Mail! Wir werden Ihnen so schnell wie möglich antworten.</value>
+  </data>
   <data name="NinaRudenko" xml:space="preserve">
     <value>Mrs. Nina Rudenko</value>
   </data>

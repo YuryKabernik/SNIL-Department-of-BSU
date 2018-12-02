@@ -57,6 +57,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Properties\SnilMailingConfigurationKeys.Designer.cs">
+      <DependentUpon>SnilMailingConfigurationKeys.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="SmtpEventArgs.cs" />
     <Compile Include="SMTPService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -66,6 +71,18 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SnilAcademicDepartment.Common\SnilAcademicDepartment.Common.csproj">
+      <Project>{907F30B1-1365-41CB-98D3-A649398A578C}</Project>
+      <Name>SnilAcademicDepartment.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\SnilMailingConfigurationKeys.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>SnilMailingConfigurationKeys.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

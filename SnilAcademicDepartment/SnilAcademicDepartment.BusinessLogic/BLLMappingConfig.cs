@@ -10,6 +10,7 @@ namespace SnilAcademicDepartment.BusinessLogic
 	{
 		public BLLMappingConfig()
 		{
+			// ------ EntityFramework mappings ------
 			// Mapping preview objects.
 			this.CreateMap<PreView, PreViewModel>()
 				.ForMember(des => des.Title, opt => opt.MapFrom(s => s.Header))
@@ -172,7 +173,6 @@ namespace SnilAcademicDepartment.BusinessLogic
 				.ForMember(des => des.Image, opt => opt.MapFrom(s => s.Image.Image1))
 				.ForMember(des => des.Seminars, opt => opt.MapFrom(s => s.Seminars.Select(o => o.Title)))
 				.ForMember(des => des.Projects, opt => opt.MapFrom(s => s.Projects.Select(o => o.ProjectName)));
-
 		}
 	}
 }

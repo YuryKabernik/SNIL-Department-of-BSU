@@ -117,52 +117,22 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Address" xml:space="preserve">
-    <value>Independence Avenue, 4, 220030, Minsk, Republic of Belarus.</value>
+  <data name="CredentialsLogin" xml:space="preserve">
+    <value>EmailLogin</value>
   </data>
-  <data name="AddressString" xml:space="preserve">
-    <value>Address</value>
+  <data name="CredentialsPassword" xml:space="preserve">
+    <value>Password</value>
   </data>
-  <data name="Company" xml:space="preserve">
-    <value>Company*</value>
+  <data name="EmailHeadOfDepartment" xml:space="preserve">
+    <value>EmailHeadOfDepartment</value>
   </data>
-  <data name="Email" xml:space="preserve">
-    <value>Email*</value>
+  <data name="EmailRightHandOfDepartment" xml:space="preserve">
+    <value>EmailRightHandOfDepartment</value>
   </data>
-  <data name="EmailString" xml:space="preserve">
-    <value>E-mail:</value>
+  <data name="HostName" xml:space="preserve">
+    <value>Host</value>
   </data>
-  <data name="FullName" xml:space="preserve">
-    <value>Full name*</value>
-  </data>
-  <data name="Head" xml:space="preserve">
-    <value>Head</value>
-  </data>
-  <data name="Message" xml:space="preserve">
-    <value>Message</value>
-  </data>
-  <data name="MessageSentFailed" xml:space="preserve">
-    <value>Sorry, but we can't send your message. Try again later or send it to address: </value>
-  </data>
-  <data name="MessageSentSuccess" xml:space="preserve">
-    <value>Thank you for email! We will give you respond as soon as possible.</value>
-  </data>
-  <data name="NinaRudenko" xml:space="preserve">
-    <value>Mrs. Nina Rudenko</value>
-  </data>
-  <data name="NinaRudenkoMail" xml:space="preserve">
-    <value>rudenko@bsu.by</value>
-  </data>
-  <data name="Secretary" xml:space="preserve">
-    <value>Secretary</value>
-  </data>
-  <data name="Subject" xml:space="preserve">
-    <value>Subject*</value>
-  </data>
-  <data name="VictorSkakun" xml:space="preserve">
-    <value>Dr., Docent: Victor Skakun</value>
-  </data>
-  <data name="VictorSkakunMail" xml:space="preserve">
-    <value>skakun@bsu.by</value>
+  <data name="PortValue" xml:space="preserve">
+    <value>Port</value>
   </data>
 </root>

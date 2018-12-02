@@ -6,10 +6,11 @@ using AutoMapper;
 using SnilAcademicDepartment.BusinessLogic.DTOModels;
 using SnilAcademicDepartment.MailService;
 using SnilAcademicDepartment.Common.ConfigManagerAdapter;
+using MailService.Properties;
 
 namespace SnilAcademicDepartment.BusinessLogic.Services
 {
-    public class SendMailService : IMailSender, ISendMail
+    public class SendMailService : ISendMail
     {
         private readonly SMTPService _mailClient;
 		private readonly ISNILConfigurationManager _configManager;
@@ -22,28 +23,7 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
 			this._mapper = mapper;
         }
 
-        public void SendMail(MailMessage mail)
-        {
-            this._mailClient.SendEmail(mail);
-        }
-
-        public Task SendMailAsync(MailMessage mail)
-        {
-            // await this._mailClient.SendMailAsync(mail);
-            return Task.CompletedTask;
-        }
-
-        public void SendMailToAdmin(ClientMail clientMail)
-        {
-            var mailMessage = this._mapper.Map<ClientMail,MailMessage>(clientMail);
-            mailMessage.To.Add("kobernicyri@mail.ru");
-            mailMessage.To.Add("skakun@bsu.by");
-            mailMessage.CC.Add(new MailAddress(clientMail.Email));
-            mailMessage.CC.Add(new MailAddress("yakubovskiy@bsu.by"));
-            this._mailClient.SendEmail(mailMessage);
-        }
-
-        public Task SendMailToAdminAsync(ClientMail clientMail)
+        public async Task SendMailToAdminAsync(ClientMail clientMail)
         {
             if (string.IsNullOrWhiteSpace(clientMail.Email) || 
                 string.IsNullOrWhiteSpace(clientMail.FullName) || 
@@ -53,9 +33,14 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
                 throw new ArgumentException("Mail can't be null or empty.", nameof(clientMail));
             }
 
-            var mailMessage = this._mapper.Map<MailMessage>(clientMail);
-            //await this._mailClient.SendMailAsync(mailMessage);
-            return Task.CompletedTask;
+			var mailMessage = this._mapper.Map<ClientMail, MailMessage>(clientMail);
+			var departmentHeadMail = await this._configManager.GetConfigValueStringAsync(SnilMailingConfigurationKeys.EmailHeadOfDepartment);
+			var departmentHelperMail = await this._configManager.GetConfigValueStringAsync(SnilMailingConfigurationKeys.EmailRightHandOfDepartment);
+
+			mailMessage.To.Add(departmentHeadMail);
+			mailMessage.CC.Add(new MailAddress(clientMail.Email));
+			mailMessage.CC.Add(new MailAddress(departmentHelperMail));
+			await this._mailClient.SendEmailAsync(mailMessage);
         }
     }
 }

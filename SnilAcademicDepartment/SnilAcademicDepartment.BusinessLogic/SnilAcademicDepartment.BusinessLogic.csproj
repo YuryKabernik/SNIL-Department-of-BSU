@@ -54,6 +54,9 @@
     <Reference Include="Mono.Reflection, Version=1.1.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
       <HintPath>..\packages\Mono.Reflection.Core.1.1.1\lib\net45\Mono.Reflection.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
       <HintPath>..\packages\NLog.4.5.3\lib\net45\NLog.dll</HintPath>
     </Reference>
@@ -93,6 +96,7 @@
     <Compile Include="DTOModels\SeminarPreview.cs" />
     <Compile Include="InjectionPackageBLL.cs" />
     <Compile Include="Enum\ProjectType.cs" />
+    <Compile Include="DTOModels\ClientMail.cs" />
     <Compile Include="Interfaces\ILecturePreview.cs" />
     <Compile Include="Interfaces\IProjectsPreview.cs" />
     <Compile Include="Interfaces\ISeminarPreview.cs" />
@@ -103,7 +107,6 @@
     <Compile Include="Interfaces\IPeople.cs" />
     <Compile Include="Interfaces\IProjects.cs" />
     <Compile Include="Interfaces\IService.cs" />
-    <Compile Include="DTOModels\ClientMail.cs" />
     <Compile Include="DTOModels\EducationBlockModel.cs" />
     <Compile Include="DTOModels\Leader.cs" />
     <Compile Include="DTOModels\PreView.cs" />

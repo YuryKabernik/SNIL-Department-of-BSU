@@ -1,61 +1,75 @@
 ﻿using System;
 using System.Net;
 using System.Net.Mail;
+using System.Threading.Tasks;
+using SnilAcademicDepartment.Common.ConfigManagerAdapter;
+using MailService.Properties;
 
 namespace SnilAcademicDepartment.MailService
 {
-    /// <summary>
-    /// SMTP Service for sending the confirmation link to new user.
-    /// </summary>
-    public sealed class SMTPService
-    {
-        public void SendEmail(MailMessage message)
-        {
-            ArgumentValidation(message);
-            SendMail(message);
-        }
+	/// <summary>
+	/// SMTP Service for sending the confirmation link to new user.
+	/// </summary>
+	public sealed class SMTPService
+	{
+		private readonly ISNILConfigurationManager _configManager;
 
-        private static void ArgumentValidation(MailMessage message)
-        {
-            if (message.To.Count == 0)
-                throw new ArgumentNullException("message", "Address doesn't exist in this mail.");
+		public SMTPService(ISNILConfigurationManager configManager)
+		{
+			this._configManager = configManager;
+		}
 
-            if (string.IsNullOrEmpty(message.Body))
-                throw new ArgumentNullException("message", "Mail body is null or empty.");
+		public async Task SendEmailAsync(MailMessage message)
+		{
+			ArgumentValidation(message);
+			await SendMailAsync(message);
+		}
 
-            if (string.IsNullOrEmpty(message.Subject))
-                throw new ArgumentNullException("message", "Mail subject is null or empty.");
-        }
+		private async Task SendMailAsync(MailMessage mailMessage)
+		{
+			var host = await this._configManager.GetConfigValueStringAsync(SnilMailingConfigurationKeys.HostName);
+			var port = await this._configManager.GetConfigValueIntAsync(SnilMailingConfigurationKeys.PortValue);
+			var login = await this._configManager.GetConfigValueStringAsync(SnilMailingConfigurationKeys.CredentialsLogin);
+			var password = await this._configManager.GetConfigValueStringAsync(SnilMailingConfigurationKeys.CredentialsPassword);
 
-        private void SendMail(MailMessage mailMessage)
-        {
-            using (var smtpClient = new SmtpClient
-            {
-                Host = "smtp.gmail.com",
-                Port = 587,
-                EnableSsl = true,
-                DeliveryMethod = SmtpDeliveryMethod.Network,
-                UseDefaultCredentials = false,
-                Credentials = new NetworkCredential(userName: "snilbsudepartment@gmail.com", password: "Snilpassword1233"),
-            })
-            {
-                try
-                {
-                    smtpClient.EnableSsl = true;
-                    smtpClient.Send(mailMessage);
-                }
-                catch (SmtpFailedRecipientsException ex)
-                {
-                    var args = new SmtpEventArgs(ex);
-                    //TODO: For logging this exception
-                }
-                catch (SmtpException ex)
-                {
-                    var args = new SmtpEventArgs(ex);
-                    //TODO: For logging this exception
-                }
-            }
-        }
+			using (var smtpClient = new SmtpClient
+			{
+				Host = host,
+				Port = port,
+				EnableSsl = true,
+				DeliveryMethod = SmtpDeliveryMethod.Network,
+				UseDefaultCredentials = false,
+				Credentials = new NetworkCredential(userName: login, password: password),
+			})
+			{
+				try
+				{
+					smtpClient.EnableSsl = true;
+					//await smtpClient.SendMailAsync(mailMessage);
+				}
+				catch (SmtpFailedRecipientsException ex)
+				{
+					var args = new SmtpEventArgs(ex);
+					//TODO: For logging this exception
+				}
+				catch (SmtpException ex)
+				{
+					var args = new SmtpEventArgs(ex);
+					//TODO: For logging this exception
+				}
+			}
+		}
 
-    }
+		private void ArgumentValidation(MailMessage message)
+		{
+			if (message.To.Count == 0)
+				throw new ArgumentNullException("message", "Address doesn't exist in this mail.");
+
+			if (string.IsNullOrEmpty(message.Body))
+				throw new ArgumentNullException("message", "Mail body is null or empty.");
+
+			if (string.IsNullOrEmpty(message.Subject))
+				throw new ArgumentNullException("message", "Mail subject is null or empty.");
+		}
+	}
 }
