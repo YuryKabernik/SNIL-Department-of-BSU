@@ -22,7 +22,7 @@ namespace SnilAcademicDepartment.Controllers
 		}
 
 		[HttpPost]
-		[Culture]
+		[HttpCultureAttribute]
 		[ValidateHttpAntiForgeryToken]
 		public async Task<IHttpActionResult> SendMailMessage([FromBody]ClientMail mail)
 		{

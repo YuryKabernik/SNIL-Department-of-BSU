@@ -195,6 +195,7 @@
     <Compile Include="Controllers\PersonsController.cs" />
     <Compile Include="Controllers\ProjectsController.cs" />
     <Compile Include="Filters\CultureAttribute.cs" />
+    <Compile Include="Filters\HttpCultureAttribute.cs" />
     <Compile Include="Filters\ValidateAntyForgeryToken.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

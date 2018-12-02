@@ -6,13 +6,19 @@ namespace SnilAcademicDepartment.App_Start
 	{
 		public static void Register(HttpConfiguration config)
 		{
+			var lang = System.Threading.Thread.CurrentThread.CurrentUICulture.Name;
+			
 			// Attribute routing.
 			config.MapHttpAttributeRoutes();
 
 			// Convention-based routing.
 			config.Routes.MapHttpRoute(
 				name: "DefaultApi",
-				routeTemplate: "api/{controller}/{action}"
+				routeTemplate: "api/{language}/{controller}/{action}",
+				defaults: new
+				{
+					language = lang
+				}
 			);
 		}
 	}

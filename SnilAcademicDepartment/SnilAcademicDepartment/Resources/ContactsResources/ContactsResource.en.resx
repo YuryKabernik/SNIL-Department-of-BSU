@@ -145,7 +145,7 @@
     <value>Sorry, but we can't send your message. Try again later or send it to address: </value>
   </data>
   <data name="MessageSentSuccess" xml:space="preserve">
-    <value>Thank you for email! We will give you respond as soon as possible.</value>
+    <value>Thank you for email! We will give you response as soon as possible.</value>
   </data>
   <data name="NinaRudenko" xml:space="preserve">
     <value>Mrs. Nina Rudenko</value>

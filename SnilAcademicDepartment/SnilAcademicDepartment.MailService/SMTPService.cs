@@ -45,7 +45,7 @@ namespace SnilAcademicDepartment.MailService
 				try
 				{
 					smtpClient.EnableSsl = true;
-					//await smtpClient.SendMailAsync(mailMessage);
+					await smtpClient.SendMailAsync(mailMessage);
 				}
 				catch (SmtpFailedRecipientsException ex)
 				{
