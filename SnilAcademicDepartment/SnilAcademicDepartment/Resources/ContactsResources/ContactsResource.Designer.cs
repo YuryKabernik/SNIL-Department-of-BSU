@@ -133,6 +133,24 @@ namespace SnilAcademicDepartment.Resources.ContactsResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Извините, но мы не можем отправить ваше сообщение. Повторите попытку позже или отправьте его по адресу: .
+        /// </summary>
+        public static string MessageSentFailed {
+            get {
+                return ResourceManager.GetString("MessageSentFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Спасибо за письмо! Мы ответим вам как можно скорее..
+        /// </summary>
+        public static string MessageSentSuccess {
+            get {
+                return ResourceManager.GetString("MessageSentSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Нина Руденко.
         /// </summary>
         public static string NinaRudenko {

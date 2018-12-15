@@ -54,3 +54,9 @@
   background-color: #ffffff;
   min-height: 150px;
 }
+.formform .mailResult {
+	height: 40px;
+	line-height: 40px;
+	border-radius: 10px;
+	text-align: center;
+}

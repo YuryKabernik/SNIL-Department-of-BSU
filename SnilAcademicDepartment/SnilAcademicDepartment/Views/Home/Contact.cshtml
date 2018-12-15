@@ -1,65 +1,68 @@
 ﻿@{
-    ViewBag.Title = "Contact";
+	ViewBag.Title = "Contact";
 }
 <div class="container formform">
-    <h3>@Resources.Resource.Contacts</h3>
-    <div class="form">
-        <div class="row">
+	<h3>@Resources.Resource.Contacts</h3>
+	<div id="mailingResult" class="mailResult hidden"></div>
+	<div class="form">
+		<div class="row">
 			<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
 				<div class="form_input">
-					@using (Html.BeginForm(new { controller = "Home", action = "SendMailMessage" }))
-					{
-						@Html.AntiForgeryToken();
-						<div class="input-group">
-							<label for="name" class="input-group-addon" id="sizing-addon2"><i class="glyphicon glyphicon-user"></i></label>
-							<input id="name" type="text" class="form-control" placeholder="@SnilAcademicDepartment.Resources.ContactsResources.ContactsResource.FullName" aria-describedby="sizing-addon2" required>
-						</div>
-						<br>
-						<div class="input-group">
-							<label for="email" class="input-group-addon" id="sizing-addon2">＠</label>
-							<input id="email" type="email" class="form-control" placeholder="@SnilAcademicDepartment.Resources.ContactsResources.ContactsResource.Email" aria-describedby="sizing-addon2" required>
-						</div>
-						<br>
-						<div class="input-group">
-							<label for="company" class="input-group-addon" id="sizing-addon2"><i class="glyphicon glyphicon-globe"></i></label>
-							<input id="company" type="text" class="form-control" placeholder="@SnilAcademicDepartment.Resources.ContactsResources.ContactsResource.Company" aria-describedby="sizing-addon2">
-						</div>
-						<br>
-						<div class="input-group">
-							<label for="subject" class="input-group-addon" id="sizing-addon2"><i class="glyphicon glyphicon-header"></i></label>
-							<input id="subject" type="text" class="form-control" placeholder="@SnilAcademicDepartment.Resources.ContactsResources.ContactsResource.Subject" aria-describedby="sizing-addon2" required>
-						</div>
-						<br>
-						<textarea name="Message" class="usertext form-control" placeholder="@SnilAcademicDepartment.Resources.ContactsResources.ContactsResource.Message..." aria-describedby="sizing-addon2" required></textarea>
-						<br>
-						<input class="btn btn-default bottom_send_form" type="submit" name="submit" value="Send" />
-					}
+					<form id="sendMessage" action="@Url.HttpRouteUrl(string.Empty, new { controller = "Mailing", action = "SendMailMessage" })">
+						<fieldset>
+							@Html.AntiForgeryToken()
+							<div class="input-group">
+								<label for="name" class="input-group-addon" id="sizing-addon2"><i class="glyphicon glyphicon-user"></i></label>
+								<input id="name" type="text" class="form-control" placeholder="@SnilAcademicDepartment.Resources.ContactsResources.ContactsResource.FullName" aria-describedby="sizing-addon2" required>
+							</div>
+							<br>
+							<div class="input-group">
+								<label for="email" class="input-group-addon" id="sizing-addon2">＠</label>
+								<input id="email" type="email" class="form-control" placeholder="@SnilAcademicDepartment.Resources.ContactsResources.ContactsResource.Email" aria-describedby="sizing-addon2" required>
+							</div>
+							<br>
+							<div class="input-group">
+								<label for="company" class="input-group-addon" id="sizing-addon2"><i class="glyphicon glyphicon-globe"></i></label>
+								<input id="company" type="text" class="form-control" placeholder="@SnilAcademicDepartment.Resources.ContactsResources.ContactsResource.Company" aria-describedby="sizing-addon2">
+							</div>
+							<br>
+							<div class="input-group">
+								<label for="subject" class="input-group-addon" id="sizing-addon2"><i class="glyphicon glyphicon-header"></i></label>
+								<input id="subject" type="text" class="form-control" placeholder="@SnilAcademicDepartment.Resources.ContactsResources.ContactsResource.Subject" aria-describedby="sizing-addon2" required>
+							</div>
+							<br>
+							<textarea name="Message" class="usertext form-control" placeholder="@SnilAcademicDepartment.Resources.ContactsResources.ContactsResource.Message..." aria-describedby="sizing-addon2" required></textarea>
+							<br>
+							<input class="btn btn-default bottom_send_form" type="submit" name="submit" value="Send" />
+						</fieldset>
+					</form>
 				</div>
 			</div>
-            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                <div class="form_address">
-                    <h3>@SnilAcademicDepartment.Resources.ContactsResources.ContactsResource.AddressString</h3>
-                    <div class="plase">
-                        <p>
-                            @SnilAcademicDepartment.Resources.ContactsResources.ContactsResource.Address
-                        </p>
-                    </div>
-                   
-                    <address class="text">
-                        <strong>@SnilAcademicDepartment.Resources.ContactsResources.ContactsResource.Secretary</strong><br>
-                        @SnilAcademicDepartment.Resources.ContactsResources.ContactsResource.NinaRudenko<br>
-                        @SnilAcademicDepartment.Resources.ContactsResources.ContactsResource.EmailString <a href="mailto:#">@SnilAcademicDepartment.Resources.ContactsResources.ContactsResource.NinaRudenkoMail</a><br>
-                        <abbr title="Phone">@Resources.Resource.PhoneString</abbr>  @Resources.Resource.PhoneNumber
-                    </address>
+			<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+				<div class="form_address">
+					<h3>@SnilAcademicDepartment.Resources.ContactsResources.ContactsResource.AddressString</h3>
+					<div class="plase">
+						<p>
+							@SnilAcademicDepartment.Resources.ContactsResources.ContactsResource.Address
+						</p>
+					</div>
 
-                    <address class="text">
-                        <strong>@SnilAcademicDepartment.Resources.ContactsResources.ContactsResource.Head</strong><br>
-                        @SnilAcademicDepartment.Resources.ContactsResources.ContactsResource.VictorSkakun<br>
-                        @SnilAcademicDepartment.Resources.ContactsResources.ContactsResource.EmailString <a href="mailto:#">@SnilAcademicDepartment.Resources.ContactsResources.ContactsResource.VictorSkakunMail</a><br>
-                    </address>
-                </div>
-            </div>
-        </div>
-    </div>
+					<address class="text">
+						<strong>@SnilAcademicDepartment.Resources.ContactsResources.ContactsResource.Secretary</strong><br>
+						@SnilAcademicDepartment.Resources.ContactsResources.ContactsResource.NinaRudenko<br>
+						@SnilAcademicDepartment.Resources.ContactsResources.ContactsResource.EmailString <a href="mailto:#">@SnilAcademicDepartment.Resources.ContactsResources.ContactsResource.NinaRudenkoMail</a><br>
+						<abbr title="Phone">@Resources.Resource.PhoneString</abbr>  @Resources.Resource.PhoneNumber
+					</address>
+
+					<address class="text">
+						<strong>@SnilAcademicDepartment.Resources.ContactsResources.ContactsResource.Head</strong><br>
+						@SnilAcademicDepartment.Resources.ContactsResources.ContactsResource.VictorSkakun<br>
+						@SnilAcademicDepartment.Resources.ContactsResources.ContactsResource.EmailString <a href="mailto:#">@SnilAcademicDepartment.Resources.ContactsResources.ContactsResource.VictorSkakunMail</a><br>
+					</address>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
 <div class="map"><iframe src="https://www.google.com/maps/embed?pb=!1m24!1m12!1m3!1d5598.701798814265!2d27.476724235794606!3d53.84350177002365!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m9!3e6!4m3!3m2!1d53.8490568!2d27.4743256!4m3!3m2!1d53.8399034!2d27.476647699999997!5e0!3m2!1sru!2sby!4v1492944929291" width="100%" height="700" frameborder="0" style="border:0" allowfullscreen></iframe></div>
+@Scripts.Render("~/bundles/form")

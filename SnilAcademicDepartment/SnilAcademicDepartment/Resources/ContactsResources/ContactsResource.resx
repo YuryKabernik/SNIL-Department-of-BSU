@@ -141,6 +141,12 @@
   <data name="Message" xml:space="preserve">
     <value>Сообщение</value>
   </data>
+  <data name="MessageSentFailed" xml:space="preserve">
+    <value>Извините, но мы не можем отправить ваше сообщение. Повторите попытку позже или отправьте его по адресу: </value>
+  </data>
+  <data name="MessageSentSuccess" xml:space="preserve">
+    <value>Спасибо за письмо! Мы ответим вам как можно скорее.</value>
+  </data>
   <data name="NinaRudenko" xml:space="preserve">
     <value>Нина Руденко</value>
   </data>

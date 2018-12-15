@@ -1,4 +1,5 @@
 ﻿using SimpleInjector;
+using SnilAcademicDepartment.App_Start;
 using System;
 using System.Web.Http;
 using System.Web.Mvc;
@@ -14,12 +15,13 @@ namespace SnilAcademicDepartment
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
+			GlobalConfiguration.Configure(WebApiConfig.Register);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
-            RouteConfig.RegisterRoutes(RouteTable.Routes);
+			RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
-            // Initializes Injector configs.
-            this._container = InjectorConfig.Initialize(GlobalConfiguration.Configuration);
+			// Initializes Injector configs.
+			this._container = InjectorConfig.Initialize(GlobalConfiguration.Configuration);
         }
 
         /// <summary>

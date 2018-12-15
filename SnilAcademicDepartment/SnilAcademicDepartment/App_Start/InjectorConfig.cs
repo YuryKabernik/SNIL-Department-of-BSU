@@ -3,6 +3,7 @@ using System.Web.Http;
 using System.Web.Mvc;
 using SnilAcademicDepartment.Common.Infrastructure;
 using SimpleInjector;
+using SimpleInjector.Integration.WebApi;
 using SimpleInjector.Integration.Web.Mvc;
 using SimpleInjector.Integration.Web;
 
@@ -28,17 +29,19 @@ namespace SnilAcademicDepartment
             var container = new Container();
             container.Options.DefaultScopedLifestyle = new WebRequestLifestyle();
 
-            // Register types for instance.
-            SnilPackage.RegisterSnilTypes(container);
+			// Register types for instance.
+			SnilPackage.RegisterSnilTypes(container);
 
-            // This is an extension method from the integration package.
-            container.RegisterMvcControllers(Assembly.GetExecutingAssembly());
+			// This is an extension method from the integration package.
+			container.RegisterWebApiControllers(GlobalConfiguration.Configuration);
+			container.RegisterMvcControllers(Assembly.GetExecutingAssembly());
 
-            container.Verify();
+			container.Verify();
 
-            DependencyResolver.SetResolver(new SimpleInjectorDependencyResolver(container));
-
-            return container;
-        }
+			DependencyResolver.SetResolver(new SimpleInjectorDependencyResolver(container));
+			GlobalConfiguration.Configuration.DependencyResolver =
+				new SimpleInjectorWebApiDependencyResolver(container);
+			return container;
+		}
     }
 }

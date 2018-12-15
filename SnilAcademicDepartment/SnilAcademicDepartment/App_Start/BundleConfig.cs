@@ -30,6 +30,10 @@ namespace SnilAcademicDepartment
 			bundles.Add(new ScriptBundle("~/bundles/font-awesome",
 						jqueryCdnPath).Include(
 						"~/Scripts/font-awesome.*"));
+
+			bundles.Add(new ScriptBundle("~/bundles/form").Include(
+						"~/Scripts/Platform/form.js"));
+
 			//IndexStyle
 			bundles.Add(new StyleBundle("~/Content/indexcss").Include(
 					  "~/Content/IndexStyle.css",
@@ -55,6 +59,9 @@ namespace SnilAcademicDepartment
 			bundles.Add(new StyleBundle("~/Content/contactcss").Include(
 					   "~/Content/bootstrap.min.css",
 					   "~/Content/ContactStyle.css"));
+
+			// Code removed for clarity.
+			BundleTable.EnableOptimizations = true;
 		}
 	}
 }

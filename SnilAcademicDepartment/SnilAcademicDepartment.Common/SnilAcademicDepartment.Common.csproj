@@ -61,6 +61,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CommonPackage.cs" />
+    <Compile Include="ConfigManagerAdapter\SNILConfigurationManager.cs" />
+    <Compile Include="ConfigManagerAdapter\ISNILConfigurationManager.cs" />
     <Compile Include="CustomExceptions\PreviewTypeNotFoundException.cs" />
     <Compile Include="Enumerations\EducationType.cs" />
     <Compile Include="Enumerations\PeoplePages\AcademicTitleEnum.cs" />

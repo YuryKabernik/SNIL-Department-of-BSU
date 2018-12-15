@@ -1,7 +1,9 @@
 ﻿using NLog;
 using SnilAcademicDepartment.BusinessLogic.DTOModels;
 using SnilAcademicDepartment.BusinessLogic.Interfaces;
+using SnilAcademicDepartment.Common.ConfigManagerAdapter;
 using SnilAcademicDepartment.Common.Enumerations;
+using SnilAcademicDepartment.Properties;
 using System;
 using System.Collections.Generic;
 using System.Threading;
@@ -14,7 +16,8 @@ namespace SnilAcademicDepartment.Controllers
     public class ProjectsController : Controller
     {
         private readonly ILogger _logger;
-        private readonly IService _previewService;
+		private readonly ISNILConfigurationManager _configManager;
+		private readonly IService _previewService;
         private readonly IProjects _projectsService;
         private readonly IProjectsPreview _projectsPreview;
 
@@ -23,10 +26,11 @@ namespace SnilAcademicDepartment.Controllers
         /// </summary>
         /// <param name="logger"></param>
         /// <param name="projectsService"></param>
-        public ProjectsController(ILogger logger,IService previewService, IProjects projectsService, IProjectsPreview projectsPreview)
+        public ProjectsController(ILogger logger, ISNILConfigurationManager configManager, IService previewService, IProjects projectsService, IProjectsPreview projectsPreview)
         {
             this._logger = logger;
-            this._previewService = previewService;
+			this._configManager = configManager;
+			this._previewService = previewService;
             this._projectsService = projectsService;
             this._projectsPreview = projectsPreview;
         }
@@ -35,25 +39,28 @@ namespace SnilAcademicDepartment.Controllers
         [Route("projects")]
         public async Task<ActionResult> Projects()
         {
-            PreViewModel projectPreview = null;
+			PreViewModel projectPreview = null;
 
-            IEnumerable<ProjectPreview> currentPreviews = null;
+			IEnumerable<ProjectPreview> currentPreviews = null;
             IEnumerable<ProjectPreview> newPreviews = null;
             IEnumerable<ProjectPreview> finishedPreviews = null;
 
-            try
-            {
+			var start = await this._configManager.GetConfigValueIntAsync(SnilConfigurationSectionKeys.ProjectsPreviewsStartIndexKey);
+			var end = await this._configManager.GetConfigValueIntAsync(SnilConfigurationSectionKeys.ProjectsPreviewsEndIndexKey);
+
+			try
+			{
                 // Get project previews.
                 projectPreview = await this._previewService.GetPagePreviewAsync("Projects", Thread.CurrentThread.CurrentCulture.LCID);
 
                 currentPreviews = await this._projectsPreview
-                    .GetProjectsPreviewsAsync<ProjectPreview>(ProjectStatusDTO.Current, 0, 12, Thread.CurrentThread.CurrentCulture.LCID);
+                    .GetProjectsPreviewsAsync<ProjectPreview>(ProjectStatusDTO.Current, start, end, Thread.CurrentThread.CurrentCulture.LCID);
 
                 newPreviews = await this._projectsPreview
-                    .GetProjectsPreviewsAsync<ProjectPreview>(ProjectStatusDTO.New, 0, 12, Thread.CurrentThread.CurrentCulture.LCID);
+                    .GetProjectsPreviewsAsync<ProjectPreview>(ProjectStatusDTO.New, start, end, Thread.CurrentThread.CurrentCulture.LCID);
 
                 finishedPreviews = await this._projectsPreview
-                    .GetProjectsPreviewsAsync<ProjectPreview>(ProjectStatusDTO.Finished, 0, 12, Thread.CurrentThread.CurrentCulture.LCID);
+                    .GetProjectsPreviewsAsync<ProjectPreview>(ProjectStatusDTO.Finished, start, end, Thread.CurrentThread.CurrentCulture.LCID);
             }
             catch (Exception ex)
             {
@@ -76,12 +83,15 @@ namespace SnilAcademicDepartment.Controllers
             ProjectModel projectModel = null;
             IEnumerable<ProjectPreview> newPreviews = null;
 
-            try
-            {
+			var start = await this._configManager.GetConfigValueIntAsync(SnilConfigurationSectionKeys.ProjectPagePreviewsStartIndexKey);
+			var end = await this._configManager.GetConfigValueIntAsync(SnilConfigurationSectionKeys.ProjectPagePreviewsEndIndexKey);
+
+			try
+			{
                 projectModel = this._projectsService.GetProjectById(id, Thread.CurrentThread.CurrentCulture.LCID);
 
                 newPreviews = await this._projectsPreview
-                    .GetProjectsPreviewsAsync<ProjectPreview>(ProjectStatusDTO.New, 0, 6, Thread.CurrentThread.CurrentCulture.LCID);
+                    .GetProjectsPreviewsAsync<ProjectPreview>(ProjectStatusDTO.New, start, end, Thread.CurrentThread.CurrentCulture.LCID);
 
             }
             catch (Exception )
@@ -103,12 +113,15 @@ namespace SnilAcademicDepartment.Controllers
             ProjectModel projectModel = null;
             IEnumerable<ProjectPreview> finishedPreviews = null;
 
-            try
-            {
+			var start = await  this._configManager.GetConfigValueIntAsync(SnilConfigurationSectionKeys.ProjectPagePreviewsStartIndexKey);
+			var end = await this._configManager.GetConfigValueIntAsync(SnilConfigurationSectionKeys.ProjectPagePreviewsEndIndexKey);
+
+			try
+			{
                 projectModel = this._projectsService.GetProjectById(id, Thread.CurrentThread.CurrentCulture.LCID);
 
                 finishedPreviews = await this._projectsPreview
-                    .GetProjectsPreviewsAsync<ProjectPreview>(ProjectStatusDTO.Finished, 0, 6, Thread.CurrentThread.CurrentCulture.LCID);
+                    .GetProjectsPreviewsAsync<ProjectPreview>(ProjectStatusDTO.Finished, start, end, Thread.CurrentThread.CurrentCulture.LCID);
 
             }
             catch (Exception)
@@ -130,12 +143,15 @@ namespace SnilAcademicDepartment.Controllers
             ProjectModel projectModel = null;
             IEnumerable<ProjectPreview> currentPreviews = null;
 
-            try
-            {
+			var start = await this._configManager.GetConfigValueIntAsync(SnilConfigurationSectionKeys.ProjectPagePreviewsStartIndexKey);
+			var end = await this._configManager.GetConfigValueIntAsync(SnilConfigurationSectionKeys.ProjectPagePreviewsEndIndexKey);
+
+			try
+			{
                 projectModel = this._projectsService.GetProjectById(id, Thread.CurrentThread.CurrentCulture.LCID);
 
                 currentPreviews = await this._projectsPreview
-                   .GetProjectsPreviewsAsync<ProjectPreview>(ProjectStatusDTO.Current, 0, 6, Thread.CurrentThread.CurrentCulture.LCID);
+                   .GetProjectsPreviewsAsync<ProjectPreview>(ProjectStatusDTO.Current, start, end, Thread.CurrentThread.CurrentCulture.LCID);
 
             }
             catch (Exception)
