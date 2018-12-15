@@ -36,52 +36,6 @@
 							<input class="btn btn-default bottom_send_form" type="submit" name="submit" value="Send" />
 						</fieldset>
 					</form>
-					<script>
-						$("#sendMessage").submit(function (event) {
-							// Stop form from submitting normally
-							event.preventDefault();
-
-							var $form = $(this),
-								name = $form.find("input[id='name']").val(),
-								email = $form.find("input[id='email']").val(),
-								company = $form.find("input[id='company']").val(),
-								subject = $form.find("input[id='subject']").val(),
-								__RequestVerificationToken = $form.find("input[name='__RequestVerificationToken']").val(),
-								message = $form.find("textarea[name='Message']").val(),
-								url = $form.attr("action") + `?tn=${__RequestVerificationToken}`;
-
-							var mail = {
-								FullName: name,
-								email: email,
-								company: company,
-								subject: subject,
-								message: message
-							};
-
-							// Send the data using post
-							var posting = $.post(url, mail);
-							var resultTarget = $("div#mailingResult");
-
-							// Put the results in a div
-							posting.done((data) => {
-								resultTarget.removeClass("hidden");
-								resultTarget.addClass("alert-success");
-								resultTarget.html(data.ResultMessage);
-							}).fail((jqXHR) => {
-								resultTarget.removeClass("hidden");
-								resultTarget.addClass("alert-danger");
-								if (jqXHR.responseJSON) {
-									resultTarget.html(jqXHR.responseJSON.Message);
-								} else {
-									resultTarget.html(jqXHR.statusText);
-								}
-							}).always(() => {
-								$("fieldset").attr("disabled", "");
-							}).catch(() => {
-								$("fieldset").attr("disabled", "");
-							});
-						});
-					</script>
 				</div>
 			</div>
 			<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
@@ -111,3 +65,4 @@
 	</div>
 </div>
 <div class="map"><iframe src="https://www.google.com/maps/embed?pb=!1m24!1m12!1m3!1d5598.701798814265!2d27.476724235794606!3d53.84350177002365!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m9!3e6!4m3!3m2!1d53.8490568!2d27.4743256!4m3!3m2!1d53.8399034!2d27.476647699999997!5e0!3m2!1sru!2sby!4v1492944929291" width="100%" height="700" frameborder="0" style="border:0" allowfullscreen></iframe></div>
+@Scripts.Render("~/bundles/form")

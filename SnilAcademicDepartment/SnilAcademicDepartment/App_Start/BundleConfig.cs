@@ -30,6 +30,10 @@ namespace SnilAcademicDepartment
 			bundles.Add(new ScriptBundle("~/bundles/font-awesome",
 						jqueryCdnPath).Include(
 						"~/Scripts/font-awesome.*"));
+
+			bundles.Add(new ScriptBundle("~/bundles/form").Include(
+						"~/Scripts/Platform/form.js"));
+
 			//IndexStyle
 			bundles.Add(new StyleBundle("~/Content/indexcss").Include(
 					  "~/Content/IndexStyle.css",
