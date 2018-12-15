@@ -171,6 +171,9 @@
   <data name="MailAddress" xml:space="preserve">
     <value>kobernykbeljr@gmail.com</value>
   </data>
+  <data name="ParticipantsSPMA" xml:space="preserve">
+    <value>SPMA-Mitglieder</value>
+  </data>
   <data name="PeopleShortDescription" xml:space="preserve">
     <value>Teilnehmer des Labors, Lehrer und Studenten der Abteilung. In diesem Abschnitt können Sie sich mit den Lehrkräften des Labors und der Abteilung sowie mit den aktivsten Studenten und ihren Leistungen in der Lehre und wissenschaftlichen Tätigkeit vertraut machen. Außerdem können Sie die besten Mitarbeiter des Monats kennenlernen.</value>
   </data>

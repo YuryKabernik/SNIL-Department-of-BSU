@@ -259,6 +259,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Состав СНИЛ.
+        /// </summary>
+        public static string ParticipantsSPMA {
+            get {
+                return ResourceManager.GetString("ParticipantsSPMA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Участники лаборатории, преподаватели и студенты кафедры. В данном разделе вы можете ознакомиться с преподавательским составом лаборатории и кафедры, а так же с самыми активными студентами и их достижениями в обучении и научной деятельности. Также вы можете ознакомиться с лучшими сотрудниками месяца..
         /// </summary>
         public static string PeopleShortDescription {

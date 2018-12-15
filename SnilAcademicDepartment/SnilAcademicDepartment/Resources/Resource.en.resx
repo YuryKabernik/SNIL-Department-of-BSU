@@ -192,4 +192,7 @@
   <data name="PhoneString" xml:space="preserve">
     <value>P. :</value>
   </data>
+  <data name="ParticipantsSPMA" xml:space="preserve">
+    <value>Participants SPMA</value>
+  </data>
 </root>

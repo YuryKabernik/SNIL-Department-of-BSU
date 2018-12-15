@@ -446,7 +446,7 @@
     <Content Include="Views\Persons\PersonalPage.cshtml" />
     <Content Include="Views\Persons\Professors.cshtml" />
     <Content Include="Views\Shared\SorryUnavaliable.cshtml" />
-    <Content Include="Views\Persons\SnilComposition.cshtml" />
+    <Content Include="Views\Persons\ParticipantsSPMA.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Cookies\" />

@@ -183,6 +183,9 @@
   <data name="Message" xml:space="preserve">
     <value>Сообщение</value>
   </data>
+  <data name="ParticipantsSPMA" xml:space="preserve">
+    <value>Состав СНИЛ</value>
+  </data>
   <data name="PeopleShortDescription" xml:space="preserve">
     <value>Участники лаборатории, преподаватели и студенты кафедры. В данном разделе вы можете ознакомиться с преподавательским составом лаборатории и кафедры, а так же с самыми активными студентами и их достижениями в обучении и научной деятельности. Также вы можете ознакомиться с лучшими сотрудниками месяца.</value>
   </data>
