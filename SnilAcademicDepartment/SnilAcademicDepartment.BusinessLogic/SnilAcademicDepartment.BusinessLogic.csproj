@@ -94,10 +94,13 @@
     <Compile Include="DTOModels\Professor.cs" />
     <Compile Include="DTOModels\ProjectPreview.cs" />
     <Compile Include="DTOModels\SeminarPreview.cs" />
+    <Compile Include="DTOModels\SpmaPerson.cs" />
+    <Compile Include="DTOModels\SpmaStudent.cs" />
     <Compile Include="InjectionPackageBLL.cs" />
     <Compile Include="Enum\ProjectType.cs" />
     <Compile Include="DTOModels\ClientMail.cs" />
     <Compile Include="Interfaces\ILecturePreview.cs" />
+    <Compile Include="Interfaces\IParticipants.cs" />
     <Compile Include="Interfaces\IProjectsPreview.cs" />
     <Compile Include="Interfaces\ISeminarPreview.cs" />
     <Compile Include="Interfaces\ISendMail.cs" />
@@ -122,6 +125,7 @@
     <Compile Include="Interfaces\IMailSender.cs" />
     <Compile Include="Managers\ImageManager.cs" />
     <Compile Include="Interfaces\ILection.cs" />
+    <Compile Include="Services\ParticipantsService.cs" />
     <Compile Include="Services\PeopleService.cs" />
     <Compile Include="Services\ProjectsService.cs" />
     <Compile Include="Services\SendMailService.cs" />
