@@ -130,6 +130,7 @@
     <Compile Include="Services\ProjectsService.cs" />
     <Compile Include="Services\SendMailService.cs" />
     <Compile Include="Services\PreViewService.cs" />
+    <Compile Include="Services\SpmaParticipants.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
