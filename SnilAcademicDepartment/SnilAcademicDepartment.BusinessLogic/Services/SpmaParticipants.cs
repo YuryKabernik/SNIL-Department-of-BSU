@@ -17,6 +17,12 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
 		private readonly SnilDBContext _repository;
 		private readonly IMapper _mapper;
 
+		/// <summary>
+		/// Initializes a new instance of the <see cref="SpmaParticipants"/> class.
+		/// </summary>
+		/// <param name="logger">The logger.</param>
+		/// <param name="repository">The repository.</param>
+		/// <param name="mapper">The mapper.</param>
 		public SpmaParticipants(ILogger logger, SnilDBContext repository, IMapper mapper)
 		{
 			_logger = logger;
@@ -24,6 +30,11 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
 			_mapper = mapper;
 		}
 
+		/// <summary>
+		/// Gets the stuff personal.
+		/// </summary>
+		/// <param name="langLCID">The language lcid.</param>
+		/// <returns>Collection of people which are snil stuff.</returns>
 		public async Task<IEnumerable<SpmaPerson>> GetStuffPersonal(int langLCID)
 		{
 			var result = await this._repository.StuffPersonals
@@ -35,6 +46,13 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
 			return this._mapper.Map<IEnumerable<SpmaPerson>>(result);
 		}
 
+		/// <summary>
+		/// Gets the stuff person by identifier.
+		/// </summary>
+		/// <param name="uniqueId">The unique identifier.</param>
+		/// <param name="langLCID">The language lcid.</param>
+		/// <returns>Spma person by unique identifier.</returns>
+		/// <exception cref="ArgumentOutOfRangeException">uniqueId - Argument can't be less or equal zero.</exception>
 		public async Task<SpmaPerson> GetStuffPersonById(int uniqueId, int langLCID)
 		{
 			if (uniqueId <= 0)
@@ -49,6 +67,13 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
 			return this._mapper.Map<SpmaPerson>(result);
 		}
 
+		/// <summary>
+		/// Gets the stuff student by identifier.
+		/// </summary>
+		/// <param name="uniqueId">The unique identifier.</param>
+		/// <param name="langLCID">The language lcid.</param>
+		/// <returns>Spma student by unique identifier.</returns>
+		/// <exception cref="ArgumentOutOfRangeException">uniqueId - Argument can't be less or equal zero.</exception>
 		public async Task<SpmaStudent> GetStuffStudentById(int uniqueId, int langLCID)
 		{
 			if (uniqueId <= 0)
@@ -63,6 +88,11 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
 			return this._mapper.Map<SpmaStudent>(result);
 		}
 
+		/// <summary>
+		/// Gets the stuff students.
+		/// </summary>
+		/// <param name="langLCID">The language lcid.</param>
+		/// <returns>Collection of spma students.</returns>
 		public async Task<IEnumerable<SpmaStudent>> GetStuffStudents(int langLCID)
 		{
 			var result = await this._repository.StuffStudents
