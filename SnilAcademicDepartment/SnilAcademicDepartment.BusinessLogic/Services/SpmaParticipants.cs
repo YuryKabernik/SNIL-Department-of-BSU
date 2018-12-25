@@ -1,23 +1,73 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using AutoMapper;
+using NLog;
+using System;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 using SnilAcademicDepartment.BusinessLogic.DTOModels;
 using SnilAcademicDepartment.BusinessLogic.Interfaces;
+using SnilAcademicDepartment.DataAccess;
+using System.Data.Entity;
 
 namespace SnilAcademicDepartment.BusinessLogic.Services
 {
 	public class SpmaParticipants : ISpmaParticipants
 	{
-		public Task<SpmaPerson> GetStuffPersonal()
+		private readonly ILogger _logger;
+		private readonly SnilDBContext _repository;
+		private readonly IMapper _mapper;
+
+		public SpmaParticipants(ILogger logger, SnilDBContext repository, IMapper mapper)
 		{
-			throw new NotImplementedException();
+			_logger = logger;
+			_repository = repository;
+			_mapper = mapper;
 		}
 
-		public Task<SpmaStudent> GetStuffStudents()
+		public async Task<IEnumerable<SpmaPerson>> GetStuffPersonal(int langLCID)
 		{
-			throw new NotImplementedException();
+			var result = await this._repository.StuffPersonals
+				.Where(p => p.PersonId.Language.LanguageCode == langLCID)
+				.Include(prop => prop.PersonId)
+				.ToListAsync();
+
+			return this._mapper.Map<IEnumerable<SpmaPerson>>(result);
+		}
+
+		public async Task<SpmaPerson> GetStuffPersonById(int uniqueId, int langLCID)
+		{
+			if (uniqueId <= 0)
+				throw new ArgumentOutOfRangeException(nameof(uniqueId), "Argument can't be less or equal zero.");
+
+			var result = await this._repository.StuffPersonals
+				.Where(p => p.PersonId.PersonUniqueIdentifire == uniqueId && p.PersonId.Language.LanguageCode == langLCID)
+				.Include(prop => prop.PersonId)
+				.ToListAsync();
+
+			return this._mapper.Map<SpmaPerson>(result);
+		}
+
+		public async Task<SpmaStudent> GetStuffStudentById(int uniqueId, int langLCID)
+		{
+			if (uniqueId <= 0)
+				throw new ArgumentOutOfRangeException(nameof(uniqueId), "Argument can't be less or equal zero.");
+
+			var result = await this._repository.StuffStudents
+				.Where(p => p.Student.UniqueIdentifier == uniqueId && p.Student.Language.LanguageCode == langLCID)
+				.Include(prop => prop.Student)
+				.ToListAsync();
+
+			return this._mapper.Map<SpmaStudent>(result);
+		}
+
+		public async Task<IEnumerable<SpmaStudent>> GetStuffStudents(int langLCID)
+		{
+			var result = await this._repository.StuffStudents
+				.Where(p => p.Student.Language.LanguageCode == langLCID)
+				.Include(prop => prop.Student)
+				.ToListAsync();
+
+			return this._mapper.Map<IEnumerable<SpmaStudent>>(result);
 		}
 	}
 }

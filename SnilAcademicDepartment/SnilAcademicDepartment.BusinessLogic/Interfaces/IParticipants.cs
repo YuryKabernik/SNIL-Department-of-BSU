@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using SnilAcademicDepartment.BusinessLogic.DTOModels;
 
 namespace SnilAcademicDepartment.BusinessLogic.Interfaces
@@ -8,7 +9,9 @@ namespace SnilAcademicDepartment.BusinessLogic.Interfaces
 	/// </summary>
 	public interface ISpmaParticipants
 	{
-		Task<SpmaPerson> GetStuffPersonal();
-		Task<SpmaStudent> GetStuffStudents();
+		Task<IEnumerable<SpmaPerson>> GetStuffPersonal(int langLCID);
+		Task<SpmaPerson> GetStuffPersonById(int uniqueId, int langLCID);
+		Task<IEnumerable<SpmaStudent>> GetStuffStudents(int langLCID);
+		Task<SpmaStudent> GetStuffStudentById(int uniqueId, int langLCID);
 	}
 }
