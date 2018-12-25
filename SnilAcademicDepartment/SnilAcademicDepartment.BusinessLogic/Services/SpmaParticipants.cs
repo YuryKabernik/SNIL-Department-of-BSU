@@ -11,6 +11,10 @@ using System.Data.Entity;
 
 namespace SnilAcademicDepartment.BusinessLogic.Services
 {
+	/// <summary>
+	/// Spma stuff structure service.
+	/// </summary>
+	/// <seealso cref="SnilAcademicDepartment.BusinessLogic.Interfaces.ISpmaParticipants" />
 	public class SpmaParticipants : ISpmaParticipants
 	{
 		private readonly ILogger _logger;
@@ -34,7 +38,7 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
 		/// Gets the stuff personal.
 		/// </summary>
 		/// <param name="langLCID">The language lcid.</param>
-		/// <returns>Collection of people which are snil stuff.</returns>
+		/// <returns>Collection of the snil stuff.</returns>
 		public async Task<IEnumerable<SpmaPerson>> GetStuffPersonal(int langLCID)
 		{
 			var result = await this._repository.StuffPersonals

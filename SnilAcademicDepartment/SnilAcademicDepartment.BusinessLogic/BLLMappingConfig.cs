@@ -175,7 +175,8 @@ namespace SnilAcademicDepartment.BusinessLogic
 				.ForMember(des => des.Projects, opt => opt.MapFrom(s => s.Projects.Select(o => o.ProjectName)));
 
 			this.CreateMap<StuffStudents, SpmaStudent>() // Spma student model
-				.ForMember(des => des.Id, opt => opt.MapFrom(s => s.Student.UniqueIdentifier))
+				.ForMember(des => des.Id, opt => opt.MapFrom(s => s.Id))
+				.ForMember(des => des.UniqueIdentifier, opt => opt.MapFrom(s => s.Student.UniqueIdentifier))
 				.ForMember(des => des.FirstName, opt => opt.MapFrom(s => s.Student.FirstName))
 				.ForMember(des => des.SecoundName, opt => opt.MapFrom(s => s.Student.SecoundName))
 				.ForMember(des => des.LastName, opt => opt.MapFrom(s => s.Student.LastName))
