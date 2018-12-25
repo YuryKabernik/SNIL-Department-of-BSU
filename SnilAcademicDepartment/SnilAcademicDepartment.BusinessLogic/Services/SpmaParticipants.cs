@@ -29,6 +29,7 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
 			var result = await this._repository.StuffPersonals
 				.Where(p => p.PersonId.Language.LanguageCode == langLCID)
 				.Include(prop => prop.PersonId)
+				.Include(prop => prop.PersonId.Image)
 				.ToListAsync();
 
 			return this._mapper.Map<IEnumerable<SpmaPerson>>(result);
@@ -40,9 +41,10 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
 				throw new ArgumentOutOfRangeException(nameof(uniqueId), "Argument can't be less or equal zero.");
 
 			var result = await this._repository.StuffPersonals
-				.Where(p => p.PersonId.PersonUniqueIdentifire == uniqueId && p.PersonId.Language.LanguageCode == langLCID)
+				.Where(p => p.PersonId.Language.LanguageCode == langLCID)
 				.Include(prop => prop.PersonId)
-				.ToListAsync();
+				.Include(prop => prop.PersonId.Image)
+				.FirstOrDefaultAsync(p => p.PersonId.PersonUniqueIdentifire == uniqueId);
 
 			return this._mapper.Map<SpmaPerson>(result);
 		}
@@ -53,9 +55,10 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
 				throw new ArgumentOutOfRangeException(nameof(uniqueId), "Argument can't be less or equal zero.");
 
 			var result = await this._repository.StuffStudents
-				.Where(p => p.Student.UniqueIdentifier == uniqueId && p.Student.Language.LanguageCode == langLCID)
+				.Where(p => p.Student.Language.LanguageCode == langLCID)
 				.Include(prop => prop.Student)
-				.ToListAsync();
+				.Include(prop => prop.Student.Image)
+				.FirstOrDefaultAsync(p => p.Student.UniqueIdentifier == uniqueId);
 
 			return this._mapper.Map<SpmaStudent>(result);
 		}
@@ -65,6 +68,7 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
 			var result = await this._repository.StuffStudents
 				.Where(p => p.Student.Language.LanguageCode == langLCID)
 				.Include(prop => prop.Student)
+				.Include(prop => prop.Student.Image)
 				.ToListAsync();
 
 			return this._mapper.Map<IEnumerable<SpmaStudent>>(result);

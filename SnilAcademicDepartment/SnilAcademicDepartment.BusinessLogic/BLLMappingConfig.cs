@@ -173,6 +173,18 @@ namespace SnilAcademicDepartment.BusinessLogic
 				.ForMember(des => des.Image, opt => opt.MapFrom(s => s.Image.Image1))
 				.ForMember(des => des.Seminars, opt => opt.MapFrom(s => s.Seminars.Select(o => o.Title)))
 				.ForMember(des => des.Projects, opt => opt.MapFrom(s => s.Projects.Select(o => o.ProjectName)));
+
+			this.CreateMap<StuffStudents, SpmaStudent>() // Spma student model
+				.ForMember(des => des.Id, opt => opt.MapFrom(s => s.Student.UniqueIdentifier))
+				.ForMember(des => des.FirstName, opt => opt.MapFrom(s => s.Student.FirstName))
+				.ForMember(des => des.SecoundName, opt => opt.MapFrom(s => s.Student.SecoundName))
+				.ForMember(des => des.LastName, opt => opt.MapFrom(s => s.Student.LastName))
+				.ForMember(des => des.StudentsGroup, opt => opt.MapFrom(s => s.Student.StudentsGroup))
+				.ForMember(des => des.Image, opt => opt.MapFrom(s => s.Student.Image.Image1))
+				.ForMember(des => des.DateEntrance, opt => opt.MapFrom(s => s.DateEntrance))
+				.ForMember(des => des.DateDeparture, opt => opt.MapFrom(s => s.DateEntrance))
+				.ForMember(des => des.GraduationYear, opt => opt.MapFrom(s => s.Student.GraduationYear.Year))
+				.ForMember(des => des.StudentsType, opt => opt.MapFrom(s => s.Student.StudentType.TypeName));
 		}
 	}
 }

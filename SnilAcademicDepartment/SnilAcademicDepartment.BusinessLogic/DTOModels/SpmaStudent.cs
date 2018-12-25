@@ -45,7 +45,28 @@ namespace SnilAcademicDepartment.BusinessLogic.DTOModels
 		/// <value>
 		/// The graduation year.
 		/// </value>
-		public DateTime GraduationYear { get; set; }
+		public int GraduationYear { get; set; }
+		/// <summary>
+		/// Gets or sets the students group.
+		/// </summary>
+		/// <value>
+		/// The students group.
+		/// </value>
+		public string StudentsGroup { get; set; }
+		/// <summary>
+		/// Gets or sets the students group.
+		/// </summary>
+		/// <value>
+		/// The students group.
+		/// </value>
+		public string StudentsType { get; set; }
+		/// <summary>
+		/// Gets or sets the image.
+		/// </summary>
+		/// <value>
+		/// The image.
+		/// </value>
+		public byte[] Image { get; set; }
 		/// <summary>
 		/// Gets or sets the date entrance.
 		/// </summary>
