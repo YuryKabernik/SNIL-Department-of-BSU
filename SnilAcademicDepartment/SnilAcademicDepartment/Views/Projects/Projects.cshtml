@@ -1,7 +1,7 @@
 ﻿@using SnilAcademicDepartment.BusinessLogic.DTOModels;
 @using SnilAcademicDepartment.Resources.ProjectsResources;
 @{
-    ViewBag.Title = "Projects";
+    ViewBag.Title = Resources.Resource.Projects;
     @Styles.Render("~/Content/projectscss")
     var base64 = Convert.ToBase64String(ViewBag.Preview.Image);
     var imgSrc = String.Format("data:image/jpeg;base64,{0}", base64);
@@ -15,7 +15,7 @@
     </ol>
 </div>
 <div class="container">
-    <h2>@ViewBag.Preview.Title</h2><br>
+    <h2>@ProjectResource.Projects</h2><br>
     <div class="row row1">
         <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
             <img src="@imgSrc" alt="" class="img-thumbnail">

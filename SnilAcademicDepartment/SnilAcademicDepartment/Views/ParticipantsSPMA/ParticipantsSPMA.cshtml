@@ -1,26 +1,26 @@
 ﻿@using SnilAcademicDepartment.BusinessLogic.DTOModels;
+@using SnilAcademicDepartment.Resources.SPMAParticipants;
 @{
 	@Styles.Render("~/Content/participantscss")
-	ViewBag.Title = "Participants";
+	ViewBag.Title = Resources.Resource.ParticipantsSPMA;
 	Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <div class="container">
 	<div class="panel panel-default">
 		<!-- Default panel contents -->
-		<div class="panel-heading"><h3>Heads (Руководство)</h3></div>
+		<div class="panel-heading"><h3>@SPMAParticipants.HeadsTableTitle</h3></div>
 
 		<!-- Table -->
 		<table class="table">
 			<thead>
 				<tr>
 					<th class="bsu_photo"></th>
-					<th class="bsu_fullName">ФИО</th>
-					<th class="bsu_academicTitle">Academic title</th>
-					<th class="bsu_professionStatus">Status</th>
-					<th class="bsu_degree">Degree</th>
-					<th class="bsu_assignmentDate">Assignment</th>
-					<th class="bsu_releaseDate">Release</th>
-					<th class="arrow"></th>
+					<th class="bsu_fullName">@SPMAParticipants.FullName</th>
+					<th class="bsu_academicTitle">@SPMAParticipants.AcademicTitle</th>
+					<th class="bsu_professionStatus">@SPMAParticipants.Status</th>
+					<th class="bsu_degree">@SPMAParticipants.Degree</th>
+					<th class="bsu_assignmentDate">@SPMAParticipants.AssignmentDate</th>
+					<th class="bsu_releaseDate">@SPMAParticipants.ReleaseDate</th>
 				</tr>
 			</thead>
 			@Table("heads")
@@ -29,19 +29,19 @@
 
 	<div class="panel panel-default">
 		<!-- Default panel contents -->
-		<div class="panel-heading"><h3>Students (Студенты)</h3></div>
+		<div class="panel-heading"><h3>@SPMAParticipants.StudentsTableTitle</h3></div>
 
 		<!-- Table -->
 		<table class="table fixed_header">
 			<thead>
 				<tr>
 					<th class="bsu_photo"></th>
-					<th class="bsu_fullName">ФИО</th>
-					<th class="bsu_studentType">Type</th>
-					<th class="bsu_studentsGroup">Group</th>
-					<th class="bsu_graduationYear">Graduation</th>
-					<th class="bsu_dateEntrance">Entrance</th>
-					<th class="bsu_dateDeparture">Departure</th>
+					<th class="bsu_fullName">@SPMAParticipants.FullName</th>
+					@*<th class="bsu_studentType">Type</th>*@
+					<th class="bsu_studentsGroup">@SPMAParticipants.StudentsGroup</th>
+					<th class="bsu_graduationYear">@SPMAParticipants.StudentGraduation</th>
+					<th class="bsu_dateEntrance">@SPMAParticipants.Entrance</th>
+					<th class="bsu_dateDeparture">@SPMAParticipants.Departure</th>
 				</tr>
 			</thead>
 			@Table("students")
@@ -65,11 +65,11 @@
 							<img src="@imgSrc" title="@string.Join(" ", item.SecoundName, item.FirstName)" />
 						</td>
 						<td class="bsu_fullName">
-								@string.Join(" ", item.SecoundName, item.FirstName, item.LastName)
+							<span>@string.Join(" ", item.SecoundName, item.FirstName, item.LastName)</span>
 						</td>
-						<td class="bsu_studentType">
+						@*<td class="bsu_studentType">
 							@item.StudentsType
-						</td>
+						</td>*@
 						<td class="bsu_studentsGroup">
 							@item.StudentsGroup
 						</td>
@@ -102,21 +102,21 @@
 			else
 			if (ViewData[$"{dataName}"] is IEnumerable<SpmaPerson>)
 			{
-				IEnumerable<SpmaPerson> students = (IEnumerable<SpmaPerson>)ViewData[$"{dataName}"];
-				foreach (var item in students)
+				IEnumerable<SpmaPerson> stuff = (IEnumerable<SpmaPerson>)ViewData[$"{dataName}"];
+				foreach (var item in stuff)
 				{
 					var base64 = Convert.ToBase64String(item.Image);
 					var imgSrc = String.Format("data:image/jpeg;base64,{0}", base64);
+					var personalPageLink = Url.Action("SpmaStuffPersonalPage", new { controller= "ParticipantsSPMA", id = item.Id });
 					<tr>
 						<td class="bsu_photo">
-							<img src="@imgSrc" title="@string.Join(" ", item.SecoundName, item.PersonName)" />
+							<a href="@personalPageLink">
+								<img src="@imgSrc" title="@string.Join(" ", item.SecoundName, item.PersonName)" />
+							</a>
 						</td>
 						<td class="bsu_fullName">
-							@{
-								var linkText = string.Join(" ", item.SecoundName, item.PersonName);
-								var link = Html.ActionLink(linkText, "SpmaStuffPersonalPage", new { controller = "ParticipantsSPMA", id = item.Id });
-							}
-							@link
+							<h5>@string.Join(" ", item.SecoundName, item.PersonName, item.FathersName)</h5>
+							<a href="@personalPageLink">@SPMAParticipants.LearnMore</a>
 						</td>
 						<td class="bsu_academicTitle">
 							@item.AcademicTitle
@@ -146,9 +146,6 @@
 							{
 								@Html.DisplayText("-")
 							}
-						</td>
-						<td class="see-details-arrow">
-							<span class="glyphicon glyphicon-chevron-right"></span>
 						</td>
 					</tr>
 				}
