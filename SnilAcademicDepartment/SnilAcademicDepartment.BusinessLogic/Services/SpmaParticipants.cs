@@ -69,6 +69,10 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
 			var result = await this._repository.StuffPersonals
 				.Where(p => p.PersonId.Language.LanguageCode == langLCID)
 				.Include(prop => prop.PersonId)
+				.Include(prop => prop.PersonId.AcademicTitle)
+				.Include(prop => prop.PersonId.Biography1)
+				.Include(prop => prop.PersonId.Degree)
+				.Include(prop => prop.PersonId.ProfessionStatus)
 				.Include(prop => prop.PersonId.Image)
 				.FirstOrDefaultAsync(p => p.PersonId.PersonUniqueIdentifire == uniqueId);
 

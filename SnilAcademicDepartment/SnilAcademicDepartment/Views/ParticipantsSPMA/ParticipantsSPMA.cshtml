@@ -64,11 +64,7 @@
 							<img src="@imgSrc" title="@string.Join(" ", item.SecoundName, item.FirstName)" />
 						</td>
 						<td class="bsu_fullName">
-							@{
-								var linkText = string.Join(" ", item.SecoundName, item.FirstName, item.LastName);
-								var link = Html.ActionLink(linkText, "SpmaStudentPersonalPage", new { controller="ParticipantsSPMA", id=item.Id });
-							}
-							@link
+								@string.Join(" ", item.SecoundName, item.FirstName, item.LastName)
 						</td>
 						<td class="bsu_studentType">
 							@item.StudentsType

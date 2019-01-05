@@ -109,15 +109,13 @@ html {
   min-width: 90%;
   margin: auto;
 }
-.content .container .row1 {
+.content .container .row1,
+.content .container .row2{
   padding-bottom: 25px;
 }
-.content .container .row1 img {
+.content .container .index-row img {
   width: 100%;
   max-width: 600px;
-}
-.content .container .row2 {
-  padding-bottom: 25px;
 }
 .content .container .row2 img {
   width: 90%;

@@ -126,6 +126,9 @@
   <data name="Administration" xml:space="preserve">
     <value>Administration</value>
   </data>
+  <data name="AssignmentDate" xml:space="preserve">
+    <value>Zuordnungsdatum</value>
+  </data>
   <data name="Degree" xml:space="preserve">
     <value>Abschluss</value>
   </data>
@@ -152,6 +155,9 @@
   </data>
   <data name="Professors" xml:space="preserve">
     <value>Lehrer</value>
+  </data>
+  <data name="ReleaseDate" xml:space="preserve">
+    <value>Veröffentlichungsdatum</value>
   </data>
   <data name="Students" xml:space="preserve">
     <value>Studenten</value>

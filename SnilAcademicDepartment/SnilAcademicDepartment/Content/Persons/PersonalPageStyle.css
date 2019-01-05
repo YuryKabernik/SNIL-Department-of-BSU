@@ -1,1 +1,11 @@
-﻿
+﻿.spma-person h2:first-child {
+	text-align: center;
+}
+.spma-person ul {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	list-style: none;
+}
+.spma-person img {
+	width: 80%;
+}

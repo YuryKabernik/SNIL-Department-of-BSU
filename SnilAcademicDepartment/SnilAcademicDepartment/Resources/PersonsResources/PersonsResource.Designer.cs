@@ -88,6 +88,15 @@ namespace SnilAcademicDepartment.Resources.PersonsResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Дата назначения.
+        /// </summary>
+        public static string AssignmentDate {
+            get {
+                return ResourceManager.GetString("AssignmentDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Степень.
         /// </summary>
         public static string Degree {
@@ -165,6 +174,15 @@ namespace SnilAcademicDepartment.Resources.PersonsResources {
         public static string Professors {
             get {
                 return ResourceManager.GetString("Professors", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Дата увольнения.
+        /// </summary>
+        public static string ReleaseDate {
+            get {
+                return ResourceManager.GetString("ReleaseDate", resourceCulture);
             }
         }
         
