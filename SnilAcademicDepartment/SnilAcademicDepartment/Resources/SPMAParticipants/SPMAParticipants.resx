@@ -117,82 +117,43 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Address" xml:space="preserve">
-    <value>Independence Avenue, 4, 220030, Minsk, Republik Belarus.</value>
+  <data name="AcademicTitle" xml:space="preserve">
+    <value>Ученое звание</value>
   </data>
-  <data name="ChooseLang" xml:space="preserve">
-    <value>Wählen Sie die Sprache</value>
+  <data name="AssignmentDate" xml:space="preserve">
+    <value>Дата назначения</value>
   </data>
-  <data name="Contacts" xml:space="preserve">
-    <value>Kontakte</value>
+  <data name="Degree" xml:space="preserve">
+    <value>Степень</value>
   </data>
-  <data name="ContactsShortDescription" xml:space="preserve">
-    <value>Kontakte mit den Leitern der Abteilung, der Verwaltung. Machen Sie sich mit dem Standort des Labors, dem kürzesten Weg zu Fuß, mit öffentlichen Verkehrsmitteln vertraut. Sie können eine Textnachricht auf der Seite hinterlassen.</value>
+  <data name="Departure" xml:space="preserve">
+    <value>Дата выпуска</value>
   </data>
-  <data name="Country" xml:space="preserve">
-    <value>Minsk</value>
+  <data name="Entrance" xml:space="preserve">
+    <value>Дата поступления</value>
   </data>
-  <data name="CultureName" xml:space="preserve">
-    <value>Deutsch</value>
+  <data name="FullName" xml:space="preserve">
+    <value>ФИО</value>
   </data>
-  <data name="Download" xml:space="preserve">
-    <value>Dokument herunterladen ...</value>
-  </data>
-  <data name="Education" xml:space="preserve">
-    <value>Unterricht</value>
-  </data>
-  <data name="EducationShortDescription" xml:space="preserve">
-    <value>Lernprozess von Studenten, Unterrichtspläne, Seminare, Quick Learning. Hier finden Sie die Beschreibung des Bildungsprozesses, lernen Sie die aktuellen Lehrer kennen und nehmen Sie Feedback zu den Arbeiten der Lehrkräfte des Labors und der Abteilung für Systemanalyse und Computermodellierung.</value>
-  </data>
-  <data name="Error" xml:space="preserve">
-    <value>Error</value>
-  </data>
-  <data name="FaxNumber" xml:space="preserve">
-    <value>Fax. + 375 17 226 59 40.</value>
-  </data>
-  <data name="FooterCopyright" xml:space="preserve">
-    <value>©  Belarussische Staatsuniversität</value>
-  </data>
-  <data name="History" xml:space="preserve">
-    <value>Geschichte</value>
-  </data>
-  <data name="HistoryShortDescription" xml:space="preserve">
-    <value>Die Geschichte der Schöpfung, die Leiter des Labors und der Abteilung, Konferenzen und Berichte über die Jahre. Auf dieser Seite finden Sie eine detaillierte Beschreibung der Vorträge zu den Seminaren, PHD, IEEE, Berichte zu den Seminaren und Archivdokumenten.</value>
-  </data>
-  <data name="Home" xml:space="preserve">
-    <value>Home</value>
-  </data>
-  <data name="IndexHeader" xml:space="preserve">
-    <value>BSU SPMA</value>
+  <data name="HeadsTableTitle" xml:space="preserve">
+    <value>Руководство</value>
   </data>
   <data name="LearnMore" xml:space="preserve">
-    <value>Lesen Sie mehr ...</value>
+    <value>Перейти на личную страницу...</value>
   </data>
-  <data name="MailAddress" xml:space="preserve">
-    <value>kobernykbeljr@gmail.com</value>
+  <data name="ReleaseDate" xml:space="preserve">
+    <value>Дата увольнения</value>
   </data>
-  <data name="ParticipantsSPMA" xml:space="preserve">
-    <value>SPMA-Mitglieder</value>
+  <data name="Status" xml:space="preserve">
+    <value>Статус</value>
   </data>
-  <data name="PeopleShortDescription" xml:space="preserve">
-    <value>Teilnehmer des Labors, Lehrer und Studenten der Abteilung. In diesem Abschnitt können Sie sich mit den Lehrkräften des Labors und der Abteilung sowie mit den aktivsten Studenten und ihren Leistungen in der Lehre und wissenschaftlichen Tätigkeit vertraut machen. Außerdem können Sie die besten Mitarbeiter des Monats kennenlernen.</value>
+  <data name="StudentGraduation" xml:space="preserve">
+    <value>Год выпуска</value>
   </data>
-  <data name="Persons" xml:space="preserve">
-    <value>Personal</value>
+  <data name="StudentsGroup" xml:space="preserve">
+    <value>Номер группы</value>
   </data>
-  <data name="PhoneNumber" xml:space="preserve">
-    <value>+ 375 17 209 50 44.</value>
-  </data>
-  <data name="PhoneString" xml:space="preserve">
-    <value>P. :</value>
-  </data>
-  <data name="Projects" xml:space="preserve">
-    <value>Projekte</value>
-  </data>
-  <data name="ProjectsShortDescription" xml:space="preserve">
-    <value>Projekte und Leistungen unserer Studenten. Hier finden Sie eine Beschreibung von Projekten, Ideen und wissenschaftlichen Berichten von Laborteilnehmern und der Abteilung Systemanalyse und Computersimulation. Für das sehr wichtige Ergebnis der Studien und der weiteren Anwendung der durchgeführten Projekte.</value>
-  </data>
-  <data name="Welcome" xml:space="preserve">
-    <value>Willkommen im Studenforschungslaborator!</value>
+  <data name="StudentsTableTitle" xml:space="preserve">
+    <value>Студенты</value>
   </data>
 </root>
