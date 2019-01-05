@@ -175,17 +175,33 @@ namespace SnilAcademicDepartment.BusinessLogic
 				.ForMember(des => des.Projects, opt => opt.MapFrom(s => s.Projects.Select(o => o.ProjectName)));
 
 			this.CreateMap<StuffStudents, SpmaStudent>() // Spma student model
-				.ForMember(des => des.Id, opt => opt.MapFrom(s => s.Id))
-				.ForMember(des => des.UniqueIdentifier, opt => opt.MapFrom(s => s.Student.UniqueIdentifier))
+				.ForMember(des => des.Id, opt => opt.MapFrom(s => s.Student.UniqueIdentifier))
 				.ForMember(des => des.FirstName, opt => opt.MapFrom(s => s.Student.FirstName))
 				.ForMember(des => des.SecoundName, opt => opt.MapFrom(s => s.Student.SecoundName))
 				.ForMember(des => des.LastName, opt => opt.MapFrom(s => s.Student.LastName))
 				.ForMember(des => des.StudentsGroup, opt => opt.MapFrom(s => s.Student.StudentsGroup))
 				.ForMember(des => des.Image, opt => opt.MapFrom(s => s.Student.Image.Image1))
 				.ForMember(des => des.DateEntrance, opt => opt.MapFrom(s => s.DateEntrance))
-				.ForMember(des => des.DateDeparture, opt => opt.MapFrom(s => s.DateEntrance))
+				.ForMember(des => des.DateDeparture, opt => opt.MapFrom(s => s.DateDeparture))
 				.ForMember(des => des.GraduationYear, opt => opt.MapFrom(s => s.Student.GraduationYear.Year))
 				.ForMember(des => des.StudentsType, opt => opt.MapFrom(s => s.Student.StudentType.TypeName));
+
+			this.CreateMap<StuffPersonal, SpmaPerson>() // Spma student model
+				.ForMember(des => des.Id, opt => opt.MapFrom(s => s.PersonId.PersonUniqueIdentifire))
+				.ForMember(des => des.PersonName, opt => opt.MapFrom(s => s.PersonId.PersonName))
+				.ForMember(des => des.SecoundName, opt => opt.MapFrom(s => s.PersonId.SecoundName))
+				.ForMember(des => des.FathersName, opt => opt.MapFrom(s => s.PersonId.FathersName))
+				.ForMember(des => des.ProfessionStatus, opt => opt.MapFrom(s => s.PersonId.ProfessionStatus.StatusNaming))
+				.ForMember(des => des.Image, opt => opt.MapFrom(s => s.PersonId.Image.Image1))
+				.ForMember(des => des.AssignmentDate, opt => opt.MapFrom(s => s.AssignmentDate))
+				.ForMember(des => des.ReleaseDate, opt => opt.MapFrom(s => s.ReleaseDate))
+				.ForMember(des => des.PersonalInterests, opt => opt.MapFrom(s => s.PersonId.PersonalInterests))
+				.ForMember(des => des.Biography, opt => opt.MapFrom(s => s.PersonId.Biography1.Description))
+				.ForMember(des => des.Degree, opt => opt.MapFrom(s => s.PersonId.Degree.DegreeNaming))
+				.ForMember(des => des.AcademicTitle, opt => opt.MapFrom(s => s.PersonId.AcademicTitle.AcademicTitleNaming))
+				.ForMember(des => des.Lectures, opt => opt.MapFrom(s => s.PersonId.Lectures.Select(o => o.LectureName)))
+				.ForMember(des => des.Seminars, opt => opt.MapFrom(s => s.PersonId.Seminars.Select(o => o.Title)))
+				.ForMember(des => des.Projects, opt => opt.MapFrom(s => s.PersonId.Projects.Select(o => o.ProjectName)));
 		}
 	}
 }

@@ -12,13 +12,6 @@ namespace SnilAcademicDepartment.BusinessLogic.DTOModels
 		/// </value>
 		public int Id { get; set; }
 		/// <summary>
-		/// Gets or sets person's unique identifier.
-		/// </summary>
-		/// <value>
-		/// The unique identifier.
-		/// </value>
-		public int UniqueIdentifier { get; set; }
-		/// <summary>
 		/// Gets or sets the first name.
 		/// </summary>
 		/// <value>
