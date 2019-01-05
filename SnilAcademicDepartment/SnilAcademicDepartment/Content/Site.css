@@ -1,24 +1,111 @@
-﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+﻿@import url('https://fonts.googleapis.com/css?family=Droid+Sans|Fira+Sans+Condensed:300,400,500,600,700,700i,900');
+/*#010659 #011759 #0a3772 #254e72 #f2f2f2*/
+* {
+  padding: 0;
+  margin: 0;
 }
-
-/* Set padding to keep content from hitting the edges */
-.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+body,
+html {
+  height: 100%;
+  min-width: 900px;
 }
-
-/* Override the default bootstrap behavior where horizontal description lists 
-   will truncate terms that are too long to fit in the left column 
-*/
-.dl-horizontal dt {
-    white-space: normal;
+.header {
+    background-color: #0A366D;
+    padding-top: 20px;
+    padding-bottom: 30px;
 }
-
-/* Set width on the form input elements since they're 100% wide by default */
-input,
-select,
-textarea {
-    max-width: 280px;
+.header .header-container{
+	max-width: 90%;
+}
+.header .header-container .logo {
+  height: 80px;
+  float: left;
+}
+.header .header-container .logo img{
+  height: 100%;
+}
+.header .header-container .signin {
+  float: right;
+  margin-top: 20px;
+}
+.header .header-container form {
+    margin-top: 10px;
+    width: 150px;
+    float: right;
+    height: 100px;
+}
+.header .header-container .lang {
+    width: 149px;
+    float: right;
+    margin-top: 5px;
+    list-style: none;
+    text-align: center;
+}
+/*.header .container .signin {
+    width: 100%;
+    margin: auto;
+    height: 20px;
+}*/
+.header .header-container .lang option {
+    font-size: 20px;
+    border: 1px solid black;
+    /*display: none;
+    font-size: 15px;
+    text-decoration: none;
+    background-repeat: no-repeat;
+    margin-bottom: 1px;*/
+}
+.header .header-container i i:hover li {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+}
+.nav {
+	width: 100%;
+	float: left;
+	background-color: #f0f0f0;
+	list-style: none;
+}
+.nav .container .li-center{
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+.nav .container .li-center .nav-item {
+  display: block;
+  float: left;
+  padding: 20px 10px;
+  color: #333333;
+  text-decoration: none;
+}
+.nav .container .li-center .nav-item a{
+	color: #333333;
+	text-decoration: none;
+}
+.nav .container .li-center .nav-item:hover {
+  background-color: gray;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  cursor: pointer;
+}
+.nav .container .li-center .nav-item:hover a{
+	text-decoration: solid;
+	color: #f0f0f0;
+}
+.content {
+	min-height: 100%;
+	background-color: #f5f5f5;
+	clear: both;
+	padding-top: 19px;
+}
+.clr {
+	height: 100px;
+}
+footer {
+	color: #d0d0d0;
+	background-color: #00285f;
+	padding-top: 20px;
+	height: 100px;
+	margin-top: -100px;
+	text-align: center;
 }

@@ -13,13 +13,14 @@
 		<table class="table">
 			<thead>
 				<tr>
-					<td class="bsu_photo"></td>
-					<td class="bsu_fullName">ФИО</td>
-					<td class="bsu_academicTitle">Academic title</td>
-					<td class="bsu_professionStatus">Status</td>
-					<td class="bsu_degree">Degree</td>
-					<td class="bsu_assignmentDate">Assignment</td>
-					<td class="bsu_releaseDate">Release</td>
+					<th class="bsu_photo"></th>
+					<th class="bsu_fullName">ФИО</th>
+					<th class="bsu_academicTitle">Academic title</th>
+					<th class="bsu_professionStatus">Status</th>
+					<th class="bsu_degree">Degree</th>
+					<th class="bsu_assignmentDate">Assignment</th>
+					<th class="bsu_releaseDate">Release</th>
+					<th class="arrow"></th>
 				</tr>
 			</thead>
 			@Table("heads")
@@ -34,13 +35,13 @@
 		<table class="table fixed_header">
 			<thead>
 				<tr>
-					<td class="bsu_photo"></td>
-					<td class="bsu_fullName">ФИО</td>
-					<td class="bsu_studentType">Type</td>
-					<td class="bsu_studentsGroup">Group</td>
-					<td class="bsu_graduationYear">Graduation</td>
-					<td class="bsu_dateEntrance">Entrance</td>
-					<td class="bsu_dateDeparture">Departure</td>
+					<th class="bsu_photo"></th>
+					<th class="bsu_fullName">ФИО</th>
+					<th class="bsu_studentType">Type</th>
+					<th class="bsu_studentsGroup">Group</th>
+					<th class="bsu_graduationYear">Graduation</th>
+					<th class="bsu_dateEntrance">Entrance</th>
+					<th class="bsu_dateDeparture">Departure</th>
 				</tr>
 			</thead>
 			@Table("students")
@@ -145,6 +146,9 @@
 							{
 								@Html.DisplayText("-")
 							}
+						</td>
+						<td class="see-details-arrow">
+							<span class="glyphicon glyphicon-chevron-right"></span>
 						</td>
 					</tr>
 				}

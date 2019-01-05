@@ -33,38 +33,35 @@ namespace SnilAcademicDepartment
 
 			bundles.Add(new ScriptBundle("~/bundles/form").Include(
 						"~/Scripts/Platform/form.js"));
+			//Layout page
+			bundles.Add(new StyleBundle("~/Content/layoutcss").Include(
+						"~/Content/Site.css",
+						"~/Content/dropdown-box.css",
+						"~/Content/bootstrap.min.css"));
 
 			//IndexStyle
 			bundles.Add(new StyleBundle("~/Content/indexcss").Include(
-					  "~/Content/IndexStyle.css",
-					  "~/Content/ContactStyle.css",
-					  "~/Content/bootstrap.min.css",
-					   "~/Content/dropdown-box.css"));
+						"~/Content/IndexStyle.css"));
 			//ProjectStyle
 			bundles.Add(new StyleBundle("~/Content/projectscss").Include(
-					   "~/Content/Projects/ProjectsStyle.css"));
+						"~/Content/Projects/ProjectsStyle.css"));
 			//ParticipantsStyle
 			bundles.Add(new StyleBundle("~/Content/participantscss").Include(
-					   "~/Content/Participants/ParticipantsStyle.css"));
+						"~/Content/Participants/ParticipantsStyle.css"));
 			//HistoryStyle
 			bundles.Add(new StyleBundle("~/Content/historycss").Include(
-					   "~/Content/bootstrap.min.css",
-					   "~/Content/History/HistoryStyle.css"));
+						"~/Content/History/HistoryStyle.css"));
 			//PersonsStyle
 			bundles.Add(new StyleBundle("~/Content/peoplecss").Include(
-					   "~/Content/bootstrap.min.css",
-					   "~/Content/Persons/PersonsStyle.css"));
+						"~/Content/Persons/PersonsStyle.css"));
 			//PersonalPageStyle
 			bundles.Add(new StyleBundle("~/Content/personalpagecss").Include(
-					   "~/Content/bootstrap.min.css",
-					   "~/Content/Persons/PersonalPageStyle.css"));
+						"~/Content/Persons/PersonalPageStyle.css"));
 			//EducationStyle
 			bundles.Add(new StyleBundle("~/Content/educationcss").Include(
-					   "~/Content/bootstrap.min.css",
 					   "~/Content/Education/EducationStyle.css"));
 			//ContactStyle
 			bundles.Add(new StyleBundle("~/Content/contactcss").Include(
-					   "~/Content/bootstrap.min.css",
 					   "~/Content/ContactStyle.css"));
 
 			// Code removed for clarity.
