@@ -43,6 +43,9 @@ namespace SnilAcademicDepartment
 			//ProjectStyle
 			bundles.Add(new StyleBundle("~/Content/projectscss").Include(
 					   "~/Content/Projects/ProjectsStyle.css"));
+			//ParticipantsStyle
+			bundles.Add(new StyleBundle("~/Content/participantscss").Include(
+					   "~/Content/Participants/ParticipantsStyle.css"));
 			//HistoryStyle
 			bundles.Add(new StyleBundle("~/Content/historycss").Include(
 					   "~/Content/bootstrap.min.css",

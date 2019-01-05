@@ -1,0 +1,158 @@
+﻿@using SnilAcademicDepartment.BusinessLogic.DTOModels;
+@{
+	@Styles.Render("~/Content/participantscss")
+	ViewBag.Title = "Participants";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container">
+	<div class="panel panel-default">
+		<!-- Default panel contents -->
+		<div class="panel-heading"><h3>Heads (Руководство)</h3></div>
+
+		<!-- Table -->
+		<table class="table">
+			<thead>
+				<tr>
+					<td class="bsu_photo"></td>
+					<td class="bsu_fullName">ФИО</td>
+					<td class="bsu_academicTitle">Academic title</td>
+					<td class="bsu_professionStatus">Status</td>
+					<td class="bsu_degree">Degree</td>
+					<td class="bsu_assignmentDate">Assignment</td>
+					<td class="bsu_releaseDate">Release</td>
+				</tr>
+			</thead>
+			@Table("heads")
+		</table>
+	</div>
+
+	<div class="panel panel-default">
+		<!-- Default panel contents -->
+		<div class="panel-heading"><h3>Students (Студенты)</h3></div>
+
+		<!-- Table -->
+		<table class="table fixed_header">
+			<thead>
+				<tr>
+					<td class="bsu_photo"></td>
+					<td class="bsu_fullName">ФИО</td>
+					<td class="bsu_studentType">Type</td>
+					<td class="bsu_studentsGroup">Group</td>
+					<td class="bsu_graduationYear">Graduation</td>
+					<td class="bsu_dateEntrance">Entrance</td>
+					<td class="bsu_dateDeparture">Departure</td>
+				</tr>
+			</thead>
+			@Table("students")
+		</table>
+	</div>
+</div>
+
+@helper Table(string dataName)
+{
+	<tbody>
+		@{
+			if (ViewData[$"{dataName}"] is IEnumerable<SpmaStudent>)
+			{
+				IEnumerable<SpmaStudent> students = (IEnumerable<SpmaStudent>)ViewData["students"];
+				foreach (var item in students)
+				{
+					var base64 = Convert.ToBase64String(item.Image);
+					var imgSrc = String.Format("data:image/jpeg;base64,{0}", base64);
+					<tr>
+						<td class="bsu_photo">
+							<img src="@imgSrc" title="@string.Join(" ", item.SecoundName, item.FirstName)" />
+						</td>
+						<td class="bsu_fullName">
+							@{
+								var linkText = string.Join(" ", item.SecoundName, item.FirstName, item.LastName);
+								var link = Html.ActionLink(linkText, "SpmaStudentPersonalPage", new { controller="ParticipantsSPMA", id=item.Id });
+							}
+							@link
+						</td>
+						<td class="bsu_studentType">
+							@item.StudentsType
+						</td>
+						<td class="bsu_studentsGroup">
+							@item.StudentsGroup
+						</td>
+						<td class="bsu_graduationYear">
+							@item.GraduationYear
+						</td>
+						<td class="bsu_dateEntrance">
+							@if (item.DateEntrance != null)
+							{
+								@item.DateEntrance.ToShortDateString()
+							}
+							else
+							{
+								@Html.TextArea("-")
+							}
+						</td>
+						<td class="bsu_dateDeparture">
+							@if (item.DateDeparture != null)
+							{
+								@item.DateDeparture.ToShortDateString()
+							}
+							else
+							{
+								@Html.DisplayText("-")
+							}
+						</td>
+					</tr>
+				}
+			}
+			else
+			if (ViewData[$"{dataName}"] is IEnumerable<SpmaPerson>)
+			{
+				IEnumerable<SpmaPerson> students = (IEnumerable<SpmaPerson>)ViewData[$"{dataName}"];
+				foreach (var item in students)
+				{
+					var base64 = Convert.ToBase64String(item.Image);
+					var imgSrc = String.Format("data:image/jpeg;base64,{0}", base64);
+					<tr>
+						<td class="bsu_photo">
+							<img src="@imgSrc" title="@string.Join(" ", item.SecoundName, item.PersonName)" />
+						</td>
+						<td class="bsu_fullName">
+							@{
+								var linkText = string.Join(" ", item.SecoundName, item.PersonName);
+								var link = Html.ActionLink(linkText, "SpmaStuffPersonalPage", new { controller = "ParticipantsSPMA", id = item.Id });
+							}
+							@link
+						</td>
+						<td class="bsu_academicTitle">
+							@item.AcademicTitle
+						</td>
+						<td class="bsu_professionStatus">
+							@item.ProfessionStatus
+						</td>
+						<td class="bsu_degree">
+							@item.Degree
+						</td>
+						<td class="bsu_assignmentDate">
+							@if (item.AssignmentDate != null)
+							{
+								@item.AssignmentDate.ToShortDateString()
+							}
+							else
+							{
+								@Html.TextArea("-")
+							}
+						</td>
+						<td class="bsu_releaseDate">
+							@if (item.ReleaseDate != null)
+							{
+								@item.ReleaseDate.ToShortDateString()
+							}
+							else
+							{
+								@Html.DisplayText("-")
+							}
+						</td>
+					</tr>
+				}
+			}
+		}
+	</tbody>
+}

@@ -295,6 +295,7 @@
     <Content Include="Content\ContactStyle.css" />
     <Content Include="Content\IndexStyle.css" />
     <Content Include="Content\dropdown-box.css" />
+    <Content Include="Content\Participants\ParticipantsStyle.css" />
     <Content Include="Content\Persons\PersonalPageStyle.css" />
     <Content Include="Content\Persons\PersonsStyle.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -447,11 +448,11 @@
     <Content Include="Views\Persons\PersonalPage.cshtml" />
     <Content Include="Views\Persons\Professors.cshtml" />
     <Content Include="Views\Shared\SorryUnavaliable.cshtml" />
-    <Content Include="Views\Persons\ParticipantsSPMA.cshtml" />
+    <Content Include="Views\ParticipantsSPMA\ParticipantsSPMA.cshtml" />
+    <Content Include="Views\ParticipantsSPMA\SpmaPersonalPage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Cookies\" />
-    <Folder Include="Views\ParticipantsSPMA\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
