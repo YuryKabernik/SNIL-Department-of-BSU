@@ -78,10 +78,8 @@ namespace SnilAcademicDepartment.Controllers
                 item.ActionId = i++;
             }
 
-            ViewBag.Title = "Education";
-            ViewBag.viewModel = viewModel;
-            ViewBag.blockModel = blockCollection;
-
+            ViewData.Add("viewModel", viewModel);
+			ViewData.Add("blockModel", blockCollection);
             return View();
         }
 
