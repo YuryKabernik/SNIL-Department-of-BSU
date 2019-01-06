@@ -23,7 +23,7 @@ namespace SnilAcademicDepartment.BusinessLogic.DTOModels
 
 		public string PersonalInterests { get; set; }
 
-		public byte[] Image { get; set; }
+		public int ImageId { get; set; }
 
 		public string Biography { get; set; }
 		

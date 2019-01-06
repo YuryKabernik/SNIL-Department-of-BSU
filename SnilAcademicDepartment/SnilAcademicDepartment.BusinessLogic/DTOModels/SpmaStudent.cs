@@ -59,7 +59,7 @@ namespace SnilAcademicDepartment.BusinessLogic.DTOModels
 		/// <value>
 		/// The image.
 		/// </value>
-		public byte[] Image { get; set; }
+		public int ImageId { get; set; }
 		/// <summary>
 		/// Gets or sets the date entrance.
 		/// </summary>
