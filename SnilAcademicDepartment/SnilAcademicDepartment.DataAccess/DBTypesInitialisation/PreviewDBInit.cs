@@ -30,7 +30,7 @@ namespace SnilAcademicDepartment.DataAccess.DBTypesInitialisation
             string discriptionPrefix,
             PageType pageTypeName,
             Language language,
-            byte[] imgPath,
+            Image imgPath,
             bool isShorted = false)
         {
             var preview = new PreView()

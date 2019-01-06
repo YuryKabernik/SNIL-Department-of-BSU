@@ -177,6 +177,10 @@
     <Compile Include="Migrations\201812250848007_AddImageToStudentsDataModel.Designer.cs">
       <DependentUpon>201812250848007_AddImageToStudentsDataModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201901060834504_ImageFromAdditionalTable.cs" />
+    <Compile Include="Migrations\201901060834504_ImageFromAdditionalTable.Designer.cs">
+      <DependentUpon>201901060834504_ImageFromAdditionalTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AcademicTitle.cs" />
     <Compile Include="Models\Biography.cs" />
@@ -280,6 +284,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201812250848007_AddImageToStudentsDataModel.resx">
       <DependentUpon>201812250848007_AddImageToStudentsDataModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901060834504_ImageFromAdditionalTable.resx">
+      <DependentUpon>201901060834504_ImageFromAdditionalTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

@@ -20,9 +20,7 @@ namespace SnilAcademicDepartment.DataAccess.Configurations
                 .IsRequired()
                 .IsUnicode(false);
 
-            this.Property(p => p.Image)
-                .HasColumnType("image")
-                .IsRequired();
+			this.HasRequired(p => p.Image);
         }
     }
 }
