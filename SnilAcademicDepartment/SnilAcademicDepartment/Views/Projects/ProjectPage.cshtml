@@ -2,8 +2,7 @@
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
     @Styles.Render("~/Content/projectscss")
-    var base64 = Convert.ToBase64String(ViewBag.Project.Image);
-    var imgSrc = String.Format("data:image/jpeg;base64,{0}", base64);
+    var imgSrc = Url.Action("GetImage", new { controller = "Image", id = ViewBag.Project.ImageId });
 }
 <div class="container">
     <ol class="breadcrumb">
@@ -36,11 +35,9 @@
     <div class="row">
         <h2>@title</h2>
         @{
-            foreach (var item in collection)
-            {
-                var base64Block = Convert.ToBase64String(item.Image);
-                var imgSrcProj = String.Format("data:image/jpeg;base64,{0}", base64Block);
-
+			foreach (var item in collection)
+			{
+				var imgSrcProj = Url.Action("GetImage", new { controller = "Image", id = item.ImageId });
                 <div class="col-sm-6 col-md-4">
                     <div class="thumbnail block">
                         <img src="@imgSrcProj" alt="@item.Title" class="img-rounded">

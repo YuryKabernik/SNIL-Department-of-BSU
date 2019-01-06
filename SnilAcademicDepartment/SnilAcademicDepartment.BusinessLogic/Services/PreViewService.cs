@@ -150,6 +150,7 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
 			}
 
 			var requestResult = await this._repository.PreViews
+				.Include(p => p.Image)
 				.FirstOrDefaultAsync(e => pageType.Equals(e.PageTypeName.PageTypeName, StringComparison.OrdinalIgnoreCase)
 				&& e.Language.LanguageCode == langLCID);
 

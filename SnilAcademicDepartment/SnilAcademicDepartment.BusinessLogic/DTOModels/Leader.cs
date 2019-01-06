@@ -15,7 +15,7 @@
         /// <summary>
         /// Leader's foto.
         /// </summary>
-        public byte[] Image { get; set; }
+        public int ImageId { get; set; }
 
         /// <summary>
         /// Leader's points.

@@ -15,9 +15,9 @@ namespace SnilAcademicDepartment.BusinessLogic.DTOModels
         public string Description { get; set; }
 
         /// <summary>
-        /// Image of the current block.
+        /// ImageId of the current block.
         /// </summary>
-        public byte[] Image { get; set; }
+        public int ImageId { get; set; }
 
         /// <summary>
         /// Topics of this ke area block.

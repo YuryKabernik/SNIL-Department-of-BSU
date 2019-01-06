@@ -57,6 +57,13 @@ namespace SnilAcademicDepartment.DataAccess.Models
 		/// </value>
 		public string StudentsGroup { get; set; }
 		/// <summary>
+		/// Gets or sets the image.
+		/// </summary>
+		/// <value>
+		/// The image.
+		/// </value>
+		public Image Image { get; set; }
+		/// <summary>
 		/// Gets or sets the language.
 		/// </summary>
 		/// <value>

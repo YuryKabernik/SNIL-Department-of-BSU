@@ -1,0 +1,51 @@
+﻿.table .bsu_photo,
+.table .bsu_fullName {
+	width: 17%;
+	text-align: center;
+	vertical-align: middle;
+}
+.table .bsu_fullName a {
+	font-size: smaller;
+}
+.table .bsu_photo img {
+	width: 120px;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.table .bsu_academicTitle,
+.table .bsu_studentType,
+.table .bsu_professionStatus,
+.table .bsu_studentsGroup {
+	width: 10%;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.table .bsu_assignmentDate,
+.table .bsu_graduationYear,
+.table .bsu_dateDeparture,
+.table .bsu_dateEntrance,
+.table .bsu_releaseDate,
+.table .bsu_degree {
+	width: 13%;
+	text-align: center;
+	vertical-align: middle;
+}
+.table .see-details-arrow {
+	vertical-align: middle;
+	text-align: center;
+	padding: 0px;
+}
+.table .see-details-arrow a {
+	display: table;
+	height: 150px;
+    width:100%;
+    border-spacing:10px;
+	color: black;
+	text-decoration: none;
+}
+.table .see-details-arrow:hover {
+	text-decoration: none;
+	background-color: #f0f0f0;
+}

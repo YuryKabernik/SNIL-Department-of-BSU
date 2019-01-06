@@ -10,9 +10,11 @@ namespace SnilAcademicDepartment.DataAccess.Models
 
         public string Header { get; set; }
 
-        public byte[] Image { get; set; }
+		public int ImageId { get; set; }
 
-        public int? Localisation { get; set; }
+		public Image Image { get; set; }
+
+		public int? Localisation { get; set; }
 
         public virtual Language Language { get; set; }
 

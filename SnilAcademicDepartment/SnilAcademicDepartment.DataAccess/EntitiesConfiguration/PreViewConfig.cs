@@ -8,6 +8,8 @@ namespace SnilAcademicDepartment.DataAccess.Configurations
     {
         public PreViewConfig()
         {
+			this.HasKey(p=>p.PreViewId);
+
             this.Property(e => e.PreViewId)
                 .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
 
@@ -19,10 +21,6 @@ namespace SnilAcademicDepartment.DataAccess.Configurations
                 .HasColumnType("text")
                 .IsRequired()
                 .IsUnicode(false);
-
-            this.Property(p => p.Image)
-                .HasColumnType("image")
-                .IsRequired();
         }
     }
 }

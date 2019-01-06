@@ -37,6 +37,9 @@
 .content .container .HallofFame .wrapper a {
   margin-right: 20px;
 }
+.content .container .HallofFame .wrapper a:hover {
+  text-decoration: none;
+}
 .content .container .HallofFame .wrapper a img {
   height: 120px;
 }

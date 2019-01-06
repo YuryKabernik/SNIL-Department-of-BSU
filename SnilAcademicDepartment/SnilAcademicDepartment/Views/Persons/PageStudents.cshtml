@@ -19,8 +19,7 @@
 	@{
 		foreach (var student in ViewData["Students"] as IList<PersonVM>)
 		{
-			var base64Block = Convert.ToBase64String(student.Image);
-			var imgSrcBlock = String.Format("data:image/jpeg;base64,{0}", base64Block);
+			var imgSrcBlock = Url.Action("GetImage", new { controller = "Image", id = student.ImageId });
 			var personPageUrl = Url.RouteUrl(new { action = "PersonalPage", controller = "Persons", id = student.Id });
 
 			<div class="row row-student well">

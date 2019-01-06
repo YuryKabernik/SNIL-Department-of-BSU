@@ -192,6 +192,7 @@
     <Compile Include="Controllers\HistoryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ImageController.cs" />
+    <Compile Include="Controllers\ParticipantsSPMAController.cs" />
     <Compile Include="Controllers\PersonsController.cs" />
     <Compile Include="Controllers\ProjectsController.cs" />
     <Compile Include="Filters\CultureAttribute.cs" />
@@ -199,6 +200,21 @@
     <Compile Include="Filters\ValidateAntyForgeryToken.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\SPMAParticipants\SPMAParticipants.de.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SPMAParticipants.de.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\SPMAParticipants\SPMAParticipants.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SPMAParticipants.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\SPMAParticipants\SPMAParticipants.en.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SPMAParticipants.en.resx</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\MailingResult.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -294,6 +310,7 @@
     <Content Include="Content\ContactStyle.css" />
     <Content Include="Content\IndexStyle.css" />
     <Content Include="Content\dropdown-box.css" />
+    <Content Include="Content\Participants\ParticipantsStyle.css" />
     <Content Include="Content\Persons\PersonalPageStyle.css" />
     <Content Include="Content\Persons\PersonsStyle.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -446,7 +463,8 @@
     <Content Include="Views\Persons\PersonalPage.cshtml" />
     <Content Include="Views\Persons\Professors.cshtml" />
     <Content Include="Views\Shared\SorryUnavaliable.cshtml" />
-    <Content Include="Views\Persons\SnilComposition.cshtml" />
+    <Content Include="Views\ParticipantsSPMA\ParticipantsSPMA.cshtml" />
+    <Content Include="Views\ParticipantsSPMA\SpmaPersonalPage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Cookies\" />
@@ -521,6 +539,18 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resource.Designer.cs</LastGenOutput>
       <CustomToolNamespace>Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\SPMAParticipants\SPMAParticipants.de.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>SPMAParticipants.de.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\SPMAParticipants\SPMAParticipants.en.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>SPMAParticipants.en.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\SPMAParticipants\SPMAParticipants.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>SPMAParticipants.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\UnavaliableErrorResources\UnavaliableErrorResource.de.resx" />
     <EmbeddedResource Include="Resources\UnavaliableErrorResources\UnavaliableErrorResource.en.resx" />

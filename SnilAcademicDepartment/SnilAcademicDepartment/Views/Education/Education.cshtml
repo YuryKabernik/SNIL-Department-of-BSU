@@ -1,62 +1,75 @@
-﻿@{
-    @Styles.Render("~/Content/educationcss")
-    var base64 = Convert.ToBase64String(ViewBag.viewModel.Image);
-    var imgSrc = String.Format("data:image/jpeg;base64,{0}", base64);
+﻿@using SnilAcademicDepartment.BusinessLogic.DTOModels;
+@{
+	ViewBag.Title = Resources.Resource.Education;
 }
+@Styles.Render("~/Content/educationcss")
 <div class="container">
-    <ol class="breadcrumb">
-        <li>
-            @Html.ActionLink(Resources.Resource.Home, "Index", "Home")
-        </li>
-        <li class="active">@Resources.Resource.Education</li>
-    </ol>
+	<ol class="breadcrumb">
+		<li>
+			@Html.ActionLink(Resources.Resource.Home, "Index", "Home")
+		</li>
+		<li class="active">@Resources.Resource.Education</li>
+	</ol>
 </div>
 <div class="container">
-    <h2>@Resources.Resource.Education</h2><br>
-    <div class="row row1">
-        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-            <img src="@imgSrc" alt="" class="img-thumbnail">
-        </div>
-        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-            @ViewBag.viewModel.Description
-        </div>
-    </div>
-    <h2>@Resources.EducationResources.EducationResource.KeyDirections</h2><br>
-    @{
-        foreach (var educationBlockModel in ViewBag.blockModel)
-        {
-            var base64Block = Convert.ToBase64String(educationBlockModel.Image);
-            var imgSrcBlock = String.Format("data:image/jpeg;base64,{0}", base64Block);
+	<h2>@Resources.Resource.Education</h2><br>
+	<div class="row row1">
+		@if(ViewData["viewModel"] is PreViewModel) {
+			PreViewModel viewModel = (PreViewModel)ViewData["viewModel"];
+			var imgSrc = Url.Action("GetImage", new { controller = "Image", id = viewModel.ImageId });
 
-            <div class="row row2">
-                <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                    <a href="#"><img src="@imgSrcBlock" alt="" class="img-thumbnail"></a>
-                </div>
-                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                    <h4>@educationBlockModel.Title</h4>
-                    <p>
-                        @educationBlockModel.Description
-                    </p>
-                    @switch (educationBlockModel.ActionId)
-                    {
-                        case 1:<p>@Html.ActionLink(Resources.Resource.LearnMore, "PageSeminars", "Education")</p>
-                            break;
+			<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+				<img src="@imgSrc" alt="@viewModel.Title" class="img-thumbnail">
+			</div>
+			<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+				<p>
+					@viewModel.Description
+				</p>
+			</div>
+		}
+		
+	</div>
+	<h2>@Resources.EducationResources.EducationResource.KeyDirections</h2><br>
+	@{
+		if(ViewData["blockModel"] is List<EducationBlockModel>)
+		{
+			List<EducationBlockModel> blockCollection = (List<EducationBlockModel>)ViewData["blockModel"];
+			foreach (var educationBlockModel in blockCollection)
+			{
+				var imgSrcBlock = Url.Action("GetImage", new { controller = "Image", id = educationBlockModel.ImageId });
+				<div class="row row2">
+					<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+						<a href="#"><img src="@imgSrcBlock" alt="@educationBlockModel.Title" class="img-thumbnail"></a>
+					</div>
+					<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+						<h4>@educationBlockModel.Title</h4>
+						<p>
+							@educationBlockModel.Description
+						</p>
+						@switch (educationBlockModel.ActionId)
+						{
+							case 1:<p>@Html.ActionLink(Resources.Resource.LearnMore, "PageSeminars", "Education")</p>
+							break;
 
-                        case 2: <p>@Html.ActionLink(Resources.Resource.LearnMore, "PageLectures", "Education")</p>
-                            break;
+							case 2: <p>@Html.ActionLink(Resources.Resource.LearnMore, "PageLectures", "Education")</p>
+							break;
 
-                        default: <p>@Html.ActionLink(Resources.Resource.LearnMore, "PageQuickLearning", "Education")</p>
-                            break;
-                    }
+							default: <p>@Html.ActionLink(Resources.Resource.LearnMore, "PageQuickLearning", "Education")</p>
+							break;
+						}
 
-                </div>
-                <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 row3">
-                    <ul>
-                        @foreach (string topic in educationBlockModel.Topics)
-                            {<li>@topic</li>}
-                    </ul>
-                </div>
-            </div>
-        }
-     }
+					</div>
+					<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 row3">
+						<ul>
+							@foreach (string topic in educationBlockModel.Topics)
+							{
+								<li>@topic</li>
+							}
+						</ul>
+					</div>
+				</div>
+			}
+			
+		}
+	}
 </div>

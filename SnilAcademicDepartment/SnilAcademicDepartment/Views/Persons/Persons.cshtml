@@ -1,7 +1,7 @@
 ﻿@using SnilAcademicDepartment.BusinessLogic.DTOModels;
 @using SnilAcademicDepartment.Resources.PersonsResources;
 @{
-	ViewBag.Title = "Persons";
+	ViewBag.Title = Resources.Resource.Persons;
 	@Styles.Render("~/Content/peoplecss");
 }
 <div class="container">
@@ -19,11 +19,11 @@
 				@{
 					foreach (Leader person in ViewBag.Leaders)
 					{
-						var base64 = Convert.ToBase64String(person.Image);
-						var imgSrc = String.Format("data:image/jpeg;base64,{0}", base64);
+						var imgSrc = Url.Action("GetImage", new { controller = "Image", id = person.ImageId });
 						var personPageUrl = Url.RouteUrl(new { action = "PersonalPage", controller = "Persons", id = person.Id });
-
-						<a href="@personPageUrl"><img src="@imgSrc" alt="@person.FullName" title="@person.FullName"></a>
+						<a href="@personPageUrl">
+							<img src="@imgSrc" alt="@person.FullName" title="@person.FullName">
+						</a>
 					}
 				}
 				<h2>@PersonsResource.HallFame</h2>
@@ -52,22 +52,6 @@
 			<a href="@Url.Action("PagePHDs")">
 				<img src="~/img/Conferences/P1040801.jpg" title="dicriptiom">
 				<h2>@PersonsResource.PhD</h2>
-			</a>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos ullam, repellat vel consectetur consequuntur eaque ea enim aliquam itaque architecto.</p>
-		</div>
-		<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-			<a href="@Url.Action("Enrollee")">
-				<img src="~/img/Persons/skakun.jpg" title="dicriptiom">
-				<h2>@PersonsResource.Abitur</h2>
-			</a>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam perferendis minima nostrum eius laboriosam doloribus dolorem aspernatur? Maiores, expedita, optio.</p>
-		</div>
-	</div>
-	<div class="row rows">
-		<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-			<a href="@Url.Action("PageStudents")">
-				<img src="~/img/Conferences/P1040805.jpg" title="dicriptiom">
-				<h2>@PersonsResource.Students</h2>
 			</a>
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos ullam, repellat vel consectetur consequuntur eaque ea enim aliquam itaque architecto.</p>
 		</div>

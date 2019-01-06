@@ -1,0 +1,55 @@
+﻿@using SnilAcademicDepartment.BusinessLogic.DTOModels;
+@using SnilAcademicDepartment.Resources.PersonsResources;
+@{
+	ViewBag.Title = "SpmaPersonalPage";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Styles.Render("~/Content/personalpagecss")
+<div class="container">
+	<ol class="breadcrumb">
+		<li>
+			@Html.ActionLink(Resources.Resource.Home, "Index", "Home")
+		</li>
+		<li>
+			@Html.ActionLink(Resources.Resource.ParticipantsSPMA, "ParticipantsPage", "ParticipantsSPMA")
+		</li>
+		@if (ViewData.Model is SpmaPerson)
+		{
+			SpmaPerson person = ViewData.Model;
+			<li class="active">@string.Join(", ", person.SecoundName, person.PersonName)</li>
+		}
+	</ol>
+</div>
+<div class="container spma-person">
+	@{
+		string base64 = null;
+		string imgSrc = null;
+	}
+	@if (ViewData.Model is SpmaPerson)
+	{
+		SpmaPerson person = ViewData.Model;
+		imgSrc = Url.Action("GetImage", new { controller = "Image", id = person.ImageId });
+
+		<h2>@String.Join(", ", person.Degree, $"{person.SecoundName} {person.PersonName}")</h2><br>
+		<div class="row row1">
+			<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4" style="text-align: -webkit-center;">
+				<img src="@imgSrc" alt="@String.Join(" ", person.SecoundName, person.PersonName)" title="@String.Concat(person.SecoundName," ",person.PersonName)">
+				<ul>
+					<li><strong>@PersonsResource.Degree:</strong> <span>@person.Degree</span> </li>
+					<li><strong>@PersonsResource.AcademicTitle:</strong> <span>@person.AcademicTitle</span> </li>
+					<li><strong>@PersonsResource.ProfessionStatus:</strong> <span>@person.ProfessionStatus</span> </li>
+				</ul>
+			</div>
+			<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+				<p>@person.Biography</p>
+				<ul>
+					<li><strong>@PersonsResource.AssignmentDate:</strong> @person.AssignmentDate.ToShortDateString()</li>
+					@if (person.ReleaseDate != null)
+					{
+					<li><strong>@PersonsResource.ReleaseDate:</strong> @person.AssignmentDate.ToShortDateString()</li>
+					}
+				</ul>
+			</div>
+		</div>
+	}
+</div>

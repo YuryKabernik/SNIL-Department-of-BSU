@@ -16,6 +16,8 @@ namespace SnilAcademicDepartment.DataAccess.Models
 
         public virtual ICollection<Project> Projects { get; set; } = new HashSet<Project>();
 
-        public Person Person { get; set; }
-    }
+		public virtual ICollection<PreView> PreViews { get; set; } = new HashSet<PreView>();
+
+		public virtual Person Person { get; set; }
+	}
 }

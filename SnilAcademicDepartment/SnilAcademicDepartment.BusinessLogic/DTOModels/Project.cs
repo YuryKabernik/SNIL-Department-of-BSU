@@ -16,7 +16,7 @@ namespace SnilAcademicDepartment.BusinessLogic.DTOModels
 
         public byte[] Document { get; set; }
 
-        public byte[] Image { get; set; }
+        public int ImageId { get; set; }
 
         /// <summary>
         /// Language LCID code.
