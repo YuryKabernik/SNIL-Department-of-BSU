@@ -7,7 +7,7 @@ namespace SnilAcademicDepartment
 	{
 		public static void RegisterRoutes(RouteCollection routes)
 		{
-			var lang = System.Threading.Thread.CurrentThread.CurrentUICulture.Name;
+			var lang = System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName;
 
 			routes.MapMvcAttributeRoutes();
 

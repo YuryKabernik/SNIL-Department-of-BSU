@@ -33,7 +33,7 @@ namespace SnilAcademicDepartment.Controllers
         }
 
         [HttpGet]
-        [Route("About")]
+        [Route("about")]
         public async Task<ActionResult> About()
         {
             ViewBag.Message = "Your application description page.";
@@ -41,7 +41,7 @@ namespace SnilAcademicDepartment.Controllers
         }
 
         [HttpGet]
-        [Route("Contact")]
+        [Route("contacts")]
         public async Task<ActionResult> Contact()
         {
             ViewBag.Message = "Your contact page.";

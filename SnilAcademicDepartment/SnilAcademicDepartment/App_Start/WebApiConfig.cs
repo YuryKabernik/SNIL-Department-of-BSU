@@ -6,7 +6,7 @@ namespace SnilAcademicDepartment.App_Start
 	{
 		public static void Register(HttpConfiguration config)
 		{
-			var lang = System.Threading.Thread.CurrentThread.CurrentUICulture.Name;
+			var lang = System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName;
 			
 			// Attribute routing.
 			config.MapHttpAttributeRoutes();

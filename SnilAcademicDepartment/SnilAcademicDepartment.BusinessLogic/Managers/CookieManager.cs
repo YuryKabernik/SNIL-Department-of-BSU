@@ -32,13 +32,13 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
 
             // Save selected culture in the cookie.
             if (cookie != null)
-                cookie.Value = culture.TextInfo.CultureName;   // If the cookie is installed, then we update the values.
+                cookie.Value = culture.TwoLetterISOLanguageName;   // If the cookie is installed, then we update the values.
             else
             {
                 cookie = new HttpCookie(newCookieName)
                 {
                     HttpOnly = false,
-                    Value = culture.TextInfo.CultureName,
+                    Value = culture.TwoLetterISOLanguageName,
                     Expires = DateTime.Now.AddHours(1)
                 };
             }
@@ -61,13 +61,13 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
 
             // Save selected culture in the cookie.
             if (cookie != null)
-                cookie.Value = culture.TextInfo.CultureName;   // If the cookie is installed, then we update the values.
+                cookie.Value = culture.TwoLetterISOLanguageName;   // If the cookie is installed, then we update the values.
             else
             {
                 cookie = new HttpCookie(newCookieName)
                 {
                     HttpOnly = false,
-                    Value = culture.TextInfo.CultureName,
+                    Value = culture.TwoLetterISOLanguageName,
                     Expires = DateTime.Now.AddHours(1)
                 };
             }
