@@ -19,11 +19,11 @@
 				@{
 					foreach (Leader person in ViewBag.Leaders)
 					{
-						var base64 = Convert.ToBase64String(person.Image);
-						var imgSrc = String.Format("data:image/jpeg;base64,{0}", base64);
+						var imgSrc = Url.Action("GetImage", new { controller = "Image", id = person.ImageId });
 						var personPageUrl = Url.RouteUrl(new { action = "PersonalPage", controller = "Persons", id = person.Id });
-
-						<a href="@personPageUrl"><img src="@imgSrc" alt="@person.FullName" title="@person.FullName"></a>
+						<a href="@personPageUrl">
+							<img src="@imgSrc" alt="@person.FullName" title="@person.FullName">
+						</a>
 					}
 				}
 				<h2>@PersonsResource.HallFame</h2>

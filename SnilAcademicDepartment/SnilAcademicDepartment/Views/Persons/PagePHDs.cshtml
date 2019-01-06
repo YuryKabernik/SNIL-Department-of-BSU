@@ -20,8 +20,7 @@
 	@{
 		foreach (var doctorOfPhilosophy in ViewData["PHD"] as IList<DoctorOfPhilosophy>)
 		{
-			var base64Block = Convert.ToBase64String(doctorOfPhilosophy.Image);
-			var imgSrcBlock = String.Format("data:image/jpeg;base64,{0}", base64Block);
+			var imgSrcBlock = Url.Action("GetImage", new { controller = "Image", id = doctorOfPhilosophy.ImageId });
 			var personPageUrl = Url.RouteUrl(new { action = "PersonalPage", controller = "Persons", id = doctorOfPhilosophy.Id });
 
 			<div class="row row-student well">

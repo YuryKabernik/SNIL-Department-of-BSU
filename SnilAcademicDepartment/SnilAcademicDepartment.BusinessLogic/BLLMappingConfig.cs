@@ -139,7 +139,7 @@ namespace SnilAcademicDepartment.BusinessLogic
 				.ForMember(des => des.Degree, opt => opt.MapFrom(s => s.Degree.DegreeNaming))
 				.ForMember(des => des.EmailAddress, opt => opt.MapFrom(s => s.EmailAddress))
 				.ForMember(des => des.PhoneNumber, opt => opt.MapFrom(s => s.PhoneNumber))
-				.ForMember(des => des.ImageId, opt => opt.MapFrom(s => s.Image.Image1))
+				.ForMember(des => des.ImageId, opt => opt.MapFrom(s => s.Image.ImageId))
 				.ForMember(des => des.Lectures, opt => opt.MapFrom(s => s.Lectures.Select(o => o.LectureName)))
 				.ForMember(des => des.Seminars, opt => opt.MapFrom(s => s.Seminars.Select(o => o.Title)))
 				.ForMember(des => des.Projects, opt => opt.MapFrom(s => s.Projects.Select(o => o.ProjectName)));
