@@ -12,7 +12,7 @@ namespace SnilAcademicDepartment.DataAccess.Models
 
 		public int ImageId { get; set; }
 
-		public virtual Image Image { get; set; }
+		public Image Image { get; set; }
 
 		public int? Localisation { get; set; }
 

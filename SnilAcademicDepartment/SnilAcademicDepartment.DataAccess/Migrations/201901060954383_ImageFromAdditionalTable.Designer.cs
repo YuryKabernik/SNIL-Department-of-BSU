@@ -13,7 +13,7 @@ namespace SnilAcademicDepartment.DataAccess.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201901060834504_ImageFromAdditionalTable"; }
+            get { return "201901060954383_ImageFromAdditionalTable"; }
         }
         
         string IMigrationMetadata.Source

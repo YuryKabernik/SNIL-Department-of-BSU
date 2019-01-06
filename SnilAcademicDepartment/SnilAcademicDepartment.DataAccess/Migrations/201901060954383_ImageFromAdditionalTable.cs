@@ -8,16 +8,16 @@ namespace SnilAcademicDepartment.DataAccess.Migrations
         public override void Up()
         {
             AddColumn("dbo.PreView", "ImageId", c => c.Int(nullable: false));
-            CreateIndex("dbo.PreView", "PreViewId");
-            AddForeignKey("dbo.PreView", "PreViewId", "dbo.Image", "ImageId");
+            CreateIndex("dbo.PreView", "ImageId");
+            AddForeignKey("dbo.PreView", "ImageId", "dbo.Image", "ImageId");
             DropColumn("dbo.PreView", "Image");
         }
         
         public override void Down()
         {
             AddColumn("dbo.PreView", "Image", c => c.Binary(nullable: false, storeType: "image"));
-            DropForeignKey("dbo.PreView", "PreViewId", "dbo.Image");
-            DropIndex("dbo.PreView", new[] { "PreViewId" });
+            DropForeignKey("dbo.PreView", "ImageId", "dbo.Image");
+            DropIndex("dbo.PreView", new[] { "ImageId" });
             DropColumn("dbo.PreView", "ImageId");
         }
     }
