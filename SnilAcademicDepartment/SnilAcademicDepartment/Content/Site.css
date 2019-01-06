@@ -56,9 +56,9 @@ html {
     margin-bottom: 1px;*/
 }
 .header .header-container i i:hover li {
-  display: block;
-  text-align: center;
-  text-decoration: none;
+	display: block;
+	text-align: center;
+	text-decoration: none;
 }
 .nav {
 	width: 100%;
@@ -72,21 +72,22 @@ html {
 	justify-content: center;
 }
 .nav .container .li-center .nav-item {
-  display: block;
-  float: left;
-  padding: 20px 10px;
-  color: #333333;
-  text-decoration: none;
+	display: block;
+	float: left;
+	color: #333333;
+	text-decoration: none;
 }
-.nav .container .li-center .nav-item a{
+.nav .container .li-center .nav-item a {
+	display: inline-block;
+	padding: 20px 10px;
 	color: #333333;
 	text-decoration: none;
 }
 .nav .container .li-center .nav-item:hover {
-  background-color: gray;
-  border-bottom-left-radius: 3px;
-  border-bottom-right-radius: 3px;
-  cursor: pointer;
+	background-color: gray;
+	border-bottom-left-radius: 3px;
+	border-bottom-right-radius: 3px;
+	cursor: pointer;
 }
 .nav .container .li-center .nav-item:hover a{
 	text-decoration: solid;
