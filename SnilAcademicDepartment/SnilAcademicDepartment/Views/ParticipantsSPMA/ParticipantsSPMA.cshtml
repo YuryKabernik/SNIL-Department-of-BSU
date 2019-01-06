@@ -58,8 +58,7 @@
 				IEnumerable<SpmaStudent> students = (IEnumerable<SpmaStudent>)ViewData["students"];
 				foreach (var item in students)
 				{
-					var base64 = Convert.ToBase64String(item.Image);
-					var imgSrc = String.Format("data:image/jpeg;base64,{0}", base64);
+					var imgSrc = Url.Action("GetImage", new { controller = "Image", id = item.ImageId });
 					<tr>
 						<td class="bsu_photo">
 							<img src="@imgSrc" title="@string.Join(" ", item.SecoundName, item.FirstName)" />
@@ -105,8 +104,7 @@
 				IEnumerable<SpmaPerson> stuff = (IEnumerable<SpmaPerson>)ViewData[$"{dataName}"];
 				foreach (var item in stuff)
 				{
-					var base64 = Convert.ToBase64String(item.Image);
-					var imgSrc = String.Format("data:image/jpeg;base64,{0}", base64);
+					var imgSrc = Url.Action("GetImage", new { controller = "Image", id = item.ImageId });
 					var personalPageLink = Url.Action("SpmaStuffPersonalPage", new { controller= "ParticipantsSPMA", id = item.Id });
 					<tr>
 						<td class="bsu_photo">

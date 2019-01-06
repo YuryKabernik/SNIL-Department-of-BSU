@@ -1,8 +1,5 @@
-﻿using System;
+﻿using NLog;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using NLog;
 using System.Web.Mvc;
 using SnilAcademicDepartment.BusinessLogic.Interfaces;
 using SnilAcademicDepartment.BusinessLogic.DTOModels;
