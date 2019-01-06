@@ -28,8 +28,8 @@
 	@if (ViewData.Model is SpmaPerson)
 	{
 		SpmaPerson person = ViewData.Model;
-		base64 = Convert.ToBase64String(person.Image);
-		imgSrc = String.Format("data:image/jpeg;base64,{0}", base64);
+		imgSrc = Url.Action("GetImage", new { controller = "Image", id = person.ImageId });
+
 		<h2>@String.Join(", ", person.Degree, $"{person.SecoundName} {person.PersonName}")</h2><br>
 		<div class="row row1">
 			<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4" style="text-align: -webkit-center;">
