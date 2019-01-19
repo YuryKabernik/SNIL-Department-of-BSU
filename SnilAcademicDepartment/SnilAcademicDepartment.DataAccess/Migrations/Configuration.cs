@@ -30,11 +30,11 @@ namespace SnilAcademicDepartment.DataAccess.Migrations
 
 		private Image _image;
 
-		private static string _imgPath = @"D:\GitHub_projects\SNIL\SNIL-Department-of-BSU\SnilAcademicDepartment\SnilAcademicDepartment.DataAccess\img\BSU3.jpg"; // D:\Visual Studio Projects\SNIL\SnilAcademicDepartment\SnilAcademicDepartment.DataAccess\img\BSU3.jpg
-		private byte[] _imgByte = File.ReadAllBytes(_imgPath);
+		private static string _imgPath; // D:\Visual Studio Projects\SNIL\SnilAcademicDepartment\SnilAcademicDepartment.DataAccess\img\BSU3.jpg
+		private byte[] _imgByte;
 
-		private static string _docPath = @"D:\GitHub_projects\SNIL\SNIL-Department-of-BSU\SnilAcademicDepartment\SnilAcademicDepartment.DataAccess\img\Head - BSU.docx"; // D:\Visual Studio Projects\SNIL\SnilAcademicDepartment\SnilAcademicDepartment.DataAccess\img\Ректору  - БГУ.docx
-		private byte[] _docByte = File.ReadAllBytes(_docPath);
+		private static string _docPath; // D:\Visual Studio Projects\SNIL\SnilAcademicDepartment\SnilAcademicDepartment.DataAccess\img\Ректору  - БГУ.docx
+		private byte[] _docByte;
 
 		/* Paths to files
 		 - D:\GitHub_projects\SNIL\SNIL-Department-of-BSU\SnilAcademicDepartment\SnilAcademicDepartment.DataAccess\img
@@ -49,6 +49,12 @@ namespace SnilAcademicDepartment.DataAccess.Migrations
 
 		protected override void Seed(SnilAcademicDepartment.DataAccess.SnilDBContext context)
 		{
+			_imgPath = Path.Combine(Directory.GetCurrentDirectory(), @"SnilAcademicDepartment\SnilAcademicDepartment.DataAccess\img\", "BSU3.jpg"); // D:\Visual Studio Projects\SNIL\SnilAcademicDepartment\SnilAcademicDepartment.DataAccess\img\BSU3.jpg
+			_imgByte = File.ReadAllBytes(_imgPath);
+			
+			_docPath = Path.Combine(Directory.GetCurrentDirectory(), @"SnilAcademicDepartment\SnilAcademicDepartment.DataAccess\img\", "Head - BSU.docx"); // D:\Visual Studio Projects\SNIL\SnilAcademicDepartment\SnilAcademicDepartment.DataAccess\img\Ректору  - БГУ.docx
+			_docByte = File.ReadAllBytes(_docPath);
+
 			using (var db = new SnilDBContext())
 			{
 				// Add page types.
