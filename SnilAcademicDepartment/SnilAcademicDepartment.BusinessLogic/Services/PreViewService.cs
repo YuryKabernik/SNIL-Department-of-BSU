@@ -38,6 +38,7 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
 			}
 
 			var requestResult = this._repository.PreViews
+				.Include(p => p.Image)
 				.FirstOrDefault(e => pageType.Equals(e.PageTypeName.PageTypeName, StringComparison.OrdinalIgnoreCase)
 				&& e.Language.LanguageCode == langLCID);
 
@@ -62,6 +63,7 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
 			}
 
 			var requestResult = this._repository.PreViews
+				.Include(p => p.Image)
 				.Where(e => e.PageTypeName.PageTypeName == pageType && e.Language.LanguageCode == langLCID)
 				.AsEnumerable();
 
@@ -176,6 +178,7 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
 			}
 
 			var requestResult = await this._repository.PreViews
+				.Include(p => p.Image)
 				.Where(e => e.PageTypeName.PageTypeName == pageType && e.Language.LanguageCode == langLCID)
 				.ToListAsync();
 
