@@ -7,13 +7,13 @@ namespace SnilAcademicDepartment.DataAccess.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class ImageFromAdditionalTable : IMigrationMetadata
+    public sealed partial class AddForgeryKeyToPreViewTableToImageTable : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(ImageFromAdditionalTable));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(AddForgeryKeyToPreViewTableToImageTable));
         
         string IMigrationMetadata.Id
         {
-            get { return "201901060954383_ImageFromAdditionalTable"; }
+            get { return "201901241318540_AddForgeryKeyToPreViewTableToImageTable"; }
         }
         
         string IMigrationMetadata.Source

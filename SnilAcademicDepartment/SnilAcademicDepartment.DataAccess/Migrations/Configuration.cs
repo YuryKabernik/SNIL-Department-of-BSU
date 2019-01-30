@@ -49,11 +49,42 @@ namespace SnilAcademicDepartment.DataAccess.Migrations
 
 		protected override void Seed(SnilAcademicDepartment.DataAccess.SnilDBContext context)
 		{
+			var yuryNotebookBSUPNG = @"D:\Visual Studio Projects\SNIL\SnilAcademicDepartment\SnilAcademicDepartment.DataAccess\img\BSU3.jpg";
+			var yuryPCBSUPNG = @"D:\GitHub_projects\SNIL\SNIL-Department-of-BSU\SnilAcademicDepartment\SnilAcademicDepartment.DataAccess\img\BSU3.jpg";
+
 			_imgPath = Path.Combine(Directory.GetCurrentDirectory(), @"SnilAcademicDepartment\SnilAcademicDepartment.DataAccess\img\", "BSU3.jpg"); // D:\Visual Studio Projects\SNIL\SnilAcademicDepartment\SnilAcademicDepartment.DataAccess\img\BSU3.jpg
-			_imgByte = File.ReadAllBytes(_imgPath);
-			
+			if(File.Exists(_imgPath))
+			{
+				_imgByte = File.ReadAllBytes(_imgPath);
+			} else if(File.Exists(yuryNotebookBSUPNG))
+			{
+				_imgPath = yuryNotebookBSUPNG;
+				_imgByte = File.ReadAllBytes(yuryNotebookBSUPNG);
+			}
+			else if(File.Exists(yuryPCBSUPNG))
+			{
+				_imgPath = yuryPCBSUPNG;
+				_imgByte = File.ReadAllBytes(yuryPCBSUPNG);
+			}
+
+			var yuryNotebookDocFile = @"D:\Visual Studio Projects\SNIL\SnilAcademicDepartment\SnilAcademicDepartment.DataAccess\img\Head - BSU.docx";
+			var yuryPCBSUDocFile = @"D:\GitHub_projects\SNIL\SNIL-Department-of-BSU\SnilAcademicDepartment\SnilAcademicDepartment.DataAccess\img\Head - BSU.docx";
+
 			_docPath = Path.Combine(Directory.GetCurrentDirectory(), @"SnilAcademicDepartment\SnilAcademicDepartment.DataAccess\img\", "Head - BSU.docx"); // D:\Visual Studio Projects\SNIL\SnilAcademicDepartment\SnilAcademicDepartment.DataAccess\img\Ðåêòîðó  - ÁÃÓ.docx
-			_docByte = File.ReadAllBytes(_docPath);
+			if (File.Exists(_docPath))
+			{
+				_docByte = File.ReadAllBytes(_docPath);
+			}
+			else if (File.Exists(yuryNotebookDocFile))
+			{
+				_docPath = yuryNotebookDocFile;
+				_docByte = File.ReadAllBytes(yuryNotebookDocFile);
+			}
+			else if (File.Exists(yuryPCBSUDocFile))
+			{
+				_docPath = yuryPCBSUDocFile;
+				_docByte = File.ReadAllBytes(yuryPCBSUDocFile);
+			}
 
 			using (var db = new SnilDBContext())
 			{

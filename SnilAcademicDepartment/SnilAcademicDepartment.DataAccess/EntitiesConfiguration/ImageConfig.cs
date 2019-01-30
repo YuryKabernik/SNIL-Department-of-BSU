@@ -26,8 +26,7 @@ namespace SnilAcademicDepartment.DataAccess.Configurations
                 .WillCascadeOnDelete(false);
 
 			this.HasMany(e => e.PreViews)
-				.WithRequired(e => e.Image)
-				.HasForeignKey(e => e.ImageId)
+				.WithOptional(e => e.Image)
 				.WillCascadeOnDelete(false);
 
 			this.HasOptional(e => e.Person)
