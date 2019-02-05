@@ -19,7 +19,7 @@ namespace SnilAcademicDepartment.DataAccess.Configurations
 
 			this.Property(p => p.SecoundName)
 				.HasMaxLength(50)
-				.IsRequired();
+				.IsOptional();
 
 			this.Property(p => p.LastName)
 				.HasMaxLength(50)
@@ -27,7 +27,7 @@ namespace SnilAcademicDepartment.DataAccess.Configurations
 
 			this.Property(p => p.StudentsGroup)
 				.HasMaxLength(50)
-				.IsRequired();
+				.IsOptional();
 
 			this.Property(p => p.GraduationYear)
 				.IsOptional();

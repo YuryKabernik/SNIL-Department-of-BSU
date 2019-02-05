@@ -13,15 +13,15 @@ namespace SnilAcademicDepartment.DataAccess.Configurations
 				.IsRequired();
 
 			this.Property(p => p.PersonName)
-				.HasMaxLength(20)
+				.HasMaxLength(100)
 				.IsRequired();
 
 			this.Property(p => p.SecoundName)
-				.HasMaxLength(25)
+				.HasMaxLength(50)
 				.IsRequired();
 
 			this.Property(p => p.FathersName)
-				.HasMaxLength(25)
+				.HasMaxLength(50)
 				.IsRequired();
 
 			//this.Property(p => p.ProfessionStatus)
@@ -41,11 +41,11 @@ namespace SnilAcademicDepartment.DataAccess.Configurations
 				.IsRequired();
 
 			this.Property(p => p.EmailAddress)
-				.HasMaxLength(50)
+				.HasMaxLength(150)
 				.IsOptional();
 
 			this.Property(p => p.PhoneNumber)
-				.HasMaxLength(50)
+				.HasMaxLength(20)
 				.IsOptional();
 
 			this.HasMany(e => e.HallOfFames)

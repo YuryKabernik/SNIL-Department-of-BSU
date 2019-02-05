@@ -12,11 +12,11 @@ namespace SnilAcademicDepartment.DataAccess.Configurations
                 .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
 
             this.Property(p => p.LectureName)
-                .HasMaxLength(50)
+                .HasMaxLength(150)
                 .IsRequired();
 
             this.Property(p => p.Description)
-                .IsRequired();
+                .IsOptional();
         }
     }
 }

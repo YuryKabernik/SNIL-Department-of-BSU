@@ -15,19 +15,20 @@ namespace SnilAcademicDepartment.DataAccess.Configurations
                 .IsRequired();
 
             this.Property(p => p.ProjectName)
-                .HasMaxLength(50)
+                .HasMaxLength(300)
                 .IsRequired();
 
             this.Property(p => p.Description)
+                .HasMaxLength(600)
                 .IsRequired();
 
-            this.Property(p => p.ShortDescription)
+			this.Property(p => p.ShortDescription)
                 .HasMaxLength(400)
                 .IsRequired();
 
-            //this.Property(p => p.Status)
-            //    .HasMaxLength(50)
-            //    .IsRequired();
-        }
+			this.Property(p => p.Status)
+				.HasMaxLength(20)
+				.IsRequired();
+		}
     }
 }
