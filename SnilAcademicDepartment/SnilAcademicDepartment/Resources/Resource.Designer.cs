@@ -277,7 +277,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Персонал.
+        ///   Looks up a localized string similar to Состав кафедры.
         /// </summary>
         public static string Persons {
             get {
