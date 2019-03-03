@@ -33,7 +33,7 @@ namespace SnilAcademicDepartment.Controllers
 		}
 
 		[HttpGet]
-		[Route("people")]
+		[Route("department/staff")]
 		public async Task<ActionResult> Persons()
 		{
 			IEnumerable<Leader> leaders = null;
@@ -51,20 +51,22 @@ namespace SnilAcademicDepartment.Controllers
 			catch (System.Exception)
 			{
 				ViewBag.Title = UnavaliableErrorResource.UnavaliableMessage;
-				return View("SorryUnavaliable");
+				return this.View("SorryUnavaliable");
 			}
 
-			ViewBag.Leaders = leaders;
+			ViewData["leaders"] = leaders;
+			ViewData["majorStaff"] = majorStaff;
+			ViewData["secondaryStaff"] = secondaryStaff;
 			ViewBag.Title = Resource.Persons;
 			return View();
 		}
 
 		[HttpGet]
-		[Route("personalpage")]
+		[Route("person")]
 		public async Task<ActionResult> PersonalPage(int id)
 		{
 			if (id <= 0)
-				return Redirect(this.Request.UrlReferrer?.AbsoluteUri ?? "/");
+				return this.View("SorryUnavaliable");
 
 			PersonVM personalInfo = null;
 
@@ -75,12 +77,12 @@ namespace SnilAcademicDepartment.Controllers
 			catch (System.Exception)
 			{
 				ViewBag.Title = UnavaliableErrorResource.UnavaliableMessage;
-				return View("SorryUnavaliable");
+				return this.View("SorryUnavaliable");
 			}
 
 			ViewData.Model = personalInfo;
 			ViewBag.Title = string.Format("{0}, {1}", personalInfo.SecoundName, personalInfo.PersonName);
-			return View();
+			return this.View();
 		}
 	}
 }
