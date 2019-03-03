@@ -3,7 +3,7 @@
 namespace SnilAcademicDepartment.DataAccess.Models
 {
 	/// <summary>
-	/// Department SNIL stuff table.
+	/// Department stuff table.
 	/// </summary>
 	public class StuffDepartment
 	{
