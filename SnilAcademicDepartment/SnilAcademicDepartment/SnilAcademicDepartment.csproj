@@ -413,11 +413,11 @@
     <Content Include="Views\History\PagesOfHistory%28HTML%29\IEEE.html" />
     <Content Include="Views\History\PagesOfHistory%28HTML%29\reports.html" />
     <Content Include="Views\History\PagesOfHistory%28HTML%29\review.html" />
-    <Content Include="Views\Persons\PagesOfPersons%28HTML%29\administration.html" />
-    <Content Include="Views\Persons\PagesOfPersons%28HTML%29\ms.html" />
-    <Content Include="Views\Persons\PagesOfPersons%28HTML%29\people.html" />
-    <Content Include="Views\Persons\PagesOfPersons%28HTML%29\phd.html" />
-    <Content Include="Views\Persons\PagesOfPersons%28HTML%29\students.html" />
+    <Content Include="Views\DepartmentStaff\PagesOfPersons%28HTML%29\administration.html" />
+    <Content Include="Views\DepartmentStaff\PagesOfPersons%28HTML%29\ms.html" />
+    <Content Include="Views\DepartmentStaff\PagesOfPersons%28HTML%29\people.html" />
+    <Content Include="Views\DepartmentStaff\PagesOfPersons%28HTML%29\phd.html" />
+    <Content Include="Views\DepartmentStaff\PagesOfPersons%28HTML%29\students.html" />
     <Content Include="Views\Projects\PagesOfView%28HTML%29\conferences.html" />
     <Content Include="Views\Projects\PagesOfView%28HTML%29\current.html" />
     <Content Include="Views\Projects\PagesOfView%28HTML%29\finished.html" />
@@ -444,7 +444,7 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Projects\Projects.cshtml" />
-    <Content Include="Views\Persons\Persons.cshtml" />
+    <Content Include="Views\DepartmentStaff\Persons.cshtml" />
     <Content Include="Views\History\History.cshtml" />
     <Content Include="Views\History\PageIEEE.cshtml" />
     <Content Include="Views\History\PageArchive.cshtml" />
@@ -455,7 +455,7 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
     <Content Include="Views\Projects\ProjectPage.cshtml" />
     <Content Include="Views\Education\EducationBlockPage.cshtml" />
-    <Content Include="Views\Persons\PersonalPage.cshtml" />
+    <Content Include="Views\DepartmentStaff\PersonalPage.cshtml" />
     <Content Include="Views\Shared\SorryUnavaliable.cshtml" />
     <Content Include="Views\ParticipantsSPMA\ParticipantsSPMA.cshtml" />
     <Content Include="Views\ParticipantsSPMA\SpmaPersonalPage.cshtml" />
