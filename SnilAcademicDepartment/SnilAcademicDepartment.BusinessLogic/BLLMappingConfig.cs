@@ -186,6 +186,20 @@ namespace SnilAcademicDepartment.BusinessLogic
 				.ForMember(des => des.GraduationYear, opt => opt.MapFrom(s => s.Student.GraduationYear.Year))
 				.ForMember(des => des.StudentsType, opt => opt.MapFrom(s => s.Student.StudentType.TypeName));
 
+			this.CreateMap<StuffDepartment, Pedagogue>() // Spma student model
+				.ForMember(des => des.Id, opt => opt.MapFrom(s => s.PersonId.PersonUniqueIdentifire))
+				.ForMember(des => des.PersonName, opt => opt.MapFrom(s => s.PersonId.PersonName))
+				.ForMember(des => des.SecoundName, opt => opt.MapFrom(s => s.PersonId.SecoundName))
+				.ForMember(des => des.FathersName, opt => opt.MapFrom(s => s.PersonId.FathersName))
+				.ForMember(des => des.ImageId, opt => opt.MapFrom(s => s.PersonId.Image.ImageId))
+				.ForMember(des => des.PersonalInterests, opt => opt.MapFrom(s => s.PersonId.PersonalInterests))
+				.ForMember(des => des.Degree, opt => opt.MapFrom(s => s.PersonId.Degree))
+				.ForMember(des => des.AcademicTitle, opt => opt.MapFrom(s => s.PersonId.AcademicTitle))
+				.ForMember(des => des.EmailAddress, opt => opt.MapFrom(s => s.PersonId.EmailAddress))
+				.ForMember(des => des.PhoneNumber, opt => opt.MapFrom(s => s.PersonId.PhoneNumber))
+				.ForMember(des => des.DateRelease, opt => opt.MapFrom(s => s.DateRelease))
+				.ForMember(des => des.DataAssign, opt => opt.MapFrom(s => s.DataAssign));
+
 			this.CreateMap<StuffPersonal, SpmaPerson>() // Spma student model
 				.ForMember(des => des.Id, opt => opt.MapFrom(s => s.PersonId.PersonUniqueIdentifire))
 				.ForMember(des => des.PersonName, opt => opt.MapFrom(s => s.PersonId.PersonName))

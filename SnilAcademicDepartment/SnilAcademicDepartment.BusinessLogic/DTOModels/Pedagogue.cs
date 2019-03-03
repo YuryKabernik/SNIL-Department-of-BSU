@@ -1,4 +1,6 @@
-﻿namespace SnilAcademicDepartment.BusinessLogic.DTOModels
+﻿using System;
+
+namespace SnilAcademicDepartment.BusinessLogic.DTOModels
 {
 	public class Pedagogue
 	{
@@ -18,8 +20,14 @@
 
 		public string EmailAddress { get; set; }
 
+		public string PhoneNumber { get; set; }
+
 		public string PersonalInterests { get; set; }
 
 		public int ImageId { get; set; }
+
+		public DateTime DateRelease { get; set; }
+
+		public DateTime DataAssign { get; set; }
 	}
 }

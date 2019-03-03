@@ -1,4 +1,5 @@
 ﻿using System;
+using SnilAcademicDepartment.Common.Enumerations.DepartmentStaff;
 
 namespace SnilAcademicDepartment.DataAccess.Models
 {
@@ -35,5 +36,12 @@ namespace SnilAcademicDepartment.DataAccess.Models
 		/// The date release.
 		/// </value>
 		public DateTime DateRelease { get; set; }
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <value>
+		/// The date release.
+		/// </value>
+		public PedagogicalStaffType StaffType { get; set; }
 	}
 }

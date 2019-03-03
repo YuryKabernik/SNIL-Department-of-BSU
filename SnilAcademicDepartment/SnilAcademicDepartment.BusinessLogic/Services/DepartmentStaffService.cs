@@ -51,9 +51,19 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
 			return this._mapper.Map<IEnumerable<Leader>>(result);
 		}
 
-		public Task<IEnumerable<Pedagogue>> GetPedagogicalStaffAsync(PedagogicalStaffType staffType, int langLCID)
+		/// <summary>
+		/// Get pedagogical spaff of department.
+		/// </summary>
+		/// <param name="staffType">Type of pedagogues.</param>
+		/// <param name="langLCID">Current language LCID.</param>
+		/// <returns>Collection of the pedagogical staff.</returns>
+		public async Task<IEnumerable<Pedagogue>> GetPedagogicalStaffAsync(PedagogicalStaffType staffType, int langLCID)
 		{
-			throw new NotImplementedException();
+			var pedagogues = await this._repository.StuffDepartment
+				.Where(p => p.PersonId.Language.LanguageCode == langLCID && p.StaffType == staffType)
+				.ToListAsync();
+
+			return this._mapper.Map<IEnumerable<Pedagogue>>(pedagogues);
 		}
 
 		/// <summary>

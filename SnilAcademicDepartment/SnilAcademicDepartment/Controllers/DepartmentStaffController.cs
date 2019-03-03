@@ -10,6 +10,7 @@ using SnilAcademicDepartment.Properties;
 using Resources;
 using SnilAcademicDepartment.Common.ConfigManagerAdapter;
 using SnilAcademicDepartment.Common.Enumerations.DepartmentStaff;
+using System;
 
 namespace SnilAcademicDepartment.Controllers
 {
@@ -48,7 +49,7 @@ namespace SnilAcademicDepartment.Controllers
 				majorStaff = await this._peopleService.GetPedagogicalStaffAsync(PedagogicalStaffType.Major, Thread.CurrentThread.CurrentCulture.LCID);
 				secondaryStaff = await this._peopleService.GetPedagogicalStaffAsync(PedagogicalStaffType.Secondary, Thread.CurrentThread.CurrentCulture.LCID);
 			}
-			catch (System.Exception)
+			catch (Exception ex)
 			{
 				ViewBag.Title = UnavaliableErrorResource.UnavaliableMessage;
 				return this.View("SorryUnavaliable");

@@ -292,6 +292,11 @@
   <ItemGroup>
     <Content Include="img\BSU3.jpg" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\SnilAcademicDepartment.Common\SnilAcademicDepartment.Common.csproj">
+      <Project>{907F30B1-1365-41CB-98D3-A649398A578C}</Project>
+      <Name>SnilAcademicDepartment.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
