@@ -181,6 +181,10 @@
     <Compile Include="Migrations\201901241318540_AddForgeryKeyToPreViewTableToImageTable.Designer.cs">
       <DependentUpon>201901241318540_AddForgeryKeyToPreViewTableToImageTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201903031534591_AddPedagogicalStaffTypeFiledToStuffDepartmentTable.cs" />
+    <Compile Include="Migrations\201903031534591_AddPedagogicalStaffTypeFiledToStuffDepartmentTable.Designer.cs">
+      <DependentUpon>201903031534591_AddPedagogicalStaffTypeFiledToStuffDepartmentTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AcademicTitle.cs" />
     <Compile Include="Models\Biography.cs" />
@@ -287,6 +291,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201901241318540_AddForgeryKeyToPreViewTableToImageTable.resx">
       <DependentUpon>201901241318540_AddForgeryKeyToPreViewTableToImageTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903031534591_AddPedagogicalStaffTypeFiledToStuffDepartmentTable.resx">
+      <DependentUpon>201903031534591_AddPedagogicalStaffTypeFiledToStuffDepartmentTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

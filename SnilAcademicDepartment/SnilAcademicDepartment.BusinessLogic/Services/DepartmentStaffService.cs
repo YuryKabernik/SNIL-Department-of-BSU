@@ -61,6 +61,11 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
 		{
 			var pedagogues = await this._repository.StuffDepartment
 				.Where(p => p.PersonId.Language.LanguageCode == langLCID && p.StaffType == staffType)
+				.Include(prop => prop.PersonId)
+				.Include(prop => prop.PersonId.Image)
+				.Include(prop => prop.PersonId.Degree)
+				.Include(prop => prop.PersonId.AcademicTitle)
+				.Include(prop => prop.PersonId.ProfessionStatus)
 				.ToListAsync();
 
 			return this._mapper.Map<IEnumerable<Pedagogue>>(pedagogues);

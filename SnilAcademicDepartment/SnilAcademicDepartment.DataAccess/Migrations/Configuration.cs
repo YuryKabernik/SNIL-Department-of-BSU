@@ -6,6 +6,7 @@ using System;
 using SnilAcademicDepartment.DataAccess.Models;
 using SnilAcademicDepartment.DataAccess.Models.EnumTypes;
 using System.Reflection;
+using System.Data.Entity.Validation;
 
 namespace SnilAcademicDepartment.DataAccess.Migrations
 {
@@ -49,131 +50,150 @@ namespace SnilAcademicDepartment.DataAccess.Migrations
 
 		protected override void Seed(SnilAcademicDepartment.DataAccess.SnilDBContext context)
 		{
-			var yuryNotebookBSUPNG = @"D:\Visual Studio Projects\SNIL\SnilAcademicDepartment\SnilAcademicDepartment.DataAccess\img\BSU3.jpg";
-			var yuryPCBSUPNG = @"D:\GitHub_projects\SNIL\SNIL-Department-of-BSU\SnilAcademicDepartment\SnilAcademicDepartment.DataAccess\img\BSU3.jpg";
+			try {
+				var yuryNotebookBSUPNG = @"D:\Visual Studio Projects\SNIL\SnilAcademicDepartment\SnilAcademicDepartment.DataAccess\img\BSU3.jpg";
+				var yuryPCBSUPNG = @"D:\GitHub_projects\SNIL\SNIL-Department-of-BSU\SnilAcademicDepartment\SnilAcademicDepartment.DataAccess\img\BSU3.jpg";
 
-			_imgPath = Path.Combine(Directory.GetCurrentDirectory(), @"SnilAcademicDepartment\SnilAcademicDepartment.DataAccess\img\", "BSU3.jpg"); // D:\Visual Studio Projects\SNIL\SnilAcademicDepartment\SnilAcademicDepartment.DataAccess\img\BSU3.jpg
-			if(File.Exists(_imgPath))
-			{
-				_imgByte = File.ReadAllBytes(_imgPath);
-			} else if(File.Exists(yuryNotebookBSUPNG))
-			{
-				_imgPath = yuryNotebookBSUPNG;
-				_imgByte = File.ReadAllBytes(yuryNotebookBSUPNG);
+				_imgPath = Path.Combine(Directory.GetCurrentDirectory(), @"SnilAcademicDepartment\SnilAcademicDepartment.DataAccess\img\", "BSU3.jpg"); // D:\Visual Studio Projects\SNIL\SnilAcademicDepartment\SnilAcademicDepartment.DataAccess\img\BSU3.jpg
+				if (File.Exists(_imgPath))
+				{
+					_imgByte = File.ReadAllBytes(_imgPath);
+				}
+				else if (File.Exists(yuryNotebookBSUPNG))
+				{
+					_imgPath = yuryNotebookBSUPNG;
+					_imgByte = File.ReadAllBytes(yuryNotebookBSUPNG);
+				}
+				else if (File.Exists(yuryPCBSUPNG))
+				{
+					_imgPath = yuryPCBSUPNG;
+					_imgByte = File.ReadAllBytes(yuryPCBSUPNG);
+				}
+
+				var yuryNotebookDocFile = @"D:\Visual Studio Projects\SNIL\SnilAcademicDepartment\SnilAcademicDepartment.DataAccess\img\Head - BSU.docx";
+				var yuryPCBSUDocFile = @"D:\GitHub_projects\SNIL\SNIL-Department-of-BSU\SnilAcademicDepartment\SnilAcademicDepartment.DataAccess\img\Head - BSU.docx";
+
+				_docPath = Path.Combine(Directory.GetCurrentDirectory(), @"SnilAcademicDepartment\SnilAcademicDepartment.DataAccess\img\", "Head - BSU.docx"); // D:\Visual Studio Projects\SNIL\SnilAcademicDepartment\SnilAcademicDepartment.DataAccess\img\Ðåêòîðó  - ÁÃÓ.docx
+				if (File.Exists(_docPath))
+				{
+					_docByte = File.ReadAllBytes(_docPath);
+				}
+				else if (File.Exists(yuryNotebookDocFile))
+				{
+					_docPath = yuryNotebookDocFile;
+					_docByte = File.ReadAllBytes(yuryNotebookDocFile);
+				}
+				else if (File.Exists(yuryPCBSUDocFile))
+				{
+					_docPath = yuryPCBSUDocFile;
+					_docByte = File.ReadAllBytes(yuryPCBSUDocFile);
+				}
+
+				using (var db = new SnilDBContext())
+				{
+					// Add page types.
+					PageTypeDBInit.DBInit(db, out this._pageTypes);
+
+					// Add languages.
+					LanguageDBInit.DBInit(db, out this._languages);
+
+					// Add image.
+					ImageDBInit.DBInit(db, this._imgByte, _imgPath, out this._image);
+
+					// Add Document.
+					DocumentDBInit.DBInit(db, this._docByte, _docPath, out this._document);
+
+					// Add Biography.
+					BiographyDBInit.DBInit(db, "MyBio", out this._biography);
+
+					// Add Education blocks.
+					EducationKeyAreaDBInit.DBInit(db, "Seminar", "RU", 1, this._image, this._languages[0], this._educationBlocks);
+					EducationKeyAreaDBInit.DBInit(db, "ENSeminar", "EN", 1, this._image, this._languages[1], this._educationBlocks);
+					EducationKeyAreaDBInit.DBInit(db, "DESeminar", "DE", 1, this._image, this._languages[2], this._educationBlocks);
+
+					EducationKeyAreaDBInit.DBInit(db, "Lection", "RU", 2, this._image, this._languages[0], this._educationBlocks);
+					EducationKeyAreaDBInit.DBInit(db, "ENLection", "EN", 2, this._image, this._languages[1], this._educationBlocks);
+					EducationKeyAreaDBInit.DBInit(db, "DELection", "DE", 2, this._image, this._languages[2], this._educationBlocks);
+
+					EducationKeyAreaDBInit.DBInit(db, "QuickLearning", "RU", 3, this._image, this._languages[0], this._educationBlocks);
+					EducationKeyAreaDBInit.DBInit(db, "ENQuickLearning", "EN", 3, this._image, this._languages[1], this._educationBlocks);
+					EducationKeyAreaDBInit.DBInit(db, "DEQuickLearning", "DE", 3, this._image, this._languages[2], this._educationBlocks);
+
+					// Add EducationTopics.
+					EducationTopicsSeminar(db);
+					EducationLectureTopics(db);
+					EducationQuickLerningTopics(db);
+
+					// Init History page preview data.
+					PreviewDBInit.DBInit(db, "Èñòîðèÿ", "RU", this._pageTypes[4], this._languages[0], this._image);
+					PreviewDBInit.DBInit(db, "History", "EN", this._pageTypes[4], this._languages[1], this._image);
+					PreviewDBInit.DBInit(db, "ÈñòîðèÿDE", "DE", this._pageTypes[4], this._languages[2], this._image);
+
+					// Init People page preview data.
+					PreviewDBInit.DBInit(db, "Ïåðñîíàë", "RU", this._pageTypes[3], this._languages[0], this._image);
+					PreviewDBInit.DBInit(db, "People", "EN", this._pageTypes[3], this._languages[1], this._image);
+					PreviewDBInit.DBInit(db, "ÏåðñîíàëDE", "DE", this._pageTypes[3], this._languages[2], this._image);
+
+					// Init Projects page preview data.
+					PreviewDBInit.DBInit(db, "Ïðîåêòû", "RU", this._pageTypes[1], this._languages[0], this._image);
+					PreviewDBInit.DBInit(db, "Projects", "EN", this._pageTypes[1], this._languages[1], this._image);
+					PreviewDBInit.DBInit(db, "ÏðîåêòûDE", "DE", this._pageTypes[1], this._languages[2], this._image);
+
+					// Init Education page preview data.
+					PreviewDBInit.DBInit(db, "Îáó÷åíèå", "RU", this._pageTypes[0], this._languages[0], this._image);
+					PreviewDBInit.DBInit(db, "Education", "EN", this._pageTypes[0], this._languages[1], this._image);
+					PreviewDBInit.DBInit(db, "Îáó÷åíèåDE", "DE", this._pageTypes[0], this._languages[2], this._image);
+
+					// Init Home page preview data.
+					PreviewDBInit.DBInit(db, "ÄîìProjects", "RUProjects", this._pageTypes[2], this._languages[0], this._image, true);
+					PreviewDBInit.DBInit(db, "HomeProjects", "ENProjects", this._pageTypes[2], this._languages[1], this._image, true);
+					PreviewDBInit.DBInit(db, "ÄîìDEProjects", "DEProjects", this._pageTypes[2], this._languages[2], this._image, true);
+
+					PreviewDBInit.DBInit(db, "ÄîìEducation", "RUEducation", this._pageTypes[2], this._languages[0], this._image, true);
+					PreviewDBInit.DBInit(db, "HomeEducation", "ENEducation", this._pageTypes[2], this._languages[1], this._image, true);
+					PreviewDBInit.DBInit(db, "ÄîìDEEducation", "DEEducation", this._pageTypes[2], this._languages[2], this._image, true);
+
+					PreviewDBInit.DBInit(db, "ÄîìPeople", "RUPeople", this._pageTypes[2], this._languages[0], this._image, true);
+					PreviewDBInit.DBInit(db, "HomePeople", "ENPeople", this._pageTypes[2], this._languages[1], this._image, true);
+					PreviewDBInit.DBInit(db, "ÄîìDEPeople", "DEPeople", this._pageTypes[2], this._languages[2], this._image, true);
+
+					PreviewDBInit.DBInit(db, "ÄîìHistory", "RUHistory", this._pageTypes[2], this._languages[0], this._image, true);
+					PreviewDBInit.DBInit(db, "HomeHistory", "ENHistory", this._pageTypes[2], this._languages[1], this._image, true);
+					PreviewDBInit.DBInit(db, "ÄîìDEHistory", "DEHistory", this._pageTypes[2], this._languages[2], this._image, true);
+
+					PreviewDBInit.DBInit(db, "ÄîìProjects", "RUProjects", this._pageTypes[2], this._languages[0], this._image, true);
+					PreviewDBInit.DBInit(db, "HomeProjects", "ENProjects", this._pageTypes[2], this._languages[1], this._image, true);
+					PreviewDBInit.DBInit(db, "ÄîìDEProjects", "DEProjects", this._pageTypes[2], this._languages[2], this._image, true);
+
+
+					// Init Projects in database.
+					AddingProjects(db);
+
+					// Init Seminars in database.
+					AddingSeminars(db);
+
+					// Init Lectures in database.
+					AddingLectures(db);
+
+					// Init Lectures in database.
+					AddingPersons(db);
+				}
 			}
-			else if(File.Exists(yuryPCBSUPNG))
+			catch (DbEntityValidationException e)
 			{
-				_imgPath = yuryPCBSUPNG;
-				_imgByte = File.ReadAllBytes(yuryPCBSUPNG);
-			}
-
-			var yuryNotebookDocFile = @"D:\Visual Studio Projects\SNIL\SnilAcademicDepartment\SnilAcademicDepartment.DataAccess\img\Head - BSU.docx";
-			var yuryPCBSUDocFile = @"D:\GitHub_projects\SNIL\SNIL-Department-of-BSU\SnilAcademicDepartment\SnilAcademicDepartment.DataAccess\img\Head - BSU.docx";
-
-			_docPath = Path.Combine(Directory.GetCurrentDirectory(), @"SnilAcademicDepartment\SnilAcademicDepartment.DataAccess\img\", "Head - BSU.docx"); // D:\Visual Studio Projects\SNIL\SnilAcademicDepartment\SnilAcademicDepartment.DataAccess\img\Ðåêòîðó  - ÁÃÓ.docx
-			if (File.Exists(_docPath))
-			{
-				_docByte = File.ReadAllBytes(_docPath);
-			}
-			else if (File.Exists(yuryNotebookDocFile))
-			{
-				_docPath = yuryNotebookDocFile;
-				_docByte = File.ReadAllBytes(yuryNotebookDocFile);
-			}
-			else if (File.Exists(yuryPCBSUDocFile))
-			{
-				_docPath = yuryPCBSUDocFile;
-				_docByte = File.ReadAllBytes(yuryPCBSUDocFile);
-			}
-
-			using (var db = new SnilDBContext())
-			{
-				// Add page types.
-				PageTypeDBInit.DBInit(db, out this._pageTypes);
-
-				// Add languages.
-				LanguageDBInit.DBInit(db, out this._languages);
-
-				// Add image.
-				ImageDBInit.DBInit(db, this._imgByte, _imgPath, out this._image);
-
-				// Add Document.
-				DocumentDBInit.DBInit(db, this._docByte, _docPath, out this._document);
-
-				// Add Biography.
-				BiographyDBInit.DBInit(db, "MyBio", out this._biography);
-
-				// Add Education blocks.
-				EducationKeyAreaDBInit.DBInit(db, "Seminar", "RU", 1, this._image, this._languages[0], this._educationBlocks);
-				EducationKeyAreaDBInit.DBInit(db, "ENSeminar", "EN", 1, this._image, this._languages[1], this._educationBlocks);
-				EducationKeyAreaDBInit.DBInit(db, "DESeminar", "DE", 1, this._image, this._languages[2], this._educationBlocks);
-
-				EducationKeyAreaDBInit.DBInit(db, "Lection", "RU", 2, this._image, this._languages[0], this._educationBlocks);
-				EducationKeyAreaDBInit.DBInit(db, "ENLection", "EN", 2, this._image, this._languages[1], this._educationBlocks);
-				EducationKeyAreaDBInit.DBInit(db, "DELection", "DE", 2, this._image, this._languages[2], this._educationBlocks);
-
-				EducationKeyAreaDBInit.DBInit(db, "QuickLearning", "RU", 3, this._image, this._languages[0], this._educationBlocks);
-				EducationKeyAreaDBInit.DBInit(db, "ENQuickLearning", "EN", 3, this._image, this._languages[1], this._educationBlocks);
-				EducationKeyAreaDBInit.DBInit(db, "DEQuickLearning", "DE", 3, this._image, this._languages[2], this._educationBlocks);
-
-				// Add EducationTopics.
-				EducationTopicsSeminar(db);
-				EducationLectureTopics(db);
-				EducationQuickLerningTopics(db);
-
-				// Init History page preview data.
-				PreviewDBInit.DBInit(db, "Èñòîðèÿ", "RU", this._pageTypes[4], this._languages[0], this._image);
-				PreviewDBInit.DBInit(db, "History", "EN", this._pageTypes[4], this._languages[1], this._image);
-				PreviewDBInit.DBInit(db, "ÈñòîðèÿDE", "DE", this._pageTypes[4], this._languages[2], this._image);
-
-				// Init People page preview data.
-				PreviewDBInit.DBInit(db, "Ïåðñîíàë", "RU", this._pageTypes[3], this._languages[0], this._image);
-				PreviewDBInit.DBInit(db, "People", "EN", this._pageTypes[3], this._languages[1], this._image);
-				PreviewDBInit.DBInit(db, "ÏåðñîíàëDE", "DE", this._pageTypes[3], this._languages[2], this._image);
-
-				// Init Projects page preview data.
-				PreviewDBInit.DBInit(db, "Ïðîåêòû", "RU", this._pageTypes[1], this._languages[0], this._image);
-				PreviewDBInit.DBInit(db, "Projects", "EN", this._pageTypes[1], this._languages[1], this._image);
-				PreviewDBInit.DBInit(db, "ÏðîåêòûDE", "DE", this._pageTypes[1], this._languages[2], this._image);
-
-				// Init Education page preview data.
-				PreviewDBInit.DBInit(db, "Îáó÷åíèå", "RU", this._pageTypes[0], this._languages[0], this._image);
-				PreviewDBInit.DBInit(db, "Education", "EN", this._pageTypes[0], this._languages[1], this._image);
-				PreviewDBInit.DBInit(db, "Îáó÷åíèåDE", "DE", this._pageTypes[0], this._languages[2], this._image);
-
-				// Init Home page preview data.
-				PreviewDBInit.DBInit(db, "ÄîìProjects", "RUProjects", this._pageTypes[2], this._languages[0], this._image, true);
-				PreviewDBInit.DBInit(db, "HomeProjects", "ENProjects", this._pageTypes[2], this._languages[1], this._image, true);
-				PreviewDBInit.DBInit(db, "ÄîìDEProjects", "DEProjects", this._pageTypes[2], this._languages[2], this._image, true);
-
-				PreviewDBInit.DBInit(db, "ÄîìEducation", "RUEducation", this._pageTypes[2], this._languages[0], this._image, true);
-				PreviewDBInit.DBInit(db, "HomeEducation", "ENEducation", this._pageTypes[2], this._languages[1], this._image, true);
-				PreviewDBInit.DBInit(db, "ÄîìDEEducation", "DEEducation", this._pageTypes[2], this._languages[2], this._image, true);
-
-				PreviewDBInit.DBInit(db, "ÄîìPeople", "RUPeople", this._pageTypes[2], this._languages[0], this._image, true);
-				PreviewDBInit.DBInit(db, "HomePeople", "ENPeople", this._pageTypes[2], this._languages[1], this._image, true);
-				PreviewDBInit.DBInit(db, "ÄîìDEPeople", "DEPeople", this._pageTypes[2], this._languages[2], this._image, true);
-
-				PreviewDBInit.DBInit(db, "ÄîìHistory", "RUHistory", this._pageTypes[2], this._languages[0], this._image, true);
-				PreviewDBInit.DBInit(db, "HomeHistory", "ENHistory", this._pageTypes[2], this._languages[1], this._image, true);
-				PreviewDBInit.DBInit(db, "ÄîìDEHistory", "DEHistory", this._pageTypes[2], this._languages[2], this._image, true);
-
-				PreviewDBInit.DBInit(db, "ÄîìProjects", "RUProjects", this._pageTypes[2], this._languages[0], this._image, true);
-				PreviewDBInit.DBInit(db, "HomeProjects", "ENProjects", this._pageTypes[2], this._languages[1], this._image, true);
-				PreviewDBInit.DBInit(db, "ÄîìDEProjects", "DEProjects", this._pageTypes[2], this._languages[2], this._image, true);
-
-
-				// Init Projects in database.
-				AddingProjects(db);
-
-				// Init Seminars in database.
-				AddingSeminars(db);
-
-				// Init Lectures in database.
-				AddingLectures(db);
-
-				// Init Lectures in database.
-				AddingPersons(db);
+				Console.WriteLine("---------------///----------------");
+				foreach (var eve in e.EntityValidationErrors)
+				{
+					Console.WriteLine("Entity of type \"{0}\" in state \"{1}\" has the following validation errors:",
+						eve.Entry.Entity.GetType().Name, eve.Entry.State);
+					foreach (var ve in eve.ValidationErrors)
+					{
+						Console.WriteLine("- Property: \"{0}\", Error: \"{1}\"",
+							ve.PropertyName, ve.ErrorMessage);
+					}
+				}
+				Console.WriteLine("---------------///----------------");
+				throw;
 			}
 		}
 

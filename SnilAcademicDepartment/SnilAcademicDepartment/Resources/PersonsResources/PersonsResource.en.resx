@@ -121,10 +121,10 @@
     <value>University entrants</value>
   </data>
   <data name="AcademicStaff" xml:space="preserve">
-    <value>Pädagogisches Personal</value>
+    <value>Teaching Staff</value>
   </data>
   <data name="AcademicSupportStaff" xml:space="preserve">
-    <value>Pädagogisches Support-Personal</value>
+    <value>Educational support staff</value>
   </data>
   <data name="AcademicTitle" xml:space="preserve">
     <value>Academic title</value>
