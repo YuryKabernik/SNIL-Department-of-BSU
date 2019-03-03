@@ -5,17 +5,15 @@ using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Web.Mvc;
-using SnilAcademicDepartment.Resources.PersonsResources;
 using SnilAcademicDepartment.Resources.UnavaliableErrorResources;
 using SnilAcademicDepartment.Properties;
 using Resources;
-using SnilAcademicDepartment.Common.Enumerations;
 using SnilAcademicDepartment.Common.ConfigManagerAdapter;
 
 namespace SnilAcademicDepartment.Controllers
 {
 	[RoutePrefix("{language}")]
-	public class PersonsController : Controller
+	public class DepartmentStaffController : Controller
 	{
 		private readonly ILogger _logger;
 		private readonly ISNILConfigurationManager _configManager;
@@ -26,7 +24,7 @@ namespace SnilAcademicDepartment.Controllers
 		/// </summary>
 		/// <param name="logger"></param>
 		/// <param name="peopleService"></param>
-		public PersonsController(ILogger logger, ISNILConfigurationManager configManager, IPeople peopleService)
+		public DepartmentStaffController(ILogger logger, ISNILConfigurationManager configManager, IPeople peopleService)
 		{
 			this._logger = logger;
 			this._configManager = configManager;
