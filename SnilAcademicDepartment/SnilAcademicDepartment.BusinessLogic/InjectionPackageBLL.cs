@@ -18,7 +18,7 @@ namespace SnilAcademicDepartment.BusinessLogic
             container.Register<IEducation, EducationService>(Lifestyle.Scoped);
             container.Register<IHistory, HistoryService>(Lifestyle.Scoped);
             container.Register<IIndex, HomeService>(Lifestyle.Scoped);
-            container.Register<IPeople, PeopleService>(Lifestyle.Scoped);
+            container.Register<IPeople, DepartmentStaffService>(Lifestyle.Scoped);
             container.Register<IProjects, ProjectsService>(Lifestyle.Scoped);
             container.Register<IProjectsPreview, ProjectsService>(Lifestyle.Scoped);
             container.Register<ISendMail, SendMailService>(Lifestyle.Scoped);
