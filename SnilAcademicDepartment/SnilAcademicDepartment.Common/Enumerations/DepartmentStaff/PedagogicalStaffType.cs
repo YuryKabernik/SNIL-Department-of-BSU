@@ -2,8 +2,7 @@
 {
 	public enum PedagogicalStaffType
 	{
-		Seminar = 11,
-		Lection = 12,
-		QuickLearning = 13
+		Major = 110,
+		Secondary = 111
 	}
 }
