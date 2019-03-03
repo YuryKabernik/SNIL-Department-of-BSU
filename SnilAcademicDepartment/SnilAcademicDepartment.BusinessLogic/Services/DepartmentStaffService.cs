@@ -9,7 +9,7 @@ using System.Linq;
 using System.Data.Entity;
 using System.Threading.Tasks;
 using SnilAcademicDepartment.DataAccess.Models;
-using SnilAcademicDepartment.Common.Enumerations;
+using SnilAcademicDepartment.Common.Enumerations.DepartmentStaff;
 
 namespace SnilAcademicDepartment.BusinessLogic.Services
 {
@@ -49,6 +49,11 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
 				.ToListAsync();
 
 			return this._mapper.Map<IEnumerable<Leader>>(result);
+		}
+
+		public Task<Pedagogue> GetPedagogicalStaffAsync(PedagogicalStaffType staffType, int langLCID)
+		{
+			throw new NotImplementedException();
 		}
 
 		/// <summary>

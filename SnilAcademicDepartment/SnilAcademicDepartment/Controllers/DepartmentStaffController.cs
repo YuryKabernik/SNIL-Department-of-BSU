@@ -9,6 +9,7 @@ using SnilAcademicDepartment.Resources.UnavaliableErrorResources;
 using SnilAcademicDepartment.Properties;
 using Resources;
 using SnilAcademicDepartment.Common.ConfigManagerAdapter;
+using SnilAcademicDepartment.Common.Enumerations.DepartmentStaff;
 
 namespace SnilAcademicDepartment.Controllers
 {
@@ -36,12 +37,16 @@ namespace SnilAcademicDepartment.Controllers
 		public async Task<ActionResult> Persons()
 		{
 			IEnumerable<Leader> leaders = null;
+			IEnumerable<Pedagogue> majorStaff = null;
+			IEnumerable<Pedagogue> secondaryStaff = null;
 
 			var numberOfLeadersOnHallOfFame = await this._configManager.GetConfigValueIntAsync(SnilConfigurationSectionKeys.NumberOfLeadersOnHallOfFameKey);
 
 			try
 			{
 				leaders = await this._peopleService.GetHallOfFameLeadersAsync(numberOfLeadersOnHallOfFame, Thread.CurrentThread.CurrentCulture.LCID);
+				majorStaff = await this._peopleService.GetPedagogicalStaffAsync(PedagogicalStaffType.Major, Thread.CurrentThread.CurrentCulture.LCID);
+				secondaryStaff = await this._peopleService.GetPedagogicalStaffAsync(PedagogicalStaffType.Secondary, Thread.CurrentThread.CurrentCulture.LCID);
 			}
 			catch (System.Exception)
 			{
