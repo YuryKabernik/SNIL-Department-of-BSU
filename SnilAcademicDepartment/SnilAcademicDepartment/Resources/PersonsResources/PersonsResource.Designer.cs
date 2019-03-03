@@ -70,6 +70,24 @@ namespace SnilAcademicDepartment.Resources.PersonsResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Преподавательский состав.
+        /// </summary>
+        public static string AcademicStaff {
+            get {
+                return ResourceManager.GetString("AcademicStaff", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Учебно вспомогательный персонал.
+        /// </summary>
+        public static string AcademicSupportStaff {
+            get {
+                return ResourceManager.GetString("AcademicSupportStaff", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Ученое звание.
         /// </summary>
         public static string AcademicTitle {

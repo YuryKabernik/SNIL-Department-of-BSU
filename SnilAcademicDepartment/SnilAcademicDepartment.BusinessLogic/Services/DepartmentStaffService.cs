@@ -51,7 +51,7 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
 			return this._mapper.Map<IEnumerable<Leader>>(result);
 		}
 
-		public Task<Pedagogue> GetPedagogicalStaffAsync(PedagogicalStaffType staffType, int langLCID)
+		public Task<IEnumerable<Pedagogue>> GetPedagogicalStaffAsync(PedagogicalStaffType staffType, int langLCID)
 		{
 			throw new NotImplementedException();
 		}

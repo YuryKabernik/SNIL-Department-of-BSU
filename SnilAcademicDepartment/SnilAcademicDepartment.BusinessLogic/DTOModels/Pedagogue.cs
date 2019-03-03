@@ -18,6 +18,8 @@
 
 		public string EmailAddress { get; set; }
 
+		public string PersonalInterests { get; set; }
+
 		public int ImageId { get; set; }
 	}
 }

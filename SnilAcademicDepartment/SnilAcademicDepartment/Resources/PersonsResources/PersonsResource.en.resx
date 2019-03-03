@@ -120,6 +120,12 @@
   <data name="Abitur" xml:space="preserve">
     <value>University entrants</value>
   </data>
+  <data name="AcademicStaff" xml:space="preserve">
+    <value>Pädagogisches Personal</value>
+  </data>
+  <data name="AcademicSupportStaff" xml:space="preserve">
+    <value>Pädagogisches Support-Personal</value>
+  </data>
   <data name="AcademicTitle" xml:space="preserve">
     <value>Academic title</value>
   </data>

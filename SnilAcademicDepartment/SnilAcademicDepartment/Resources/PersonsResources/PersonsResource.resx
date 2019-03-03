@@ -120,6 +120,12 @@
   <data name="Abitur" xml:space="preserve">
     <value>Абитуриенты</value>
   </data>
+  <data name="AcademicStaff" xml:space="preserve">
+    <value>Преподавательский состав</value>
+  </data>
+  <data name="AcademicSupportStaff" xml:space="preserve">
+    <value>Учебно вспомогательный персонал</value>
+  </data>
   <data name="AcademicTitle" xml:space="preserve">
     <value>Ученое звание</value>
   </data>
