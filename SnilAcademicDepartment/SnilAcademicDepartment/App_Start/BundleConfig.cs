@@ -55,7 +55,7 @@ namespace SnilAcademicDepartment
 			bundles.Add(new StyleBundle("~/Content/peoplecss").Include(
 						"~/Content/Persons/PersonsStyle.css"));
 			//PersonalPageStyle
-			bundles.Add(new StyleBundle("~/Content/personalpagecss").Include(
+			bundles.Add(new StyleBundle("~/Content/personalpagestylecss").Include(
 						"~/Content/Persons/PersonalPageStyle.css"));
 			//EducationStyle
 			bundles.Add(new StyleBundle("~/Content/educationcss").Include(

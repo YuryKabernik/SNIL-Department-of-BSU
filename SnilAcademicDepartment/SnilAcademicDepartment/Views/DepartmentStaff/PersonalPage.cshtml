@@ -1,29 +1,28 @@
 ﻿@using SnilAcademicDepartment.BusinessLogic.DTOModels;
 @{
-	Styles.Render("~/Content/personalpagecss");
-
 	Layout = "~/Views/Shared/_Layout.cshtml";
 	PersonVM person = ViewData.Model;
 	var imgSrc = Url.Action("GetImage", new { controller = "Image", id = person.ImageId });
 }
+@Styles.Render("~/Content/personalpagestylecss")
 <div class="container">
 	<ol class="breadcrumb">
 		<li>
 			@Html.ActionLink(Resources.Resource.Home, "Index", "Home")
 		</li>
 		<li>
-			@Html.ActionLink(Resources.Resource.Persons, "Persons", "Persons")
+			@Html.ActionLink(Resources.Resource.Persons, "Persons", "DepartmentStaff")
 		</li>
 		<li class="active">@string.Format("{0}, {1}", person.SecoundName, person.PersonName)</li>
 	</ol>
 </div>
-<div class="container">
+<div class="container department-person">
 	<h2>@String.Join(", ", person.Degree, $"{person.SecoundName} {person.PersonName}")</h2><br>
 	<div class="row row1">
-		<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+		<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
 			<img src="@imgSrc" alt="@String.Join(" ", person.SecoundName, person.PersonName)" title="@String.Concat(person.SecoundName," ",person.PersonName)">
 		</div>
-		<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+		<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
 			@person.Biography
 		</div>
 	</div>

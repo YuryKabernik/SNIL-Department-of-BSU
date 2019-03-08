@@ -1,11 +1,18 @@
-﻿.spma-person h2:first-child {
+﻿.department-person h2:first-child,
+.spma-person h2:first-child {
 	text-align: center;
 }
-.spma-person ul {
+.spma-person ul,
+.department-person ul {
 	margin-top: 10px;
 	margin-bottom: 10px;
 	list-style: none;
 }
-.spma-person img {
-	width: 80%;
+.spma-person img,
+.department-person img {
+	width: 100%;
+}
+.spma-person ul,
+.department-person ul {
+	margin-left: 10px;
 }

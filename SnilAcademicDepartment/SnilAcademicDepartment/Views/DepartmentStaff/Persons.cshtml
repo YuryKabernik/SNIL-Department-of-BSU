@@ -59,9 +59,9 @@
 	foreach(var pedagogue in pedagogues)
 	{
 		var imgSrcBlock = Url.Action("GetImage", new { controller = "Image", id = pedagogue.ImageId });
-		var personPageUrl = Url.RouteUrl(new { action = "PersonalPage", controller = "Persons", id = pedagogue.Id });
+		var personPageUrl = Url.RouteUrl(new { action = "PersonalPage", controller = "DepartmentStaff", id = pedagogue.Id });
 
-		<div class="row row-student well">
+		<div class="row row-student well department-person">
 			<h4>@string.Format("{0} {1} {2}", pedagogue.PersonName, pedagogue.SecoundName, pedagogue.FathersName)</h4>
 			<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
 				<a href="@personPageUrl">
