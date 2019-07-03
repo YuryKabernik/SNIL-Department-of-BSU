@@ -61,7 +61,16 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Адрес: пр. Независимости, 4, 220030, г. Минск, Республика Беларусь..
+        ///   Looks up a localized string similar to О студенческой научной лаборатории.
+        /// </summary>
+        public static string About {
+            get {
+                return ResourceManager.GetString("About", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Адрес: Курчатова 1, 220108, г. Минск, Республика Беларусь..
         /// </summary>
         public static string Address {
             get {
@@ -75,6 +84,38 @@ namespace Resources {
         public static string ChooseLang {
             get {
                 return ResourceManager.GetString("ChooseLang", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Международное сотрудничество.
+        /// </summary>
+        public static string Collaboration {
+            get {
+                return ResourceManager.GetString("Collaboration", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Наша студенческая научная лаборатория поддерживает тесные контакты с ведущими зарубежными научными лабораториями и университетами. Среди них можно отметить Институт здоровья Люксембурга (LiH), Европейскую молекулярную биологическую лабораторию (EMBL) и др..
+        /// </summary>
+        public static string CollaborationIntro {
+            get {
+                return ResourceManager.GetString("CollaborationIntro", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Кафедра осуществляет научное сотрудничество с рядом зарубежных научных организаций, в том числе с:
+        ///    &lt;p&gt;
+        ///        &lt;ul style=&quot;margin-left:18pt&quot;&gt;
+        ///            &lt;li&gt;EuroPhoton GmbH, Neusalza-Spremberg, Germany (краткосрочная стажировка Ска-куна В.В, июль 2018 г. без оформления командировки);
+        ///            &lt;li&gt;Марбургский университет, Марбург, Германия (меморандум о сотрудничестве, стажировка ассистента кафедры Свидрицкого А.С., консультирование аспиранта);
+        ///            &lt;li&gt;Рурский университет, Бохум, Германия [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string CollaborationPage {
+            get {
+                return ResourceManager.GetString("CollaborationPage", resourceCulture);
             }
         }
         
@@ -97,7 +138,25 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Контакты с руководителями кафедры, администрацией. Ознакомьтесь с расположением лаборатории, кротчайшим пешким путём, на общественном, личном транспорте. На странице имеется возможность оставить текстовое сообщение..
+        ///   Looks up a localized string similar to Обратная связь.
+        /// </summary>
+        public static string ContactsForm {
+            get {
+                return ResourceManager.GetString("ContactsForm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Страница с контактными данными.
+        /// </summary>
+        public static string ContactsPage {
+            get {
+                return ResourceManager.GetString("ContactsPage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Контакты с руководителями кафедры, администрацией. Ознакомьтесь с расположением лаборатории, кротчайшим пешим путём, на общественном, личном транспорте. На странице имеется возможность оставить текстовое сообщение..
         /// </summary>
         public static string ContactsShortDescription {
             get {
@@ -124,6 +183,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Здесь вы можете познакомиться с библиотекой резюме выпукскников нашего факультета.
+        /// </summary>
+        public static string CVInto {
+            get {
+                return ResourceManager.GetString("CVInto", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Скачать документ....
         /// </summary>
         public static string Download {
@@ -133,7 +201,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Обучени.
+        ///   Looks up a localized string similar to Обучение на кафедре.
         /// </summary>
         public static string Education {
             get {
@@ -142,7 +210,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Образовательный процесс студентов, планы занятий, семинары, программа Quick Learning. Тут вы можете найти описание образовательного процесса, ознакомиться с действующими преподавателями и отзывами на работу преподавательского состава лаборатории и кафедры Системного анализа и компьютерного моделирования..
+        ///   Looks up a localized string similar to Образовательный процесс студентов. Здесь вы сможете найти описание образовательного процесса, список читаемых дисиплин, а также список текущих магистерских и дипломных работ..
         /// </summary>
         public static string EducationShortDescription {
             get {
@@ -169,7 +237,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Факс. + 375 17 226 59 40..
+        ///   Looks up a localized string similar to Факс. +375 17 398 7042..
         /// </summary>
         public static string FaxNumber {
             get {
@@ -178,7 +246,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to © Белорусский государственный университет.
+        ///   Looks up a localized string similar to © Белорусский государственный университет, СНИЛ &quot;Моделирования и анализа процессов и систем&quot;.
         /// </summary>
         public static string FooterCopyright {
             get {
@@ -196,7 +264,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to История.
+        ///   Looks up a localized string similar to История СНИЛ.
         /// </summary>
         public static string History {
             get {
@@ -205,7 +273,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to История создания, руководители лаборатории и кафедры, конференции и доклады по годам. На данной странице вы сможете найти подробное описание выступлений на семинарах, PHD, IEEE, отчеты по семинарам и архивные документы..
+        ///   Looks up a localized string similar to История создания лаборатории, проводимые конференции и другая важная информация. На данной странице вы сможете найти подробное описание деятельности лаборатории и ознакомиться с достижениями ее участников..
         /// </summary>
         public static string HistoryShortDescription {
             get {
@@ -223,7 +291,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to БГУ СНИЛ.
+        ///   Looks up a localized string similar to БГУ СНИЛ .
         /// </summary>
         public static string IndexHeader {
             get {
@@ -268,7 +336,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Участники лаборатории, преподаватели и студенты кафедры. В данном разделе вы можете ознакомиться с преподавательским составом лаборатории и кафедры, а так же с самыми активными студентами и их достижениями в обучении и научной деятельности. Также вы можете ознакомиться с лучшими сотрудниками месяца..
+        ///   Looks up a localized string similar to Преподаватели и учебно-вспомогательный персонал кафедры. В данном разделе вы можете ознакомиться с преподавательским составом кафедры, узнать направления научной деятельности ее сотрудников..
         /// </summary>
         public static string PeopleShortDescription {
             get {
@@ -286,7 +354,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to + 375 17 209 50 44. .
+        ///   Looks up a localized string similar to +375 17 398 7042; +375 17 398 0222. .
         /// </summary>
         public static string PhoneNumber {
             get {
@@ -313,11 +381,65 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Проекты студентов нашей лаборатории и достижения. Тут вы можете найти описание проектов, идей и научных докладов участников лаборатории и кафедры Системного анализа и компьютерного моделирования. Для очень важен результат проведенных исследований и дальнейшее применение реализованных проектов..
+        ///   Looks up a localized string similar to Информация о научных проектах, выполняемых силами сотрудников лаборатории и преподавателей кафедры..
+        /// </summary>
+        public static string ProjectsIntro {
+            get {
+                return ResourceManager.GetString("ProjectsIntro", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Научно-исследовательские проекты сотрудников кафедры, студентов нашей лаборатории. Наши достижения. Здесь вы можете найти описание проектов, идей участников лаборатории и сотрудников кафедры системного анализа и компьютерного моделирования. Для очень важен результат проведенных исследований и дальнейшее применение реализованных проектов..
         /// </summary>
         public static string ProjectsShortDescription {
             get {
                 return ResourceManager.GetString("ProjectsShortDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Научные исследовательские проекты.
+        /// </summary>
+        public static string SciProjects {
+            get {
+                return ResourceManager.GetString("SciProjects", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Семинары.
+        /// </summary>
+        public static string Seminars {
+            get {
+                return ResourceManager.GetString("Seminars", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Список научных семинаров кафедры и студенческой научной лаборатории. Научные семинары проводятся на регулярной основе с приглашением известных ученых. Многие семинары проводятся с участием зарубежных ученых, а также выпускников кафедры, получивших научные степени и работающих за границей..
+        /// </summary>
+        public static string SeminarsShortDescription {
+            get {
+                return ResourceManager.GetString("SeminarsShortDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Состав СНИЛ.
+        /// </summary>
+        public static string SNIL {
+            get {
+                return ResourceManager.GetString("SNIL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Участники студенческой научной лаборатории и ее руководящий состав. В данном разделе вы можете ознакомиться с руководителями лаборатории, а также со студентами,  магистрантами и аспирантами, работающими в ней..
+        /// </summary>
+        public static string SNILShortDescription {
+            get {
+                return ResourceManager.GetString("SNILShortDescription", resourceCulture);
             }
         }
         
@@ -331,7 +453,25 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Добро пожаловать в Студентческую Научно-Исследовательскую Лабораторию!.
+        ///   Looks up a localized string similar to Студенческая научно исследовательская лаборатория.
+        /// </summary>
+        public static string Title1 {
+            get {
+                return ResourceManager.GetString("Title1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Моделирования и анализа процессов и систем.
+        /// </summary>
+        public static string Title2 {
+            get {
+                return ResourceManager.GetString("Title2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Добро пожаловать в Студентческую Научно-Исследовательскую Лабораторию &quot;Моделирования и анализа процессов и систем&quot;!.
         /// </summary>
         public static string Welcome {
             get {

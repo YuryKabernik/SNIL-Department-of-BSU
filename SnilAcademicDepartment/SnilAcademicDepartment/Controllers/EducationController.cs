@@ -1,27 +1,28 @@
 ﻿using System;
-using NLog;
-using SnilAcademicDepartment.BusinessLogic.Interfaces;
-using System.Web.Mvc;
-using System.Threading;
 using System.Collections.Generic;
-using Resources.EducationResources;
-using SnilAcademicDepartment.Properties;
-using SnilAcademicDepartment.BusinessLogic.DTOModels;
-using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
-using SnilAcademicDepartment.Resources.UnavaliableErrorResources;
+using System.Web.Mvc;
+using NLog;
+using SnilAcademicDepartment.BusinessLogic.DTOModels;
+using SnilAcademicDepartment.BusinessLogic.Interfaces;
+using SnilAcademicDepartment.BusinessLogic.Interfaces.API;
 using SnilAcademicDepartment.Common.ConfigManagerAdapter;
+using SnilAcademicDepartment.Properties;
+using SnilAcademicDepartment.Resources.EducationResources;
+using SnilAcademicDepartment.Resources.UnavaliableErrorResources;
 
 namespace SnilAcademicDepartment.Controllers
 {
-    [RoutePrefix("{language}")]
-    public class EducationController : Controller
-    {
-        private readonly ILogger _logger;
-        private readonly IService _previewService;
-        private readonly IEducation _educationService;
-        private readonly ILecturePreview _lecturePreviewService;
-        private readonly ISeminarPreview _seminarPreviewService;
+	[RoutePrefix("{language}")]
+	public class EducationController : Controller
+	{
+		private readonly ILogger _logger;
+		private readonly IService _previewService;
+		private readonly IEducation _educationService;
+		private readonly IDiplomasApiService _diplomasApiService;
+		private readonly ILecturePreview _lecturePreviewService;
+		private readonly ISeminarPreview _seminarPreviewService;
 		private readonly ISNILConfigurationManager _configManager;
 
 		/// <summary>
@@ -34,130 +35,100 @@ namespace SnilAcademicDepartment.Controllers
 		/// <param name="lecturePreviewService">The lecture preview service.</param>
 		/// <param name="seminarPreviewService">The seminar preview service.</param>
 		public EducationController(
-            ILogger logger,
-            ISNILConfigurationManager configManager,
-			IService previewService, 
-            IEducation educationService, 
-            ILecturePreview lecturePreviewService,
-            ISeminarPreview seminarPreviewService)
-        {
-            this._logger = logger;
+			ILogger logger,
+			ISNILConfigurationManager configManager,
+			IService previewService,
+			IEducation educationService,
+			ILecturePreview lecturePreviewService,
+			ISeminarPreview seminarPreviewService,
+			IDiplomasApiService diplomasApiService)
+		{
+			this._logger = logger;
 			this._configManager = configManager;
 			this._previewService = previewService;
-            this._educationService = educationService;
-            this._lecturePreviewService = lecturePreviewService;
-            this._seminarPreviewService = seminarPreviewService;
-        }
+			this._educationService = educationService;
+			this._diplomasApiService = diplomasApiService;
+			this._lecturePreviewService = lecturePreviewService;
+			this._seminarPreviewService = seminarPreviewService;
+		}
 
-        [HttpGet]
-        [Route("education")]
-        public async Task<ActionResult> Education()
-        {
-            PreViewModel viewModel = null;
-            List<EducationBlockModel> blockCollection = null;
+		[HttpGet]
+		[Route("education")]
+		public async Task<ActionResult> Education()
+		{
+			PreViewModel viewModel = null;
+			List<EducationBlockModel> blockCollection = null;
 
 			var numberOfElements = await this._configManager.GetConfigValueIntAsync(SnilConfigurationSectionKeys.NumberOfKeyAreasOnEducationPageKey);
 
-            try
-            {
-                // Get page preview data.
-                viewModel = await this._previewService.GetPagePreviewAsync("Education", Thread.CurrentThread.CurrentCulture.LCID);
+			try
+			{
+				// Get page preview data.
+				viewModel = await this._previewService.GetPagePreviewAsync("Education", Thread.CurrentThread.CurrentCulture.LCID);
 
-                // Get educatio key areas.
-                blockCollection = await this._educationService.GetKeyAreasAsync(numberOfElements, Thread.CurrentThread.CurrentCulture.LCID);
-            }
-            catch (Exception)
-            {
-                ViewBag.ErrorMessage = "Sorry, but education page is not avaliable now :( \n Try again later!";
-                return View("Error");
-            }
+				// Get educatio key areas.
+				blockCollection = await this._educationService.GetKeyAreasAsync(numberOfElements, Thread.CurrentThread.CurrentCulture.LCID);
+			}
+			catch (Exception ex)
+			{
+				ViewBag.ErrorMessage = "Sorry, but education page is not avaliable now :( \n Try again later!";
+				return View("Error");
+			}
 
-            int i = 1;
-            foreach (var item in blockCollection)
-            {
-                item.ActionId = i++;
-            }
+			int i = 1;
+			foreach (var item in blockCollection)
+			{
+				item.ActionId = i++;
+			}
 
-            ViewData.Add("viewModel", viewModel);
+			ViewData.Add("viewModel", viewModel);
 			ViewData.Add("blockModel", blockCollection);
-            return View();
-        }
+			return View();
+		}
 
-        [HttpGet]
-        [Route("learning")]
-        public async Task<ActionResult> PageQuickLearning()
-        {
-            EducationBlockModel viewModel = null;
-
-			var numberOfElements = await this._configManager.GetConfigValueIntAsync(SnilConfigurationSectionKeys.NumberOfQuickLearningBlocksOnPageKey);
+		[HttpGet]
+		[Route("diploma")]
+		public async Task<ActionResult> PageDiploma()
+		{
+			IEnumerable<UiDiploma> viewModel = null;
 
 			try
 			{
-                viewModel = await this._educationService.GetEducationBlockByIdAsync(numberOfElements, Thread.CurrentThread.CurrentCulture.LCID);
-
-            }
-            catch (Exception)
-            {
-
+				viewModel = await this._diplomasApiService.GetDiplomas(Thread.CurrentThread.CurrentCulture.LCID);
+			}
+			catch (Exception ex)
+			{
 				ViewBag.Title = UnavaliableErrorResource.UnavaliableMessage;
 				return View("SorryUnavaliable");
 			}
 
-            ViewBag.Title = "Quick Learning";
-            ViewBag.EducationResourseTitle = EducationResource.QuickLearning;
-            ViewBag.Components = viewModel;
+			ViewData.Add("diplomas", viewModel);
+			return View("Diplomas");
+		}
 
-            return View("EducationBlockPage");
-        }
-
-        [HttpGet]
-        [Route("seminars")]
-        public async Task<ActionResult> PageSeminars()
-        {
-            IEnumerable<IGrouping<int, SeminarPreview>> seninarsPreviewsModels = null;
-
-			var numberOfSeminars = await this._configManager.GetConfigValueIntAsync(SnilConfigurationSectionKeys.NumberOfSeminarsOnPageSeminarsKey);
-
-			try
-			{
-                seninarsPreviewsModels = await this._seminarPreviewService.GetSeminarPreviewsAsync<SeminarPreview>(numberOfSeminars, Thread.CurrentThread.CurrentCulture.LCID);
-            }
-            catch (Exception)
-            {
-				ViewBag.Title = UnavaliableErrorResource.UnavaliableMessage;
-				return View("SorryUnavaliable");
-			}
-
-            ViewBag.Title = "Seminars";
-            ViewBag.EducationResourseTitle = EducationResource.Seminars;
-            ViewBag.Components = seninarsPreviewsModels;
-
-            return View("EducationBlockPage");
-        }
-
-        [HttpGet]
-        [Route("lections")]
-        public async Task<ActionResult> PageLectures()
-        {
-            IEnumerable<LecturePreview> lecturePreviewsModels = null;
+		[HttpGet]
+		[Route("lections")]
+		public async Task<ActionResult> PageLectures()
+		{
+			IEnumerable<LecturePreview> lecturePreviewsModels = null;
 
 			var numberOfLectures = await this._configManager.GetConfigValueIntAsync(SnilConfigurationSectionKeys.NumberOfLecturesOnPageLecturesKey);
 
 			try
 			{
-                lecturePreviewsModels = await this._lecturePreviewService.GetLecturePreviewsAsync<LecturePreview>(numberOfLectures, Thread.CurrentThread.CurrentCulture.LCID);
-            }
-            catch (Exception)
-            {
+				lecturePreviewsModels = await this._lecturePreviewService.GetLecturePreviewsAsync<LecturePreview>(numberOfLectures, Thread.CurrentThread.CurrentCulture.LCID);
+			}
+			catch (Exception ex)
+			{
 				ViewBag.Title = UnavaliableErrorResource.UnavaliableMessage;
 				return View("SorryUnavaliable");
 			}
 
-            ViewBag.Title = "Lections";
-            ViewBag.EducationResourseTitle = EducationResource.Lectures;
-            ViewBag.Components = lecturePreviewsModels;
+			ViewBag.Title = "Lections";
+			ViewBag.EducationResourseTitle = EducationResource.Lectures;
+			ViewBag.Components = lecturePreviewsModels;
 
-            return View("EducationBlockPage");
-        }
-    }
+			return View("EducationBlockPage");
+		}
+	}
 }

@@ -20,6 +20,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -28,6 +29,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet />
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
@@ -36,11 +38,11 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
-    <Reference Include="SimpleInjector, Version=4.2.2.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
-      <HintPath>..\packages\SimpleInjector.4.2.2\lib\net45\SimpleInjector.dll</HintPath>
+    <Reference Include="SimpleInjector, Version=4.6.0.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
+      <HintPath>..\packages\SimpleInjector.4.6.0\lib\net45\SimpleInjector.dll</HintPath>
     </Reference>
-    <Reference Include="SimpleInjector.Packaging, Version=4.2.2.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
-      <HintPath>..\packages\SimpleInjector.Packaging.4.2.2\lib\net40\SimpleInjector.Packaging.dll</HintPath>
+    <Reference Include="SimpleInjector.Packaging, Version=4.6.0.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
+      <HintPath>..\packages\SimpleInjector.Packaging.4.6.0\lib\net40\SimpleInjector.Packaging.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -68,6 +70,7 @@
     <Compile Include="DBTypesInitialisation\ProjectsDBInit.cs" />
     <Compile Include="DBTypesInitialisation\SeminarsDBInit.cs" />
     <Compile Include="EntitiesConfiguration\BiographyConfig.cs" />
+    <Compile Include="EntitiesConfiguration\DiplomaConfig.cs" />
     <Compile Include="EntitiesConfiguration\DocumentConfig.cs" />
     <Compile Include="EntitiesConfiguration\EducationBlockConfig.cs" />
     <Compile Include="EntitiesConfiguration\EducationTopicConfiguration.cs" />
@@ -89,101 +92,17 @@
     <Compile Include="EntitiesConfiguration\TopicConfig.cs" />
     <Compile Include="InjectionPackageDAL.cs" />
     <Compile Include="Interfaces\IRepository.cs" />
-    <Compile Include="Migrations\201805021126597_CodeFirstFromDatabase.cs" />
-    <Compile Include="Migrations\201805021126597_CodeFirstFromDatabase.Designer.cs">
-      <DependentUpon>201805021126597_CodeFirstFromDatabase.cs</DependentUpon>
+    <Compile Include="Migrations\201906080812254_DatabaseModel-08-06-19.cs" />
+    <Compile Include="Migrations\201906080812254_DatabaseModel-08-06-19.Designer.cs">
+      <DependentUpon>201906080812254_DatabaseModel-08-06-19.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201805021130529_AddFieldPointsToHallOfFame.cs" />
-    <Compile Include="Migrations\201805021130529_AddFieldPointsToHallOfFame.Designer.cs">
-      <DependentUpon>201805021130529_AddFieldPointsToHallOfFame.cs</DependentUpon>
+    <Compile Include="Migrations\201906081042279_DatabaseModel-08-06-2019.cs" />
+    <Compile Include="Migrations\201906081042279_DatabaseModel-08-06-2019.Designer.cs">
+      <DependentUpon>201906081042279_DatabaseModel-08-06-2019.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201805091031220_ChangeLanguageCodeTypeToInt32.cs" />
-    <Compile Include="Migrations\201805091031220_ChangeLanguageCodeTypeToInt32.Designer.cs">
-      <DependentUpon>201805091031220_ChangeLanguageCodeTypeToInt32.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201805091425210_ExpandMaxLengthInTopic.cs" />
-    <Compile Include="Migrations\201805091425210_ExpandMaxLengthInTopic.Designer.cs">
-      <DependentUpon>201805091425210_ExpandMaxLengthInTopic.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201805191751495_AddCommonIDToProjectForCulturalProjectAssociation.cs" />
-    <Compile Include="Migrations\201805191751495_AddCommonIDToProjectForCulturalProjectAssociation.Designer.cs">
-      <DependentUpon>201805191751495_AddCommonIDToProjectForCulturalProjectAssociation.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201805261520417_AddCommonIdToBlockType.cs" />
-    <Compile Include="Migrations\201805261520417_AddCommonIdToBlockType.Designer.cs">
-      <DependentUpon>201805261520417_AddCommonIdToBlockType.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201805271221307_AddFileTypeColumnToDocumentTable.cs" />
-    <Compile Include="Migrations\201805271221307_AddFileTypeColumnToDocumentTable.Designer.cs">
-      <DependentUpon>201805271221307_AddFileTypeColumnToDocumentTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201805271335524_AddImageTypeExtenctionColumnToImageTable.cs" />
-    <Compile Include="Migrations\201805271335524_AddImageTypeExtenctionColumnToImageTable.Designer.cs">
-      <DependentUpon>201805271335524_AddImageTypeExtenctionColumnToImageTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201805271558061_EditFileTypeColumnInDocumentTable.cs" />
-    <Compile Include="Migrations\201805271558061_EditFileTypeColumnInDocumentTable.Designer.cs">
-      <DependentUpon>201805271558061_EditFileTypeColumnInDocumentTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201805271605370_EditMaxValeuOfColumnFileContentInDocumentTable.cs" />
-    <Compile Include="Migrations\201805271605370_EditMaxValeuOfColumnFileContentInDocumentTable.Designer.cs">
-      <DependentUpon>201805271605370_EditMaxValeuOfColumnFileContentInDocumentTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201805271637267_AddDocumentToLecturesTable.cs" />
-    <Compile Include="Migrations\201805271637267_AddDocumentToLecturesTable.Designer.cs">
-      <DependentUpon>201805271637267_AddDocumentToLecturesTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201809072018179_AddFameLeaderIdentifier.cs" />
-    <Compile Include="Migrations\201809072018179_AddFameLeaderIdentifier.Designer.cs">
-      <DependentUpon>201809072018179_AddFameLeaderIdentifier.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201810070634348_AddPhoneNumberAndAddress.cs" />
-    <Compile Include="Migrations\201810070634348_AddPhoneNumberAndAddress.Designer.cs">
-      <DependentUpon>201810070634348_AddPhoneNumberAndAddress.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201810211045134_AddProfessionTables.cs" />
-    <Compile Include="Migrations\201810211045134_AddProfessionTables.Designer.cs">
-      <DependentUpon>201810211045134_AddProfessionTables.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201810221951291_SetProjectStatusAsEnum.cs" />
-    <Compile Include="Migrations\201810221951291_SetProjectStatusAsEnum.Designer.cs">
-      <DependentUpon>201810221951291_SetProjectStatusAsEnum.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201810271522023_StringifyStatus.cs" />
-    <Compile Include="Migrations\201810271522023_StringifyStatus.Designer.cs">
-      <DependentUpon>201810271522023_StringifyStatus.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201810311856280_AddStudentsTableToDatabase.cs" />
-    <Compile Include="Migrations\201810311856280_AddStudentsTableToDatabase.Designer.cs">
-      <DependentUpon>201810311856280_AddStudentsTableToDatabase.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201810311930157_AddStuffDepartmentTable.cs" />
-    <Compile Include="Migrations\201810311930157_AddStuffDepartmentTable.Designer.cs">
-      <DependentUpon>201810311930157_AddStuffDepartmentTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201810312012100_AddStuffStudentsTable.cs" />
-    <Compile Include="Migrations\201810312012100_AddStuffStudentsTable.Designer.cs">
-      <DependentUpon>201810312012100_AddStuffStudentsTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201811011937475_AddStudentTypesAndUpdateStudentTable.cs" />
-    <Compile Include="Migrations\201811011937475_AddStudentTypesAndUpdateStudentTable.Designer.cs">
-      <DependentUpon>201811011937475_AddStudentTypesAndUpdateStudentTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201811031029371_AddStuffPersonalTableToDataBase.cs" />
-    <Compile Include="Migrations\201811031029371_AddStuffPersonalTableToDataBase.Designer.cs">
-      <DependentUpon>201811031029371_AddStuffPersonalTableToDataBase.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201812250848007_AddImageToStudentsDataModel.cs" />
-    <Compile Include="Migrations\201812250848007_AddImageToStudentsDataModel.Designer.cs">
-      <DependentUpon>201812250848007_AddImageToStudentsDataModel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201901241318540_AddForgeryKeyToPreViewTableToImageTable.cs" />
-    <Compile Include="Migrations\201901241318540_AddForgeryKeyToPreViewTableToImageTable.Designer.cs">
-      <DependentUpon>201901241318540_AddForgeryKeyToPreViewTableToImageTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201903031534591_AddPedagogicalStaffTypeFiledToStuffDepartmentTable.cs" />
-    <Compile Include="Migrations\201903031534591_AddPedagogicalStaffTypeFiledToStuffDepartmentTable.Designer.cs">
-      <DependentUpon>201903031534591_AddPedagogicalStaffTypeFiledToStuffDepartmentTable.cs</DependentUpon>
+    <Compile Include="Migrations\201906272201147_Skakun_28-06-2019.cs" />
+    <Compile Include="Migrations\201906272201147_Skakun_28-06-2019.Designer.cs">
+      <DependentUpon>201906272201147_Skakun_28-06-2019.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AcademicTitle.cs" />
@@ -193,6 +112,7 @@
     <Compile Include="Models\Document.cs" />
     <Compile Include="Models\EducationBlock.cs" />
     <Compile Include="Models\EducationTopic.cs" />
+    <Compile Include="Models\Education\Diploma.cs" />
     <Compile Include="Models\EnumType\ProjectStatus.cs" />
     <Compile Include="Models\EnumType\StudentType.cs" />
     <Compile Include="Models\HallOfFame.cs" />
@@ -217,84 +137,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />
-    <None Include="img\Head - BSU.docx" />
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201805021126597_CodeFirstFromDatabase.resx">
-      <DependentUpon>201805021126597_CodeFirstFromDatabase.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201805021130529_AddFieldPointsToHallOfFame.resx">
-      <DependentUpon>201805021130529_AddFieldPointsToHallOfFame.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201805091031220_ChangeLanguageCodeTypeToInt32.resx">
-      <DependentUpon>201805091031220_ChangeLanguageCodeTypeToInt32.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201805091425210_ExpandMaxLengthInTopic.resx">
-      <DependentUpon>201805091425210_ExpandMaxLengthInTopic.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201805191751495_AddCommonIDToProjectForCulturalProjectAssociation.resx">
-      <DependentUpon>201805191751495_AddCommonIDToProjectForCulturalProjectAssociation.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201805261520417_AddCommonIdToBlockType.resx">
-      <DependentUpon>201805261520417_AddCommonIdToBlockType.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201805271221307_AddFileTypeColumnToDocumentTable.resx">
-      <DependentUpon>201805271221307_AddFileTypeColumnToDocumentTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201805271335524_AddImageTypeExtenctionColumnToImageTable.resx">
-      <DependentUpon>201805271335524_AddImageTypeExtenctionColumnToImageTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201805271558061_EditFileTypeColumnInDocumentTable.resx">
-      <DependentUpon>201805271558061_EditFileTypeColumnInDocumentTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201805271605370_EditMaxValeuOfColumnFileContentInDocumentTable.resx">
-      <DependentUpon>201805271605370_EditMaxValeuOfColumnFileContentInDocumentTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201805271637267_AddDocumentToLecturesTable.resx">
-      <DependentUpon>201805271637267_AddDocumentToLecturesTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201809072018179_AddFameLeaderIdentifier.resx">
-      <DependentUpon>201809072018179_AddFameLeaderIdentifier.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201810070634348_AddPhoneNumberAndAddress.resx">
-      <DependentUpon>201810070634348_AddPhoneNumberAndAddress.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201810211045134_AddProfessionTables.resx">
-      <DependentUpon>201810211045134_AddProfessionTables.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201810221951291_SetProjectStatusAsEnum.resx">
-      <DependentUpon>201810221951291_SetProjectStatusAsEnum.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201810271522023_StringifyStatus.resx">
-      <DependentUpon>201810271522023_StringifyStatus.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201810311856280_AddStudentsTableToDatabase.resx">
-      <DependentUpon>201810311856280_AddStudentsTableToDatabase.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201810311930157_AddStuffDepartmentTable.resx">
-      <DependentUpon>201810311930157_AddStuffDepartmentTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201810312012100_AddStuffStudentsTable.resx">
-      <DependentUpon>201810312012100_AddStuffStudentsTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201811011937475_AddStudentTypesAndUpdateStudentTable.resx">
-      <DependentUpon>201811011937475_AddStudentTypesAndUpdateStudentTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201811031029371_AddStuffPersonalTableToDataBase.resx">
-      <DependentUpon>201811031029371_AddStuffPersonalTableToDataBase.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201812250848007_AddImageToStudentsDataModel.resx">
-      <DependentUpon>201812250848007_AddImageToStudentsDataModel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201901241318540_AddForgeryKeyToPreViewTableToImageTable.resx">
-      <DependentUpon>201901241318540_AddForgeryKeyToPreViewTableToImageTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201903031534591_AddPedagogicalStaffTypeFiledToStuffDepartmentTable.resx">
-      <DependentUpon>201903031534591_AddPedagogicalStaffTypeFiledToStuffDepartmentTable.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Content Include="img\BSU3.jpg" />
@@ -305,5 +150,17 @@
       <Name>SnilAcademicDepartment.Common</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201906080812254_DatabaseModel-08-06-19.resx">
+      <DependentUpon>201906080812254_DatabaseModel-08-06-19.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906081042279_DatabaseModel-08-06-2019.resx">
+      <DependentUpon>201906081042279_DatabaseModel-08-06-2019.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906272201147_Skakun_28-06-2019.resx">
+      <DependentUpon>201906272201147_Skakun_28-06-2019.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

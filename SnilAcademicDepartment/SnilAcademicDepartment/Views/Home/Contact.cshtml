@@ -3,7 +3,7 @@
 }
 @Styles.Render("~/Content/contactcss")
 <div class="container formform">
-	<h3>@Resources.Resource.Contacts</h3>
+	<h3>@Resources.Resource.ContactsForm</h3>
 	<div id="mailingResult" class="mailResult hidden"></div>
 	<div class="form">
 		<div class="row">
@@ -34,7 +34,7 @@
 							<br>
 							<textarea name="Message" class="usertext form-control" placeholder="@SnilAcademicDepartment.Resources.ContactsResources.ContactsResource.Message..." aria-describedby="sizing-addon2" required></textarea>
 							<br>
-							<input class="btn btn-default bottom_send_form" type="submit" name="submit" value="Send" />
+							<input class="btn btn-default bottom_send_form" type="submit" name="submit" value="@SnilAcademicDepartment.Resources.ContactsResources.ContactsResource.Send" />
 						</fieldset>
 					</form>
 				</div>

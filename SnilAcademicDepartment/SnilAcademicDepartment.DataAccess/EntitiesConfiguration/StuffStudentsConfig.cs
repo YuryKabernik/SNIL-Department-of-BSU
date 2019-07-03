@@ -11,7 +11,7 @@ namespace SnilAcademicDepartment.DataAccess.Configurations
 
 			this.HasKey(p => p.Id);
 
-			this.HasRequired(p => p.Student);
+			//this.HasRequired(p => p.Student);
 
 			this.Property(p => p.DateEntrance)
 				.HasColumnName("date_entrance")
@@ -20,6 +20,9 @@ namespace SnilAcademicDepartment.DataAccess.Configurations
 			this.Property(p => p.DateDeparture)
 				.HasColumnName("date_departure")
 				.IsOptional();
-		}
-	}
+
+            this.HasRequired(p => p.Student)
+                .WithMany(p => p.StuffStudents);
+        }
+    }
 }

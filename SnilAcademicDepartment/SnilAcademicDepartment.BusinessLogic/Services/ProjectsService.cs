@@ -74,7 +74,7 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
 		/// <returns></returns>
 		public ProjectModel GetProjectByStatus(ProjectStatusDTO projectStatus, int langLCID)
 		{
-			if (projectStatus == null || !Enum.IsDefined(typeof(ProjectStatusDTO), projectStatus))
+			if (!Enum.IsDefined(typeof(ProjectStatusDTO), projectStatus))
 			{
 				throw new ArgumentNullException(nameof(projectStatus), "Your argument is Null, Empty or WhiteSpace");
 			}
@@ -99,7 +99,7 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
 		/// <returns></returns>
 		public IEnumerable<ProjectModel> GetProjectsByStatus(ProjectStatusDTO projectStatus, int langLCID)
 		{
-			if (projectStatus == null || !Enum.IsDefined(typeof(ProjectStatusDTO), projectStatus))
+			if (!Enum.IsDefined(typeof(ProjectStatusDTO), projectStatus))
 			{
 				throw new ArgumentNullException(nameof(projectStatus), "Your argument is Null, Empty or WhiteSpace");
 			}
@@ -126,7 +126,7 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
 		/// <returns></returns>
 		public IEnumerable<ProjectModel> GetProjectsByStatus(ProjectStatusDTO projectStatus, int startIndex, int endIndex, int langLCID)
 		{
-			if (projectStatus == null || !Enum.IsDefined(typeof(ProjectStatusDTO), projectStatus))
+			if (!Enum.IsDefined(typeof(ProjectStatusDTO), projectStatus))
 			{
 				throw new ArgumentNullException(nameof(projectStatus), "Your argument is Null, Empty or WhiteSpace");
 			}
@@ -192,7 +192,7 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
 		/// <returns></returns>
 		private async Task<ProjectModel> GetProjectByStatusAsync(ProjectStatusDTO projectStatus, int langLCID)
 		{
-			if (projectStatus == null || !Enum.IsDefined(typeof(ProjectStatusDTO), projectStatus))
+			if (!Enum.IsDefined(typeof(ProjectStatusDTO), projectStatus))
 			{
 				throw new ArgumentNullException(nameof(projectStatus), "Your argument is Null, Empty or WhiteSpace");
 			}
@@ -231,7 +231,7 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
 		/// <returns></returns>
 		private async Task<IEnumerable<ProjectModel>> GetProjectsByStatusAsync(ProjectStatusDTO projectStatus, int langLCID)
 		{
-			if (projectStatus == null || !Enum.IsDefined(typeof(ProjectStatusDTO), projectStatus))
+			if (!Enum.IsDefined(typeof(ProjectStatusDTO), projectStatus))
 			{
 				throw new ArgumentNullException(nameof(projectStatus), "Your argument is Null, Empty or WhiteSpace");
 			}
@@ -274,7 +274,7 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
 		/// <returns></returns>
 		private async Task<IEnumerable<ProjectModel>> GetProjectsByStatusAsync(ProjectStatusDTO projectStatus, int startIndex, int endIndex, int langLCID)
 		{
-			if (projectStatus == null || !Enum.IsDefined(typeof(ProjectStatusDTO), projectStatus))
+			if (!Enum.IsDefined(typeof(ProjectStatusDTO), projectStatus))
 			{
 				throw new ArgumentNullException(nameof(projectStatus), "Your argument is Null, Empty or WhiteSpace");
 			}

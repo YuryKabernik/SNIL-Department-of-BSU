@@ -3,6 +3,7 @@ using System.Data.Entity.ModelConfiguration.Conventions;
 using SnilAcademicDepartment.DataAccess.Configurations;
 using SnilAcademicDepartment.DataAccess.Migrations;
 using SnilAcademicDepartment.DataAccess.Models;
+using SnilAcademicDepartment.DataAccess.Models.Education;
 
 namespace SnilAcademicDepartment.DataAccess
 {
@@ -25,8 +26,9 @@ namespace SnilAcademicDepartment.DataAccess
         public virtual DbSet<Language> Languages { get; set; }
         public virtual DbSet<Lecture> Lectures { get; set; }
         public virtual DbSet<PageType> PageTypes { get; set; }
+        public virtual DbSet<Diploma> Diplomas { get; set; }
         public virtual DbSet<Person> People { get; set; }
-        public virtual DbSet<PreView> PreViews { get; set; }
+		public virtual DbSet<PreView> PreViews { get; set; }
         public virtual DbSet<Project> Projects { get; set; }
         public virtual DbSet<Seminar> Seminars { get; set; }
         public virtual DbSet<Specialisation> Specialisations { get; set; }

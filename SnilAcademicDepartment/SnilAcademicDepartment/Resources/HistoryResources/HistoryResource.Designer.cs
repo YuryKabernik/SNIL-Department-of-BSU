@@ -22,7 +22,7 @@ namespace SnilAcademicDepartment.Resources.HistoryResources {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class HistoryResource {
+    public class HistoryResource {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace SnilAcademicDepartment.Resources.HistoryResources {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("SnilAcademicDepartment.Resources.HistoryResources.HistoryResource", typeof(HistoryResource).Assembly);
@@ -51,12 +51,211 @@ namespace SnilAcademicDepartment.Resources.HistoryResources {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
             set {
                 resourceCulture = value;
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Конференция CTDA&apos;2020.
+        /// </summary>
+        public static string ConfCTDA2020 {
+            get {
+                return ResourceManager.GetString("ConfCTDA2020", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///                В 2020 г. на базе факультета радиофизики и компьютерных технологий (по инициативе и организации кафедры системного анализа и компьютерного моделирования) состоится
+        ///                &lt;strong&gt;
+        ///                    Международная научно-практическая конференция &quot;Компьютерные технологии и анализ данных&quot; (CTDA’2020). Сроки проведения конференции: 23–24 апреля 2020 г. Минск, Беларусь&lt;br /&gt;
+        ///                &lt;/strong&gt;
+        ///            &lt;/p&gt;
+        ///            &lt;p&gt;
+        ///                Белорусский государственный [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string ConfCTDA2020Body {
+            get {
+                return ResourceManager.GetString("ConfCTDA2020Body", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Конференция ITEDS&apos;2010.
+        /// </summary>
+        public static string ConfITEDS2010 {
+            get {
+                return ResourceManager.GetString("ConfITEDS2010", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///                В 2010 г. на базе факультета радиофизики (по инициативе и организации кафедры системного анализа) состоялась
+        ///                &lt;strong&gt;Международная научно-практическая конференция ITEDS’2010 “Информационные технологии, электронные приборы и системы”, 6-7  апреля 2010 г. Минск, Беларусь&lt;br /&gt;&lt;/strong&gt;
+        ///            &lt;/p&gt;
+        ///            &lt;p&gt;
+        ///                Научные направления конференции:
+        ///                &lt;ul style=&quot;margin-left:18pt&quot;&gt;
+        ///                    &lt;li&gt;Секция 1. Анализ данных,  обрабо [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string ConfITEDS2010Body {
+            get {
+                return ResourceManager.GetString("ConfITEDS2010Body", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///            &lt;strong&gt;
+        ///                Компьютерные технологии и анализ данных&lt;br /&gt;
+        ///                (
+        ///            &lt;/strong&gt;&lt;strong&gt;CTDA&lt;/strong&gt;&lt;strong&gt;&amp;rsquo;2020) &lt;/strong&gt;
+        ///        &lt;/p&gt;
+        ///
+        ///        &lt;p&gt;&lt;strong&gt;Международная научно-практическая конференция &lt;/strong&gt;&lt;/p&gt;
+        ///
+        ///        &lt;p&gt;23&amp;ndash;24 апреля 2020 г.&lt;/p&gt;
+        ///        &lt;br /&gt;
+        ///        &lt;p&gt;
+        ///            Белорусский государственный университет&lt;br /&gt;
+        ///            Минск, Беларусь
+        ///        &lt;/p&gt;.
+        /// </summary>
+        public static string CTDA2020Col1_1 {
+            get {
+                return ResourceManager.GetString("CTDA2020Col1_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;br /&gt;&lt;strong&gt;Организаторы: &lt;/strong&gt;&lt;/p&gt;
+        ///&lt;ul style=&quot;margin-left:16pt&quot;&gt;
+        ///            &lt;li&gt;
+        ///                Министерство образования Республики, Беларусь. 
+        ///                Белорусский государственный университет&lt;br /&gt;
+        ///                Факультет радиофизики и компьютерных технологий
+        ///            &lt;/li&gt;
+        ///            &lt;li&gt;Иностранное производственное унитарное предприятие &amp;laquo;Иссофт Солюшенз&amp;raquo;&lt;/li&gt;
+        ///&lt;/ul&gt;.
+        /// </summary>
+        public static string CTDA2020Col1_2 {
+            get {
+                return ResourceManager.GetString("CTDA2020Col1_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;Белорусский государственный университет приглашает Вас принять участие в &lt;strong&gt;Международной научно- практической конференции Компьютерные технологии и анализ данных (&lt;/strong&gt;&lt;strong&gt;CTDA&lt;/strong&gt;&lt;strong&gt;&amp;rsquo;2020)&lt;/strong&gt;. Участниками конференции могут стать ученые, специалисты, преподаватели, аспиранты и студенты из республик СНГ и зарубежных стран. Устные доклады будут заслушаны на пленарных и секционных заседаниях, часть секционных докладов &amp;ndash; стендовые.&lt;/p&gt;
+        ///
+        ///        &lt;p&gt;&lt;strong&gt;Работа ко [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string CTDA2020Col2 {
+            get {
+                return ResourceManager.GetString("CTDA2020Col2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;&lt;strong&gt;Программный комитет: &lt;/strong&gt;&lt;/p&gt;
+        ///
+        ///        &lt;ul style=&quot;margin-left:16pt&quot;&gt;
+        ///            &lt;li&gt;С.Г. Мулярчик,&lt;/li&gt;
+        ///            &lt;li&gt;В.В.Апанасович,&lt;/li&gt;
+        ///            &lt;li&gt;М.М.Кугейко&lt;/li&gt;
+        ///            &lt;li&gt;В.М. Борздов&lt;/li&gt;
+        ///            &lt;li&gt;Ю.И. Воротницкий&lt;/li&gt;
+        ///            &lt;li&gt;В.А. Саечников&lt;/li&gt;
+        ///            &lt;li&gt;П.В. Назаров, Люксембург&lt;/li&gt;
+        ///            &lt;li&gt;О.В. Стукач, Россия&lt;/li&gt;
+        ///        &lt;/ul&gt;
+        ///
+        ///        &lt;p&gt;Тезисы докладов будут опубликованы до начала конференции.&lt;/p&gt;
+        ///
+        ///        &lt;p&gt;&lt;strong&gt;Сро [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string CTDA2020Col3 {
+            get {
+                return ResourceManager.GetString("CTDA2020Col3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to История СНИЛ.
+        /// </summary>
+        public static string History {
+            get {
+                return ResourceManager.GetString("History", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;СНИЛ  организована в 1997 году по инициативе активных студентов (Макарский Р., Барановский О., Дедков А., Назаров П. , Балахонцев А.,  Нечаев С. и др) при поддержке руководства и сотрудников кафедры системного анализа (В.В. Апанасович и В.М. Лутковский).&lt;/p&gt;
+        ///&lt;p&gt;Инициатива была поддержана руководством факультета ( протокол №3 Совет факультета Радиофизики и электроники  от 02.12.1997 ) и утверждена руководством БГУ (март 1998 г.).&lt;/p&gt;.
+        /// </summary>
+        public static string HistoryBody {
+            get {
+                return ResourceManager.GetString("HistoryBody", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;СНИЛ  организована в 1997 году по инициативе активных студентов (Макарский Р., Барановский О., Дедков А., Назаров П. , Балахонцев А.,  Нечаев С. и др) при поддержке руководства и сотрудников кафедры системного анализа (В.В. Апанасович и В.М. Лутковский).&lt;/p&gt;
+        ///    &lt;p&gt;Инициатива была поддержана руководством факультета ( протокол №3 Совет факультета Радиофизики и электроники  от 02.12.1997 ) и утверждена руководством БГУ (март 1998 г.).&lt;/p&gt;
+        ///    &lt;p&gt;На протяжении 2001- 2018 годов СНИЛ «Моделирование и анализ [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string HistoryBody1 {
+            get {
+                return ResourceManager.GetString("HistoryBody1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to В 2018 году изменилось название в сторону обобщения: «Моделирование и анализ процессов и систем», так как тематика начала более тяготеть к задачам биоинформатики.&lt;/p&gt;
+        ///    &lt;p&gt;После окончания университета многие студенты, работавшие в СНИЛ, защитили  диссертации в различных европейских университетах, что способствовало установлению  сотрудничества с этими университетами.&lt;/p&gt;
+        ///    &lt;p&gt;
+        ///        Ниже представлен неполный список сотрудников СНИЛ, получивших степень PhD за рубежом:
+        ///        &lt;table border=1 width= [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string HistoryBody2 {
+            get {
+                return ResourceManager.GetString("HistoryBody2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to BSU IEEE  SB  1997-2012.
+        /// </summary>
+        public static string IEEE {
+            get {
+                return ResourceManager.GetString("IEEE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;При поддержке&amp;nbsp; Польской секции&amp;nbsp; IEEE в 2001 году в БГУ&amp;nbsp; организована первичная ячейка&amp;nbsp; IEEE Student Branch Chapter, а затем студенческое отделение - &amp;nbsp;Student Branch&amp;nbsp;&amp;nbsp; (BSU IEEE&amp;nbsp; SB ).&lt;/p&gt;
+        ///&lt;p&gt;Членство в этом студенческом объединении позволило студентам БГУ принять участие и достичь впечатляющих успехов в различных мероприятиях (конференциях, конгрессах,&amp;nbsp; конкурсах ), поддерживаемых IEEE.&lt;/p&gt;.
+        /// </summary>
+        public static string IEEEBody {
+            get {
+                return ResourceManager.GetString("IEEEBody", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;Первые контакты сотрудников БГУ &amp;nbsp;с представителями IEEE относятся к 1997 году.&lt;/p&gt;
+        ///&lt;p&gt;В 2001 году&amp;nbsp; студенты БГУ (О.Барановский, П.Назаров, Е.Лутковская) были приглашены в Варшаву на IEEE-SPIE Симпозиум по фотонике и веб-проектированию.&lt;/p&gt;
+        ///&lt;p&gt;При поддержке&amp;nbsp; Польской секции&amp;nbsp; IEEE в 2001 году в БГУ&amp;nbsp; организована первичная ячейка&amp;nbsp; Student Branch Chapter, а затем студенческое отделение - &amp;nbsp;Student Branch&amp;nbsp;&amp;nbsp; (BSU IEEE&amp;nbsp; SB )&amp;nbsp;&lt;/p&gt;
+        ///&lt;p&gt;Студенты, магистранты  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string IEEEHistory {
+            get {
+                return ResourceManager.GetString("IEEEHistory", resourceCulture);
             }
         }
     }

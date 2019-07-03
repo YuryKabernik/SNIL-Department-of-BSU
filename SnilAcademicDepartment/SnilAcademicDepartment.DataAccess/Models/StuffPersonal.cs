@@ -27,13 +27,13 @@ namespace SnilAcademicDepartment.DataAccess.Models
 		/// <value>
 		/// The assignment date.
 		/// </value>
-		public DateTime AssignmentDate { get; set; }
+		public DateTime? AssignmentDate { get; set; }
 		/// <summary>
 		/// Gets or sets the release date.
 		/// </summary>
 		/// <value>
 		/// The release date.
 		/// </value>
-		public DateTime ReleaseDate { get; set; }
+		public DateTime? ReleaseDate { get; set; }
 	}
 }

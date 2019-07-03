@@ -28,14 +28,14 @@ namespace SnilAcademicDepartment.DataAccess.Models
 		/// <value>
 		/// The data assign.
 		/// </value>
-		public DateTime DataAssign { get; set; }
+		public DateTime? DataAssign { get; set; }
 		/// <summary>
 		/// Gets or sets the date release.
 		/// </summary>
 		/// <value>
 		/// The date release.
 		/// </value>
-		public DateTime DateRelease { get; set; }
+		public DateTime? DateRelease { get; set; }
 		/// <summary>
 		/// 
 		/// </summary>

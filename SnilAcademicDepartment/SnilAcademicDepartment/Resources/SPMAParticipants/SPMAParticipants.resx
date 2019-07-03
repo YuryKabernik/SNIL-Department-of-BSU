@@ -145,7 +145,7 @@
     <value>Дата увольнения</value>
   </data>
   <data name="Status" xml:space="preserve">
-    <value>Статус</value>
+    <value>Должность</value>
   </data>
   <data name="StudentGraduation" xml:space="preserve">
     <value>Год выпуска</value>

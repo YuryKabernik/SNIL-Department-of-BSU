@@ -37,7 +37,7 @@ namespace SnilAcademicDepartment.Controllers
 				students = await this._participantsService.GetStuffStudents(Thread.CurrentThread.CurrentCulture.LCID);
 				heads = await this._participantsService.GetStuffPersonal(Thread.CurrentThread.CurrentCulture.LCID);
 			}
-			catch (System.Exception)
+			catch (System.Exception ex)
 			{
 				ViewBag.Title = UnavaliableErrorResource.UnavaliableMessage;
 				return View("SorryUnavaliable");

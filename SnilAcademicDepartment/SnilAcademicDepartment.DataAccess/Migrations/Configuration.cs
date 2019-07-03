@@ -115,7 +115,7 @@ namespace SnilAcademicDepartment.DataAccess.Migrations
 					EducationKeyAreaDBInit.DBInit(db, "ENLection", "EN", 2, this._image, this._languages[1], this._educationBlocks);
 					EducationKeyAreaDBInit.DBInit(db, "DELection", "DE", 2, this._image, this._languages[2], this._educationBlocks);
 
-					EducationKeyAreaDBInit.DBInit(db, "QuickLearning", "RU", 3, this._image, this._languages[0], this._educationBlocks);
+					EducationKeyAreaDBInit.DBInit(db, "Diploma", "RU", 3, this._image, this._languages[0], this._educationBlocks);
 					EducationKeyAreaDBInit.DBInit(db, "ENQuickLearning", "EN", 3, this._image, this._languages[1], this._educationBlocks);
 					EducationKeyAreaDBInit.DBInit(db, "DEQuickLearning", "DE", 3, this._image, this._languages[2], this._educationBlocks);
 

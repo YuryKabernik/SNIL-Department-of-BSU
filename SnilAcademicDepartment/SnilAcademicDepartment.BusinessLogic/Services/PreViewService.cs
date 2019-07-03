@@ -123,12 +123,13 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
 
 			var seminars = this._repository.Seminars
 				.Where(s => s.Language.LanguageCode == lcid)
-				.Take(numberOfSeminars)
+                .Take(numberOfSeminars)
 				.ToList()
 				.AsQueryable()
 				.ProjectTo<SeminarPreview>(this._mapper.ConfigurationProvider) // AutoMapper Extension
-				.GroupBy<SeminarPreview, int>(k => k.EventDate.Year)
-				.ToList();
+                .OrderByDescending(s => s.EventDate)
+                .GroupBy(k => k.EventDate.Year)
+                .ToList();
 
 			if (seminars == null)
 			{
@@ -246,6 +247,7 @@ namespace SnilAcademicDepartment.BusinessLogic.Services
 				.Where(s => s.Language.LanguageCode == lcid)
 				.Include(prop => prop.People.Select(pr => pr.ProfessionStatus))
 				.Take(numberOfSeminars)
+                .OrderByDescending(s => s.EventDate)
 				.ToListAsync();
 
 			var mappedAndGroupedSeminars = seminars

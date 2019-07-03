@@ -20,12 +20,12 @@
             <img src="@imgSrc" alt="" class="img-thumbnail">
         </div>
         <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-            @ViewBag.Preview.Description
+            @Html.Raw(ViewBag.Preview.Description)
         </div>
     </div>
-        @RenderProjectsV2(@ProjectResource.NewTitle, ViewBag.newPreviews as IEnumerable<ProjectPreview>, "PageNew")
-        @RenderProjectsV2(@ProjectResource.FinishedTitle, ViewBag.finishedPreviews as IEnumerable<ProjectPreview>, "PageFinished")
-        @RenderProjectsV2(@ProjectResource.CurrentTitle, ViewBag.currentPreviews as IEnumerable<ProjectPreview>, "PageCurrent")
+    @*@RenderProjectsV2(@ProjectResource.NewTitle, ViewBag.newPreviews as IEnumerable<ProjectPreview>, "PageNew")*@
+    @RenderProjectsV2(@ProjectResource.CurrentTitle, ViewBag.currentPreviews as IEnumerable<ProjectPreview>, "PageCurrent")
+    @RenderProjectsV2(@ProjectResource.FinishedTitle, ViewBag.finishedPreviews as IEnumerable<ProjectPreview>, "PageFinished")
 </div>
 
 @helper RenderProjectsV2(string title, IEnumerable<ProjectPreview> collection, string actionName)

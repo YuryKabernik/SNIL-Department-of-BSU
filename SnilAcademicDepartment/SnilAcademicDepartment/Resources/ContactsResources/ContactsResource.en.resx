@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Address" xml:space="preserve">
-    <value>Independence Avenue, 4, 220030, Minsk, Republic of Belarus.</value>
+    <value>Kurchatova str. 4, 220180, Minsk, Republic of Belarus.</value>
   </data>
   <data name="AddressString" xml:space="preserve">
     <value>Address</value>
@@ -155,6 +155,9 @@
   </data>
   <data name="Secretary" xml:space="preserve">
     <value>Secretary</value>
+  </data>
+  <data name="Send" xml:space="preserve">
+    <value>Send</value>
   </data>
   <data name="Subject" xml:space="preserve">
     <value>Subject*</value>

@@ -1,101 +1,338 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
-	<!-- 
-		Microsoft ResX Schema
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
 
-		Version 1.3
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ConfCTDA2020" xml:space="preserve">
+    <value>Конференция CTDA'2020</value>
+  </data>
+  <data name="ConfCTDA2020Body" xml:space="preserve">
+    <value>&lt;p&gt;
+                В 2020 г. на базе факультета радиофизики и компьютерных технологий (по инициативе и организации кафедры системного анализа и компьютерного моделирования) состоится
+                &lt;strong&gt;
+                    Международная научно-практическая конференция "Компьютерные технологии и анализ данных" (CTDA’2020). Сроки проведения конференции: 23–24 апреля 2020 г. Минск, Беларусь&lt;br /&gt;
+                &lt;/strong&gt;
+            &lt;/p&gt;
+            &lt;p&gt;
+                Белорусский государственный универси-тет приглашает Вас принять участие в Международной научно-практической конференции Компьютерные технологии и анализ данных (CTDA’2020). Участниками конфе-ренции могут стать ученые, специалисты, преподаватели, аспиранты и студенты из рес-публик СНГ и зарубежных стран. Устные до-клады будут заслушаны на пленарных и сек-ционных заседаниях, часть секционных до-кладов – стендовые.
+                Работа конференции будет проходить по следующим направлениям:
+                &lt;ul style="margin-left:18pt"&gt;
+                    &lt;li&gt;Секция 1. Биоинформатика.
+                    &lt;li&gt;Секция 2. Системы машинного и глубокого обучения.
+                    &lt;li&gt;Секция 3. Интеллектуальные технологии и системы.
+                    &lt;li&gt;Секция 4. Компьютерное моделирование процессов и систем.
+                &lt;/ul&gt;
+            &lt;/p&gt;</value>
+  </data>
+  <data name="ConfITEDS2010" xml:space="preserve">
+    <value>Конференция ITEDS'2010</value>
+  </data>
+  <data name="ConfITEDS2010Body" xml:space="preserve">
+    <value>&lt;p&gt;
+                В 2010 г. на базе факультета радиофизики (по инициативе и организации кафедры системного анализа) состоялась
+                &lt;strong&gt;Международная научно-практическая конференция ITEDS’2010 “Информационные технологии, электронные приборы и системы”, 6-7  апреля 2010 г. Минск, Беларусь&lt;br /&gt;&lt;/strong&gt;
+            &lt;/p&gt;
+            &lt;p&gt;
+                Научные направления конференции:
+                &lt;ul style="margin-left:18pt"&gt;
+                    &lt;li&gt;Секция 1. Анализ данных,  обработка сигналов и изображений.
+                    &lt;li&gt;Секция 2. Системы связи и управления, электронные и оптоэлектронные приборы.
+                    &lt;li&gt;Секция 3. Применение информационных технологий.
+                &lt;/ul&gt;
+&lt;/p&gt;</value>
+  </data>
+  <data name="CTDA2020Col1_1" xml:space="preserve">
+    <value>&lt;p&gt;
+            &lt;strong&gt;
+                Компьютерные технологии и анализ данных&lt;br /&gt;
+                (
+            &lt;/strong&gt;&lt;strong&gt;CTDA&lt;/strong&gt;&lt;strong&gt;&amp;rsquo;2020) &lt;/strong&gt;
+        &lt;/p&gt;
 
-		The primary goals of this format is to allow a simple XML format 
-		that is mostly human readable. The generation and parsing of the 
-		various data types are done through the TypeConverter classes 
-		associated with the data types.
+        &lt;p&gt;&lt;strong&gt;Международная научно-практическая конференция &lt;/strong&gt;&lt;/p&gt;
 
-		Example:
+        &lt;p&gt;23&amp;ndash;24 апреля 2020 г.&lt;/p&gt;
+        &lt;br /&gt;
+        &lt;p&gt;
+            Белорусский государственный университет&lt;br /&gt;
+            Минск, Беларусь
+        &lt;/p&gt;</value>
+  </data>
+  <data name="CTDA2020Col2" xml:space="preserve">
+    <value>&lt;p&gt;Белорусский государственный университет приглашает Вас принять участие в &lt;strong&gt;Международной научно- практической конференции Компьютерные технологии и анализ данных (&lt;/strong&gt;&lt;strong&gt;CTDA&lt;/strong&gt;&lt;strong&gt;&amp;rsquo;2020)&lt;/strong&gt;. Участниками конференции могут стать ученые, специалисты, преподаватели, аспиранты и студенты из республик СНГ и зарубежных стран. Устные доклады будут заслушаны на пленарных и секционных заседаниях, часть секционных докладов &amp;ndash; стендовые.&lt;/p&gt;
 
-		... ado.net/XML headers & schema ...
-		<resheader name="resmimetype">text/microsoft-resx</resheader>
-		<resheader name="version">1.3</resheader>
-		<resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
-		<resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
-		<data name="Name1">this is my long string</data>
-		<data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
-		<data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
-			[base64 mime encoded serialized .NET Framework object]
-		</data>
-		<data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-			[base64 mime encoded string representing a byte array form of the .NET Framework object]
-		</data>
+        &lt;p&gt;&lt;strong&gt;Работа конференции будет проходить по следующим направлениям: &lt;/strong&gt;&lt;/p&gt;
 
-		There are any number of "resheader" rows that contain simple 
-		name/value pairs.
+        &lt;ul style="margin-left:16pt"&gt;
+            &lt;li&gt;Биоинформатика&lt;/li&gt;
+            &lt;li&gt;Системы машинного и глубокого обучения&lt;/li&gt;
+            &lt;li&gt;Интеллектуальные технологии и системы&lt;/li&gt;
+            &lt;li&gt;Компьютерное моделирование процессов и систем&lt;/li&gt;
+        &lt;/ul&gt;
 
-		Each data row contains a name, and value. The row also contains a 
-		type or mimetype. Type corresponds to a .NET class that support 
-		text/value conversion through the TypeConverter architecture. 
-		Classes that don't support this are serialized and stored with the 
-		mimetype set.
+        &lt;p&gt;&lt;strong&gt;Организационный комитет: &lt;/strong&gt;&lt;/p&gt;
 
-		The mimetype is used for serialized objects, and tells the 
-		ResXResourceReader how to depersist the object. This is currently not 
-		extensible. For a given mimetype the value must be set accordingly:
+        &lt;ul style="margin-left:16pt"&gt;
+            &lt;li&gt;С.В. Малый &lt;em&gt;(Председатель)&lt;/em&gt;,&lt;/li&gt;
+            &lt;li&gt;В.В. Скакун &lt;em&gt;(Зам. председателя)&lt;/em&gt;,&lt;/li&gt;
+            &lt;li&gt;Н.Н. Яцков &lt;em&gt;(Ученый секретарь)&lt;/em&gt;,&lt;/li&gt;
+            &lt;li&gt;В.И. Демидчик&lt;/li&gt;
+            &lt;li&gt;И.Э. Хейдоров&lt;/li&gt;
+            &lt;li&gt;Е.И. Козлова&lt;/li&gt;
+            &lt;li&gt;В.С. Садов&lt;/li&gt;
+            &lt;li&gt;В.В. Гринев&lt;/li&gt;
+            &lt;li&gt;В.И. Джиган, Россия&lt;/li&gt;
+            &lt;li&gt;В.М. Лутковский&lt;/li&gt;
+            &lt;li&gt;Е.В. Лисица&lt;/li&gt;
+            &lt;li&gt;И.С. Эйсмонт&lt;/li&gt;
+        &lt;/ul&gt;</value>
+  </data>
+  <data name="CTDA2020Col3" xml:space="preserve">
+    <value>&lt;p&gt;&lt;strong&gt;Программный комитет: &lt;/strong&gt;&lt;/p&gt;
 
-		Note - application/x-microsoft.net.object.binary.base64 is the format 
-		that the ResXResourceWriter will generate, however the reader can 
-		read any of the formats listed below.
+        &lt;ul style="margin-left:16pt"&gt;
+            &lt;li&gt;С.Г. Мулярчик,&lt;/li&gt;
+            &lt;li&gt;В.В.Апанасович,&lt;/li&gt;
+            &lt;li&gt;М.М.Кугейко&lt;/li&gt;
+            &lt;li&gt;В.М. Борздов&lt;/li&gt;
+            &lt;li&gt;Ю.И. Воротницкий&lt;/li&gt;
+            &lt;li&gt;В.А. Саечников&lt;/li&gt;
+            &lt;li&gt;П.В. Назаров, Люксембург&lt;/li&gt;
+            &lt;li&gt;О.В. Стукач, Россия&lt;/li&gt;
+        &lt;/ul&gt;
 
-		mimetype: application/x-microsoft.net.object.binary.base64
-		value   : The object must be serialized with 
-			: System.Serialization.Formatters.Binary.BinaryFormatter
-			: and then encoded with base64 encoding.
+        &lt;p&gt;Тезисы докладов будут опубликованы до начала конференции.&lt;/p&gt;
 
-		mimetype: application/x-microsoft.net.object.soap.base64
-		value   : The object must be serialized with 
-			: System.Runtime.Serialization.Formatters.Soap.SoapFormatter
-			: and then encoded with base64 encoding.
+        &lt;p&gt;&lt;strong&gt;Сроки представления материалов и получения уведомлений: &lt;/strong&gt;&lt;/p&gt;
 
-		mimetype: application/x-microsoft.net.object.bytearray.base64
-		value   : The object must be serialized into a byte array 
-			: using a System.ComponentModel.TypeConverter
-			: and then encoded with base64 encoding.
-	-->
-	
-	<xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-		<xsd:element name="root" msdata:IsDataSet="true">
-			<xsd:complexType>
-				<xsd:choice maxOccurs="unbounded">
-					<xsd:element name="data">
-						<xsd:complexType>
-							<xsd:sequence>
-								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-								<xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
-							</xsd:sequence>
-							<xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
-							<xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-							<xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-						</xsd:complexType>
-					</xsd:element>
-					<xsd:element name="resheader">
-						<xsd:complexType>
-							<xsd:sequence>
-								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-							</xsd:sequence>
-							<xsd:attribute name="name" type="xsd:string" use="required" />
-						</xsd:complexType>
-					</xsd:element>
-				</xsd:choice>
-			</xsd:complexType>
-		</xsd:element>
-	</xsd:schema>
-	<resheader name="resmimetype">
-		<value>text/microsoft-resx</value>
-	</resheader>
-	<resheader name="version">
-		<value>1.3</value>
-	</resheader>
-	<resheader name="reader">
-		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-	</resheader>
-	<resheader name="writer">
-		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-	</resheader>
+        &lt;ul style="margin-left:16pt"&gt;
+            &lt;li&gt;15 февраля 2020&amp;nbsp;г. &amp;ndash; подача заявки;&lt;/li&gt;
+            &lt;li&gt;1&amp;nbsp;марта&amp;nbsp;2020&amp;nbsp;г. &amp;ndash; представление материалов;&lt;/li&gt;
+            &lt;li&gt;31&amp;nbsp;марта&amp;nbsp;2020&amp;nbsp;г. &amp;ndash; рассылка приглашений участникам.&lt;/li&gt;
+        &lt;/ul&gt;
+
+        &lt;p&gt;&lt;strong&gt;Место проведения конференции: &lt;/strong&gt;&lt;/p&gt;
+
+        &lt;p&gt;Белорусский государственный университет, Факультет радиофизики и компьютерных технологий, Минск, ул. Курчатова, 5 (проезд автобусами № 28, 30 от станции метро Малиновка или Петровщина, №&amp;nbsp; 47 с Привокзальной площади или маршрутными такси №&amp;nbsp;1112 с просп. Независимости).&lt;/p&gt;
+
+        &lt;p&gt;&lt;strong&gt;Иллюстрационный материал к докладу: &lt;/strong&gt;&lt;/p&gt;
+
+        &lt;ul style="margin-left:16pt"&gt;
+            &lt;li&gt;компьютерная презентация (для устных докладов),&lt;/li&gt;
+            &lt;li&gt;стенд размером 1.5&amp;acute;1.5&amp;nbsp;м&lt;sup&gt;2&lt;/sup&gt; (для стендовых докладов).&lt;/li&gt;
+        &lt;/ul&gt;</value>
+  </data>
+  <data name="History" xml:space="preserve">
+    <value>История СНИЛ</value>
+  </data>
+  <data name="HistoryBody1" xml:space="preserve">
+    <value>&lt;p&gt;СНИЛ  организована в 1997 году по инициативе активных студентов (Макарский Р., Барановский О., Дедков А., Назаров П. , Балахонцев А.,  Нечаев С. и др) при поддержке руководства и сотрудников кафедры системного анализа (В.В. Апанасович и В.М. Лутковский).&lt;/p&gt;
+    &lt;p&gt;Инициатива была поддержана руководством факультета ( протокол №3 Совет факультета Радиофизики и электроники  от 02.12.1997 ) и утверждена руководством БГУ (март 1998 г.).&lt;/p&gt;
+    &lt;p&gt;На протяжении 2001- 2018 годов СНИЛ «Моделирование и анализ стохастических процессов и систем» входила в десятку лучших СНИЛ (смотри ниже заметку в средствах массовой информации).&lt;/p&gt;</value>
+  </data>
+  <data name="IEEE" xml:space="preserve">
+    <value>BSU IEEE  SB  1997-2012</value>
+  </data>
+  <data name="IEEEBody" xml:space="preserve">
+    <value>&lt;p&gt;При поддержке&amp;nbsp; Польской секции&amp;nbsp; IEEE в 2001 году в БГУ&amp;nbsp; организована первичная ячейка&amp;nbsp; IEEE Student Branch Chapter, а затем студенческое отделение - &amp;nbsp;Student Branch&amp;nbsp;&amp;nbsp; (BSU IEEE&amp;nbsp; SB ).&lt;/p&gt;
+&lt;p&gt;Членство в этом студенческом объединении позволило студентам БГУ принять участие и достичь впечатляющих успехов в различных мероприятиях (конференциях, конгрессах,&amp;nbsp; конкурсах ), поддерживаемых IEEE.&lt;/p&gt;</value>
+  </data>
+  <data name="CTDA2020Col1_2" xml:space="preserve">
+    <value>&lt;br /&gt;&lt;strong&gt;Организаторы: &lt;/strong&gt;&lt;/p&gt;
+&lt;ul style="margin-left:16pt"&gt;
+            &lt;li&gt;
+                Министерство образования Республики, Беларусь. 
+                Белорусский государственный университет&lt;br /&gt;
+                Факультет радиофизики и компьютерных технологий
+            &lt;/li&gt;
+            &lt;li&gt;Иностранное производственное унитарное предприятие &amp;laquo;Иссофт Солюшенз&amp;raquo;&lt;/li&gt;
+&lt;/ul&gt;</value>
+  </data>
+  <data name="HistoryBody2" xml:space="preserve">
+    <value>В 2018 году изменилось название в сторону обобщения: «Моделирование и анализ процессов и систем», так как тематика начала более тяготеть к задачам биоинформатики.&lt;/p&gt;
+    &lt;p&gt;После окончания университета многие студенты, работавшие в СНИЛ, защитили  диссертации в различных европейских университетах, что способствовало установлению  сотрудничества с этими университетами.&lt;/p&gt;
+    &lt;p&gt;
+        Ниже представлен неполный список сотрудников СНИЛ, получивших степень PhD за рубежом:
+        &lt;table border=1 width=800&gt;
+            &lt;tr&gt;
+                &lt;th&gt;&lt;b&gt;Сотрудник СНИЛ&lt;/b&gt;&lt;/th&gt;
+                &lt;th&gt;&lt;b&gt;Год выпуска&lt;/b&gt;&lt;/th&gt;
+                &lt;th&gt;&lt;b&gt;Страна защиты&lt;/b&gt;&lt;/th&gt;
+                &lt;th&gt;&lt;b&gt;Год защиты&lt;/b&gt;&lt;/th&gt;
+            &lt;/tr&gt;
+            &lt;tbody&gt;
+                &lt;tr&gt;&lt;td&gt; Яцков Николай Н.&lt;/td&gt;&lt;td&gt; 1996 &lt;/td&gt;&lt;td&gt; Вагенинген, Голландия &lt;/td&gt;&lt;td&gt; 2001 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt; Мельников Сергей М. &lt;/td&gt;&lt;td&gt; 1993 &lt;/td&gt;&lt;td&gt; Минск, Беларусь &lt;/td&gt;&lt;td&gt; 2001 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt; Трофимов С.Ю.&lt;/td&gt;&lt;td&gt; 1998 &lt;/td&gt;&lt;td&gt; Эйндховен, Голландия&lt;/td&gt;&lt;td&gt; 2003 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt; Глушков Дмитрий И.&lt;/td&gt;&lt;td&gt; 1997 &lt;/td&gt;&lt;td&gt; Магдебург, Германия&lt;/td&gt;&lt;td&gt; 2004 &lt;/td&gt; &lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt; Кергет А.В.&lt;/td&gt;&lt;td&gt; 2002 &lt;/td&gt;&lt;td&gt; Тренто, Италия &lt;/td&gt;&lt;td&gt; 2006 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt; Назаров Петр В.&lt;/td&gt;&lt;td&gt; 2000 &lt;/td&gt;&lt;td&gt; Вагенинген, Голландия&lt;/td&gt;&lt;td&gt; 2006 &lt;/td&gt; &lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt; Барановский Олег К.&lt;/td&gt;&lt;td&gt; 1998 &lt;/td&gt;&lt;td&gt; Минск, Беларусь&lt;/td&gt;&lt;td&gt; 2006 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt; Кожемякин Р.О.&lt;/td&gt;&lt;td&gt; 2002 &lt;/td&gt;&lt;td&gt; Тренто, Италия&lt;/td&gt;&lt;td&gt; 2007&lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt; Лутковская Екатерина В.&lt;/td&gt;&lt;td&gt; 2002&lt;/td&gt;&lt;td&gt; Берн, Швейцария&lt;/td&gt;&lt;td&gt; 2007 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt; Томилин А.Л.&lt;/td&gt;&lt;td&gt; 2002 &lt;/td&gt;&lt;td&gt; Тренто, Италия&lt;/td&gt;&lt;td&gt; 2007 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt; Назаров Петр В.&lt;/td&gt;&lt;td&gt; 2000 &lt;/td&gt;&lt;td&gt; Минск, Беларусь&lt;/td&gt;&lt;td&gt; 2008 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt; Яцкевич Николай И.&lt;/td&gt;&lt;td&gt; 2003 &lt;/td&gt;&lt;td&gt; Тренто, Италия&lt;/td&gt;&lt;td&gt; 2008 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt; Евтюхин А.К.&lt;/td&gt;&lt;td&gt; 2004 &lt;/td&gt;&lt;td&gt; Тренто, Италия&lt;/td&gt;&lt;td&gt; 2009 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt; Коваленко Олег&lt;/td&gt;&lt;td&gt; &amp;nbsp;&lt;/td&gt;&lt;td&gt; Вагенинген, Голландия&lt;/td&gt;&lt;td&gt; 2009 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt; Кочетков А.&lt;/td&gt;&lt;td&gt; 2003 &lt;/td&gt;&lt;td&gt; Манчестер, Великобритания&lt;/td&gt;&lt;td&gt; 2009 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt; Лаптенок Сергей П.&lt;/td&gt;&lt;td&gt; &amp;nbsp;&lt;/td&gt;&lt;td&gt; Вагенинген, Голландия&lt;/td&gt;&lt;td&gt; 2009 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt; Симолацер Е.В.&lt;/td&gt;&lt;td&gt; 2005 &lt;/td&gt;&lt;td&gt; Тренто, Италия&lt;/td&gt;&lt;td&gt; 2009 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt; Скакун Виктор В.&lt;/td&gt;&lt;td&gt; 1992 &lt;/td&gt;&lt;td&gt; Минск, Беларусь&lt;/td&gt;&lt;td&gt; 2009 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt; Репич Марина&amp;nbsp; В.&lt;/td&gt;&lt;td&gt; 2004 &lt;/td&gt;&lt;td&gt; Тренто, Италия&lt;/td&gt;&lt;td&gt; 2010 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt; Харкевич В.М.&lt;/td&gt;&lt;td&gt; 2005 &lt;/td&gt;&lt;td&gt; Тренто, Италия&lt;/td&gt;&lt;td&gt; 2010 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt; Яцков Николай Н.&lt;/td&gt;&lt;td&gt; 1996 &lt;/td&gt;&lt;td&gt; Минск, Беларусь&lt;/td&gt;&lt;td&gt; 2010 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt; Макарова Екатерина В.&lt;/td&gt;&lt;td&gt; &amp;nbsp;2004 &lt;/td&gt;&lt;td&gt; Вагенинген, Голландия&lt;/td&gt;&lt;td&gt; 2011 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt; Поплетеев А.М.&lt;/td&gt;&lt;td&gt; 2004 &lt;/td&gt;&lt;td&gt; Тренто, Италия&lt;/td&gt;&lt;td&gt; 2011 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt; Головатый Александр А.&lt;/td&gt;&lt;td&gt; 2007 &lt;/td&gt;&lt;td&gt; Люксембург, Люксембург&lt;/td&gt;&lt;td&gt; 2012 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt; Прибыток Павел В.&lt;/td&gt;&lt;td&gt; 2008 &lt;/td&gt;&lt;td&gt; Шефилд, Великобр.&lt;/td&gt;&lt;td&gt; 2012 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt; Кравцевич Л.И.&lt;/td&gt;&lt;td&gt; 2008 &lt;/td&gt;&lt;td&gt; Пиза, Италия&lt;/td&gt;&lt;td&gt; 2013 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt; Яцкевич Николай И.&lt;/td&gt;&lt;td&gt; 2003 &lt;/td&gt;&lt;td&gt; Минск, Беларусь&lt;/td&gt;&lt;td&gt; 2013 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt; Северин А.&lt;/td&gt;&lt;td&gt; 2008 &lt;/td&gt;&lt;td&gt; Тренто, Италия&lt;/td&gt;&lt;td&gt; ~2014 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt; Чухутина Оьга Владимировна&lt;/td&gt;&lt;td&gt; 2009 &lt;/td&gt;&lt;td&gt; Вагенинген, Голландия&lt;/td&gt;&lt;td&gt; 2015 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt; Хиревич Сергей&lt;/td&gt;&lt;td&gt; 2005 &lt;/td&gt;&lt;td&gt; Марбург, Германия&lt;/td&gt;&lt;td&gt; 2011 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt; Данейко Антон&lt;/td&gt;&lt;td&gt; 2005 &lt;/td&gt;&lt;td&gt; Марбург, Германия&lt;/td&gt;&lt;td&gt; 2015 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt; Шинкевич Евгения&lt;/td&gt;&lt;td&gt; 2010 &lt;/td&gt;&lt;td&gt; Ulster University, UK&lt;/td&gt;&lt;td&gt; 2016 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt; Баранов&lt;/td&gt;&lt;td&gt; 2009 &lt;/td&gt;&lt;td&gt; &amp;nbsp;&lt;/td&gt;&lt;td&gt; 2017 &lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt; Игнатенко Андрей&lt;/td&gt;&lt;td&gt; &lt;/td&gt;&lt;td&gt; университ &amp;nbsp;Люксембурга, Люксембург&lt;/td&gt;&lt;td&gt; 2017 &lt;/td&gt;&lt;/tr&gt;
+            &lt;/tbody&gt;
+        &lt;/table&gt;
+    &lt;/p&gt;</value>
+  </data>
+  <data name="HistoryBody" xml:space="preserve">
+    <value>&lt;p&gt;СНИЛ  организована в 1997 году по инициативе активных студентов (Макарский Р., Барановский О., Дедков А., Назаров П. , Балахонцев А.,  Нечаев С. и др) при поддержке руководства и сотрудников кафедры системного анализа (В.В. Апанасович и В.М. Лутковский).&lt;/p&gt;
+&lt;p&gt;Инициатива была поддержана руководством факультета ( протокол №3 Совет факультета Радиофизики и электроники  от 02.12.1997 ) и утверждена руководством БГУ (март 1998 г.).&lt;/p&gt;</value>
+  </data>
+  <data name="IEEEHistory" xml:space="preserve">
+    <value>&lt;p&gt;Первые контакты сотрудников БГУ &amp;nbsp;с представителями IEEE относятся к 1997 году.&lt;/p&gt;
+&lt;p&gt;В 2001 году&amp;nbsp; студенты БГУ (О.Барановский, П.Назаров, Е.Лутковская) были приглашены в Варшаву на IEEE-SPIE Симпозиум по фотонике и веб-проектированию.&lt;/p&gt;
+&lt;p&gt;При поддержке&amp;nbsp; Польской секции&amp;nbsp; IEEE в 2001 году в БГУ&amp;nbsp; организована первичная ячейка&amp;nbsp; Student Branch Chapter, а затем студенческое отделение - &amp;nbsp;Student Branch&amp;nbsp;&amp;nbsp; (BSU IEEE&amp;nbsp; SB )&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;Студенты, магистранты и аспиранты, состоявшие в этом студенческом объединении были организаторами и участниками&amp;nbsp; многих семинаров и конференций:&lt;/p&gt;
+&lt;ol style="margin-left:18pt"&gt;
+	&lt;li&gt;В&amp;nbsp; мае 2002 года на факультете организован 1-й семинар (1&lt;sup&gt;st&lt;/sup&gt; Worksop) c участием более двух десятков студентов. &amp;nbsp;&lt;/li&gt;
+	&lt;li&gt;В&amp;nbsp; мае 2009 года проведена конференция &amp;laquo;Международный обмен и сотрудничество студентов: программы IEEE, DAAD&amp;nbsp; и AIESEC&amp;raquo;,&amp;nbsp; посвященная 125-лению IEEE.&lt;/li&gt;
+	&lt;li&gt;В&amp;nbsp; апреле 2010 года на факультете состоялась международная конференция ITEDS&amp;rsquo;2010&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Членство в этом студенческом объединении позволило студентам БГУ принять участие и достичь впечатляющих успехов в различных мероприятиях (конференциях, конгрессах,&amp;nbsp; конкурсах ), поддерживаемых IEEE:&lt;/p&gt;
+&lt;ul style="margin-left:18pt"&gt;
+	&lt;li&gt;2004 IEEE&amp;nbsp; SB Congress (Passau, Germany)&lt;/li&gt;
+	&lt;li&gt;2008 IEEE&amp;nbsp; SB Congress (London, UK)&lt;/li&gt;
+	&lt;li&gt;2010 IEEE&amp;nbsp; Xtreme 4.0&lt;/li&gt;
+	&lt;li&gt;2011 IEEE&amp;nbsp; Xtreme 5.0&lt;/li&gt;
+&lt;/ul&gt;</value>
+  </data>
 </root>

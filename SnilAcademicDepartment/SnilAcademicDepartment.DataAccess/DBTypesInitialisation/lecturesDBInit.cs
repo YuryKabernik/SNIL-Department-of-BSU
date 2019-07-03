@@ -20,6 +20,7 @@ namespace SnilAcademicDepartment.DataAccess.DBTypesInitialisation
             {
                 LectureName = lang.LanguageName + name,
                 Description = lang.LanguageName + _description,
+				LectureType = "none",
                 Language = lang,
                 Document = CopyDocument(document),
                 Specialisation = new Specialisation { SpecialisationName = "SPName" + lang.LanguageName, Speciality = "Specil", Language = lang}

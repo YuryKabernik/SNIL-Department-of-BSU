@@ -118,10 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Address" xml:space="preserve">
-    <value>пр. Независимости, 4, 220030, г. Минск, Республика Беларусь.</value>
+    <value>Курчатова 1, 220108, г. Минск, Республика Беларусь.</value>
   </data>
   <data name="AddressString" xml:space="preserve">
-    <value>Адрес</value>
+    <value>Адрес СНИЛ</value>
   </data>
   <data name="Company" xml:space="preserve">
     <value>Компания*</value>
@@ -136,7 +136,7 @@
     <value>ФИО*</value>
   </data>
   <data name="Head" xml:space="preserve">
-    <value>Руководитель</value>
+    <value>Заведующий кафедрой</value>
   </data>
   <data name="Message" xml:space="preserve">
     <value>Сообщение</value>
@@ -156,11 +156,14 @@
   <data name="Secretary" xml:space="preserve">
     <value>Секретарь</value>
   </data>
+  <data name="Send" xml:space="preserve">
+    <value>Отправить</value>
+  </data>
   <data name="Subject" xml:space="preserve">
     <value>Тема*</value>
   </data>
   <data name="VictorSkakun" xml:space="preserve">
-    <value>Др., Доцент: Виктор Скакун</value>
+    <value>К.ф-м.н., Доцент: Виктор Скакун</value>
   </data>
   <data name="VictorSkakunMail" xml:space="preserve">
     <value>skakun@bsu.by</value>

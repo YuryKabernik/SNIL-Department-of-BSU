@@ -23,13 +23,13 @@
 			</div>
 			<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
 				<p>
-					@viewModel.Description
+					@Html.Raw(viewModel.Description)
 				</p>
 			</div>
 		}
 		
 	</div>
-	<h2>@Resources.EducationResources.EducationResource.KeyDirections</h2><br>
+	<h2>@SnilAcademicDepartment.Resources.EducationResources.EducationResource.KeyDirections</h2><br>
 	@{
 		if(ViewData["blockModel"] is List<EducationBlockModel>)
 		{
@@ -48,16 +48,12 @@
 						</p>
 						@switch (educationBlockModel.ActionId)
 						{
-							case 1:<p>@Html.ActionLink(Resources.Resource.LearnMore, "PageSeminars", "Education")</p>
+							case 1: <p>@Html.ActionLink(Resources.Resource.LearnMore, "PageLectures", "Education")</p>
 							break;
 
-							case 2: <p>@Html.ActionLink(Resources.Resource.LearnMore, "PageLectures", "Education")</p>
-							break;
-
-							default: <p>@Html.ActionLink(Resources.Resource.LearnMore, "PageQuickLearning", "Education")</p>
+							case 2: <p>@Html.ActionLink(Resources.Resource.LearnMore, "PageDiploma", "Education")</p>
 							break;
 						}
-
 					</div>
 					<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 row3">
 						<ul>

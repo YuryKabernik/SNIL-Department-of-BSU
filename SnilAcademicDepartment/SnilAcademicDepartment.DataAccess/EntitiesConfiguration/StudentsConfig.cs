@@ -42,6 +42,6 @@ namespace SnilAcademicDepartment.DataAccess.Configurations
 			this.HasRequired(p => p.Language)
 				.WithMany(p => p.Students)
 				.WillCascadeOnDelete(false);
-		}
-	}
+        }
+    }
 }

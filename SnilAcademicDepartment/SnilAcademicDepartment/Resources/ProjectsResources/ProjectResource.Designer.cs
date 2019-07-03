@@ -61,7 +61,7 @@ namespace SnilAcademicDepartment.Resources.ProjectsResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Текущие.
+        ///   Looks up a localized string similar to Текущие проекты.
         /// </summary>
         public static string CurrentTitle {
             get {
@@ -70,7 +70,7 @@ namespace SnilAcademicDepartment.Resources.ProjectsResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Законченные.
+        ///   Looks up a localized string similar to Завершенные проекты.
         /// </summary>
         public static string FinishedTitle {
             get {
@@ -79,7 +79,7 @@ namespace SnilAcademicDepartment.Resources.ProjectsResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Новые.
+        ///   Looks up a localized string similar to Новые проекты.
         /// </summary>
         public static string NewTitle {
             get {
@@ -88,7 +88,7 @@ namespace SnilAcademicDepartment.Resources.ProjectsResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Проекты.
+        ///   Looks up a localized string similar to Научно исследовательские проекты.
         /// </summary>
         public static string Projects {
             get {

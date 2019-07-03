@@ -126,8 +126,8 @@
   <data name="NumberOfLecturesOnPageLecturesKey" xml:space="preserve">
     <value>NumberOfLecturesOnPageLectures</value>
   </data>
-  <data name="NumberOfQuickLearningBlocksOnPageKey" xml:space="preserve">
-    <value>NumberOfQuickLearningBlocksOnPage</value>
+  <data name="NumberOfDimplomaOnEducationPageKey" xml:space="preserve">
+    <value>NumberOfDiplomaOnEducationPage</value>
   </data>
   <data name="NumberOfSeminarsOnPageSeminarsKey" xml:space="preserve">
     <value>NumberOfSeminarsOnPageSeminars</value>

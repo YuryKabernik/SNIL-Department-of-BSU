@@ -61,7 +61,7 @@ namespace SnilAcademicDepartment.Resources.ContactsResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to пр. Независимости, 4, 220030, г. Минск, Республика Беларусь..
+        ///   Looks up a localized string similar to Курчатова 1, 220108, г. Минск, Республика Беларусь..
         /// </summary>
         public static string Address {
             get {
@@ -70,7 +70,7 @@ namespace SnilAcademicDepartment.Resources.ContactsResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Адрес.
+        ///   Looks up a localized string similar to Адрес СНИЛ.
         /// </summary>
         public static string AddressString {
             get {
@@ -115,7 +115,7 @@ namespace SnilAcademicDepartment.Resources.ContactsResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Руководитель.
+        ///   Looks up a localized string similar to Заведующий кафедрой.
         /// </summary>
         public static string Head {
             get {
@@ -178,6 +178,15 @@ namespace SnilAcademicDepartment.Resources.ContactsResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Отправить.
+        /// </summary>
+        public static string Send {
+            get {
+                return ResourceManager.GetString("Send", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Тема*.
         /// </summary>
         public static string Subject {
@@ -187,7 +196,7 @@ namespace SnilAcademicDepartment.Resources.ContactsResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Др., Доцент: Виктор Скакун.
+        ///   Looks up a localized string similar to К.ф-м.н., Доцент: Виктор Скакун.
         /// </summary>
         public static string VictorSkakun {
             get {

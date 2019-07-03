@@ -86,8 +86,8 @@
 							}
 						</td>
 						<td class="bsu_dateDeparture">
-							@if (item.DateDeparture != null)
-							{
+							@if (item.DateDeparture != null && item.DateDeparture > DateTime.MinValue)
+                            {
 								@item.DateDeparture.ToShortDateString()
 							}
 							else
@@ -136,7 +136,7 @@
 							}
 						</td>
 						<td class="bsu_releaseDate">
-							@if (item.ReleaseDate != null)
+							@if (item.ReleaseDate != null && item.ReleaseDate > DateTime.MinValue)
 							{
 								@item.ReleaseDate.ToShortDateString()
 							}

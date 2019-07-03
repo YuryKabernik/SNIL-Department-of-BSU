@@ -157,7 +157,7 @@
     <value>Телефон</value>
   </data>
   <data name="ProfessionStatus" xml:space="preserve">
-    <value>Статус профессии</value>
+    <value>Должность</value>
   </data>
   <data name="Professors" xml:space="preserve">
     <value>Профессора</value>

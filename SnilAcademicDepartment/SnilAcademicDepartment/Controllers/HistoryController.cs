@@ -32,9 +32,9 @@ namespace SnilAcademicDepartment.Controllers
 
         [HttpGet]
         [Route("archive")]
-        public Task<ActionResult> PageArchive()
+        public Task<ActionResult> PageHistory()
         {
-            ViewBag.Title = "Archive";
+            ViewBag.Title = "History";
             return Task.FromResult<ActionResult>(View());
         }
 
@@ -47,18 +47,18 @@ namespace SnilAcademicDepartment.Controllers
         }
 
         [HttpGet]
-        [Route("review")]
-        public Task<ActionResult> PageReview()
+        [Route("ITEDS2010")]
+        public Task<ActionResult> PageITEDS2010()
         {
-            ViewBag.Title = "Review";
+            ViewBag.Title = "ITEDS'2010";
             return Task.FromResult<ActionResult>(View());
         }
 
         [HttpGet]
-        [Route("reports")]
-        public Task<ActionResult> PageReports()
+        [Route("CTDA2020")]
+        public Task<ActionResult> PageCTDA2020()
         {
-            ViewBag.Title = "Reports";
+            ViewBag.Title = "CTDA'2020";
             return Task.FromResult<ActionResult>(View());
         }
     }

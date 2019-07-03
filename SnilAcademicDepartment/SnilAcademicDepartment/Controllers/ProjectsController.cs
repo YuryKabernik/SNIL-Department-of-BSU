@@ -42,7 +42,7 @@ namespace SnilAcademicDepartment.Controllers
 			PreViewModel projectPreview = null;
 
 			IEnumerable<ProjectPreview> currentPreviews = null;
-            IEnumerable<ProjectPreview> newPreviews = null;
+            //IEnumerable<ProjectPreview> newPreviews = null;
             IEnumerable<ProjectPreview> finishedPreviews = null;
 
 			var start = await this._configManager.GetConfigValueIntAsync(SnilConfigurationSectionKeys.ProjectsPreviewsStartIndexKey);
@@ -56,8 +56,8 @@ namespace SnilAcademicDepartment.Controllers
                 currentPreviews = await this._projectsPreview
                     .GetProjectsPreviewsAsync<ProjectPreview>(ProjectStatusDTO.Current, start, end, Thread.CurrentThread.CurrentCulture.LCID);
 
-                newPreviews = await this._projectsPreview
-                    .GetProjectsPreviewsAsync<ProjectPreview>(ProjectStatusDTO.New, start, end, Thread.CurrentThread.CurrentCulture.LCID);
+                //newPreviews = await this._projectsPreview
+                //    .GetProjectsPreviewsAsync<ProjectPreview>(ProjectStatusDTO.New, start, end, Thread.CurrentThread.CurrentCulture.LCID);
 
                 finishedPreviews = await this._projectsPreview
                     .GetProjectsPreviewsAsync<ProjectPreview>(ProjectStatusDTO.Finished, start, end, Thread.CurrentThread.CurrentCulture.LCID);
@@ -70,7 +70,7 @@ namespace SnilAcademicDepartment.Controllers
             ViewBag.Preview = projectPreview;
 
             ViewBag.currentPreviews = currentPreviews;
-            ViewBag.newPreviews = newPreviews;
+            //ViewBag.newPreviews = newPreviews;
             ViewBag.finishedPreviews = finishedPreviews;
 
             return View();

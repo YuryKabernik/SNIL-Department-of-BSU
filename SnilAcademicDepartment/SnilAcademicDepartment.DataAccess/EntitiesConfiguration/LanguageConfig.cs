@@ -1,5 +1,4 @@
-﻿using System.Data.Entity;
-using System.Data.Entity.ModelConfiguration;
+﻿using System.Data.Entity.ModelConfiguration;
 using SnilAcademicDepartment.DataAccess.Models;
 
 namespace SnilAcademicDepartment.DataAccess.Configurations
@@ -33,11 +32,17 @@ namespace SnilAcademicDepartment.DataAccess.Configurations
                 .HasForeignKey(e => e.Localisation)
                 .WillCascadeOnDelete(false);
 
-            this.HasMany(e => e.PreViews)
-                .WithOptional(e => e.Language)
-                .HasForeignKey(e => e.Localisation);
+			this.HasMany(e => e.Diplomas)
+				.WithRequired(e => e.Localization)
+				.HasForeignKey(e => e.LanguageId)
+				.WillCascadeOnDelete(false);
 
-            this.HasMany(e => e.Projects)
+			this.HasMany(e => e.PreViews)
+                .WithOptional(e => e.Language)
+                .HasForeignKey(e => e.Localisation)
+				.WillCascadeOnDelete(false);
+
+			this.HasMany(e => e.Projects)
                 .WithRequired(e => e.Language)
                 .HasForeignKey(e => e.Localisation)
                 .WillCascadeOnDelete(false);

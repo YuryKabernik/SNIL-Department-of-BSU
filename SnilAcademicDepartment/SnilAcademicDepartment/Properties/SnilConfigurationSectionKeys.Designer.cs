@@ -61,6 +61,15 @@ namespace SnilAcademicDepartment.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to NumberOfDiplomaOnEducationPage.
+        /// </summary>
+        public static string NumberOfDimplomaOnEducationPageKey {
+            get {
+                return ResourceManager.GetString("NumberOfDimplomaOnEducationPageKey", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to NumberOfKeyAreasOnEducationPage.
         /// </summary>
         public static string NumberOfKeyAreasOnEducationPageKey {
@@ -84,15 +93,6 @@ namespace SnilAcademicDepartment.Properties {
         public static string NumberOfLecturesOnPageLecturesKey {
             get {
                 return ResourceManager.GetString("NumberOfLecturesOnPageLecturesKey", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to NumberOfQuickLearningBlocksOnPage.
-        /// </summary>
-        public static string NumberOfQuickLearningBlocksOnPageKey {
-            get {
-                return ResourceManager.GetString("NumberOfQuickLearningBlocksOnPageKey", resourceCulture);
             }
         }
         

@@ -1,0 +1,87 @@
+﻿@using SnilAcademicDepartment.Resources.EducationResources;
+@using SnilAcademicDepartment.BusinessLogic.DTOModels;
+@{
+	@Styles.Render("~/Content/participantscss")
+	ViewBag.Title = EducationResource.Diploma;
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container">
+	<div class="panel panel-default">
+		<!-- Default panel contents -->
+		<div class="panel-heading"><h3>@EducationResource.Diploma</h3></div>
+
+		<!-- Table -->
+		<table class="table fixed_header">
+			<thead>
+				<tr>
+					<th class="bsu_diplomaName">@EducationResource.DiplomaNameTitle</th>
+					<th class="bsu_diplomaType">@EducationResource.DiplomaTypeTitle</th>
+					<th class="bsu_diplomaDate">@EducationResource.DiplomaProtectionDate</th>
+				</tr>
+			</thead>
+			@Table("diplomas")
+		</table>
+	</div>
+</div>
+
+@helper Table(string dataName)
+{
+	<tbody>
+		@{
+			if (ViewData[$"{dataName}"] is IEnumerable<UiDiploma>)
+			{
+				IEnumerable<UiDiploma> students = (IEnumerable<UiDiploma>)ViewData[dataName];
+				if (students.Count() > 0)
+				{
+					foreach (var item in students)
+					{
+						<tr>
+							<td class="bsu_diploma-name">
+								@item.Name
+							</td>
+							<td class="bsu_diploma-type">
+                                @{ 
+                                    switch (item.Type)
+                                    {
+                                        case SnilAcademicDepartment.Common.Enumerations.DiplomaTypes.Unknown:
+                                            
+                                            // Resource
+                                            break;
+                                        case SnilAcademicDepartment.Common.Enumerations.DiplomaTypes.Master:
+                                            // Resource
+                                            break;
+                                        case SnilAcademicDepartment.Common.Enumerations.DiplomaTypes.Diploma:
+                                            // Resource
+                                            break;
+                                        case SnilAcademicDepartment.Common.Enumerations.DiplomaTypes.Kurs:
+                                            // Resource
+                                            break;
+                                        default:
+                                            // Resource
+                                            break;
+                                    }
+                                }
+							</td>
+							<td class="bsu_protection-date">
+								@if (item.ProtectionDate != null && item.ProtectionDate > DateTime.MinValue)
+								{
+									@item.ProtectionDate.ToShortDateString()
+								}
+								else
+								{
+									@Html.DisplayText("-")
+								}
+							</td>
+						</tr>
+					}
+				}
+				else
+				{
+					<tr>
+						<td class="bsu_tableEmpty">@EducationResource.DiplomaNoTableData</td>
+					</tr>
+				}
+			}
+		}
+	</tbody>
+}

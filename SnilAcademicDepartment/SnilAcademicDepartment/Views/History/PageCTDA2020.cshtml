@@ -1,0 +1,29 @@
+﻿@using SnilAcademicDepartment.Resources.HistoryResources;
+@{
+    ViewBag.Title = "CTDA'2020";
+    @Styles.Render("~/Content/historycss")
+}
+<div class="container">
+    <ol class="breadcrumb">
+        <li>
+            @Html.ActionLink(Resources.Resource.Home, "Index", "Home")
+        </li>
+        <li>
+            @Html.ActionLink(Resources.Resource.History, "History", "History")
+        </li>
+        <li class="active">@HistoryResource.ConfCTDA2020</li>
+    </ol>
+</div>
+<div class="container">
+    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+        @Html.Raw(HistoryResource.CTDA2020Col1_1)
+        <p><img src="~/img/CTDA2020.jpg" style="height:185px; width:322px" /></p>
+        @Html.Raw(HistoryResource.CTDA2020Col1_2)
+    </div>
+    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+        @Html.Raw(HistoryResource.CTDA2020Col2)
+    </div>
+    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+        @Html.Raw(HistoryResource.CTDA2020Col3)
+    </div>
+</div>

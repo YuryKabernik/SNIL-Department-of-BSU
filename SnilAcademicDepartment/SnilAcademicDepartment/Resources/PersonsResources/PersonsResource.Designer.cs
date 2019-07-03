@@ -178,7 +178,7 @@ namespace SnilAcademicDepartment.Resources.PersonsResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Статус профессии.
+        ///   Looks up a localized string similar to Должность.
         /// </summary>
         public static string ProfessionStatus {
             get {

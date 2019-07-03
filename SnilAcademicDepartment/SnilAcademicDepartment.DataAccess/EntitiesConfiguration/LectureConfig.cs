@@ -15,6 +15,10 @@ namespace SnilAcademicDepartment.DataAccess.Configurations
                 .HasMaxLength(150)
                 .IsRequired();
 
+            this.Property(p => p.LectureType)
+                .HasMaxLength(50)
+                .IsRequired();
+
             this.Property(p => p.Description)
                 .IsOptional();
         }

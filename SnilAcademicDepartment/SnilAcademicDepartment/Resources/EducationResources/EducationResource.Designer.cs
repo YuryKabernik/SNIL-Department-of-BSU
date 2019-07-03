@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Resources.EducationResources {
+namespace SnilAcademicDepartment.Resources.EducationResources {
     using System;
     
     
@@ -61,6 +61,78 @@ namespace Resources.EducationResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Общие курсы и курсы по выбору.
+        /// </summary>
+        public static string CommonLectures {
+            get {
+                return ResourceManager.GetString("CommonLectures", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Дата семинара.
+        /// </summary>
+        public static string Date {
+            get {
+                return ResourceManager.GetString("Date", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Дипломные и магистерские работы.
+        /// </summary>
+        public static string Diploma {
+            get {
+                return ResourceManager.GetString("Diploma", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Описание.
+        /// </summary>
+        public static string DiplomaDescription {
+            get {
+                return ResourceManager.GetString("DiplomaDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Название.
+        /// </summary>
+        public static string DiplomaNameTitle {
+            get {
+                return ResourceManager.GetString("DiplomaNameTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Нет данных.
+        /// </summary>
+        public static string DiplomaNoTableData {
+            get {
+                return ResourceManager.GetString("DiplomaNoTableData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Дата защиты.
+        /// </summary>
+        public static string DiplomaProtectionDate {
+            get {
+                return ResourceManager.GetString("DiplomaProtectionDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Тип.
+        /// </summary>
+        public static string DiplomaTypeTitle {
+            get {
+                return ResourceManager.GetString("DiplomaTypeTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Ключевые направления.
         /// </summary>
         public static string KeyDirections {
@@ -88,11 +160,11 @@ namespace Resources.EducationResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Quick Learning.
+        ///   Looks up a localized string similar to Ответственные.
         /// </summary>
-        public static string QuickLearning {
+        public static string ResponsiblePerson {
             get {
-                return ResourceManager.GetString("QuickLearning", resourceCulture);
+                return ResourceManager.GetString("ResponsiblePerson", resourceCulture);
             }
         }
         
@@ -106,11 +178,47 @@ namespace Resources.EducationResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Участники.
+        ///   Looks up a localized string similar to Выступил.
         /// </summary>
         public static string SeminarSpeaker {
             get {
                 return ResourceManager.GetString("SeminarSpeaker", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Специальные курсы.
+        /// </summary>
+        public static string SpecialCourses {
+            get {
+                return ResourceManager.GetString("SpecialCourses", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Специальность.
+        /// </summary>
+        public static string Speciality {
+            get {
+                return ResourceManager.GetString("Speciality", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Специализация.
+        /// </summary>
+        public static string Specialization {
+            get {
+                return ResourceManager.GetString("Specialization", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Тематика.
+        /// </summary>
+        public static string Topic {
+            get {
+                return ResourceManager.GetString("Topic", resourceCulture);
             }
         }
     }

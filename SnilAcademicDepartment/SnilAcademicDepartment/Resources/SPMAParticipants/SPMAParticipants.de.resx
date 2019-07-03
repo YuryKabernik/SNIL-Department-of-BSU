@@ -145,7 +145,7 @@
     <value>Datum der Entlassung</value>
   </data>
   <data name="Status" xml:space="preserve">
-    <value>Status</value>
+    <value>Position</value>
   </data>
   <data name="StudentGraduation" xml:space="preserve">
     <value>Baujahr</value>

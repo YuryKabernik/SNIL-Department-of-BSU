@@ -157,7 +157,7 @@
     <value>Phone number</value>
   </data>
   <data name="ProfessionStatus" xml:space="preserve">
-    <value>Profession status</value>
+    <value>Position</value>
   </data>
   <data name="Professors" xml:space="preserve">
     <value>Professors</value>

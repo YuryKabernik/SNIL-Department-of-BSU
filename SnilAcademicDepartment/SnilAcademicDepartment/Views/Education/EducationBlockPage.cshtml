@@ -1,5 +1,4 @@
 ﻿@using SnilAcademicDepartment.BusinessLogic.DTOModels;
-@using System.Linq;
 @{
 	@Styles.Render("~/Content/educationcss")
 	Layout = "~/Views/Shared/_Layout.cshtml";
@@ -20,58 +19,62 @@
 <div class="container">
 	<div class="row rowcurrent">
 		@{
-			if (ViewBag.Components is IEnumerable<IGrouping<int, SeminarPreview>>)
-			{
-				foreach (IGrouping<int, SeminarPreview> group in ViewBag.Components)
-				{
-					<div class="page-header">
-						<h1>@ViewBag.EducationResourseTitle <small>@group.Key</small></h1>
-					</div>
-					<div class="row flex-container" >
-						@foreach (var seminar in group)
-						{
-						<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-							<div class="block thumbnail">
-								<h4>@seminar.Title</h4><br>
-								<div class="seminar-content">
-									<p> @seminar.Topic</p><br />
-									<strong>@Resources.EducationResources.EducationResource.SeminarSpeaker: </strong>
-									<ul class="speaker-list">
-										@foreach (string speaker in seminar.SpeakersProfessionStatusAndFullNames)
-										{
-											<li class="speaker">@speaker</li>
-										}
-									</ul>
-								</div>
-								@Html.ActionLink(Resources.Resource.Download, "GetFileById", new { controller = "File", action = "GetFileById", id = seminar.DocumentId })
-							</div>
-						</div>
-						}
-					</div>
-				}
-			}
-			else
 			if (ViewBag.Components is IEnumerable<LecturePreview>)
 			{
 				<div class="page-header">
 					<h1>@ViewBag.EducationResourseTitle</h1>
 				</div>
+				<div class="page-subheader">
+					<h3>@SnilAcademicDepartment.Resources.EducationResources.EducationResource.CommonLectures</h3>
+				</div>
 				<div class="row flex-container">
 					@foreach (LecturePreview component in ViewBag.Components)
 					{
+						if (component.LectureType == "Спецкурс" || component.LectureType == "Special course" || component.LectureType == "Spezieller Kurs")
+						{
+							continue;
+						}
 						<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
 							<div class="block thumbnail">
 								<h4>@component.LectureTitle</h4><br>
 								<div class="lecture-content">
-									<p> @component.Specialisation</p><br />
-									<strong>@Resources.EducationResources.EducationResource.LectureSpeaker: </strong><br />
+									<p> @component.LectureType</p><br />
+									<p> @SnilAcademicDepartment.Resources.EducationResources.EducationResource.Speciality: @component.Speciality</p><br />
+									<strong>@SnilAcademicDepartment.Resources.EducationResources.EducationResource.LectureSpeaker: </strong><br />
 									<ul class="author-list">
 										<li class="author">@component.Author</li>
 									</ul>
 								</div>
-								@Html.ActionLink(Resources.Resource.Download, "GetFileById", new { controller = "File", action = "GetFileById", id = component.DocumentId })
+								<span>
+									@Html.ActionLink(Resources.Resource.Download, "GetFileById", new { controller = "File", action = "GetFileById", id = component.DocumentId })
+								</span>
 							</div>
 						</div>
+					}
+				</div>
+				<div class="page-subheader">
+					<h3>@SnilAcademicDepartment.Resources.EducationResources.EducationResource.SpecialCourses</h3>
+				</div>
+				<div class="row flex-container">
+					@foreach (LecturePreview component in ViewBag.Components)
+					{
+						if (component.LectureType == "Спецкурс" || component.LectureType == "Special course" || component.LectureType == "Spezieller Kurs")
+						{
+							<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+								<div class="block thumbnail">
+									<h4>@component.LectureTitle</h4><br>
+									<div class="lecture-content">
+										<p> @component.LectureType</p><br />
+										<p> @SnilAcademicDepartment.Resources.EducationResources.EducationResource.Specialization: @component.Specialisation</p><br />
+										<strong>@SnilAcademicDepartment.Resources.EducationResources.EducationResource.LectureSpeaker: </strong><br />
+										<ul class="author-list">
+											<li class="author">@component.Author</li>
+										</ul>
+									</div>
+									@Html.ActionLink(Resources.Resource.Download, "GetFileById", new { controller = "File", action = "GetFileById", id = component.DocumentId })
+								</div>
+							</div>
+						}
 					}
 				</div>
 			}

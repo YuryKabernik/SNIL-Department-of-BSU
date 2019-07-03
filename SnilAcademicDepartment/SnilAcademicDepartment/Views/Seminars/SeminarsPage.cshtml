@@ -1,0 +1,54 @@
+﻿@using SnilAcademicDepartment.BusinessLogic.DTOModels;
+@using System.Linq;
+@{
+	@Styles.Render("~/Content/seminarscss")
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+	<ol class="breadcrumb">
+		<li>
+			@Html.ActionLink(Resources.Resource.Home, "Index", "Home")
+		</li>
+		<li class="active">@ViewBag.EducationResourseTitle</li>
+	</ol>
+</div>
+<div class="container">
+	<div class="row rowcurrent">
+		@{
+			if (ViewBag.Components is IEnumerable<IGrouping<int, SeminarPreview>>)
+			{
+				foreach (IGrouping<int, SeminarPreview> group in ViewBag.Components)
+				{
+					<div class="page-header">
+						<h2>@ViewBag.EducationResourseTitle @group.Key</h2>
+					</div>
+					<div class="row flex-container">
+						@foreach (var seminar in group)
+						{
+							<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+								<div class="block thumbnail">
+									<h4>@seminar.Title</h4><br>
+									<div class="seminar-content">
+										<div class="seminar-content-p"><span>@SnilAcademicDepartment.Resources.EducationResources.EducationResource.Date: </span><span>@seminar.EventDate</span></div>
+										<div class="seminar-content-p"><span>@SnilAcademicDepartment.Resources.EducationResources.EducationResource.SeminarSpeaker: </span><span>@seminar.Speacker</span></div>
+										<div class="seminar-content-p"><span>@SnilAcademicDepartment.Resources.EducationResources.EducationResource.Topic: </span><span>@seminar.Topic</span></div>
+										<br />
+										<strong>@SnilAcademicDepartment.Resources.EducationResources.EducationResource.ResponsiblePerson: </strong>
+										<ul class="speaker-list">
+											@foreach (string speaker in seminar.SpeakersProfessionStatusAndFullNames)
+											{
+												<li class="speaker">@speaker</li>
+											}
+										</ul>
+									</div>
+									@Html.ActionLink(Resources.Resource.Download, "GetFileById", new { controller = "File", action = "GetFileById", id = seminar.DocumentId })
+								</div>
+							</div>
+						}
+					</div>
+				}
+			}
+		}
+	</div>
+</div>

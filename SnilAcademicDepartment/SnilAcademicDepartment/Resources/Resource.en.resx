@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Address" xml:space="preserve">
-    <value>Address: Independence Avenue, 4, 220030, Minsk, Republic of Belarus.</value>
+    <value>Address: Kurchatova str 1, 220180, Minsk, Republic of Belarus.</value>
   </data>
   <data name="ChooseLang" xml:space="preserve">
     <value>Choose the Language</value>
@@ -148,7 +148,7 @@
     <value>Educational process of students, lesson plans, seminars, Quick Learning. Here you can find the description of the educational process, get acquainted with the current teachers and feedback on the work of the teaching staff of the laboratory and the Department of System Analysis and Computer Modeling.</value>
   </data>
   <data name="FaxNumber" xml:space="preserve">
-    <value>Fax. + 375 17 226 59 40.</value>
+    <value>Fax. +375 17 398 7042.</value>
   </data>
   <data name="FooterCopyright" xml:space="preserve">
     <value>© Belarusian State University</value>
@@ -178,7 +178,7 @@
     <value>Department staff</value>
   </data>
   <data name="PhoneNumber" xml:space="preserve">
-    <value>+ 375 17 209 50 44. </value>
+    <value>+375 17 398 7042; +375 17 398 0222. </value>
   </data>
   <data name="Projects" xml:space="preserve">
     <value>Projects</value>
@@ -187,12 +187,77 @@
     <value>Projects and achievements of our students. Here you can find a description of projects, ideas and scientific reports of laboratory participants and the Department of System Analysis and Computer Simulation. For the very important result of the studies and further application of the implemented projects.</value>
   </data>
   <data name="Welcome" xml:space="preserve">
-    <value>Welcome to the Student Resesrch Laboratory!</value>
+    <value>Welcome to the Student Resesrch Laboratory "Systems Processes Modelling and Analysis"!</value>
   </data>
   <data name="PhoneString" xml:space="preserve">
     <value>P. :</value>
   </data>
   <data name="ParticipantsSPMA" xml:space="preserve">
     <value>Participants SPMA</value>
+  </data>
+  <data name="ContactsForm" xml:space="preserve">
+    <value>Contacts form</value>
+  </data>
+  <data name="Seminars" xml:space="preserve">
+    <value>Seminars</value>
+  </data>
+  <data name="Title1" xml:space="preserve">
+    <value>Student Resesrch Laboratory</value>
+  </data>
+  <data name="Title2" xml:space="preserve">
+    <value>Systems Processes Modelling and Analysis</value>
+  </data>
+  <data name="Collaboration" xml:space="preserve">
+    <value>International cooperation</value>
+  </data>
+  <data name="CollaborationIntro" xml:space="preserve">
+    <value>Our student science laboratory maintains close contacts with leading foreign scientific laboratories and universities. Among them are the Luxembourg Institute of Health (LiH), the European Molecular Biological Laboratory (EMBL) and others.</value>
+  </data>
+  <data name="CVInto" xml:space="preserve">
+    <value>Here you can get acquainted with the library of resumes of graduates of our faculty</value>
+  </data>
+  <data name="ProjectsIntro" xml:space="preserve">
+    <value>Information about scientific projects carried out by the staff of the laboratory and teachers of the department.</value>
+  </data>
+  <data name="About" xml:space="preserve">
+    <value>About student science lab</value>
+  </data>
+  <data name="ContactsPage" xml:space="preserve">
+    <value>Contact page</value>
+  </data>
+  <data name="CollaborationPage" xml:space="preserve">
+    <value>The department carries out scientific cooperation with a number of foreign scientific organizations, including with:
+    &lt;p&gt;
+        &lt;ul style = "margin-left: 18pt"&gt;
+            &lt;li&gt; EuroPhoton GmbH, Neusalza-Spremberg, Germany (Ska-Kun V. Short-term Internship, July 2018, without arranging for a business trip);
+            &lt;li&gt; University of Marburg, Marburg, Germany (Memorandum of Cooperation, Internship Assistant of the Department Svidritsky AS, advising a graduate student);
+            &lt;li&gt; Ruhr University, Bochum, Germany (scientific research conducted by a postgraduate student of the department Seechnikova A.V.);
+            &lt;li&gt; Center for Microscopy, University of Wageningen, Holland (Memorandum of Cooperation of the Research Center for Microscopy of the University of Wageningen and Department of System Analysis and Computer Simulation);
+            &lt;li&gt; University of Groningen, Holland (joint scientific research on the search for effective treatments for Parkinson's disease, Skakun V.V. short-term internship, April 2018);
+            &lt;li&gt; Laboratory of Spectroscopy and Data Modeling, Faculty of Mathematical Sciences and Technology, Norwegian University of Life Sciences, Os, Norway (joint guidance of post-graduate students Yevgeny Gunko and Darya Dubova, holding a summer school in August 2018)
+        &lt;/ ul&gt;
+    &lt;/ p&gt;
+    &lt;p&gt;
+        In 2018, 2 postgraduate students (staff of the SNL) and 4 employees of the system analysis and computer modeling department underwent internship abroad:
+        &lt;ul style = "margin-left: 18pt"&gt;
+            &lt;li&gt; Graduate students Evgeny Gunko and Daria Dubova - long-term internship at the Norwegian University of Life Sciences, Oc, Norway (all costs for the project Belanoda, Project No. CPEA-LT-2016/10126);
+            &lt;li&gt; Assistant Daria Dubova - a long-term internship at the Norwegian University of Life Sciences, Oc, Norway (all costs for the project Belanoda, Project No. CPEA-LT-2016/10126);
+            &lt;li&gt; Assistant Arthur Svidritsky - a long-term internship at the University of Marburg, Germany (at the expense of the host country);
+            &lt;li&gt; Head of the department Skakun V.V. - short-term internship at the Norwegian University of Life Sciences, Oc, Norway (all costs for the Belanoda project, Pro-ject No. CPEA-LT-2016/10126);
+            &lt;li&gt; Head of the department Skakun V.V. and Associate Professor Yatskova N.N. - short-term internship at the Norwegian University of Life Sciences, Oc, Norway (all costs for the project Belanoda, Project No. CPEA-LT-2016/10126);
+        &lt;/ ul&gt;
+    &lt;/ p&gt;
+    &lt;p&gt;
+        Let us give examples of fruitful international cooperation:
+        &lt;ul style = "margin-left: 18pt"&gt;
+            &lt;li&gt; According to the results of joint scientific research with the University of Marburg, Germany, 3 joint scientific articles [1-3] have been published in journals with a high impact factor;
+            &lt;li&gt; The travels of Skakun VV, Yatskova NN, postgraduate students Evgeny Gunko and Darya Dubova to the Norwegian University of Life Sciences were paid for, Os, Norway;
+            &lt;li&gt; As part of the Belanoda project in August 2018, a summer school was held at the Norwegian University of Life Sciences, Os, Norway. From BSU there were 12 undergraduates and 6 graduate students.
+            &lt;li&gt; According to the results of joint research with the Ruhr University, Germany published a scientific article [4] in a journal with a high impact factor;
+            &lt;li&gt; Paid Skakun V.V. to the University of Groningen, Holland. Studies have been carried out on the processes of regulation of the equilibrium of the monomer-dimer of the LRRK2 protein in vivo associated with Parkinson's disease;
+            &lt;li&gt; The joint international project “Multidisciplinary graduate education for the big data analysis for life sciences” (Belanoda, Project No. CPEA-LT-2016/10126), funded by the SIU of Norway foundation, on the training of highly qualified personnel continues and the preparation of a joint interdisciplinary course "Analysis of big data in the tasks of life science" for undergraduates. From the Republic of Belarus, the project involves staff and graduate students of the Department of Systems Analysis and Computer Modeling of the Faculty of Radiophysics and Computer Technologies, the Department of Genetics of the Faculty of Biology and graduate students of the Joint Institute of Informatics Problems of the Academy of Sciences of the Republic of Belarus. On the Norwegian side, the Laboratory of Spectroscopy and Data Modeling at the Faculty of Mathematical Sciences and Technology, Norwegian University of Life Sciences, Oc, Norway;
+            &lt;li&gt; A summer school was held in August 2018 at the Norwegian University of Life Sciences, Oc, Norway. From BSU participated 18 undergraduates and graduate students (25 people in total). The lectures and practical exercises from the Department of Systems Analysis and Computer Modeling were performed by the forces of V. Skakun. and Yatskova N.N.
+        &lt;/ ul&gt;
+    &lt;/ p&gt;</value>
   </data>
 </root>

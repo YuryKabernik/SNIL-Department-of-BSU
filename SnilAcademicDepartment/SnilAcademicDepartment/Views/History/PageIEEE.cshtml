@@ -1,4 +1,5 @@
-﻿@{
+﻿@using SnilAcademicDepartment.Resources.HistoryResources;
+@{
     ViewBag.Title = "IEEE";
     @Styles.Render("~/Content/historycss")
 }
@@ -14,6 +15,6 @@
     </ol>
 </div>
 <div class="container">
-    <!--<h3>Добро пожаловать в Студентческую Научно-Исследовательскую Лабораторию!</h3>-->
-    <p style="text-align: center; text-shadow:10px 12px 2px #808080"><strong>Sorry, this education block is not avaliable :(</strong></p>
+    <h3>@HistoryResource.IEEE</h3>
+    @Html.Raw(HistoryResource.IEEEHistory)
 </div>

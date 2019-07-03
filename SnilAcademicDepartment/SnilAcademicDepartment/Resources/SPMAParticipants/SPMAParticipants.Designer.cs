@@ -142,7 +142,7 @@ namespace SnilAcademicDepartment.Resources.SPMAParticipants {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Статус.
+        ///   Looks up a localized string similar to Должность.
         /// </summary>
         public static string Status {
             get {

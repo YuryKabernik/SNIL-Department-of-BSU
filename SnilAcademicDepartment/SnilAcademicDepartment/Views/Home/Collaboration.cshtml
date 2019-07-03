@@ -1,0 +1,15 @@
+﻿@{
+    ViewBag.Title = "Международное сотрудничество";
+    @Styles.Render("~/Content/historycss")
+}
+<div class="container">
+    <ol class="breadcrumb">
+        <li>
+            @Html.ActionLink(Resources.Resource.Home, "Index", "Home")
+        </li>
+        <li class="active">@Resources.Resource.Collaboration</li>
+    </ol>
+</div>
+<div class="container">
+    @Html.Raw(Resources.Resource.CollaborationPage)
+</div>

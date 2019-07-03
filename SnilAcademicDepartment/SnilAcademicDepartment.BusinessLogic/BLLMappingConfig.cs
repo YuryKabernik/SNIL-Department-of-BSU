@@ -1,8 +1,9 @@
-﻿using AutoMapper;
+﻿using System.Linq;
+using System.Net.Mail;
+using AutoMapper;
 using SnilAcademicDepartment.BusinessLogic.DTOModels;
 using SnilAcademicDepartment.DataAccess.Models;
-using System.Linq;
-using System.Net.Mail;
+using SnilAcademicDepartment.DataAccess.Models.Education;
 
 namespace SnilAcademicDepartment.BusinessLogic
 {
@@ -49,7 +50,7 @@ namespace SnilAcademicDepartment.BusinessLogic
 				.ForMember(des => des.Description, opt => opt.MapFrom(s => s.Description))
 				.ForMember(des => des.ImageId, opt => opt.MapFrom(s => s.Image1.ImageId))
 				.ForMember(des => des.Topics, opt => opt.MapFrom(s => s.EducationTopics.Select(p => p.TopicName)))
-				.ForMember(des => des.ActionId, opt => opt.MapFrom(s => s.BlockId));
+				.ForMember(des => des.ActionId, opt => opt.MapFrom(s => s.CommonBlockTypeId));
 
 			// Mapping HallOfFame objects.
 			this.CreateMap<HallOfFame, Leader>()
@@ -74,17 +75,21 @@ namespace SnilAcademicDepartment.BusinessLogic
 
 			// Mapping Lecture object LecturePreview.
 			this.CreateMap<Lecture, LecturePreview>()
-				.ForMember(des => des.Author, opt => opt.MapFrom(s => string.Concat(s.People.FirstOrDefault().PersonName, " ", s.People.FirstOrDefault().SecoundName)))
+				.ForMember(des => des.Author, opt => opt.MapFrom(s => string.Concat(s.People.FirstOrDefault().PersonName, " ", s.People.FirstOrDefault().SecoundName, " ", s.People.FirstOrDefault().FathersName)))
 				.ForMember(des => des.LectureTitle, opt => opt.MapFrom(s => s.LectureName))
+				.ForMember(des => des.LectureType, opt => opt.MapFrom(s => s.LectureType))
+				.ForMember(des => des.Description, opt => opt.MapFrom(s => s.Description))
 				.ForMember(des => des.Specialisation, opt => opt.MapFrom(s => s.Specialisation.SpecialisationName))
+				.ForMember(des => des.Speciality, opt => opt.MapFrom(s => s.Specialisation.Speciality))
 				.ForMember(des => des.DocumentId, opt => opt.MapFrom(s => s.DocumentId));
 
 			// Mapping Seminar object SeminarPreview.
 			this.CreateMap<Seminar, SeminarPreview>()
 				.ForMember(des => des.Title, opt => opt.MapFrom(s => s.Title))
+				.ForMember(des => des.Speacker, opt => opt.MapFrom(s => s.Speaker))
 				.ForMember(des => des.SpeakersProfessionStatusAndFullNames, opt => opt
 					.MapFrom(s => s.People.Select<Person, string>(j =>
-					string.Concat(j.PersonName, j.SecoundName, $" ({j.ProfessionStatus.StatusNaming})"))))
+					string.Concat(j.PersonName, " ", j.SecoundName))))
 				.ForMember(des => des.EventDate, opt => opt.MapFrom(s => s.EventDate))
 				.ForMember(des => des.Topic, opt => opt.MapFrom(s => s.Topic1.TopicName))
 				.ForMember(des => des.DocumentId, opt => opt.MapFrom(s => s.DoctId));
@@ -94,13 +99,13 @@ namespace SnilAcademicDepartment.BusinessLogic
 
 			this.CreateMap<ClientMail, MailMessage>()
 				.ForMember(des => des.Body, opt => opt.MapFrom(s => s.Message))
-				.ForMember(des => des.From, opt => opt.ResolveUsing(s => new MailAddress(s.Email)))
-				.ForMember(des => des.Sender, opt => opt.ResolveUsing(s => new MailAddress(s.Email)))
-				.ForMember(des => des.Subject, opt => opt.ResolveUsing(s => s.Subject))
-				.ForMember(des => des.To, opt => opt.ResolveUsing(s => new MailAddressCollection()))
-				.ForMember(des => des.CC, opt => opt.ResolveUsing(s => new MailAddressCollection()))
-				.ForMember(des => des.Priority, opt => opt.ResolveUsing(s => MailPriority.Normal))
-				.ForMember(des => des.IsBodyHtml, opt => opt.ResolveUsing(s => true))
+				.ForMember(des => des.From, opt => opt.MapFrom(s => new MailAddress(s.Email)))
+				.ForMember(des => des.Sender, opt => opt.MapFrom(s => new MailAddress(s.Email)))
+				.ForMember(des => des.Subject, opt => opt.MapFrom(s => s.Subject))
+				.ForMember(des => des.To, opt => opt.MapFrom(s => new MailAddressCollection()))
+				.ForMember(des => des.CC, opt => opt.MapFrom(s => new MailAddressCollection()))
+				.ForMember(des => des.Priority, opt => opt.MapFrom(s => MailPriority.Normal))
+				.ForMember(des => des.IsBodyHtml, opt => opt.MapFrom(s => true))
 				.ForAllOtherMembers(s => s.Ignore());
 
 			this.CreateMap<Person, PersonVM>() // PersonVM
@@ -217,6 +222,13 @@ namespace SnilAcademicDepartment.BusinessLogic
 				.ForMember(des => des.Lectures, opt => opt.MapFrom(s => s.PersonId.Lectures.Select(o => o.LectureName)))
 				.ForMember(des => des.Seminars, opt => opt.MapFrom(s => s.PersonId.Seminars.Select(o => o.Title)))
 				.ForMember(des => des.Projects, opt => opt.MapFrom(s => s.PersonId.Projects.Select(o => o.ProjectName)));
+
+			this.CreateMap<Diploma, UiDiploma>() // Spma student model
+				.ForMember(des => des.Id, opt => opt.MapFrom(s => s.DiplomaId))
+                .ForMember(des => des.Name, opt => opt.MapFrom(s => s.Name))
+                .ForMember(des => des.Description, opt => opt.MapFrom(s => s.Description))
+				.ForMember(des => des.ProtectionDate, opt => opt.MapFrom(s => s.ProtectionDate.Date))
+				.ForMember(des => des.Type, opt => opt.MapFrom(s => s.Type));
 		}
 	}
 }

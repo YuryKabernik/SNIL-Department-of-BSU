@@ -126,13 +126,49 @@
   <data name="LectureSpeaker" xml:space="preserve">
     <value>Читает лекции</value>
   </data>
-  <data name="QuickLearning" xml:space="preserve">
-    <value>Quick Learning</value>
+  <data name="Diploma" xml:space="preserve">
+    <value>Дипломные и магистерские работы</value>
   </data>
   <data name="Seminars" xml:space="preserve">
     <value>Семинары</value>
   </data>
   <data name="SeminarSpeaker" xml:space="preserve">
-    <value>Участники</value>
+    <value>Выступил</value>
+  </data>
+  <data name="Date" xml:space="preserve">
+    <value>Дата семинара</value>
+  </data>
+  <data name="ResponsiblePerson" xml:space="preserve">
+    <value>Ответственные</value>
+  </data>
+  <data name="Topic" xml:space="preserve">
+    <value>Тематика</value>
+  </data>
+  <data name="CommonLectures" xml:space="preserve">
+    <value>Общие курсы и курсы по выбору</value>
+  </data>
+  <data name="SpecialCourses" xml:space="preserve">
+    <value>Специальные курсы</value>
+  </data>
+  <data name="Speciality" xml:space="preserve">
+    <value>Специальность</value>
+  </data>
+  <data name="Specialization" xml:space="preserve">
+    <value>Специализация</value>
+  </data>
+  <data name="DiplomaProtectionDate" xml:space="preserve">
+    <value>Дата защиты</value>
+  </data>
+  <data name="DiplomaDescription" xml:space="preserve">
+    <value>Описание</value>
+  </data>
+  <data name="DiplomaNameTitle" xml:space="preserve">
+    <value>Название</value>
+  </data>
+  <data name="DiplomaTypeTitle" xml:space="preserve">
+    <value>Тип</value>
+  </data>
+  <data name="DiplomaNoTableData" xml:space="preserve">
+    <value>Нет данных</value>
   </data>
 </root>

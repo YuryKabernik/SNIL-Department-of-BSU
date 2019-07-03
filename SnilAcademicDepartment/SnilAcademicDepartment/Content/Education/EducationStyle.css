@@ -1,17 +1,28 @@
 @import url('https://fonts.googleapis.com/css?family=Droid+Sans|Fira+Sans+Condensed:300,400,500,600,700,700i,900');
 /*#010659 #011759 #0a3772 #254e72 #f2f2f2*/
 
+.page-header {
+    width: 100%;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #afaeae;
+}
+.page-subheader {
+    width: 100%;
+    margin: 12px 0 12px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #afaeae;
+}
 .content {
-  min-height: 100%;
-  background-color: #f5f5f5;
-  clear: both;
-  padding-top: 19px;
-  padding-bottom: 40px;
+    min-height: 100%;
+    background-color: #f5f5f5;
+    clear: both;
+    padding-top: 19px;
+    padding-bottom: 40px;
 }
 .content .container h2 {
   text-align: center;
   margin-bottom: 0;
-  border-bottom: 1px solid black;
+  /*border-bottom: 1px solid black;*/
   padding-bottom: 32px;
 }
 .content .container .row1 {
@@ -36,7 +47,9 @@
 	padding-top: 45px;
 }
 .content .container .row2 ul li {
-  text-align: center;
+  text-align: left;
+  padding-inline-start: 10px;
+  padding-bottom: 5px;
   border-left: 1px solid black;
 }
 .content .container .row2 ul li:hover {
@@ -58,13 +71,15 @@
     display: flex;
     flex-flow: row wrap;
 }
+.flex-container .thumbnail {
+    min-height: 312px;
+}
 .block .speaker-list {
-	text-decoration: none;
-	list-style-type: none;
-
-	/* BOTH of the following are required for text-overflow */
-	white-space: nowrap;
-	overflow: hidden;
+    text-decoration: none;
+    list-style-type: none;
+    /* BOTH of the following are required for text-overflow */
+    white-space: nowrap;
+    overflow: hidden;
 }
 .speaker-list .speaker,
 .author-list .author {
@@ -77,4 +92,9 @@
 	display: -webkit-box;
 	-webkit-line-clamp: 8;
 	-webkit-box-orient: vertical;
+}
+.seminar-content-p {
+    font-size: 15px;
+    width: 100%;
+    padding: 4px 8px;
 }

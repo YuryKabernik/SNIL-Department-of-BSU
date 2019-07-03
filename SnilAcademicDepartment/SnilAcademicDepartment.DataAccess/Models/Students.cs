@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace SnilAcademicDepartment.DataAccess.Models
 {
@@ -77,5 +78,7 @@ namespace SnilAcademicDepartment.DataAccess.Models
 		/// The language.
 		/// </value>
 		public virtual StudentTypes StudentType { get; set; }
-	}
+
+        public virtual ICollection<StuffStudents> StuffStudents { get; set; }
+    }
 }

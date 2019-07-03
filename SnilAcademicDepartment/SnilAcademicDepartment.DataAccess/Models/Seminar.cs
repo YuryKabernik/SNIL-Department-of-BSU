@@ -13,14 +13,12 @@ namespace SnilAcademicDepartment.DataAccess.Models
         [StringLength(900)]
         public string Title { get; set; }
 
-        public int? SpeakerId { get; set; }
+        public string Speaker { get; set; }
 
         [Column(TypeName = "date")]
         public DateTime EventDate { get; set; }
 
         public int? DoctId { get; set; }
-
-        public int? ResponsiblePersonId { get; set; }
 
         public int? Topic { get; set; }
 

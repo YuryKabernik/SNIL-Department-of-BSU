@@ -1,9 +1,10 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
+using SnilAcademicDepartment.DataAccess.Models.Education;
 
 namespace SnilAcademicDepartment.DataAccess.Models
 {
-    [Table("Language")]
+	[Table("Language")]
     public partial class Language
     {
         public int LanguageId { get; set; }
@@ -29,5 +30,7 @@ namespace SnilAcademicDepartment.DataAccess.Models
         public virtual ICollection<Specialisation> Specialisations { get; set; } = new HashSet<Specialisation>();
 
 		public virtual ICollection<Students> Students { get; set; } = new HashSet<Students>();
+
+		public virtual ICollection<Diploma> Diplomas { get; set; } = new HashSet<Diploma>();
 	}
 }

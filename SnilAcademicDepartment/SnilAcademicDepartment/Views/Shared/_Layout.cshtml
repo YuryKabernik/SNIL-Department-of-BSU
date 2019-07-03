@@ -8,6 +8,7 @@
 	<title>@ViewBag.Title</title>
 	@Styles.Render("~/Content/layoutcss")
 	<script src="~/Scripts/jquery-3.3.1.js"></script>
+	<script src="https://kit.fontawesome.com/7949cffce7.js"></script>
 </head>
 <body>
 	<div class=header>
@@ -15,7 +16,7 @@
 			@{
 				var url = Url.RouteUrl(new { action = "Index", controller = "Home", });
 				<a class="logo" href="@url">
-					<img src="~/img/BSU.png" />
+					<img src="~/img/BSU.png" title="@Resources.Resource.IndexHeader"/>
 				</a>
 			}
 			<div class="dropdown" style="float:right;">
@@ -30,15 +31,16 @@
 	</div>
 	<div class="nav">
 		<div class="container">
-			<ul class="navbar-nav li-center">
-				<li class="nav-item">@Html.ActionLink(Resources.Resource.Home, "Index", "Home")</li>
-				<li class="nav-item">@Html.ActionLink(Resources.Resource.Projects, "Projects", "Projects")</li>
-				<li class="nav-item">@Html.ActionLink(Resources.Resource.Education, "Education", "Education")</li>
-				<li class="nav-item">@Html.ActionLink(Resources.Resource.Persons, "Persons", "DepartmentStaff")</li>
-				<li class="nav-item">@Html.ActionLink(Resources.Resource.ParticipantsSPMA, "ParticipantsPage", "ParticipantsSPMA")</li>
-				<li class="nav-item">@Html.ActionLink(Resources.Resource.History, "History", "History")</li>
-				<li class="nav-item">@Html.ActionLink(Resources.Resource.Contacts, "Contact", "Home")</li>
-			</ul>
+            <ul class="navbar-nav li-center">
+                <li class="nav-item">@Html.ActionLink(Resources.Resource.Home, "Index", "Home")</li>
+                <li class="nav-item">@Html.ActionLink(Resources.Resource.Projects, "Projects", "Projects")</li>
+                <li class="nav-item">@Html.ActionLink(Resources.Resource.Seminars, "Seminars", "Seminars")</li>
+                <li class="nav-item">@Html.ActionLink(Resources.Resource.Education, "Education", "Education")</li>
+                <li class="nav-item">@Html.ActionLink(Resources.Resource.Persons, "Persons", "DepartmentStaff")</li>
+                <li class="nav-item">@Html.ActionLink(Resources.Resource.ParticipantsSPMA, "ParticipantsPage", "ParticipantsSPMA")</li>
+                <li class="nav-item">@Html.ActionLink(Resources.Resource.History, "History", "History")</li>
+                <li class="nav-item">@Html.ActionLink(Resources.Resource.Contacts, "Contact", "Home")</li>
+            </ul>
 		</div>
 	</div>
 	<div class="content">

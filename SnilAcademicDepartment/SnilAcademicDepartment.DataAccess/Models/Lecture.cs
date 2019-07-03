@@ -8,6 +8,8 @@ namespace SnilAcademicDepartment.DataAccess.Models
 
         public string LectureName { get; set; }
 
+        public string LectureType { get; set; }
+
         public int SpesialisationId { get; set; }
 
         public string Description { get; set; }

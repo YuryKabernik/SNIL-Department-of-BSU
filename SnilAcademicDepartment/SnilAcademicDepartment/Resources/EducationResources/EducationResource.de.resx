@@ -126,13 +126,34 @@
   <data name="LectureSpeaker" xml:space="preserve">
     <value>Vortragende</value>
   </data>
-  <data name="QuickLearning" xml:space="preserve">
-    <value>Quick Learning</value>
+  <data name="Diploma" xml:space="preserve">
+    <value>Diplom- und Masterarbeit</value>
   </data>
   <data name="Seminars" xml:space="preserve">
     <value>Seminare</value>
   </data>
   <data name="SeminarSpeaker" xml:space="preserve">
     <value>Die Teilnehmer</value>
+  </data>
+  <data name="Date" xml:space="preserve">
+    <value>Datum</value>
+  </data>
+  <data name="ResponsiblePerson" xml:space="preserve">
+    <value>Verantwortliche personen</value>
+  </data>
+  <data name="Topic" xml:space="preserve">
+    <value>Thema</value>
+  </data>
+  <data name="CommonLectures" xml:space="preserve">
+    <value>Allgemeine und Wahlfächer</value>
+  </data>
+  <data name="SpecialCourses" xml:space="preserve">
+    <value>Spezielle Kurse</value>
+  </data>
+  <data name="Speciality" xml:space="preserve">
+    <value>Spezialität</value>
+  </data>
+  <data name="Specialization" xml:space="preserve">
+    <value>Spezialisierung</value>
   </data>
 </root>

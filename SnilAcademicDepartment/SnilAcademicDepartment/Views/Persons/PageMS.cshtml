@@ -1,0 +1,74 @@
+﻿@using SnilAcademicDepartment.BusinessLogic.DTOModels;
+@using SnilAcademicDepartment.Resources.PersonsResources;
+@{
+	Layout = "~/Views/Shared/_Layout.cshtml";
+	@Styles.Render("~/Content/peoplecss");
+}
+<div class="container">
+	<ol class="breadcrumb">
+		<li>
+			@Html.ActionLink(Resources.Resource.Home, "Index", "Home")
+		</li>
+		<li>
+			@Html.ActionLink(Resources.Resource.Persons, "Persons", "Persons")
+		</li>
+		<li class="active">@PersonsResource.MS</li>
+	</ol>
+</div>
+<div class="container subpage">
+	<h2>@PersonsResource.MS</h2><br>
+	@{
+		foreach (var masterOfScience in ViewData["MS"] as IList<MasterOfScience>)
+		{
+			var imgSrcBlock = Url.Action("GetImage", new { controller = "Image", id = masterOfScience.ImageId });
+			var personPageUrl = Url.RouteUrl(new { action = "PersonalPage", controller = "Persons", id = masterOfScience.Id });
+
+			<div class="row row-student well">
+				<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+					<a href="@personPageUrl">
+						<img src="@imgSrcBlock" alt="@string.Format("{0} {1}",masterOfScience.PersonName, masterOfScience.SecoundName)" title="@string.Format("{0} {1}",masterOfScience.PersonName, masterOfScience.SecoundName)">
+					</a>
+				</div>
+				<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+					<h4>@string.Format("{0} {1} {2}", masterOfScience.PersonName, masterOfScience.SecoundName, masterOfScience.FathersName)</h4>
+					<div class="container">
+						@{
+							if (masterOfScience.Projects.Count() > 0)
+							{
+								@UlStringList(masterOfScience.Projects, "Projects");
+							}
+							if (masterOfScience.Seminars.Count() > 0)
+							{
+								@UlStringList(masterOfScience.Seminars, "Seminars");
+							}
+						}
+					</div>
+				</div>
+				<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 row3">
+					<ul>
+						<li><strong>@PersonsResource.Degree:</strong>  <span>@masterOfScience.Degree</span> </li>
+						<li><strong>@PersonsResource.AcademicTitle:</strong> <span>@masterOfScience.AcademicTitle</span> </li>
+						<li><strong>@PersonsResource.ProfessionStatus:</strong> <span>@masterOfScience.ProfessionStatus</span> </li>
+					</ul>
+					<ul>
+						<li><strong>@PersonsResource.EmailAddress:</strong>  <span>@masterOfScience.EmailAddress</span> </li>
+						<li><strong>@PersonsResource.PhoneNumber:</strong> <span>@masterOfScience.PhoneNumber</span> </li>
+					</ul>
+				</div>
+			</div>
+		}
+	}
+</div>
+
+@helper UlStringList(IEnumerable<string> collection, string title)
+{
+	<div>
+		<strong>@title:</strong>
+		<ul>
+			@foreach (var item in collection)
+			{
+				<li>@item</li>
+			}
+		</ul>
+	</div>
+}

@@ -27,13 +27,13 @@ namespace SnilAcademicDepartment.DataAccess.Models
 		/// <value>
 		/// The date entrance.
 		/// </value>
-		public DateTime DateEntrance { get; set; }
+		public DateTime? DateEntrance { get; set; }
 		/// <summary>
 		/// Gets or sets the date departure.
 		/// </summary>
 		/// <value>
 		/// The date departure.
 		/// </value>
-		public DateTime DateDeparture { get; set; }
+		public DateTime? DateDeparture { get; set; }
 	}
 }

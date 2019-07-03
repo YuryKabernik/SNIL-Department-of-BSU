@@ -4,6 +4,6 @@
 	{
 		Seminar = 11,
 		Lection = 12,
-		QuickLearning = 13
+		Diploma = 13
 	}
 }

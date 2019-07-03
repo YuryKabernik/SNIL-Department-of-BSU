@@ -34,18 +34,26 @@ namespace SnilAcademicDepartment.Controllers
 
         [HttpGet]
         [Route("about")]
-        public async Task<ActionResult> About()
+        public Task<ActionResult> About()
         {
-            ViewBag.Message = "Your application description page.";
-            return View();
+            ViewBag.Message = Resource.About;
+            return Task.FromResult<ActionResult>(View());
         }
 
         [HttpGet]
         [Route("contacts")]
-        public async Task<ActionResult> Contact()
+        public Task<ActionResult> Contact()
         {
-            ViewBag.Message = "Your contact page.";
-            return View();
+            ViewBag.Message = Resource.ContactsPage;
+            return Task.FromResult<ActionResult>(View());
+        }
+
+        [HttpGet]
+        [Route("collaboration")]
+        public Task<ActionResult> Collaboration()
+        {
+            ViewBag.Message = Resource.Collaboration;
+            return Task.FromResult<ActionResult>(View());
         }
     }
 }

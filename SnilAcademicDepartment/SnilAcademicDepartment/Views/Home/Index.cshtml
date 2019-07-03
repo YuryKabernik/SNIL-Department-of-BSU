@@ -2,6 +2,9 @@
     ViewBag.Title = Resources.Resource.Home ;
 }
 @Styles.Render("~/Content/indexcss")
+<div class="spma_title">
+	<h2 class="title">@Resources.Resource.Title1<br>@Resources.Resource.Title2</h2>
+</div>
 <div class="container">
     <div class="rowimg">
         <div id="carousel-id" class="carousel slide" data-ride="carousel">
@@ -16,9 +19,9 @@
                     <img data-src="holder.js/900x500/auto/#777:#7a7a7a/text:First slide" alt="First slide" src="~/img/Carousel/conferences.jpg">
                     <div class="container">
                         <div class="carousel-caption">
-                            <h1>Креативные проекты.</h1>
-                            <p>Note: If you're viewing this page via a <code>file://</code> URL, the "next" and "previous" Glyphicon buttons on the left and right might not load/display properly due to web browser security rules.</p>
-                            <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
+                            <h1>@Resources.Resource.SciProjects</h1>
+                            <p style="font-size:14pt">@Resources.Resource.ProjectsIntro</p>
+                            <p><a class="btn btn-lg btn-primary" href="@Url.RouteUrl(new { action = "Projects", controller = "Projects", })" role="button">@Resources.Resource.LearnMore</a></p>
                         </div>
                     </div>
                 </div>
@@ -26,9 +29,9 @@
                     <img data-src="holder.js/900x500/auto/#666:#6a6a6a/text:Second slide" alt="Second slide" src="~/img/Carousel/cooperation.jpg">
                     <div class="container">
                         <div class="carousel-caption">
-                            <h1>Международное сотрудничество.</h1>
-                            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                            <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
+                            <h1>@Resources.Resource.Collaboration</h1>
+                            <p style="font-size:14pt; background-color:rgba(150, 150, 150, 0.5)">@Resources.Resource.CollaborationIntro</p>
+                            <p><a class="btn btn-lg btn-primary" href="@Url.RouteUrl(new { action = "Collaboration", controller = "Home", })" role="button">@Resources.Resource.LearnMore</a></p>
                         </div>
                     </div>
                 </div>
@@ -36,9 +39,9 @@
                     <img class="pict" data-src="holder.js/900x500/auto/#555:#5a5a5a/text:Third slide" alt="Third slide" src="~/img/Carousel/tools.jpg">
                     <div class="container">
                         <div class="carousel-caption">
-                            <h1>Оборудование.</h1>
-                            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                            <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
+                            <h1></h1>
+                            <p style="font-size:14pt"></p>
+                            <p><a class="btn btn-lg btn-primary" href="#" role="button">@Resources.Resource.LearnMore</a></p>
                         </div>
                     </div>
                 </div>
@@ -47,8 +50,8 @@
                     <div class="container">
                         <div class="carousel-caption">
                             <h1>CV.BSU.by</h1>
-                            <p>Resume of BSU students.<a href="http://cv.bsu.by/" target="_blank">http://cv.bsu.by/</a></p>
-                            <p><a class="btn btn-lg btn-primary" href="http://cv.bsu.by/" target="_blank" role="button">Learn more</a></p>
+                            <p style="font-size:14pt">@Resources.Resource.CVInto<a href="http://cv.bsu.by/" target="_blank">http://cv.bsu.by/</a></p>
+                            <p><a class="btn btn-lg btn-primary" href="http://cv.bsu.by/" target="_blank" role="button">@Resources.Resource.LearnMore</a></p>
                         </div>
                     </div>
                 </div>
@@ -61,9 +64,17 @@
         <div class="col-sm-4 col-md-4 col-lg-4 col-xs-4">
             <img src="../img/DSC_3577.jpg" alt="">
             <div class="projects">
-                <h4>@Resources.Resource.Projects</h4>
+                <h4>@Resources.Resource.SciProjects</h4>
                 <p>@Resources.Resource.ProjectsShortDescription</p>
                 @Html.ActionLink(Resources.Resource.LearnMore, "Projects", "Projects")
+            </div>
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4 col-xs-4">
+            <img src="../img/DSC_3533.jpg" alt="">
+            <div class="education">
+                <h4>@Resources.Resource.Seminars</h4>
+                <p>@Resources.Resource.SeminarsShortDescription</p>
+                @Html.ActionLink(Resources.Resource.LearnMore, "Seminars", "Seminars")
             </div>
         </div>
         <div class="col-sm-4 col-md-4 col-lg-4 col-xs-4">
@@ -74,30 +85,30 @@
                 @Html.ActionLink(Resources.Resource.LearnMore, "Education", "Education")
             </div>
         </div>
+    </div>
+    <div class="row row1 index-row">
         <div class="col-sm-4 col-md-4 col-lg-4 col-xs-4">
-            <img src="../img/DSC_3533.jpg" alt="">
+            <img src="../img/IMG_4660.JPG" alt="">
             <div class="person">
                 <h4>@Resources.Resource.Persons</h4>
                 <p>@Resources.Resource.PeopleShortDescription</p>
-                @Html.ActionLink(Resources.Resource.LearnMore, "Persons", "Persons")
+                @Html.ActionLink(Resources.Resource.LearnMore, "Persons", "DepartmentStaff")
             </div>
         </div>
-    </div>
-    <div class="row row2 index-row">
-        <div class="col-sm-6 col-md-6 col-lg-6 col-xs-6">
+        <div class="col-sm-4 col-md-4 col-lg-4 col-xs-4">
+            <img src="../img/DSC_3533.jpg" alt="">
+            <div class="person">
+                <h4>@Resources.Resource.SNIL</h4>
+                <p>@Resources.Resource.SNILShortDescription</p>
+                @Html.ActionLink(Resources.Resource.LearnMore, "ParticipantsPage", "ParticipantsSPMA")
+            </div>
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4 col-xs-4">
             <img src="../img/DSC_3607.jpg" alt="">
             <div class="description">
                 <h4>@Resources.Resource.History</h4>
                 <p>@Resources.Resource.HistoryShortDescription</p>
-                @Html.ActionLink(Resources.Resource.LearnMore, "History", "History") 
-            </div>
-        </div>
-        <div class="col-sm-6 col-md-6 col-lg-6 col-xs-4">
-            <img src="../img/IMG_0004.jpg" alt="">
-            <div class="description">
-                <h4>@Resources.Resource.Contacts</h4>
-                <p>@Resources.Resource.ContactsShortDescription</p>
-                @Html.ActionLink(Resources.Resource.LearnMore, "Contact", "Home")
+                @Html.ActionLink(Resources.Resource.LearnMore, "History", "History")
             </div>
         </div>
     </div>

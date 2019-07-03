@@ -1,5 +1,4 @@
-﻿using System.Web;
-using System.Web.Optimization;
+﻿using System.Web.Optimization;
 
 namespace SnilAcademicDepartment
 {
@@ -22,7 +21,7 @@ namespace SnilAcademicDepartment
 						"~/Scripts/modernizr-*"));
 
 			bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-					  "~/Scripts/bootstrap.js",
+					  "~/Scripts/bootstrap.min.js",
 					  "~/Scripts/respond.js"));
 
 			var jqueryCdnPath = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css";
@@ -37,7 +36,9 @@ namespace SnilAcademicDepartment
 			bundles.Add(new StyleBundle("~/Content/layoutcss").Include(
 						"~/Content/Site.css",
 						"~/Content/dropdown-box.css",
-						"~/Content/bootstrap.min.css"));
+						"~/Content/BootstrapCSS/bootstrap-theme.min.css",
+						"~/Content/BootstrapCSS/bootstrap-grid.min.css",
+						"~/Content/BootstrapCSS/bootstrap.min.css"));
 
 			//IndexStyle
 			bundles.Add(new StyleBundle("~/Content/indexcss").Include(
@@ -45,6 +46,9 @@ namespace SnilAcademicDepartment
 			//ProjectStyle
 			bundles.Add(new StyleBundle("~/Content/projectscss").Include(
 						"~/Content/Projects/ProjectsStyle.css"));
+			//SeminarsStyle
+			bundles.Add(new StyleBundle("~/Content/seminarscss").Include(
+						"~/Content/Seminars/SeminarsStyles.css"));
 			//ParticipantsStyle
 			bundles.Add(new StyleBundle("~/Content/participantscss").Include(
 						"~/Content/Participants/ParticipantsStyle.css"));

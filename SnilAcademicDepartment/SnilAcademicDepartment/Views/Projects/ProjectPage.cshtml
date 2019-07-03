@@ -22,15 +22,15 @@
             <img src="@imgSrc" alt="">
         </div>
         <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-            @ViewBag.Project.Description
+            @Html.Raw(ViewBag.Project.Description)
         </div>
     </div>
-    <div class="row rowcurrent">
+    @*<div class="row rowcurrent">
         @RenderProjectsV2(Resources.Resource.Projects, ViewBag.Previews)
-    </div>
+    </div>*@
 </div>
 
-@helper RenderProjectsV2(string title, IEnumerable<ProjectPreview> collection)
+@*@helper RenderProjectsV2(string title, IEnumerable<ProjectPreview> collection)
 {
     <div class="row">
         <h2>@title</h2>
@@ -51,4 +51,4 @@
             }
         }
     </div>
-}
+}*@
