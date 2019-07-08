@@ -22,7 +22,7 @@ namespace SnilAcademicDepartment.Resources.UnavaliableErrorResources {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class UnavaliableErrorResource {
+    public class UnavaliableErrorResource {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace SnilAcademicDepartment.Resources.UnavaliableErrorResources {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("SnilAcademicDepartment.Resources.UnavaliableErrorResources.UnavaliableErrorResour" +
@@ -52,7 +52,7 @@ namespace SnilAcademicDepartment.Resources.UnavaliableErrorResources {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -62,9 +62,18 @@ namespace SnilAcademicDepartment.Resources.UnavaliableErrorResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to К сожалению, данная страница не доступна....
+        /// </summary>
+        public static string ErrorMessage {
+            get {
+                return ResourceManager.GetString("ErrorMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Извините, данная страница недоступна :(.
         /// </summary>
-        internal static string UnavaliableMessage {
+        public static string UnavaliableMessage {
             get {
                 return ResourceManager.GetString("UnavaliableMessage", resourceCulture);
             }

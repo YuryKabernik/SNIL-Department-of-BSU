@@ -206,6 +206,7 @@
     <Compile Include="Controllers\ProjectsController.cs" />
     <Compile Include="Controllers\SeminarsController.cs" />
     <Compile Include="Filters\CultureAttribute.cs" />
+    <Compile Include="Filters\GlobalExceptionHandler.cs" />
     <Compile Include="Filters\HttpCultureAttribute.cs" />
     <Compile Include="Filters\ValidateAntyForgeryToken.cs" />
     <Compile Include="Global.asax.cs">
@@ -325,6 +326,7 @@
     <Content Include="Content\BootstrapCSS\bootstrap.css" />
     <Content Include="Content\BootstrapCSS\bootstrap.min.css" />
     <Content Include="Content\Education\EducationStyle.css" />
+    <Content Include="Content\Error\ErrorPages.css" />
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\History\HistoryStyle.css" />
     <Content Include="Content\ContactStyle.css" />
@@ -555,7 +557,7 @@
     <EmbeddedResource Include="Resources\UnavaliableErrorResources\UnavaliableErrorResource.de.resx" />
     <EmbeddedResource Include="Resources\UnavaliableErrorResources\UnavaliableErrorResource.en.resx" />
     <EmbeddedResource Include="Resources\UnavaliableErrorResources\UnavaliableErrorResource.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>UnavaliableErrorResource.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
