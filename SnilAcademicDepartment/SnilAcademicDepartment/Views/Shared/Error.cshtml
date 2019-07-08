@@ -1,7 +1,15 @@
-﻿@{
-    ViewBag.Title = Resources.Resource.Error;
+﻿@using SnilAcademicDepartment.Resources.UnavaliableErrorResources;
+@{
+	ViewBag.Title = Resources.Resource.Error;
 }
-<hgroup style="align-self: center">
-    <h1>@ViewBag.Title</h1>
-    <h2>@ViewBag.ErrorMessage</h2>
-</hgroup>
+<div class="container snil_errorPage">
+	@{
+		object errorTitle = string.Empty;
+		object errorMessage = string.Empty;
+
+		bool containsTitle = ViewData.TryGetValue("Title", out errorTitle);
+		bool containsErrorMessage = ViewData.TryGetValue("ErrorMessage", out errorMessage);
+	}
+	<h1 class="snil_errorTitle">@Html.Raw(errorTitle ?? Resources.Resource.Error)</h1>
+	<h2 class="snil_errorMessage">@Html.Raw(errorMessage ?? UnavaliableErrorResource.ErrorMessage)</h2>
+</div>
