@@ -1,10 +1,11 @@
-﻿using NLog;
-using System;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
-using System.Web.Mvc;
 using System.Threading;
 using System.Threading.Tasks;
-using System.Collections.Generic;
+using System.Web.Mvc;
+using NLog;
+using SnilAcademicDepartment.Base;
 using SnilAcademicDepartment.BusinessLogic.DTOModels;
 using SnilAcademicDepartment.BusinessLogic.Interfaces;
 using SnilAcademicDepartment.Common.ConfigManagerAdapter;
@@ -14,10 +15,9 @@ using SnilAcademicDepartment.Resources.UnavaliableErrorResources;
 
 namespace SnilAcademicDepartment.Controllers
 {
-    [RoutePrefix("{language}")]
-    public class SeminarsController : Controller
+	[RoutePrefix("{language}")]
+    public class SeminarsController : SnilBaseController
 	{
-		private readonly ILogger _logger;
 		private readonly ISeminarPreview _seminarPreviewService;
 		private readonly ISNILConfigurationManager _configManager;
 
@@ -35,9 +35,8 @@ namespace SnilAcademicDepartment.Controllers
 			ISNILConfigurationManager configManager,
 			IService previewService,
 			IEducation educationService,
-			ISeminarPreview seminarPreviewService)
+			ISeminarPreview seminarPreviewService) : base(logger)
 		{
-			this._logger = logger;
 			this._configManager = configManager;
 			this._seminarPreviewService = seminarPreviewService;
 		}

@@ -4,6 +4,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 using NLog;
+using SnilAcademicDepartment.Base;
 using SnilAcademicDepartment.BusinessLogic.DTOModels;
 using SnilAcademicDepartment.BusinessLogic.Interfaces;
 using SnilAcademicDepartment.BusinessLogic.Interfaces.API;
@@ -15,9 +16,8 @@ using SnilAcademicDepartment.Resources.UnavaliableErrorResources;
 namespace SnilAcademicDepartment.Controllers
 {
 	[RoutePrefix("{language}")]
-	public class EducationController : Controller
+	public class EducationController : SnilBaseController
 	{
-		private readonly ILogger _logger;
 		private readonly IService _previewService;
 		private readonly IEducation _educationService;
 		private readonly IDiplomasApiService _diplomasApiService;
@@ -41,9 +41,8 @@ namespace SnilAcademicDepartment.Controllers
 			IEducation educationService,
 			ILecturePreview lecturePreviewService,
 			ISeminarPreview seminarPreviewService,
-			IDiplomasApiService diplomasApiService)
+			IDiplomasApiService diplomasApiService) : base(logger)
 		{
-			this._logger = logger;
 			this._configManager = configManager;
 			this._previewService = previewService;
 			this._educationService = educationService;

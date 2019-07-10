@@ -1,21 +1,20 @@
 ﻿using System;
-using NLog;
+using System.Globalization;
 using System.Threading.Tasks;
-using SnilAcademicDepartment.BusinessLogic.Interfaces;
 using System.Web;
 using System.Web.Mvc;
-using System.Globalization;
+using NLog;
+using SnilAcademicDepartment.Base;
+using SnilAcademicDepartment.BusinessLogic.Interfaces;
 
 namespace SnilAcademicDepartment.Controllers
 {
-    public class CookiesController : Controller
-    {
-        private readonly ILogger _logger;
+	public class CookiesController : SnilBaseController
+	{
         private readonly ICookieManager _cookieManager;
 
-        public CookiesController(ILogger logger, ICookieManager cookieManager)
+        public CookiesController(ILogger logger, ICookieManager cookieManager) : base(logger)
         {
-            this._logger = logger;
             this._cookieManager = cookieManager;
         }
 

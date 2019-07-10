@@ -194,6 +194,7 @@
     <Compile Include="App_Start\InjectorConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Base\SnilBaseController.cs" />
     <Compile Include="Controllers\API\MailingController.cs" />
     <Compile Include="Controllers\CookiesController.cs" />
     <Compile Include="Controllers\EducationController.cs" />
@@ -452,9 +453,7 @@
     <Content Include="Views\Education\Diplomas.cshtml" />
     <Content Include="Views\Education\LectionDescription.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\Cookies\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="packages.config">
       <SubType>Designer</SubType>

@@ -1,16 +1,16 @@
-﻿using NLog;
-using SnilAcademicDepartment.BusinessLogic.Interfaces;
+﻿using System.Threading.Tasks;
 using System.Web.Mvc;
+using NLog;
 using Resources;
-using System.Threading.Tasks;
+using SnilAcademicDepartment.Base;
+using SnilAcademicDepartment.BusinessLogic.Interfaces;
 
 namespace SnilAcademicDepartment.Controllers
 {
-    //[Culture]
-    [RoutePrefix("{language}")]
-    public class HomeController : Controller
-    {
-        private readonly ILogger _logger;
+	//[Culture]
+	[RoutePrefix("{language}")]
+    public class HomeController : SnilBaseController
+	{
         private readonly IService _previewService;
 
         /// <summary>
@@ -19,9 +19,8 @@ namespace SnilAcademicDepartment.Controllers
         /// <param name="logger"></param>
         /// <param name="previewService"></param>
         /// <param name="mailSender">Service for sending mail.</param>
-        public HomeController(ILogger logger, IService previewService)
+        public HomeController(ILogger logger, IService previewService) : base(logger)
         {
-            this._logger = logger;
             this._previewService = previewService;
         }
 
