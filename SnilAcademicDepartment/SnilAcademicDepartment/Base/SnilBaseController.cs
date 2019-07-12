@@ -1,4 +1,5 @@
-﻿using System.Web.Mvc;
+﻿using System;
+using System.Web.Mvc;
 using NLog;
 
 namespace SnilAcademicDepartment.Base
@@ -29,9 +30,15 @@ namespace SnilAcademicDepartment.Base
 		/// <param name="filterContext">Information about the current request and action.</param>
 		protected override void OnException(ExceptionContext filterContext)
 		{
-			filterContext.ExceptionHandled = true;
+			if (!filterContext.ExceptionHandled)
+			{
+				filterContext.ExceptionHandled = true;
+			}
 
-			_logger.Error(filterContext.Exception);
+			Exception exception = filterContext.Exception;
+
+			_logger.Error(exception, $"\n\r\n\rError handled into Application_Error handler and logged on the system.\n\r\n\r" +
+				$"Message : {exception.Message}.\n\r\n\r Stack Trace : {exception.StackTrace}\n\r\n\r");
 
 			filterContext.Result = new ViewResult
 			{

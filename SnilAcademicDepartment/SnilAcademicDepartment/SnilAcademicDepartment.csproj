@@ -198,6 +198,7 @@
     <Compile Include="Controllers\API\MailingController.cs" />
     <Compile Include="Controllers\CookiesController.cs" />
     <Compile Include="Controllers\EducationController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\FileController.cs" />
     <Compile Include="Controllers\HistoryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -430,7 +431,7 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Error\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
@@ -443,7 +444,7 @@
     <Content Include="Views\Projects\ProjectPage.cshtml" />
     <Content Include="Views\Education\EducationBlockPage.cshtml" />
     <Content Include="Views\DepartmentStaff\PersonalPage.cshtml" />
-    <Content Include="Views\Shared\SorryUnavaliable.cshtml" />
+    <Content Include="Views\Error\SorryUnavaliable.cshtml" />
     <Content Include="Views\ParticipantsSPMA\ParticipantsSPMA.cshtml" />
     <Content Include="Views\ParticipantsSPMA\SpmaPersonalPage.cshtml" />
     <Content Include="Views\Seminars\SeminarsPage.cshtml" />
