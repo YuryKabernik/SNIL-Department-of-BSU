@@ -1,4 +1,5 @@
-﻿using System.Web.Mvc;
+﻿using System;
+using System.Web.Mvc;
 using NLog;
 
 namespace SnilAcademicDepartment.Filters
@@ -7,11 +8,18 @@ namespace SnilAcademicDepartment.Filters
 	/// Global exceptionn handler.
 	/// </summary>
 	/// <seealso cref="System.Web.Mvc.HandleErrorAttribute" />
-	public class GlobalExceptionHandler : HandleErrorAttribute
+	public class InternalErrorExceptionHandler : HandleErrorAttribute
 	{
+		/// <summary>
+		/// The logger.
+		/// </summary>
 		private ILogger logger;
 
-		public GlobalExceptionHandler(ILogger logger)
+		/// <summary>
+		/// Initializes a new instance of the <see cref="InternalErrorExceptionHandler" /> class.
+		/// </summary>
+		/// <param name="logger">The logger.</param>
+		public InternalErrorExceptionHandler(ILogger logger)
 		{
 			this.logger = logger;
 		}
@@ -23,6 +31,12 @@ namespace SnilAcademicDepartment.Filters
 		/// <param name="filterContext">The action-filter context.</param>
 		public override void OnException(ExceptionContext filterContext)
 		{
+			string messageTemplate =
+				$"\n\r\n\r Error occured at {DateTime.UtcNow} UTC from {filterContext.Controller.ToString()}/" +
+				$"{filterContext.Exception.TargetSite.Name} with stack trace {filterContext.Exception.StackTrace}\n\r\n\r";
+
+			this.logger.Error(filterContext.Exception, messageTemplate);
+
 			base.OnException(filterContext);
 		}
 	}

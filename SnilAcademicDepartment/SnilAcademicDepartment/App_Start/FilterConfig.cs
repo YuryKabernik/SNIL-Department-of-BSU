@@ -9,7 +9,7 @@ namespace SnilAcademicDepartment
     {
         public static void RegisterGlobalFilters(GlobalFilterCollection filters, Container container)
 		{
-			filters.Add(new GlobalExceptionHandler(container.GetInstance<ILogger>()));
+			filters.Add(new InternalErrorExceptionHandler(container.GetInstance<ILogger>()));
 			filters.Add(new CultureAttribute());
 		}
     }
