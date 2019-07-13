@@ -39,7 +39,9 @@ namespace SnilAcademicDepartment
 			this._container = InjectorConfig.Initialize(GlobalConfiguration.Configuration);
 
 			AreaRegistration.RegisterAllAreas();
-			GlobalConfiguration.Configure(WebApiConfig.Register);
+			GlobalConfiguration.Configure(
+				(httpConfiguraton) => WebApiConfig.Register(httpConfiguraton, this._container)
+			);
 			FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters, this._container);
 			RouteConfig.RegisterRoutes(RouteTable.Routes);
 			BundleConfig.RegisterBundles(BundleTable.Bundles);

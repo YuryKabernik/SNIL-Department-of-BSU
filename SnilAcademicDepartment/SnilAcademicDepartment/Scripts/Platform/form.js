@@ -18,8 +18,9 @@
 	}).fail((jqXHR) => {
 		resultTarget.removeClass("hidden");
 		resultTarget.addClass("alert-danger");
-		if (jqXHR.responseJSON) {
-			resultTarget.html(jqXHR.responseJSON.Message);
+		if (jqXHR.responseText) {
+			var response = JSON.parse(jqXHR.responseText);
+			resultTarget.html(response.ResultMessage);
 		} else {
 			resultTarget.html(jqXHR.statusText);
 		}
