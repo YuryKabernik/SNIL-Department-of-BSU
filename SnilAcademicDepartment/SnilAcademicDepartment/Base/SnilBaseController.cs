@@ -42,7 +42,7 @@ namespace SnilAcademicDepartment.Base
 
 			filterContext.Result = new ViewResult
 			{
-				ViewName = "Error"
+				ViewName = "~/Views/Error/Error.cshtml"
 			};
 		}
 	}
