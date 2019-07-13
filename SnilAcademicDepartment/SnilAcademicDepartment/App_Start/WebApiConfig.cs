@@ -1,7 +1,9 @@
 ﻿using System.Web.Http;
+using System.Web.Http.ExceptionHandling;
 using NLog;
 using SimpleInjector;
 using SnilAcademicDepartment.Filters;
+using SnilAcademicDepartment.Http;
 
 namespace SnilAcademicDepartment.App_Start
 {
@@ -17,7 +19,9 @@ namespace SnilAcademicDepartment.App_Start
 		/// <param name="container">The container.</param>
 		public static void Register(HttpConfiguration config, Container container)
 		{
-			config.Filters.Add(new HttpExceptionHandler(container.GetInstance<ILogger>()));
+			//config.Filters.Add(new HttpExceptionFilter(container.GetInstance<ILogger>()));
+
+			config.Services.Replace(typeof(IExceptionHandler), new GlobalHttpExceptionHandler(container.GetInstance<ILogger>()));
 
 			config.MapHttpAttributeRoutes();
 			RegisterRouting(config.Routes);

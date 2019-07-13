@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Net;
 using System.Net.Http;
-using System.Text;
 using System.Web.Helpers;
 using System.Web.Http.Filters;
 using NLog;
@@ -10,7 +9,7 @@ using SnilAcademicDepartment.ViewModels;
 
 namespace SnilAcademicDepartment.Filters
 {
-	public class HttpExceptionHandler : ExceptionFilterAttribute
+	public class HttpExceptionFilter : ExceptionFilterAttribute
 	{
 		/// <summary>
 		/// The logger.
@@ -21,7 +20,7 @@ namespace SnilAcademicDepartment.Filters
 		/// Initializes a new instance of the <see cref="InternalErrorExceptionHandler" /> class.
 		/// </summary>
 		/// <param name="logger">The logger.</param>
-		public HttpExceptionHandler(ILogger logger)
+		public HttpExceptionFilter(ILogger logger)
 		{
 			this.logger = logger;
 		}
@@ -63,7 +62,7 @@ namespace SnilAcademicDepartment.Filters
 					ResultCode = (int)HttpStatusCode.BadRequest,
 					ResultMessage = ContactsResource.MessageSentFailed + ContactsResource.VictorSkakunMail
 				})),
-				ReasonPhrase = $"Internal Server Error. Please Contact {ContactsResource.VictorSkakunMail}."
+				ReasonPhrase = $"Bad request to server. Please Contact {ContactsResource.VictorSkakunMail}."
 			};
 		}
 	}

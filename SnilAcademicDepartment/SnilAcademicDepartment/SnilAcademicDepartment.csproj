@@ -208,13 +208,14 @@
     <Compile Include="Controllers\ProjectsController.cs" />
     <Compile Include="Controllers\SeminarsController.cs" />
     <Compile Include="Filters\CultureAttribute.cs" />
-    <Compile Include="Filters\HttpExceptionHandler.cs" />
+    <Compile Include="Filters\HttpExceptionFilter.cs" />
     <Compile Include="Filters\InternalErrorExceptionHandler.cs" />
     <Compile Include="Filters\HttpCultureAttribute.cs" />
     <Compile Include="Filters\ValidateAntyForgeryToken.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Http\GlobalHttpExceptionHandler.cs" />
     <Compile Include="Resources\HistoryResources\HistoryResource.de.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

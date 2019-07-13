@@ -26,6 +26,7 @@ namespace SnilAcademicDepartment.Controllers
 		[ValidateHttpAntiForgeryToken]
 		public async Task<IHttpActionResult> SendMailMessage([FromBody]ClientMail mail)
 		{
+			throw new Exception();
 			await this._mailSender.SendMailToAdminAsync(mail);
 
 			return this.Ok(new MailingResult
