@@ -1,13 +1,15 @@
-﻿using SnilAcademicDepartment.Filters;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
+using NLog;
+using SimpleInjector;
+using SnilAcademicDepartment.Filters;
 
 namespace SnilAcademicDepartment
 {
-    public class FilterConfig
+	public class FilterConfig
     {
-        public static void RegisterGlobalFilters(GlobalFilterCollection filters)
+        public static void RegisterGlobalFilters(GlobalFilterCollection filters, Container container)
 		{
-			filters.Add(new HandleErrorAttribute());
+			filters.Add(new InternalErrorExceptionHandler(container.GetInstance<ILogger>()));
 			filters.Add(new CultureAttribute());
 		}
     }

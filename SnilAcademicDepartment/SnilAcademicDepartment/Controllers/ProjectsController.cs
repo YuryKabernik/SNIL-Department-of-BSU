@@ -1,21 +1,21 @@
-﻿using NLog;
+﻿using System;
+using System.Collections.Generic;
+using System.Threading;
+using System.Threading.Tasks;
+using System.Web.Mvc;
+using NLog;
+using SnilAcademicDepartment.Base;
 using SnilAcademicDepartment.BusinessLogic.DTOModels;
 using SnilAcademicDepartment.BusinessLogic.Interfaces;
 using SnilAcademicDepartment.Common.ConfigManagerAdapter;
 using SnilAcademicDepartment.Common.Enumerations;
 using SnilAcademicDepartment.Properties;
-using System;
-using System.Collections.Generic;
-using System.Threading;
-using System.Threading.Tasks;
-using System.Web.Mvc;
 
 namespace SnilAcademicDepartment.Controllers
 {
-    [RoutePrefix("{language}")]
-    public class ProjectsController : Controller
-    {
-        private readonly ILogger _logger;
+	[RoutePrefix("{language}")]
+    public class ProjectsController : SnilBaseController
+	{
 		private readonly ISNILConfigurationManager _configManager;
 		private readonly IService _previewService;
         private readonly IProjects _projectsService;
@@ -26,9 +26,13 @@ namespace SnilAcademicDepartment.Controllers
         /// </summary>
         /// <param name="logger"></param>
         /// <param name="projectsService"></param>
-        public ProjectsController(ILogger logger, ISNILConfigurationManager configManager, IService previewService, IProjects projectsService, IProjectsPreview projectsPreview)
+        public ProjectsController(
+			ILogger logger,
+			IService previewService,
+			IProjects projectsService,
+			IProjectsPreview projectsPreview,
+			ISNILConfigurationManager configManager) : base(logger)
         {
-            this._logger = logger;
 			this._configManager = configManager;
 			this._previewService = previewService;
             this._projectsService = projectsService;
@@ -48,27 +52,19 @@ namespace SnilAcademicDepartment.Controllers
 			var start = await this._configManager.GetConfigValueIntAsync(SnilConfigurationSectionKeys.ProjectsPreviewsStartIndexKey);
 			var end = await this._configManager.GetConfigValueIntAsync(SnilConfigurationSectionKeys.ProjectsPreviewsEndIndexKey);
 
-			try
-			{
-                // Get project previews.
-                projectPreview = await this._previewService.GetPagePreviewAsync("Projects", Thread.CurrentThread.CurrentCulture.LCID);
+			// Get project previews.
+			projectPreview = await this._previewService.GetPagePreviewAsync("Projects", Thread.CurrentThread.CurrentCulture.LCID);
 
-                currentPreviews = await this._projectsPreview
-                    .GetProjectsPreviewsAsync<ProjectPreview>(ProjectStatusDTO.Current, start, end, Thread.CurrentThread.CurrentCulture.LCID);
+			currentPreviews = await this._projectsPreview
+				.GetProjectsPreviewsAsync<ProjectPreview>(ProjectStatusDTO.Current, start, end, Thread.CurrentThread.CurrentCulture.LCID);
 
-                //newPreviews = await this._projectsPreview
-                //    .GetProjectsPreviewsAsync<ProjectPreview>(ProjectStatusDTO.New, start, end, Thread.CurrentThread.CurrentCulture.LCID);
+			//newPreviews = await this._projectsPreview
+			//    .GetProjectsPreviewsAsync<ProjectPreview>(ProjectStatusDTO.New, start, end, Thread.CurrentThread.CurrentCulture.LCID);
 
-                finishedPreviews = await this._projectsPreview
-                    .GetProjectsPreviewsAsync<ProjectPreview>(ProjectStatusDTO.Finished, start, end, Thread.CurrentThread.CurrentCulture.LCID);
-            }
-            catch (Exception ex)
-            {
-                return Redirect(this.Request.UrlReferrer?.AbsoluteUri ?? "/");
-            }
+			finishedPreviews = await this._projectsPreview
+				.GetProjectsPreviewsAsync<ProjectPreview>(ProjectStatusDTO.Finished, start, end, Thread.CurrentThread.CurrentCulture.LCID);
 
-            ViewBag.Preview = projectPreview;
-
+			ViewBag.Preview = projectPreview;
             ViewBag.currentPreviews = currentPreviews;
             //ViewBag.newPreviews = newPreviews;
             ViewBag.finishedPreviews = finishedPreviews;

@@ -1,23 +1,23 @@
-﻿using NLog;
-using SnilAcademicDepartment.BusinessLogic.DTOModels;
-using SnilAcademicDepartment.BusinessLogic.Interfaces;
+﻿using System;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Web.Mvc;
-using SnilAcademicDepartment.Resources.UnavaliableErrorResources;
-using SnilAcademicDepartment.Properties;
+using NLog;
 using Resources;
+using SnilAcademicDepartment.Base;
+using SnilAcademicDepartment.BusinessLogic.DTOModels;
+using SnilAcademicDepartment.BusinessLogic.Interfaces;
 using SnilAcademicDepartment.Common.ConfigManagerAdapter;
 using SnilAcademicDepartment.Common.Enumerations.DepartmentStaff;
-using System;
+using SnilAcademicDepartment.Properties;
+using SnilAcademicDepartment.Resources.UnavaliableErrorResources;
 
 namespace SnilAcademicDepartment.Controllers
 {
 	[RoutePrefix("{language}")]
-	public class DepartmentStaffController : Controller
+	public class DepartmentStaffController : SnilBaseController
 	{
-		private readonly ILogger _logger;
 		private readonly ISNILConfigurationManager _configManager;
 		private readonly IPeople _peopleService;
 
@@ -26,9 +26,8 @@ namespace SnilAcademicDepartment.Controllers
 		/// </summary>
 		/// <param name="logger"></param>
 		/// <param name="peopleService"></param>
-		public DepartmentStaffController(ILogger logger, ISNILConfigurationManager configManager, IPeople peopleService)
+		public DepartmentStaffController(ILogger logger, ISNILConfigurationManager configManager, IPeople peopleService) : base(logger)
 		{
-			this._logger = logger;
 			this._configManager = configManager;
 			this._peopleService = peopleService;
 		}

@@ -40,6 +40,9 @@ namespace SnilAcademicDepartment
 						"~/Content/BootstrapCSS/bootstrap-grid.min.css",
 						"~/Content/BootstrapCSS/bootstrap.min.css"));
 
+			//Error page tyles
+			bundles.Add(new StyleBundle("~/Errors/errorpage").Include(
+						"~/Content/Error/ErrorPages.css"));
 			//IndexStyle
 			bundles.Add(new StyleBundle("~/Content/indexcss").Include(
 						"~/Content/IndexStyle.css"));

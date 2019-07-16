@@ -1,18 +1,18 @@
-﻿using NLog;
-using System.Collections.Generic;
-using System.Web.Mvc;
-using SnilAcademicDepartment.BusinessLogic.Interfaces;
-using SnilAcademicDepartment.BusinessLogic.DTOModels;
-using SnilAcademicDepartment.Resources.UnavaliableErrorResources;
+﻿using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Web.Mvc;
+using NLog;
+using SnilAcademicDepartment.Base;
+using SnilAcademicDepartment.BusinessLogic.DTOModels;
+using SnilAcademicDepartment.BusinessLogic.Interfaces;
+using SnilAcademicDepartment.Resources.UnavaliableErrorResources;
 
 namespace SnilAcademicDepartment.Controllers
 {
-    [RoutePrefix("{language}")]
-	public class ParticipantsSPMAController : Controller
-    {
-		private readonly ILogger _logger;
+	[RoutePrefix("{language}")]
+	public class ParticipantsSPMAController : SnilBaseController
+	{
 		private readonly ISpmaParticipants _participantsService;
 
 		/// <summary>
@@ -20,9 +20,8 @@ namespace SnilAcademicDepartment.Controllers
 		/// </summary>
 		/// <param name="logger">The logger.</param>
 		/// <param name="participantsService">The participants service.</param>
-		public ParticipantsSPMAController(ILogger logger, ISpmaParticipants participantsService)
+		public ParticipantsSPMAController(ILogger logger, ISpmaParticipants participantsService) : base(logger)
 		{
-			this._logger = logger;
 			this._participantsService = participantsService;
 		}
 

@@ -1,14 +1,14 @@
-﻿using NLog;
-using SnilAcademicDepartment.BusinessLogic.Interfaces;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using System.Web.Mvc;
+using NLog;
+using SnilAcademicDepartment.Base;
+using SnilAcademicDepartment.BusinessLogic.Interfaces;
 
 namespace SnilAcademicDepartment.Controllers
 {
-    [RoutePrefix("{language}")]
-    public class HistoryController : Controller
-    {
-        private readonly ILogger _logger;
+	[RoutePrefix("{language}")]
+    public class HistoryController : SnilBaseController
+	{
         private readonly IHistory _historyService;
 
         /// <summary>
@@ -16,9 +16,8 @@ namespace SnilAcademicDepartment.Controllers
         /// </summary>
         /// <param name="logger"></param>
         /// <param name="historyService"></param>
-        public HistoryController(ILogger logger, IHistory historyService)
+        public HistoryController(ILogger logger, IHistory historyService) : base(logger)
         {
-            this._logger = logger;
             this._historyService = historyService;
         }
 

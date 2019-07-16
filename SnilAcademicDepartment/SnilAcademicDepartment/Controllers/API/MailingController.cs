@@ -10,8 +10,8 @@ using SnilAcademicDepartment.Resources.ContactsResources;
 
 namespace SnilAcademicDepartment.Controllers
 {
-    public class MailingController : ApiController
-    {
+	public class MailingController : ApiController
+	{
 		private readonly ISendMail _mailSender;
 		private readonly ILogger _logger;
 
@@ -26,18 +26,14 @@ namespace SnilAcademicDepartment.Controllers
 		[ValidateHttpAntiForgeryToken]
 		public async Task<IHttpActionResult> SendMailMessage([FromBody]ClientMail mail)
 		{
-			var mailresult = new MailingResult();
-			try
+			throw new Exception();
+			await this._mailSender.SendMailToAdminAsync(mail);
+
+			return this.Ok(new MailingResult
 			{
-				await this._mailSender.SendMailToAdminAsync(mail);
-				mailresult.ResultCode = 200;
-				mailresult.ResultMessage = ContactsResource.MessageSentSuccess;
-			}
-			catch (Exception)
-			{
-				return this.BadRequest(ContactsResource.MessageSentFailed + ContactsResource.VictorSkakunMail);
-			}
-			return this.Ok(mailresult);
+				ResultCode = 200,
+				ResultMessage = ContactsResource.MessageSentSuccess
+			});
 		}
 	}
 }

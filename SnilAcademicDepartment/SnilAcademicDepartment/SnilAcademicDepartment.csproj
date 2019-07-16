@@ -194,9 +194,11 @@
     <Compile Include="App_Start\InjectorConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Base\SnilBaseController.cs" />
     <Compile Include="Controllers\API\MailingController.cs" />
     <Compile Include="Controllers\CookiesController.cs" />
     <Compile Include="Controllers\EducationController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\FileController.cs" />
     <Compile Include="Controllers\HistoryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -206,11 +208,14 @@
     <Compile Include="Controllers\ProjectsController.cs" />
     <Compile Include="Controllers\SeminarsController.cs" />
     <Compile Include="Filters\CultureAttribute.cs" />
+    <Compile Include="Filters\HttpExceptionFilter.cs" />
+    <Compile Include="Filters\InternalErrorExceptionHandler.cs" />
     <Compile Include="Filters\HttpCultureAttribute.cs" />
     <Compile Include="Filters\ValidateAntyForgeryToken.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Http\GlobalHttpExceptionHandler.cs" />
     <Compile Include="Resources\HistoryResources\HistoryResource.de.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -325,6 +330,7 @@
     <Content Include="Content\BootstrapCSS\bootstrap.css" />
     <Content Include="Content\BootstrapCSS\bootstrap.min.css" />
     <Content Include="Content\Education\EducationStyle.css" />
+    <Content Include="Content\Error\ErrorPages.css" />
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\History\HistoryStyle.css" />
     <Content Include="Content\ContactStyle.css" />
@@ -428,7 +434,7 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Error\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
@@ -441,7 +447,7 @@
     <Content Include="Views\Projects\ProjectPage.cshtml" />
     <Content Include="Views\Education\EducationBlockPage.cshtml" />
     <Content Include="Views\DepartmentStaff\PersonalPage.cshtml" />
-    <Content Include="Views\Shared\SorryUnavaliable.cshtml" />
+    <Content Include="Views\Error\SorryUnavaliable.cshtml" />
     <Content Include="Views\ParticipantsSPMA\ParticipantsSPMA.cshtml" />
     <Content Include="Views\ParticipantsSPMA\SpmaPersonalPage.cshtml" />
     <Content Include="Views\Seminars\SeminarsPage.cshtml" />
@@ -451,9 +457,7 @@
     <Content Include="Views\Education\Diplomas.cshtml" />
     <Content Include="Views\Education\LectionDescription.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\Cookies\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="packages.config">
       <SubType>Designer</SubType>
@@ -556,7 +560,7 @@
     <EmbeddedResource Include="Resources\UnavaliableErrorResources\UnavaliableErrorResource.de.resx" />
     <EmbeddedResource Include="Resources\UnavaliableErrorResources\UnavaliableErrorResource.en.resx" />
     <EmbeddedResource Include="Resources\UnavaliableErrorResources\UnavaliableErrorResource.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>UnavaliableErrorResource.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
