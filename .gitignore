@@ -299,3 +299,4 @@ __pycache__/
 
 # End of https://www.gitignore.io/api/visualstudio
 /SnilAcademicDepartment/web.config
+/SnilAcademicDepartment/SnilAcademicDepartment/Spma_Logs
