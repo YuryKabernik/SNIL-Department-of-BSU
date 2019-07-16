@@ -19,7 +19,8 @@ namespace SnilAcademicDepartment.App_Start
 		/// <param name="container">The container.</param>
 		public static void Register(HttpConfiguration config, Container container)
 		{
-			//config.Filters.Add(new HttpExceptionFilter(container.GetInstance<ILogger>()));
+			config.Filters.Add(new HttpCultureAttribute());
+			config.Filters.Add(new ValidateHttpAntiForgeryToken(container.GetInstance<ILogger>()));
 
 			config.Services.Replace(typeof(IExceptionHandler), new GlobalHttpExceptionHandler(container.GetInstance<ILogger>()));
 

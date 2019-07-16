@@ -1,12 +1,10 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using System.Web.Http;
 using NLog;
 using SnilAcademicDepartment.BusinessLogic.DTOModels;
 using SnilAcademicDepartment.BusinessLogic.Interfaces;
-using SnilAcademicDepartment.Filters;
-using SnilAcademicDepartment.ViewModels;
 using SnilAcademicDepartment.Resources.ContactsResources;
+using SnilAcademicDepartment.ViewModels;
 
 namespace SnilAcademicDepartment.Controllers
 {
@@ -22,8 +20,6 @@ namespace SnilAcademicDepartment.Controllers
 		}
 
 		[HttpPost]
-		[HttpCultureAttribute]
-		[ValidateHttpAntiForgeryToken]
 		public async Task<IHttpActionResult> SendMailMessage([FromBody]ClientMail mail)
 		{
 			await this._mailSender.SendMailToAdminAsync(mail);
