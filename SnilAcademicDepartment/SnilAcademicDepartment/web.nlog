@@ -1,0 +1,24 @@
+﻿<!--If ypu need to configure logger settings, see https://nlog-project.org/config/?tab=targets -->
+<nlog xmlns="http://www.nlog-project.org/schemas/NLog.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" autoReload="false"
+	  throwConfigExceptions="false"
+	  throwExceptions="false">
+	<default-target-parameters xsi:type="File" keepFileOpen="true" openFileCacheTimeout="60" archiveEvery="Month" />
+	<variable name="logDirectory" value="${basedir}/Spma_Logs/${shortdate}/${level}"/>
+	<variable name="archvedLogsDirectory" value="${basedir}/Spma_Logs/Archived/${shortdate}/${level}"/>
+	<targets async="true">
+		<target name="txt_file_log"
+				xsi:type="File"
+				fileName="${var:logDirectory}/SpmaApplicationLog.txt"
+				header="---------------- Start log message: ${longdate} ${level:uppercase=true} ${callsite} ----------------"
+				layout="${message}"
+				footer="---------------- Finish log message: ${longdate} ${callsite} ----------------"
+				archiveFileName="${archvedLogsDirectory}/SpmaSiteLogs.${level}.log"
+				enableArchiveFileCompression="true"
+				archiveDateFormat="MMddyyyy"
+				archiveNumbering="Date"
+				concurrentWrites="false" />
+	</targets>
+	<rules>
+		<logger name="*" minlevel="Debug" writeTo="txt_file_log" />
+	</rules>
+</nlog>
