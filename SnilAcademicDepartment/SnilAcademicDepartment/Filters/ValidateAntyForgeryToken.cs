@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Specialized;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -10,7 +11,7 @@ using System.Web.Helpers;
 using System.Web.Http;
 using System.Web.Http.Controllers;
 using System.Web.Http.Filters;
-using System.Collections.Specialized;
+using NLog;
 using SnilAcademicDepartment.Resources.ContactsResources;
 
 namespace SnilAcademicDepartment.Filters
@@ -19,6 +20,12 @@ namespace SnilAcademicDepartment.Filters
 	{
 		private const string XsrfHeader = "XSRF-TOKEN";
 		private const string XsrfCookie = "xsrf-token";
+		private readonly ILogger _logger;
+
+		public ValidateHttpAntiForgeryToken(ILogger logger)
+		{
+			this._logger = logger;
+		}
 
 		public Task<HttpResponseMessage> ExecuteActionFilterAsync(HttpActionContext actionContext, CancellationToken cancellationToken, Func<Task<HttpResponseMessage>> continuation)
 		{
@@ -41,10 +48,14 @@ namespace SnilAcademicDepartment.Filters
 				}
 				catch (Exception ex)
 				{
+					this._logger.Error(ex, $"Error occured in {ex.Source}. Stack trace: {ex.StackTrace}");
 					throw new HttpResponseException(httpErrorResponseMessage);
 				}
 				return continuation();
 			}
+
+			this._logger.Warn($"Unauthorized User has tried to send message, but the cookie header '{AntiForgeryConfig.CookieName}' didn't found.");
+
 			throw new HttpResponseException(httpErrorResponseMessage);
 		}
 	}
