@@ -50,6 +50,10 @@ namespace SnilAcademicDepartment.Controllers
 			}
 			catch (Exception ex)
 			{
+				string errMessage = $"Department stuff request has been finished by an exception in {ex.TargetSite} with the stack trace: {ex.StackTrace}";
+
+				this._logger.Error(ex, errMessage);
+
 				ViewBag.Title = UnavaliableErrorResource.UnavaliableMessage;
 				return this.View("SorryUnavaliable");
 			}
@@ -66,7 +70,10 @@ namespace SnilAcademicDepartment.Controllers
 		public async Task<ActionResult> PersonalPage(int id)
 		{
 			if (id <= 0)
+			{
+				this._logger.Warn($"Person's Id requsted in PersonalPage is less than zero. Id value: {id}");
 				return this.View("SorryUnavaliable");
+			}
 
 			PersonVM personalInfo = null;
 
@@ -74,8 +81,12 @@ namespace SnilAcademicDepartment.Controllers
 			{
 				personalInfo = await this._peopleService.GetPersonDescriptionAsync(id, Thread.CurrentThread.CurrentCulture.LCID);
 			}
-			catch (System.Exception)
+			catch (Exception ex)
 			{
+				string errMessage = $"Personal page request has been finished by an exception in {ex.TargetSite} with the stack trace: {ex.StackTrace}";
+
+				this._logger.Error(ex, errMessage);
+
 				ViewBag.Title = UnavaliableErrorResource.UnavaliableMessage;
 				return this.View("SorryUnavaliable");
 			}
