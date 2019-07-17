@@ -6,7 +6,6 @@ using NLog;
 using SnilAcademicDepartment.Base;
 using SnilAcademicDepartment.BusinessLogic.DTOModels;
 using SnilAcademicDepartment.BusinessLogic.Interfaces;
-using SnilAcademicDepartment.Resources.UnavaliableErrorResources;
 
 namespace SnilAcademicDepartment.Controllers
 {
@@ -28,19 +27,9 @@ namespace SnilAcademicDepartment.Controllers
 		[HttpGet]
 		[Route("participants")]
 		public async Task<ActionResult> ParticipantsPage()
-        {
-			IEnumerable<SpmaStudent> students;
-			IEnumerable<SpmaPerson> heads;
-			try
-			{
-				students = await this._participantsService.GetStuffStudents(Thread.CurrentThread.CurrentCulture.LCID);
-				heads = await this._participantsService.GetStuffPersonal(Thread.CurrentThread.CurrentCulture.LCID);
-			}
-			catch (System.Exception ex)
-			{
-				ViewBag.Title = UnavaliableErrorResource.UnavaliableMessage;
-				return this.View("~/Views/Error/SorryUnavaliable.cshtml");
-			}
+		{
+			IEnumerable<SpmaStudent> students = await this._participantsService.GetStuffStudents(Thread.CurrentThread.CurrentCulture.LCID);
+			IEnumerable<SpmaPerson> heads = await this._participantsService.GetStuffPersonal(Thread.CurrentThread.CurrentCulture.LCID);
 
 			ViewData.Add("students", students);
 			ViewData.Add("heads", heads);
@@ -52,19 +41,14 @@ namespace SnilAcademicDepartment.Controllers
 		public async Task<ActionResult> SpmaStudentPersonalPage(int id)
 		{
 			if (id <= 0)
-				return Redirect(this.Request.UrlReferrer?.AbsoluteUri ?? "/");
+			{
+				this._logger.Warn($"SpmaStudent's Id requsted in ParticipantsSPMAController is less than zero. Id value: {id}");
+				return this.Redirect(this.Request.UrlReferrer?.AbsoluteUri ?? "/");
+			}
 
 			SpmaStudent personalInfo = null;
 
-			try
-			{
-				personalInfo = await this._participantsService.GetStuffStudentById(id, Thread.CurrentThread.CurrentCulture.LCID);
-			}
-			catch (System.Exception)
-			{
-				ViewBag.Title = UnavaliableErrorResource.UnavaliableMessage;
-				return this.View("~/Views/Error/SorryUnavaliable.cshtml");
-			}
+			personalInfo = await this._participantsService.GetStuffStudentById(id, Thread.CurrentThread.CurrentCulture.LCID);
 
 			ViewData.Model = personalInfo;
 			ViewBag.Title = string.Format("{0}, {1}", personalInfo.SecoundName, personalInfo.FirstName);
@@ -76,19 +60,14 @@ namespace SnilAcademicDepartment.Controllers
 		public async Task<ActionResult> SpmaStuffPersonalPage(int id)
 		{
 			if (id <= 0)
-				return Redirect(this.Request.UrlReferrer?.AbsoluteUri ?? "/");
+			{
+				this._logger.Warn($"SpmaStuff's Id requsted in ParticipantsSPMAController is less than zero. Id value: {id}");
+				return this.Redirect(this.Request.UrlReferrer?.AbsoluteUri ?? "/");
+			}
 
 			SpmaPerson personalInfo = null;
 
-			try
-			{
-				personalInfo = await this._participantsService.GetStuffPersonById(id, Thread.CurrentThread.CurrentCulture.LCID);
-			}
-			catch (System.Exception)
-			{
-				ViewBag.Title = UnavaliableErrorResource.UnavaliableMessage;
-				return this.View("~/Views/Error/SorryUnavaliable.cshtml");
-			}
+			personalInfo = await this._participantsService.GetStuffPersonById(id, Thread.CurrentThread.CurrentCulture.LCID);
 
 			ViewData.Model = personalInfo;
 			ViewBag.Title = string.Format("{0}, {1}", personalInfo.SecoundName, personalInfo.PersonName);

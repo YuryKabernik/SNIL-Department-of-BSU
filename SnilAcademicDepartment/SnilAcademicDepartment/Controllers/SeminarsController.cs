@@ -49,15 +49,7 @@ namespace SnilAcademicDepartment.Controllers
 
 			var numberOfSeminars = await this._configManager.GetConfigValueIntAsync(SnilConfigurationSectionKeys.NumberOfSeminarsOnPageSeminarsKey);
 
-			try
-			{
-				seninarsPreviewsModels = await this._seminarPreviewService.GetSeminarPreviewsAsync<SeminarPreview>(numberOfSeminars, Thread.CurrentThread.CurrentCulture.LCID);
-			}
-			catch (Exception)
-			{
-				ViewBag.Title = UnavaliableErrorResource.UnavaliableMessage;
-				return View("SorryUnavaliable");
-			}
+			seninarsPreviewsModels = await this._seminarPreviewService.GetSeminarPreviewsAsync<SeminarPreview>(numberOfSeminars, Thread.CurrentThread.CurrentCulture.LCID);
 
 			ViewBag.Title = "Seminars";
 			ViewBag.EducationResourseTitle = EducationResource.Seminars;

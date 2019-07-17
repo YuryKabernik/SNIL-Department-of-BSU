@@ -50,7 +50,7 @@ namespace SnilAcademicDepartment.Controllers
 			}
 			catch (Exception ex)
 			{
-				string errMessage = $"Department stuff request has been finished by an exception in {ex.TargetSite} with the stack trace: {ex.StackTrace}";
+				string errMessage = $"Department stuff request has been failed by an exception in {ex.TargetSite} with the stack trace: {ex.StackTrace}";
 
 				this._logger.Error(ex, errMessage);
 
@@ -83,7 +83,7 @@ namespace SnilAcademicDepartment.Controllers
 			}
 			catch (Exception ex)
 			{
-				string errMessage = $"Personal page request has been finished by an exception in {ex.TargetSite} with the stack trace: {ex.StackTrace}";
+				string errMessage = $"Personal page request has been failed by an exception in {ex.TargetSite} with the stack trace: {ex.StackTrace}";
 
 				this._logger.Error(ex, errMessage);
 

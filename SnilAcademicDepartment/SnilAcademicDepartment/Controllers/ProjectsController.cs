@@ -14,40 +14,39 @@ using SnilAcademicDepartment.Properties;
 namespace SnilAcademicDepartment.Controllers
 {
 	[RoutePrefix("{language}")]
-    public class ProjectsController : SnilBaseController
+	public class ProjectsController : SnilBaseController
 	{
 		private readonly ISNILConfigurationManager _configManager;
 		private readonly IService _previewService;
-        private readonly IProjects _projectsService;
-        private readonly IProjectsPreview _projectsPreview;
+		private readonly IProjects _projectsService;
+		private readonly IProjectsPreview _projectsPreview;
 
-        /// <summary>
-        /// Constructor of the ProjectsController.
-        /// </summary>
-        /// <param name="logger"></param>
-        /// <param name="projectsService"></param>
-        public ProjectsController(
+		/// <summary>
+		/// Constructor of the ProjectsController.
+		/// </summary>
+		/// <param name="logger"></param>
+		/// <param name="projectsService"></param>
+		public ProjectsController(
 			ILogger logger,
 			IService previewService,
 			IProjects projectsService,
 			IProjectsPreview projectsPreview,
 			ISNILConfigurationManager configManager) : base(logger)
-        {
+		{
 			this._configManager = configManager;
 			this._previewService = previewService;
-            this._projectsService = projectsService;
-            this._projectsPreview = projectsPreview;
-        }
+			this._projectsService = projectsService;
+			this._projectsPreview = projectsPreview;
+		}
 
-        [HttpGet]
-        [Route("projects")]
-        public async Task<ActionResult> Projects()
-        {
+		[HttpGet]
+		[Route("projects")]
+		public async Task<ActionResult> Projects()
+		{
 			PreViewModel projectPreview = null;
 
 			IEnumerable<ProjectPreview> currentPreviews = null;
-            //IEnumerable<ProjectPreview> newPreviews = null;
-            IEnumerable<ProjectPreview> finishedPreviews = null;
+			IEnumerable<ProjectPreview> finishedPreviews = null;
 
 			var start = await this._configManager.GetConfigValueIntAsync(SnilConfigurationSectionKeys.ProjectsPreviewsStartIndexKey);
 			var end = await this._configManager.GetConfigValueIntAsync(SnilConfigurationSectionKeys.ProjectsPreviewsEndIndexKey);
@@ -62,101 +61,106 @@ namespace SnilAcademicDepartment.Controllers
 				.GetProjectsPreviewsAsync<ProjectPreview>(ProjectStatusDTO.Finished, start, end, Thread.CurrentThread.CurrentCulture.LCID);
 
 			ViewBag.Preview = projectPreview;
-            ViewBag.currentPreviews = currentPreviews;
-            //ViewBag.newPreviews = newPreviews;
-            ViewBag.finishedPreviews = finishedPreviews;
+			ViewBag.currentPreviews = currentPreviews;
+			ViewBag.finishedPreviews = finishedPreviews;
 
-            return View();
-        }
+			return View();
+		}
 
-        [HttpGet]
-        [Route("new")]
-        public async Task<ActionResult> PageNew(int id)
-        {
-            ProjectModel projectModel = null;
-            IEnumerable<ProjectPreview> newPreviews = null;
-
-			var start = await this._configManager.GetConfigValueIntAsync(SnilConfigurationSectionKeys.ProjectPagePreviewsStartIndexKey);
-			var end = await this._configManager.GetConfigValueIntAsync(SnilConfigurationSectionKeys.ProjectPagePreviewsEndIndexKey);
-
-			try
-			{
-                projectModel = this._projectsService.GetProjectById(id, Thread.CurrentThread.CurrentCulture.LCID);
-
-                newPreviews = await this._projectsPreview
-                    .GetProjectsPreviewsAsync<ProjectPreview>(ProjectStatusDTO.New, start, end, Thread.CurrentThread.CurrentCulture.LCID);
-
-            }
-            catch (Exception )
-            {
-                return Redirect(this.Request.UrlReferrer?.AbsoluteUri ?? "/");
-            }
-
-            ViewBag.Title = projectModel.ProjectTitle;
-            ViewBag.Project = projectModel;
-            ViewBag.Previews = newPreviews;
-
-            return View("ProjectPage");
-        }
-
-        [HttpGet]
-        [Route("finished")]
-        public async Task<ActionResult> PageFinished(int id)
-        {
-            ProjectModel projectModel = null;
-            IEnumerable<ProjectPreview> finishedPreviews = null;
-
-			var start = await  this._configManager.GetConfigValueIntAsync(SnilConfigurationSectionKeys.ProjectPagePreviewsStartIndexKey);
-			var end = await this._configManager.GetConfigValueIntAsync(SnilConfigurationSectionKeys.ProjectPagePreviewsEndIndexKey);
-
-			try
-			{
-                projectModel = this._projectsService.GetProjectById(id, Thread.CurrentThread.CurrentCulture.LCID);
-
-                finishedPreviews = await this._projectsPreview
-                    .GetProjectsPreviewsAsync<ProjectPreview>(ProjectStatusDTO.Finished, start, end, Thread.CurrentThread.CurrentCulture.LCID);
-
-            }
-            catch (Exception)
-            {
-                return Redirect(this.Request.UrlReferrer?.AbsoluteUri ?? "/");
-            }
-
-            ViewBag.Title = projectModel.ProjectTitle;
-            ViewBag.Project = projectModel;
-            ViewBag.Previews = finishedPreviews;
-
-            return View("ProjectPage");
-        }
-
-        [HttpGet]
-        [Route("current")]
-        public async Task<ActionResult> PageCurrent(int id)
-        {
-            ProjectModel projectModel = null;
-            IEnumerable<ProjectPreview> currentPreviews = null;
+		[HttpGet]
+		[Route("new")]
+		public async Task<ActionResult> PageNew(int id)
+		{
+			ProjectModel projectModel = null;
+			IEnumerable<ProjectPreview> newPreviews = null;
 
 			var start = await this._configManager.GetConfigValueIntAsync(SnilConfigurationSectionKeys.ProjectPagePreviewsStartIndexKey);
 			var end = await this._configManager.GetConfigValueIntAsync(SnilConfigurationSectionKeys.ProjectPagePreviewsEndIndexKey);
 
 			try
 			{
-                projectModel = this._projectsService.GetProjectById(id, Thread.CurrentThread.CurrentCulture.LCID);
+				projectModel = this._projectsService.GetProjectById(id, Thread.CurrentThread.CurrentCulture.LCID);
+				newPreviews = await this._projectsPreview
+					.GetProjectsPreviewsAsync<ProjectPreview>(ProjectStatusDTO.New, start, end, Thread.CurrentThread.CurrentCulture.LCID);
+			}
+			catch (Exception ex)
+			{
+				string errMessage = $"NewProjects page request has been failed by an exception in {ex.TargetSite} with the stack trace: {ex.StackTrace}";
 
-                currentPreviews = await this._projectsPreview
-                   .GetProjectsPreviewsAsync<ProjectPreview>(ProjectStatusDTO.Current, start, end, Thread.CurrentThread.CurrentCulture.LCID);
+				this._logger.Error(ex, errMessage);
 
-            }
-            catch (Exception)
-            {
-                return Redirect(this.Request.UrlReferrer?.AbsoluteUri ?? "/");
-            }
+				return Redirect(this.Request.UrlReferrer?.AbsoluteUri ?? "/");
+			}
 
-            ViewBag.Title = projectModel.ProjectTitle;
-            ViewBag.Project = projectModel;
-            ViewBag.Previews = currentPreviews;
+			ViewBag.Title = projectModel.ProjectTitle;
+			ViewBag.Project = projectModel;
+			ViewBag.Previews = newPreviews;
 
-            return View("ProjectPage");
-        }
-    }
+			return View("ProjectPage");
+		}
+
+		[HttpGet]
+		[Route("finished")]
+		public async Task<ActionResult> PageFinished(int id)
+		{
+			ProjectModel projectModel = null;
+			IEnumerable<ProjectPreview> finishedPreviews = null;
+
+			var start = await this._configManager.GetConfigValueIntAsync(SnilConfigurationSectionKeys.ProjectPagePreviewsStartIndexKey);
+			var end = await this._configManager.GetConfigValueIntAsync(SnilConfigurationSectionKeys.ProjectPagePreviewsEndIndexKey);
+
+			try
+			{
+				projectModel = this._projectsService.GetProjectById(id, Thread.CurrentThread.CurrentCulture.LCID);
+				finishedPreviews = await this._projectsPreview
+					.GetProjectsPreviewsAsync<ProjectPreview>(ProjectStatusDTO.Finished, start, end, Thread.CurrentThread.CurrentCulture.LCID);
+			}
+			catch (Exception ex)
+			{
+				string errMessage = $"FinishedProjects page request has been failed by an exception in {ex.TargetSite} with the stack trace: {ex.StackTrace}";
+
+				this._logger.Error(ex, errMessage);
+
+				return Redirect(this.Request.UrlReferrer?.AbsoluteUri ?? "/");
+			}
+
+			ViewBag.Title = projectModel.ProjectTitle;
+			ViewBag.Project = projectModel;
+			ViewBag.Previews = finishedPreviews;
+
+			return View("ProjectPage");
+		}
+
+		[HttpGet]
+		[Route("current")]
+		public async Task<ActionResult> PageCurrent(int id)
+		{
+			ProjectModel projectModel = null;
+			IEnumerable<ProjectPreview> currentPreviews = null;
+
+			var start = await this._configManager.GetConfigValueIntAsync(SnilConfigurationSectionKeys.ProjectPagePreviewsStartIndexKey);
+			var end = await this._configManager.GetConfigValueIntAsync(SnilConfigurationSectionKeys.ProjectPagePreviewsEndIndexKey);
+
+			try
+			{
+				projectModel = this._projectsService.GetProjectById(id, Thread.CurrentThread.CurrentCulture.LCID);
+				currentPreviews = await this._projectsPreview
+				   .GetProjectsPreviewsAsync<ProjectPreview>(ProjectStatusDTO.Current, start, end, Thread.CurrentThread.CurrentCulture.LCID);
+			}
+			catch (Exception ex)
+			{
+				string errMessage = $"CurrentProjects page request has been failed by an exception in {ex.TargetSite} with the stack trace: {ex.StackTrace}";
+
+				this._logger.Error(ex, errMessage);
+
+				return Redirect(this.Request.UrlReferrer?.AbsoluteUri ?? "/");
+			}
+
+			ViewBag.Title = projectModel.ProjectTitle;
+			ViewBag.Project = projectModel;
+			ViewBag.Previews = currentPreviews;
+
+			return View("ProjectPage");
+		}
+	}
 }

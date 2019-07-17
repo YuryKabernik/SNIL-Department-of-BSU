@@ -83,6 +83,11 @@ namespace SnilAcademicDepartment.Controllers
 			}
 			catch (Exception ex)
 			{
+				string errMessage = $"An exception error occured in PageDiploma with the stack trace: {ex.StackTrace}." +
+					$"An inner exception stack trace: {ex.InnerException.StackTrace}";
+
+				this._logger.Error(ex, errMessage);
+
 				ViewBag.Title = UnavaliableErrorResource.UnavaliableMessage;
 				return this.View("~/Views/Error/SorryUnavaliable.cshtml");
 			}
@@ -105,6 +110,11 @@ namespace SnilAcademicDepartment.Controllers
 			}
 			catch (Exception ex)
 			{
+				string errMessage = $"An exception error occured in PageLectures with the stack trace: {ex.StackTrace}." +
+					$"An inner exception stack trace: {ex.InnerException.StackTrace}";
+
+				this._logger.Error(ex, errMessage);
+
 				ViewBag.Title = UnavaliableErrorResource.UnavaliableMessage;
 				return this.View("~/Views/Error/SorryUnavaliable.cshtml");
 			}
