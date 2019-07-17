@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Web.Mvc;
 using NLog;
+using SnilAcademicDepartment.Resources.UnavaliableErrorResources;
 
 namespace SnilAcademicDepartment.Base
 {
@@ -37,12 +38,13 @@ namespace SnilAcademicDepartment.Base
 
 			Exception exception = filterContext.Exception;
 
-			_logger.Error(exception, $"\n\r\n\rError handled into Application_Error handler and logged on the system.\n\r\n\r" +
+			_logger.Error(exception, $"\n\r\n\rError has been handled in OnException handler of {this} and logged on the system.\n\r\n\r" +
 				$"Message : {exception.Message}.\n\r\n\r Stack Trace : {exception.StackTrace}\n\r\n\r");
 
+			filterContext.Controller.ViewBag.Title = UnavaliableErrorResource.UnavaliableMessage;
 			filterContext.Result = new ViewResult
 			{
-				ViewName = "~/Views/Error/Error.cshtml"
+				ViewName = "~/Views/Error/SorryUnavaliable.cshtml"
 			};
 		}
 	}
