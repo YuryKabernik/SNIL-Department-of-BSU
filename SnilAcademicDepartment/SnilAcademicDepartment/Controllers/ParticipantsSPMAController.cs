@@ -39,12 +39,12 @@ namespace SnilAcademicDepartment.Controllers
 			catch (System.Exception ex)
 			{
 				ViewBag.Title = UnavaliableErrorResource.UnavaliableMessage;
-				return View("SorryUnavaliable");
+				return this.View("~/Views/Error/SorryUnavaliable.cshtml");
 			}
 
 			ViewData.Add("students", students);
 			ViewData.Add("heads", heads);
-			return View("ParticipantsSPMA");
+			return this.View("ParticipantsSPMA");
 		}
 
 		[HttpGet]
@@ -63,12 +63,12 @@ namespace SnilAcademicDepartment.Controllers
 			catch (System.Exception)
 			{
 				ViewBag.Title = UnavaliableErrorResource.UnavaliableMessage;
-				return View("SorryUnavaliable");
+				return this.View("~/Views/Error/SorryUnavaliable.cshtml");
 			}
 
 			ViewData.Model = personalInfo;
 			ViewBag.Title = string.Format("{0}, {1}", personalInfo.SecoundName, personalInfo.FirstName);
-			return View("SpmaPersonalPage");
+			return this.View("SpmaPersonalPage");
 		}
 
 		[HttpGet]
@@ -87,12 +87,12 @@ namespace SnilAcademicDepartment.Controllers
 			catch (System.Exception)
 			{
 				ViewBag.Title = UnavaliableErrorResource.UnavaliableMessage;
-				return View("SorryUnavaliable");
+				return this.View("~/Views/Error/SorryUnavaliable.cshtml");
 			}
 
 			ViewData.Model = personalInfo;
 			ViewBag.Title = string.Format("{0}, {1}", personalInfo.SecoundName, personalInfo.PersonName);
-			return View("SpmaPersonalPage");
+			return this.View("SpmaPersonalPage");
 		}
 	}
 }

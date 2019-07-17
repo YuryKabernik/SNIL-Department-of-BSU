@@ -55,7 +55,7 @@ namespace SnilAcademicDepartment.Controllers
 				this._logger.Error(ex, errMessage);
 
 				ViewBag.Title = UnavaliableErrorResource.UnavaliableMessage;
-				return this.View("SorryUnavaliable");
+				return this.View("~/Views/Error/SorryUnavaliable.cshtml");
 			}
 
 			ViewData["leaders"] = leaders;
@@ -72,7 +72,7 @@ namespace SnilAcademicDepartment.Controllers
 			if (id <= 0)
 			{
 				this._logger.Warn($"Person's Id requsted in PersonalPage is less than zero. Id value: {id}");
-				return this.View("SorryUnavaliable");
+				return this.View("~/Views/Error/SorryUnavaliable.cshtml");
 			}
 
 			PersonVM personalInfo = null;
@@ -88,7 +88,7 @@ namespace SnilAcademicDepartment.Controllers
 				this._logger.Error(ex, errMessage);
 
 				ViewBag.Title = UnavaliableErrorResource.UnavaliableMessage;
-				return this.View("SorryUnavaliable");
+				return this.View("~/Views/Error/SorryUnavaliable.cshtml");
 			}
 
 			ViewData.Model = personalInfo;

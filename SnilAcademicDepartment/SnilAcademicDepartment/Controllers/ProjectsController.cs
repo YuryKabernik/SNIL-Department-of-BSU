@@ -58,9 +58,6 @@ namespace SnilAcademicDepartment.Controllers
 			currentPreviews = await this._projectsPreview
 				.GetProjectsPreviewsAsync<ProjectPreview>(ProjectStatusDTO.Current, start, end, Thread.CurrentThread.CurrentCulture.LCID);
 
-			//newPreviews = await this._projectsPreview
-			//    .GetProjectsPreviewsAsync<ProjectPreview>(ProjectStatusDTO.New, start, end, Thread.CurrentThread.CurrentCulture.LCID);
-
 			finishedPreviews = await this._projectsPreview
 				.GetProjectsPreviewsAsync<ProjectPreview>(ProjectStatusDTO.Finished, start, end, Thread.CurrentThread.CurrentCulture.LCID);
 

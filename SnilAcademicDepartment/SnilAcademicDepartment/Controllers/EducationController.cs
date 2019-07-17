@@ -55,24 +55,10 @@ namespace SnilAcademicDepartment.Controllers
 		[Route("education")]
 		public async Task<ActionResult> Education()
 		{
-			PreViewModel viewModel = null;
-			List<EducationBlockModel> blockCollection = null;
+			int numberOfElements = await this._configManager.GetConfigValueIntAsync(SnilConfigurationSectionKeys.NumberOfKeyAreasOnEducationPageKey);
 
-			var numberOfElements = await this._configManager.GetConfigValueIntAsync(SnilConfigurationSectionKeys.NumberOfKeyAreasOnEducationPageKey);
-
-			try
-			{
-				// Get page preview data.
-				viewModel = await this._previewService.GetPagePreviewAsync("Education", Thread.CurrentThread.CurrentCulture.LCID);
-
-				// Get educatio key areas.
-				blockCollection = await this._educationService.GetKeyAreasAsync(numberOfElements, Thread.CurrentThread.CurrentCulture.LCID);
-			}
-			catch (Exception ex)
-			{
-				ViewBag.ErrorMessage = "Sorry, but education page is not avaliable now :( \n Try again later!";
-				return View("Error");
-			}
+			PreViewModel viewModel = await this._previewService.GetPagePreviewAsync("Education", Thread.CurrentThread.CurrentCulture.LCID);
+			List<EducationBlockModel> blockCollection = await this._educationService.GetKeyAreasAsync(numberOfElements, Thread.CurrentThread.CurrentCulture.LCID);
 
 			int i = 1;
 			foreach (var item in blockCollection)
@@ -98,7 +84,7 @@ namespace SnilAcademicDepartment.Controllers
 			catch (Exception ex)
 			{
 				ViewBag.Title = UnavaliableErrorResource.UnavaliableMessage;
-				return View("SorryUnavaliable");
+				return this.View("~/Views/Error/SorryUnavaliable.cshtml");
 			}
 
 			ViewData.Add("diplomas", viewModel);
@@ -120,7 +106,7 @@ namespace SnilAcademicDepartment.Controllers
 			catch (Exception ex)
 			{
 				ViewBag.Title = UnavaliableErrorResource.UnavaliableMessage;
-				return View("SorryUnavaliable");
+				return this.View("~/Views/Error/SorryUnavaliable.cshtml");
 			}
 
 			ViewBag.Title = "Lections";
