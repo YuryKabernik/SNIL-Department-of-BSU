@@ -52,23 +52,19 @@
 @helper Table(string dataName)
 {
 	<tbody>
-		@{  if (ViewData[$"{dataName}"] is IEnumerable<SpmaStudent>)
-            {
-                IEnumerable<SpmaStudent> students = (IEnumerable<SpmaStudent>)ViewData["students"];
-                SpmaStudent prev_student = null;
-                foreach (var item in students)
-                {
-                    if (prev_student != null && item.FirstName == prev_student.FirstName && item.SecoundName == prev_student.SecoundName)  //added because of strange duplicates of students
-                    {
-                        continue;
-                    }
-                    var imgSrc = Url.Action("GetImage", new { controller = "Image", id = item.ImageId });
+		@{
+			if (ViewData[$"{dataName}"] is IEnumerable<SpmaStudent>)
+			{
+				IEnumerable<SpmaStudent> students = (IEnumerable<SpmaStudent>)ViewData["students"];
+				foreach (var item in students)
+				{
+					var imgSrc = Url.Action("GetImage", new { controller = "Image", id = item.ImageId });
 					<tr>
 						<td class="bsu_photo">
 							<img src="@imgSrc" title="@string.Join(" ", item.SecoundName, item.FirstName)" />
 						</td>
 						<td class="bsu_fullName">
-							<span>@string.Join(" ", item.FirstName, item.SecoundName, item.LastName)</span>
+							<span>@string.Join(" ", item.SecoundName, item.FirstName, item.LastName)</span>
 						</td>
 						@*<td class="bsu_studentType">
 							@item.StudentsType
@@ -100,17 +96,16 @@
 							}
 						</td>
 					</tr>
-                    prev_student = item;
-                }
-            }
-            else
-            if (ViewData[$"{dataName}"] is IEnumerable<SpmaPerson>)
-            {
-                IEnumerable<SpmaPerson> stuff = (IEnumerable<SpmaPerson>)ViewData[$"{dataName}"];
-                foreach (var item in stuff)
-                {
-                    var imgSrc = Url.Action("GetImage", new { controller = "Image", id = item.ImageId });
-                    var personalPageLink = Url.Action("SpmaStuffPersonalPage", new { controller= "ParticipantsSPMA", id = item.Id });
+				}
+			}
+			else
+			if (ViewData[$"{dataName}"] is IEnumerable<SpmaPerson>)
+			{
+				IEnumerable<SpmaPerson> stuff = (IEnumerable<SpmaPerson>)ViewData[$"{dataName}"];
+				foreach (var item in stuff)
+				{
+					var imgSrc = Url.Action("GetImage", new { controller = "Image", id = item.ImageId });
+					var personalPageLink = Url.Action("SpmaStuffPersonalPage", new { controller= "ParticipantsSPMA", id = item.Id });
 					<tr>
 						<td class="bsu_photo">
 							<a href="@personalPageLink">

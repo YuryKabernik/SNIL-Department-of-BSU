@@ -11,23 +11,23 @@ html {
 }
 .header {
     background-color: #0A366D;
-    padding-top: 18px;
-    padding-bottom: 24px;
+    padding-top: 20px;
+    padding-bottom: 30px;
 }
 .header .header-container{
 	max-width: 90%;
 }
 .header .header-container .logo {
 	margin: 10px;
-    height: 80px;
-    float: left;
+  height: 80px;
+  float: left;
 }
 .header .header-container .logo img{
-    height: 100%;
+  height: 100%;
 }
 .header .header-container .signin {
-    float: right;
-    margin-top: 20px;
+  float: right;
+  margin-top: 20px;
 }
 .header .header-container form {
     margin-top: 10px;
@@ -60,18 +60,6 @@ html {
 	display: block;
 	text-align: center;
 	text-decoration: none;
-}
-.spma_title .title {
-    float: left;
-    text-align: center;
-    margin-top: 0px;
-    padding: 4px 18px;
-    font-family: fantasy;
-    color: white;
-}
-.langswitch {
-    float: right;
-    margin-top: 44px;
 }
 .nav {
 	width: 100%;

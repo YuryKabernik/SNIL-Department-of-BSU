@@ -1,6 +1,11 @@
+.spma_title .title {
+	text-align: center;
+	padding: 10px 12px;
+	font-family: fantasy;
+}
 .content .container .rowimg {
-    background-color: #0A366D;
-    margin-bottom: 55px;
+  background-color: #0A366D;
+  margin-bottom: 55px;
 }
 .content .container .rowimg .carousel-inner > .item > img,
 .content .container .rowimg .carousel-inner > .item > a > img {

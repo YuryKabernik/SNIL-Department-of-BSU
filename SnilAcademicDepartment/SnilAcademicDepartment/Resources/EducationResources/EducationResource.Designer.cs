@@ -79,15 +79,6 @@ namespace SnilAcademicDepartment.Resources.EducationResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Дипломная работа.
-        /// </summary>
-        public static string Dimplom {
-            get {
-                return ResourceManager.GetString("Dimplom", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Дипломные и магистерские работы.
         /// </summary>
         public static string Diploma {
@@ -151,15 +142,6 @@ namespace SnilAcademicDepartment.Resources.EducationResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Курсовая работа.
-        /// </summary>
-        public static string Kurs {
-            get {
-                return ResourceManager.GetString("Kurs", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Лекции.
         /// </summary>
         public static string Lectures {
@@ -174,15 +156,6 @@ namespace SnilAcademicDepartment.Resources.EducationResources {
         public static string LectureSpeaker {
             get {
                 return ResourceManager.GetString("LectureSpeaker", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Магистерская диссертация.
-        /// </summary>
-        public static string Master {
-            get {
-                return ResourceManager.GetString("Master", resourceCulture);
             }
         }
         
@@ -246,15 +219,6 @@ namespace SnilAcademicDepartment.Resources.EducationResources {
         public static string Topic {
             get {
                 return ResourceManager.GetString("Topic", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to .
-        /// </summary>
-        public static string Unknown {
-            get {
-                return ResourceManager.GetString("Unknown", resourceCulture);
             }
         }
     }

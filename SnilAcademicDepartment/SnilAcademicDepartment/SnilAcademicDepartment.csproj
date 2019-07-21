@@ -368,13 +368,11 @@
     <Content Include="img\DSC_3607.JPG" />
     <Content Include="img\Carousel\cooperation.jpg" />
     <Content Include="img\Germany-flag-icon.png" />
-    <Content Include="img\IEEEonSPMA.JPG" />
     <Content Include="img\IEEE_BSU_SB_2004.png" />
     <Content Include="img\IMG_0004.JPG" />
     <Content Include="img\IMG_3485.JPG" />
     <Content Include="img\IMG_4660.jpg" />
     <Content Include="img\immunohist.png" />
-    <Content Include="img\ITEDS2010Common.jpg" />
     <Content Include="img\language-solid.svg" />
     <Content Include="img\RNAExplorer.png" />
     <Content Include="img\Science.png" />
@@ -402,7 +400,7 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Content\History\presentations_list.pdf" />
-    <Content Include="img\SPMATeam.JPG" />
+    <Content Include="libman.json" />
     <Content Include="Content\BootstrapCSS\bootstrap-theme.css.map" />
     <Content Include="Content\BootstrapCSS\bootstrap-theme.min.css.map" />
     <Content Include="Content\BootstrapCSS\bootstrap.css.map" />

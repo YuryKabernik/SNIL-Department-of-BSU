@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Web.Mvc;
 using NLog;
-using Resources;
-using SnilAcademicDepartment.Resources.ContactsResources;
 using SnilAcademicDepartment.Resources.UnavaliableErrorResources;
 
 namespace SnilAcademicDepartment.Base
@@ -43,14 +41,11 @@ namespace SnilAcademicDepartment.Base
 			_logger.Error(exception, $"\n\r\n\rError has been handled in OnException handler of {this} and logged on the system.\n\r\n\r" +
 				$"Message : {exception.Message}.\n\r\n\r Stack Trace : {exception.StackTrace}\n\r\n\r");
 
-			ViewResult unavailableViewResult = new ViewResult
+			filterContext.Controller.ViewBag.Title = UnavaliableErrorResource.UnavaliableMessage;
+			filterContext.Result = new ViewResult
 			{
 				ViewName = "~/Views/Error/SorryUnavaliable.cshtml"
 			};
-			unavailableViewResult.ViewBag.Title = Resource.Error;
-			unavailableViewResult.ViewData["ErrorMessage"] = $"{UnavaliableErrorResource.UnavaliableMessage} {UnavaliableErrorResource.ContactWithLabel} {ContactsResource.VictorSkakunMail}";
-
-			filterContext.Result = unavailableViewResult;
 		}
 	}
 }

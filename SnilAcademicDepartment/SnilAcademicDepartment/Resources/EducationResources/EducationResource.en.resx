@@ -156,16 +156,4 @@
   <data name="Specialization" xml:space="preserve">
     <value>Specialization</value>
   </data>
-  <data name="Dimplom" xml:space="preserve">
-    <value>Diploma work</value>
-  </data>
-  <data name="Kurs" xml:space="preserve">
-    <value>Course work</value>
-  </data>
-  <data name="Master" xml:space="preserve">
-    <value>Master work</value>
-  </data>
-  <data name="Unknown" xml:space="preserve">
-    <value />
-  </data>
 </root>
