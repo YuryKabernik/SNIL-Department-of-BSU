@@ -12,22 +12,28 @@
 </head>
 <body>
 	<div class=header>
-		<div class="container header-container">
-			@{
-				var url = Url.RouteUrl(new { action = "Index", controller = "Home", });
-				<a class="logo" href="@url">
-					<img src="~/img/BSU.png" title="@Resources.Resource.IndexHeader"/>
-				</a>
-			}
-			<div class="dropdown" style="float:right;">
-				<button class="dropbtn"></button>
-				<div class="dropdown-content">
-					@Html.ActionLink("Русский", "ChangeCulture", new { controller = "Cookies", lang = "ru" })
-					@Html.ActionLink("English", "ChangeCulture", new { controller = "Cookies", lang = "en" })
-					@Html.ActionLink("Deutsch", "ChangeCulture", new { controller = "Cookies", lang = "de" })
-				</div>
-			</div>
-		</div>
+        <div class="container header-container">
+            @{
+                var url = Url.RouteUrl(new { action = "Index", controller = "Home", });
+                <a class="logo" href="@url">
+                    <img src="~/img/BSU.png" title="@Resources.Resource.IndexHeader" />
+                </a>
+            }
+            <div class="spma_title">
+                <div class="title">
+                    <h3 style="margin-bottom:0px">@Resources.Resource.Title1<br /><span style="font-size:30px">@Resources.Resource.Title2</span></h3><br />
+                    <h3 style="margin-top:0px;margin-bottom:0px">@Resources.Resource.Department</h3>
+                </div>
+            </div>
+            <div class="dropdown langswitch">
+                <button class="dropbtn"></button>
+                <div class="dropdown-content">
+                    @Html.ActionLink("Русский", "ChangeCulture", new { controller = "Cookies", lang = "ru" })
+                    @Html.ActionLink("English", "ChangeCulture", new { controller = "Cookies", lang = "en" })
+                    @Html.ActionLink("Deutsch", "ChangeCulture", new { controller = "Cookies", lang = "de" })
+                </div>
+            </div>
+        </div>
 	</div>
 	<div class="nav">
 		<div class="container">

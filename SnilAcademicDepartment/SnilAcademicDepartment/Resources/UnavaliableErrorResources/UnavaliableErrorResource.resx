@@ -117,10 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ContactWithLabel" xml:space="preserve">
+    <value>Пожалуйста, свяжитесь с </value>
+  </data>
   <data name="ErrorMessage" xml:space="preserve">
     <value>К сожалению, данная страница не доступна...</value>
   </data>
   <data name="UnavaliableMessage" xml:space="preserve">
-    <value>Извините, данная страница недоступна :(</value>
+    <value>Извините, данная страница недоступна.</value>
   </data>
 </root>

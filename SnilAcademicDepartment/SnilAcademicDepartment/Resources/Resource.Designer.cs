@@ -192,6 +192,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Кафедра системного анализа и компьютерного моделирования.
+        /// </summary>
+        public static string Department {
+            get {
+                return ResourceManager.GetString("Department", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Скачать документ....
         /// </summary>
         public static string Download {

@@ -62,6 +62,15 @@ namespace SnilAcademicDepartment.Resources.UnavaliableErrorResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Пожалуйста, свяжитесь с .
+        /// </summary>
+        public static string ContactWithLabel {
+            get {
+                return ResourceManager.GetString("ContactWithLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to К сожалению, данная страница не доступна....
         /// </summary>
         public static string ErrorMessage {
@@ -71,7 +80,7 @@ namespace SnilAcademicDepartment.Resources.UnavaliableErrorResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Извините, данная страница недоступна :(.
+        ///   Looks up a localized string similar to Извините, данная страница недоступна..
         /// </summary>
         public static string UnavaliableMessage {
             get {

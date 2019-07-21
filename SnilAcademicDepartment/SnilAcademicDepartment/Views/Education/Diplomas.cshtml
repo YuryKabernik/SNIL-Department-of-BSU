@@ -43,21 +43,17 @@
                                 @{ 
                                     switch (item.Type)
                                     {
-                                        case SnilAcademicDepartment.Common.Enumerations.DiplomaTypes.Unknown:
-                                            
-                                            // Resource
-                                            break;
                                         case SnilAcademicDepartment.Common.Enumerations.DiplomaTypes.Master:
-                                            // Resource
+                                            @EducationResource.Master;
                                             break;
                                         case SnilAcademicDepartment.Common.Enumerations.DiplomaTypes.Diploma:
-                                            // Resource
+                                            @EducationResource.Dimplom;
                                             break;
                                         case SnilAcademicDepartment.Common.Enumerations.DiplomaTypes.Kurs:
-                                            // Resource
+                                            @EducationResource.Kurs;
                                             break;
                                         default:
-                                            // Resource
+                                            @EducationResource.Unknown;
                                             break;
                                     }
                                 }
