@@ -2,8 +2,10 @@
 	text-align: -webkit-center;
 	text-align: center;
 }
-
 .snil_errorPage .snil_errorMessage,
 .snil_errorPage .snil_errorTitle {
 
+}
+.snil_errorPage .snil_unavailableErrorMessage {
+	margin-top: 20%;
 }

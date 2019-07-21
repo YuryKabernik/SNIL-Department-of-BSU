@@ -287,4 +287,7 @@
         &lt;/ul&gt;
     &lt;/p&gt;</value>
   </data>
+  <data name="Department" xml:space="preserve">
+    <value>Кафедра системного анализа и компьютерного моделирования</value>
+  </data>
 </root>

@@ -171,4 +171,16 @@
   <data name="DiplomaNoTableData" xml:space="preserve">
     <value>Нет данных</value>
   </data>
+  <data name="Dimplom" xml:space="preserve">
+    <value>Дипломная работа</value>
+  </data>
+  <data name="Kurs" xml:space="preserve">
+    <value>Курсовая работа</value>
+  </data>
+  <data name="Master" xml:space="preserve">
+    <value>Магистерская диссертация</value>
+  </data>
+  <data name="Unknown" xml:space="preserve">
+    <value />
+  </data>
 </root>
